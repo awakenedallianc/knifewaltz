@@ -1,0 +1,465 @@
+{
+  "manifest": "刀尖舞 KnifeWaltz v1.3 总建造清单（build_manifest_v13）",
+  "version": "13.0.0",
+  "date": "2026-09-22",
+  "core_mission_verbatim": "全站围绕一条管道：广域宇宙（美股/币圈各前500+期货+港股中概）每天扫描 → 复盘回溯推演出的核心指标过滤 → 信息面/技术面/宏观/微观行业/政策面五维证据 → 每月 Top5 核心机会（含决策链条与档案）→ 逐笔结算回灌复盘。与此管道无关的功能一律从简。",
+  "merged_from": [
+    "data/state/funnel_spec.json v1.3.0（主轴，12 步）",
+    "data/state/precision_spec.json v1（S 级，9 步，M1-M4 合并点）",
+    "data/state/depth_spec.json v1.3.0-spec（8 步，按 funnel 第 5 章 merge 规则收编）",
+    "data/raw/radar_research_cnhk.md（已并入 funnel 宇宙，本次逐条核对无遗漏，见 cnhk_audit）"
+  ],
+  "merge_principle": "漏斗主轴优先（funnel_spec 第 5 章 merge_rule_when_depth_spec_appears 逐字执行）：depth 的 universe_add 并入第 1 章分层、gates_add 一律观察闸、depth_pack 收编为档案页 g 节子项（探针/实测通过才点亮）、radar_add 并入雷达页且零 Jev；与「每月 Top5 管道」无直接贡献的项裁掉或降占位（见 cut_list）。",
+
+  "cnhk_audit": {
+    "verdict": "无遗漏。cnhk 报告全部要点已被 funnel_spec 收编：HK88 源与兜底（1_universe.layers.CN_HK）、ADR34 名单与 DADA 剔除（layers.CN_ADR）、T3 定义闸 ORNAMENT 名单（裁决 B4）、-60 单级筛 + -50~-60 观察名单（B4）、HKD /7.8 与免改 yahoo.py（B4/honesty）、回填相位合并 625（B5）、mcap 存量 bug（B8）。",
+    "supplement": "cnhk 第 5 条『write_kline 756 上限恰好容纳』与 funnel data_file_mapping 的 cap rows[-1100:] 并存——裁定统一 cap=1100（funnel 口径，向后兼容），由 universe_stocks 槽实现（MA-11）。"
+  },
+
+  "merge_adjudications": [
+    {"id": "MA-1", "topic": "depth_spec 收编", "ruling": "depth_spec.json 已落盘，funnel 第 5 章降级态解除，按其 merge 规则执行：T1S(20)/T1C(6)/T1F(+3) 并入宇宙分层（走 knives.grab 3y 通道，不进 backfill 相位，channel_universe('stocks') 仍 625）；8 道观察闸受治理红线；COT/财报/SI/拍卖四腿已实测 → 档案页 g 节由『源未实测·缺席』改为点亮（加密 OI 仍缺，占位不变）；radar_add 四节按 cut_list 裁剪后并入。"},
+    {"id": "MA-2", "topic": "Jev 预算冲突", "ruling": "depth jev_feed 的『≤4 次 POST / MAX_QUESTIONS=160 / Call-1..4 / 问题集一字不动』写于 Jev v3 之前，作废；采 funnel 4_jev_v3：MAX_CALLS=6 / MAX_QUESTIONS=320 / Call-1..6 / 新增 J6/J7/J8。保留 depth 的两项有效增量：J1/J2 state facts 四字段（earnings_days_to/earnings_when/cot_z52/days_to_cover，null 键省略）与 J3 四事件源 union（cap 仍 30）；J1-J5 instructions/criteria sha 不变断言继续生效（v3 未改旧问题文本）。"},
+    {"id": "MA-3", "topic": "config.yaml 与 params_registry 归属", "ruling": "config.yaml 单一 owner = universe_stocks 槽（t2c 港股中概固化清单 + ORNAMENT 名单 + t1s/t1c/t1f 补 3 条 + thresholds.sector_fall/credit_fall 一次做全）；params_registry.json / params_history.json 归 integrator 一次性登记（precision 17 条 s_tier.* + depth 18 条 obs.*与新阈值，frozen 语义原样，法庭流程人工，stier.py 只读）。"},
+    {"id": "MA-4", "topic": "H7 白名单与宇宙扩容冲突", "ruling": "precision H7 写作时白名单=SP500∪NDX100；NS-70 核心使命明令港股中概与币圈入 Top5 管道 → H7 池白名单扩展为：T1/T2 ∪ T2C 核心池（ORNAMENT 剔除后）∪ T1S/T1C（主流 ETF 恒过流动性）；流动性阈值三条 frozen 不动（px>=2.0 USD、$1e7 vol20——港股按 /7.8 换算比较、crypto quoteVolume>=2e7）；C-SEED close_only 标的按 H2 保守规则 valid 项全过；ORNAMENT 永不发信号故永不达 H1。此扩展记 PROGRESS，异议走法庭。"},
+    {"id": "MA-5", "topic": "雷达页金纪律冲突", "ruling": "funnel/depth 均写雷达页 0 金，precision D2 给『在窗 S 级>=1 日判定行 1 金』——S 层是北极星交付，precision 胜：雷达页平日 0 金，仅在窗 S>=1 的日子判定行恰 1 处金（仍满足全站每页<=1 金）。"},
+    {"id": "MA-6", "topic": "雷达页首元素顺序冲突", "ruling": "funnel 漏斗条与 precision 配给卡都要求『口径 liverow 之下第一』——漏斗条第一（主轴导航），S 配给/Top5 合一账本卡第二（M3）。"},
+    {"id": "MA-7", "topic": "beta/corr 基准与刀谱对照重复实现", "ruling": "基准口径 funnel 胜：加密对 BTC、其余对 ^GSPC（depth 的 vs SPY 作废，beta_corr60 函数签名泛化基准参数）；depth b 模块（dd_rank3y/knifebook_context）即 funnel 档案页 c 节『当前跌深历史分位』与 i 节无 Jev 退化链的唯一实现，不另开抽屉版面（cut_list #7/#8）；『连坐型/独立坠落型』措辞仅作 c 节展示语义。"},
+    {"id": "MA-8", "topic": "每月 Top5 组装归属缺口", "ruling": "precision E13 判 Top5 排名『归 funnel_spec 管道』，但 funnel build_order 无对应步——缺口裁定：stier 槽实现 build_month_top5()（Top5 = GRANTED ∪ 按软分补足恒 5 名，非 GRANTED 者标『当月最优·未达 S』+ 差哪条硬条件与现值/阈值）；run.py 接线归 integrator（M1）；payload 字段名以 precision payload_contract_stier_block 为准（M4）；逐笔结算与 S 级共用同一 replay.atier_exec 调用点（M2）。"},
+    {"id": "MA-9", "topic": "探针合并", "ruling": "probe.yml 一次性 dispatch 探 7 端点 = funnel 六端点（CG markets/category/market_chart、Paprika tickers、OKX history-candles、Yahoo 0700.HK）+ FINRA partitions（裁决 D7 首跑腿）；FINRA 过则 ops 槽在 daily.yml 置 KW_ENABLE_FINRA=1，不过则门保持关并记机房页；CG/Paprika fail 走 funnel 裁决 B10 降级链。"},
+    {"id": "MA-10", "topic": "tier 枚举与宇宙计数", "ruling": "universe.json 行 tier 枚举扩为 T1|T1F|T1S|T1C|T2|T2C|MOVER|ORNAMENT|null；宇宙总数 ≈1160+29≈1189（以实际去重为准）；board ≈94（depth 估算）+T2C 核心 ≈25 入状态机；depth 指标符号（裁剪后）只进指标库 store 不进 universe.json。"},
+    {"id": "MA-11", "topic": "kline cap", "ruling": "write_kline 行上限统一 cap rows[-1100:]（funnel 口径），兼容 cnhk 报告的 756 观察；universe_stocks 槽实现。"},
+    {"id": "MA-12", "topic": "档案页 g 节（资金面）点亮", "ruling": "funnel 原文按『源未实测』写缺席文案，depth 已实测四腿 → g 节改为：crypto=资金费率（既有）+ OI 占位（仍未实测，诚实缺口）；futures=COT z52/net_oi（17 条有映射，RB/HO/OJ 标『无 COT 映射』）+ 拍卖窗（ZB 与 T1C）；equity=财报临近（<=5 交易日）+ SI（FINRA 门解锁后，双月滞后徽章）。徽章三件套 source+asof+延迟缺一不可（depth honesty 全表适用）。"}
+  ],
+
+  "governance_redlines_verbatim": {
+    "1_观察闸": {
+      "source": "depth_spec.json gates_add.governance_redline_verbatim + funnel_spec.json 5_gates_depth.governance_kept",
+      "text": [
+        "本节全部闸门为观察闸（display-only）：只上墙展示，不进入 BladeIndex，不参与状态机、KnifeScore、veto 与任何信号判定；公式与阈值的任何改动只能走 2026-12 参数法庭（季度 walk-forward + params_history 留痕），此前一律冻结。",
+        "观察闸不入 BladeIndex：任何新增观察级闸门只作展示与记录，不参与刀锋指数/8 闸联动计数与 gate_ok checklist 项",
+        "2026-12 法庭：观察闸转正（进 8 闸正编）须凭 2026-12 复盘法庭成绩单（样本量、命中、误报、Wilson 区间）裁决，转正流程走 RL-9/RL-10 预注册；法庭之前一律观察态"
+      ]
+    },
+    "2_S级影子闸纯记账": {
+      "source": "precision_spec.json hypothetical_replay.leg2_shadow_12m.graduation + s_tier_rules.shadow_gates.H9.rule",
+      "text": [
+        "满 12 个月或 shadow 样本 n>=10（以先到者），且 walk-forward 法庭验证通过 → 才允许把对应 s_tier.* 参数从禁用值改为启用值（RL-9/10 流程）；期间任何页面均标「影子·不影响放行」",
+        "lr_gate_enabled==true 时要求命中切片 grade=='证据'(n>=10) 且 lr >= s_tier.lr_min(4.0)；启用唯一通道=季度 walk-forward 法庭。关闭期间仅记录「若启用会拦谁」"
+      ]
+    },
+    "3_Jev_outcome_defs预注册": {
+      "source": "funnel_spec.json 7_honesty_gates_delta.gates[8]",
+      "text": [
+        "J6/J7/J8 结算口径提问时预注册（RL-6）并写入 calibration.json outcome_defs；尺度常数与 sigma20 冻结值随记录落盘杜绝事后重算漂移（RL-2）；unresolvable 分列计数公示，宁缺记录不造分母；随机基线（J6 1/3、J7 mean|W|/5）与命中率并列公示"
+      ]
+    }
+  },
+
+  "cut_list": [
+    {"item": "depth radar_add『链 TVL 异动』独立节", "action": "降级合并", "to": "稳定币节尾极值行（仅 warn/red 时渲染）", "reason": "链 TVL 对每月 Top5 管道无直接贡献，仅作稳定币危机佐证，不值一个独立 h2 节。"},
+    {"item": "depth radar_add『PCR 极值卡』独立节", "action": "降级合并", "to": "观察闸带格悬浮（z60+分位）+ 机房页完整口径", "reason": "G-PCR-EQ/IDX 两闸已在观察闸带展示，独立卡与闸带信息重复。"},
+    {"item": "depth fx 指标 12 币中的 10 币（eurusd/gbpusd/try/brl/mxn/zar/inr/idr/krw/rub）", "action": "砍（不抓取）", "reason": "无任何闸门/版面/Jev 消费者（D10『不为没有消费者的数据编造版面』）；只留 fx.jpy（G-JPY 闸）与 fx.cny（港股中概宇宙背景腿）；源已实测留档，法庭/v1.4 需要时再开。"},
+    {"item": "depth 指标 ^SKEW / ^VIX1D", "action": "砍（不抓取）", "reason": "vol_complex 中仅 MOVE/VVIX 有观察闸与分位消费者，SKEW/VIX1D 无任何消费面。"},
+    {"item": "depth 指标 PA=F（钯）", "action": "砍（不抓取）", "reason": "无消费者且成交量 51.3% 缺失（D3 已降为指标-only，本清单进一步裁掉）。"},
+    {"item": "funnel C-LIST rank<=200 的 cg_1y 展示升级通道", "action": "降级为按需", "to": "仅 J1 晋升候选 / day_losers 临时线触发时拉取", "reason": "榜单级币的 1 年收盘线是纯展示，Top5 管道不经过；按需拉省预算。"},
+    {"item": "depth 抽屉独立 knifebook 对照展示", "action": "降级合并", "to": "档案页 i 节（J6 case_map > knifebook_context 距离匹配 > cls 粗配的退化链，单一实现）", "reason": "同一数据两处版面违反去繁就简（MA-7）。"},
+    {"item": "depth 抽屉独立 dd_rank 展示", "action": "降级合并", "to": "档案页 c 节『当前跌深历史分位』行（即 funnel 的 pctile_dd52w，同一实现）", "reason": "同 MA-7，一处数据一处版面。"},
+    {"item": "depth semi 四锚（TSM/ASML/NVDA/AVGO）任何独立版面", "action": "占位固化", "to": "仅财报 watchlist + 指标库 store；semi 齐崩旗标留 v2（spec 原判，明示防蔓延）", "reason": "对 Top5 管道仅作财报引信输入，无独立展示价值。"}
+  ],
+
+  "owners": {
+    ".github/workflows/probe.yml": "ops_workflows",
+    ".github/workflows/daily.yml": "ops_workflows",
+    "data/state/probe_datacenter.json": "ops_workflows",
+    "src/kw/universe.py": "universe_crypto",
+    "src/kw/fetchers/coingecko.py": "universe_crypto",
+    "src/kw/fetchers/okx_kline.py": "universe_crypto",
+    "scripts/binance_seed.py": "universe_crypto",
+    "data/state/universe_list.json": "universe_crypto",
+    "data/state/universe_backfill.json": "universe_crypto",
+    "config.yaml": "universe_stocks",
+    "src/kw/fetchers/yahoo.py": "universe_stocks",
+    "src/kw/fetchers/breadth.py": "universe_stocks",
+    "src/kw/fetchers/knives.py": "universe_stocks",
+    "src/kw/engine.py": "engine",
+    "src/kw/fetchers/depth.py": "depth_fetchers",
+    "src/kw/fetchers/cot.py": "depth_fetchers",
+    "data/state/pcr_history.json": "depth_fetchers",
+    "data/state/cot_latest.json": "depth_fetchers",
+    "data/state/earnings_marks.json": "depth_fetchers",
+    "data/state/auction_windows.json": "depth_fetchers",
+    "data/state/short_interest.json": "depth_fetchers",
+    "src/kw/jev.py": "jev",
+    "src/kw/fetchers/news.py": "jev",
+    "src/kw/fetchers/radar.py": "jev",
+    "data/state/movers_history.json": "jev",
+    "src/kw/stier.py": "stier",
+    "src/kw/snapshot.py": "stier",
+    "scripts/stier_replay.py": "stier",
+    "data/state/stier_ledger.json": "stier",
+    "data/state/stier_replay.json": "stier",
+    "data/state/slice_lr.json": "stier",
+    "data/state/knife_book_seed.json": "stier",
+    "src/kw/settle.py": "settle_calibrate",
+    "src/kw/calibrate.py": "settle_calibrate",
+    "src/kw/review.py": "settle_calibrate",
+    "data/state/red_lines.json": "settle_calibrate",
+    "src/kw/render.py": "render_backend",
+    "docs/data/*（universe/profile/jev_profiles/stier_public/payload 导出契约）": "render_backend",
+    "templates/index.html.j2": "frontend",
+    "templates/assets/app.js": "frontend",
+    "templates/assets/app.css": "frontend",
+    "scripts/display_chars.txt": "frontend",
+    "templates/assets/fonts/*": "frontend",
+    "data/state/style_spec.json": "frontend",
+    "run.py": "integrator",
+    "data/state/params_registry.json": "integrator",
+    "data/state/params_history.json": "integrator",
+    "data/state/radar_spec.json": "integrator",
+    "data/state/goals.json": "integrator",
+    "PROGRESS.md": "integrator"
+  },
+  "ownership_note": "运行时写权（如 stier_ledger 的 settle/review 分键写入）按 precision budget_machine.write_ownership 执行，与建造期文件归属互不冲突；任何槽位需要改非本槽文件=提契约给对应槽或 integrator，禁止越权直改。",
+
+  "phases": {
+    "P0": "门与先行件：ops_workflows 的机房探针（7 端点）；frontend 的字体子集先行（+25 字一次合并）。",
+    "P1": "并行建造：universe_crypto / universe_stocks / engine / depth_fetchers / jev / stier / settle_calibrate / frontend（模板与应用层，在字体子集后）。槽间仅契约依赖（见各槽 depends），无顺序阻塞。",
+    "P2": "后端合流：render_backend 按契约可与 P1 并行开发，最终 schema 验收在 P1 各槽交付后。",
+    "P3": "总装：integrator 的 run.py 接线 + params_registry 登记 + ops_workflows 的 daily.yml 接线 + 全量回归验证 + 发版。"
+  },
+
+  "slots": [
+    {
+      "slot": "ops_workflows",
+      "phase": "P0（探针）+ P3（工作流接线）",
+      "depends": {"P0": [], "P3": ["universe_crypto", "universe_stocks", "render_backend"]},
+      "owns": [".github/workflows/probe.yml", ".github/workflows/daily.yml", "data/state/probe_datacenter.json"],
+      "read_spec_paths": [
+        "funnel_spec.json → 6_build_order.steps[step=1] 与 [step=11]",
+        "funnel_spec.json → 1_universe.datacenter_probe_gate",
+        "funnel_spec.json → architect_adjudications_v13.B10（探针失败降级链）",
+        "funnel_spec.json → 8_budgets.storage.actions_cache / pages_artifact",
+        "depth_spec.json → adjudications.D7（FINRA 首跑验证门）",
+        "depth_spec.json → build_order[step=8]",
+        "本清单 → merge_adjudications.MA-9"
+      ],
+      "deliverables": [
+        "probe.yml：workflow_dispatch 一次性探 7 端点（CG markets p1 / CG category=stablecoins / CG market_chart days=365 / CoinPaprika tickers / OKX history-candles 1 页 / Yahoo chart 0700.HK / FINRA partitions），逐端点状态码+样本行数写 probe_datacenter.json 并 commit",
+        "daily.yml（P3）：heavy 增 backfill 步（增量前执行、300s 墙钟）+ seed Release 资产恢复步（cache miss 时）+ cache 条目扩容（≈33-37MB zstd，键沿用 kw-db-v1-* 前缀）+ KW_ENABLE_FINRA（探针过后置 1，不过保持关并记机房页）",
+        "radar.yml 零改动核验（只 restore cache 透传 kline/universe/profile 到部署）"
+      ],
+      "self_test": [
+        "探针 7 端点逐一 pass/fail 落盘；fail 通道通知 universe_crypto/depth_fetchers 按 B10/D7 禁用",
+        "Actions 两连跑：第 1 跑回填推进且 state 提交、第 2 跑增量 <净增 5 分钟",
+        "手动清缓存验证 seed 恢复路径；radar 端到端绿且零 state 写入"
+      ],
+      "acceptance": "funnel step1 + step11 accept 原文合并；depth step8 accept（FINRA 结论二选一落档、机房日志各源 ok 或如实 degraded）；deploy 步 >90s 触发 radar 降频整点预案"
+    },
+    {
+      "slot": "universe_crypto",
+      "phase": "P1（代码并行；生产接入受 P0 探针门）",
+      "depends": {"契约": ["ops_workflows 的 probe_datacenter.json（B10 降级链开关）"]},
+      "owns": ["src/kw/universe.py", "src/kw/fetchers/coingecko.py", "src/kw/fetchers/okx_kline.py", "scripts/binance_seed.py", "data/state/universe_list.json", "data/state/universe_backfill.json"],
+      "read_spec_paths": [
+        "funnel_spec.json → 1_universe 全章（layers / crypto_binding / backfill_state_machine_verbatim / backfill_eta / sqlite_policy / datacenter_probe_gate）",
+        "funnel_spec.json → architect_adjudications_v13.B2 / B3 / B5 / B10 / B11",
+        "funnel_spec.json → 8_budgets.initial_backfill 与 risks_condensed（限速/降级/symbol 冲突）",
+        "本清单 → cut_list[6]（cg_1y 降为按需）"
+      ],
+      "deliverables": [
+        "CG 榜单 2 请求 + 稳定币类别 1 请求（6s 间隔+指数退避+Paprika 降级+昨日快照兜底）；cg_id 主键绑定 OKX/Binance（现价偏差 >20% 拒绑记 failed）",
+        "四层分层落 universe_list.json（C-FULL≈185 / C-SEED≈63 / C-LIST≈248 / C-STABLE，BTC/ETH 归并 T1 键，B3）",
+        "okx_kline：日增量 candles（8rps）+ history-candles 全量回填；backfill 状态机逐字实现（含 300s deadline、N 上限、phase 推进、git 断点）",
+        "binance_seed.py 本地产 seed tar.gz 挂 Release 资产（生产 451 永不直连）；C-SEED 从 CG 榜单行免费续写收盘 bar（close_only 标志）",
+        "cg_1y 通道改按需触发（cut_list#6）"
+      ],
+      "self_test": [
+        "本地跑通分层计数 ≈185/63/248/稳定币；断点中断重跑无损；生产路径零 Binance 请求断言",
+        "探针 fail 通道确认禁用且降级文案落 universe_list（B10 三级降级链实测）"
+      ],
+      "acceptance": "funnel step3 accept 原文"
+    },
+    {
+      "slot": "universe_stocks",
+      "phase": "P1",
+      "depends": {},
+      "owns": ["config.yaml", "src/kw/fetchers/yahoo.py", "src/kw/fetchers/breadth.py", "src/kw/fetchers/knives.py"],
+      "read_spec_paths": [
+        "funnel_spec.json → 1_universe.layers[US500 / CN_HK / CN_ADR]",
+        "funnel_spec.json → architect_adjudications_v13.B1 / B4 / B5 / B8",
+        "funnel_spec.json → 6_build_order.steps[step=4]",
+        "depth_spec.json → adjudications.D1 / D2 / D3 / D8 / D9",
+        "depth_spec.json → universe_add.knife_targets（T1S/T1C/T1F 三表全量）",
+        "depth_spec.json → build_order[step=1]（params_registry 部分除外——归 integrator，MA-3）",
+        "data/raw/radar_research_cnhk.md 全文",
+        "本清单 → merge_adjudications.MA-3 / MA-10 / MA-11"
+      ],
+      "deliverables": [
+        "yahoo.py：fetch() USX 6 元素解包 bug 修复（D9，volume 保留）；write_kline 合并追加模式（增量 5d 与文件尾按日期合并去重，首次/缺失 3y），cap rows[-1100:]（MA-11）",
+        "breadth.py：循环内 chart 第 4 返回值 ohlc 落 write_kline；池扩 US503+HK88+ADR34=625；恒指 CSV 源+仓库快照兜底（同 ndx100 模式）",
+        "knives.py：修 :147 mcap bug（恒 null+徽章，B8）；新增 T1S(20)/T1C(6) grab 循环与 T1F 补 3 条（RB/HO/OJ）",
+        "config.yaml：t1s/t1c 节 + t1f 补 3 条 + thresholds.sector_fall{-30,-12,28}/credit_fall{-15,-8,30} + t2c 港股中概固化清单（cnhk 名单逐字，DADA 剔除）+ ORNAMENT 剔除名单（NOAH/MOMO/FINV/LX + IQ/LX/RLX + DIDIY）"
+      ],
+      "self_test": [
+        "抽样 20 股增量后 kline 尾行=最新交易日且无重复日期；625 池回填 2-3 个跑批内完成",
+        "29 条新 kline 各 ≥600 根；OJ=F 为 USD 口径（~1.48 非 148）；board 出现 T1S/T1C 行且 cls 走新阈值",
+        "k.HYG/k.IEF 序列入库（blade_index 信用腿激活为数据 diff，提交说明必须声明，D2）；mcap=null 不再假装有值"
+      ],
+      "acceptance": "funnel step4 accept + depth step1 accept 合并（registry 条目除外）"
+    },
+    {
+      "slot": "engine",
+      "phase": "P1",
+      "depends": {"契约": ["universe_stocks 的第 1 步库作 golden 基线（信用腿数据 diff 与代码 diff 分离）"]},
+      "owns": ["src/kw/engine.py"],
+      "read_spec_paths": [
+        "funnel_spec.json → 2_dossier.chain_rings_definition_table 与 chain_contract（8 环 schema/企稳 5 子项 checklist_facts）",
+        "funnel_spec.json → 6_build_order.steps[step=5]",
+        "depth_spec.json → depth_pack.modules_ownership + items.a_key_value_percentiles / b_dd_rank_and_knifebook / c_beta_corr_spy（基准按 MA-7 改）",
+        "depth_spec.json → gates_add.engine_contract 与 gates（8 条观察闸公式逐字）",
+        "depth_spec.json → build_order[step=4]",
+        "precision_spec.json → s_tier_rules.shadow_gates.H10（flip_back_age_days 落盘要求）与 build_order.steps[step=2] 的 engine 部分",
+        "本清单 → merge_adjudications.MA-7 / MA-12，cut_list[7][8]"
+      ],
+      "deliverables": [
+        "detect 新事实量：z1d / worst_day_252_pct / sigma20_ann_pct / beta / corr60（基准：加密对 BTC、其余对 ^GSPC）/ pctile_dd52w（=dd_rank3y，单一实现）",
+        "detect/step_state 逐环 emit chain（8 环，含企稳 5 子项实数；close_only 币量能项 None 走 no_volume 先例；state_events 供 markPoint）",
+        "纯函数：pct_rank（n<252→None）/ rolling_dd52 / dd_rank3y / beta_corr60（泛化基准）/ knifebook_context（档案 i 节退化链实现）/ obs_gates（8 条 display-only）/ build_depth",
+        "market_gates 末尾挂 g['obs_gates'] / g['pctiles'] / flip_back_age_days（gates_prev 边沿计龄，供 stier H10 影子读数）；detect/step_state/blade_index 公式零改动"
+      ],
+      "self_test": [
+        "golden 对比：同库同 state 下 g['gates']/g['state']/g['blade_index'] 与改前逐字段一致（信用腿激活是数据 diff 非代码 diff）",
+        "58 现有标的链条 emit 齐 8 环且实数正确；detect×1189 基准 <8s；close_only 标的第 4 环标『此环免验』",
+        "obs_gates 8 条齐且绝不混入主闸/blade_index/state；pct_rank n<252 → None"
+      ],
+      "acceptance": "funnel step5 + depth step4 accept 合并 + flip_back_age_days 字段落盘验证"
+    },
+    {
+      "slot": "depth_fetchers",
+      "phase": "P1",
+      "depends": {"契约": ["ops_workflows 的 FINRA 探针结论（KW_ENABLE_FINRA 门）"]},
+      "owns": ["src/kw/fetchers/depth.py", "src/kw/fetchers/cot.py", "data/state/pcr_history.json", "data/state/cot_latest.json", "data/state/earnings_marks.json", "data/state/auction_windows.json", "data/state/short_interest.json"],
+      "read_spec_paths": [
+        "depth_spec.json → depth_pack.items.d_cot_crowding / e_earnings_and_short_interest / f_auction_window / pcr_pipeline / stable_tvl_pipeline",
+        "depth_spec.json → universe_add.indicator_only（按 cut_list[3][4][5] 裁剪：只抓 move/vvix/rate.irx+fvx+tnx+tyx/spread.3m10y 自算/fx.jpy/fx.cny/gidx 11 条/semi 4 锚）",
+        "depth_spec.json → build_order[steps 2-3] 与 honesty 全节（徽章三件套逐条）",
+        "depth_spec.json → adjudications.D5 / D6 / D7",
+        "本清单 → cut_list[3][4][5]"
+      ],
+      "deliverables": [
+        "depth.py：fetch_indicators（裁剪后 ≈21 符号，volume 恒 0 不入库）/ fetch_pcr（RSC 正则主解析+HTML 表降级，None 非错误）+ backfill_pcr（<40 观测时回补 60 日）/ fetch_stablecoins + fetch_chain_tvl（末位盘中点不用）/ earnings_marks（5 请求 5 日窗，watchlist=T2∪day_losers_promoted∪semi 四锚）/ fetch_auctions（timeout 60+重试 1，term 桶措辞实测表）/ finra_short_interest（KW_ENABLE_FINRA 门，partitions→EQUAL compareFilter 流程固定）；标准 fetch() 契约聚合，每腿独立 try/except 降级",
+        "cot.py：CODES 20 条实测映射、单请求 53 周 $limit 5000、cot_z（n<40→None）、cot_latest.json 落盘（含 published_lag 徽章文本；typo 字段 noncomm_postions_spread_all 原样处理）"
+      ],
+      "self_test": [
+        "单腿断网其余腿照常；PCR 未发布日返回 None 不报错；门关时 short_interest.json 不产",
+        "COT 对拍 2026-09-15 报告 ±0.1：SB +3.0 / LE -2.34 / ZC +2.18 / 6J +2.15 / NG -1.89",
+        "全部 store 键带 source+date/asof；G-STABLE 只写 heavy store 序列（D6 口径分离）"
+      ],
+      "acceptance": "depth step2/step3 accept（裁剪范围内）"
+    },
+    {
+      "slot": "jev",
+      "phase": "P1",
+      "depends": {"契约": ["depth_fetchers 的 depth.py 函数签名（radar 轻腿复用 stable/tvl 两函数）与 earnings_marks/cot_latest schema（J1/J2 facts 字段）"]},
+      "owns": ["src/kw/jev.py", "src/kw/fetchers/news.py", "src/kw/fetchers/radar.py", "data/state/movers_history.json"],
+      "read_spec_paths": [
+        "funnel_spec.json → 4_jev_v3 全章（budget_constants_final / J6 / J7 / J8 / jev_profiles_builder 的输入侧 / call_sequence_per_heavy_run / pipeline_order_updated / budget_guards / degrade_matrix / implementation_changes_concrete 前四条）",
+        "funnel_spec.json → 6_build_order.steps[step=6]",
+        "depth_spec.json → jev_feed.J1_J2_state_facts_add 与 J3_events_source_add（预算约束按 MA-2 作废）",
+        "depth_spec.json → depth_pack.stable_tvl_pipeline.radar_light_reuse",
+        "本清单 → merge_adjudications.MA-2"
+      ],
+      "deliverables": [
+        "常量：MAX_CALLS=6 / MAX_QUESTIONS=320 / J1_LIMIT=48 / J1_BATCH=24 / J5_LIMIT=80 / J6_LIMIT=16 / J7_LIMIT=16；HORIZONS += {J6:252, J7:63, J8:5}",
+        "triage_and_heat 拆双批挂 J8（headlines>=2 才发问）；新增 _bool_val 解析器、build_j6_criteria()（读 knife_book_seed 模板生成 18+1 行，无 fwd 防泄漏）、case_similarity()、catch_prior_and_weak_links()；build_payload_block 增 case_map/weak_link/news_divergence",
+        "news.py：max_inst 40→56；fetch_macro_events union 追加 depth 四事件源（财报/拍卖/COT 极值/脱锚），cap 仍 30",
+        "radar.py：24h 榜涨/跌各 20→40；movers_history.json 每日 80 行；轻跑批加 stable+tvl 快腿（调 depth.py 函数，只写 radar.json.depth，不写 store 不写 state）",
+        "J1/J2 candidate facts 增四字段（earnings_days_to/earnings_when/cot_z52/days_to_cover，null 键省略）"
+      ],
+      "self_test": [
+        "无 TYPESAFE_API_KEY 站点字节级一致；有 key 单跑批 <=6 调用 <=320 问",
+        "J1-J5 instructions/criteria sha256 与改前一致（脚本断言，MA-2 保留）",
+        "jev_log 新增 J6/J7/J8 记录 horizon/aux 齐备（J8 aux.sigma20_frozen 落盘）；jev_cache 命中免计费；headlines<2 无 J8 记录",
+        "radar 跑批零 Jev 调用零 state 写入（裁决 A1）"
+      ],
+      "acceptance": "funnel step6 accept + depth step6 accept（预算数字按 MA-2 改为 6 调用/320 问，其余原文）"
+    },
+    {
+      "slot": "stier",
+      "phase": "P1",
+      "depends": {"契约": ["engine 的 flip_back_age_days 与 detect 字段", "jev 的 payload.jev.triage/catch_prior schema", "settle_calibrate 的 replay.atier_exec 复用点（M2）"]},
+      "owns": ["src/kw/stier.py", "src/kw/snapshot.py", "scripts/stier_replay.py", "data/state/stier_ledger.json", "data/state/stier_replay.json", "data/state/slice_lr.json", "data/state/knife_book_seed.json"],
+      "read_spec_paths": [
+        "precision_spec.json → adjudications 全节（A1-A10）",
+        "precision_spec.json → s_tier_rules 全章（tiering / hard_conditions H1-H8 / shadow_gates H9-H11 / soft_score / watchlist_clues / decision_pseudocode 逐行）",
+        "precision_spec.json → budget_machine 全章（月态机 / E1-E13 / R1-R4 / ledger_schema / write_ownership）",
+        "precision_spec.json → hypothetical_replay 全章（leg1 vix36 + H10 对照臂 / leg3 T1 pooled / output schema）",
+        "precision_spec.json → build_order.steps[step=2, 7, 8]；params_registry_additions（数值参照，登记归 integrator）",
+        "本清单 → merge_adjudications.MA-4（H7 白名单扩展）/ MA-8（build_month_top5 归属）"
+      ],
+      "deliverables": [
+        "stier.py：s_adjudicate / s_grant / load_ledger / roll_month / liquidity_ok（白名单按 MA-4 扩展，阈值三条 frozen 不动）/ cap_class / close_pos；影子闸 H9/H10/H11 只落 shadow 字段；软分 0.40/0.25/0.35 + lr_norm；E1-E13 全部边界；stier_ledger.json 唯一创建/占额写者",
+        "build_month_top5()（MA-8）：Top5 = GRANTED ∪ 按软分补足恒 5 名；非 GRANTED 标『当月最优·未达 S』+ 差哪条硬条件（现值/阈值）；输出供 render 注入 payload（字段名以 precision payload_contract_stier_block 为准，M4）",
+        "snapshot.py：capture 增 stier 子块 + features_sha（append-only，RL-3）",
+        "stier_replay.py：leg1 vix36 假想配给（可回算硬条件子集，缺 J1/J4 如实标注）+ H10 对照臂双列 + leg3 T1 pooled；输出 stier_replay.json（hypothetical:true，唯一允许覆写）",
+        "slice_lr.json（train 窗 1990-2013，预注册五维 (J1_family, gate_state, tier_time, cap_class, cls)，每切片必带 n/wins/win_rate/wilson95/lr）；knife_book_seed.json 补齐 9 例 buy_minus30_further_dd_pct"
+      ],
+      "self_test": [
+        "E8 幂等：同日重跑/build-only 零重复占额；KW_RADAR=1 分支零触达",
+        "重建轮次与 vix_replay.json 逐轮等值校验（差<0.35pp，复用 atier_exec）",
+        "缺 slice_lr.json 时 lr 全中性照常运行；无撤销/置换/追授代码路径（R4 静态断言）",
+        "build_month_top5 恒返回 5 名（不足 5 个 CATCH 月按软分从合格池外候选补足并如实分级）"
+      ],
+      "acceptance": "precision steps 2/7/8 accept 合并 + MA-8 Top5 恒 5 名断言"
+    },
+    {
+      "slot": "settle_calibrate",
+      "phase": "P1",
+      "depends": {"契约": ["stier 的 ledger schema（outcome/hold252_pct 只写两键）", "jev 的 jev_log 记录格式（J6/J7/J8 aux 字段）"]},
+      "owns": ["src/kw/settle.py", "src/kw/calibrate.py", "src/kw/review.py", "data/state/red_lines.json"],
+      "read_spec_paths": [
+        "funnel_spec.json → 4_jev_v3.J6/J7/J8 各自 outcome_def_preregistered_verbatim + calibration_bucket + jev_profiles_builder",
+        "funnel_spec.json → 4_jev_v3.implementation_changes_concrete 后两条；6_build_order.steps[step=7]",
+        "precision_spec.json → settlement 全章（engine / precision_definition / loss_attribution / calibrate / rule_counts / red_lines_additions SR-1..3）",
+        "precision_spec.json → build_order.steps[step=4, 5]",
+        "本清单 → governance_redlines_verbatim.3_Jev_outcome_defs预注册"
+      ],
+      "deliverables": [
+        "settle.py：resolve_jev_log 新增 J6（episode 完成判定+签名距离排名，冻结 DD_SCALE=25 / LNDAYS_SCALE=1.2）/ J7（归因谓词集合 W + none_weak 分支，X-STOP 从台账/atier 读）/ J8（sigma5/sigma20，分母用 aux.sigma20_frozen）；全部幂等只填 null 记录",
+        "settle.py：settle_stier() 复用 replay.atier_exec(max_bars=60)——M2：S 级与 Top5 逐笔结算共用同一调用点，禁止第二份退出规则实现；GRANTED/CANDIDATE 一视同仁结算、分列统计；只写 outcome/hold252_pct/settled_at",
+        "calibrate.py：jev 节新增 J6/J7/J8（含 J7 confusion 6×5、J8 group_contrast）；outcome_defs 纯增列三条逐字口径 + outcome_defs_sha 变更写 change_log；build_jev_profiles() → docs/data/jev_profiles.json（history 封顶 20 条/标的）；s_tier 节（granted/candidate/rolling30/shadow_counterfactual）",
+        "review.py：attribute_stier() 四选一强制归因（只写 attribution/attributed_at 两键）；SR-1..3 写入 red_lines.json 并接入周审计"
+      ],
+      "self_test": [
+        "calibration.json J1-J5 旧键字节不动；三新节与 s_tier 节 conclusive:false 起步；结算幂等",
+        "jev_profiles.json 只含有记录的标的；n<30 一律『收集中 x/30』（RL-4）",
+        "静态断言：全仓 atier 退出规则实现唯一（grep 级检查）；三口径（实盘/候补/假想）无合并数据路径（SR-3）"
+      ],
+      "acceptance": "funnel step7 accept + precision steps 4/5 accept 合并"
+    },
+    {
+      "slot": "render_backend",
+      "phase": "P2（契约先行并行开发，schema 合流验收在 P1 交付后）",
+      "depends": {"契约": ["universe_crypto/universe_stocks 的 universe_list 与 kline schema", "engine 的 chain/depth/obs_gates 结构", "jev 的 payload 三新键", "stier 的 payload_contract_stier_block（M4）与 build_month_top5 输出", "depth_fetchers 的 depth_pack.payload_contract"]},
+      "owns": ["src/kw/render.py", "docs/data/*（universe.json / profile/{key}.json / jev_profiles.json / stier_public.json / payload.json 各块导出契约）"],
+      "read_spec_paths": [
+        "funnel_spec.json → 2_dossier.data_file_mapping（五文件 producer/content/size 全表）与 verdict_templates_enum",
+        "funnel_spec.json → architect_adjudications_v13.B11（universe/profile 只由 heavy 产出）/ B12（双端同文契约）",
+        "funnel_spec.json → 6_build_order.steps[step=8]（run.py 接线除外——integrator）",
+        "precision_spec.json → frontend.payload_contract_stier_block（M4：字段名以此为准）",
+        "depth_spec.json → depth_pack.payload_contract（gates.pctiles / obs_gates / depth_market / board_row_depth）",
+        "本清单 → merge_adjudications.MA-8 / MA-10 / MA-12"
+      ],
+      "deliverables": [
+        "universe.json 导出（≈1189 行瘦字段 <450KB raw，tier 枚举含 T1S/T1C/T2C，MA-10）",
+        "profile/{key}.json 导出循环（活跃集 <=200：chain/verdict/facts/jev/headlines/derivs——g 节点亮腿按 MA-12/snapshots 切片/similar）",
+        "verdict 模板函数（零 LLM，与前端降级路径逐字同文——B12 契约记 PROGRESS）",
+        "payload 注入：funnel 计数+defs / thresholds_by_cls（config 透出）/ board 行 z1d / jev 三新键 / stier 块（M4）/ depth_market / gates.pctiles+obs_gates；stier_public.json 与 jev_profiles.json 公开瘦身版"
+      ],
+      "self_test": [
+        "heavy 本地跑通产出全部新文件且 schema 合规；payload <220KB；universe <450KB raw / <90KB gzip",
+        "radar 模式零改动验证（只透传不重算，funnel 计数恒标『跑批口径』）"
+      ],
+      "acceptance": "funnel step8 accept（run.py 接线除外）+ M4 字段名比对"
+    },
+    {
+      "slot": "frontend",
+      "phase": "P0（字体子集先行）+ P1（模板与应用层）",
+      "depends": {"P0": [], "P1": ["自身 P0 字体子集完成（先字体后模板铁律）", "render_backend 契约（数据可 mock，降级路径先行）"]},
+      "owns": ["templates/index.html.j2", "templates/assets/app.js", "templates/assets/app.css", "scripts/display_chars.txt", "templates/assets/fonts/*", "data/state/style_spec.json"],
+      "read_spec_paths": [
+        "funnel_spec.json → 2_dossier.skeleton / data_loading / sections（九节全表）/ chain_contract（降级同文）",
+        "funnel_spec.json → 3_funnel_ia 全章（funnel_bar markup 逐字 / funnelpos_line / nav_reorg / views_routes / home_declutter / howto_view / saya_compliance 含 new_css_verbatim）",
+        "funnel_spec.json → 6_build_order.steps[step=2, 9, 10]；7_honesty_gates_delta.hard_checks_regression",
+        "precision_spec.json → frontend 全章（quota_card / review_room_section / drawer_ring / display_chars / css）与 build_order.steps[step=6]",
+        "depth_spec.json → radar_add（按 cut_list[1][2] 裁剪后）与 honesty（每个新数字 source+asof+延迟徽章三件套）",
+        "本清单 → merge_adjudications.MA-5 / MA-6 / MA-12，cut_list[1][2][7][8]"
+      ],
+      "deliverables": [
+        "P0：display_chars.txt 一次追加 25 字（funnel 17『决策链事走势史新闻面对如何漏斗词表』+ precision 8『月配给级宁缺毋滥』）→ python scripts/subset_font.py → style_spec words 同步；184 字 woff2 预算内",
+        "index.html.j2：v-profile 节 / nav 四组+ng 组签 / bottomnav 五槽（markup 逐字）/ tape 移除、funnel 条进原位",
+        "app.js：hashchange 路由 + renderProfile 九节（每节防御式降级、降级模板与后端同文；g 节按 MA-12 点亮）+ 首页重排（funnel/gatebar/今日机会）+ vHowto + cmdk 宇宙懒加载 + 抽屉『完整档案』链 + funnelpos 行 + knives data-group 锚",
+        "S 层前端（M3）：雷达页漏斗条之后第二元素为 S 配给/Top5 合一账本卡（E13；GRANTED 带 S 章，未达 S 标差哪条；空态两行）；复盘室『S 级战绩』节三列分立；抽屉 ring8 8 格判定 + 影子行 + verdict 差距句；金纪律按 MA-5",
+        "depth 前端（裁剪后）：观察闸带 8 小格（含 PCR 悬浮 z60+分位，cut#2）/ 稳定币节含 TVL 极值行（cut#1）/ 财报临近榜 / global_sync 脚注行 / 行级徽章（财报引信/拍卖窗/COT 拥挤/轧空燃料/无 COT 映射/收集中 x/252）",
+        "app.css：.funnel/.ng/.gatebar/.ring8/.stier-seal（new_css_verbatim 逐字，零新动画零新 transition）"
+      ],
+      "self_test": [
+        "375px 零横滚零控制台错误；三级降级实测（无 profile、无 kline、无 jev 各一遍）；返回键档案↔列表往返",
+        "金审计：每页 <=1；雷达页平日 0、仅在窗 S>=1 日判定行 1（MA-5）；血 <2%/屏；动效恰 4 种；子集外 display 汉字 0",
+        "缺键（si/cot/depth 任一为空）对应列/徽章整体隐藏不留空壳；每个新数字徽章三件套逐节目检"
+      ],
+      "acceptance": "funnel steps 2/9/10 + precision step6 + depth step7 accept 合并（裁剪范围内）"
+    }
+  ],
+
+  "integrator_tasks": {
+    "role": "主上下文总装（run.py 与总装/验证唯一归属）",
+    "run_py_wiring_order": "fetchers（含 depth.py 六腿与 cot.py）→ news.fetch_news(候选, max_inst=56) → Call-1/2 triage_and_heat(+J8) → Call-3 case_similarity(J6) → Call-4 score_catalysts(J3，events 含 depth 四源) → engine.run_engine(veto_keys=jev.veto_set()，末尾挂 obs_gates/pctiles/flip_back_age_days/build_depth) → Call-5 catch_prior_and_weak_links(J4+J7) → stier.s_adjudicate + s_grant（M1；funnel 读 stier 合格者与软分，stier 不读 funnel）→ stier.build_month_top5（E13）→ Call-6 score_movers(J5) → payload 注入（funnel/thresholds/jev 三键/stier 块/depth_market）→ snapshot.capture（含 stier 子块）→ settle（resolve_jev_log 扩 J6/J7/J8 + settle_stier，共用 atier_exec 调用点 M2）→ calibrate（三新节 + s_tier 节 + build_jev_profiles）→ render（universe/profile/jev_profiles/stier_public 导出）；radar 分支：零 Jev、零 state 写、零 stier 触达，只透传 cache 既有文件 + stable/tvl 轻腿写 radar.json",
+    "params_registry_registration": "一次性登记并留痕 params_history：precision params_registry_additions 全部 17 条（s_tier.*，frozen 语义原样）+ depth params_registry_add 全部 18 条（sector_fall/credit_fall 4 条 frozen:false + obs.* 14 条 frozen_until 2026-12 法庭）；RL-10 校验通过后各槽方可读取",
+    "payload_contract_summary": {
+      "payload.funnel": "render_backend 产 ← universe/board 计数；frontend 消费（漏斗条）",
+      "payload.thresholds_by_cls": "render_backend 透出 config ← universe_stocks 的 thresholds；frontend 消费（链条/简化链）",
+      "payload.jev.{case_map,weak_link,news_divergence}": "jev 产；frontend 档案页 i/b/f 节消费",
+      "payload.stier + board 行 b.stier": "stier 产（字段名以 precision payload_contract_stier_block 为准，M4）；frontend 配给卡/抽屉环消费",
+      "payload.gates.{pctiles,obs_gates} + payload.depth_market + 行级 det.depth": "engine/depth_fetchers 产；frontend 观察闸带/徽章/g 节消费",
+      "docs/data/universe.json / profile/{key}.json / jev_profiles.json / kline/*": "heavy 唯一产出（B11），radar 只透传"
+    },
+    "dual_end_same_text_contract": "verdict 判定句模板与决策链条/简化链降级拼装模板：render.py 与 app.js 逐字同文（B12），契约原文记 PROGRESS.md，改一处必改两处",
+    "font_subset_gate": "监督顺序铁律：先 display_chars.txt（+25 字一次合并）→ subset_font.py → 再上新模板；构建扫描子集外字即失败",
+    "writebacks": [
+      "radar_spec.json A6 注记追加（B9 spark 回归结论，逐字）",
+      "PROGRESS.md：mcap bug 出处 / blade_index 信用腿激活声明（D2）/ 双端同文契约 / MA-4 H7 白名单扩展记录 / 断点",
+      "goals.json iterations：影子记账启动日（precision step9）"
+    ],
+    "verification_sequence": [
+      "1 本地无 key heavy 全跑（站点与未接入 Jev 字节级一致）",
+      "2 本地有 key heavy（<=6 调用 <=320 问；J1-J5 sha 断言）",
+      "3 radar 模式：零 Jev / 零 state 写 / 零 stier 触达断言",
+      "4 hard_checks 全量回归（funnel 7_honesty_gates_delta.hard_checks_regression + precision SR-1..3 静态检查 + depth step7 目检清单）",
+      "5 Actions probe.yml dispatch（7 端点落档）",
+      "6 Actions heavy 两连跑（回填推进 / 增量 <净增 5 分钟）+ 清缓存 seed 恢复验证",
+      "7 FINRA 首跑（临时 KW_ENABLE_FINRA=1 dispatch，结论二选一落档）",
+      "8 观察 24h（双 heavy + 约 48 radar 无红跑；deploy >90s 则 radar 降频整点）",
+      "9 发版：按仓库惯例手动 git push 触发 Actions 构建部署 + tag + 交接文档更新"
+    ]
+  },
+
+  "budgets": {
+    "limits": {"heavy_total_minutes_max": 25, "docs_mb_max": 100},
+    "heavy_runtime": {
+      "baseline_existing": "现状 heavy 约 8-10 分钟（估）",
+      "funnel_net_add": "≈3-5 分钟/heavy（CG 21s + OKX 增量 25-50s + 美股 1.3-2.5 分 + 港股中概 40-60s + detect 5-8s + 渲染 <10s + Jev 6 调用 10-60s）",
+      "depth_net_add_after_cuts": "≈1.5-2 分钟（29 knife 符号 +35s；指标符号裁至 ≈21 条 ≈25s；PCR/稳定币/TVL/财报/拍卖/COT 六腿 ≈30-60s；engine depth 计算 <10s）",
+      "stier_top5_render_add": "<30s（纯规则计算 + 少量文件）",
+      "total_estimate": "≈13-18 分钟 < 25 分钟限 ✅；初始回填期峰值 +300s（墙钟硬顶）≈ <=23 分钟，仍在限内 ✅；daily.yml timeout 40 分钟余量充足",
+      "trim_if_exceeded": ["backfill deadline 300s→180s", "cg_1y 通道停（已降按需）", "backfill N: stocks 250→150 / crypto_okx 100→60", "指标腿再裁（gidx 11→G7 核心）"]
+    },
+    "docs_size": {
+      "funnel": "≈65MB raw（美股 35 + 港股中概 9 + 加密 15 + 其余 6）",
+      "depth_add": "≈2MB（29 条新 kline）",
+      "stier_jev_add": "≈1-2MB（stier_public/jev_profiles/stier_replay 瘦身版）",
+      "total_estimate": "≈68-70MB < 100MB 限 ✅（Pages 软限 1GB 更远）",
+      "trim_if_exceeded": ["profile 活跃集 <=200 收紧至 <=120", "kline cap 1100→800", "universe.json display 行再瘦字段"]
+    },
+    "actions_cache": "≈33-37MB zstd（funnel 31-35 + depth state 1-2）；repo 10GB 上限无忧；键沿用 kw-db-v1-* 前缀",
+    "jev_cost": {
+      "funnel_v3": "worst ≈$4.6/年、typical ≈$2.1/年（6 调用/320 问、单价 $42/1e9 输入 tok、输出免费）",
+      "depth_add": "零新调用；J1/J2 facts 四字段 + J3 四事件源 ≈ +2-4% token ≈ +$0.1-0.2/年",
+      "total": "worst <$5/年 ✅（『年费几美元』量级不破）；最大单请求 Call-6 ≈43k < 64k 限；限流无压力"
+    },
+    "verdict": "四项预算相加均在限内，无强制裁剪；trim_if_exceeded 为超限预案非当前动作。"
+  },
+
+  "slot_summary_table": [
+    {"slot": "ops_workflows", "owns_n": 3, "core": "7 端点机房探针门 + daily.yml 回填/seed/cache/FINRA 接线", "phase": "P0+P3"},
+    {"slot": "universe_crypto", "owns_n": 6, "core": "加密 top500 四层分层 + OKX 回填状态机 + Binance 种子", "phase": "P1（生产接入受 P0 探针）"},
+    {"slot": "universe_stocks", "owns_n": 4, "core": "625 池 kline 增量 + T1S/T1C/T1F+3 + config 全量 + D9/mcap 修复", "phase": "P1"},
+    {"slot": "engine", "owns_n": 1, "core": "8 环链条 emit + 新事实量 + obs_gates/build_depth + flip_back_age_days", "phase": "P1"},
+    {"slot": "depth_fetchers", "owns_n": 7, "core": "depth.py 六腿（裁剪版）+ cot.py 20 映射对拍", "phase": "P1"},
+    {"slot": "jev", "owns_n": 4, "core": "Jev v3（6 调用/320 问/J6-J8）+ depth 事实喂入 + radar 轻腿", "phase": "P1"},
+    {"slot": "stier", "owns_n": 7, "core": "S 级判定/配给/影子闸 + build_month_top5 + 36 年假想回放 + slice_lr", "phase": "P1"},
+    {"slot": "settle_calibrate", "owns_n": 4, "core": "J6/J7/J8 预注册结算 + settle_stier（atier_exec 同源 M2）+ 三新校准节 + SR 红线", "phase": "P1"},
+    {"slot": "render_backend", "owns_n": 2, "core": "universe/profile/jev_profiles/stier_public/payload 全导出（M4 契约）", "phase": "P2"},
+    {"slot": "frontend", "owns_n": 6, "core": "字体+25 字先行 + 档案页九节 + 漏斗 IA + S 配给卡（M3）+ depth 版面（裁剪版）", "phase": "P0+P1"}
+  ]
+}
