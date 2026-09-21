@@ -6,23 +6,26 @@
 <title>刀尖舞 KnifeWaltz · {{ date }}</title>
 <meta name="description" content="接飞刀的纪律工具：市场闸门、刀落板、逐笔结算台账。历史统计公开可复算，不构成投资建议。">
 <meta name="color-scheme" content="dark light">
-<meta name="theme-color" content="#0A0C10">
+<meta name="theme-color" content="#0A0A0C">
 <link rel="stylesheet" href="assets/app.css">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 </head>
 <body>
 
-<div class="tape" id="tape" aria-label="行情条"></div>
+<div class="rail" aria-hidden="true">刀尖舞 · {{ date }} · 纪律是唯一的刀鞘</div>
+
+<div class="tape" id="tape" aria-label="读数条"></div>
 
 <div class="warnbar" id="warnbar">
-  <span>⚠</span><span id="warn-text">接飞刀属极高风险行为。本站为历史统计研究工具，非投资建议。</span>
+  <span id="warn-text">接飞刀属极高风险行为。本站为历史统计研究工具，非投资建议。</span>
   <a href="#disclaimer" data-nav="disclaimer" style="margin-left:auto">免责全文</a>
 </div>
+<div id="hazard-slot"></div>
 
 <header class="top">
   <div class="brand" data-nav="home" role="button" tabindex="0">
     {% include 'assets/logo.svg' %}
-    <div><span class="cn">刀尖舞</span><br><span class="en">KnifeWaltz</span></div>
+    <div><span class="cn" data-text="刀尖舞">刀尖舞</span><br><span class="en">Knifewaltz</span></div>
   </div>
   <nav class="nav" id="nav">
     <button data-nav="home" aria-selected="true">首页</button>
@@ -34,9 +37,9 @@
     <button data-nav="ledger">结算台账</button>
   </nav>
   <span class="sp"></span>
-  <button class="iconbtn" id="btn-cmdk" title="命令面板">Ctrl K</button>
-  <button class="iconbtn" id="btn-dir" title="切换红涨绿跌">涨跌色</button>
-  <button class="iconbtn" id="btn-theme" title="深浅色">◐</button>
+  <button class="iconbtn" id="btn-cmdk" title="命令面板">CTRL K</button>
+  <button class="iconbtn" id="btn-dir" title="切换红涨绿跌">涨跌</button>
+  <button class="iconbtn" id="btn-theme" title="深浅色">明暗</button>
 </header>
 
 <main id="main">
@@ -61,10 +64,10 @@
 </nav>
 
 <footer class="site">
-  <div>刀尖舞 KnifeWaltz —— 纪律是唯一的刀鞘 · 在坠落里找秩序</div>
-  <div>本站零收费、不设群、不代客；任何以本站名义收费的行为均系冒充。唯一站点：<span class="mono" id="site-url"></span></div>
+  <div id="witness" class="witness"></div>
+  <div style="margin-top:20px">本站零收费、不设群、不代客；任何以本站名义收费的行为均系冒充。唯一站点：<span class="mono" id="site-url"></span></div>
   <div><a data-nav="method" href="#method">方法论</a> · <a data-nav="datacenter" href="#datacenter">数据机房</a> · <a data-nav="disclaimer" href="#disclaimer">免责声明</a> · <span id="src-health"></span></div>
-  <div class="faint">生成于 {{ generated_at }} · 运行时零大模型 · 全部数字可点击「重算」核验</div>
+  <div class="faint mono">$ {{ generated_at }} · 运行时零大模型 · 全部数字可点徽章回源复算</div>
 </footer>
 
 <div class="backdrop" id="backdrop"></div>
@@ -74,14 +77,15 @@
   <div class="mbox">
     <div class="mbody" id="disc-body">{{ risk.disclaimer_full }}</div>
     <div class="mfoot">
-      <span class="dim s12" id="disc-hint">滚动读完全文后方可关闭</span>
-      <button class="btn primary" id="disc-ok" disabled>我已读完，风险自担</button>
+      <span class="faint mono" style="font-size:10.5px" id="disc-hint">滚动读完全文后方可关闭</span>
+      <button class="btn-bone" id="disc-ok" disabled>我已读完，风险自担</button>
     </div>
+    <span id="disc-stamp"></span>
   </div>
 </div>
 
 <div class="cmdk" id="cmdk">
-  <input id="cmdk-in" placeholder="搜索标的 / 页面 / 信号…" autocomplete="off">
+  <input id="cmdk-in" placeholder="$ 搜索标的 / 页面 / 信号" autocomplete="off">
   <div class="list" id="cmdk-list"></div>
 </div>
 

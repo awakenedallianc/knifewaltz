@@ -1,0 +1,12 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="刀尖舞 KnifeWaltz">
+  <!-- 坠刀K线：刀=细长等腰三角（垂直系内做几何，整体旋转 20° 成坠势）；
+       刀身内负空间蜡烛（芯线+实体），刀尖下方入场金圆点=接住的手。
+       几何验算：刀身半宽 w(y)=7×(1-y/48)；芯线 y∈[6,38] 处 w≥1.46≥芯半宽1；
+       实体 y∈[12,22] 处 w≥3.79≥实体半宽3。 -->
+  <g transform="translate(36 4) rotate(20)">
+    <path d="M-7 0 L7 0 L0 48 Z" fill="currentColor"/>
+    <rect x="-1" y="6" width="2" height="32" fill="var(--bg,#0A0C10)"/>
+    <rect x="-3" y="12" width="6" height="10" fill="var(--bg,#0A0C10)"/>
+    <circle cx="0" cy="54" r="3.2" fill="var(--gold,#F5B301)"/>
+  </g>
+</svg>
