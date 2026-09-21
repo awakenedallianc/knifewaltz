@@ -1,1 +1,50 @@
-[]
+[
+ {
+  "date": "2026-09-22",
+  "param": "registry:v1.3-batch",
+  "old": null,
+  "new": "新登记 35 条（precision s_tier.* + depth sector/credit_fall + obs.*）",
+  "basis": {
+   "source": "precision_spec.params_registry_additions + depth_spec.gates_add.params_registry_add",
+   "type": "预注册登记（非换参）"
+  },
+  "decided_by": "integrator（v1.3 总装，按 build_manifest integrator_tasks.params_registry_registration）",
+  "params": [
+   "s_tier.monthly_max",
+   "s_tier.per_key_month_max",
+   "s_tier.carryover",
+   "s_tier.checklist_min",
+   "s_tier.score_min",
+   "s_tier.j1_p_terminal_max",
+   "s_tier.softscore.weights",
+   "s_tier.lr_gate_enabled",
+   "s_tier.lr_min",
+   "s_tier.slice_evidence_min_n",
+   "s_tier.h10_flipback_age_min_days",
+   "s_tier.h11_close_pos_min",
+   "s_tier.liquidity.min_price_usd",
+   "s_tier.liquidity.min_dollar_vol20_usd",
+   "s_tier.liquidity.min_crypto_quote_vol_usd",
+   "s_tier.jev_unavailable_policy",
+   "court_agenda",
+   "sector_fall.dd52w",
+   "sector_fall.ret10",
+   "credit_fall.dd52w",
+   "credit_fall.ret10",
+   "obs.pcr_eq.z",
+   "obs.pcr_idx.z",
+   "obs.move.level",
+   "obs.vvix.level",
+   "obs.steepen_5d.pp",
+   "obs.jpy_3d.pct",
+   "obs.stable.warn_bp",
+   "obs.stable.red_bp",
+   "obs.vix9d_ratio",
+   "obs.cot.z_extreme",
+   "obs.si.days_to_cover",
+   "obs.tvl.warn_pct",
+   "obs.tvl.red_pct",
+   "obs.earnings_window_days"
+  ]
+ }
+]

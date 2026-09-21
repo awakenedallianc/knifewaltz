@@ -48,6 +48,52 @@ t1f:
   - {symbol: "ES=F", name: 标普500期货,    cls: futures}
   - {symbol: "NQ=F", name: 纳指100期货,    cls: futures}
   - {symbol: "ZB=F", name: 美债30年期货,   cls: futures}
+  # 补 3 条（depth_spec T1F_期货补3条，2026-09-22 实测 755 根带量）：RB/HO 成品油裂解=炼能/需求冲击，
+  # OJ 橙汁=食品通胀与气候冲击；OJ=F 为 USX 美分报价（×0.01 换算，裁决 D9 修复后 fetch/grab 双通道正确）；
+  # 三条均无已实测 COT 代码映射 → depth.cot 恒 null 并标『无 COT 映射』（裁决 D8，禁止猜代码）
+  - {symbol: "RB=F", name: RBOB汽油期货,   cls: futures}
+  - {symbol: "HO=F", name: 取暖油期货,     cls: futures}
+  - {symbol: "OJ=F", name: 橙汁期货,       cls: futures}
+
+# T1S：行业 ETF 20 条（depth_spec 裁决 D1）——行业刀阵暴动=危机定位器：KRE 独崩=区域银行危机（2023 剧本），
+# XLE/OIH 暴动=能源冲击，XBI 崩=利率杀长久期资产，ITB 崩=地产传导，GDX/GDXJ 独涨=法币信任危机。
+# cls=sector_etf（engine.detect 走 thresholds.sector_fall）；允许 A 档 + B 档（分散篮子无归零结构，
+# b_tier_dd250=-60 冻结线不动，极少达标属正常）
+t1s:
+  - {symbol: XLF,  name: 金融行业ETF,     cls: sector_etf}
+  - {symbol: XLE,  name: 能源行业ETF,     cls: sector_etf}
+  - {symbol: XLK,  name: 科技行业ETF,     cls: sector_etf}
+  - {symbol: XLV,  name: 医疗保健ETF,     cls: sector_etf}
+  - {symbol: XLI,  name: 工业行业ETF,     cls: sector_etf}
+  - {symbol: XLY,  name: 可选消费ETF,     cls: sector_etf}
+  - {symbol: XLP,  name: 必需消费ETF,     cls: sector_etf}
+  - {symbol: XLU,  name: 公用事业ETF,     cls: sector_etf}
+  - {symbol: XLB,  name: 原材料ETF,       cls: sector_etf}
+  - {symbol: XLRE, name: 房地产ETF,       cls: sector_etf}
+  - {symbol: XLC,  name: 通信服务ETF,     cls: sector_etf}
+  - {symbol: SMH,  name: 半导体ETF,       cls: sector_etf}
+  - {symbol: KRE,  name: 区域银行ETF,     cls: sector_etf}
+  - {symbol: XBI,  name: 生物科技ETF,     cls: sector_etf}
+  - {symbol: ITB,  name: 住宅建筑ETF,     cls: sector_etf}
+  - {symbol: JETS, name: 航空业ETF,       cls: sector_etf}
+  - {symbol: OIH,  name: 油田服务ETF,     cls: sector_etf}
+  - {symbol: XME,  name: 金属矿业ETF,     cls: sector_etf}
+  - {symbol: GDX,  name: 金矿ETF,         cls: sector_etf}
+  - {symbol: GDXJ, name: 小型金矿ETF,     cls: sector_etf}
+
+# T1C：信用 ETF 6 条（depth_spec 裁决 D2）——信用面暴动=违约概率重定价：HYG/BKLN 崩=企业信用收缩
+# （BKLN 浮息，与 HYG 背离可分离利率因子），PFF 崩=银行资本结构承压（优先股是银行危机温度计），
+# EMB 崩=主权美元债危机，LQD-IEF 差走阔=投资级信用溢价——信用先于股票认输。
+# cls=credit_etf（engine.detect 走 thresholds.credit_fall）；A 档 + B 档（B 资格线 -60 对债 ETF
+# 几乎不可达属正常，诚实呈现不调线）。双角色：knives.grab 产出的 k.HYG/k.IEF 序列同时供 engine
+# 信用代理与 blade_index sev_credit（裁决 D2 死腿复活——这是补缺失数据不是改公式，提交说明必须声明）
+t1c:
+  - {symbol: LQD,  name: 投资级公司债ETF, cls: credit_etf}
+  - {symbol: BKLN, name: 银行贷款ETF,     cls: credit_etf}
+  - {symbol: PFF,  name: 优先股ETF,       cls: credit_etf}
+  - {symbol: EMB,  name: 新兴市场美元债ETF, cls: credit_etf}
+  - {symbol: HYG,  name: 高收益债ETF,     cls: credit_etf}
+  - {symbol: IEF,  name: 美债7-10年ETF,   cls: credit_etf}
 
 # T2：蓝筹个股——B 档资格线 -60%/250日，从扫描池动态入选（dd250 ≤ -50% 预筛后取全量 OHLCV）
 # 扫描池 = S&P 500（sp500.csv 广度池）∪ Nasdaq-100（在线拉取，data/state/ndx100.json 快照兜底）
@@ -78,11 +124,74 @@ thresholds:
   # 期货刀落：介于 index_fall(-20) 与 knife_fall(-40) 之间——商品波动大于指数、小于个股崩盘；
   # 6J/6E 外汇腿极少触发属正常（诚实呈现，不为触发而调低）。受 params_registry 预注册网格管辖（RL-9/10）
   futures_fall: {dd52w: -30, ret10: -12, rsi14: 28}
+  # 行业 ETF 刀落（T1S，裁决 D1）：介于 index_fall(-20) 与 knife_fall(-40) 之间——行业篮子
+  # 波动大于宽基、小于个股崩盘。受 params_registry 预注册网格管辖（RL-9/10，登记归 integrator）
+  sector_fall: {dd52w: -30, ret10: -12, rsi14: 28}
+  # 信用 ETF 刀落（T1C，裁决 D2）：债 ETF 的 -15% 已是危机级
+  credit_fall: {dd52w: -15, ret10: -8, rsi14: 30}
   vol_climax_ratio: 3.0
   crypto_fall: {dd52w: -50, ret10: -20, fund_8h: -0.05}
   b_tier_dd250: -60
   catch_window_days: 10
   cooldown_days: 10
+
+# T2C：港股中概固化池（cnhk 报告 2026-09-22 全实测；裁决 B4/B5、MA-10）
+# 池 = 恒指 88（在线 CSV，与 ndx100_url 同仓库同格式；失败读 data/state/hsi.json 快照兜底）
+#    + 中概 ADR 固化清单 34 只（cnhk 名单逐字，DADA 已退市剔除）。
+# 预筛：池小直接 -60 单级筛（不复用 T2 的 -50 预筛，稀缺含义失效）；-50~-60 进
+# 『接近资格线观察名单』展示层（data/state/cnhk_watchlist.json，不入板不进状态机）；
+# B 档 -60/250 日军规不动。ADR 固化清单全员入板（MA-10：核心 ≈27 只 tier=T2C 进状态机；
+# T3 定义闸剔除者 tier=ORNAMENT——照常建档案与链条，判定恒『观赏刀 · 永不发信号』）。
+# HKD 口径（cnhk 第 4 条）：dd 为价格比率不受影响；成交额与美元比较 /7.8；无需改 yahoo.py 换算。
+t2c:
+  hsi_url: "https://yfiua.github.io/index-constituents/constituents-hsi.csv"  # 89 行=88 只，Symbol,Name 表头
+  eligible_dd250: -60   # 单级筛（与 B 档资格线同值，可比性优先）
+  watch_dd250: -50      # -50~-60 观察名单（仅展示层）
+  hkd_usd: 7.8          # 港币成交额换美元比较用（价格比率类指标不用）
+  adr:
+    - {symbol: BABA,  name: 阿里巴巴}
+    - {symbol: JD,    name: 京东}
+    - {symbol: PDD,   name: 拼多多}
+    - {symbol: BIDU,  name: 百度}
+    - {symbol: NTES,  name: 网易}
+    - {symbol: TME,   name: 腾讯音乐}
+    - {symbol: BILI,  name: 哔哩哔哩}
+    - {symbol: IQ,    name: 爱奇艺}
+    - {symbol: NIO,   name: 蔚来}
+    - {symbol: XPEV,  name: 小鹏汽车}
+    - {symbol: LI,    name: 理想汽车}
+    - {symbol: TCOM,  name: 携程集团}
+    - {symbol: YUMC,  name: 百胜中国}
+    - {symbol: BEKE,  name: 贝壳}
+    - {symbol: ZTO,   name: 中通快递}
+    - {symbol: HTHT,  name: 华住集团}
+    - {symbol: EDU,   name: 新东方}
+    - {symbol: TAL,   name: 好未来}
+    - {symbol: GDS,   name: 万国数据}
+    - {symbol: VNET,  name: 世纪互联}
+    - {symbol: WB,    name: 微博}
+    - {symbol: MOMO,  name: 挚文集团}
+    - {symbol: ATAT,  name: 亚朵集团}
+    - {symbol: QFIN,  name: 奇富科技}
+    - {symbol: FINV,  name: 信也科技}
+    - {symbol: LX,    name: 乐信}
+    - {symbol: NOAH,  name: 诺亚财富}
+    - {symbol: RLX,   name: 雾芯科技}
+    - {symbol: YMM,   name: 满帮集团}
+    - {symbol: DIDIY, name: 滴滴出行}
+    - {symbol: BZ,    name: BOSS直聘}
+    - {symbol: KC,    name: 金山云}
+    - {symbol: TIGR,  name: 老虎证券}
+    - {symbol: FUTU,  name: 富途控股}
+  # T3 定义闸剔除名单 → tier=ORNAMENT 观赏刀（symbol: 剔除理由，cnhk 实测数据逐字）
+  ornament:
+    NOAH:  小盘流动性（日成交额约 83 万美元，池内最差）
+    MOMO:  小盘流动性（日成交额 <500 万美元）
+    FINV:  小盘流动性（日成交额 <500 万美元）
+    LX:    小盘流动性 + 仙股 <$2（$0.78，慢性阴跌）
+    IQ:    仙股 <$2（$0.99）
+    RLX:   仙股 <$2（$1.73）
+    DIDIY: 粉单 PNK 仅观赏
 
 # 日线暴动检测（radar_spec universe.burst_detection.daily_z_score；T1+T1F+T2 全体，heavy/radar 用库内现价算）
 burst:

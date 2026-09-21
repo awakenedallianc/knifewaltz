@@ -1,257 +1,416 @@
 {
-  "meta": {
-    "name": "鞘 SAYA · 刀尖舞设计语言 v2",
-    "tagline": "表面是公文，内里是刑场",
-    "version": "2.0.0",
-    "date": "2026-09-21",
-    "role": "设计总监定稿。约束继承 CLAUDE.md：运行时零大模型；--up/--down 可翻转；--danger/--amber 独立于涨跌；--gold 全站 <5% 面积；统计不撒谎版式不得折叠免责与败率。",
-    "sources": "EVA/PSYCHO-PASS（eva 域）· 今敏/死亡笔记（kon 域）· 库布里克/American Psycho/Drive/Mr.Robot（film 域）· 福本伸行/甲斐谷忍/迫稔雄（gamble 域），共 32 条手法，取舍见 what_to_kill 与各节引注。"
+ "meta": {
+  "name": "鞘 SAYA · 刀尖舞设计语言 v2",
+  "tagline": "表面是公文，内里是刑场",
+  "version": "2.0.0",
+  "date": "2026-09-21",
+  "role": "设计总监定稿。约束继承 CLAUDE.md：运行时零大模型；--up/--down 可翻转；--danger/--amber 独立于涨跌；--gold 全站 <5% 面积；统计不撒谎版式不得折叠免责与败率。",
+  "sources": "EVA/PSYCHO-PASS（eva 域）· 今敏/死亡笔记（kon 域）· 库布里克/American Psycho/Drive/Mr.Robot（film 域）· 福本伸行/甲斐谷忍/迫稔雄（gamble 域），共 32 条手法，取舍见 what_to_kill 与各节引注。"
+ },
+ "design_thesis": "疯批的人不信警告，只信记录。这套语言把整站伪装成一份不动声色的公文：化验单式的过度精确（41.3% 而非 41%）、账本式的均匀横格线、合同式的编号条款、裁判式的双线印框——这是「表面平静」，它替用户压住情绪，支撑他的自我叙事：我不是在赌，我在执行流程。而「内心疯批」不靠满屏红色和抖动动效，靠配给制的泄漏：血红每屏 <2% 且只出现在会死人的地方；金色一站一处；全站默认静止，动的东西总共四种，其中无限循环的只有一条警戒斜纹——它只在刀正在落时出现。懂行的人会从三个细节认出同类：台账在用横格线登记被飞刀杀掉的仓位的名字；每张危险卡的顶边框在同一位置留着一道永远关不住的缺口；盯久了会发现背景整面墙用低于阈值的灰字在重复「勿接‥」。界面从不劝阻你，它只是提前把你的结局登记好——这种礼貌的杀气正是高风险玩家的镜像。克制越极致，泄漏越致命：第一眼冷静专业，第三眼后颈发凉，从此记住这个站。",
+ "tokens": {
+  "dark_default": {
+   "--bg": "#0A0A0C",
+   "--paper": "#101014",
+   "--paper-2": "#14141A",
+   "--line": "#1D1D22",
+   "--line-hi": "#2A2A2E",
+   "--ink": "#E8E6E1",
+   "--ink-dim": "#9A9AA2",
+   "--ink-faint": "#6B6E76",
+   "--blood": "#C41E2F",
+   "--signal": "#FF6B1A",
+   "--gold": "#C9A227",
+   "--amber": "#B98A2E",
+   "--bone": "#E5DFD1",
+   "--bone-ink": "#1A1A1C",
+   "--focus": "#2E3A8C",
+   "--up": "#C24046",
+   "--down": "#2F9E6E",
+   "--up-live": "#E5484D",
+   "--down-live": "#30D158",
+   "--chart-grid": "rgba(120,123,134,0.08)",
+   "--whisper": "0.022"
   },
-
-  "design_thesis": "疯批的人不信警告，只信记录。这套语言把整站伪装成一份不动声色的公文：化验单式的过度精确（41.3% 而非 41%）、账本式的均匀横格线、合同式的编号条款、裁判式的双线印框——这是「表面平静」，它替用户压住情绪，支撑他的自我叙事：我不是在赌，我在执行流程。而「内心疯批」不靠满屏红色和抖动动效，靠配给制的泄漏：血红每屏 <2% 且只出现在会死人的地方；金色一站一处；全站默认静止，动的东西总共四种，其中无限循环的只有一条警戒斜纹——它只在刀正在落时出现。懂行的人会从三个细节认出同类：台账在用横格线登记被飞刀杀掉的仓位的名字；每张危险卡的顶边框在同一位置留着一道永远关不住的缺口；盯久了会发现背景整面墙用低于阈值的灰字在重复「勿接‥」。界面从不劝阻你，它只是提前把你的结局登记好——这种礼貌的杀气正是高风险玩家的镜像。克制越极致，泄漏越致命：第一眼冷静专业，第三眼后颈发凉，从此记住这个站。",
-
-  "tokens": {
-    "dark_default": {
-      "--bg": "#0A0A0C",
-      "--paper": "#101014",
-      "--paper-2": "#14141A",
-      "--line": "#1D1D22",
-      "--line-hi": "#2A2A2E",
-      "--ink": "#E8E6E1",
-      "--ink-dim": "#9A9AA2",
-      "--ink-faint": "#6B6E76",
-      "--blood": "#C41E2F",
-      "--signal": "#FF6B1A",
-      "--gold": "#C9A227",
-      "--amber": "#B98A2E",
-      "--bone": "#E5DFD1",
-      "--bone-ink": "#1A1A1C",
-      "--focus": "#2E3A8C",
-      "--up": "#C24046",
-      "--down": "#2F9E6E",
-      "--up-live": "#E5484D",
-      "--down-live": "#30D158",
-      "--chart-grid": "rgba(120,123,134,0.08)",
-      "--whisper": "0.022"
-    },
-    "light_adaptation": {
-      "note": "浅色 = 同一份公文的『打印版』：骨纸底，不是白底软件。色相不变只换明度，血/金/橙全部压深保 AA。",
-      "--bg": "#EDEAE2",
-      "--paper": "#F5F2EA",
-      "--paper-2": "#EFEBE1",
-      "--line": "#D6D2C8",
-      "--line-hi": "#C2BDB1",
-      "--ink": "#1A1A1C",
-      "--ink-dim": "#55565C",
-      "--ink-faint": "#8B8C90",
-      "--blood": "#A31621",
-      "--signal": "#B4530A",
-      "--gold": "#8C6D1F",
-      "--amber": "#8A6A1E",
-      "--bone": "#FBF8F0",
-      "--bone-ink": "#1A1A1C",
-      "--focus": "#2E3A8C",
-      "--up": "#B03A34",
-      "--down": "#20794F",
-      "--up-live": "#C7362F",
-      "--down-live": "#0F9D6E",
-      "--chart-grid": "rgba(60,66,80,0.12)"
-    },
-    "semantic_compat": {
-      "note": "兼容现有 app.css/app.js 的类与变量，迁移期零改 JS。",
-      "aliases": {
-        "--panel": "var(--paper)",
-        "--panel-2": "var(--paper-2)",
-        "--grid": "var(--line)",
-        "--text": "var(--ink)",
-        "--text-dim": "var(--ink-dim)",
-        "--text-faint": "var(--ink-faint)",
-        "--steel": "#B9B9C0",
-        "--steel-hi": "var(--ink)",
-        "--danger": "var(--blood)",
-        "--edge": "none"
-      },
-      "updown_flip": ":root[data-dir='green-up'] 交换 --up/--down 与 --up-live/--down-live，机制照旧；--blood/--signal/--amber 永不参与翻转（评审 P2-11 保持）。",
-      "clouding": "可选 PSYCHO-PASS 色相浑浊：构建时把刀锋指数映射为内联变量 --clouding: hsl(180 8% 60%) → hsl(350 85% 55%)，全站仅授权给 hero 的一颗 10px 状态圆点使用，零 JS。"
-    },
-    "color_discipline": [
-      "禁止：一切渐变（仅两处例外：hazard 警戒条、hero 伪蓝图 SVG）、box-shadow（仅 --focus 焦点环例外）、玻璃拟态、彩色氛围底（color-mix 面积色一律拆除）。",
-      "配给表：--gold 每页 ≤1 个元素（品牌印或当日唯一 apex 信号）；--blood 每屏面积 <2%，只准出现在：刀尖标记/落刀榜亏损点/军规血字条款/最高风险档数字/免责下划线；--signal 橙 <5%，只标注『此刻需要你做判断』的状态（闸门刚点亮、接刀窗倒计时）；第二处金色出现即视为 bug。",
-      "涨跌纪律：静息态一律降饱和 --up/--down；只有『今日实时值』允许 --up-live/--down-live 全饱和（福本欠曝：历史是灰的，正在坠落的才是活的）。",
-      "纯白 #FFFFFF 只配给两处：hero 巨字、插入字卡（EVA 标题卡黑白二值）。"
-    ]
+  "light_adaptation": {
+   "note": "浅色 = 同一份公文的『打印版』：骨纸底，不是白底软件。色相不变只换明度，血/金/橙全部压深保 AA。",
+   "--bg": "#EDEAE2",
+   "--paper": "#F5F2EA",
+   "--paper-2": "#EFEBE1",
+   "--line": "#D6D2C8",
+   "--line-hi": "#C2BDB1",
+   "--ink": "#1A1A1C",
+   "--ink-dim": "#55565C",
+   "--ink-faint": "#8B8C90",
+   "--blood": "#A31621",
+   "--signal": "#B4530A",
+   "--gold": "#8C6D1F",
+   "--amber": "#8A6A1E",
+   "--bone": "#FBF8F0",
+   "--bone-ink": "#1A1A1C",
+   "--focus": "#2E3A8C",
+   "--up": "#B03A34",
+   "--down": "#20794F",
+   "--up-live": "#C7362F",
+   "--down-live": "#0F9D6E",
+   "--chart-grid": "rgba(60,66,80,0.12)"
   },
-
-  "typography": {
-    "display": {
-      "family": "'KW Serif'（Noto Serif SC Black 900 子集，自托管 woff2）, 'Songti SC', 'SimSun', serif",
-      "rationale": "EVA Matisse EB 极粗明朝体巨字：衬线巨字在中文网页极少见，天然成为站的特色；黑白二值 + 负字距靠字号本身施暴。替换现用 Smiley Sans（斜体网红体，电商气，见 what_to_kill#1）。",
-      "rules": "font-weight:900; letter-spacing:-0.05em; line-height:0.95; 禁止渐变/阴影/描边。巨字一律纯 #FFFFFF 落在 #0A0A0C（浅色主题反转为 #1A1A1C 落在骨纸）。",
-      "used_by": ["品牌字『刀尖舞』", "hero 刀锋巨字（钝/出鞘/落刀）", "插入字卡（接刀窗/刀在落）", "章节题 h2.sec", "空态大字（今日无刀落下）", "免责门确认句", "抽屉标的大标题"],
-      "subset": {
-        "tool": "fontTools pyftsubset",
-        "command": "pyftsubset NotoSerifSC-Black.otf --text-file=scripts/display_chars.txt --flavor=woff2 --no-hinting --layout-features='' --output-file=docs/assets/fonts/kwserif-black.woff2",
-        "font_face": "@font-face{font-family:'KW Serif';src:url('fonts/kwserif-black.woff2') format('woff2');font-weight:900;font-display:swap}",
-        "budget": "≈141 汉字 ≈ 35-50KB；缺字自动回退宋体，构建脚本须扫描渲染后 index.html 中挂 display 字体的文本，发现子集外汉字即构建失败。",
-        "words": ["刀尖舞", "落刀", "出鞘", "钝", "刀未落地", "刀出鞘", "刀在落", "不接", "接刀窗口", "接刀窗", "接飞刀", "企稳中", "常态", "观赏刀", "今日落刀榜", "今日无刀落下", "空", "战绩", "公开结算", "五条军规", "刀落板", "信号规则", "刀谱", "仓位计算器", "连败室", "结算台账", "方法论", "数据机房", "免责声明", "恐慌闸", "放弃规则", "三层监听", "死区", "纪律是唯一的刀鞘", "在坠落里找秩序", "先看最坏", "再谈最好", "我已读完", "风险自担", "免责全文", "立会人", "诚实统计", "双口径", "流动性休克", "泡沫出清", "族", "档", "市场闸门", "刀锋指数", "胜率", "败率", "最大单笔亏损", "首页", "回测", "实盘", "判定", "禁止"],
-        "characters": "刀尖舞落出鞘钝未地在不接窗口飞企稳中常态观赏今日榜无下空战绩公开结算五条军规板信号则谱仓位计器连败室台账方法论数据机房免责声明恐慌闸放弃三层监听死区纪律是唯一的坠里找秩序先看最坏再谈好我已读完风险自担全文立会人诚实统双径流动性休克泡沫清族档市场门锋指胜率大单笔亏损首页回测盘判定禁止",
-        "punctuation_note": "「·」「—」随子集打入；拉丁与数字不进衬线子集，经字体栈自然落到 mono/body。"
-      }
-    },
-    "body": {
-      "family": "-apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif",
-      "rules": "400/600 两档；13px/1.75 正文（移动端 14px）；letter-spacing:0.01em；严格 8px 网格。死亡笔记优等生原则：正文先像一份合规文件。",
-      "labels": "小标签 10-11px、text-transform:uppercase（拉丁）、letter-spacing:0.12em、color:var(--ink-faint)——MAGI 台账小标。"
-    },
-    "mono": {
-      "family": "'JetBrains Mono'（已自托管 jbm-400/jbm-600，保留不换）, ui-monospace, Consolas, monospace",
-      "rules": "一切数字 font-variant-numeric:tabular-nums lining-nums、右对齐；统计值保留一位『多余』小数（41.3% 而非 41%）；元数据行统一前缀「$ 」：如「$ 2026-09-21 · CBOE · 自算口径 · n=213」（Mr.Robot 终端声道，替代现 badge 版式）。"
-    },
-    "scale": {
-      "hero_word": "clamp(64px,15vw,168px) / 0.95 / -0.05em / 900（刀锋巨字）",
-      "insert_card": "clamp(48px,14vw,160px) / 0.95 / -0.05em / 900",
-      "hero_number": "clamp(48px,9vw,96px) mono 400 / -0.03em（刀锋指数数字，Kaiji 巨数配细字重=冷酷而非叫卖）",
-      "clinical_number": "40px mono 400（计算器判定数、抽屉关键读数）",
-      "section_title": "22px display 900 / letter-spacing:0.02em",
-      "body": "13px / 1.75",
-      "meta": "11px mono",
-      "micro": "10px mono",
-      "ratio_rule": "hero 巨字与正文比例 ≥8:1（普通仪表盘的 2-3 倍层级读起来是『产品』，8 倍才是变焦）。"
-    }
+  "semantic_compat": {
+   "note": "兼容现有 app.css/app.js 的类与变量，迁移期零改 JS。",
+   "aliases": {
+    "--panel": "var(--paper)",
+    "--panel-2": "var(--paper-2)",
+    "--grid": "var(--line)",
+    "--text": "var(--ink)",
+    "--text-dim": "var(--ink-dim)",
+    "--text-faint": "var(--ink-faint)",
+    "--steel": "#B9B9C0",
+    "--steel-hi": "var(--ink)",
+    "--danger": "var(--blood)",
+    "--edge": "none"
+   },
+   "updown_flip": ":root[data-dir='green-up'] 交换 --up/--down 与 --up-live/--down-live，机制照旧；--blood/--signal/--amber 永不参与翻转（评审 P2-11 保持）。",
+   "clouding": "可选 PSYCHO-PASS 色相浑浊：构建时把刀锋指数映射为内联变量 --clouding: hsl(180 8% 60%) → hsl(350 85% 55%)，全站仅授权给 hero 的一颗 10px 状态圆点使用，零 JS。"
   },
-
-  "motifs": [
-    {
-      "id": "vertical-rail",
-      "name": "竖排侧标",
-      "from": "EVA 标题卡竖排 + 今敏门框",
-      "spec": "视口左缘固定一条竖排字：position:fixed; left:14px; top:50%; transform:translateY(-50%); writing-mode:vertical-rl; font:900 12px 'KW Serif'; letter-spacing:0.5em; color:var(--ink-faint); pointer-events:none; z-index:5。内容构建时写死：「刀尖舞 · {date} · 纪律是唯一的刀鞘」。@media (max-width:1099px) 隐藏。全站唯一竖排，第二处即 bug。"
-    },
-    {
-      "id": "doorframe",
-      "name": "门框线 + 刀痕缺口",
-      "from": "千年女优门框匹配剪辑 + 妄想代理人结构性缺口",
-      "spec": "两件套。A 门框：main 容器内一条从页首贯到页尾的 1px 竖线，x 位置全站严格一致——main{position:relative} main::before{content:'';position:absolute;left:24px;top:0;bottom:0;width:1px;background:rgba(232,230,225,0.12)}；所有 h2.sec 挂线：h2.sec{padding-left:44px;position:relative} h2.sec::before{content:'';position:absolute;left:24px;top:50%;width:12px;height:1px;background:var(--ink-dim)}。滚动即穿门，禁用一切滚动进入动画，转场完全由这条不断的线完成。B 刀痕：一切危险容器（点亮的 gate、KNIFE_FALLING 行所属卡、apex 信号卡）顶边不用 border-top，改 1px 背景线留同位缺口——background-image:linear-gradient(90deg,var(--line) 0 71%,transparent 71% 74%,var(--line) 74% 100%);background-size:100% 1px;background-repeat:no-repeat。缺口永远在 71%-74%，缺口处不放任何内容不加任何说明：这个框关不住里面的东西。"
-    },
-    {
-      "id": "hazard",
-      "name": "警戒斜纹条",
-      "from": "EVA 使徒警报 EMERGENCY 条",
-      "spec": ".hazard{height:6px;background:repeating-linear-gradient(45deg,var(--blood) 0 12px,var(--bg) 12px 24px);background-size:34px 6px;animation:hazard 1.2s linear infinite} @keyframes hazard{to{background-position:34px 0}}。只在 G.state==='RED'（刀在落·禁止接）时渲染于 warnbar 下沿，全站唯一无限动画；@media (prefers-reduced-motion:reduce){animation:none}。整站静止，疯只从这一条缝里泄漏——动的东西越少，这一条动的越吓人。"
-    },
-    {
-      "id": "seal",
-      "name": "血印",
-      "from": "嘘喰い立会人印 + Drive 一处金的配给逻辑",
-      "spec": "内联 SVG 方印 30×30：<svg viewBox='0 0 30 30'><rect x='1' y='1' width='28' height='28' fill='none' stroke='#C41E2F' stroke-width='2'/><text x='15' y='22' text-anchor='middle' font-family='KW Serif' font-weight='900' font-size='18' fill='#C41E2F'>刀</text></svg>。全站至多两处：①页眉品牌（替换现 logo.svg 的通用刀图形，印+『刀尖舞』serif 字）；②免责门确认后盖在合同右下角，transform:rotate(-3deg)，瞬间出现无动画（印是盖上去的，不是长出来的）。"
-    },
-    {
-      "id": "whisper",
-      "name": "耳语背景层",
-      "from": "Kaiji ざわ‥（本站转译为中文站训的低语）",
-      "spec": "body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='160'><text x='10' y='60' transform='rotate(-8 10 60)' font-size='12' letter-spacing='5' fill='rgba(232,230,225,0.9)'>勿接‥勿接‥</text><text x='40' y='130' transform='rotate(-8 40 130)' font-size='12' letter-spacing='5' fill='rgba(232,230,225,0.9)'>手别抖‥</text></svg>\");opacity:var(--whisper)}。默认 --whisper:0.022（#0A0A0C 上恰在可见阈值边缘，凑近才发现满屏都是字）；仓位计算器输出区与 CATCH 抽屉所在页升到 0.035（[data-risk='high']）。绝对禁止给这层任何动画——它必须被『发现』，不能被『展示』。浅色主题换 fill 为墨色同阈值。"
-    }
-  ],
-
-  "composition": {
-    "layout": "单栏严格中轴：main{max-width:880px;margin:0 auto;padding:0 16px 96px}（880 保表格呼吸；表格外内容再收 max-width:62ch 居左挂门框线）。库布里克对称是默认公理：左右留白像素级相等，任何不对称都是 bug——全站唯一授权破轴一次：见 disclaimer 处理（Mr.Robot 压角）。8px 基线网格，卡片 padding 一律 24px。",
-    "page_rhythm": "庵野节奏：平-平-平-吼。高密度小字区块之间，至多一处 100svh 插入字卡，靠滚动自然撞上，禁止 fade/parallax。",
-    "modules": {
-      "tape_读数条": "杀掉跑马灯动画（见 what_to_kill#4）。改静态读数条：高 32px，mono 11px，最多 8 个标的「BTC 67,412 −2.1%」以「 · 」分隔，超出裁切不滚动，点击开抽屉。涨跌用静息降饱和色。",
-      "warnbar_警示条": "去 ⚠ emoji。mono 11px、color:var(--signal)、透明底、上下 hairline；ESMA 式真实数字句照旧（『短线执行口径 xx% 的信号止损离场』——数字本身就是警告，不需要图标喊）。G.state==='RED' 时其下沿挂 hazard 条。",
-      "hero_刀锋指数": "走廊尽头（闪灵单点透视）：min-height:82vh; display:grid; place-items:center; text-align:center。层叠内容自上而下：①判定行 11px mono letter-spacing:0.08em 不加粗无感叹号，句式固定「判定：刀未落地 · 只看不接／刀出鞘 · 观察／刀在落 · 禁止接刀／接刀窗口 · 允许执行」（PSYCHO-PASS 临床腔），FLIP_BACK 时此行用 --gold；②刀锋巨字（钝/出鞘/落刀）clamp(64px,15vw,168px) 纯白——它就是灭点；③指数数字 clamp(48px,9vw,96px) mono 并列;④刻度尺替换现渐变 blade-band：120px 宽 hairline 上每 10 分一根 1px tick（50/80 两根加高为阈值刻度），2px 墨色 needle 指向当前值，数值不着色尺不着色；⑤构成行「$ 恐慌 41.3 · 广度 22.0 · 信用 18.5 · 加密 12.2」mono 11px。背景仅此处放一层 SVG 伪蓝图：同心圆 3 圈 + 放射 tick + 6px 灰伪注记，stroke:#1E1E22 1px, fill:none, opacity:0.5, pointer-events:none（NERV『看不懂但相信它重要』）。当日最大回撤数字享受 Perfect Blue 静态倒影：伪元素 scaleY(-1) translateY(2px), opacity:0.06, blur(0.5px), 颜色用比本体亮的 #EDEAF0, mask 渐隐——全站仅 masthead 与此数字两处有倒影，绝不动画。",
-      "gates_市场闸门": "hero 下方紧接（滚一屏可达）：4×2 仪表格，gap 8px。每格：方角 0 radius、无底色、L 形角括号（::before/::after 各画 8×8px 的 border-top+border-left 1px，MAGI 角括号取代整框）；内容三行——状态点（10px 圆，HAL 红眼：点亮时 radial-gradient(circle at 35% 35%,#FF5A4D 0%,#C41E1E 40%,#4A0808 100%)，永久静止绝不闪烁；未亮 var(--ink-faint) 实心灰点）、读数 mono 16px、名称 11px 标签体。点亮态叠加刀痕缺口顶线（motif doorframe-B），value 转 --blood；『自算』口径章保留改方角虚线框。FLIP-BACK 徽标为该屏唯一 --gold 文本。",
-      "insert_card_插入字卡": "条件渲染（构建时决定，零 JS）：当存在 CATCH 窗（catchN>0）或当日转入 RED，闸门与落刀榜之间插一屏 min-height:100svh，display:grid;place-items:center，内部只有 2-3 个巨字「接刀窗」（--gold）或「刀在落」（纯白）+ 其下 11px mono 一行「$ 窗口 D3/10 · 军规第一条生效」。无导航无装饰无入场动画。平日无此屏——爆发是结构性的（排版突变），不是动效性的。",
-      "board_今日落刀榜": "死亡笔记账本页（详 component_treatments.table）。章节题「今日落刀榜」display 22px 挂门框线，右侧「$ 全部 {n} 个标的」mono 链接替现「→」箭头。空态：巨字「今日无刀落下」display 28px + mono 一行状态，居中，不配插画不配 emoji。",
-      "record_战绩": "American Psycho 名片：居中卡 width:340px; aspect-ratio:1.75; background:var(--bone); color:var(--bone-ink)——全站唯一亮底元素（暗桌上递过来的一张骨色名片）。内容居中小型大写式排版：回测 n / 胜率(Wilson 区间) / 败率同字号 / 最大单笔亏损 / 实盘 n，11px, letter-spacing:0.22em, 数字 oldstyle（font-feature-settings:'onum' 1）；压印感 text-shadow:0 1px 0 rgba(240,235,220,0.5),0 -1px 0 rgba(0,0,0,0.15)。最大单笔亏损一行用 --blood。整卡可点进台账。数据一字不改，只换印刷方式——体面地告知死亡率，正是疯批的礼貌。",
-      "rules5_五条军规": "Kaiji 借据/帝愛合同块：等宽 11px/1.9, color:var(--ink-dim), max-width:62ch, border:1px solid var(--line), background:var(--paper), padding:20px 24px，条款编号「第一条…第五条」。整块有且只有一行血字：第三条『死区不接：高点后 3-12 个月为动量死区，本系统视此区间入场者已死亡，不再统计』——同字号 11px、不加粗、不加大，颜色 var(--blood)。血字与样板文用同一音量说话。",
-      "footer_立会人印": "免责+诚实统计升格为裁判落印：页脚居中块 border:3px double var(--line-hi)（全站唯一双线框），标题「立会人 · 诚实统计」12px letter-spacing:0.25em；框内原文照录胜率/Wilson 区间/样本数/最大回撤/最差一次，永不折叠、永不进 toggle、每页同一 markup 同一位置，不加图标不加颜色。下附站训一行 display 13px「纪律是唯一的刀鞘 · 在坠落里找秩序」。"
-    }
-  },
-
-  "calm_vs_mad": {
-    "永远静止": [
-      "耳语背景层（必须被发现，不能被展示）",
-      "血印、HAL 状态红点（不闪烁的红点比闪烁的更可怕——它一直在看）",
-      "刀痕缺口、门框线、L 角括号、伪蓝图",
-      "全部表格、刻度尺、巨字、倒影（静态复制，绝不动画）",
-      "插入字卡（滚动撞上，无 fade）",
-      "ECharts 全部图表：animation:false，十字光标即时跟随",
-      "页面切换、锚点跳转：即时，无过渡"
+  "color_discipline": [
+   "禁止：一切渐变（仅两处例外：hazard 警戒条、hero 伪蓝图 SVG）、box-shadow（仅 --focus 焦点环例外）、玻璃拟态、彩色氛围底（color-mix 面积色一律拆除）。",
+   "配给表：--gold 每页 ≤1 个元素（品牌印或当日唯一 apex 信号）；--blood 每屏面积 <2%，只准出现在：刀尖标记/落刀榜亏损点/军规血字条款/最高风险档数字/免责下划线；--signal 橙 <5%，只标注『此刻需要你做判断』的状态（闸门刚点亮、接刀窗倒计时）；第二处金色出现即视为 bug。",
+   "涨跌纪律：静息态一律降饱和 --up/--down；只有『今日实时值』允许 --up-live/--down-live 全饱和（福本欠曝：历史是灰的，正在坠落的才是活的）。",
+   "纯白 #FFFFFF 只配给两处：hero 巨字、插入字卡（EVA 标题卡黑白二值）。"
+  ]
+ },
+ "typography": {
+  "display": {
+   "family": "'KW Serif'（Noto Serif SC Black 900 子集，自托管 woff2）, 'Songti SC', 'SimSun', serif",
+   "rationale": "EVA Matisse EB 极粗明朝体巨字：衬线巨字在中文网页极少见，天然成为站的特色；黑白二值 + 负字距靠字号本身施暴。替换现用 Smiley Sans（斜体网红体，电商气，见 what_to_kill#1）。",
+   "rules": "font-weight:900; letter-spacing:-0.05em; line-height:0.95; 禁止渐变/阴影/描边。巨字一律纯 #FFFFFF 落在 #0A0A0C（浅色主题反转为 #1A1A1C 落在骨纸）。",
+   "used_by": [
+    "品牌字『刀尖舞』",
+    "hero 刀锋巨字（钝/出鞘/落刀）",
+    "插入字卡（接刀窗/刀在落）",
+    "章节题 h2.sec",
+    "空态大字（今日无刀落下）",
+    "免责门确认句",
+    "抽屉标的大标题"
+   ],
+   "subset": {
+    "tool": "fontTools pyftsubset",
+    "command": "pyftsubset NotoSerifSC-Black.otf --text-file=scripts/display_chars.txt --flavor=woff2 --no-hinting --layout-features='' --output-file=docs/assets/fonts/kwserif-black.woff2",
+    "font_face": "@font-face{font-family:'KW Serif';src:url('fonts/kwserif-black.woff2') format('woff2');font-weight:900;font-display:swap}",
+    "budget": "v1.3 实测 222 字形（汉字 201 + 标点数字）woff2 41.6KB；缺字自动回退宋体，构建脚本须扫描渲染后 index.html 中挂 display 字体的文本，发现子集外汉字即构建失败。",
+    "words": [
+     "刀尖舞",
+     "落刀",
+     "出鞘",
+     "钝",
+     "刀未落地",
+     "刀出鞘",
+     "刀在落",
+     "不接",
+     "接刀窗口",
+     "接刀窗",
+     "接飞刀",
+     "企稳中",
+     "常态",
+     "观赏刀",
+     "今日落刀榜",
+     "今日无刀落下",
+     "空",
+     "战绩",
+     "公开结算",
+     "五条军规",
+     "刀落板",
+     "信号规则",
+     "刀谱",
+     "仓位计算器",
+     "连败室",
+     "结算台账",
+     "方法论",
+     "数据机房",
+     "免责声明",
+     "恐慌闸",
+     "放弃规则",
+     "三层监听",
+     "死区",
+     "纪律是唯一的刀鞘",
+     "在坠落里找秩序",
+     "先看最坏",
+     "再谈最好",
+     "我已读完",
+     "风险自担",
+     "免责全文",
+     "立会人",
+     "诚实统计",
+     "双口径",
+     "流动性休克",
+     "泡沫出清",
+     "族",
+     "档",
+     "市场闸门",
+     "刀锋指数",
+     "胜率",
+     "败率",
+     "最大单笔亏损",
+     "首页",
+     "回测",
+     "实盘",
+     "判定",
+     "禁止",
+     "雷达",
+     "崩落榜",
+     "逼空榜",
+     "资金费率极值榜",
+     "暴动",
+     "美股榜单",
+     "停牌熔断",
+     "清算热度",
+     "日线暴动",
+     "引信",
+     "热度",
+     "复盘室",
+     "本周复盘",
+     "快照台账",
+     "校准",
+     "参数留痕",
+     "红线",
+     "跑批未产出",
+     "今日无暴动",
+     "不下结论",
+     "决策链条",
+     "事实",
+     "走势",
+     "判断史",
+     "新闻",
+     "资金面",
+     "刀谱对照",
+     "今日机会",
+     "如何读",
+     "漏斗",
+     "名词表",
+     "本月配给",
+     "S 级战绩",
+     "宁缺毋滥"
     ],
-    "default_css": "*{transition:none} 为全站默认；白名单外任何 transition/animation 视为 bug。@media (prefers-reduced-motion:reduce) 下白名单 1/2 也置 none、4 变瞬开。",
-    "泄漏清单": [
-      {
-        "moment": "闸门点亮",
-        "trigger": ".gate[data-on='true']（构建时数据决定）",
-        "css": "顶线换刀痕缺口渐变 + 状态点换 HAL 红眼 radial + .gv{color:var(--blood)}。零动效——颜色的稀缺本身完成警报（NERV 法则）。",
-        "motion": "无"
-      },
-      {
-        "moment": "刀在落（G.state=RED）",
-        "trigger": "构建时 G.state==='RED' 渲染 .hazard",
-        "css": "见 motifs.hazard。",
-        "motion": "动效 #1（全站唯一无限动画）"
-      },
-      {
-        "moment": "进入接刀窗（FLIP_BACK 或任一标的 CATCH）",
-        "trigger": "首页/抽屉首次渲染该状态，每会话一次（sessionStorage 键 kw_typed）",
-        "css": "信号行打字机：.sig-line{overflow:hidden;white-space:nowrap;animation:typing 1.4s steps(28,end) 1 both} @keyframes typing{from{width:0}to{width:100%}}；其后 8px 方块光标 animation:blink .5s steps(1) 3 forwards 熄灭。此后整站重归完全静止——一次泄漏定义了其余所有的静止（Mr.Robot/嘘喰い一弧一爆）。",
-        "motion": "动效 #2（一次性，不随滚动重放）"
-      },
-      {
-        "moment": "台账亏损行 / 当日最大回撤",
-        "trigger": "ledger 行 pnl<0；hero 最大回撤数字",
-        "css": "亏损行首 4px×4px var(--blood) 方点（不标红底，死亡笔记：格式即恐怖）；最大回撤数字带静态过曝倒影（见 hero）。",
-        "motion": "无"
-      },
-      {
-        "moment": "hover（导航/标的链接/落刀榜行）",
-        "trigger": ":hover",
-        "css": "本体不动、不变色、不下划线，只出现迟到红残影：text-shadow:1px 0 0 rgba(196,30,47,0.5);transition:text-shadow 0s linear 0.1s；移开时延迟归零立即消失（Perfect Blue 倒影慢半拍——用户第一反应是自己眼花了）。表格行 hover 底色 var(--paper-2) 0ms 保可用性。",
-        "motion": "动效 #3（0 时长延迟过渡）"
-      },
-      {
-        "moment": "抽屉开合",
-        "trigger": "[data-open]",
-        "css": "transform 160ms ease-out（现 200ms 收紧），backdrop 无过渡直接显隐。",
-        "motion": "动效 #4（可用性保留）"
-      }
-    ],
-    "budget_audit": "动效总数 = 4（hazard 无限 / typing 一次性 / hover 残影 / 抽屉）。现存违规待拆：tape 跑马灯 60s infinite（杀）、nav/btn/iconbtn 默认 hover 过渡（归零）、cmdk 无过渡（合规）。"
+    "characters": "刀尖舞落出鞘钝未地在不接窗口飞企稳中常态观赏今日榜无下空战绩公开结算五条军规板信号则谱仓位计器连败室台账方法论数据机房免责声明恐慌闸放弃三层监听死区纪律是唯一的坠里找秩序先看最坏再谈好我已读完风险自担全文立会人诚实统双径流动性休克泡沫清族档市场门锋指胜率大单笔亏损首页回测盘判定禁止雷达崩逼资金费极值暴复本周校准参留痕美股线引热度快照红跑批产停牌熔断决策链事走势史新闻面对如何漏斗词表月配给级宁缺毋滥名",
+    "punctuation_note": "「·」「—」随子集打入；拉丁与数字不进衬线子集，经字体栈自然落到 mono/body。",
+    "v13_note": "v1.3 追加 26 字：funnel 17『决策链事走势史新闻面对如何漏斗词表』+ precision 8『月配给级宁缺毋滥』+ 补『名』（名词表页题所需，原清单遗漏，缺字审计会挂）；v1.2 既有追加（雷达/复盘室词族+停牌熔断）一并补记 words。"
+   }
   },
-
-  "component_treatments": {
-    "table_表格": "死亡笔记账本：行高锁死 32px（移动端 44px），tbody 背景 repeating-linear-gradient(to bottom,transparent 0 31px,rgba(232,230,225,0.07) 31px 32px) 画横格线，td 去 border-bottom 改由格线承担，line-height:32px 基线精确落线。无斑马纹、无圆角、无 hover 位移；th 10.5px 标签体 letter-spacing:0.12em；数字列 mono tabular 右对齐；层级只靠 400/600 字重与一档灰度，绝不靠字号跳或彩色（LIAR GAME 事务局级无聊）。亏损行行首 4px 血方点；tier/timechip/state 徽章全部降为方角 1px 描边 + mono 文本，唯 CATCH 态文字用 --gold（每屏至多一处金——若与品牌印同屏则 CATCH 用白）。",
-    "card_卡片": "border-radius:0（一律方角，≤2px 容忍）；去 box-shadow 去 --edge；1px var(--line)；padding:24px 齐 8px 网格。数据/统计卡加 L 角括号；危险卡顶线换刀痕缺口。全站唯一微倾斜授权：KNIFE_FALLING 主卡（当前下坠最凶的一张）transform:rotate(-0.4deg) 且背后铺静态斜线 repeating-linear-gradient(115deg,rgba(196,30,47,0.03) 0 1px,transparent 1px 9px)——0.4° 在潜意识区间，先感到『哪里不对』才看出歪；第二个倾斜元素即 bug（福本汗珠构图，配给制）。",
-    "drawer_抽屉": "background:var(--paper); border-left:1px solid var(--line); 方角；开合 160ms（动效 #4）。头部：标的名 display 22px + 「$ symbol · tier · state · asof」mono 元数据行；K 线区下方状态五格改 5 个 9px 方点（CATCH 位金点）。抽屉内自带门框线（padding-left:24px 竖线）延续页面骨架——换房间，门框不变。",
-    "modal_免责门": "升格为合同仪式（Kaiji 借据）：mbox 方角、border:1px solid var(--line-hi)；正文重排为编号条款「第一条…」，mono 11px/1.9, color:var(--ink-dim), max-width:62ch；全文有且只有一行 --blood 同字号血字（清算纪律行）。滚动读完解锁逻辑保留；确认按钮为骨色名片式：background:var(--bone);color:var(--bone-ink);letter-spacing:0.22em;方角；文案不变「我已读完，风险自担」。点击后血印 SVG 瞬间盖在合同右下角 rotate(-3deg)（无动画），写 localStorage，此后每次开站合同页角落带印。",
-    "calculator_仓位计算器": "输入区：方角 input，background:var(--bg), border:1px solid var(--line)，focus 时 outline:1px solid var(--focus)（全站唯一深霓虹蓝，Perfect Blue 配给）；label 10.5px 标签体。输出区 = PSYCHO-PASS 化验单：判定大数字 40px mono，硬阈值换色——建议仓位 ≤1%: #7BD8D0 灰青 / 1-3%: var(--amber) / 触顶或违规: var(--blood)；判定行 11px letter-spacing:0.08em 永不加粗永不感叹，句式固定「判定：仓位 1.8% · 三批 0.9/0.6/0.3 · 允许」或「判定：超出单刀上限 · 禁止」。危险态卡不再洗红底，只挂刀痕缺口 + 血字判定。预承诺门保留，按钮同免责门骨色规格缩小版。本区 --whisper 升 0.035。",
-    "cmdk_命令面板": "方角；输入框 border:1px solid var(--line-hi) 无圆角上框；列表项 mono 13px 前缀「$ 」；选中态 var(--paper-2) 0ms。无打开动画。",
-    "badge_数据徽章": "改终端元数据行：「$ 2026-09-21 · CBOE + 自算广度 · 自算口径」mono 10.5px, color:var(--ink-faint), 右对齐；链接下划线 dotted 保留；stale 态前缀改「$ STALE ·」+ var(--amber)，去 saturate 滤镜。",
-    "buttons_按钮": ".btn 方角 1px 描边透明底；hover 仅 border-color:var(--ink-faint) 0ms。金实底 primary 拆除：金只以描边金字形式授予唯一 apex CTA（.btn--gold{border-color:var(--gold);color:var(--gold);background:none}）；骨色名片按钮仅免责/预承诺两个仪式点使用。iconbtn 文字化：「Ctrl K」「涨跌」「明暗」mono。",
-    "echarts_图表": "主题令牌化：animation:false；K 线 upColor/downColor 读 --up/--down 静息值（翻转联动照旧），当日最后一根用 live 值；grid 线 var(--chart-grid)；轴标签 mono 10px var(--ink-faint)；tooltip 方角 background:var(--paper) border:1px solid var(--line) mono 11px 无阴影；十字光标线 1px var(--ink-faint) 虚线。禁用 ECharts 默认彩板与平滑曲线。"
+  "body": {
+   "family": "-apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif",
+   "rules": "400/600 两档；13px/1.75 正文（移动端 14px）；letter-spacing:0.01em；严格 8px 网格。死亡笔记优等生原则：正文先像一份合规文件。",
+   "labels": "小标签 10-11px、text-transform:uppercase（拉丁）、letter-spacing:0.12em、color:var(--ink-faint)——MAGI 台账小标。"
   },
-
-  "what_to_kill": [
-    { "element": "Smiley Sans（得意黑斜体显示字）", "why_low": "网红电商体，斜体自带促销腔，与『纪律/刑场』人格相反", "replace": "Noto Serif SC Black 900 子集巨字（typography.display），fonts/smiley-oblique.woff2 删除" },
-    { "element": "全站 6-8px 圆角 + --edge 内描边高光", "why_low": "SaaS 产品感=『到处都体贴』，没有杀气", "replace": "0 radius 方角 + 1px hairline；仪式感由 L 角括号与双线印框承担" },
-    { "element": "color-mix 彩色氛围底（gate 点亮 9% 红洗、CATCH 16% 金洗、calc 8% 红洗、warnbar 8% 琥珀洗）", "why_low": "面积色是最廉价的强调，红铺开就不再是血", "replace": "刀痕缺口 + 4px 血方点 + 同字号血字；彩色只留给数字与判定本身" },
-    { "element": "tape 跑马灯 60s infinite 动画", "why_low": "证券营业厅大屏味；且抢走 hazard 条的唯一动权", "replace": "静态读数条，点击开抽屉；全站无限动画只许 hazard 一条" },
-    { "element": "emoji 与几何符号（⚠、◐、→）", "why_low": "表情符号是界面在替用户紧张，疯批不需要被安抚", "replace": "⚠ 删除（数字即警告）；◐ →「明暗」；「→」→ mono「$ 全部 n 个标的」" },
-    { "element": "blade-band 三色渐变进度条", "why_low": "渐变进度条=健身 App；危险不该是彩虹色的", "replace": "hairline 刻度尺 + 阈值高刻度 + 2px 墨针（背景当测量仪）" },
-    { "element": "彩底圆角小徽章（state-tag CATCH 金底、timechip、score-mini 彩条）", "why_low": "圆角彩丸是消费级 UI 的口红", "replace": "方角 1px 描边 + mono 文本；score 用 mono 数值 + 5 格 9px 方点" },
-    { "element": ".btn.primary 大金实底按钮", "why_low": "金一铺开就成了赌场灯箱（Drive：第二处金即 bug）", "replace": "金仅描边金字授予唯一 apex 动作；仪式按钮用骨色名片" },
-    { "element": "涨跌红绿全饱和满屏", "why_low": "满屏高饱和=行情软件地摊感，也稀释真警报", "replace": "静息降饱和 #C24046/#2F9E6E，仅今日实时值用 live 全饱和（欠曝画面里被灯打亮的半张脸）" },
-    { "element": "h2.sec 内『· 口语标语』混排（如「先看最坏，再谈最好」挤在标题行）", "why_low": "标题夹私货显得碎嘴", "replace": "章节题只留词（display 体）；判词降为其下「$ 」mono 元数据行" },
-    { "element": "::selection 金色 30%", "why_low": "违反金的配给制", "replace": "::selection{background:rgba(196,30,47,0.3);color:var(--ink)}——选中即见血" },
-    { "element": "logo.svg 通用刀图形 + brand 圆润排印", "why_low": "剪贴画式图标是『特色缺失』的源头", "replace": "血印方章「刀」+ 『刀尖舞』KW Serif 900 + 『KNIFEWALTZ』mono 2px 字距小字；masthead 享受唯一的静态倒影" },
-    { "element": "nav 圆角药丸 hover 底 + 默认 transition", "why_low": "药丸导航=模板站", "replace": "纯文字导航，选中态仅字重 600 + 挂门框短横线；hover 用红残影（动效 #3）" }
-  ],
-
-  "implementation_notes": {
-    "order": ["1. tokens+compat 别名落地（app.css 头部替换，页面不坏）", "2. 字体子集脚本 scripts/subset_font.py + display_chars.txt，接入构建", "3. 巨字 hero + 门框线 + 章节题（composition）", "4. 表格/卡片/徽章方角化与账本线（component_treatments）", "5. 泄漏系统（calm_vs_mad 六条）+ 动效白名单审计", "6. 名片战绩卡 / 合同军规 / 立会人印 / 免责盖印", "7. what_to_kill 清扫 + ECharts 主题", "8. 浅色主题回归测试（AA 对比、血金橙面积配给复查）"],
-    "preview": "机会监控 .claude/launch.json 的 kw（端口 8792）；移动端 375px 必须无横向滚动，vertical-rail 隐藏。",
-    "hard_checks": ["每页 grep：--gold 使用处 ≤1", "无限 animation 数 ===1 且仅 .hazard", "transition 白名单外 === 0", "子集外 display 汉字 === 0", "免责/诚实统计文本与现版 diff === 0（只换版式不动内容）"]
+  "mono": {
+   "family": "'JetBrains Mono'（已自托管 jbm-400/jbm-600，保留不换）, ui-monospace, Consolas, monospace",
+   "rules": "一切数字 font-variant-numeric:tabular-nums lining-nums、右对齐；统计值保留一位『多余』小数（41.3% 而非 41%）；元数据行统一前缀「$ 」：如「$ 2026-09-21 · CBOE · 自算口径 · n=213」（Mr.Robot 终端声道，替代现 badge 版式）。"
+  },
+  "scale": {
+   "hero_word": "clamp(64px,15vw,168px) / 0.95 / -0.05em / 900（刀锋巨字）",
+   "insert_card": "clamp(48px,14vw,160px) / 0.95 / -0.05em / 900",
+   "hero_number": "clamp(48px,9vw,96px) mono 400 / -0.03em（刀锋指数数字，Kaiji 巨数配细字重=冷酷而非叫卖）",
+   "clinical_number": "40px mono 400（计算器判定数、抽屉关键读数）",
+   "section_title": "22px display 900 / letter-spacing:0.02em",
+   "body": "13px / 1.75",
+   "meta": "11px mono",
+   "micro": "10px mono",
+   "ratio_rule": "hero 巨字与正文比例 ≥8:1（普通仪表盘的 2-3 倍层级读起来是『产品』，8 倍才是变焦）。"
   }
+ },
+ "motifs": [
+  {
+   "id": "vertical-rail",
+   "name": "竖排侧标",
+   "from": "EVA 标题卡竖排 + 今敏门框",
+   "spec": "视口左缘固定一条竖排字：position:fixed; left:14px; top:50%; transform:translateY(-50%); writing-mode:vertical-rl; font:900 12px 'KW Serif'; letter-spacing:0.5em; color:var(--ink-faint); pointer-events:none; z-index:5。内容构建时写死：「刀尖舞 · {date} · 纪律是唯一的刀鞘」。@media (max-width:1099px) 隐藏。全站唯一竖排，第二处即 bug。"
+  },
+  {
+   "id": "doorframe",
+   "name": "门框线 + 刀痕缺口",
+   "from": "千年女优门框匹配剪辑 + 妄想代理人结构性缺口",
+   "spec": "两件套。A 门框：main 容器内一条从页首贯到页尾的 1px 竖线，x 位置全站严格一致——main{position:relative} main::before{content:'';position:absolute;left:24px;top:0;bottom:0;width:1px;background:rgba(232,230,225,0.12)}；所有 h2.sec 挂线：h2.sec{padding-left:44px;position:relative} h2.sec::before{content:'';position:absolute;left:24px;top:50%;width:12px;height:1px;background:var(--ink-dim)}。滚动即穿门，禁用一切滚动进入动画，转场完全由这条不断的线完成。B 刀痕：一切危险容器（点亮的 gate、KNIFE_FALLING 行所属卡、apex 信号卡）顶边不用 border-top，改 1px 背景线留同位缺口——background-image:linear-gradient(90deg,var(--line) 0 71%,transparent 71% 74%,var(--line) 74% 100%);background-size:100% 1px;background-repeat:no-repeat。缺口永远在 71%-74%，缺口处不放任何内容不加任何说明：这个框关不住里面的东西。"
+  },
+  {
+   "id": "hazard",
+   "name": "警戒斜纹条",
+   "from": "EVA 使徒警报 EMERGENCY 条",
+   "spec": ".hazard{height:6px;background:repeating-linear-gradient(45deg,var(--blood) 0 12px,var(--bg) 12px 24px);background-size:34px 6px;animation:hazard 1.2s linear infinite} @keyframes hazard{to{background-position:34px 0}}。只在 G.state==='RED'（刀在落·禁止接）时渲染于 warnbar 下沿，全站唯一无限动画；@media (prefers-reduced-motion:reduce){animation:none}。整站静止，疯只从这一条缝里泄漏——动的东西越少，这一条动的越吓人。"
+  },
+  {
+   "id": "seal",
+   "name": "血印",
+   "from": "嘘喰い立会人印 + Drive 一处金的配给逻辑",
+   "spec": "内联 SVG 方印 30×30：<svg viewBox='0 0 30 30'><rect x='1' y='1' width='28' height='28' fill='none' stroke='#C41E2F' stroke-width='2'/><text x='15' y='22' text-anchor='middle' font-family='KW Serif' font-weight='900' font-size='18' fill='#C41E2F'>刀</text></svg>。全站至多两处：①页眉品牌（替换现 logo.svg 的通用刀图形，印+『刀尖舞』serif 字）；②免责门确认后盖在合同右下角，transform:rotate(-3deg)，瞬间出现无动画（印是盖上去的，不是长出来的）。"
+  },
+  {
+   "id": "whisper",
+   "name": "耳语背景层",
+   "from": "Kaiji ざわ‥（本站转译为中文站训的低语）",
+   "spec": "body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='160'><text x='10' y='60' transform='rotate(-8 10 60)' font-size='12' letter-spacing='5' fill='rgba(232,230,225,0.9)'>勿接‥勿接‥</text><text x='40' y='130' transform='rotate(-8 40 130)' font-size='12' letter-spacing='5' fill='rgba(232,230,225,0.9)'>手别抖‥</text></svg>\");opacity:var(--whisper)}。默认 --whisper:0.022（#0A0A0C 上恰在可见阈值边缘，凑近才发现满屏都是字）；仓位计算器输出区与 CATCH 抽屉所在页升到 0.035（[data-risk='high']）。绝对禁止给这层任何动画——它必须被『发现』，不能被『展示』。浅色主题换 fill 为墨色同阈值。"
+  }
+ ],
+ "composition": {
+  "layout": "单栏严格中轴：main{max-width:880px;margin:0 auto;padding:0 16px 96px}（880 保表格呼吸；表格外内容再收 max-width:62ch 居左挂门框线）。库布里克对称是默认公理：左右留白像素级相等，任何不对称都是 bug——全站唯一授权破轴一次：见 disclaimer 处理（Mr.Robot 压角）。8px 基线网格，卡片 padding 一律 24px。",
+  "page_rhythm": "庵野节奏：平-平-平-吼。高密度小字区块之间，至多一处 100svh 插入字卡，靠滚动自然撞上，禁止 fade/parallax。",
+  "modules": {
+   "tape_读数条": "杀掉跑马灯动画（见 what_to_kill#4）。改静态读数条：高 32px，mono 11px，最多 8 个标的「BTC 67,412 −2.1%」以「 · 」分隔，超出裁切不滚动，点击开抽屉。涨跌用静息降饱和色。",
+   "warnbar_警示条": "去 ⚠ emoji。mono 11px、color:var(--signal)、透明底、上下 hairline；ESMA 式真实数字句照旧（『短线执行口径 xx% 的信号止损离场』——数字本身就是警告，不需要图标喊）。G.state==='RED' 时其下沿挂 hazard 条。",
+   "hero_刀锋指数": "走廊尽头（闪灵单点透视）：min-height:82vh; display:grid; place-items:center; text-align:center。层叠内容自上而下：①判定行 11px mono letter-spacing:0.08em 不加粗无感叹号，句式固定「判定：刀未落地 · 只看不接／刀出鞘 · 观察／刀在落 · 禁止接刀／接刀窗口 · 允许执行」（PSYCHO-PASS 临床腔），FLIP_BACK 时此行用 --gold；②刀锋巨字（钝/出鞘/落刀）clamp(64px,15vw,168px) 纯白——它就是灭点；③指数数字 clamp(48px,9vw,96px) mono 并列;④刻度尺替换现渐变 blade-band：120px 宽 hairline 上每 10 分一根 1px tick（50/80 两根加高为阈值刻度），2px 墨色 needle 指向当前值，数值不着色尺不着色；⑤构成行「$ 恐慌 41.3 · 广度 22.0 · 信用 18.5 · 加密 12.2」mono 11px。背景仅此处放一层 SVG 伪蓝图：同心圆 3 圈 + 放射 tick + 6px 灰伪注记，stroke:#1E1E22 1px, fill:none, opacity:0.5, pointer-events:none（NERV『看不懂但相信它重要』）。当日最大回撤数字享受 Perfect Blue 静态倒影：伪元素 scaleY(-1) translateY(2px), opacity:0.06, blur(0.5px), 颜色用比本体亮的 #EDEAF0, mask 渐隐——全站仅 masthead 与此数字两处有倒影，绝不动画。",
+   "gates_市场闸门": "hero 下方紧接（滚一屏可达）：4×2 仪表格，gap 8px。每格：方角 0 radius、无底色、L 形角括号（::before/::after 各画 8×8px 的 border-top+border-left 1px，MAGI 角括号取代整框）；内容三行——状态点（10px 圆，HAL 红眼：点亮时 radial-gradient(circle at 35% 35%,#FF5A4D 0%,#C41E1E 40%,#4A0808 100%)，永久静止绝不闪烁；未亮 var(--ink-faint) 实心灰点）、读数 mono 16px、名称 11px 标签体。点亮态叠加刀痕缺口顶线（motif doorframe-B），value 转 --blood；『自算』口径章保留改方角虚线框。FLIP-BACK 徽标为该屏唯一 --gold 文本。",
+   "insert_card_插入字卡": "条件渲染（构建时决定，零 JS）：当存在 CATCH 窗（catchN>0）或当日转入 RED，闸门与落刀榜之间插一屏 min-height:100svh，display:grid;place-items:center，内部只有 2-3 个巨字「接刀窗」（--gold）或「刀在落」（纯白）+ 其下 11px mono 一行「$ 窗口 D3/10 · 军规第一条生效」。无导航无装饰无入场动画。平日无此屏——爆发是结构性的（排版突变），不是动效性的。",
+   "board_今日落刀榜": "死亡笔记账本页（详 component_treatments.table）。章节题「今日落刀榜」display 22px 挂门框线，右侧「$ 全部 {n} 个标的」mono 链接替现「→」箭头。空态：巨字「今日无刀落下」display 28px + mono 一行状态，居中，不配插画不配 emoji。",
+   "record_战绩": "American Psycho 名片：居中卡 width:340px; aspect-ratio:1.75; background:var(--bone); color:var(--bone-ink)——全站唯一亮底元素（暗桌上递过来的一张骨色名片）。内容居中小型大写式排版：回测 n / 胜率(Wilson 区间) / 败率同字号 / 最大单笔亏损 / 实盘 n，11px, letter-spacing:0.22em, 数字 oldstyle（font-feature-settings:'onum' 1）；压印感 text-shadow:0 1px 0 rgba(240,235,220,0.5),0 -1px 0 rgba(0,0,0,0.15)。最大单笔亏损一行用 --blood。整卡可点进台账。数据一字不改，只换印刷方式——体面地告知死亡率，正是疯批的礼貌。",
+   "rules5_五条军规": "Kaiji 借据/帝愛合同块：等宽 11px/1.9, color:var(--ink-dim), max-width:62ch, border:1px solid var(--line), background:var(--paper), padding:20px 24px，条款编号「第一条…第五条」。整块有且只有一行血字：第三条『死区不接：高点后 3-12 个月为动量死区，本系统视此区间入场者已死亡，不再统计』——同字号 11px、不加粗、不加大，颜色 var(--blood)。血字与样板文用同一音量说话。",
+   "footer_立会人印": "免责+诚实统计升格为裁判落印：页脚居中块 border:3px double var(--line-hi)（全站唯一双线框），标题「立会人 · 诚实统计」12px letter-spacing:0.25em；框内原文照录胜率/Wilson 区间/样本数/最大回撤/最差一次，永不折叠、永不进 toggle、每页同一 markup 同一位置，不加图标不加颜色。下附站训一行 display 13px「纪律是唯一的刀鞘 · 在坠落里找秩序」。"
+  }
+ },
+ "calm_vs_mad": {
+  "永远静止": [
+   "耳语背景层（必须被发现，不能被展示）",
+   "血印、HAL 状态红点（不闪烁的红点比闪烁的更可怕——它一直在看）",
+   "刀痕缺口、门框线、L 角括号、伪蓝图",
+   "全部表格、刻度尺、巨字、倒影（静态复制，绝不动画）",
+   "插入字卡（滚动撞上，无 fade）",
+   "ECharts 全部图表：animation:false，十字光标即时跟随",
+   "页面切换、锚点跳转：即时，无过渡"
+  ],
+  "default_css": "*{transition:none} 为全站默认；白名单外任何 transition/animation 视为 bug。@media (prefers-reduced-motion:reduce) 下白名单 1/2 也置 none、4 变瞬开。",
+  "泄漏清单": [
+   {
+    "moment": "闸门点亮",
+    "trigger": ".gate[data-on='true']（构建时数据决定）",
+    "css": "顶线换刀痕缺口渐变 + 状态点换 HAL 红眼 radial + .gv{color:var(--blood)}。零动效——颜色的稀缺本身完成警报（NERV 法则）。",
+    "motion": "无"
+   },
+   {
+    "moment": "刀在落（G.state=RED）",
+    "trigger": "构建时 G.state==='RED' 渲染 .hazard",
+    "css": "见 motifs.hazard。",
+    "motion": "动效 #1（全站唯一无限动画）"
+   },
+   {
+    "moment": "进入接刀窗（FLIP_BACK 或任一标的 CATCH）",
+    "trigger": "首页/抽屉首次渲染该状态，每会话一次（sessionStorage 键 kw_typed）",
+    "css": "信号行打字机：.sig-line{overflow:hidden;white-space:nowrap;animation:typing 1.4s steps(28,end) 1 both} @keyframes typing{from{width:0}to{width:100%}}；其后 8px 方块光标 animation:blink .5s steps(1) 3 forwards 熄灭。此后整站重归完全静止——一次泄漏定义了其余所有的静止（Mr.Robot/嘘喰い一弧一爆）。",
+    "motion": "动效 #2（一次性，不随滚动重放）"
+   },
+   {
+    "moment": "台账亏损行 / 当日最大回撤",
+    "trigger": "ledger 行 pnl<0；hero 最大回撤数字",
+    "css": "亏损行首 4px×4px var(--blood) 方点（不标红底，死亡笔记：格式即恐怖）；最大回撤数字带静态过曝倒影（见 hero）。",
+    "motion": "无"
+   },
+   {
+    "moment": "hover（导航/标的链接/落刀榜行）",
+    "trigger": ":hover",
+    "css": "本体不动、不变色、不下划线，只出现迟到红残影：text-shadow:1px 0 0 rgba(196,30,47,0.5);transition:text-shadow 0s linear 0.1s；移开时延迟归零立即消失（Perfect Blue 倒影慢半拍——用户第一反应是自己眼花了）。表格行 hover 底色 var(--paper-2) 0ms 保可用性。",
+    "motion": "动效 #3（0 时长延迟过渡）"
+   },
+   {
+    "moment": "抽屉开合",
+    "trigger": "[data-open]",
+    "css": "transform 160ms ease-out（现 200ms 收紧），backdrop 无过渡直接显隐。",
+    "motion": "动效 #4（可用性保留）"
+   }
+  ],
+  "budget_audit": "动效总数 = 4（hazard 无限 / typing 一次性 / hover 残影 / 抽屉）。现存违规待拆：tape 跑马灯 60s infinite（杀）、nav/btn/iconbtn 默认 hover 过渡（归零）、cmdk 无过渡（合规）。"
+ },
+ "component_treatments": {
+  "table_表格": "死亡笔记账本：行高锁死 32px（移动端 44px），tbody 背景 repeating-linear-gradient(to bottom,transparent 0 31px,rgba(232,230,225,0.07) 31px 32px) 画横格线，td 去 border-bottom 改由格线承担，line-height:32px 基线精确落线。无斑马纹、无圆角、无 hover 位移；th 10.5px 标签体 letter-spacing:0.12em；数字列 mono tabular 右对齐；层级只靠 400/600 字重与一档灰度，绝不靠字号跳或彩色（LIAR GAME 事务局级无聊）。亏损行行首 4px 血方点；tier/timechip/state 徽章全部降为方角 1px 描边 + mono 文本，唯 CATCH 态文字用 --gold（每屏至多一处金——若与品牌印同屏则 CATCH 用白）。",
+  "card_卡片": "border-radius:0（一律方角，≤2px 容忍）；去 box-shadow 去 --edge；1px var(--line)；padding:24px 齐 8px 网格。数据/统计卡加 L 角括号；危险卡顶线换刀痕缺口。全站唯一微倾斜授权：KNIFE_FALLING 主卡（当前下坠最凶的一张）transform:rotate(-0.4deg) 且背后铺静态斜线 repeating-linear-gradient(115deg,rgba(196,30,47,0.03) 0 1px,transparent 1px 9px)——0.4° 在潜意识区间，先感到『哪里不对』才看出歪；第二个倾斜元素即 bug（福本汗珠构图，配给制）。",
+  "drawer_抽屉": "background:var(--paper); border-left:1px solid var(--line); 方角；开合 160ms（动效 #4）。头部：标的名 display 22px + 「$ symbol · tier · state · asof」mono 元数据行；K 线区下方状态五格改 5 个 9px 方点（CATCH 位金点）。抽屉内自带门框线（padding-left:24px 竖线）延续页面骨架——换房间，门框不变。",
+  "modal_免责门": "升格为合同仪式（Kaiji 借据）：mbox 方角、border:1px solid var(--line-hi)；正文重排为编号条款「第一条…」，mono 11px/1.9, color:var(--ink-dim), max-width:62ch；全文有且只有一行 --blood 同字号血字（清算纪律行）。滚动读完解锁逻辑保留；确认按钮为骨色名片式：background:var(--bone);color:var(--bone-ink);letter-spacing:0.22em;方角；文案不变「我已读完，风险自担」。点击后血印 SVG 瞬间盖在合同右下角 rotate(-3deg)（无动画），写 localStorage，此后每次开站合同页角落带印。",
+  "calculator_仓位计算器": "输入区：方角 input，background:var(--bg), border:1px solid var(--line)，focus 时 outline:1px solid var(--focus)（全站唯一深霓虹蓝，Perfect Blue 配给）；label 10.5px 标签体。输出区 = PSYCHO-PASS 化验单：判定大数字 40px mono，硬阈值换色——建议仓位 ≤1%: #7BD8D0 灰青 / 1-3%: var(--amber) / 触顶或违规: var(--blood)；判定行 11px letter-spacing:0.08em 永不加粗永不感叹，句式固定「判定：仓位 1.8% · 三批 0.9/0.6/0.3 · 允许」或「判定：超出单刀上限 · 禁止」。危险态卡不再洗红底，只挂刀痕缺口 + 血字判定。预承诺门保留，按钮同免责门骨色规格缩小版。本区 --whisper 升 0.035。",
+  "cmdk_命令面板": "方角；输入框 border:1px solid var(--line-hi) 无圆角上框；列表项 mono 13px 前缀「$ 」；选中态 var(--paper-2) 0ms。无打开动画。",
+  "badge_数据徽章": "改终端元数据行：「$ 2026-09-21 · CBOE + 自算广度 · 自算口径」mono 10.5px, color:var(--ink-faint), 右对齐；链接下划线 dotted 保留；stale 态前缀改「$ STALE ·」+ var(--amber)，去 saturate 滤镜。",
+  "buttons_按钮": ".btn 方角 1px 描边透明底；hover 仅 border-color:var(--ink-faint) 0ms。金实底 primary 拆除：金只以描边金字形式授予唯一 apex CTA（.btn--gold{border-color:var(--gold);color:var(--gold);background:none}）；骨色名片按钮仅免责/预承诺两个仪式点使用。iconbtn 文字化：「Ctrl K」「涨跌」「明暗」mono。",
+  "echarts_图表": "主题令牌化：animation:false；K 线 upColor/downColor 读 --up/--down 静息值（翻转联动照旧），当日最后一根用 live 值；grid 线 var(--chart-grid)；轴标签 mono 10px var(--ink-faint)；tooltip 方角 background:var(--paper) border:1px solid var(--line) mono 11px 无阴影；十字光标线 1px var(--ink-faint) 虚线。禁用 ECharts 默认彩板与平滑曲线。"
+ },
+ "what_to_kill": [
+  {
+   "element": "Smiley Sans（得意黑斜体显示字）",
+   "why_low": "网红电商体，斜体自带促销腔，与『纪律/刑场』人格相反",
+   "replace": "Noto Serif SC Black 900 子集巨字（typography.display），fonts/smiley-oblique.woff2 删除"
+  },
+  {
+   "element": "全站 6-8px 圆角 + --edge 内描边高光",
+   "why_low": "SaaS 产品感=『到处都体贴』，没有杀气",
+   "replace": "0 radius 方角 + 1px hairline；仪式感由 L 角括号与双线印框承担"
+  },
+  {
+   "element": "color-mix 彩色氛围底（gate 点亮 9% 红洗、CATCH 16% 金洗、calc 8% 红洗、warnbar 8% 琥珀洗）",
+   "why_low": "面积色是最廉价的强调，红铺开就不再是血",
+   "replace": "刀痕缺口 + 4px 血方点 + 同字号血字；彩色只留给数字与判定本身"
+  },
+  {
+   "element": "tape 跑马灯 60s infinite 动画",
+   "why_low": "证券营业厅大屏味；且抢走 hazard 条的唯一动权",
+   "replace": "静态读数条，点击开抽屉；全站无限动画只许 hazard 一条"
+  },
+  {
+   "element": "emoji 与几何符号（⚠、◐、→）",
+   "why_low": "表情符号是界面在替用户紧张，疯批不需要被安抚",
+   "replace": "⚠ 删除（数字即警告）；◐ →「明暗」；「→」→ mono「$ 全部 n 个标的」"
+  },
+  {
+   "element": "blade-band 三色渐变进度条",
+   "why_low": "渐变进度条=健身 App；危险不该是彩虹色的",
+   "replace": "hairline 刻度尺 + 阈值高刻度 + 2px 墨针（背景当测量仪）"
+  },
+  {
+   "element": "彩底圆角小徽章（state-tag CATCH 金底、timechip、score-mini 彩条）",
+   "why_low": "圆角彩丸是消费级 UI 的口红",
+   "replace": "方角 1px 描边 + mono 文本；score 用 mono 数值 + 5 格 9px 方点"
+  },
+  {
+   "element": ".btn.primary 大金实底按钮",
+   "why_low": "金一铺开就成了赌场灯箱（Drive：第二处金即 bug）",
+   "replace": "金仅描边金字授予唯一 apex 动作；仪式按钮用骨色名片"
+  },
+  {
+   "element": "涨跌红绿全饱和满屏",
+   "why_low": "满屏高饱和=行情软件地摊感，也稀释真警报",
+   "replace": "静息降饱和 #C24046/#2F9E6E，仅今日实时值用 live 全饱和（欠曝画面里被灯打亮的半张脸）"
+  },
+  {
+   "element": "h2.sec 内『· 口语标语』混排（如「先看最坏，再谈最好」挤在标题行）",
+   "why_low": "标题夹私货显得碎嘴",
+   "replace": "章节题只留词（display 体）；判词降为其下「$ 」mono 元数据行"
+  },
+  {
+   "element": "::selection 金色 30%",
+   "why_low": "违反金的配给制",
+   "replace": "::selection{background:rgba(196,30,47,0.3);color:var(--ink)}——选中即见血"
+  },
+  {
+   "element": "logo.svg 通用刀图形 + brand 圆润排印",
+   "why_low": "剪贴画式图标是『特色缺失』的源头",
+   "replace": "血印方章「刀」+ 『刀尖舞』KW Serif 900 + 『KNIFEWALTZ』mono 2px 字距小字；masthead 享受唯一的静态倒影"
+  },
+  {
+   "element": "nav 圆角药丸 hover 底 + 默认 transition",
+   "why_low": "药丸导航=模板站",
+   "replace": "纯文字导航，选中态仅字重 600 + 挂门框短横线；hover 用红残影（动效 #3）"
+  }
+ ],
+ "implementation_notes": {
+  "order": [
+   "1. tokens+compat 别名落地（app.css 头部替换，页面不坏）",
+   "2. 字体子集脚本 scripts/subset_font.py + display_chars.txt，接入构建",
+   "3. 巨字 hero + 门框线 + 章节题（composition）",
+   "4. 表格/卡片/徽章方角化与账本线（component_treatments）",
+   "5. 泄漏系统（calm_vs_mad 六条）+ 动效白名单审计",
+   "6. 名片战绩卡 / 合同军规 / 立会人印 / 免责盖印",
+   "7. what_to_kill 清扫 + ECharts 主题",
+   "8. 浅色主题回归测试（AA 对比、血金橙面积配给复查）"
+  ],
+  "preview": "机会监控 .claude/launch.json 的 kw（端口 8792）；移动端 375px 必须无横向滚动，vertical-rail 隐藏。",
+  "hard_checks": [
+   "每页 grep：--gold 使用处 ≤1",
+   "无限 animation 数 ===1 且仅 .hazard",
+   "transition 白名单外 === 0",
+   "子集外 display 汉字 === 0",
+   "免责/诚实统计文本与现版 diff === 0（只换版式不动内容）"
+  ]
+ }
 }

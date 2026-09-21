@@ -84,6 +84,13 @@
    "max_vol_vs_50d": {
     "date": "1987-10-19",
     "ratio": 3.21
+   },
+   "buy_minus30_further_dd_pct": -0.41,
+   "buy_minus30": {
+    "date": "1987-10-19",
+    "close": 224.84,
+    "trading_days_to_trough": 33,
+    "caliber": "峰值收盘 -30% 首触日买入 → 本轮谷底进一步回撤%（收盘口径，自算）"
    }
   },
   {
@@ -124,6 +131,13 @@
      "date": "2001-09-21",
      "v": 42.66
     }
+   },
+   "buy_minus30_further_dd_pct": -25.22,
+   "buy_minus30": {
+    "date": "2001-09-17",
+    "close": 1038.77,
+    "trading_days_to_trough": 268,
+    "caliber": "峰值收盘 -30% 首触日买入 → 本轮谷底进一步回撤%（收盘口径，自算）"
    }
   },
   {
@@ -164,6 +178,13 @@
      "date": "2008-10-24",
      "v": 79.13
     }
+   },
+   "buy_minus30_further_dd_pct": -35.99,
+   "buy_minus30": {
+    "date": "2008-10-06",
+    "close": 1056.89,
+    "trading_days_to_trough": 105,
+    "caliber": "峰值收盘 -30% 首触日买入 → 本轮谷底进一步回撤%（收盘口径，自算）"
    }
   },
   {
@@ -204,7 +225,9 @@
      "date": "2011-08-08",
      "v": 48.0
     }
-   }
+   },
+   "buy_minus30_further_dd_pct": null,
+   "buy_minus30_note": "峰值回撤未达 -30%（收盘口径），不适用——B 族排除验证集如实标注"
   },
   {
    "case": "2018_q4",
@@ -244,7 +267,9 @@
      "date": "2018-12-26",
      "v": 30.41
     }
-   }
+   },
+   "buy_minus30_further_dd_pct": null,
+   "buy_minus30_note": "峰值回撤未达 -30%（收盘口径），不适用——B 族排除验证集如实标注"
   },
   {
    "case": "2020_covid",
@@ -284,6 +309,13 @@
      "date": "2020-03-18",
      "v": 76.45
     }
+   },
+   "buy_minus30_further_dd_pct": -2.93,
+   "buy_minus30": {
+    "date": "2020-03-20",
+    "close": 2304.9199,
+    "trading_days_to_trough": 1,
+    "caliber": "峰值收盘 -30% 首触日买入 → 本轮谷底进一步回撤%（收盘口径，自算）"
    }
   },
   {
@@ -324,7 +356,9 @@
      "date": "2025-04-07",
      "v": 46.98
     }
-   }
+   },
+   "buy_minus30_further_dd_pct": null,
+   "buy_minus30_note": "峰值回撤未达 -30%（收盘口径），不适用——B 族排除验证集如实标注"
   },
   {
    "case": "2026_tariff_mar",
@@ -364,7 +398,9 @@
      "date": "2026-03-09",
      "v": 25.5
     }
-   }
+   },
+   "buy_minus30_further_dd_pct": null,
+   "buy_minus30_note": "峰值回撤未达 -30%（收盘口径），不适用——B 族排除验证集如实标注"
   }
  ],
  "yahoo_cases": [
@@ -406,6 +442,13 @@
      "date": "2001-09-21",
      "v": 42.66
     }
+   },
+   "buy_minus30_further_dd_pct": -66.46,
+   "buy_minus30": {
+    "date": "2000-04-14",
+    "close": 3321.29,
+    "trading_days_to_trough": 622,
+    "caliber": "峰值收盘 -30% 首触日买入 → 本轮谷底进一步回撤%（收盘口径，自算）"
    }
   },
   {
@@ -446,6 +489,13 @@
      "date": "2022-01-24",
      "v": 29.9
     }
+   },
+   "buy_minus30_further_dd_pct": -5.51,
+   "buy_minus30": {
+    "date": "2022-06-13",
+    "close": 10809.2305,
+    "trading_days_to_trough": 137,
+    "caliber": "峰值收盘 -30% 首触日买入 → 本轮谷底进一步回撤%（收盘口径，自算）"
    }
   },
   {
@@ -486,7 +536,9 @@
      "date": "2026-03-09",
      "v": 25.5
     }
-   }
+   },
+   "buy_minus30_further_dd_pct": null,
+   "buy_minus30_note": "峰值回撤未达 -30%（收盘口径），不适用——B 族排除验证集如实标注"
   },
   {
    "case": "2024_carry_unwind_nikkei",
@@ -526,7 +578,9 @@
      "date": "2024-08-05",
      "v": 38.57
     }
-   }
+   },
+   "buy_minus30_further_dd_pct": null,
+   "buy_minus30_note": "峰值回撤未达 -30%（收盘口径），不适用——B 族排除验证集如实标注"
   },
   {
    "case": "2015_ashare_leg1",
@@ -566,6 +620,13 @@
      "date": "2015-08-24",
      "v": 40.74
     }
+   },
+   "buy_minus30_further_dd_pct": -16.53,
+   "buy_minus30": {
+    "date": "2015-07-08",
+    "close": 3507.1919,
+    "trading_days_to_trough": 35,
+    "caliber": "峰值收盘 -30% 首触日买入 → 本轮谷底进一步回撤%（收盘口径，自算）"
    }
   },
   {
@@ -606,6 +667,13 @@
      "date": "2015-08-24",
      "v": 40.74
     }
+   },
+   "buy_minus30_further_dd_pct": -24.28,
+   "buy_minus30": {
+    "date": "2015-07-08",
+    "close": 3507.1919,
+    "trading_days_to_trough": 138,
+    "caliber": "峰值收盘 -30% 首触日买入 → 本轮谷底进一步回撤%（收盘口径，自算）"
    }
   },
   {
@@ -646,6 +714,13 @@
      "date": "2022-01-24",
      "v": 29.9
     }
+   },
+   "buy_minus30_further_dd_pct": -66.58,
+   "buy_minus30": {
+    "date": "2021-12-10",
+    "close": 47243.3047,
+    "trading_days_to_trough": 346,
+    "caliber": "峰值收盘 -30% 首触日买入 → 本轮谷底进一步回撤%（收盘口径，自算）"
    }
   },
   {
@@ -686,6 +761,13 @@
      "date": "2026-03-09",
      "v": 25.5
     }
+   },
+   "buy_minus30_further_dd_pct": -32.4,
+   "buy_minus30": {
+    "date": "2025-11-20",
+    "close": 86631.8984,
+    "trading_days_to_trough": 222,
+    "caliber": "峰值收盘 -30% 首触日买入 → 本轮谷底进一步回撤%（收盘口径，自算）"
    }
   },
   {
@@ -726,6 +808,13 @@
      "date": "2022-01-24",
      "v": 29.9
     }
+   },
+   "buy_minus30_further_dd_pct": -74.51,
+   "buy_minus30": {
+    "date": "2021-05-07",
+    "close": 72.23,
+    "trading_days_to_trough": 369,
+    "caliber": "峰值收盘 -30% 首触日买入 → 本轮谷底进一步回撤%（收盘口径，自算）"
    }
   },
   {
@@ -766,7 +855,20 @@
      "date": "2022-01-24",
      "v": 29.9
     }
+   },
+   "buy_minus30_further_dd_pct": -72.64,
+   "buy_minus30": {
+    "date": "2021-05-06",
+    "close": 108.34,
+    "trading_days_to_trough": 415,
+    "caliber": "峰值收盘 -30% 首触日买入 → 本轮谷底进一步回撤%（收盘口径，自算）"
    }
   }
- ]
+ ],
+ "buy_minus30_task": {
+  "filled_at": "2026-09-22",
+  "cases": 18,
+  "with_value": 12,
+  "note": "precision_spec leg3 book_task：B 族排除验证集自 9 扩至全 18 例；未达 -30% 的案例保留 null + 不适用标注（统计不撒谎）"
+ }
 }

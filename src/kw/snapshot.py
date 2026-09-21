@@ -47,9 +47,13 @@ def canonical_json(obj) -> str:
     return json.dumps(obj, ensure_ascii=False, sort_keys=True, separators=(",", ":"), default=str)
 
 
-def features_sha(features, score, market, jev) -> str:
-    """sha256(canonical_json(features,score,market,jev))[:16]，创建时写死（RL-3）。"""
-    blob = canonical_json({"features": features, "score": score, "market": market, "jev": jev})
+def features_sha(features, score, market, jev, stier=None) -> str:
+    """sha256(canonical_json(features,score,market,jev[,stier]))[:16]，创建时写死（RL-3）。
+    stier 子块（v1.3 S 级判定摘要）仅在存在时进指纹——旧快照（无 stier 键）校验不变。"""
+    obj = {"features": features, "score": score, "market": market, "jev": jev}
+    if stier is not None:
+        obj["stier"] = stier
+    blob = canonical_json(obj)
     return hashlib.sha256(blob.encode("utf-8")).hexdigest()[:16]
 
 
@@ -124,35 +128,41 @@ def append(records: list[dict]) -> int:
 
 def _mk_record(kind: str, symbol: str, date: str, trigger_px, stop_price,
                features: dict, score, market: dict, jev,
-               params_version: str, engine_sha: str) -> dict:
+               params_version: str, engine_sha: str, stier: dict | None = None) -> dict:
     if jev:  # RL-6：jev 块必带预注册结算口径
         jev = dict(jev)
         jev.setdefault("outcome_defs", OUTCOME_DEFS)
-    return {
+    rec = {
         "id": f"{kind}:{symbol}:{date}",
         "kind": kind, "symbol": symbol, "date": date,
         "trigger_px": trigger_px, "stop_price": stop_price,
         "features": features, "score": score, "market": market, "jev": jev,
         "params_version": params_version, "engine_sha": engine_sha,
-        "features_sha": features_sha(features, score, market, jev),
+        "features_sha": features_sha(features, score, market, jev, stier),
         "realized": {}, "settled": False,
     }
+    if stier is not None:   # v1.3 S 级判定摘要（受 features_sha 保护，append-only）
+        rec["stier"] = stier
+    return rec
 
 
 def capture(board: list[dict], gates: dict, jev_blocks: dict | None = None,
             params_version: str | None = None, engine_sha: str | None = None,
-            today: str | None = None) -> list[dict]:
+            today: str | None = None, stier_blocks: dict | None = None) -> list[dict]:
     """从当日跑批产物做边沿检测，返回去重后的新快照（调用方随后 append）。
 
-    board      : engine.run_engine 的 board（含 state / state_since / state_events）
-    gates      : engine.market_gates 输出
-    jev_blocks : {key: snapshots_jev_block}，无 Jev 时 None（整块 null，站点行为不变）
+    board       : engine.run_engine 的 board（含 state / state_since / state_events）
+    gates       : engine.market_gates 输出
+    jev_blocks  : {key: snapshots_jev_block}，无 Jev 时 None（整块 null，站点行为不变）
+    stier_blocks: {key: stier 判定摘要}（run_stier().snapshot_blocks；precision build_order 步 3）
+                  ——仅 S-CATCH 快照挂 stier 子块并纳入 features_sha；None 时输出与 v1.2 字节级一致
     边沿检测读写 data/state/gates_prev.json。
     """
     today = today or today_str()
     params_version = params_version or params_version_default()
     engine_sha = engine_sha or engine_sha_default()
     jev_blocks = jev_blocks or {}
+    stier_blocks = stier_blocks or {}
     known = {_dedupe_key(r) for r in load_all_snapshots()}
     market = {"blade_index": gates.get("blade_index"), "gate_state": gates.get("state"),
               "vix": gates.get("vix"), "vix_ratio": gates.get("vix_ratio")}
@@ -180,7 +190,8 @@ def capture(board: list[dict], gates: dict, jev_blocks: dict | None = None,
                 feats["score_parts"] = b.get("score_parts")
             _add(_mk_record(kind, key, today, b.get("px"), b.get("stop_price"),
                             feats, b.get("score"), market, jev_blocks.get(key),
-                            params_version, engine_sha))
+                            params_version, engine_sha,
+                            stier=stier_blocks.get(key) if kind == "S-CATCH" else None))
 
     # ② 市场闸门边沿：G-VIX-* off→on 与 G-FLIP-BACK false→true（gates_prev.json）
     prev = read_json(GATES_PREV_PATH, {}) or {}
@@ -218,7 +229,8 @@ def verify_immutable(include_archive: bool = True) -> dict:
     mismatch = []
     snaps = load_all_snapshots(include_archive)
     for r in snaps:
-        expect = features_sha(r.get("features"), r.get("score"), r.get("market"), r.get("jev"))
+        expect = features_sha(r.get("features"), r.get("score"), r.get("market"), r.get("jev"),
+                              r.get("stier"))
         if expect != r.get("features_sha"):
             mismatch.append(r.get("id"))
     ok = not mismatch

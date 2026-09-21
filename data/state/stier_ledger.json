@@ -1,0 +1,18 @@
+{
+ "version": "s1",
+ "month": "2026-09",
+ "max": 5,
+ "used": 0,
+ "entries": [],
+ "eval_log": {
+  "2026-09-22": {
+   "windows": 0,
+   "blocked": {},
+   "qualified": 0,
+   "granted": 0,
+   "candidate": 0,
+   "jev_unavailable": false
+  }
+ },
+ "history": []
+}

@@ -1,0 +1,28 @@
+{
+ "files_written": [
+  "D:\\knifewaltz\\src\\kw\\stier.py",
+  "D:\\knifewaltz\\src\\kw\\snapshot.py",
+  "D:\\knifewaltz\\scripts\\stier_replay.py",
+  "D:\\knifewaltz\\data\\state\\stier_ledger.json",
+  "D:\\knifewaltz\\data\\state\\stier_replay.json",
+  "D:\\knifewaltz\\data\\state\\slice_lr.json",
+  "D:\\knifewaltz\\data\\state\\knife_book_seed.json"
+ ],
+ "public_interface": [
+  "stier.run_stier(board, gates, jev_block, today=None) -> dict — heavy 主流程唯一钩子（run_engine 与 jev.catch_prior 之后调用）：评估→放行→写台账→返回 {skipped, ledger, evaluations, board_stier, payload, top5, snapshot_blocks}；KW_RADAR=1 时返回 {skipped:...} 且零触达台账",
+  "stier.s_adjudicate(det, st, gates, jev, slice_lr, P, today) -> verdict — 单标的 H1-H8 逐条判定 + H9/H10/H11 shadow（合格者与被拦者均落），含 ring/readings/missing/soft",
+  "stier.s_grant(qualified, L, P, today) -> L — 软分排序放行（E3/E5/E6/E8 全边界，id=S-{YYYYMMDD}-{key} 幂等）",
+  "stier.load_ledger(today=None) / stier.roll_month(L, today) / stier.save_ledger(L) — 台账读写（月滚动归档、history>24月轮转 stier_archive_{YYYY}.json）",
+  "stier.liquidity_ok(det, P=None, rows=None) -> bool 与 stier.liquidity_reading(...) -> dict — H7（MA-4 白名单池 T1/T2/T2C/T1S/T1C/T1F；.HK 按 /7.8；三阈值 frozen；读数缺失保守不过）",
+  "stier.cap_class(det) -> 'hammer'|'climax'|'none'；stier.close_pos(det) -> float|None",
+  "stier.build_month_top5(L, evaluations=None, board=None, today=None) -> list[5] — MA-8/E13：恒 5 名，非 GRANTED 标『当月最优·未达 S』+ missing[{id,name,now,need}]（板块补足行 soft 中性代入并标 soft_is_proxy）",
+  "stier.build_payload_stier(L, evaluations, today, jev_enabled=True) -> dict — payload.stier 块（M4 字段名：rules_version/month/used/max/in_window/month_rows/candidates/ledger_live/ledger_shadow/precision/ns70 + jev_unavailable + rule_counts）",
+  "stier.board_stier_block(key, L, evaluations, today) -> dict|None 与 stier.inject_board(board, stier_result) — b.stier 注入 {admitted,budget_blocked,seq_in_month,window_day,ring,readings,missing,shadow,rules_version}",
+  "stier.load_params() -> P（params_registry s_tier.* 只读+默认兜底）；stier.load_slice_lr() / stier.lookup_slice(...)（精确键→family=ANY 回退）；stier.precision_summary(L)（RL-4：n<30 精度字段一律 null 只给收集中）",
+  "snapshot.capture(board, gates, jev_blocks=None, ..., stier_blocks=None) — 新增可选参：S-CATCH 快照挂 stier 子块并纳入 features_sha；不传时输出与 v1.2 字节级一致",
+  "snapshot.features_sha(features, score, market, jev, stier=None) — stier 仅存在时进指纹，旧快照校验不变（verify_immutable 实测 ok）",
+  "scripts/stier_replay.py：无参=全量 leg1(36年^GSPC假想配给+H10对照臂+等值校验)+leg3(T1 pooled) → stier_replay.json；--weekly-review=仅重算 leg3 合并（零联网）；--train=另产 slice_lr.json（挖掘员通道，运行时只读）"
+ ],
+ "test_results": "全部通过。(1) 模块自测 32/32 PASS（临时路径注入，真实台账/store 零触达）：QUALIFIED/NOT_S 判定、软分公式、B 族只走 B 档、Jev 不可用→H5 缺席保守、7 合格→5 GRANTED+2 quota_full CANDIDATE、E6 排序、E8 同日重跑幂等零重复占额、E3 per_key_month_max、E10 无 Jev 零入笔、月滚动清零不结转、Top5 恒 5 名（board 补足）、M4 payload/b.stier 字段齐、RL-4 rolling30 n<30 精度字段 null、KW_RADAR=1 零触达（文件字节比对）、R4 静态断言无撤销/置换/追授、快照 RL-3 旧记录审计不受影响+stier 子块进指纹+篡改即暴露、缺 slice_lr 全中性照常运行、切片证据命中含 ANY 回退。(2) stier_replay 等值校验 PASS：重建 vix36 30 轮与 vix_replay.json 逐轮日期对齐、max diff 0.0pp（复用 atier_exec）。(3) 回放实跑（本机联网实测 Yahoo ^GSPC 14301 根 + CBOE VIX 9276 行 + sqlite vix3m 只读 mode=ro）：leg1 36 年 CATCH 窗 9 个、硬子集合格 0（拦截分母公示 H2:8/H3:9/H8:9/H6:3/H4:2——状态机开窗时 days_from_peak 已超 20，S 稀缺是设计而非 bug）；leg3 57 标的 157 窗、合格 0（H2:156/H3:142/H8:154，near_miss 尾 20 条列示）；--weekly-review 增量 2.0s 通过。(4) 刀谱补数 12/18 例带 buy_minus30_further_dd_pct（6 例未达 -30% 如实标注不适用）：A 族 1987 再挨 -0.41%/2020 -2.93% vs B 族 KWEB -74.51%/ARKK -72.64%/dotcom纳指 -66.46%，与挖掘员 0/6 结论方向一致。真实 stier_ledger.json 保持初始态。",
+ "notes_for_integrator": "【run.py 接线（M1）】在 engine.run_engine → jev.catch_prior（jev_block=jev.build_payload_block 产物，H5 读 .enabled/.triage、软分读 .catch_prior）之后：res = stier.run_stier(result['board'], result['gates'], jev_block, today=today)；若 not res.get('skipped')：stier.inject_board(result['board'], res)（b.stier）；payload['stier'] = res['payload']；Top5 排名 res['top5'] 按 M3 注入 payload.funnel（每行 {rank,key,symbol,name,grade,status,soft_score,soft_is_proxy,knife_score,missing,...}）；snapshot.capture(..., stier_blocks=res['snapshot_blocks'])。radar 分支可不调用也可照调——run_stier 自带 KW_RADAR 守卫零触达。build-only 幂等（E8）。【顺序依赖】必须在 jev catch_prior 之后（否则 J4 中性代入）、render 之前。【与 engine 槽契约】shadow H10 读 gates['flip_back_age_days']（engine 槽落盘前该值恒 null → FLIP_BACK 日 shadow.would_block=true 属保守记账，参数=0 不拦截，无行为影响）。【与 settle_calibrate 契约】未结= entry.outcome is None；只写 outcome{result,pnl_pct,exit,exit_bar,settled_at,caliber}/hold252_pct 两键（GRANTED/CANDIDATE 一视同仁结算分列统计）；review 只写 attribution/attributed_at；precision_summary 读 outcome.pnl_pct 判胜负。台账月对象额外携带 eval_log{date:{windows,blocked,qualified,granted,candidate,jev_unavailable}}=RL-5 分母公示（stier 唯一写者、逐日幂等、随月归档），payload.stier.rule_counts 即其透出。【与 render/frontend 契约】payload.stier 含契约外增量键 jev_unavailable（E10 横幅）与 rule_counts；ring 数组序=H1..H8；b.stier.ring 为 {H1..H8: true|false|null}（null=缺席琥珀格）。【口径注意】H7 crypto quoteVolume 以 kline volume 列为 USD 报价额（Yahoo 口径）；universe_crypto 槽若 OKX 蜡烛 volume 为币本位需换算，当前缺失方向保守（只可能少放 S）。【文件】stier_ledger.json 已建初始空账（2026-09）；slice_lr.json 由 --train 产出（train 窗 6 事件全线索级 → 运行时中性，meta 注明 family=ANY 与 Haldane 校正）；stier_replay.json 含 interception 分母公示（36 年硬子集 0 合格是诚实结果，页面按空态+拦截表渲染）；knife_book_seed.json 为纯增量键（jev 槽 build_j6_criteria 不受影响）。【integrator writeback 提醒】MA-4 H7 白名单扩展与影子记账启动日按 manifest 记 PROGRESS/goals（integrator 专属，本槽未碰 run.py/params_registry/PROGRESS）。"
+}

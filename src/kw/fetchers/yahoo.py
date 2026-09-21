@@ -13,9 +13,13 @@ from __future__ import annotations
 import time
 from datetime import datetime, timezone
 
-from ..utils import DOCS_DIR, Http, log, write_json
+from ..utils import DOCS_DIR, Http, log, read_json, write_json
 
 BASES = ["https://query1.finance.yahoo.com", "https://query2.finance.yahoo.com"]
+
+# K 线文件行上限：756 → 1100 统一口径（MA-11，funnel data_file_mapping cap rows[-1100:]，
+# 兼容 cnhk 报告的 756 观察；okx_kline.ROW_CAP 同值）
+KLINE_CAP = 1100
 
 
 def chart(http: Http, symbol: str, rng: str = "3y", interval: str = "1d") -> tuple[list[str], list[float], dict, list[list]]:
@@ -66,12 +70,47 @@ def chart(http: Http, symbol: str, rng: str = "3y", interval: str = "1d") -> tup
     raise RuntimeError(f"yahoo {symbol}: {last}")
 
 
-def write_kline(key: str, symbol: str, ohlc: list[list], label: str | None = None) -> None:
-    """近 3 年日 K → docs/data/kline/{key}.json（页面点标的名时懒加载；失败不影响主流程）。"""
+def safe_key(symbol: str) -> str:
+    """标的代码 → 文件/键安全形式（只留字母数字与 _-；全站统一清洗口径）。"""
+    return "".join(ch if ch.isalnum() or ch in "_-" else "_" for ch in symbol)
+
+
+def kline_path(key: str):
+    """kline 文件路径（文件名经 safe_key 清洗，与 write_kline 同口径）。"""
+    return DOCS_DIR / "data" / "kline" / f"{safe_key(key)}.json"
+
+
+def read_kline(key: str) -> dict:
+    """读已落盘的 kline 文件（含 rows）；缺失/损坏返回 {}（优雅降级）。"""
+    return read_json(kline_path(key), {}) or {}
+
+
+def kline_len(key: str) -> int:
+    """已落盘 kline 行数；缺失为 0（breadth 增量/首次分流依据）。"""
+    return len(read_kline(key).get("rows") or [])
+
+
+def write_kline(key: str, symbol: str, ohlc: list[list], label: str | None = None,
+                merge: bool = False) -> None:
+    """日 K → docs/data/kline/{key}.json（页面点标的名时懒加载；失败不影响主流程）。
+
+    merge=True 为合并追加模式（funnel step4）：读文件已有 rows，与新行按日期合并去重，
+    同日新值覆盖旧值（增量 range=5d 与文件尾按日期合并）；merge=False 为整段覆写（全量拉取）。
+    行上限统一 cap rows[-1100:]（MA-11）。
+    """
     try:
-        safe = "".join(ch if ch.isalnum() or ch in "_-" else "_" for ch in key)
-        write_json(DOCS_DIR / "data" / "kline" / f"{safe}.json",
-                   {"key": key, "symbol": symbol, "label": label, "rows": ohlc[-756:]})
+        rows = [r for r in ohlc if r]
+        if merge:
+            old = read_kline(key).get("rows") or []
+            if old:
+                by_date = {r[0]: r for r in old if r}
+                for r in rows:
+                    by_date[r[0]] = r
+                rows = [by_date[d] for d in sorted(by_date)]
+        if not rows:
+            return
+        write_json(kline_path(key),
+                   {"key": safe_key(key), "symbol": symbol, "label": label, "rows": rows[-KLINE_CAP:]})
     except Exception as e:
         log.debug("kline %s: %s", key, e)
 
@@ -97,7 +136,9 @@ def fetch(cfg: dict, settings: dict) -> dict:
             currency = "USD" if (meta.get("currency") or "").upper() == "USX" else ("GBP" if scale != 1.0 else meta.get("currency"))
             vals = [v * scale for v in vals]
             if scale != 1.0:
-                ohlc = [[d, o * scale, h * scale, lo * scale, c * scale] for d, o, h, lo, c in ohlc]
+                # 裁决 D9：chart() 行为 6 元素 [d,o,h,lo,c,v]，此处曾按 5 元素解包 → 任何 USX
+                # 符号走 fetch() 即 ValueError 被外层吞掉（K 线文件不落盘）。修复并保留 volume。
+                ohlc = [[d, o * scale, h * scale, lo * scale, c * scale, v] for d, o, h, lo, c, v in ohlc]
             write_kline(key, sym, ohlc, it.get("label"))
             cur = vals[-1]
             asof = dates[-1]

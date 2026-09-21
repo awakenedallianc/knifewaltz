@@ -1,1 +1,1 @@
-{"heavy": {"cboe": {"ok": true, "metrics": 17508, "s": 3.0, "notes": ""}, "derivs": {"ok": true, "metrics": 4064, "s": 6.2, "notes": "fund BTC: okx fallback（binance: 451 Client Error:  for url: https://fapi）; oi BTC: okx fallback（binance: 451 Client Error:  for url: https://fapi）; fund ETH: okx fallback（binance: 451 Client Error:  f"}, "breadth": {"ok": true, "metrics": 4, "s": 66.6, "notes": "universe 503/503"}, "knives": {"ok": true, "metrics": 53654, "s": 32.0, "notes": ""}}, "at": "2026-09-22T00:34:24+07:00"}
+{"heavy": {}, "at": "2026-09-22T02:08:53+07:00"}

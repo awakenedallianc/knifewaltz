@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-22T00:34:24+07:00",
+ "generated_at": "2026-09-22T02:04:43+07:00",
  "date": "2026-09-22",
  "min_n": 30,
  "outcome_defs": {
@@ -9,17 +9,20 @@
   "J4": "该笔 CATCH 按 A 档退出规则的胜负（从 ledger 读）",
   "J5": "1 若 3 日内 |累计收益| >= 10%（movers_history 快照价口径）",
   "J1_shadow": "反事实盈亏 = atier_exec(entry, stop) 结果",
+  "J6": "episode 完成日 = 判断日后价格自『判断日后最低点』反弹 >=20% 或满 252 交易日（先到者）。完成日用库内 kline 机械计算本轮实际签名 {realized_dd = 触发时 52 周峰到 episode 最低点跌幅%, realized_days = 峰到最低点交易日数}；将刀谱 18 例按签名距离 d = |dd_case - realized_dd|/25 + |ln(days_case) - ln(realized_days)|/1.2 升序排名（尺度常数 25 与 1.2 为刀谱 18 例自身 dd 标准差与 ln(days) 标准差，一次计算后冻结入 outcome_def）；hit=1 若所选案例排名 <=6（前三分之一）。choice=none_of_book、标的退市或 kline 断档 → unresolvable（计数公示，不进分母）。随机基线 = 6/18 = 1/3，与实测命中率并列公示",
+  "J7": "仅结算『该标的在判断后 63 交易日内实际进入 CATCH 且触发 X-STOP』的记录。settle.py 按预注册谓词对该次失败机械归因弱环集合 W：gate ∈ W 若入场日 gate_state ∉ {GREEN, FLIP_BACK} 或持仓期内闸门转 RED；volume ∈ W 若入场日 capitulation=false 或无量能数据；stabilization ∈ W 若入场日 checklist_n <= 3；time_tier ∈ W 若入场日 tier_time ∈ {DEAD_ZONE, -}；semantic ∈ W 若持仓期内任一跑批该标的 p_terminal >= 0.35 或其 J1 记录结算为 1。hit = 1 若预测环 ∈ W；W 为空 → unresolvable。预测 none_weak 的记录改按『链条守住』结算：hit = 1 若该标的接刀后 63 交易日内未触发 X-STOP（未接刀 → unresolvable）。其余未接刀或接刀后未触发 X-STOP 的记录 → unresolvable（计数公示）。随机基线 = 逐样本 mean(|W|/5)，与命中率并列公示（W 是集合命中，必须公示基线防虚高）",
+  "J8": "hit = 1 若判断日后 5 交易日已实现波动 sigma5（未来 5 根日 log 收益标准差）>= 1.25 × sigma20（判断日前 20 根日 log 收益标准差，判断时随 aux 落盘冻结）；前向不足 5 根 → pending，退市/断档 → unresolvable。与 J2 口径刻意不同：J2 结算方向性净移动（|5日收益|>=2×ATR14%），J8 结算波动放大（sigma 比值）——一概率一口径（RL-6）。另设组对比公示：p>=0.6 分歧组 vs p<0.4 无分歧组的 median(sigma5/sigma20)，0.4<=p<0.6 中间带不入组对比但正常进 Brier；任一组 n<30 该组只显示『收集中 x/30』（RL-4）",
   "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
   "heat": "|5 日前向收益|>=2×ATR14%",
   "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
  },
- "outcome_defs_sha": "e40741506f8bfd43",
+ "outcome_defs_sha": "94469c10cab3da65",
  "jev": {
   "J1": {
    "question_id": "J1",
    "outcome_def": "1 若 180 日内触发 X-EVENT 类事件或较 veto 日再跌 90%",
    "n_total": 0,
-   "n_pending": 116,
+   "n_pending": 164,
    "n_unresolvable": 0,
    "conclusive": false,
    "base_rate": null,
@@ -32,7 +35,7 @@
    "question_id": "J2",
    "outcome_def": "1 若 |5 日前向收益| >= 2×ATR14%",
    "n_total": 0,
-   "n_pending": 116,
+   "n_pending": 164,
    "n_unresolvable": 0,
    "conclusive": false,
    "base_rate": null,
@@ -45,7 +48,7 @@
    "question_id": "J3",
    "outcome_def": "1 若事件后 3 日 VIX 或已实现波动跳升 >15%",
    "n_total": 20,
-   "n_pending": 20,
+   "n_pending": 44,
    "n_unresolvable": 0,
    "conclusive": false,
    "base_rate": null,
@@ -71,7 +74,7 @@
    "question_id": "J5",
    "outcome_def": "1 若 3 日内 |累计收益| >= 10%（movers_history 快照价口径）",
    "n_total": 33,
-   "n_pending": 76,
+   "n_pending": 178,
    "n_unresolvable": 0,
    "conclusive": true,
    "base_rate": 0.0,
@@ -137,6 +140,117 @@
    "median_pct": null,
    "worst_pct": null,
    "note": "暂无拦截样本"
+  },
+  "J6": {
+   "question_id": "J6",
+   "outcome_def": "episode 完成日 = 判断日后价格自『判断日后最低点』反弹 >=20% 或满 252 交易日（先到者）。完成日用库内 kline 机械计算本轮实际签名 {realized_dd = 触发时 52 周峰到 episode 最低点跌幅%, realized_days = 峰到最低点交易日数}；将刀谱 18 例按签名距离 d = |dd_case - realized_dd|/25 + |ln(days_case) - ln(realized_days)|/1.2 升序排名（尺度常数 25 与 1.2 为刀谱 18 例自身 dd 标准差与 ln(days) 标准差，一次计算后冻结入 outcome_def）；hit=1 若所选案例排名 <=6（前三分之一）。choice=none_of_book、标的退市或 kline 断档 → unresolvable（计数公示，不进分母）。随机基线 = 6/18 = 1/3，与实测命中率并列公示",
+   "n_total": 0,
+   "n_pending": 4,
+   "n_unresolvable": {
+    "none_of_book": 2,
+    "broken": 0
+   },
+   "conclusive": false,
+   "hit_rate": null,
+   "wilson95": null,
+   "brier": null,
+   "brier_baseline_climatology": null,
+   "reliability": null,
+   "note": "收集中 0/30",
+   "random_baseline": 0.3333,
+   "horizon_note": "长周期结算中（horizon 252 交易日，慢桶）"
+  },
+  "J7": {
+   "question_id": "J7",
+   "outcome_def": "仅结算『该标的在判断后 63 交易日内实际进入 CATCH 且触发 X-STOP』的记录。settle.py 按预注册谓词对该次失败机械归因弱环集合 W：gate ∈ W 若入场日 gate_state ∉ {GREEN, FLIP_BACK} 或持仓期内闸门转 RED；volume ∈ W 若入场日 capitulation=false 或无量能数据；stabilization ∈ W 若入场日 checklist_n <= 3；time_tier ∈ W 若入场日 tier_time ∈ {DEAD_ZONE, -}；semantic ∈ W 若持仓期内任一跑批该标的 p_terminal >= 0.35 或其 J1 记录结算为 1。hit = 1 若预测环 ∈ W；W 为空 → unresolvable。预测 none_weak 的记录改按『链条守住』结算：hit = 1 若该标的接刀后 63 交易日内未触发 X-STOP（未接刀 → unresolvable）。其余未接刀或接刀后未触发 X-STOP 的记录 → unresolvable（计数公示）。随机基线 = 逐样本 mean(|W|/5)，与命中率并列公示（W 是集合命中，必须公示基线防虚高）",
+   "n_total": 0,
+   "n_pending": 6,
+   "n_unresolvable": 0,
+   "conclusive": false,
+   "hit_rate": null,
+   "wilson95": null,
+   "brier": null,
+   "brier_baseline_climatology": null,
+   "reliability": null,
+   "note": "收集中 0/30",
+   "random_baseline_mean_W_over_5": null,
+   "confusion": {
+    "n": 0,
+    "matrix": {
+     "gate": {
+      "gate": 0,
+      "volume": 0,
+      "stabilization": 0,
+      "time_tier": 0,
+      "semantic": 0
+     },
+     "volume": {
+      "gate": 0,
+      "volume": 0,
+      "stabilization": 0,
+      "time_tier": 0,
+      "semantic": 0
+     },
+     "stabilization": {
+      "gate": 0,
+      "volume": 0,
+      "stabilization": 0,
+      "time_tier": 0,
+      "semantic": 0
+     },
+     "time_tier": {
+      "gate": 0,
+      "volume": 0,
+      "stabilization": 0,
+      "time_tier": 0,
+      "semantic": 0
+     },
+     "semantic": {
+      "gate": 0,
+      "volume": 0,
+      "stabilization": 0,
+      "time_tier": 0,
+      "semantic": 0
+     },
+     "none_weak": {
+      "gate": 0,
+      "volume": 0,
+      "stabilization": 0,
+      "time_tier": 0,
+      "semantic": 0
+     }
+    },
+    "render": false,
+    "note": "预测环×机械归因环（W 集合）计数；n_total<30 只存不显（RL-4）"
+   }
+  },
+  "J8": {
+   "question_id": "J8",
+   "outcome_def": "hit = 1 若判断日后 5 交易日已实现波动 sigma5（未来 5 根日 log 收益标准差）>= 1.25 × sigma20（判断日前 20 根日 log 收益标准差，判断时随 aux 落盘冻结）；前向不足 5 根 → pending，退市/断档 → unresolvable。与 J2 口径刻意不同：J2 结算方向性净移动（|5日收益|>=2×ATR14%），J8 结算波动放大（sigma 比值）——一概率一口径（RL-6）。另设组对比公示：p>=0.6 分歧组 vs p<0.4 无分歧组的 median(sigma5/sigma20)，0.4<=p<0.6 中间带不入组对比但正常进 Brier；任一组 n<30 该组只显示『收集中 x/30』（RL-4）",
+   "n_total": 0,
+   "n_pending": 44,
+   "n_unresolvable": 0,
+   "conclusive": false,
+   "hit_rate": null,
+   "wilson95": null,
+   "brier": null,
+   "brier_baseline_climatology": null,
+   "reliability": null,
+   "note": "收集中 0/30",
+   "base_rate": null,
+   "group_contrast": {
+    "divergent": {
+     "n": 0,
+     "median_ratio": null,
+     "note": "收集中 0/30"
+    },
+    "non_divergent": {
+     "n": 0,
+     "median_ratio": null,
+     "note": "收集中 0/30"
+    },
+    "note": "0.4<=p<0.6 中间带不入组对比但正常进 Brier（预注册口径）"
+   }
   }
  },
  "knifescore": {
@@ -275,5 +389,84 @@
   },
   "note": "live=真实信号快照触发数；backtest=历史重放触发数；两列永不合并（RL-7）"
  },
- "change_log": []
+ "s_tier": {
+  "caliber_note": "已结=A 档执行口径（replay.atier_exec 同一段代码，RL-2）；GRANTED 与 CANDIDATE 分列、与全信号/假想回放永不合并（SR-3）",
+  "granted": {
+   "n": 0,
+   "win": 0,
+   "win_rate": null,
+   "wilson95": null,
+   "note": "收集中 0/30",
+   "mean_pct": null,
+   "worst_pct": null
+  },
+  "candidate": {
+   "n": 0,
+   "win": 0,
+   "win_rate": null,
+   "wilson95": null,
+   "note": "收集中 0/30",
+   "mean_pct": null,
+   "worst_pct": null
+  },
+  "rolling30": {
+   "n": 0,
+   "conclusive": false,
+   "win_rate": null,
+   "wilson95": null,
+   "note": "收集中 0/30"
+  },
+  "used_by_month": [
+   {
+    "month": "2026-09",
+    "max": 5,
+    "used": 0
+   }
+  ],
+  "shadow_counterfactual": {
+   "H9": {
+    "evaluated": 0,
+    "would_block": 0,
+    "blocked_outcomes": {
+     "n_settled": 0,
+     "win": 0,
+     "loss": 0,
+     "mean_pct": null
+    },
+    "note": "影子·不影响放行"
+   },
+   "H10": {
+    "evaluated": 0,
+    "would_block": 0,
+    "blocked_outcomes": {
+     "n_settled": 0,
+     "win": 0,
+     "loss": 0,
+     "mean_pct": null
+    },
+    "note": "影子·不影响放行"
+   },
+   "H11": {
+    "evaluated": 0,
+    "would_block": 0,
+    "blocked_outcomes": {
+     "n_settled": 0,
+     "win": 0,
+     "loss": 0,
+     "mean_pct": null
+    },
+    "note": "影子·不影响放行"
+   }
+  }
+ },
+ "change_log": [
+  {
+   "date": "2026-09-22",
+   "field": "outcome_defs",
+   "old_sha": "e40741506f8bfd43",
+   "new_sha": "94469c10cab3da65",
+   "ack": true,
+   "note": "v1.3 新增 J6/J7/J8 预注册口径（纯增列，J1-J5 旧键字节不动；预注册于结算之前，RL-2 留痕通道）"
+  }
+ ]
 }

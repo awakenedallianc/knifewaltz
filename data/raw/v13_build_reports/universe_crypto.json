@@ -1,0 +1,24 @@
+{
+ "files_written": [
+  "D:\\knifewaltz\\src\\kw\\universe.py",
+  "D:\\knifewaltz\\src\\kw\\fetchers\\coingecko.py",
+  "D:\\knifewaltz\\src\\kw\\fetchers\\okx_kline.py",
+  "D:\\knifewaltz\\scripts\\binance_seed.py",
+  "D:\\knifewaltz\\data\\state\\universe_list.json",
+  "D:\\knifewaltz\\data\\state\\universe_backfill.json",
+  "D:\\knifewaltz\\data\\seed\\kw_crypto_seed_v13.tar.gz（本地产物，挂 Release 资产用，不进 git）",
+  "D:\\knifewaltz\\docs\\data\\kline\\cg_*.json + seed_manifest.json + 550 美股 kline（docs 不进 git，Actions cache 持久化）"
+ ],
+ "public_interface": [
+  "universe.fetch(cfg: dict, settings: dict) -> {'metrics': [], 'news': [], 'notes': str} — heavy 入口：探针门→榜单三级降级→绑定分层→回填状态机步（增量前、300s 墙钟）→C-FULL 日增量→C-SEED 收盘续写→cg_1y 队列→universe_list.json 落盘；metrics 恒空（sqlite_policy：不为宇宙新增 px 序列，store 零触达）",
+  "universe.run_backfill_step(coins=None, deadline_s=300, state_path=None, n_cap=None, allow_okx_hist=True) -> {'phase','fetched','todo','failed_n'} — 回填状态机单步（fetch 内已自动调用；也可独立调）；allow_okx_hist=False 时 crypto_okx 相位跳过且不推进（B10）",
+  "universe.request_cg_1y(cg_ids: list[str]) -> int — cg_1y 按需入队（cut_list#6：仅 J1 晋升候选/day_losers 触发时由 jev/stier 调用；只收 rank<=200 非稳定币 C-LIST 币），下次 heavy 消化 ≤10 币/跑批",
+  "universe.channel_universe(phase, coins=None, state=None) -> list[str] — 各相位回填全集；'stocks' = sp500.csv ∪ ndx100.json ∪ config.yaml t2c（现 550，universe_stocks 交付 t2c 后自动 625）",
+  "universe.probe_gate(path=None) -> {cg_markets,cg_category,cg_chart,paprika,okx_hist: bool, mode, detail} — B10 门：本机恒放行，机房凭 probe_datacenter.json",
+  "okx_kline.fetch_incremental(http, inst_id) / fetch_full(http, inst_id) / write_kline_file(key, symbol, rows, label, channel, close_only, source) / merge_rows(old, new) / read_kline_file(key) / usdt_spot_instruments(http) / spot_last_prices(http)",
+  "coingecko.fetch_markets(http) / fetch_stable_ids(http) / fetch_paprika(http) / fetch_chart_1y(http, cg_id) / make_http()（6s 间隔）",
+  "scripts/binance_seed.py：无参=本地建种子（GITHUB_ACTIONS 下拒绝，exit 1）；--restore [TAR]=零网络解包恢复到 docs/data/kline/（生产恢复步用这条；已有更全文件不回退）"
+ ],
+ "test_results": "自测全过（离线 41 项 + 实测）：[1] 分层计数实跑 C-FULL 176 / C-SEED 57 / C-LIST 267（含稳定币 59）/ total 500——与规格 ≈185/63/248 的偏差为 2026-09-22 当日榜单/OKX 上下架真实漂移，逐币口径徽章上墙；[2] 状态机全相位走通 crypto_okx(172 done+VVV/PONS 上市不足60根诚实 failed)→crypto_seed(57 tar 物化)→stocks(778，EA 源失效 failed 3 次剔除)→cg_1y→done，三次中断重跑零重抓（done 断点持久）、deadline 墙钟中断实测、N 上限实测；[3] 生产零 Binance：三模块静态断言无 binance.com；binance_seed build 在 GITHUB_ACTIONS=true 下拒绝（exit 1）、--restore 允许；[4] B10 三级降级链实测：L1 CG 禁用→Paprika 实拉 494 行（cg_id 快照映射）、L2 全禁→昨日快照+asof、L3 无快照→『OKX 交易对池+现有 T1 crypto』降级文案落 universe_list，probe 明细/probe_mode 同落盘，回填禁用不推进相位；[5] 绑定偏差>20% 拒绑当场抓到 3 个同名代币（AI→artificial-inu、ONE→cross-2、harmony vs OKX ONE-USDT 价差 30% 拒绑后经 Binance 种子通道正确回收为 C-SEED）；[6] C-SEED 收盘续写实测 o=h=l=c、v=0、close_only 标志，快照日不续写；cg_1y 按需实拉 332 根仅收盘；[7] engine.load_kline 直读 cg_ 文件 1100 根通过；重写无新数据字节级不变；heavy 净增实测 44-97s（含回填批），稳态 ≈60s 在预算内。store 零触达（零 Store 引用）。",
+ "notes_for_integrator": "run.py 接线：fetcher 循环加 (\"universe\", universe)（from kw import universe；返回 metrics 恒空、notes 首段为分层计数），建议排在 knives 之后（无硬依赖；BTC/ETH kline 由 T1 通道产）。契约点：[a] probe_datacenter.json（ops 槽）宽容解析已实现，建议键名 cg_markets / cg_category_stablecoins / cg_market_chart / paprika_tickers / okx_history_candles，条目含 ok:bool 或 status:pass|fail 或 http:int 任一即可；机房无此文件=CG/Paprika/history-candles 全禁用（绝不静默）。[b] config.yaml t2c（universe_stocks 槽）：channel_universe('stocks') 容忍 t2c 为 {hsi:[...],adr:[...]} 或列表、元素 str 或 {symbol}——交付后自动 625，现为 550（US 池），不造名单。[c] universe_list.json schema（render_backend 消费）见 universe.py 模块 docstring：coins 行含 layer(C-FULL|C-SEED|C-LIST)+stable+channel（口径徽章枚举：全K线 OKX/种子+收盘续写/仅榜单/稳定币/1年·收盘·CoinGecko/T1 归并（Yahoo））+key(kline 文件键，BTC/ETH 即 BTC-USD/ETH-USD)+span+delisted_date+failed_bindings。[d] universe_backfill.json 逐字 schema {phase,done,failed,asof} + cg_1y_queue（cut_list#6 按需队列），随 daily.yml 既有 Commit state 步进 git。[e] daily.yml（ops P3）：cache miss 时下载 Release 种子资产后跑 python scripts/binance_seed.py --restore <tar>；种子资产 data/seed/kw_crypto_seed_v13.tar.gz（867KB/57 币）需人工挂 Release；建议 .gitignore 加 data/seed/（该文件非本槽 owns，未动）。[f] 顺序依赖：universe.fetch 内部已按『回填在增量步之前』执行，run.py 无需单列回填步；初始回填期单跑批峰值 +300s 墙钟硬顶。[g] cg_1y 触发接线：jev/stier 在 J1 晋升候选或 day_losers 时调 universe.request_cg_1y([cg_id...])。[h] 已知漂移记录：VVV/PONS 上市<60 根、EA Yahoo chart 已失效（三次后剔除，universe_n 如实缩水）——可入 PROGRESS 断点记录（PROGRESS.md 归 integrator writebacks，本槽未动）。"
+}

@@ -4,7 +4,12 @@ on:
     - cron: '37 23 * * *'   # 06:37 曼谷（美股收盘后）
     - cron: '37 11 * * *'   # 18:37 曼谷
     - cron: '37 1 * * 0'    # 08:37 曼谷 周日（周复盘跑：--weekly-review --walkforward）
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      enable_finra:
+        description: 'D7 首跑门：本次跑批临时置 KW_ENABLE_FINRA=1（长期门自动读 probe_datacenter.json 探针凭证）'
+        type: boolean
+        default: false
   push:
     branches: [main]
     paths: ['src/**', 'templates/**', 'config.yaml', 'run.py', 'requirements.txt', '.github/workflows/daily.yml']
@@ -41,17 +46,70 @@ jobs:
         id: restore
         uses: actions/cache/restore@v4
         with:
+          # 注意：path 清单必须与 radar.yml 的 restore 逐字节一致——actions/cache 的版本哈希
+          # 由 path 文本参与计算，两端不一致 = radar 永远 miss（radar.yml 零改动铁律，step11/MA-9）
           path: |
             data/history.sqlite
             docs/data/kline
           key: kw-db-v1-${{ github.run_id }}
           restore-keys: kw-db-v1-
+      - name: Seed restore (cache miss 时从 Release 资产恢复加密种子 kline——生产 451 永不直连 Binance)
+        if: steps.restore.outputs.cache-matched-key == ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # 契约（universe_crypto 的 scripts/binance_seed.py 产出）：Release tag=kw-seed，
+          # 资产 kw_seed_kline.tar.gz，打包布局 `tar -czf … -C docs/data kline`（条目 kline/cg_*.json）
+          mkdir -p docs/data/kline
+          if gh release download kw-seed --repo "$GITHUB_REPOSITORY" --pattern 'kw_seed_kline.tar.gz' --output /tmp/kw_seed_kline.tar.gz 2>/dev/null; then
+            tar -xzf /tmp/kw_seed_kline.tar.gz -C docs/data
+            echo "::notice::seed 恢复完成：docs/data/kline 现有 $(ls docs/data/kline | wc -l) 个文件"
+          else
+            echo "::warning::kw-seed Release 资产不存在或下载失败——跳过（backfill 状态机将按既有通道重建；Binance-only 币种缺 3 年史，待本地重刷种子资产）"
+          fi
+      - name: FINRA gate (D7/MA-9：机房探针 pass 才置 KW_ENABLE_FINRA=1；dispatch 输入可单次强开做首跑验证)
+        env:
+          FORCE_FINRA: ${{ inputs.enable_finra == true && '1' || '0' }}
+        run: |
+          if [ "$FORCE_FINRA" = "1" ]; then
+            echo "KW_ENABLE_FINRA=1" >> "$GITHUB_ENV"
+            echo "::notice::FINRA 门：dispatch 临时强开（D7 首跑验证，仅本次跑批）"
+          elif python -c "import json,sys; d=json.load(open('data/state/probe_datacenter.json',encoding='utf-8')); sys.exit(0 if d.get('datacenter',{}).get('endpoints',{}).get('finra_partitions',{}).get('status')=='pass' else 1)" 2>/dev/null; then
+            echo "KW_ENABLE_FINRA=1" >> "$GITHUB_ENV"
+            echo "::notice::FINRA 门：探针凭证 pass，KW_ENABLE_FINRA=1"
+          else
+            echo "::notice::FINRA 门保持关（探针未跑或未过）——short_interest 全链 None，机房页如实缺席（D7）"
+          fi
+      - name: Backfill (增量前执行；300s 墙钟与断点续传由 universe_backfill 状态机内部执行，state 随下方 Commit state 步进 git)
+        timeout-minutes: 8
+        run: |
+          if python run.py --help 2>/dev/null | grep -q -- '--backfill'; then
+            python run.py --backfill
+          else
+            echo "::notice::run.py 尚未接线 --backfill（integrator P3 总装项）——本跑批跳过回填"
+          fi
       - name: Run pipeline (fetch → gates → knives → replay → ledger → render)
         run: python run.py
       - name: Weekly review (仅周日 08:37 曼谷 cron 触发)
         if: github.event.schedule == '37 1 * * 0'
         run: python run.py --weekly-review --walkforward
-      - name: Save history db + kline (保存键带 run_id，恢复用前缀命中最近一份；radar 只 restore 不 save)
+      - name: Pack heavy site exports into cache shuttle (B11：universe/profile 等 heavy 独产文件经 docs/data/kline/_heavy_site 随缓存进 radar，radar 只透传不重算)
+        if: success()
+        run: |
+          # radar.yml 零改动 + cache path 版本哈希锁死两条路径 → heavy 产出的站点数据文件
+          # 借道被缓存的 kline 子树运输；run.py --radar 恢复后将 _heavy_site/* 迁回 docs/data/
+          # （integrator 接线）。v1.3 文件未产出时本步零文件、缓存内容与现状一致。
+          rm -rf docs/data/kline/_heavy_site
+          mkdir -p docs/data/kline/_heavy_site
+          n=0
+          for p in universe.json jev_profiles.json stier_public.json payload.json; do
+            if [ -f "docs/data/$p" ]; then cp "docs/data/$p" docs/data/kline/_heavy_site/; n=$((n+1)); fi
+          done
+          if [ -d docs/data/profile ]; then cp -r docs/data/profile docs/data/kline/_heavy_site/; n=$((n+1)); fi
+          if [ "$n" = "0" ]; then rmdir docs/data/kline/_heavy_site; echo "shuttle: 无 v1.3 产物，跳过"; else
+            echo "shuttle: $(find docs/data/kline/_heavy_site -type f | wc -l) 个文件入缓存"
+          fi
+      - name: Save history db + kline (保存键带 run_id，恢复用前缀命中最近一份；radar 只 restore 不 save；path 清单必须与 radar.yml 逐字节一致)
         if: success()
         uses: actions/cache/save@v4
         with:
@@ -59,6 +117,8 @@ jobs:
             data/history.sqlite
             docs/data/kline
           key: kw-db-v1-${{ github.run_id }}
+      - name: Clean shuttle from heavy deploy (运输目录只进缓存不上 Pages)
+        run: rm -rf docs/data/kline/_heavy_site
       - name: Commit state (ledger / knife_states / replay cache — 跨跑批持久化)
         run: |
           git config user.name 'knifewaltz-bot'

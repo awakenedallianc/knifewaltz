@@ -6,7 +6,7 @@
   "cls": "equity_index",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 772.47998046875,
+  "px": 774.25,
   "bars": 752
  },
  {
@@ -16,7 +16,7 @@
   "cls": "equity_index",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 738.780029296875,
+  "px": 741.369873046875,
   "bars": 752
  },
  {
@@ -26,7 +26,7 @@
   "cls": "equity_index",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 285.4949951171875,
+  "px": 286.3800048828125,
   "bars": 752
  },
  {
@@ -36,7 +36,7 @@
   "cls": "equity_index",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 68.68000030517578,
+  "px": 68.83499908447266,
   "bars": 752
  },
  {
@@ -46,7 +46,7 @@
   "cls": "equity_index",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 34.834999084472656,
+  "px": 34.89500045776367,
   "bars": 752
  },
  {
@@ -56,7 +56,7 @@
   "cls": "equity_index",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 25.165000915527344,
+  "px": 25.225000381469727,
   "bars": 752
  },
  {
@@ -66,7 +66,7 @@
   "cls": "equity_index",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 90.45050048828125,
+  "px": 90.83499908447266,
   "bars": 752
  },
  {
@@ -76,7 +76,7 @@
   "cls": "equity_index",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 7755.25,
+  "px": 7772.18017578125,
   "bars": 752
  },
  {
@@ -86,7 +86,7 @@
   "cls": "equity_index",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 27052.056640625,
+  "px": 27119.671875,
   "bars": 752
  },
  {
@@ -126,7 +126,7 @@
   "cls": "commodity",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 397.8110046386719,
+  "px": 398.2099914550781,
   "bars": 752
  },
  {
@@ -136,7 +136,7 @@
   "cls": "commodity",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 59.375,
+  "px": 59.595001220703125,
   "bars": 752
  },
  {
@@ -146,7 +146,7 @@
   "cls": "commodity",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 147.81500244140625,
+  "px": 148.6699981689453,
   "bars": 752
  },
  {
@@ -156,7 +156,7 @@
   "cls": "commodity",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 10.3149995803833,
+  "px": 10.265000343322754,
   "bars": 752
  },
  {
@@ -166,7 +166,7 @@
   "cls": "commodity",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 28.645000457763672,
+  "px": 28.655000686645508,
   "bars": 752
  },
  {
@@ -176,7 +176,7 @@
   "cls": "commodity",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 86.82499694824219,
+  "px": 87.36000061035156,
   "bars": 752
  },
  {
@@ -186,7 +186,7 @@
   "cls": "commodity",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 42.90999984741211,
+  "px": 43.060001373291016,
   "bars": 752
  },
  {
@@ -196,7 +196,7 @@
   "cls": "crypto",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 85919.65625,
+  "px": 86075.4765625,
   "bars": 1097
  },
  {
@@ -206,7 +206,7 @@
   "cls": "crypto",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 2751.43994140625,
+  "px": 2759.090087890625,
   "bars": 1097
  },
  {
@@ -216,7 +216,7 @@
   "cls": "futures",
   "tier": "T1F",
   "asof": "2026-09-21",
-  "px": 91.69000244140625,
+  "px": 92.48999786376953,
   "bars": 1257
  },
  {
@@ -226,7 +226,7 @@
   "cls": "futures",
   "tier": "T1F",
   "asof": "2026-09-21",
-  "px": 4380.7998046875,
+  "px": 4386.60009765625,
   "bars": 1258
  },
  {
@@ -236,7 +236,7 @@
   "cls": "futures",
   "tier": "T1F",
   "asof": "2026-09-21",
-  "px": 66.45500183105469,
+  "px": 66.58999633789062,
   "bars": 1257
  },
  {
@@ -246,7 +246,7 @@
   "cls": "futures",
   "tier": "T1F",
   "asof": "2026-09-21",
-  "px": 2.8389999866485596,
+  "px": 2.822999954223633,
   "bars": 1258
  },
  {
@@ -256,7 +256,7 @@
   "cls": "futures",
   "tier": "T1F",
   "asof": "2026-09-21",
-  "px": 6.761000156402588,
+  "px": 6.7779998779296875,
   "bars": 1258
  },
  {
@@ -266,7 +266,7 @@
   "cls": "futures",
   "tier": "T1F",
   "asof": "2026-09-21",
-  "px": 1801.5,
+  "px": 1808.0,
   "bars": 1257
  },
  {
@@ -276,7 +276,7 @@
   "cls": "futures",
   "tier": "T1F",
   "asof": "2026-09-21",
-  "px": 5.4125000000000005,
+  "px": 5.43,
   "bars": 1256
  },
  {
@@ -286,7 +286,7 @@
   "cls": "futures",
   "tier": "T1F",
   "asof": "2026-09-21",
-  "px": 13.2675,
+  "px": 13.27,
   "bars": 1256
  },
  {
@@ -316,7 +316,7 @@
   "cls": "futures",
   "tier": "T1F",
   "asof": "2026-09-21",
-  "px": 2.755,
+  "px": 2.745,
   "bars": 1258
  },
  {
@@ -336,7 +336,7 @@
   "cls": "futures",
   "tier": "T1F",
   "asof": "2026-09-21",
-  "px": 5335.0,
+  "px": 5307.0,
   "bars": 1257
  },
  {
@@ -346,7 +346,7 @@
   "cls": "futures",
   "tier": "T1F",
   "asof": "2026-09-21",
-  "px": 2.22125,
+  "px": 2.2217500305175784,
   "bars": 1256
  },
  {
@@ -356,7 +356,7 @@
   "cls": "futures",
   "tier": "T1F",
   "asof": "2026-09-21",
-  "px": 0.6977500152587891,
+  "px": 0.6982499694824219,
   "bars": 1256
  },
  {
@@ -366,7 +366,7 @@
   "cls": "futures",
   "tier": "T1F",
   "asof": "2026-09-21",
-  "px": 0.006393999792635441,
+  "px": 0.00639350013807416,
   "bars": 1258
  },
  {
@@ -376,7 +376,7 @@
   "cls": "futures",
   "tier": "T1F",
   "asof": "2026-09-21",
-  "px": 1.1509000062942505,
+  "px": 1.1503499746322632,
   "bars": 1257
  },
  {
@@ -386,7 +386,7 @@
   "cls": "futures",
   "tier": "T1F",
   "asof": "2026-09-21",
-  "px": 7824.25,
+  "px": 7842.75,
   "bars": 1258
  },
  {
@@ -396,7 +396,7 @@
   "cls": "futures",
   "tier": "T1F",
   "asof": "2026-09-21",
-  "px": 30675.75,
+  "px": 30783.0,
   "bars": 1258
  },
  {
@@ -410,13 +410,303 @@
   "bars": 1258
  },
  {
+  "symbol": "RB=F",
+  "key": "RB_F",
+  "name": "RBOB汽油期货",
+  "cls": "futures",
+  "tier": "T1F",
+  "asof": "2026-09-21",
+  "px": 3.1967999935150146,
+  "bars": 1258
+ },
+ {
+  "symbol": "HO=F",
+  "key": "HO_F",
+  "name": "取暖油期货",
+  "cls": "futures",
+  "tier": "T1F",
+  "asof": "2026-09-21",
+  "px": 4.732399940490723,
+  "bars": 1258
+ },
+ {
+  "symbol": "OJ=F",
+  "key": "OJ_F",
+  "name": "橙汁期货",
+  "cls": "futures",
+  "tier": "T1F",
+  "asof": "2026-09-21",
+  "px": 1.4789999389648438,
+  "bars": 1258
+ },
+ {
+  "symbol": "XLF",
+  "key": "XLF",
+  "name": "金融行业ETF",
+  "cls": "sector_etf",
+  "tier": "T1S",
+  "asof": "2026-09-21",
+  "px": 56.025001525878906,
+  "bars": 752
+ },
+ {
+  "symbol": "XLE",
+  "key": "XLE",
+  "name": "能源行业ETF",
+  "cls": "sector_etf",
+  "tier": "T1S",
+  "asof": "2026-09-21",
+  "px": 62.85499954223633,
+  "bars": 752
+ },
+ {
+  "symbol": "XLK",
+  "key": "XLK",
+  "name": "科技行业ETF",
+  "cls": "sector_etf",
+  "tier": "T1S",
+  "asof": "2026-09-21",
+  "px": 194.58999633789062,
+  "bars": 752
+ },
+ {
+  "symbol": "XLV",
+  "key": "XLV",
+  "name": "医疗保健ETF",
+  "cls": "sector_etf",
+  "tier": "T1S",
+  "asof": "2026-09-21",
+  "px": 169.4199981689453,
+  "bars": 752
+ },
+ {
+  "symbol": "XLI",
+  "key": "XLI",
+  "name": "工业行业ETF",
+  "cls": "sector_etf",
+  "tier": "T1S",
+  "asof": "2026-09-21",
+  "px": 170.3699951171875,
+  "bars": 752
+ },
+ {
+  "symbol": "XLY",
+  "key": "XLY",
+  "name": "可选消费ETF",
+  "cls": "sector_etf",
+  "tier": "T1S",
+  "asof": "2026-09-21",
+  "px": 112.52999877929688,
+  "bars": 752
+ },
+ {
+  "symbol": "XLP",
+  "key": "XLP",
+  "name": "必需消费ETF",
+  "cls": "sector_etf",
+  "tier": "T1S",
+  "asof": "2026-09-21",
+  "px": 82.16999816894531,
+  "bars": 752
+ },
+ {
+  "symbol": "XLU",
+  "key": "XLU",
+  "name": "公用事业ETF",
+  "cls": "sector_etf",
+  "tier": "T1S",
+  "asof": "2026-09-21",
+  "px": 40.69499969482422,
+  "bars": 752
+ },
+ {
+  "symbol": "XLB",
+  "key": "XLB",
+  "name": "原材料ETF",
+  "cls": "sector_etf",
+  "tier": "T1S",
+  "asof": "2026-09-21",
+  "px": 49.92689895629883,
+  "bars": 752
+ },
+ {
+  "symbol": "XLRE",
+  "key": "XLRE",
+  "name": "房地产ETF",
+  "cls": "sector_etf",
+  "tier": "T1S",
+  "asof": "2026-09-21",
+  "px": 42.61989974975586,
+  "bars": 752
+ },
+ {
+  "symbol": "XLC",
+  "key": "XLC",
+  "name": "通信服务ETF",
+  "cls": "sector_etf",
+  "tier": "T1S",
+  "asof": "2026-09-21",
+  "px": 115.11000061035156,
+  "bars": 752
+ },
+ {
+  "symbol": "SMH",
+  "key": "SMH",
+  "name": "半导体ETF",
+  "cls": "sector_etf",
+  "tier": "T1S",
+  "asof": "2026-09-21",
+  "px": 595.864990234375,
+  "bars": 752
+ },
+ {
+  "symbol": "KRE",
+  "key": "KRE",
+  "name": "区域银行ETF",
+  "cls": "sector_etf",
+  "tier": "T1S",
+  "asof": "2026-09-21",
+  "px": 72.36000061035156,
+  "bars": 752
+ },
+ {
+  "symbol": "XBI",
+  "key": "XBI",
+  "name": "生物科技ETF",
+  "cls": "sector_etf",
+  "tier": "T1S",
+  "asof": "2026-09-21",
+  "px": 158.0500030517578,
+  "bars": 752
+ },
+ {
+  "symbol": "ITB",
+  "key": "ITB",
+  "name": "住宅建筑ETF",
+  "cls": "sector_etf",
+  "tier": "T1S",
+  "asof": "2026-09-21",
+  "px": 88.48500061035156,
+  "bars": 752
+ },
+ {
+  "symbol": "JETS",
+  "key": "JETS",
+  "name": "航空业ETF",
+  "cls": "sector_etf",
+  "tier": "T1S",
+  "asof": "2026-09-21",
+  "px": 28.94499969482422,
+  "bars": 752
+ },
+ {
+  "symbol": "OIH",
+  "key": "OIH",
+  "name": "油田服务ETF",
+  "cls": "sector_etf",
+  "tier": "T1S",
+  "asof": "2026-09-21",
+  "px": 399.32000732421875,
+  "bars": 752
+ },
+ {
+  "symbol": "XME",
+  "key": "XME",
+  "name": "金属矿业ETF",
+  "cls": "sector_etf",
+  "tier": "T1S",
+  "asof": "2026-09-21",
+  "px": 109.2699966430664,
+  "bars": 752
+ },
+ {
+  "symbol": "GDX",
+  "key": "GDX",
+  "name": "金矿ETF",
+  "cls": "sector_etf",
+  "tier": "T1S",
+  "asof": "2026-09-21",
+  "px": 94.44499969482422,
+  "bars": 752
+ },
+ {
+  "symbol": "GDXJ",
+  "key": "GDXJ",
+  "name": "小型金矿ETF",
+  "cls": "sector_etf",
+  "tier": "T1S",
+  "asof": "2026-09-21",
+  "px": 122.70999908447266,
+  "bars": 752
+ },
+ {
+  "symbol": "LQD",
+  "key": "LQD",
+  "name": "投资级公司债ETF",
+  "cls": "credit_etf",
+  "tier": "T1C",
+  "asof": "2026-09-21",
+  "px": 104.99500274658203,
+  "bars": 752
+ },
+ {
+  "symbol": "BKLN",
+  "key": "BKLN",
+  "name": "银行贷款ETF",
+  "cls": "credit_etf",
+  "tier": "T1C",
+  "asof": "2026-09-21",
+  "px": 20.565000534057617,
+  "bars": 752
+ },
+ {
+  "symbol": "PFF",
+  "key": "PFF",
+  "name": "优先股ETF",
+  "cls": "credit_etf",
+  "tier": "T1C",
+  "asof": "2026-09-21",
+  "px": 30.174299240112305,
+  "bars": 752
+ },
+ {
+  "symbol": "EMB",
+  "key": "EMB",
+  "name": "新兴市场美元债ETF",
+  "cls": "credit_etf",
+  "tier": "T1C",
+  "asof": "2026-09-21",
+  "px": 93.75499725341797,
+  "bars": 752
+ },
+ {
+  "symbol": "HYG",
+  "key": "HYG",
+  "name": "高收益债ETF",
+  "cls": "credit_etf",
+  "tier": "T1C",
+  "asof": "2026-09-21",
+  "px": 78.69499969482422,
+  "bars": 752
+ },
+ {
+  "symbol": "IEF",
+  "key": "IEF",
+  "name": "美债7-10年ETF",
+  "cls": "credit_etf",
+  "tier": "T1C",
+  "asof": "2026-09-21",
+  "px": 91.07499694824219,
+  "bars": 752
+ },
+ {
   "symbol": "CSGP",
   "key": "CSGP",
   "name": "CSGP",
   "cls": "equity_single",
   "tier": "T2",
   "asof": "2026-09-21",
-  "px": 29.520999908447266,
+  "px": 29.309999465942383,
   "bars": 752
  },
  {
@@ -426,7 +716,7 @@
   "cls": "equity_single",
   "tier": "T2",
   "asof": "2026-09-21",
-  "px": 46.5099983215332,
+  "px": 46.654998779296875,
   "bars": 751
  },
  {
@@ -436,7 +726,7 @@
   "cls": "equity_single",
   "tier": "T2",
   "asof": "2026-09-21",
-  "px": 140.13999938964844,
+  "px": 140.69500732421875,
   "bars": 752
  },
  {
@@ -446,7 +736,7 @@
   "cls": "equity_single",
   "tier": "T2",
   "asof": "2026-09-21",
-  "px": 43.185001373291016,
+  "px": 43.560001373291016,
   "bars": 752
  },
  {
@@ -456,7 +746,7 @@
   "cls": "equity_single",
   "tier": "T2",
   "asof": "2026-09-21",
-  "px": 303.2749938964844,
+  "px": 303.3349914550781,
   "bars": 752
  },
  {
@@ -466,7 +756,7 @@
   "cls": "equity_single",
   "tier": "T2",
   "asof": "2026-09-21",
-  "px": 125.93000030517578,
+  "px": 125.33000183105469,
   "bars": 752
  },
  {
@@ -476,7 +766,7 @@
   "cls": "equity_single",
   "tier": "T2",
   "asof": "2026-09-21",
-  "px": 327.7250061035156,
+  "px": 332.9200134277344,
   "bars": 752
  },
  {
@@ -486,7 +776,7 @@
   "cls": "equity_single",
   "tier": "T2",
   "asof": "2026-09-21",
-  "px": 165.6199951171875,
+  "px": 166.6199951171875,
   "bars": 752
  },
  {
@@ -496,7 +786,7 @@
   "cls": "equity_single",
   "tier": "T2",
   "asof": "2026-09-21",
-  "px": 101.65010070800781,
+  "px": 100.75499725341797,
   "bars": 752
  },
  {
@@ -506,7 +796,7 @@
   "cls": "equity_single",
   "tier": "T2",
   "asof": "2026-09-21",
-  "px": 148.72999572753906,
+  "px": 148.52499389648438,
   "bars": 752
  },
  {
@@ -516,7 +806,7 @@
   "cls": "equity_single",
   "tier": "T2",
   "asof": "2026-09-21",
-  "px": 36.06990051269531,
+  "px": 36.07500076293945,
   "bars": 752
  },
  {
@@ -526,27 +816,7 @@
   "cls": "equity_single",
   "tier": "T2",
   "asof": "2026-09-21",
-  "px": 71.47000122070312,
-  "bars": 752
- },
- {
-  "symbol": "FICO",
-  "key": "FICO",
-  "name": "FICO",
-  "cls": "equity_single",
-  "tier": "T2",
-  "asof": "2026-09-21",
-  "px": 927.6699829101562,
-  "bars": 752
- },
- {
-  "symbol": "ROL",
-  "key": "ROL",
-  "name": "ROL",
-  "cls": "equity_single",
-  "tier": "T2",
-  "asof": "2026-09-21",
-  "px": 32.55500030517578,
+  "px": 71.66000366210938,
   "bars": 752
  },
  {
@@ -556,7 +826,27 @@
   "cls": "equity_single",
   "tier": "T2",
   "asof": "2026-09-21",
-  "px": 43.9900016784668,
+  "px": 43.95500183105469,
+  "bars": 752
+ },
+ {
+  "symbol": "FICO",
+  "key": "FICO",
+  "name": "FICO",
+  "cls": "equity_single",
+  "tier": "T2",
+  "asof": "2026-09-21",
+  "px": 930.5499877929688,
+  "bars": 752
+ },
+ {
+  "symbol": "ROL",
+  "key": "ROL",
+  "name": "ROL",
+  "cls": "equity_single",
+  "tier": "T2",
+  "asof": "2026-09-21",
+  "px": 32.61000061035156,
   "bars": 752
  },
  {
@@ -566,7 +856,394 @@
   "cls": "equity_single",
   "tier": "T2",
   "asof": "2026-09-21",
-  "px": 56.06999969482422,
+  "px": 55.880001068115234,
   "bars": 752
+ },
+ {
+  "symbol": "ALNY",
+  "key": "ALNY",
+  "name": "ALNY",
+  "cls": "equity_single",
+  "tier": "T2",
+  "asof": "2026-09-21",
+  "px": 244.60000610351562,
+  "bars": 752
+ },
+ {
+  "symbol": "BABA",
+  "key": "BABA",
+  "name": "阿里巴巴",
+  "cls": "equity_single",
+  "tier": "T2C",
+  "asof": "2026-09-21",
+  "px": 115.9000015258789,
+  "bars": 752
+ },
+ {
+  "symbol": "JD",
+  "key": "JD",
+  "name": "京东",
+  "cls": "equity_single",
+  "tier": "T2C",
+  "asof": "2026-09-21",
+  "px": 27.2549991607666,
+  "bars": 752
+ },
+ {
+  "symbol": "PDD",
+  "key": "PDD",
+  "name": "拼多多",
+  "cls": "equity_single",
+  "tier": "T2C",
+  "asof": "2026-09-21",
+  "px": 79.59500122070312,
+  "bars": 752
+ },
+ {
+  "symbol": "BIDU",
+  "key": "BIDU",
+  "name": "百度",
+  "cls": "equity_single",
+  "tier": "T2C",
+  "asof": "2026-09-21",
+  "px": 92.38999938964844,
+  "bars": 752
+ },
+ {
+  "symbol": "NTES",
+  "key": "NTES",
+  "name": "网易",
+  "cls": "equity_single",
+  "tier": "T2C",
+  "asof": "2026-09-21",
+  "px": 117.45999908447266,
+  "bars": 752
+ },
+ {
+  "symbol": "TME",
+  "key": "TME",
+  "name": "腾讯音乐",
+  "cls": "equity_single",
+  "tier": "T2C",
+  "asof": "2026-09-21",
+  "px": 8.132699966430664,
+  "bars": 752
+ },
+ {
+  "symbol": "BILI",
+  "key": "BILI",
+  "name": "哔哩哔哩",
+  "cls": "equity_single",
+  "tier": "T2C",
+  "asof": "2026-09-21",
+  "px": 15.164999961853027,
+  "bars": 752
+ },
+ {
+  "symbol": "IQ",
+  "key": "IQ",
+  "name": "爱奇艺",
+  "cls": "equity_single",
+  "tier": "ORNAMENT",
+  "asof": "2026-09-21",
+  "px": 0.9907000064849854,
+  "bars": 752,
+  "ornament_reason": "仙股 <$2（$0.99）"
+ },
+ {
+  "symbol": "NIO",
+  "key": "NIO",
+  "name": "蔚来",
+  "cls": "equity_single",
+  "tier": "T2C",
+  "asof": "2026-09-21",
+  "px": 3.6600000858306885,
+  "bars": 752
+ },
+ {
+  "symbol": "XPEV",
+  "key": "XPEV",
+  "name": "小鹏汽车",
+  "cls": "equity_single",
+  "tier": "T2C",
+  "asof": "2026-09-21",
+  "px": 10.444999694824219,
+  "bars": 752
+ },
+ {
+  "symbol": "LI",
+  "key": "LI",
+  "name": "理想汽车",
+  "cls": "equity_single",
+  "tier": "T2C",
+  "asof": "2026-09-21",
+  "px": 11.505000114440918,
+  "bars": 752
+ },
+ {
+  "symbol": "TCOM",
+  "key": "TCOM",
+  "name": "携程集团",
+  "cls": "equity_single",
+  "tier": "T2C",
+  "asof": "2026-09-21",
+  "px": 40.70000076293945,
+  "bars": 752
+ },
+ {
+  "symbol": "YUMC",
+  "key": "YUMC",
+  "name": "百胜中国",
+  "cls": "equity_single",
+  "tier": "T2C",
+  "asof": "2026-09-21",
+  "px": 41.41999816894531,
+  "bars": 752
+ },
+ {
+  "symbol": "BEKE",
+  "key": "BEKE",
+  "name": "贝壳",
+  "cls": "equity_single",
+  "tier": "T2C",
+  "asof": "2026-09-21",
+  "px": 16.434999465942383,
+  "bars": 752
+ },
+ {
+  "symbol": "ZTO",
+  "key": "ZTO",
+  "name": "中通快递",
+  "cls": "equity_single",
+  "tier": "T2C",
+  "asof": "2026-09-21",
+  "px": 19.209999084472656,
+  "bars": 752
+ },
+ {
+  "symbol": "HTHT",
+  "key": "HTHT",
+  "name": "华住集团",
+  "cls": "equity_single",
+  "tier": "T2C",
+  "asof": "2026-09-21",
+  "px": 43.790000915527344,
+  "bars": 752
+ },
+ {
+  "symbol": "EDU",
+  "key": "EDU",
+  "name": "新东方",
+  "cls": "equity_single",
+  "tier": "T2C",
+  "asof": "2026-09-21",
+  "px": 55.17499923706055,
+  "bars": 752
+ },
+ {
+  "symbol": "TAL",
+  "key": "TAL",
+  "name": "好未来",
+  "cls": "equity_single",
+  "tier": "T2C",
+  "asof": "2026-09-21",
+  "px": 11.859999656677246,
+  "bars": 752
+ },
+ {
+  "symbol": "GDS",
+  "key": "GDS",
+  "name": "万国数据",
+  "cls": "equity_single",
+  "tier": "T2C",
+  "asof": "2026-09-21",
+  "px": 34.724998474121094,
+  "bars": 752
+ },
+ {
+  "symbol": "VNET",
+  "key": "VNET",
+  "name": "世纪互联",
+  "cls": "equity_single",
+  "tier": "T2C",
+  "asof": "2026-09-21",
+  "px": 7.284999847412109,
+  "bars": 752
+ },
+ {
+  "symbol": "WB",
+  "key": "WB",
+  "name": "微博",
+  "cls": "equity_single",
+  "tier": "T2C",
+  "asof": "2026-09-21",
+  "px": 6.684999942779541,
+  "bars": 752
+ },
+ {
+  "symbol": "MOMO",
+  "key": "MOMO",
+  "name": "挚文集团",
+  "cls": "equity_single",
+  "tier": "ORNAMENT",
+  "asof": "2026-09-21",
+  "px": 5.0,
+  "bars": 752,
+  "ornament_reason": "小盘流动性（日成交额 <500 万美元）"
+ },
+ {
+  "symbol": "ATAT",
+  "key": "ATAT",
+  "name": "亚朵集团",
+  "cls": "equity_single",
+  "tier": "T2C",
+  "asof": "2026-09-21",
+  "px": 32.72999954223633,
+  "bars": 752
+ },
+ {
+  "symbol": "QFIN",
+  "key": "QFIN",
+  "name": "奇富科技",
+  "cls": "equity_single",
+  "tier": "T2C",
+  "asof": "2026-09-21",
+  "px": 8.085000038146973,
+  "bars": 752
+ },
+ {
+  "symbol": "FINV",
+  "key": "FINV",
+  "name": "信也科技",
+  "cls": "equity_single",
+  "tier": "ORNAMENT",
+  "asof": "2026-09-21",
+  "px": 3.2750000953674316,
+  "bars": 752,
+  "ornament_reason": "小盘流动性（日成交额 <500 万美元）"
+ },
+ {
+  "symbol": "LX",
+  "key": "LX",
+  "name": "乐信",
+  "cls": "equity_single",
+  "tier": "ORNAMENT",
+  "asof": "2026-09-21",
+  "px": 0.7750999927520752,
+  "bars": 752,
+  "ornament_reason": "小盘流动性 + 仙股 <$2（$0.78，慢性阴跌）"
+ },
+ {
+  "symbol": "NOAH",
+  "key": "NOAH",
+  "name": "诺亚财富",
+  "cls": "equity_single",
+  "tier": "ORNAMENT",
+  "asof": "2026-09-21",
+  "px": 8.156000137329102,
+  "bars": 752,
+  "ornament_reason": "小盘流动性（日成交额约 83 万美元，池内最差）"
+ },
+ {
+  "symbol": "RLX",
+  "key": "RLX",
+  "name": "雾芯科技",
+  "cls": "equity_single",
+  "tier": "ORNAMENT",
+  "asof": "2026-09-21",
+  "px": 1.7200000286102295,
+  "bars": 752,
+  "ornament_reason": "仙股 <$2（$1.73）"
+ },
+ {
+  "symbol": "YMM",
+  "key": "YMM",
+  "name": "满帮集团",
+  "cls": "equity_single",
+  "tier": "T2C",
+  "asof": "2026-09-21",
+  "px": 8.15999984741211,
+  "bars": 752
+ },
+ {
+  "symbol": "DIDIY",
+  "key": "DIDIY",
+  "name": "滴滴出行",
+  "cls": "equity_single",
+  "tier": "ORNAMENT",
+  "asof": "2026-09-21",
+  "px": 3.7100000381469727,
+  "bars": 752,
+  "ornament_reason": "粉单 PNK 仅观赏"
+ },
+ {
+  "symbol": "BZ",
+  "key": "BZ",
+  "name": "BOSS直聘",
+  "cls": "equity_single",
+  "tier": "T2C",
+  "asof": "2026-09-21",
+  "px": 14.430000305175781,
+  "bars": 752
+ },
+ {
+  "symbol": "KC",
+  "key": "KC",
+  "name": "金山云",
+  "cls": "equity_single",
+  "tier": "T2C",
+  "asof": "2026-09-21",
+  "px": 10.270000457763672,
+  "bars": 752
+ },
+ {
+  "symbol": "TIGR",
+  "key": "TIGR",
+  "name": "老虎证券",
+  "cls": "equity_single",
+  "tier": "T2C",
+  "asof": "2026-09-21",
+  "px": 4.889999866485596,
+  "bars": 752
+ },
+ {
+  "symbol": "FUTU",
+  "key": "FUTU",
+  "name": "富途控股",
+  "cls": "equity_single",
+  "tier": "T2C",
+  "asof": "2026-09-21",
+  "px": 114.8550033569336,
+  "bars": 752
+ },
+ {
+  "symbol": "1024.HK",
+  "key": "1024_HK",
+  "name": "Kuaishou Technology",
+  "cls": "equity_single",
+  "tier": "T2C",
+  "asof": "2026-09-21",
+  "px": 30.81999969482422,
+  "bars": 737
+ },
+ {
+  "symbol": "0241.HK",
+  "key": "0241_HK",
+  "name": "Alibaba Health Information Technology Ltd",
+  "cls": "equity_single",
+  "tier": "T2C",
+  "asof": "2026-09-21",
+  "px": 2.930000066757202,
+  "bars": 737
+ },
+ {
+  "symbol": "0881.HK",
+  "key": "0881_HK",
+  "name": "Zhongsheng Group Holdings Ltd",
+  "cls": "equity_single",
+  "tier": "T2C",
+  "asof": "2026-09-21",
+  "px": 3.0950000286102295,
+  "bars": 737
  }
 ]

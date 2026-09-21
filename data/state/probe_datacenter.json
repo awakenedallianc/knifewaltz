@@ -1,0 +1,117 @@
+{
+ "doc": "机房数据源探针凭证（funnel 6_build_order step1 + 1_universe.datacenter_probe_gate + MA-9）。datacenter 节由 .github/workflows/probe.yml 在 GitHub Actions 美国机房 dispatch 一次写入并 commit；在此之前 status=pending_dispatch，所有 unverified 端点不得生产接入。",
+ "datacenter": {
+  "status": "pending_dispatch",
+  "asof": null,
+  "run": null,
+  "endpoints": {},
+  "summary": {
+   "pass": [],
+   "fail": []
+  }
+ },
+ "gate": {
+  "rule": "端点 status=pass 才准生产接入（datacenter_probe_gate）；fail 走降级链，绝不带病接入。",
+  "finra_gate": "daily.yml 的『FINRA 门』步读 datacenter.endpoints.finra_partitions.status——pass 才置 KW_ENABLE_FINRA=1（MA-9/D7）；pending/fail 一律保持关，short_interest 全链 None，机房页如实缺席。workflow_dispatch 输入 enable_finra=true 可单次临时强开做 D7 首跑验证。",
+  "degrade_map": {
+   "cg_markets|cg_category_stablecoins|cg_market_chart_365": "B10：CG 榜单探针不过→退 CoinPaprika（/v1/tickers 单请求）；两者皆不过→加密宇宙退化为『OKX 交易对池 + 现有 T1 crypto』，榜单层显示降级文案并标 asof（universe_crypto 执行）",
+   "paprika_tickers": "B10 第一降级源本身 fail→与 CG 同不过时触发第二级退化（universe_crypto 执行）",
+   "okx_history_candles": "B10：全量回填禁用、仅日增量（既有 candles 通道），span 如实缩短（universe_crypto 执行）",
+   "yahoo_chart_0700hk": "港股腿未确认→HK88/ADR 扩容暂缓接入并记机房页（universe_stocks 执行；恒指 CSV+仓库快照兜底不受影响）",
+   "finra_partitions": "D7：门保持关（KW_ENABLE_FINRA 不置 1），short_interest.json 不产、页面无该列，与未接入一致；记机房页"
+  }
+ },
+ "local_reference": {
+  "asof": "2026-09-21T18:07:47Z",
+  "run": {
+   "run_id": null,
+   "runner_os": null,
+   "repo": null
+  },
+  "endpoints": {
+   "cg_markets": {
+    "http": 200,
+    "rows": 250,
+    "ms": 648,
+    "status": "pass",
+    "note": "",
+    "url": "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&price_change_percentage=24h",
+    "min_rows": 200,
+    "purpose": "CG 榜单 p1（universe_crypto 分层主源）"
+   },
+   "cg_category_stablecoins": {
+    "http": 200,
+    "rows": 250,
+    "ms": 464,
+    "status": "pass",
+    "note": "",
+    "url": "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&category=stablecoins&per_page=250&page=1",
+    "min_rows": 20,
+    "purpose": "CG 稳定币类别（C-STABLE 层）"
+   },
+   "cg_market_chart_365": {
+    "http": 200,
+    "rows": 366,
+    "ms": 454,
+    "status": "pass",
+    "note": "",
+    "url": "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=365&interval=daily",
+    "min_rows": 300,
+    "purpose": "CG 年线（cg_1y 按需通道，close_only）"
+   },
+   "paprika_tickers": {
+    "http": 200,
+    "rows": 2000,
+    "ms": 687,
+    "status": "pass",
+    "note": "",
+    "url": "https://api.coinpaprika.com/v1/tickers",
+    "min_rows": 500,
+    "purpose": "CoinPaprika 降级源（B10 第一级）"
+   },
+   "okx_history_candles": {
+    "http": 200,
+    "rows": 100,
+    "ms": 265,
+    "status": "pass",
+    "note": "",
+    "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT&bar=1D&limit=100",
+    "min_rows": 90,
+    "purpose": "OKX 全量回填通道（backfill 状态机）"
+   },
+   "yahoo_chart_0700hk": {
+    "http": 200,
+    "rows": 22,
+    "ms": 284,
+    "status": "pass",
+    "note": "",
+    "url": "https://query1.finance.yahoo.com/v8/finance/chart/0700.HK?range=1mo&interval=1d",
+    "min_rows": 1,
+    "purpose": "Yahoo 港股腿确认（HK88 宇宙）"
+   },
+   "finra_partitions": {
+    "http": 200,
+    "rows": 209,
+    "ms": 1598,
+    "status": "pass",
+    "note": "",
+    "url": "https://api.finra.org/partitions/group/otcMarket/name/consolidatedShortInterest",
+    "min_rows": 1,
+    "purpose": "FINRA 分区元数据（D7 首跑门；过则 KW_ENABLE_FINRA=1）"
+   }
+  },
+  "summary": {
+   "pass": [
+    "cg_category_stablecoins",
+    "cg_market_chart_365",
+    "cg_markets",
+    "finra_partitions",
+    "okx_history_candles",
+    "paprika_tickers",
+    "yahoo_chart_0700hk"
+   ],
+   "fail": []
+  },
+  "note": "本机网络实测（探针脚本与端点契约校验用，非机房凭证）"
+ }
+}

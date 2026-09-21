@@ -1,0 +1,155 @@
+name: knifewaltz-probe
+# 机房数据源探针（funnel 6_build_order step1 + build_manifest_v13 MA-9）：
+# workflow_dispatch 一次性探 7 端点各 1 请求（六端点 + FINRA partitions 首跑腿，裁决 D7），
+# 逐端点状态码+样本行数写 data/state/probe_datacenter.json 并 commit——
+# 该文件是生产接入门（datacenter_probe_gate）与机房页数据源清单的凭证：
+#   CG/Paprika fail → universe_crypto 按裁决 B10 降级链禁用对应通道；
+#   OKX history-candles fail → 全量回填禁用、仅日增量，span 如实缩短（B10）；
+#   FINRA pass → daily.yml 的 FINRA 门自动置 KW_ENABLE_FINRA=1（MA-9），fail → 门保持关并记机房页。
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kw-pipeline        # 与 daily/radar 同组序列化，避免与 heavy 的 state 提交竞态
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      TZ: Asia/Bangkok
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Probe 7 endpoints (stdlib-only，逐端点状态码+样本行数)
+        run: |
+          python - <<'PY'
+          # -*- coding: utf-8 -*-
+          """机房数据源探针（funnel step1 + MA-9，7 端点各 1 请求）。与本机自测脚本同文。"""
+          import json
+          import os
+          import time
+          import urllib.error
+          import urllib.request
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          OUT = Path(os.environ.get("KW_PROBE_OUT", "data/state/probe_datacenter.json"))
+          ENV = os.environ.get("KW_PROBE_ENV", "actions")
+          UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
+
+          def rows_len(doc, path):
+              cur = doc
+              for k in [p for p in path.split(".") if p]:
+                  if isinstance(cur, dict):
+                      cur = cur.get(k)
+                  else:
+                      return 0
+              return len(cur) if isinstance(cur, (list, dict)) else 0
+
+          # 7 端点（funnel step1 六端点 + MA-9 FINRA partitions 腿）；min_rows=样本行数下限
+          ENDPOINTS = [
+              ("cg_markets",
+               "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&price_change_percentage=24h",
+               "", 200, "CG 榜单 p1（universe_crypto 分层主源）"),
+              ("cg_category_stablecoins",
+               "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&category=stablecoins&per_page=250&page=1",
+               "", 20, "CG 稳定币类别（C-STABLE 层）"),
+              ("cg_market_chart_365",
+               "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=365&interval=daily",
+               "prices", 300, "CG 年线（cg_1y 按需通道，close_only）"),
+              ("paprika_tickers",
+               "https://api.coinpaprika.com/v1/tickers",
+               "", 500, "CoinPaprika 降级源（B10 第一级）"),
+              ("okx_history_candles",
+               "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT&bar=1D&limit=100",
+               "data", 90, "OKX 全量回填通道（backfill 状态机）"),
+              ("yahoo_chart_0700hk",
+               "https://query1.finance.yahoo.com/v8/finance/chart/0700.HK?range=1mo&interval=1d",
+               "chart.result", 1, "Yahoo 港股腿确认（HK88 宇宙）"),
+              ("finra_partitions",
+               "https://api.finra.org/partitions/group/otcMarket/name/consolidatedShortInterest",
+               "availablePartitions", 1, "FINRA 分区元数据（D7 首跑门；过则 KW_ENABLE_FINRA=1）"),
+          ]
+
+          def probe_one(url, rows_path, min_rows):
+              req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/json"})
+              t0 = time.time()
+              try:
+                  with urllib.request.urlopen(req, timeout=30) as r:
+                      http = r.status
+                      body = r.read()
+              except urllib.error.HTTPError as e:
+                  return {"http": e.code, "rows": 0, "ms": int((time.time() - t0) * 1000),
+                          "status": "fail", "note": f"HTTPError {e.code}"}
+              except Exception as e:  # 网络层失败也如实落盘
+                  return {"http": None, "rows": 0, "ms": int((time.time() - t0) * 1000),
+                          "status": "fail", "note": type(e).__name__ + ": " + str(e)[:120]}
+              ms = int((time.time() - t0) * 1000)
+              try:
+                  doc = json.loads(body)
+              except Exception:
+                  return {"http": http, "rows": 0, "ms": ms, "status": "fail", "note": "非 JSON 响应"}
+              n = rows_len(doc, rows_path)
+              if rows_path == "chart.result":  # Yahoo 特例：行数取 timestamp 长度
+                  try:
+                      n = len(doc["chart"]["result"][0]["timestamp"])
+                  except Exception:
+                      n = 0
+              ok = (http == 200 and n >= min_rows)
+              return {"http": http, "rows": n, "ms": ms, "status": "pass" if ok else "fail",
+                      "note": "" if ok else f"rows {n} < min {min_rows}" if http == 200 else f"http {http}"}
+
+          results = {}
+          for i, (key, url, rows_path, min_rows, purpose) in enumerate(ENDPOINTS):
+              if key.startswith("cg_") and i > 0:
+                  time.sleep(6)  # CG 免费档限速：6s 间隔
+              r = probe_one(url, rows_path, min_rows)
+              r.update({"url": url, "min_rows": min_rows, "purpose": purpose})
+              results[key] = r
+              print(f"[probe] {key}: {r['status']} http={r['http']} rows={r['rows']} {r['ms']}ms {r.get('note','')}")
+
+          old = {}
+          if OUT.exists():
+              try:
+                  old = json.loads(OUT.read_text(encoding="utf-8"))
+              except Exception:
+                  old = {}
+          doc = old if isinstance(old, dict) else {}
+          block = {
+              "asof": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+              "run": {"run_id": os.environ.get("GITHUB_RUN_ID"),
+                      "runner_os": os.environ.get("RUNNER_OS"),
+                      "repo": os.environ.get("GITHUB_REPOSITORY")},
+              "endpoints": results,
+              "summary": {"pass": sorted(k for k, v in results.items() if v["status"] == "pass"),
+                          "fail": sorted(k for k, v in results.items() if v["status"] == "fail")},
+          }
+          if ENV == "local":
+              block["note"] = "本机网络实测（探针脚本与端点契约校验用，非机房凭证）"
+              doc["local_reference"] = block
+          else:
+              block["status"] = "done"
+              doc["datacenter"] = block
+          OUT.parent.mkdir(parents=True, exist_ok=True)
+          OUT.write_text(json.dumps(doc, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+          print(f"[probe] 写盘 {OUT}（env={ENV}）")
+          PY
+      - name: Commit probe evidence (探针凭证入 git，供 B10/D7 消费者与机房页读取)
+        run: |
+          git config user.name 'knifewaltz-bot'
+          git config user.email 'knifewaltz-bot@users.noreply.github.com'
+          git add data/state/probe_datacenter.json
+          if git diff --cached --quiet; then echo "no probe change"; else
+            git commit -m "probe: datacenter 7-endpoint evidence $(date +%F)"
+            git pull --rebase -X theirs origin main || { git rebase --abort; echo "::warning::rebase failed; probe evidence dropped this run"; }
+            git push || echo "::warning::push failed"
+          fi

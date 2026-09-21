@@ -1,0 +1,57 @@
+{
+ "meta": {
+  "generated_at": "2026-09-22",
+  "generator": "scripts/stier_replay.py --train",
+  "train_window": [
+   "1990-01-01",
+   "2013-12-31"
+  ],
+  "preregistered_dims": [
+   "J1_family",
+   "gate_state",
+   "tier_time",
+   "cap_class",
+   "cls"
+  ],
+  "family_note": "J1 family 历史不可回算（无历史新闻）→ 维度值记 ANY；运行时精确键未命中回退 ANY 匹配",
+  "population": "train 窗 ^GSPC CATCH 开窗事件（硬条件子集口径，A 档 atier 结算）",
+  "baseline": {
+   "n": 6,
+   "wins": 1,
+   "win_rate": 0.167,
+   "wilson95": [
+    0.03,
+    0.564
+   ]
+  },
+  "lr_def": "切片胜赔 / train 池胜赔（Haldane-Anscombe +0.5 校正）；lr=1 中性",
+  "honesty": [
+   "n<10 只能标线索（slice_evidence_min_n frozen）——运行时一律中性代入",
+   "48 切片挖掘、约 32% 假阳性预算（A3）——挖掘·假设生成·非验证"
+  ]
+ },
+ "slices": {
+  "ANY|GREEN|-|none|equity_index": {
+   "n": 4,
+   "wins": 1,
+   "win_rate": 0.25,
+   "wilson95": [
+    0.046,
+    0.699
+   ],
+   "lr": 1.571,
+   "grade": "线索"
+  },
+  "ANY|RED|-|none|equity_index": {
+   "n": 2,
+   "wins": 0,
+   "win_rate": 0.0,
+   "wilson95": [
+    0.0,
+    0.658
+   ],
+   "lr": 0.733,
+   "grade": "线索"
+  }
+ }
+}

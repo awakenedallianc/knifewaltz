@@ -1,7 +1,8 @@
 """新闻抓取（Jev 判断层前置件）：每标的近 2 日头条 + 加密 RSS 三件套 + 宏观事件源。
 
-规格：data/state/radar_spec.json jev_layer.prerequisite_news_fetcher / J3 trigger。
-- fetch_news(insts, max_inst=40) -> {key: [{t, src, age_h}]}
+规格：data/state/radar_spec.json jev_layer.prerequisite_news_fetcher / J3 trigger
+     + depth_spec.json jev_feed.J3_events_source_add（v1.3 四事件源 union）。
+- fetch_news(insts, max_inst=56) -> {key: [{t, src, age_h}]}（v3 扩 56，抓取仍 0.5s 间隔串行）
 - 源路由：美股/ETF/指数走 Yahoo 标的 RSS；任意标的可用 Google News RSS 补充（每标的 1 次）；
   加密走三件套（CoinDesk/Cointelegraph/Decrypt，各抓一次按币名/代号过滤分发）
 - 卫生：只留 pubDate 48h 内；标题小写去标点哈希去重；每标的最多 8 条、标题截 160 字符
@@ -19,6 +20,11 @@ from ..utils import ROOT, Http, clean_text, log, now_bkk, parse_date, read_json,
 
 CACHE_PATH = ROOT / "data" / "state" / "news_cache.json"
 SEED_PATH = ROOT / "data" / "state" / "macro_calendar_seed.json"
+# depth 事件源状态文件（depth_fetchers 槽产出；缺失=该源优雅缺席）
+EARNINGS_PATH = ROOT / "data" / "state" / "earnings_marks.json"
+AUCTIONS_PATH = ROOT / "data" / "state" / "auction_windows.json"
+COT_LATEST_PATH = ROOT / "data" / "state" / "cot_latest.json"
+PARAMS_PATH = ROOT / "data" / "state" / "params_registry.json"
 
 MAX_AGE_H = 48.0          # 只留近 2 日
 MAX_PER_INST = 8          # 每标的最多 8 条
@@ -167,7 +173,7 @@ def _match_crypto(feed: list[dict], base: str) -> list[dict]:
 
 # ---------- 公开 API ----------
 
-def fetch_news(insts: list[dict], max_inst: int = 40) -> dict[str, list[dict]]:
+def fetch_news(insts: list[dict], max_inst: int = 56) -> dict[str, list[dict]]:
     """每标的近 2 日头条：{key: [{t, src, age_h}]}。
 
     insts 元素至少含 key/symbol（cls/name 可选）；顺序即优先级，超出 max_inst 截断。
@@ -246,12 +252,85 @@ def crypto_headlines(syms: list[str], per_sym: int = 3) -> dict[str, list[str]]:
     return out
 
 
-def fetch_macro_events() -> list[dict]:
-    """J3 事件源：macro_calendar_seed.json（未来 14 日内）∪ Google News 宏观查询（days_to=0）。
+def _days_to(d, today: str) -> int | None:
+    try:
+        return (datetime.strptime(str(d)[:10], "%Y-%m-%d").date()
+                - datetime.strptime(today, "%Y-%m-%d").date()).days
+    except Exception:
+        return None
 
-    返回 [{title, days_to}]（≤30 条，days_to>=0）；seed 缺失或全部失败 → 尽力返回（可为 []）。
+
+def _obs_param(name: str, default: float) -> float:
+    """params_registry 观察参数读取（integrator 登记后生效；未登记时用 spec 默认值）。"""
+    try:
+        p = ((read_json(PARAMS_PATH, {}) or {}).get("params") or {}).get(name) or {}
+        v = p.get("current")
+        return v if isinstance(v, (int, float)) else default
+    except Exception:
+        return default
+
+
+def _depth_events(today: str, store=None) -> list[dict]:
+    """J3 四事件源（depth_spec jev_feed.J3_events_source_add）：财报/美债拍卖/COT 极值/脱锚。
+
+    全部来自 depth_fetchers 槽落盘的状态文件（脱锚一腿来自 heavy store 当日 G-STABLE 现值，
+    store 缺省时该腿如实缺席）；每腿独立降级，缺文件=空。
     """
-    events: list[dict] = []
+    out: list[dict] = []
+    # 财报临近（earnings_marks.json 本身即 watchlist ≤5 交易日窗）
+    try:
+        for m in (read_json(EARNINGS_PATH, {}) or {}).get("marks") or []:
+            tk, when = m.get("ticker"), m.get("when")
+            n = _days_to(m.get("date"), today)
+            if tk and when and n is not None and 0 <= n <= 14:
+                out.append({"title": f"{tk} 财报（{when}）", "days_to": n})
+    except Exception as e:
+        log.debug("depth events earnings skipped: %s", e)
+    # 美债拍卖（10y/30y 长债拍卖尾部风险窗）
+    try:
+        for w in (read_json(AUCTIONS_PATH, {}) or {}).get("windows") or []:
+            bucket = w.get("bucket")
+            n = _days_to(w.get("auction_date"), today)
+            if bucket not in ("10y", "30y") or n is None or not 0 <= n <= 14:
+                continue
+            amt = w.get("offering_amt")
+            title = (f"美债{bucket}拍卖 ${amt / 1e9:.0f}B" if isinstance(amt, (int, float)) and amt > 0
+                     else f"美债{bucket}拍卖")   # 金额缺失如实省略，不造数
+            out.append({"title": title, "days_to": n})
+    except Exception as e:
+        log.debug("depth events auctions skipped: %s", e)
+    # COT 极值（|z52| ≥ obs.cot.z_extreme，当日事实 days_to=0）
+    try:
+        z_ext = _obs_param("obs.cot.z_extreme", 2.0)
+        for tk, row in ((read_json(COT_LATEST_PATH, {}) or {}).get("rows") or {}).items():
+            z = row.get("z52") if isinstance(row, dict) else None
+            if isinstance(z, (int, float)) and abs(z) >= z_ext:
+                out.append({"title": f"{tk} 投机净头寸 {z:+.1f}σ（52周）", "days_to": 0})
+    except Exception as e:
+        log.debug("depth events cot skipped: %s", e)
+    # 脱锚事件（G-STABLE warn/red 当日；现值来自 heavy store，闸门判定本身仍归引擎）
+    try:
+        if store is not None:
+            warn_bp = _obs_param("obs.stable.warn_bp", 50)
+            for sym in ("USDT", "USDC", "DAI"):
+                row = store.latest(f"stable.{sym}.depeg_bp") or {}
+                bp = row.get("value")
+                if row.get("date") == today and isinstance(bp, (int, float)) and abs(bp) >= warn_bp:
+                    out.append({"title": f"{sym} 脱锚 {bp:.0f}bp", "days_to": 0})
+    except Exception as e:
+        log.debug("depth events depeg skipped: %s", e)
+    return out
+
+
+def fetch_macro_events(store=None) -> list[dict]:
+    """J3 事件源：macro_calendar_seed.json（未来 14 日内）∪ Google News 宏观查询（days_to=0）
+    ∪ depth 四事件源（财报/拍卖/COT 极值/脱锚，v1.3 追加）。
+
+    返回 [{title, days_to}]（≤30 条，days_to>=0，days_to asc 截断）；同 days_to 内优先级
+    seed > depth 新事实 > RSS（seed/RSS 相对优先级不变）；seed 缺失或全部失败 → 尽力返回（可为 []）。
+    store: heavy 侧传入 Store 实例供脱锚腿读当日 G-STABLE 现值；缺省=该腿跳过（radar/旧接线不受影响）。
+    """
+    events: list[dict] = []   # 元素带 _prio 排序键：0=seed 1=depth 2=rss（输出前剥除）
     today = today_str()
     # 1) 年度人工维护的种子日历（FOMC/CPI/NFP/四巫日/大额代币解锁）
     try:
@@ -262,16 +341,15 @@ def fetch_macro_events() -> list[dict]:
             d, title = e.get("date"), e.get("title")
             if not d or not title:
                 continue
-            try:
-                days_to = (datetime.strptime(str(d)[:10], "%Y-%m-%d").date()
-                           - datetime.strptime(today, "%Y-%m-%d").date()).days
-            except Exception:
-                continue
-            if 0 <= days_to <= 14:
-                events.append({"title": clean_text(str(title), TITLE_LIMIT), "days_to": days_to})
+            days_to = _days_to(d, today)
+            if days_to is not None and 0 <= days_to <= 14:
+                events.append({"title": clean_text(str(title), TITLE_LIMIT), "days_to": days_to, "_prio": 0})
     except Exception as e:
         log.debug("macro seed skipped: %s", e)
-    # 2) Google News 宏观 RSS（近 2 日头条，days_to=0），当日缓存
+    # 2) depth 四事件源（文件缺失=优雅缺席）
+    for e in _depth_events(today, store=store):
+        events.append({"title": clean_text(e["title"], TITLE_LIMIT), "days_to": e["days_to"], "_prio": 1})
+    # 3) Google News 宏观 RSS（近 2 日头条，days_to=0），当日缓存
     try:
         cache = _load_cache()
         feed = cache["feeds"].get("macro")
@@ -283,17 +361,17 @@ def fetch_macro_events() -> list[dict]:
             cache["feeds"]["macro"] = feed
             _save_cache(cache)
         for it in feed:
-            events.append({"title": it["t"], "days_to": 0})
+            events.append({"title": it["t"], "days_to": 0, "_prio": 2})
     except Exception as e:
         log.debug("macro rss skipped: %s", e)
     # 去重（同标题）并截 30
     seen, out = set(), []
-    for e in sorted(events, key=lambda x: x["days_to"]):
+    for e in sorted(events, key=lambda x: (x["days_to"], x["_prio"])):
         h = _title_hash(e["title"])
         if h in seen:
             continue
         seen.add(h)
-        out.append(e)
+        out.append({"title": e["title"], "days_to": e["days_to"]})
         if len(out) >= 30:
             break
     return out

@@ -1,0 +1,762 @@
+{
+ "computed_at": "2026-09-22",
+ "rules_version": "s1",
+ "hypothetical": true,
+ "mining_not_validation": true,
+ "caliber_note": "假想配给回放：可回算硬条件子集（H1-H4、H6-H8）+ 月配给 5/月（E1-E8）；回放缺 J1/J4，与实盘口径不同，两口径永不合并（RL-7）；A 档结算复用 replay.atier_exec（与实盘同一段代码，RL-2）",
+ "applicable_rules": [
+  "H1",
+  "H2",
+  "H3",
+  "H4",
+  "H6",
+  "H7",
+  "H8",
+  "E1",
+  "E3",
+  "E5",
+  "E6",
+  "E8",
+  "X-STOP",
+  "X-TIME(15/60)"
+ ],
+ "skipped_rules": [
+  {
+   "id": "H5",
+   "why": "无历史新闻 → J1 分诊不可回算（回放口径=硬条件子集）"
+  },
+  {
+   "id": "soft/J4",
+   "why": "J4 先验不可回算 → 排序退化为 (KnifeScore desc, dd52w asc)"
+  },
+  {
+   "id": "H9/H11",
+   "why": "影子闸只记账不拦截；H10 见对照臂双列"
+  },
+  {
+   "id": "crypto fund_8h",
+   "why": "资金费率无 36 年历史 → 刀落加成腿跳过（只可能少触发）"
+  }
+ ],
+ "false_positive_note": "48 切片挖掘、约 32% 假阳性预算（A3）——挖掘·假设生成·非验证",
+ "inputs": {
+  "gspc_rows": 14301,
+  "gspc_range": [
+   "1970-01-02",
+   "2026-09-21"
+  ],
+  "vix_rows": 9276,
+  "vix3m_rows": 4277
+ },
+ "equivalence_check": {
+  "reference_rounds": 30,
+  "rebuilt_rounds": 30,
+  "matched": 30,
+  "missing_dates": [],
+  "max_diff_pp": 0.0,
+  "pass": true,
+  "criterion": "逐轮日期对齐且 |atier 差| < 0.35pp（复用 atier_exec）"
+ },
+ "coverage": {
+  "replay_since": "1990-01-02（VIX 起点）",
+  "flip_back_since": "2009-09-18",
+  "note": "vix3m 起点前无期限结构 → 无 FLIP-BACK 判定，覆盖率如实标注（对照臂样本天花板）"
+ },
+ "catch_windows_n": 9,
+ "eligible_n": 0,
+ "interception": {
+  "blocked_counts": {
+   "H2": 8,
+   "H3": 9,
+   "H8": 9,
+   "H6": 3,
+   "H4": 2
+  },
+  "note": "分母公示（RL-5 同款）：每个 CATCH 窗被哪几条硬条件拦下；全部窗口逐条列于 window_rows（含 atier 仅作损失来源展示，不入任何精度）",
+  "window_rows": [
+   {
+    "date": "2001-04-18",
+    "month": "2001-04",
+    "key": "^GSPC",
+    "entry": 1238.16,
+    "stop_px": 1191.8101,
+    "score": 32,
+    "ck_n": 3,
+    "tier_time": "-",
+    "gate": "GREEN",
+    "vix": 24.1,
+    "flip_back_age_days": null,
+    "atier_pct": -3.84,
+    "atier_exit": "X-STOP@55日",
+    "exit_bar": 55,
+    "hold252_pct": -11.7,
+    "hypothetical": true,
+    "eligible": false,
+    "fails": [
+     "H2",
+     "H3",
+     "H8"
+    ]
+   },
+   {
+    "date": "2001-11-19",
+    "month": "2001-11",
+    "key": "^GSPC",
+    "entry": 1151.0601,
+    "stop_px": 1138.65,
+    "score": 32,
+    "ck_n": 3,
+    "tier_time": "-",
+    "gate": "GREEN",
+    "vix": 24.5,
+    "flip_back_age_days": null,
+    "atier_pct": -1.22,
+    "atier_exit": "X-STOP@2日",
+    "exit_bar": 2,
+    "hold252_pct": -22.1,
+    "hypothetical": true,
+    "eligible": false,
+    "fails": [
+     "H2",
+     "H3",
+     "H8"
+    ]
+   },
+   {
+    "date": "2002-11-21",
+    "month": "2002-11",
+    "key": "^GSPC",
+    "entry": 933.76,
+    "stop_px": 914.15,
+    "score": 36,
+    "ck_n": 4,
+    "tier_time": "-",
+    "gate": "GREEN",
+    "vix": 23.8,
+    "flip_back_age_days": null,
+    "atier_pct": -2.19,
+    "atier_exit": "X-STOP@3日",
+    "exit_bar": 3,
+    "hold252_pct": 10.9,
+    "hypothetical": true,
+    "eligible": false,
+    "fails": [
+     "H3",
+     "H8"
+    ]
+   },
+   {
+    "date": "2008-12-22",
+    "month": "2008-12",
+    "key": "^GSPC",
+    "entry": 871.63,
+    "stop_px": 857.09,
+    "score": 22,
+    "ck_n": 3,
+    "tier_time": "-",
+    "gate": "RED",
+    "vix": 44.6,
+    "flip_back_age_days": null,
+    "atier_pct": -3.33,
+    "atier_exit": "X-STOP@15日",
+    "exit_bar": 15,
+    "hold252_pct": 28.3,
+    "hypothetical": true,
+    "eligible": false,
+    "fails": [
+     "H2",
+     "H3",
+     "H6",
+     "H8"
+    ]
+   },
+   {
+    "date": "2009-02-10",
+    "month": "2009-02",
+    "key": "^GSPC",
+    "entry": 827.16,
+    "stop_px": 822.99,
+    "score": 23,
+    "ck_n": 3,
+    "tier_time": "-",
+    "gate": "RED",
+    "vix": 46.7,
+    "flip_back_age_days": null,
+    "atier_pct": -4.59,
+    "atier_exit": "X-STOP@4日",
+    "exit_bar": 4,
+    "hold252_pct": 29.1,
+    "hypothetical": true,
+    "eligible": false,
+    "fails": [
+     "H2",
+     "H3",
+     "H6",
+     "H8"
+    ]
+   },
+   {
+    "date": "2009-07-20",
+    "month": "2009-07",
+    "key": "^GSPC",
+    "entry": 951.13,
+    "stop_px": 940.99,
+    "score": 35,
+    "ck_n": 3,
+    "tier_time": "-",
+    "gate": "GREEN",
+    "vix": 24.4,
+    "flip_back_age_days": null,
+    "atier_pct": 12.83,
+    "atier_exit": "60日全退",
+    "exit_bar": 60,
+    "hold252_pct": 13.9,
+    "hypothetical": true,
+    "eligible": false,
+    "fails": [
+     "H2",
+     "H3",
+     "H8"
+    ]
+   },
+   {
+    "date": "2020-04-24",
+    "month": "2020-04",
+    "key": "^GSPC",
+    "entry": 2836.74,
+    "stop_px": 2791.76,
+    "score": 32,
+    "ck_n": 3,
+    "tier_time": "-",
+    "gate": "FLIP_BACK",
+    "vix": 35.9,
+    "flip_back_age_days": 0,
+    "atier_pct": 14.83,
+    "atier_exit": "60日全退",
+    "exit_bar": 60,
+    "hold252_pct": 47.6,
+    "hypothetical": true,
+    "eligible": false,
+    "fails": [
+     "H2",
+     "H3",
+     "H8"
+    ]
+   },
+   {
+    "date": "2022-06-24",
+    "month": "2022-06",
+    "key": "^GSPC",
+    "entry": 3911.74,
+    "stop_px": 3821.75,
+    "score": 22,
+    "ck_n": 3,
+    "tier_time": "DEAD_ZONE",
+    "gate": "YELLOW",
+    "vix": 27.2,
+    "flip_back_age_days": null,
+    "atier_pct": -2.31,
+    "atier_exit": "X-STOP@2日",
+    "exit_bar": 2,
+    "hold252_pct": 11.9,
+    "hypothetical": true,
+    "eligible": false,
+    "fails": [
+     "H2",
+     "H3",
+     "H4",
+     "H6",
+     "H8"
+    ]
+   },
+   {
+    "date": "2022-10-19",
+    "month": "2022-10",
+    "key": "^GSPC",
+    "entry": 3695.1599,
+    "stop_px": 3666.51,
+    "score": 33,
+    "ck_n": 3,
+    "tier_time": "DEAD_ZONE",
+    "gate": "FLIP_BACK",
+    "vix": 30.8,
+    "flip_back_age_days": 3,
+    "atier_pct": -0.8,
+    "atier_exit": "X-STOP@1日",
+    "exit_bar": 1,
+    "hold252_pct": 14.3,
+    "hypothetical": true,
+    "eligible": false,
+    "fails": [
+     "H2",
+     "H3",
+     "H4",
+     "H8"
+    ]
+   }
+  ]
+ },
+ "months": 441,
+ "grants_n": 0,
+ "unresolved_n": 0,
+ "atier": {
+  "n": 0,
+  "win": 0,
+  "win_rate": null,
+  "wilson95": [
+   0.0,
+   0.0
+  ],
+  "mean_pct": null,
+  "worst_pct": null,
+  "best_pct": null,
+  "median_pct": null
+ },
+ "hold252": {
+  "n": 0,
+  "win": 0,
+  "win_rate": null,
+  "wilson95": [
+   0.0,
+   0.0
+  ],
+  "mean_pct": null,
+  "worst_pct": null,
+  "best_pct": null,
+  "median_pct": null
+ },
+ "precision": null,
+ "wilson95": [
+  0.0,
+  0.0
+ ],
+ "mean_pct": null,
+ "worst_pct": null,
+ "by_decade": [],
+ "control_arm_h10": {
+  "rule": "H6 之上加 H10：GREEN，或 FLIP_BACK 且开窗等待 >= 3 交易日（A3 首要对照臂）",
+  "eligible_n": 0,
+  "grants_n": 0,
+  "atier": {
+   "n": 0,
+   "win": 0,
+   "win_rate": null,
+   "wilson95": [
+    0.0,
+    0.0
+   ],
+   "mean_pct": null,
+   "worst_pct": null,
+   "best_pct": null,
+   "median_pct": null
+  },
+  "hold252": {
+   "n": 0,
+   "win": 0,
+   "win_rate": null,
+   "wilson95": [
+    0.0,
+    0.0
+   ],
+   "mean_pct": null,
+   "worst_pct": null,
+   "best_pct": null,
+   "median_pct": null
+  },
+  "monthly_budget_counterfactual": [],
+  "rows": [],
+  "false_positive_note": "48 切片挖掘、约 32% 假阳性预算（A3）——挖掘·假设生成·非验证"
+ },
+ "monthly_budget_counterfactual": [],
+ "sort_effective_months": 0,
+ "rows": [],
+ "leg3_t1_pooled": {
+  "caliber": "T1 池 3 年 kline pooled 口径（标的级不单列）；月配给 5/月 + E1-E8 同规则；缺 J1/J4 硬条件子集",
+  "regime_note": "3 年单一 regime（2023-2026），外推力有限——如实标注",
+  "instruments_scanned": 57,
+  "catch_windows_n": 157,
+  "eligible_n": 0,
+  "grants_n": 0,
+  "interception": {
+   "blocked_counts": {
+    "H2": 156,
+    "H3": 142,
+    "H8": 154,
+    "H4": 73,
+    "H6": 2
+   },
+   "near_miss_rows": [
+    {
+     "date": "2024-05-21",
+     "month": "2024-05",
+     "key": "CC_F",
+     "entry": 7394.0,
+     "stop_px": 6910.0,
+     "score": 72,
+     "ck_n": 3,
+     "tier_time": "-",
+     "gate": "GREEN",
+     "vix": 11.9,
+     "flip_back_age_days": null,
+     "atier_pct": 16.81,
+     "atier_exit": "60日全退",
+     "exit_bar": 60,
+     "hold252_pct": 39.0,
+     "hypothetical": true,
+     "fails": [
+      "H2",
+      "H3"
+     ]
+    },
+    {
+     "date": "2025-09-17",
+     "month": "2025-09",
+     "key": "LULU",
+     "entry": 163.48,
+     "stop_px": 162.22,
+     "score": 60,
+     "ck_n": 3,
+     "tier_time": "B",
+     "gate": "GREEN",
+     "vix": 15.7,
+     "flip_back_age_days": null,
+     "atier_pct": -1.72,
+     "atier_exit": "X-STOP@34日",
+     "exit_bar": 34,
+     "hold252_pct": -40.0,
+     "hypothetical": true,
+     "fails": [
+      "H2",
+      "H8"
+     ]
+    },
+    {
+     "date": "2025-11-05",
+     "month": "2025-11",
+     "key": "FISV",
+     "entry": 64.0,
+     "stop_px": 63.5,
+     "score": 72,
+     "ck_n": 3,
+     "tier_time": "B",
+     "gate": "GREEN",
+     "vix": 18.0,
+     "flip_back_age_days": null,
+     "atier_pct": -3.7,
+     "atier_exit": "X-STOP@1日",
+     "exit_bar": 1,
+     "hold252_pct": null,
+     "hypothetical": true,
+     "fails": [
+      "H2"
+     ]
+    },
+    {
+     "date": "2025-11-26",
+     "month": "2025-11",
+     "key": "MSTR",
+     "entry": 175.64,
+     "stop_px": 169.7,
+     "score": 63,
+     "ck_n": 3,
+     "tier_time": "B",
+     "gate": "FLIP_BACK",
+     "vix": 17.2,
+     "flip_back_age_days": 3,
+     "atier_pct": -7.72,
+     "atier_exit": "X-STOP@12日",
+     "exit_bar": 12,
+     "hold252_pct": null,
+     "hypothetical": true,
+     "fails": [
+      "H2",
+      "H8"
+     ]
+    },
+    {
+     "date": "2026-02-10",
+     "month": "2026-02",
+     "key": "SLV",
+     "entry": 73.41,
+     "stop_px": 72.46,
+     "score": 52,
+     "ck_n": 3,
+     "tier_time": "A",
+     "gate": "GREEN",
+     "vix": 17.8,
+     "flip_back_age_days": null,
+     "atier_pct": -7.74,
+     "atier_exit": "X-STOP@2日",
+     "exit_bar": 2,
+     "hold252_pct": null,
+     "hypothetical": true,
+     "fails": [
+      "H2",
+      "H8"
+     ]
+    },
+    {
+     "date": "2026-02-12",
+     "month": "2026-02",
+     "key": "MSTR",
+     "entry": 123.0,
+     "stop_px": 120.64,
+     "score": 62,
+     "ck_n": 3,
+     "tier_time": "B",
+     "gate": "GREEN",
+     "vix": 20.8,
+     "flip_back_age_days": null,
+     "atier_pct": -2.58,
+     "atier_exit": "X-STOP@34日",
+     "exit_bar": 34,
+     "hold252_pct": null,
+     "hypothetical": true,
+     "fails": [
+      "H2",
+      "H8"
+     ]
+    },
+    {
+     "date": "2026-02-23",
+     "month": "2026-02",
+     "key": "NG_F",
+     "entry": 2.985,
+     "stop_px": 2.977,
+     "score": 56,
+     "ck_n": 3,
+     "tier_time": "A",
+     "gate": "GREEN",
+     "vix": 21.0,
+     "flip_back_age_days": null,
+     "atier_pct": -2.35,
+     "atier_exit": "X-STOP@1日",
+     "exit_bar": 1,
+     "hold252_pct": null,
+     "hypothetical": true,
+     "fails": [
+      "H2",
+      "H8"
+     ]
+    },
+    {
+     "date": "2026-04-09",
+     "month": "2026-04",
+     "key": "MSTR",
+     "entry": 128.86,
+     "stop_px": 125.8,
+     "score": 58,
+     "ck_n": 3,
+     "tier_time": "B",
+     "gate": "FLIP_BACK",
+     "vix": 19.5,
+     "flip_back_age_days": 1,
+     "atier_pct": -6.53,
+     "atier_exit": "X-STOP@40日",
+     "exit_bar": 40,
+     "hold252_pct": null,
+     "hypothetical": true,
+     "fails": [
+      "H2",
+      "H8"
+     ]
+    },
+    {
+     "date": "2026-05-04",
+     "month": "2026-05",
+     "key": "CHTR",
+     "entry": 165.34,
+     "stop_px": 165.15,
+     "score": 68,
+     "ck_n": 3,
+     "tier_time": "B",
+     "gate": "GREEN",
+     "vix": 18.3,
+     "flip_back_age_days": null,
+     "atier_pct": -4.3,
+     "atier_exit": "X-STOP@1日",
+     "exit_bar": 1,
+     "hold252_pct": null,
+     "hypothetical": true,
+     "fails": [
+      "H2"
+     ]
+    },
+    {
+     "date": "2026-05-07",
+     "month": "2026-05",
+     "key": "LULU",
+     "entry": 133.59,
+     "stop_px": 132.19,
+     "score": 52,
+     "ck_n": 3,
+     "tier_time": "B",
+     "gate": "GREEN",
+     "vix": 17.1,
+     "flip_back_age_days": null,
+     "atier_pct": -1.8,
+     "atier_exit": "X-STOP@1日",
+     "exit_bar": 1,
+     "hold252_pct": null,
+     "hypothetical": true,
+     "fails": [
+      "H2",
+      "H8"
+     ]
+    },
+    {
+     "date": "2026-05-22",
+     "month": "2026-05",
+     "key": "FISV",
+     "entry": 57.13,
+     "stop_px": 56.03,
+     "score": 55,
+     "ck_n": 3,
+     "tier_time": "B",
+     "gate": "GREEN",
+     "vix": 16.7,
+     "flip_back_age_days": null,
+     "atier_pct": -2.66,
+     "atier_exit": "X-STOP@1日",
+     "exit_bar": 1,
+     "hold252_pct": null,
+     "hypothetical": true,
+     "fails": [
+      "H2",
+      "H8"
+     ]
+    },
+    {
+     "date": "2026-06-11",
+     "month": "2026-06",
+     "key": "ETH-USD",
+     "entry": 1672.2806,
+     "stop_px": 1620.0845,
+     "score": 61,
+     "ck_n": 3,
+     "tier_time": "B",
+     "gate": "GREEN",
+     "vix": 19.4,
+     "flip_back_age_days": null,
+     "atier_pct": -3.13,
+     "atier_exit": "X-STOP@13日",
+     "exit_bar": 13,
+     "hold252_pct": null,
+     "hypothetical": true,
+     "fails": [
+      "H2",
+      "H8"
+     ]
+    },
+    {
+     "date": "2026-06-18",
+     "month": "2026-06",
+     "key": "MSTR",
+     "entry": 112.53,
+     "stop_px": 107.85,
+     "score": 61,
+     "ck_n": 3,
+     "tier_time": "B",
+     "gate": "GREEN",
+     "vix": 16.4,
+     "flip_back_age_days": null,
+     "atier_pct": -7.72,
+     "atier_exit": "X-STOP@2日",
+     "exit_bar": 2,
+     "hold252_pct": null,
+     "hypothetical": true,
+     "fails": [
+      "H2",
+      "H8"
+     ]
+    },
+    {
+     "date": "2026-06-25",
+     "month": "2026-06",
+     "key": "FISV",
+     "entry": 47.53,
+     "stop_px": 47.3,
+     "score": 60,
+     "ck_n": 3,
+     "tier_time": "B",
+     "gate": "GREEN",
+     "vix": 18.9,
+     "flip_back_age_days": null,
+     "atier_pct": -0.72,
+     "atier_exit": "X-STOP@59日",
+     "exit_bar": 59,
+     "hold252_pct": null,
+     "hypothetical": true,
+     "fails": [
+      "H2",
+      "H8"
+     ]
+    },
+    {
+     "date": "2026-06-26",
+     "month": "2026-06",
+     "key": "INTU",
+     "entry": 267.72,
+     "stop_px": 259.38,
+     "score": 54,
+     "ck_n": 3,
+     "tier_time": "B",
+     "gate": "GREEN",
+     "vix": 18.4,
+     "flip_back_age_days": null,
+     "atier_pct": null,
+     "atier_exit": "未走完窗口·不入分母",
+     "exit_bar": 59,
+     "hold252_pct": null,
+     "hypothetical": true,
+     "fails": [
+      "H2",
+      "H8"
+     ]
+    },
+    {
+     "date": "2026-07-06",
+     "month": "2026-07",
+     "key": "CSGP",
+     "entry": 28.7,
+     "stop_px": 28.54,
+     "score": 56,
+     "ck_n": 3,
+     "tier_time": "B",
+     "gate": "GREEN",
+     "vix": 15.6,
+     "flip_back_age_days": null,
+     "atier_pct": -1.08,
+     "atier_exit": "X-STOP@4日",
+     "exit_bar": 4,
+     "hold252_pct": null,
+     "hypothetical": true,
+     "fails": [
+      "H2",
+      "H8"
+     ]
+    }
+   ],
+   "note": "分母公示：全部 CATCH 窗的逐条拦截计数；near_miss=差 <=2 条硬条件的窗（尾 20 条）"
+  },
+  "pooled": {
+   "n": 0,
+   "win": 0,
+   "win_rate": null,
+   "wilson95": [
+    0.0,
+    0.0
+   ],
+   "mean_pct": null,
+   "worst_pct": null,
+   "best_pct": null,
+   "median_pct": null
+  },
+  "collecting": true,
+  "conclusive": false,
+  "collecting_label": "收集中 0/30",
+  "monthly_budget_counterfactual": [],
+  "sort_effective_months": 0,
+  "rows": []
+ }
+}

@@ -1,0 +1,27 @@
+{
+ "files_written": [
+  "D:\\knifewaltz\\src\\kw\\fetchers\\depth.py",
+  "D:\\knifewaltz\\src\\kw\\fetchers\\cot.py",
+  "D:\\knifewaltz\\data\\state\\pcr_history.json",
+  "D:\\knifewaltz\\data\\state\\cot_latest.json",
+  "D:\\knifewaltz\\data\\state\\earnings_marks.json",
+  "D:\\knifewaltz\\data\\state\\auction_windows.json"
+ ],
+ "public_interface": [
+  "depth.fetch(cfg: dict, settings: dict) -> dict — 标准六腿聚合 {metrics,news,notes}，每腿独立 try/except 降级（单腿断网其余腿照常）",
+  "depth.fetch_indicators(http: Http, notes: list[str] | None = None) -> list[dict] — 裁剪后 23 指标符号 3y 全序列 backfill 行 + spread.3m10y 自算(source=self) + depth.global_sync 行；volume 不入库",
+  "depth.fetch_pcr(http: Http, dt: str | None = None) -> dict | None — 返回 {'total','index','equity','vix','date'}，date=页内 selectedDate；未发布/非交易日返回 None（非错误）；RSC flight 正则主解析 + HTML 表降级",
+  "depth.backfill_pcr(http: Http, store, days: int = 60) -> int — 仅当 store pcr.equity 观测<40：先镜像 pcr_history.json 免网络重灌，再逐日 dt 网络回补（1s 节流），返回补入 store 行数",
+  "depth.fetch_stablecoins(http: Http) -> list[dict] — stable.{USDT|USDC|DAI}.depeg_bp/.circ 数据行；纯函数零写盘（radar 轻腿复用，D6 口径分离）",
+  "depth.fetch_chain_tvl(http: Http, chains: tuple = TVL_CHAINS) -> list[dict] — chain.{Chain}.tvl 完整日序列（末位盘中点弃用），最新行 meta.drop_1d_pct；纯函数零写盘（radar 轻腿复用）",
+  "depth.earnings_marks(http: Http, watchlist: set[str], days: list[date]) -> list[dict] — 逐日 5 请求 1s 节流，写 earnings_marks.json 并返回 marks（ticker/date/when(BMO|AMC|TAS|TNS)/eps_est/date_confirmed）",
+  "depth.next_trading_days(n: int = 5, start: date | None = None) -> list[date] — 未来 n 个工作日（含当日）",
+  "depth.fetch_auctions(http: Http) -> list[dict] — FiscalData 14 天窗 10y/30y 拍卖窗 [D-1,D+1]，写 auction_windows.json 并返回 windows",
+  "depth.finra_short_interest(http: Http, symbols: list[str]) -> dict | None — KW_ENABLE_FINRA != '1' 直接 None 不触网不产文件；门开时 partitions→EQUAL compareFilter + symbolCode domainFilter 批查，写 short_interest.json",
+  "cot.fetch(cfg: dict, settings: dict) -> dict — 单请求 53 周 20 合约（$limit 5000，实测 1060 行 1.9s），cot.{TK}.net 周度序列 + cot_latest.json（含 published_lag 徽章）",
+  "cot.cot_z(net_series: list[tuple[str, float]]) -> float | None — 52 周窗（含当期）总体标准差 z 分，n<40 或 sd=0 → None",
+  "cot.CODES: dict[str, str] — 实测 20 条 cftc_contract_market_code 映射（spec 原文逐字）"
+ ],
+ "test_results": "全部通过（24+17+1 项，0 fail，本机实网直调，生产 store/sqlite 零触碰）：【COT】对拍 2026-09-15 报告全部 ±0.1 内：SB z=3.01(target+3.0)/LE -2.34/ZC 2.18/6J 2.22(+2.15)/NG -1.94(-1.89)；20 合约齐；typo 字段 noncomm_postions_spread_all 原样请求且带 $select 失败降级路径；1080 行 store 键 source+date/asof 三件套齐。【PCR】最新页 {total 0.81/index 0.98/equity 0.58/vix 0.21, date=2026-09-18}（周一午间仍是上周五值——实测符合 honesty 预期）；dt=2026-09-20（周日）返回 None 不报错；dt=2026-09-16 回补值与页面一致；镜像首跑网络回补 +56 → pcr_history.json 57 个交易日（2026-06-30..09-18，全为工作日）已随槽落盘，生产机房免 2-3 分钟首跑回补；第二次 fetch 不再触发回补；backfill_pcr 临时 store 首灌 232 行/57 观测、二次调用返回 0（幂等）。【稳定币/TVL】三币 6 键齐；两函数零写盘实测（state 目录 mtime 逐文件比对）；chain.Ethereum.tvl 最新完整日 2026-09-20 < 今日（末位盘中点弃用生效）。【财报】AZO(BMO,confirmed)/KBH(AMC)/THO 命中路径实测通过；真实 watchlist(20)=0 marks 如实落盘（含 days/days_failed/truncated_days）。【拍卖】当前 14 天窗 10y/30y 为 0（honesty：仅 2y/5y/7y 已公告，属正常）；桶措辞 7 变体合成对拍全过且 window=[D-1,D+1] 正确。【FINRA 门】门关 → None 且 short_interest.json 不产；门开本机实测 4 股（settlement 2026-08-31，days_to_cover/chg_pct 齐）；测试后已删文件还原门关态（D7：机房首跑验证前该文件不存在）。【指标腿】23 符号 + spread.3m10y + depth.global_sync 键齐、各序列 ≥500 根、无 volume 键；spread 与 rate.tnx-rate.irx 同 asof 逐位相等（2026-09-21: 0.989=4.971-3.982）；global_sync {n_down2:0, of:11, asof:2026-09-18(最旧成员)}。【降级】monkeypatch 断 stablecoins 腿：notes 如实记录、无 stable 行、其余 35 键 23122 行照常。",
+ "notes_for_integrator": "1) run.py 接线：fetchers 循环追加 (\"depth\", depth), (\"cot\", cot)，沿用 mod.fetch({}, {}) 契约即可（metrics 已带 _backfill 排序标志，put_metrics 直灌）；depth.fetch 内部自理 PCR 镜像→store 回灌（每跑全量 _backfill 行，sqlite 缓存丢失自愈），backfill_pcr(http, store) 可选不接。2) store 键清单（engine pctiles/obs_gates 消费）：pcr.{total,index,equity,vix}(source=cboe,date=交易日)；move.close/vvix.close/rate.{irx,fvx,tnx,tyx}/spread.3m10y(source=self)/fx.{jpy,cny}/gidx.11 条/semi.{TSM,ASML,NVDA,AVGO}(source=yahoo)；stable.{SYM}.{depeg_bp,circ}/chain.{Chain}.tvl(source=defillama)；cot.{TK}.net(source=cftc)；depth.global_sync(value=n_down2, meta={n_down2,of,asof,down,caliber}——payload.depth_market.global_sync 直接取 store.latest('depth.global_sync') 的 meta)。3) 档案文件契约（jev J1/J2 facts 与 engine build_depth 读取）：earnings_marks.json.marks[{ticker,date,when,eps_est,date_confirmed}]（earnings_days_to 由消费方按 mark.date 现算）；cot_latest.json.rows[TK]={net,z52,net_oi,oi}（cot_z52 取 z52；RB/HO/OJ 无键→前端『无 COT 映射』）；short_interest.json.rows[sym]={short,days_to_cover,chg_pct}（KW_ENABLE_FINRA 门开前文件不存在→null 键省略，与未接入一致）；auction_windows.json.windows[{bucket,auction_date,offering_amt,window:[D-1,D+1]}]。4) radar 轻腿（jev 槽）：直接调 depth.fetch_stablecoins / depth.fetch_chain_tvl（纯函数零写盘），只写 radar.json.depth——G-STABLE 闸门判定只认 heavy store 序列（D6），两处徽章分别标注。5) KW_ENABLE_FINRA 由 ops 槽 Actions 首跑验证后置 1（D7）；本机已实测门开可用。6) 顺序依赖：depth/cot 腿间无顺序要求，但 depth 排在 knives 之后更佳（_earnings_watchlist 读 instruments.json/day_losers_promoted.json 当日值；读不到时优雅缩窄为 semi 四锚不报错）。7) 口径备忘：指标符号裁剪后实为 23 条（manifest ≈21 为约数，cut_list[3][4][5] 逐字执行）；cot_z 为总体标准差（pstdev）口径——对拍锚以此校准，勿改为样本差；fetch_pcr 返回 dict 比 spec 四键多一个 'date'（页内 selectedDate，honesty 落 asof 必需）。8) 预算实测：depth.fetch 常态（镜像在手）≈60-90s，cot.fetch ≈2s，均在 depth_net_add 1.5-2 分钟预算内；PCR 首跑回补已由随槽落盘的 pcr_history.json（57 日）豁免。"
+}

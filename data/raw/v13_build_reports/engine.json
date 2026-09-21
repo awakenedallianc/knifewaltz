@@ -1,0 +1,21 @@
+{
+ "files_written": [
+  "D:\\knifewaltz\\src\\kw\\engine.py"
+ ],
+ "public_interface": [
+  "pct_rank(values: list[float], v: float | None, min_n: int = 252) -> float | None — 0-100 分位（严格小于计数/n×100），n<min_n→None",
+  "rolling_dd52(closes: list[float]) -> list[float] — 每日 dd52w 序列（单调队列 O(n)），closes<300→[]",
+  "dd_rank3y(closes: list[float]) -> dict | None — {'pct','n'}：当前跌深在自身 3 年分布排位（pct 高=极深）；=pctile_dd52w 单一实现",
+  "beta_corr60(rows, bench_rows, win=60) -> dict | None — {'beta60','corr60','n','asof'}；bench_rows 接受 kline 行列表或 {date:close} 映射（性能通道）；n<40→None",
+  "knifebook_context(dd52w, book) -> dict | None — {'deeper_than','of':18,'nearest':[{case,drawdown_pct,trading_days,fwd_3m_pct}×3]}（档案 i 节退化链唯一实现）",
+  "obs_gates(store) -> list[dict] — 8 条观察闸 {id,name,value,threshold,on,warn,pct3y,asof,lag_note,caliber[,nodata,coin,circ_run,spread,inverted]}，display-only 绝不入主闸/blade_index/state",
+  "market_pctiles(store) -> dict — 7 键(vix/pcr_equity/pcr_index/move/vvix/fund_BTC/fund_ETH) 各 {value,pct3y,n,asof}，窗 756 观测",
+  "build_chain(det, gates, th, st=None, today=None, jev_gate=None) -> list[dict] — 8 环决策链 {id,name,inputs,rule_text,pass(true|false|null),blocking,next_text,j7_map}，第 5 环带 subs 5 子行实数；engine=display 只回第 1 环；唯一 blocking 环",
+  "build_depth(board, store, ctx=None) -> dict — 就地写 det['depth']={dd_rank,knifebook,beta60,corr60,cot,earnings,si,auction}（缺键省略），返回 payload.depth_market={global_sync,cot_extremes,stable,tvl,earnings_upcoming,auction_windows}；ctx 可注入 {cot,earnings,si,auction,book}，默认只读 data/state/*.json；幂等",
+  "market_gates(store) -> dict — 末尾新挂 g['obs_gates'] / g['pctiles'] / g['flip_back_age_days']（gates_prev 边沿计龄，只读；非 flip_back→None，边沿日=0）；主闸/state/blade_index 公式零改动",
+  "detect(inst, th, gates, fund_last) -> dict — 新事实量 z1d/worst_day_252_pct/sigma20_ann_pct/beta/corr60/beta_bench/pctile_dd52w/dd_rank_n/fall_rule/checklist_facts；close_only 走 no_volume 先例（量比/收位/ATR 项 None）；新 cls 路由 sector_etf→thresholds.sector_fall、credit_etf→thresholds.credit_fall（config 缺失用规格默认）",
+  "run_engine(store, insts, fund, veto_keys=frozenset()) -> dict — board 行全员带 det['chain']；返回值新增 result['depth_market']；KW_RADAR=1 仍零 state 写入"
+ ],
+ "test_results": "全部通过。1) 金样：改前基线（改前采集）vs 改后同库同 state，g['gates']/g['state']/g['blade_index']/blade_parts/credit 及 board 57 行全部旧键逐字段一致 PASS（新增键仅为预期新事实量）；2) 冻结库两连跑字节级一致 PASS（并行槽 universe_stocks 实时改写 T2 kline 造成的中途 diff 已隔离验证为数据 diff 非代码 diff）；3) 模块自测 74/74：链条 57/57 标的齐 8 环+实数正确、唯一 blocking 环、close_only 第 4 环『此环免验』、display 单环、ORNAMENT/RED/死区/veto/CATCH 各阻塞位、pct_rank n<252→None、rolling_dd52 与朴素实现对拍、beta_corr60 QQQ~^GSPC corr 0.9+/n=60、基准自身省略、flip_back_age 边沿计龄 4 例（含 gates_prev 未开窗钳制）、obs_gates 8 条契约键齐+缺源 nodata+不混入主闸、pctiles 7 键（fund_* 『收集中』口径）、KW_RADAR=1 零 knife_states/gates_prev 写入；4) obs 闸公式合成库对拍 10/10（z60 手算、d5/倒挂、JPY chg3、STABLE red 需连续 2 heavy 观测+赎回徽章+单观测不 red）；5) detect×1189 基准 3.4s < 8s；6) build_depth 幂等，已并行落盘的 cot_latest/auction_windows/earnings_marks 正确透传（cot_extremes SB/LE/ZC 等极值），缺源（stable/tvl/gidx/si）如实空值。",
+ "notes_for_integrator": "1) run.py 零签名变更：run_engine 已在内部 emit chain、调 build_depth 并返回 result['depth_market']；payload.gates 透传 result['gates'] 即自动含 pctiles/obs_gates/flip_back_age_days，另需注入 payload['depth_market']=result['depth_market']。2) 体积警告：det['chain'] 57 行≈124KB、checklist_facts≈19KB——按 data_file_mapping chain 归 profile/{key}.json，payload 的 board 行必须剥离 chain/checklist_facts/depth 只留 z1d 等瘦字段（render_backend M4 契约），否则 payload 破 220KB。3) flip_back_age_days：引擎只读 gates_prev.json（snapshot.py 仍是唯一写者），比值序列边沿计龄+跨跑批钳制；非 flip_back→None、边沿日=0，stier H10 直接读 g['flip_back_age_days']。4) 链条第 7 环 p_terminal 只读 jev_semantic_gate.json 的 'p' 键（jev 在引擎前落盘，与接线顺序 Call-1/2→engine 吻合）；'conf' 键 jev 若补充会自动透出。5) build_depth ctx 契约 {cot,earnings,si,auction,book}（默认只读 data/state/ 同名文件）；depth fetchers 刷新状态文件后可再调一次（幂等）。6) 新 cls 契约：universe_stocks 的 T1S 行 cls='sector_etf'、T1C 行 cls='credit_etf' 即走新阈值组（config 缺失时引擎用规格默认 -30/-12/28 与 -15/-8/30 优雅降级）；close_only 行需带 inst['close_only']=true、display 行带 inst['engine']='display'。7) 口径备忘：z1d=ln(Ct/Ct-1)/std(近250根对数收益不含当日,ddof=1,min 120)——run.py _zboard 现行实现把当日计入 σ 窗，建议总装时统一改用 det['z1d']；sigma20_ann_pct 为年化%（J8 原始日σ=值/100/√252，ddof=1 近 20 根）。8) 建造期实况：universe_stocks 已回填 kline 至 757 文件并盘中实时改写 T2 行、depth_fetchers 已落盘 cot_latest/auction_windows/earnings_marks——金样与确定性验证均按冻结快照完成，engine 对这些文件只读。"
+}

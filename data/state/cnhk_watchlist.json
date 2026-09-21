@@ -1,0 +1,83 @@
+{
+ "date": "2026-09-22",
+ "source": "yahoo",
+ "line": {
+  "eligible_dd250": -60.0,
+  "watch_dd250": -50.0
+ },
+ "note": "接近资格线观察名单：dd250 在 -50%~-60% 之间（B4 单级筛展示层，不入板不进状态机；ORNAMENT 不列）",
+ "rows": [
+  {
+   "symbol": "BILI",
+   "key": "BILI",
+   "name": "哔哩哔哩",
+   "pool": "CN_ADR",
+   "dd250": -57.8,
+   "px": 15.164999961853027,
+   "asof": "2026-09-21"
+  },
+  {
+   "symbol": "2015.HK",
+   "key": "2015_HK",
+   "name": "Li Auto Inc",
+   "pool": "CN_HK",
+   "dd250": -56.5,
+   "px": 45.47999954223633,
+   "asof": "2026-09-21"
+  },
+  {
+   "symbol": "TIGR",
+   "key": "TIGR",
+   "name": "老虎证券",
+   "pool": "CN_ADR",
+   "dd250": -56.0,
+   "px": 4.889999866485596,
+   "asof": "2026-09-21"
+  },
+  {
+   "symbol": "LI",
+   "key": "LI",
+   "name": "理想汽车",
+   "pool": "CN_ADR",
+   "dd250": -55.5,
+   "px": 11.505000114440918,
+   "asof": "2026-09-21"
+  },
+  {
+   "symbol": "NIO",
+   "key": "NIO",
+   "name": "蔚来",
+   "pool": "CN_ADR",
+   "dd250": -53.6,
+   "px": 3.6600000858306885,
+   "asof": "2026-09-21"
+  },
+  {
+   "symbol": "1810.HK",
+   "key": "1810_HK",
+   "name": "Xiaomi Corp",
+   "pool": "CN_HK",
+   "dd250": -53.6,
+   "px": 27.579999923706055,
+   "asof": "2026-09-21"
+  },
+  {
+   "symbol": "2313.HK",
+   "key": "2313_HK",
+   "name": "Shenzhou International Group Holdings Ltd",
+   "pool": "CN_HK",
+   "dd250": -51.9,
+   "px": 34.70000076293945,
+   "asof": "2026-09-21"
+  },
+  {
+   "symbol": "0960.HK",
+   "key": "0960_HK",
+   "name": "Longfor Group Holdings Ltd",
+   "pool": "CN_HK",
+   "dd250": -51.9,
+   "px": 5.820000171661377,
+   "asof": "2026-09-21"
+  }
+ ]
+}

@@ -1,0 +1,359 @@
+{
+ "asof": "2026-09-22",
+ "source": "https://yfiua.github.io/index-constituents/constituents-hsi.csv",
+ "n": 88,
+ "rows": [
+  {
+   "symbol": "0101.HK",
+   "name": "Hang Lung Properties Ltd"
+  },
+  {
+   "symbol": "1024.HK",
+   "name": "Kuaishou Technology"
+  },
+  {
+   "symbol": "1038.HK",
+   "name": "CK Infrastructure Holdings Ltd"
+  },
+  {
+   "symbol": "1044.HK",
+   "name": "Hengan International Group Co Ltd"
+  },
+  {
+   "symbol": "1088.HK",
+   "name": "China Shenhua Energy Co Ltd"
+  },
+  {
+   "symbol": "1093.HK",
+   "name": "CSPC Pharmaceutical Group Ltd"
+  },
+  {
+   "symbol": "1099.HK",
+   "name": "Sinopharm Group Co Ltd"
+  },
+  {
+   "symbol": "1109.HK",
+   "name": "China Resources Land Ltd"
+  },
+  {
+   "symbol": "1113.HK",
+   "name": "CK Asset Holdings Ltd"
+  },
+  {
+   "symbol": "1177.HK",
+   "name": "Sino Biopharmaceutical Ltd"
+  },
+  {
+   "symbol": "0011.HK",
+   "name": "Hang Seng Bank Ltd"
+  },
+  {
+   "symbol": "1209.HK",
+   "name": "China Resources Mixc Lifestyle Services Ltd"
+  },
+  {
+   "symbol": "1211.HK",
+   "name": "BYD Co Ltd"
+  },
+  {
+   "symbol": "1299.HK",
+   "name": "AIA Group Ltd"
+  },
+  {
+   "symbol": "0012.HK",
+   "name": "Henderson Land Development Co Ltd"
+  },
+  {
+   "symbol": "1378.HK",
+   "name": "China Hongqiao Group Ltd"
+  },
+  {
+   "symbol": "1398.HK",
+   "name": "Industrial & Commercial Bank of China Ltd"
+  },
+  {
+   "symbol": "0016.HK",
+   "name": "Sun Hung Kai Properties Ltd"
+  },
+  {
+   "symbol": "0175.HK",
+   "name": "Geely Automobile Holdings Ltd"
+  },
+  {
+   "symbol": "1810.HK",
+   "name": "Xiaomi Corp"
+  },
+  {
+   "symbol": "1876.HK",
+   "name": "Budweiser Brewing Co APAC Ltd"
+  },
+  {
+   "symbol": "1928.HK",
+   "name": "Sands China Ltd"
+  },
+  {
+   "symbol": "1929.HK",
+   "name": "Chow Tai Fook Jewellery Group Ltd"
+  },
+  {
+   "symbol": "1997.HK",
+   "name": "Wharf Real Estate Investment Co Ltd"
+  },
+  {
+   "symbol": "0001.HK",
+   "name": "CK Hutchison Holdings Ltd"
+  },
+  {
+   "symbol": "2015.HK",
+   "name": "Li Auto Inc"
+  },
+  {
+   "symbol": "2020.HK",
+   "name": "ANTA Sports Products Ltd"
+  },
+  {
+   "symbol": "2057.HK",
+   "name": "ZTO Express Cayman Inc"
+  },
+  {
+   "symbol": "2269.HK",
+   "name": "Wuxi Biologics Cayman Inc"
+  },
+  {
+   "symbol": "2313.HK",
+   "name": "Shenzhou International Group Holdings Ltd"
+  },
+  {
+   "symbol": "2318.HK",
+   "name": "Ping An Insurance Group Co of China Ltd"
+  },
+  {
+   "symbol": "2319.HK",
+   "name": "China Mengniu Dairy Co Ltd"
+  },
+  {
+   "symbol": "2331.HK",
+   "name": "Li Ning Co Ltd"
+  },
+  {
+   "symbol": "2359.HK",
+   "name": "WuXi AppTec Co Ltd"
+  },
+  {
+   "symbol": "2382.HK",
+   "name": "Sunny Optical Technology Group Co Ltd"
+  },
+  {
+   "symbol": "2388.HK",
+   "name": "BOC Hong Kong Holdings Ltd"
+  },
+  {
+   "symbol": "0241.HK",
+   "name": "Alibaba Health Information Technology Ltd"
+  },
+  {
+   "symbol": "2618.HK",
+   "name": "JD Logistics Inc"
+  },
+  {
+   "symbol": "2628.HK",
+   "name": "China Life Insurance Co Ltd"
+  },
+  {
+   "symbol": "0267.HK",
+   "name": "CITIC Ltd"
+  },
+  {
+   "symbol": "2688.HK",
+   "name": "ENN Energy Holdings Ltd"
+  },
+  {
+   "symbol": "0027.HK",
+   "name": "Galaxy Entertainment Group Ltd"
+  },
+  {
+   "symbol": "0285.HK",
+   "name": "BYD Electronic International Co Ltd"
+  },
+  {
+   "symbol": "0288.HK",
+   "name": "WH Group Ltd"
+  },
+  {
+   "symbol": "2899.HK",
+   "name": "Zijin Mining Group Co Ltd"
+  },
+  {
+   "symbol": "0291.HK",
+   "name": "China Resources Beer Holdings Co Ltd"
+  },
+  {
+   "symbol": "0002.HK",
+   "name": "CLP Holdings Ltd"
+  },
+  {
+   "symbol": "0300.HK",
+   "name": "Midea Group Co Ltd"
+  },
+  {
+   "symbol": "0316.HK",
+   "name": "Orient Overseas International Ltd"
+  },
+  {
+   "symbol": "0322.HK",
+   "name": "Tingyi Cayman Islands Holding Corp"
+  },
+  {
+   "symbol": "3690.HK",
+   "name": "Meituan"
+  },
+  {
+   "symbol": "3692.HK",
+   "name": "Hansoh Pharmaceutical Group Co Ltd"
+  },
+  {
+   "symbol": "0386.HK",
+   "name": "China Petroleum & Chemical Corp"
+  },
+  {
+   "symbol": "0388.HK",
+   "name": "Hong Kong Exchanges & Clearing Ltd"
+  },
+  {
+   "symbol": "3968.HK",
+   "name": "China Merchants Bank Co Ltd"
+  },
+  {
+   "symbol": "3988.HK",
+   "name": "Bank of China Ltd"
+  },
+  {
+   "symbol": "0003.HK",
+   "name": "Hong Kong & China Gas Co Ltd"
+  },
+  {
+   "symbol": "0005.HK",
+   "name": "HSBC Holdings PLC"
+  },
+  {
+   "symbol": "6618.HK",
+   "name": "JD Health International Inc"
+  },
+  {
+   "symbol": "6690.HK",
+   "name": "Haier Smart Home Co Ltd"
+  },
+  {
+   "symbol": "0669.HK",
+   "name": "Techtronic Industries Co Ltd"
+  },
+  {
+   "symbol": "0066.HK",
+   "name": "MTR Corp Ltd"
+  },
+  {
+   "symbol": "6862.HK",
+   "name": "Haidilao International Holding Ltd"
+  },
+  {
+   "symbol": "0688.HK",
+   "name": "China Overseas Land & Investment Ltd"
+  },
+  {
+   "symbol": "0006.HK",
+   "name": "Power Assets Holdings Ltd"
+  },
+  {
+   "symbol": "0700.HK",
+   "name": "Tencent Holdings Ltd"
+  },
+  {
+   "symbol": "0728.HK",
+   "name": "China Telecom Corp Ltd"
+  },
+  {
+   "symbol": "0762.HK",
+   "name": "China Unicom Hong Kong Ltd"
+  },
+  {
+   "symbol": "0823.HK",
+   "name": "Link REIT"
+  },
+  {
+   "symbol": "0836.HK",
+   "name": "China Resources Power Holdings Co Ltd"
+  },
+  {
+   "symbol": "0857.HK",
+   "name": "PetroChina Co Ltd"
+  },
+  {
+   "symbol": "0868.HK",
+   "name": "Xinyi Glass Holdings Ltd"
+  },
+  {
+   "symbol": "0881.HK",
+   "name": "Zhongsheng Group Holdings Ltd"
+  },
+  {
+   "symbol": "0883.HK",
+   "name": "CNOOC Ltd"
+  },
+  {
+   "symbol": "0939.HK",
+   "name": "China Construction Bank Corp"
+  },
+  {
+   "symbol": "0941.HK",
+   "name": "China Mobile Ltd"
+  },
+  {
+   "symbol": "0960.HK",
+   "name": "Longfor Group Holdings Ltd"
+  },
+  {
+   "symbol": "9618.HK",
+   "name": "JD.com Inc"
+  },
+  {
+   "symbol": "9633.HK",
+   "name": "Nongfu Spring Co Ltd"
+  },
+  {
+   "symbol": "0968.HK",
+   "name": "Xinyi Solar Holdings Ltd"
+  },
+  {
+   "symbol": "0981.HK",
+   "name": "Semiconductor Manufacturing International Corp"
+  },
+  {
+   "symbol": "9888.HK",
+   "name": "Baidu Inc"
+  },
+  {
+   "symbol": "9901.HK",
+   "name": "New Oriental Education & Technology Group Inc"
+  },
+  {
+   "symbol": "0992.HK",
+   "name": "Lenovo Group Ltd"
+  },
+  {
+   "symbol": "9961.HK",
+   "name": "Trip.com Group Ltd"
+  },
+  {
+   "symbol": "9988.HK",
+   "name": "Alibaba Group Holding Ltd"
+  },
+  {
+   "symbol": "9992.HK",
+   "name": "Pop Mart International Group Ltd"
+  },
+  {
+   "symbol": "9999.HK",
+   "name": "NetEase Inc"
+  }
+ ]
+}

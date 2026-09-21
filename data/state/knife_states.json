@@ -327,5 +327,335 @@
   "state": "NORMAL",
   "since": "2026-09-21",
   "events": []
+ },
+ "RB_F": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "HO_F": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "OJ_F": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "XLF": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "XLE": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "XLK": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "XLV": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "XLI": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "XLY": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "XLP": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "XLU": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "XLB": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "XLRE": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "XLC": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "SMH": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "KRE": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "XBI": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "ITB": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "JETS": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "OIH": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "XME": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "GDX": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "GDXJ": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "LQD": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "BKLN": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "PFF": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "EMB": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "HYG": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "IEF": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "BABA": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "JD": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "PDD": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "BIDU": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "NTES": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "TME": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "BILI": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "IQ": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "NIO": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "XPEV": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "LI": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "TCOM": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "YUMC": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "BEKE": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "ZTO": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "HTHT": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "EDU": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "TAL": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "GDS": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "VNET": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "WB": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "MOMO": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "ATAT": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "QFIN": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "FINV": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "LX": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "NOAH": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "RLX": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "YMM": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "DIDIY": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "BZ": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "KC": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "TIGR": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "FUTU": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "1024_HK": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "0241_HK": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
+ },
+ "0881_HK": {
+  "state": "NORMAL",
+  "since": "2026-09-22",
+  "events": []
  }
 }

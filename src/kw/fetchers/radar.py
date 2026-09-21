@@ -1,8 +1,10 @@
-"""秒抓雷达 · 轻跑批数据面（spec v1.2 ops.run_py_radar_mode + universe.burst_detection）。
+"""秒抓雷达 · 轻跑批数据面（spec v1.2 ops.run_py_radar_mode + universe.burst_detection
++ v1.3 funnel_spec 4_jev_v3 J5_prereq（榜扩 40）与 depth_spec stable_tvl_pipeline.radar_light_reuse）。
 
-六条腿（全程目标 <150s，单腿失败只标 unhealthy 不整体抛）：
+六条腿 + depth 快腿（全程目标 <150s，单腿失败只标 unhealthy 不整体抛）：
   1. Binance 现货+永续全市场 24h ticker → 崩落榜/逼空榜（USDT 对、quoteVolume>=2000 万过滤、
-     按 priceChangePercent 排序取涨/跌各 20；z 分按 spec daily_z_score 公式、量比见下）；
+     按 priceChangePercent 排序取涨/跌各 40——v1.3 J5 结算源扩容；z 分按 spec daily_z_score
+     公式、量比见下）；
      Binance 451（GitHub Actions 美国机房 IP 被全线地理封锁，2026-09 实锤）时降级 OKX
      tickers，行级 source 如实标 'okx'，binance-* 失败照旧记入 sources
   2. 全市场资金费率 premiumIndex 一次拿全 → 极值榜（warn 0.05% / red 0.1%）+
@@ -12,6 +14,9 @@
   4. 停牌/熔断：NASDAQ Trader RSS + NYSE current CSV → halts 列表（LULD 交叉验证）
   5. Yahoo screener 三榜 day_gainers/day_losers/most_actives（UA header、间隔 1s、失败不重试）
   6. Deribit DVOL 当前值（BTC/ETH，含 24h 跳升旗标）+ alternative.me F&G 当前值
+  7. depth 快腿（v1.3）：稳定币脱锚 + 链 TVL（调 depth.py 两函数，3 请求 <5s）→ 只写
+     radar.json.depth 供雷达页展示；不写 store 不写 state（contents:read 纪律）；
+     G-STABLE 闸门判定只认 heavy 的 store 序列（裁决 D6）；depth.py 未就绪 → depth=null（optional）
 
 口径诚实（页面标注依据）：
   - z1d = ln(1+pct24/100) / std(近 250 根日线对数收益，不含当日)；日线只有 BTC-USD/ETH-USD
@@ -56,7 +61,7 @@ QV_MIN = 20_000_000            # 2000 万美元门槛去僵尸币/拉盘盘
 FUNDING_WARN = 0.0005          # 0.05%/8h
 FUNDING_RED = 0.001            # 0.1%/8h
 KNIFE_PCT24 = -10.0            # 跌深线（与 funding_red 负值组合）
-BOARD_N = 20                   # 涨/跌各 20 名
+BOARD_N = 40                   # 涨/跌各 40 名（v1.3 J5_prereq：20→40，movers_history 同步 80 行/日）
 
 # 过滤噪音底座：稳定币对与杠杆代币（算法研究件 mkt_rank_pctile 的排除清单）
 STABLE_BASES = {"USDC", "FDUSD", "TUSD", "DAI", "USDP", "BUSD", "EUR", "EURI", "AEUR", "USDE", "USD1", "XUSD"}
@@ -366,8 +371,8 @@ def _leg_crypto(http: Http, sources: dict) -> dict:
                 "jev_flavor": j.get("flavor"), "jev_family": j.get("family"),
                 "source": src, "asof": asof}
 
-    # spec：按 priceChangePercent 排序取涨/跌各 20 名（榜位=排名，绿盘日跌榜可能含小涨标的，
-    # pct24 如实展示不粉饰）；宇宙不足 40 对时跌榜剔除已上涨榜的符号，防止同名双挂
+    # spec：按 priceChangePercent 排序取涨/跌各 BOARD_N 名（v1.3 各 40；榜位=排名，绿盘日跌榜可能
+    # 含小涨标的，pct24 如实展示不粉饰）；宇宙不足 2×BOARD_N 对时跌榜剔除已上涨榜的符号，防同名双挂
     ranked = sorted((r for r in spot if r["pct24"] is not None),
                     key=lambda r: r["pct24"], reverse=True)
     gain = ranked[:BOARD_N]
@@ -643,6 +648,101 @@ def _leg_dvol_fng(http: Http, sources: dict, crypto: dict) -> None:
         _mark(sources, "alternative-fng", t0, False, err=e)
 
 
+# ---------- depth 快腿：稳定币脱锚 + 链 TVL（v1.3 radar_light_reuse） ----------
+
+def _obs_param(name: str, default: float) -> float:
+    """params_registry 观察参数读取（integrator 登记后生效；未登记时用 spec 默认值）。"""
+    try:
+        p = ((read_json(STATE_DIR / "params_registry.json") or {}).get("params") or {}).get(name) or {}
+        v = p.get("current")
+        return v if isinstance(v, (int, float)) else default
+    except Exception:
+        return default
+
+
+def _num(meta: dict, *names):
+    for n in names:
+        v = meta.get(n)
+        if isinstance(v, (int, float)):
+            return v
+    return None
+
+
+def _leg_depth(http: Http, sources: dict) -> dict | None:
+    """调 depth.py 的 fetch_stablecoins / fetch_chain_tvl（标准 metrics 行契约）并整形为展示块。
+
+    只作展示（radar.json.depth），本函数零写盘；现值=30 分钟展示口径，G-STABLE 闸门判定
+    只认 heavy 的 store 序列（12h×2 确认，裁决 D6）——状态点是现值分档不是闸门判定。
+    depth.py 未就绪/单函数失败 → 对应节 []（optional 源，不算整体降级）。
+    """
+    t0 = time.time()
+    try:
+        from . import depth as depth_mod
+    except Exception as e:
+        _mark(sources, "defillama-depth", t0, False, err=f"depth.py 未就绪: {str(e)[:80]}", optional=True)
+        return None
+    warn_bp = _obs_param("obs.stable.warn_bp", 50)
+    red_bp = _obs_param("obs.stable.red_bp", 100)
+    warn_tvl = _obs_param("obs.tvl.warn_pct", -8)
+    red_tvl = _obs_param("obs.tvl.red_pct", -15)
+    out = {"stable": [], "tvl": [], "source": "defillama", "asof": now_iso(),
+           "note": "现值=跑批 30 分钟展示口径；G-STABLE 闸门判定只认 heavy store 序列（12h×2 确认）",
+           "degraded_reason": None}
+    degraded = []
+    n_rows = 0
+    # 稳定币：metrics 行 key = stable.{SYM}.depeg_bp / stable.{SYM}.circ
+    try:
+        per: dict[str, dict] = {}
+        for r in depth_mod.fetch_stablecoins(http) or []:
+            m = re.match(r"^stable\.([A-Z0-9]+)\.(depeg_bp|circ)$", str(r.get("key") or ""))
+            if not m:
+                continue
+            sym, field = m.groups()
+            d = per.setdefault(sym, {"meta": {}})
+            d[field] = r.get("value")
+            if isinstance(r.get("meta"), dict):
+                d["meta"].update(r["meta"])
+            d.setdefault("asof", r.get("asof") or r.get("date"))
+        for sym in sorted(per, key=lambda s: ("USDT", "USDC", "DAI").index(s) if s in ("USDT", "USDC", "DAI") else 9):
+            d = per[sym]
+            bp = d.get("depeg_bp")
+            price = _num(d["meta"], "price")     # depth.py 恒随行给 meta.price；缺失=如实 null 不反推
+            chg = _num(d["meta"], "circ_chg1d_pct", "chg1d_pct", "circ_chg_pct")
+            level = None
+            if isinstance(bp, (int, float)):
+                level = "red" if abs(bp) >= red_bp else ("warn" if abs(bp) >= warn_bp else "ok")
+            out["stable"].append({"sym": sym, "price": price,
+                                  "depeg_bp": round(bp, 1) if isinstance(bp, (int, float)) else None,
+                                  "circ": d.get("circ"), "circ_chg1d_pct": chg, "level": level,
+                                  "asof": d.get("asof")})
+            n_rows += 1
+    except Exception as e:
+        degraded.append(f"stable: {str(e)[:60]}")
+    # 链 TVL：metrics 行 key = chain.{name}.tvl（date=完整日，末位盘中点由 depth.py 剔除）；
+    # depth.py 每链回填序列行带 _backfill，末尾汇总行带 meta.drop_1d_pct——雷达只取汇总行
+    try:
+        for r in depth_mod.fetch_chain_tvl(http) or []:
+            if r.get("_backfill"):
+                continue
+            m = re.match(r"^chain\.(.+)\.tvl$", str(r.get("key") or ""))
+            if not m:
+                continue
+            meta = r.get("meta") if isinstance(r.get("meta"), dict) else {}
+            chg = _num(meta, "drop_1d_pct", "chg1d_pct", "drop_pct", "chg_pct")
+            level = None
+            if isinstance(chg, (int, float)):
+                level = "red" if chg <= red_tvl else ("warn" if chg <= warn_tvl else "ok")
+            out["tvl"].append({"chain": m.group(1), "tvl": r.get("value"), "chg1d_pct": chg,
+                               "date": r.get("date") or r.get("asof"), "level": level})
+            n_rows += 1
+    except Exception as e:
+        degraded.append(f"tvl: {str(e)[:60]}")
+    out["degraded_reason"] = "; ".join(degraded) or None
+    _mark(sources, "defillama-depth", t0, ok=not degraded and n_rows > 0, n=n_rows,
+          err="; ".join(degraded) or None, optional=True)
+    return out
+
+
 # ---------- 主入口 ----------
 
 def build_radar(http: Http | None = None) -> dict:
@@ -688,6 +788,11 @@ def build_radar(http: Http | None = None) -> dict:
         _leg_dvol_fng(h, sources, crypto)
     except Exception as e:
         log.warning("radar dvol/fng leg: %s", e)
+    try:
+        depth = _leg_depth(h, sources)
+    except Exception as e:
+        log.warning("radar depth leg: %s", e)
+        depth = None
 
     critical_bad = [k for k, v in sources.items() if not v["ok"] and not v.get("optional")]
     return {
@@ -697,6 +802,7 @@ def build_radar(http: Http | None = None) -> dict:
         "us": us,
         "halts": halts,
         "liquidations": liquidations,
+        "depth": depth,
         "news": [],  # radar_rss 腿由总装侧填充（store.put_news 去重后的标题流）
         "radar_thresholds": dict(RADAR_THRESHOLDS),
         "latency_notes": dict(LATENCY_NOTES),

@@ -1,0 +1,1465 @@
+{
+ "built_at": "2026-09-22T01:23:20+07:00",
+ "source": "binance(local)",
+ "row_cap": 1100,
+ "coins": {
+  "quant-network": {
+   "symbol": "QNT",
+   "binance_sym": "QNTUSDT",
+   "file": "cg_QNT.json",
+   "bars": 1100,
+   "span": {
+    "start": "2023-09-18",
+    "end": "2026-09-21",
+    "bars": 1100
+   }
+  },
+  "just": {
+   "symbol": "JST",
+   "binance_sym": "JSTUSDT",
+   "file": "cg_JST.json",
+   "bars": 1100,
+   "span": {
+    "start": "2023-09-18",
+    "end": "2026-09-21",
+    "bars": 1100
+   }
+  },
+  "nexo": {
+   "symbol": "NEXO",
+   "binance_sym": "NEXOUSDT",
+   "file": "cg_NEXO.json",
+   "bars": 1100,
+   "span": {
+    "start": "2023-09-18",
+    "end": "2026-09-21",
+    "bars": 1100
+   }
+  },
+  "pancakeswap-token": {
+   "symbol": "CAKE",
+   "binance_sym": "CAKEUSDT",
+   "file": "cg_CAKE.json",
+   "bars": 1100,
+   "span": {
+    "start": "2023-09-18",
+    "end": "2026-09-21",
+    "bars": 1100
+   }
+  },
+  "vechain": {
+   "symbol": "VET",
+   "binance_sym": "VETUSDT",
+   "file": "cg_VET.json",
+   "bars": 1100,
+   "span": {
+    "start": "2023-09-18",
+    "end": "2026-09-21",
+    "bars": 1100
+   }
+  },
+  "aerodrome-finance": {
+   "symbol": "AERO",
+   "binance_sym": "AEROUSDT",
+   "file": "cg_AERO.json",
+   "bars": 67,
+   "span": {
+    "start": "2026-07-17",
+    "end": "2026-09-21",
+    "bars": 67
+   }
+  },
+  "bianrensheng": {
+   "symbol": "币安人生",
+   "binance_sym": "币安人生USDT",
+   "file": "cg_币安人生.json",
+   "bars": 258,
+   "span": {
+    "start": "2026-01-07",
+    "end": "2026-09-21",
+    "bars": 258
+   }
+  },
+  "falcon-finance-ff": {
+   "symbol": "FF",
+   "binance_sym": "FFUSDT",
+   "file": "cg_FF.json",
+   "bars": 358,
+   "span": {
+    "start": "2025-09-29",
+    "end": "2026-09-21",
+    "bars": 358
+   }
+  },
+  "sun-token": {
+   "symbol": "SUN",
+   "binance_sym": "SUNUSDT",
+   "file": "cg_SUN.json",
+   "bars": 1100,
+   "span": {
+    "start": "2023-09-18",
+    "end": "2026-09-21",
+    "bars": 1100
+   }
+  },
+  "decred": {
+   "symbol": "DCR",
+   "binance_sym": "DCRUSDT",
+   "file": "cg_DCR.json",
+   "bars": 1100,
+   "span": {
+    "start": "2023-09-18",
+    "end": "2026-09-21",
+    "bars": 1100
+   }
+  },
+  "gnosis": {
+   "symbol": "GNO",
+   "binance_sym": "GNOUSDT",
+   "file": "cg_GNO.json",
+   "bars": 1100,
+   "span": {
+    "start": "2023-09-18",
+    "end": "2026-09-21",
+    "bars": 1100
+   }
+  },
+  "terra-luna": {
+   "symbol": "LUNC",
+   "binance_sym": "LUNCUSDT",
+   "file": "cg_LUNC.json",
+   "bars": 1100,
+   "span": {
+    "start": "2023-09-18",
+    "end": "2026-09-21",
+    "bars": 1100
+   }
+  },
+  "syrup": {
+   "symbol": "SYRUP",
+   "binance_sym": "SYRUPUSDT",
+   "file": "cg_SYRUP.json",
+   "bars": 504,
+   "span": {
+    "start": "2025-05-06",
+    "end": "2026-09-21",
+    "bars": 504
+   }
+  },
+  "trust-wallet-token": {
+   "symbol": "TWT",
+   "binance_sym": "TWTUSDT",
+   "file": "cg_TWT.json",
+   "bars": 1100,
+   "span": {
+    "start": "2023-09-18",
+    "end": "2026-09-21",
+    "bars": 1100
+   }
+  },
+  "jasmycoin": {
+   "symbol": "JASMY",
+   "binance_sym": "JASMYUSDT",
+   "file": "cg_JASMY.json",
+   "bars": 1100,
+   "span": {
+    "start": "2023-09-18",
+    "end": "2026-09-21",
+    "bars": 1100
+   }
+  },
+  "thorchain": {
+   "symbol": "RUNE",
+   "binance_sym": "RUNEUSDT",
+   "file": "cg_RUNE.json",
+   "bars": 1100,
+   "span": {
+    "start": "2023-09-18",
+    "end": "2026-09-21",
+    "bars": 1100
+   }
+  },
+  "ecash": {
+   "symbol": "XEC",
+   "binance_sym": "XECUSDT",
+   "file": "cg_XEC.json",
+   "bars": 1100,
+   "span": {
+    "start": "2023-09-18",
+    "end": "2026-09-21",
+    "bars": 1100
+   }
+  },
+  "safepal": {
+   "symbol": "SFP",
+   "binance_sym": "SFPUSDT",
+   "file": "cg_SFP.json",
+   "bars": 1100,
+   "span": {
+    "start": "2023-09-18",
+    "end": "2026-09-21",
+    "bars": 1100
+   }
+  },
+  "four": {
+   "symbol": "FORM",
+   "binance_sym": "FORMUSDT",
+   "file": "cg_FORM.json",
+   "bars": 552,
+   "span": {
+    "start": "2025-03-19",
+    "end": "2026-09-21",
+    "bars": 552
+   }
+  },
+  "stp-network": {
+   "symbol": "AWE",
+   "binance_sym": "AWEUSDT",
+   "file": "cg_AWE.json",
+   "bars": 489,
+   "span": {
+    "start": "2025-05-21",
+    "end": "2026-09-21",
+    "bars": 489
+   }
+  },
+  "circle-internet-group-bstock": {
+   "symbol": "CRCLB",
+   "binance_sym": "CRCLBUSDT",
+   "file": "cg_CRCLB.json",
+   "bars": 103,
+   "span": {
+    "start": "2026-06-11",
+    "end": "2026-09-21",
+    "bars": 103
+   }
+  },
+  "genius-3": {
+   "symbol": "GENIUS",
+   "binance_sym": "GENIUSUSDT",
+   "file": "cg_GENIUS.json",
+   "bars": 123,
+   "span": {
+    "start": "2026-05-22",
+    "end": "2026-09-21",
+    "bars": 123
+   }
+  },
+  "plume": {
+   "symbol": "PLUME",
+   "binance_sym": "PLUMEUSDT",
+   "file": "cg_PLUME.json",
+   "bars": 400,
+   "span": {
+    "start": "2025-08-18",
+    "end": "2026-09-21",
+    "bars": 400
+   }
+  },
+  "superfarm": {
+   "symbol": "SUPER",
+   "binance_sym": "SUPERUSDT",
+   "file": "cg_SUPER.json",
+   "bars": 1100,
+   "span": {
+    "start": "2023-09-18",
+    "end": "2026-09-21",
+    "bars": 1100
+   }
+  },
+  "prometeus": {
+   "symbol": "PROM",
+   "binance_sym": "PROMUSDT",
+   "file": "cg_PROM.json",
+   "bars": 1100,
+   "span": {
+    "start": "2023-09-18",
+    "end": "2026-09-21",
+    "bars": 1100
+   }
+  },
+  "orca": {
+   "symbol": "ORCA",
+   "binance_sym": "ORCAUSDT",
+   "file": "cg_ORCA.json",
+   "bars": 655,
+   "span": {
+    "start": "2024-12-06",
+    "end": "2026-09-21",
+    "bars": 655
+   }
+  },
+  "cow-protocol": {
+   "symbol": "COW",
+   "binance_sym": "COWUSDT",
+   "file": "cg_COW.json",
+   "bars": 685,
+   "span": {
+    "start": "2024-11-06",
+    "end": "2026-09-21",
+    "bars": 685
+   }
+  },
+  "walrus-2": {
+   "symbol": "WAL",
+   "binance_sym": "WALUSDT",
+   "file": "cg_WAL.json",
+   "bars": 347,
+   "span": {
+    "start": "2025-10-10",
+    "end": "2026-09-21",
+    "bars": 347
+   }
+  },
+  "rif-token": {
+   "symbol": "RIF",
+   "binance_sym": "RIFUSDT",
+   "file": "cg_RIF.json",
+   "bars": 1100,
+   "span": {
+    "start": "2023-09-18",
+    "end": "2026-09-21",
+    "bars": 1100
+   }
+  },
+  "theta-fuel": {
+   "symbol": "TFUEL",
+   "binance_sym": "TFUELUSDT",
+   "file": "cg_TFUEL.json",
+   "bars": 1100,
+   "span": {
+    "start": "2023-09-18",
+    "end": "2026-09-21",
+    "bars": 1100
+   }
+  },
+  "redstone-oracles": {
+   "symbol": "RED",
+   "binance_sym": "REDUSDT",
+   "file": "cg_RED.json",
+   "bars": 571,
+   "span": {
+    "start": "2025-02-28",
+    "end": "2026-09-21",
+    "bars": 571
+   }
+  },
+  "kava": {
+   "symbol": "KAVA",
+   "binance_sym": "KAVAUSDT",
+   "file": "cg_KAVA.json",
+   "bars": 1100,
+   "span": {
+    "start": "2023-09-18",
+    "end": "2026-09-21",
+    "bars": 1100
+   }
+  },
+  "banana-for-scale-2": {
+   "symbol": "BANANAS31",
+   "binance_sym": "BANANAS31USDT",
+   "file": "cg_BANANAS31.json",
+   "bars": 544,
+   "span": {
+    "start": "2025-03-27",
+    "end": "2026-09-21",
+    "bars": 544
+   }
+  },
+  "holotoken": {
+   "symbol": "HOT",
+   "binance_sym": "HOTUSDT",
+   "file": "cg_HOT.json",
+   "bars": 1100,
+   "span": {
+    "start": "2023-09-18",
+    "end": "2026-09-21",
+    "bars": 1100
+   }
+  },
+  "vethor-token": {
+   "symbol": "VTHO",
+   "binance_sym": "VTHOUSDT",
+   "file": "cg_VTHO.json",
+   "bars": 1100,
+   "span": {
+    "start": "2023-09-18",
+    "end": "2026-09-21",
+    "bars": 1100
+   }
+  },
+  "nexpace": {
+   "symbol": "NXPC",
+   "binance_sym": "NXPCUSDT",
+   "file": "cg_NXPC.json",
+   "bars": 495,
+   "span": {
+    "start": "2025-05-15",
+    "end": "2026-09-21",
+    "bars": 495
+   }
+  },
+  "spacex-bstocks-tokenized-stock": {
+   "symbol": "SPCXB",
+   "binance_sym": "SPCXBUSDT",
+   "file": "cg_SPCXB.json",
+   "bars": 102,
+   "span": {
+    "start": "2026-06-12",
+    "end": "2026-09-21",
+    "bars": 102
+   }
+  },
+  "dexe": {
+   "symbol": "DEXE",
+   "binance_sym": "DEXEUSDT",
+   "file": "cg_DEXE.json",
+   "bars": 1100,
+   "span": {
+    "start": "2023-09-18",
+    "end": "2026-09-21",
+    "bars": 1100
+   }
+  },
+  "goplus-security": {
+   "symbol": "GPS",
+   "binance_sym": "GPSUSDT",
+   "file": "cg_GPS.json",
+   "bars": 567,
+   "span": {
+    "start": "2025-03-04",
+    "end": "2026-09-21",
+    "bars": 567
+   }
+  },
+  "espresso": {
+   "symbol": "ESP",
+   "binance_sym": "ESPUSDT",
+   "file": "cg_ESP.json",
+   "bars": 222,
+   "span": {
+    "start": "2026-02-12",
+    "end": "2026-09-21",
+    "bars": 222
+   }
+  },
+  "axelar": {
+   "symbol": "AXL",
+   "binance_sym": "AXLUSDT",
+   "file": "cg_AXL.json",
+   "bars": 935,
+   "span": {
+    "start": "2024-03-01",
+    "end": "2026-09-21",
+    "bars": 935
+   }
+  },
+  "nervos-network": {
+   "symbol": "CKB",
+   "binance_sym": "CKBUSDT",
+   "file": "cg_CKB.json",
+   "bars": 1100,
+   "span": {
+    "start": "2023-09-18",
+    "end": "2026-09-21",
+    "bars": 1100
+   }
+  },
+  "harmony": {
+   "symbol": "ONE",
+   "binance_sym": "ONEUSDT",
+   "file": "cg_ONE_5343a7.json",
+   "bars": 1100,
+   "span": {
+    "start": "2023-09-18",
+    "end": "2026-09-21",
+    "bars": 1100
+   }
+  },
+  "oasis-network": {
+   "symbol": "ROSE",
+   "binance_sym": "ROSEUSDT",
+   "file": "cg_ROSE.json",
+   "bars": 1100,
+   "span": {
+    "start": "2023-09-18",
+    "end": "2026-09-21",
+    "bars": 1100
+   }
+  },
+  "strategy-tokenized-bstocks": {
+   "symbol": "MSTRB",
+   "binance_sym": "MSTRBUSDT",
+   "file": "cg_MSTRB.json",
+   "bars": 91,
+   "span": {
+    "start": "2026-06-23",
+    "end": "2026-09-21",
+    "bars": 91
+   }
+  },
+  "io": {
+   "symbol": "IO",
+   "binance_sym": "IOUSDT",
+   "file": "cg_IO.json",
+   "bars": 833,
+   "span": {
+    "start": "2024-06-11",
+    "end": "2026-09-21",
+    "bars": 833
+   }
+  },
+  "synapse-2": {
+   "symbol": "SYN",
+   "binance_sym": "SYNUSDT",
+   "file": "cg_SYN.json",
+   "bars": 1100,
+   "span": {
+    "start": "2023-09-18",
+    "end": "2026-09-21",
+    "bars": 1100
+   }
+  },
+  "polymesh": {
+   "symbol": "POLYX",
+   "binance_sym": "POLYXUSDT",
+   "file": "cg_POLYX.json",
+   "bars": 1100,
+   "span": {
+    "start": "2023-09-18",
+    "end": "2026-09-21",
+    "bars": 1100
+   }
+  },
+  "venus": {
+   "symbol": "XVS",
+   "binance_sym": "XVSUSDT",
+   "file": "cg_XVS.json",
+   "bars": 1100,
+   "span": {
+    "start": "2023-09-18",
+    "end": "2026-09-21",
+    "bars": 1100
+   }
+  },
+  "nano": {
+   "symbol": "XNO",
+   "binance_sym": "XNOUSDT",
+   "file": "cg_XNO.json",
+   "bars": 1100,
+   "span": {
+    "start": "2023-09-18",
+    "end": "2026-09-21",
+    "bars": 1100
+   }
+  },
+  "altlayer": {
+   "symbol": "ALT",
+   "binance_sym": "ALTUSDT",
+   "file": "cg_ALT.json",
+   "bars": 971,
+   "span": {
+    "start": "2024-01-25",
+    "end": "2026-09-21",
+    "bars": 971
+   }
+  },
+  "dusk-network": {
+   "symbol": "DUSK",
+   "binance_sym": "DUSKUSDT",
+   "file": "cg_DUSK.json",
+   "bars": 1100,
+   "span": {
+    "start": "2023-09-18",
+    "end": "2026-09-21",
+    "bars": 1100
+   }
+  },
+  "coti": {
+   "symbol": "COTI",
+   "binance_sym": "COTIUSDT",
+   "file": "cg_COTI.json",
+   "bars": 1100,
+   "span": {
+    "start": "2023-09-18",
+    "end": "2026-09-21",
+    "bars": 1100
+   }
+  },
+  "verge": {
+   "symbol": "XVG",
+   "binance_sym": "XVGUSDT",
+   "file": "cg_XVG.json",
+   "bars": 1100,
+   "span": {
+    "start": "2023-09-18",
+    "end": "2026-09-21",
+    "bars": 1100
+   }
+  },
+  "holoworld": {
+   "symbol": "HOLO",
+   "binance_sym": "HOLOUSDT",
+   "file": "cg_HOLO.json",
+   "bars": 376,
+   "span": {
+    "start": "2025-09-11",
+    "end": "2026-09-21",
+    "bars": 376
+   }
+  },
+  "ankr": {
+   "symbol": "ANKR",
+   "binance_sym": "ANKRUSDT",
+   "file": "cg_ANKR.json",
+   "bars": 1100,
+   "span": {
+    "start": "2023-09-18",
+    "end": "2026-09-21",
+    "bars": 1100
+   }
+  },
+  "zero-gravity": {
+   "symbol": "0G",
+   "binance_sym": "0GUSDT",
+   "file": "cg_0G.json",
+   "bars": 365,
+   "span": {
+    "start": "2025-09-22",
+    "end": "2026-09-21",
+    "bars": 365
+   }
+  }
+ },
+ "failed": {
+  "figure-heloc": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "FIGR_HELOC"
+  },
+  "monero": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "XMR"
+  },
+  "whitebit": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "WBT"
+  },
+  "rain": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "RAIN"
+  },
+  "memecore": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "M"
+  },
+  "bitway": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "BTW"
+  },
+  "hashnote-usyc": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "USYC"
+  },
+  "blackrock-usd-institutional-digital-liquidity-fund": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "BUIDL"
+  },
+  "ondo-us-dollar-yield": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "USDY"
+  },
+  "mantle": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "MNT"
+  },
+  "htx-dao": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "HTX"
+  },
+  "bitget-token": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "BGB"
+  },
+  "spiko-amundi-overnight-swap-fund-eur": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "EURSAFO"
+  },
+  "akedo": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "AKE"
+  },
+  "gatechain-token": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "GT"
+  },
+  "kaspa": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "KAS"
+  },
+  "kucoin-shares": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "KCS"
+  },
+  "blockchain-capital": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "BCAP"
+  },
+  "eutbl": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "EUTBL"
+  },
+  "janus-henderson-anemoy-aaa-clo-fund": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "JAAA"
+  },
+  "superstate-short-duration-us-government-securities-fund-ustb": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "USTB"
+  },
+  "stable-2": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "STABLE"
+  },
+  "xdce-crowd-sale": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "XDC"
+  },
+  "beldex": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "BDX"
+  },
+  "pieverse": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "PIEVERSE"
+  },
+  "spx6900": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "SPX"
+  },
+  "hash-2": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "HASH"
+  },
+  "derive": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "DRV"
+  },
+  "bitcoin-cash-sv": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "BSV"
+  },
+  "bedrock-token": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "BR"
+  },
+  "unibase": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "UB"
+  },
+  "janus-henderson-anemoy-treasury-fund": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "JTRSY"
+  },
+  "bittorrent": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "BTT"
+  },
+  "kinesis-gold": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "KAU"
+  },
+  "usdai": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "USDAI"
+  },
+  "ousg": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "OUSG"
+  },
+  "stonk-3": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "STONK"
+  },
+  "olympus": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "OHM"
+  },
+  "useless-3": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "USELESS"
+  },
+  "ape-and-pepe": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "APEPE"
+  },
+  "kinesis-silver": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "KAG"
+  },
+  "ribbita-by-virtuals": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "TIBBIR"
+  },
+  "artificial-inu-3": {
+   "reason": "现价偏差 >20% 拒绑（防同名代币绑错）",
+   "symbol": "AI",
+   "binance_sym": "AIUSDT",
+   "binance_px": 0.0183,
+   "cg_px": 0.24666
+  },
+  "backpack": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "BP"
+  },
+  "lobster-2": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "龙虾"
+  },
+  "pearl-2": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "PRL"
+  },
+  "bnb48-club-token": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "KOGE"
+  },
+  "railgun": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "RAIL"
+  },
+  "build-on": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "B"
+  },
+  "tradable-na-rent-financing-platform-sstn": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "PC0000031"
+  },
+  "grx-chain": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "GRX"
+  },
+  "non-playable-coin": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "NPC"
+  },
+  "fartcoin": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "FARTCOIN"
+  },
+  "akash-network": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "AKT"
+  },
+  "safo": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "SAFO"
+  },
+  "mx-token": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "MX"
+  },
+  "cash-cat": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "CASHCAT"
+  },
+  "apyusd": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "APYUSD"
+  },
+  "swissborg": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "BORG"
+  },
+  "btse-token": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "BTSE"
+  },
+  "chain-2": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "XCN"
+  },
+  "spiko-us-t-bills-money-market-fund": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "USTBL"
+  },
+  "vision-3": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "VSN"
+  },
+  "coco-2": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "COCO"
+  },
+  "telcoin": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "TEL"
+  },
+  "tradable-apac-diversified-finance-provider-sstn": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "PC0000033"
+  },
+  "ultima": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "ULTIMA"
+  },
+  "origintrail": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "TRAC"
+  },
+  "gmt-token": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "GOMINING"
+  },
+  "dgrid-ai": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "DGAI"
+  },
+  "shuffle-2": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "SHFL"
+  },
+  "seeker": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "SKR"
+  },
+  "strategy-pp-variable-xstock": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "STRCX"
+  },
+  "aioz-network": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "AIOZ"
+  },
+  "humanity": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "H"
+  },
+  "tradable-latam-fintech-sstn": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "PC0000097"
+  },
+  "zano": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "ZANO"
+  },
+  "ozone-chain": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "OZO"
+  },
+  "rollbit-coin": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "RLB"
+  },
+  "meta-2-2": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "META"
+  },
+  "bc-token": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "BC"
+  },
+  "dog-go-to-the-moon-rune": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "DOG"
+  },
+  "greenhood": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "HOOD"
+  },
+  "theo-short-duration-us-treasury-fund": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "THBILL"
+  },
+  "geodnet": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "GEOD"
+  },
+  "chutes": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "SN64"
+  },
+  "nxm": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "NXM"
+  },
+  "cheems-token": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "CHEEMS"
+  },
+  "alpha-bulgaria-warrants": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "ALFW"
+  },
+  "quack-ai": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "Q"
+  },
+  "celium": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "SN51"
+  },
+  "circle-internet-group-ondo-tokenized-stock": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "CRCLON"
+  },
+  "bulla-3": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "BULLA"
+  },
+  "tradable-na-third-party-online-merchant-sstn": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "PC0000015"
+  },
+  "nest-blackopal-liquidstone-ii-vault": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "NOPAL"
+  },
+  "onyc": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "ONYC"
+  },
+  "melania-meme": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "MELANIA"
+  },
+  "niu-lai": {
+   "reason": "仅 13 根（<60），不造假数据",
+   "symbol": "牛来",
+   "binance_sym": "牛来USDT"
+  },
+  "securitize-tokenized-aaa-clo-fund": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "STAC"
+  },
+  "anonymous-cat": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "ZCAT"
+  },
+  "bitget-wrapped-btc": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "BGBTC"
+  },
+  "sosovalue": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "SOSO"
+  },
+  "tradable-latam-middle-market-lender-sstl": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "PC0000085"
+  },
+  "tradable-singapore-fintech-ssl": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "PC0000077"
+  },
+  "microstrategy-xstock": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "MSTRX"
+  },
+  "marscoin-4": {
+   "reason": "仅 18 根（<60），不造假数据",
+   "symbol": "MARSCOIN",
+   "binance_sym": "MARSCOINUSDT"
+  },
+  "beam-2": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "BEAM"
+  },
+  "bermuda-shorts": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "SHORT"
+  },
+  "wemix-token": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "WEMIX"
+  },
+  "debridge": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "DBR"
+  },
+  "mag7-ssi": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "MAG7.SSI"
+  },
+  "apollo-diversified-credit-securitize-fund": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "ACRED"
+  },
+  "unifai-network": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "UAI"
+  },
+  "nockchain": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "NOCK"
+  },
+  "pumpmeme": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "PM"
+  },
+  "unitywallet-token": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "UNT"
+  },
+  "kinetiq": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "KNTQ"
+  },
+  "helium": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "HNT"
+  },
+  "peaq-2": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "PEAQ"
+  },
+  "targon": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "SN4"
+  },
+  "tagger": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "TAG"
+  },
+  "goldfish-gold": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "GGBR"
+  },
+  "o1-exchange": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "O"
+  },
+  "yzy": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "YZY"
+  },
+  "pleasing-gold": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "PGOLD"
+  },
+  "project-galaxy": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "GAL"
+  },
+  "adi-token": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "ADI"
+  },
+  "circle-xstock": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "CRCLX"
+  },
+  "wrappedm-by-m0": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "WM"
+  },
+  "3jane-usd3": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "USD3"
+  },
+  "bending-spoons-xstock": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "BSPX"
+  },
+  "diem": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "DIEM"
+  },
+  "fx-usd-saving": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "FXSAVE"
+  },
+  "purr-2": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "PURR"
+  },
+  "na-post-settlement-legal-financing-receivables": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "PC0000101"
+  },
+  "cross-2": {
+   "reason": "现价偏差 >20% 拒绑（防同名代币绑错）",
+   "symbol": "ONE",
+   "binance_sym": "ONEUSDT",
+   "binance_px": 0.004146,
+   "cg_px": 0.147662
+  },
+  "tradable-north-america-pos-lender-sstn": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "PC0000019"
+  },
+  "tradable-na-neobank-sstl": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "PC0000023"
+  },
+  "ai-rig-complex": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "ARC"
+  },
+  "midas-mtbill": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "MTBILL"
+  },
+  "the-black-bull": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "ANSEM"
+  },
+  "funfair": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "FUN"
+  },
+  "proton": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "XPR"
+  },
+  "anvil": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "ANVL"
+  },
+  "tesla-xstock": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "TSLAX"
+  },
+  "matrixdock-gold": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "XAUM"
+  },
+  "cap-4": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "CAP"
+  },
+  "cortex-2": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "CX"
+  },
+  "ishares-core-s-p-500-etf-ondo-tokenized-etf": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "IVVON"
+  },
+  "exod": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "EXOD"
+  },
+  "prize-protocol": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "PRIZE"
+  },
+  "temple": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "TEMPLE"
+  },
+  "orbio-so": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "ORBIO"
+  },
+  "sp500-xstock": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "SPYX"
+  },
+  "midas-fasanara-global": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "MGLOBAL"
+  },
+  "comedian": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "BAN"
+  },
+  "metal-blockchain": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "METAL"
+  },
+  "zignaly": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "ZIG"
+  },
+  "stronghold-token": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "SHX"
+  },
+  "mindwavedao": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "NILA"
+  },
+  "soon-2": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "SOON"
+  },
+  "midas-mf-one": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "MF-ONE"
+  },
+  "tradable-eu-latam-pos-financing-sstl": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "PC0000049"
+  },
+  "escoin-token": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "ELG"
+  },
+  "swop-2": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "SWOP"
+  },
+  "nexus-4": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "NEX"
+  },
+  "unitas": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "UP"
+  },
+  "midas-fasanara-global-open": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "MGLO"
+  },
+  "meme-horse": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "MHORSE"
+  },
+  "marscat-token": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "MCAT"
+  },
+  "chainopera-ai": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "COAI"
+  },
+  "bas": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "BAS"
+  },
+  "qubic-network": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "QUBIC"
+  },
+  "vaneck-treasury-fund": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "VBILL"
+  },
+  "noxo": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "NOXO"
+  },
+  "newton-project": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "AB"
+  },
+  "based-brett": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "BRETT"
+  },
+  "pentagon-chain": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "PC"
+  },
+  "fonq": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "FONQ"
+  },
+  "tradable-na-legal-receivables-ssl": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "PC0000081"
+  },
+  "researchcoin": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "RSC"
+  },
+  "jelly-my-jelly": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "JELLYJELLY"
+  },
+  "pirate-chain": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "ARRR"
+  },
+  "atoshi": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "ATOS"
+  },
+  "ravedao": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "RAVE"
+  },
+  "affine": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "SN120"
+  },
+  "score": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "SN44"
+  },
+  "bim-2": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "BIM"
+  },
+  "ozapay": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "OZA"
+  },
+  "popcat": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "POPCAT"
+  },
+  "flying-tulip": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "FT"
+  },
+  "troll-2": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "TROLL"
+  },
+  "quantum-resistant-ledger": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "QRL"
+  },
+  "keeta": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "KTA"
+  },
+  "anemoy-tokenized-apollo-diversified-credit-fund": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "ACRDX"
+  },
+  "chump-coin": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "CHUMP"
+  },
+  "na-capital-as-a-service-sstn": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "PC0016245"
+  },
+  "gekko": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "GEKKO"
+  },
+  "xyo-network": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "XYO"
+  },
+  "templar": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "SN3"
+  },
+  "blackrock-daily-reinvestment-stablecoin-reserve-vehicle": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "BRSRV"
+  },
+  "skyai": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "SKYAI"
+  },
+  "aria-chain": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "ARIAX"
+  },
+  "loaded-lions": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "LION"
+  },
+  "infinifi-usd": {
+   "reason": "binance 无 USDT 现货对",
+   "symbol": "IUSD"
+  }
+ },
+ "n": 57
+}

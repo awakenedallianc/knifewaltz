@@ -2,23 +2,479 @@
  "version": "v1.2-preregistered",
  "registered_at": "2026-09-21",
  "source": "radar_spec.json calibration.files.params_registry（CAL 14 参数表照抄 + 期货腿新增 2 条）",
- "note": "预注册参数网格：网格外的参数值禁止上线（RL-10）；换参唯一通道=季度 walk-forward（验证集入选+留出集一次性否决）→ params_history 留痕 → 人工改 config.yaml（RL-9）；网格本身的修改按换参同等流程留痕。",
+ "note": "预注册参数网格：网格外的参数值禁止上线（RL-10）；换参唯一通道=季度 walk-forward（验证集入选+留出集一次性否决）→ params_history 留痕 → 人工改 config.yaml（RL-9）；网格本身的修改按换参同等流程留痕。 | 2026-09-22 v1.3 登记：precision 17 条(s_tier.*) + depth 18 条(sector/credit_fall walk-forward 管辖 + obs.* 冻结至 2026-12 法庭)",
  "params": {
-  "vix_gate.primary": {"current": 36, "grid": [33, 36, 39, 42], "frozen": false},
-  "index_fall.dd52w": {"current": -20, "grid": [-15, -20, -25], "frozen": false},
-  "index_fall.ret10": {"current": -10, "grid": [-8, -10, -12], "frozen": false},
-  "knife_fall.dd52w": {"current": -40, "grid": [-35, -40, -45, -50], "frozen": false},
-  "knife_fall.ret10": {"current": -15, "grid": [-10, -15, -20], "frozen": false},
-  "crypto_fall.dd52w": {"current": -50, "grid": [-40, -50, -60], "frozen": false},
-  "crypto_fall.ret10": {"current": -20, "grid": [-15, -20, -25], "frozen": false},
-  "vol_climax_ratio": {"current": 3.0, "grid": [2.5, 3.0, 3.5, 4.0], "frozen": false},
-  "checklist.catch_min": {"current": 3, "grid": [3, 4], "frozen": false},
-  "catch_window_days": {"current": 10, "grid": [7, 10, 15], "frozen": false},
-  "knifescore.weights": {"current": [40, 20, 20, 20], "grid": [[40, 20, 20, 20], [30, 30, 20, 20], [35, 25, 20, 20]], "frozen": false},
-  "term_flip.red": {"current": 1.0, "grid": [1.0], "frozen": true},
-  "b_tier_dd250": {"current": -60, "grid": [-60], "frozen": true},
-  "cooldown_days": {"current": 10, "grid": [10], "frozen": true},
-  "futures_fall.dd52w": {"current": -30, "grid": [-25, -30, -35], "frozen": false},
-  "futures_fall.ret10": {"current": -12, "grid": [-10, -12, -15], "frozen": false}
- }
+  "vix_gate.primary": {
+   "current": 36,
+   "grid": [
+    33,
+    36,
+    39,
+    42
+   ],
+   "frozen": false
+  },
+  "index_fall.dd52w": {
+   "current": -20,
+   "grid": [
+    -15,
+    -20,
+    -25
+   ],
+   "frozen": false
+  },
+  "index_fall.ret10": {
+   "current": -10,
+   "grid": [
+    -8,
+    -10,
+    -12
+   ],
+   "frozen": false
+  },
+  "knife_fall.dd52w": {
+   "current": -40,
+   "grid": [
+    -35,
+    -40,
+    -45,
+    -50
+   ],
+   "frozen": false
+  },
+  "knife_fall.ret10": {
+   "current": -15,
+   "grid": [
+    -10,
+    -15,
+    -20
+   ],
+   "frozen": false
+  },
+  "crypto_fall.dd52w": {
+   "current": -50,
+   "grid": [
+    -40,
+    -50,
+    -60
+   ],
+   "frozen": false
+  },
+  "crypto_fall.ret10": {
+   "current": -20,
+   "grid": [
+    -15,
+    -20,
+    -25
+   ],
+   "frozen": false
+  },
+  "vol_climax_ratio": {
+   "current": 3.0,
+   "grid": [
+    2.5,
+    3.0,
+    3.5,
+    4.0
+   ],
+   "frozen": false
+  },
+  "checklist.catch_min": {
+   "current": 3,
+   "grid": [
+    3,
+    4
+   ],
+   "frozen": false
+  },
+  "catch_window_days": {
+   "current": 10,
+   "grid": [
+    7,
+    10,
+    15
+   ],
+   "frozen": false
+  },
+  "knifescore.weights": {
+   "current": [
+    40,
+    20,
+    20,
+    20
+   ],
+   "grid": [
+    [
+     40,
+     20,
+     20,
+     20
+    ],
+    [
+     30,
+     30,
+     20,
+     20
+    ],
+    [
+     35,
+     25,
+     20,
+     20
+    ]
+   ],
+   "frozen": false
+  },
+  "term_flip.red": {
+   "current": 1.0,
+   "grid": [
+    1.0
+   ],
+   "frozen": true
+  },
+  "b_tier_dd250": {
+   "current": -60,
+   "grid": [
+    -60
+   ],
+   "frozen": true
+  },
+  "cooldown_days": {
+   "current": 10,
+   "grid": [
+    10
+   ],
+   "frozen": true
+  },
+  "futures_fall.dd52w": {
+   "current": -30,
+   "grid": [
+    -25,
+    -30,
+    -35
+   ],
+   "frozen": false
+  },
+  "futures_fall.ret10": {
+   "current": -12,
+   "grid": [
+    -10,
+    -12,
+    -15
+   ],
+   "frozen": false
+  },
+  "s_tier.monthly_max": {
+   "current": 5,
+   "grid": [
+    5
+   ],
+   "frozen": true,
+   "basis": "用户指令 NS-70 逐字：月不超过 5"
+  },
+  "s_tier.per_key_month_max": {
+   "current": 1,
+   "grid": [
+    1
+   ],
+   "frozen": true
+  },
+  "s_tier.carryover": {
+   "current": "none",
+   "grid": [
+    "none"
+   ],
+   "frozen": true
+  },
+  "s_tier.checklist_min": {
+   "current": 4,
+   "grid": [
+    4,
+    5
+   ],
+   "frozen": false
+  },
+  "s_tier.score_min": {
+   "current": 65,
+   "grid": [
+    55,
+    65,
+    75,
+    80
+   ],
+   "frozen": false,
+   "note": "80 档位=展示方提案并入网格（A2），由法庭裁"
+  },
+  "s_tier.j1_p_terminal_max": {
+   "current": 0.15,
+   "grid": [
+    0.1,
+    0.15,
+    0.2
+   ],
+   "frozen": false
+  },
+  "s_tier.softscore.weights": {
+   "current": [
+    0.4,
+    0.25,
+    0.35
+   ],
+   "grid": [
+    [
+     0.4,
+     0.25,
+     0.35
+    ],
+    [
+     0.5,
+     0.2,
+     0.3
+    ],
+    [
+     0.34,
+     0.33,
+     0.33
+    ]
+   ],
+   "frozen": false
+  },
+  "s_tier.lr_gate_enabled": {
+   "current": false,
+   "grid": [
+    false,
+    true
+   ],
+   "frozen": false,
+   "note": "H9 启用唯一通道=季度 walk-forward 法庭；启用前只记 shadow"
+  },
+  "s_tier.lr_min": {
+   "current": 4.0,
+   "grid": [
+    3.0,
+    4.0,
+    5.0
+   ],
+   "frozen": false
+  },
+  "s_tier.slice_evidence_min_n": {
+   "current": 10,
+   "grid": [
+    10
+   ],
+   "frozen": true,
+   "note": "n<10 只能标线索——诚实规则不可调参"
+  },
+  "s_tier.h10_flipback_age_min_days": {
+   "current": 0,
+   "grid": [
+    0,
+    3,
+    5
+   ],
+   "frozen": false,
+   "note": "0=不拦截仅影子记账；3=挖掘员最强假设（A3）；启用走法庭"
+  },
+  "s_tier.h11_close_pos_min": {
+   "current": 0.0,
+   "grid": [
+    0.0,
+    0.2
+   ],
+   "frozen": false,
+   "note": "0=不拦截仅影子记账；0.2=早止损前兆假设（A10）；启用走法庭"
+  },
+  "s_tier.liquidity.min_price_usd": {
+   "current": 2.0,
+   "grid": [
+    2.0
+   ],
+   "frozen": true
+  },
+  "s_tier.liquidity.min_dollar_vol20_usd": {
+   "current": 10000000,
+   "grid": [
+    10000000
+   ],
+   "frozen": true
+  },
+  "s_tier.liquidity.min_crypto_quote_vol_usd": {
+   "current": 20000000,
+   "grid": [
+    20000000
+   ],
+   "frozen": true,
+   "note": "复用雷达门槛"
+  },
+  "s_tier.jev_unavailable_policy": {
+   "current": "no_grant",
+   "grid": [
+    "no_grant"
+   ],
+   "frozen": true
+  },
+  "sector_fall.dd52w": {
+   "current": -30,
+   "grid": [
+    -25,
+    -30,
+    -35
+   ],
+   "frozen": false
+  },
+  "sector_fall.ret10": {
+   "current": -12,
+   "grid": [
+    -10,
+    -12,
+    -15
+   ],
+   "frozen": false
+  },
+  "credit_fall.dd52w": {
+   "current": -15,
+   "grid": [
+    -12,
+    -15,
+    -20
+   ],
+   "frozen": false
+  },
+  "credit_fall.ret10": {
+   "current": -8,
+   "grid": [
+    -6,
+    -8,
+    -10
+   ],
+   "frozen": false
+  },
+  "obs.pcr_eq.z": {
+   "current": -2.0,
+   "grid": [
+    -1.5,
+    -2.0,
+    -2.5
+   ],
+   "frozen": true
+  },
+  "obs.pcr_idx.z": {
+   "current": 2.0,
+   "grid": [
+    1.5,
+    2.0,
+    2.5
+   ],
+   "frozen": true
+  },
+  "obs.move.level": {
+   "current": 120,
+   "grid": [
+    110,
+    120,
+    130
+   ],
+   "frozen": true
+  },
+  "obs.vvix.level": {
+   "current": 110,
+   "grid": [
+    100,
+    110,
+    120
+   ],
+   "frozen": true
+  },
+  "obs.steepen_5d.pp": {
+   "current": 0.35,
+   "grid": [
+    0.25,
+    0.35,
+    0.5
+   ],
+   "frozen": true
+  },
+  "obs.jpy_3d.pct": {
+   "current": -3.0,
+   "grid": [
+    -2.0,
+    -3.0,
+    -4.0
+   ],
+   "frozen": true
+  },
+  "obs.stable.warn_bp": {
+   "current": 50,
+   "grid": [
+    25,
+    50
+   ],
+   "frozen": true
+  },
+  "obs.stable.red_bp": {
+   "current": 100,
+   "grid": [
+    75,
+    100,
+    150
+   ],
+   "frozen": true
+  },
+  "obs.vix9d_ratio": {
+   "current": 1.0,
+   "grid": [
+    1.0,
+    1.05
+   ],
+   "frozen": true
+  },
+  "obs.cot.z_extreme": {
+   "current": 2.0,
+   "grid": [
+    1.5,
+    2.0,
+    2.5
+   ],
+   "frozen": true
+  },
+  "obs.si.days_to_cover": {
+   "current": 5.0,
+   "grid": [
+    4.0,
+    5.0,
+    6.0
+   ],
+   "frozen": true
+  },
+  "obs.tvl.warn_pct": {
+   "current": -8,
+   "grid": [
+    -6,
+    -8,
+    -10
+   ],
+   "frozen": true
+  },
+  "obs.tvl.red_pct": {
+   "current": -15,
+   "grid": [
+    -12,
+    -15,
+    -20
+   ],
+   "frozen": true
+  },
+  "obs.earnings_window_days": {
+   "current": 5,
+   "grid": [
+    3,
+    5
+   ],
+   "frozen": true
+  }
+ },
+ "court_agenda": [
+  "vol_climax_ratio 3.0→2.5（hammer 3 年 0 触发=capitulation 20 分项恒为死项，网格内已有 2.5）",
+  "checklist 门槛与权重重检（fwd20 口径无增益的线索，非证据）"
+ ]
 }

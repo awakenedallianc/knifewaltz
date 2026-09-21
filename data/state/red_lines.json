@@ -8,5 +8,8 @@
  {"id": "RL-7", "rule": "live 与 backtest 永远分开统计，永不合并成一个胜率", "check": "auto: calibrate 输出结构上就分列，页面无合并视图"},
  {"id": "RL-8", "rule": "台账与快照永不删除：标的移出监控池后其历史快照仍参与统计（防幸存者偏差）；退市标的结算用最后可得价并标注", "check": "auto: instruments 移除不触达 snapshots"},
  {"id": "RL-9", "rule": "换参只有一条路：季度 walk-forward（验证集入选+留出集一次性否决）→ 写 params_history → 人工改 config.yaml；周复盘的反事实归因、单笔亏损、页面观感都不是换参理由", "check": "auto: config.yaml 中受管参数变更但 params_history 无对应条目 → 红线 fail"},
- {"id": "RL-10", "rule": "预注册网格外的参数值禁止上线；网格本身的修改按换参同等流程留痕", "check": "auto: config.yaml 值 ∈ registry.grid 校验"}
+ {"id": "RL-10", "rule": "预注册网格外的参数值禁止上线；网格本身的修改按换参同等流程留痕", "check": "auto: config.yaml 值 ∈ registry.grid 校验"},
+ {"id": "SR-1", "rule": "S 级已结败笔必须四选一归因；未归因即 FAIL", "check": "auto: reviews.stier.unattributed_losses==0"},
+ {"id": "SR-2", "rule": "月配给超发禁止：任一月 GRANTED 笔数 >5 即 FAIL；配给不滚存", "check": "auto: stier_ledger 按月计数"},
+ {"id": "SR-3", "rule": "S 级与全信号、实盘与候补/假想回放，任何合并统计视图即 FAIL", "check": "auto: calibrate 输出结构分列 + 渲染层无合并数据路径 + 周审计静态检查"}
 ]

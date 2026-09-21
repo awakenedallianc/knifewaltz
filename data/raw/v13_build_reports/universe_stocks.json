@@ -1,0 +1,25 @@
+{
+ "files_written": [
+  "D:\\knifewaltz\\config.yaml",
+  "D:\\knifewaltz\\src\\kw\\fetchers\\yahoo.py",
+  "D:\\knifewaltz\\src\\kw\\fetchers\\breadth.py",
+  "D:\\knifewaltz\\src\\kw\\fetchers\\knives.py",
+  "D:\\knifewaltz\\data\\state\\hsi.json"
+ ],
+ "public_interface": [
+  "yahoo.safe_key(symbol: str) -> str — 全站统一的标的代码→文件/键清洗（原 knives.safe_key 上移，knives 继续 re-export）",
+  "yahoo.write_kline(key, symbol, ohlc, label=None, merge=False) -> None — K 线落盘；merge=True 为合并追加模式（与文件尾按日期合并去重、同日新值覆盖）；行上限统一 KLINE_CAP=1100（MA-11）",
+  "yahoo.read_kline(key) -> dict / yahoo.kline_len(key) -> int / yahoo.kline_path(key) -> Path — kline 文件只读工具（engine/render 可复用）",
+  "yahoo.fetch(cfg, settings) -> dict — D9 修复：USX 缩放分支按 6 元素解包且 volume 保留（此前任何 USX 符号走 fetch 即 ValueError 被吞）",
+  "breadth.fetch(cfg, settings) -> dict — 池扩 625（US503+HK88+ADR34）：每股 5d 增量 merge 进 kline 文件，首次/缺失/陈旧 3y（内建预算 BACKFILL_MAX=250/跑批 + 300s 墙钟，与 backfill 状态机 stocks 相位同参数幂等收敛）；广度指标分母恒为 S&P500 固化池（口径不变）；港股/中概不写 u.*（sqlite_policy：kline 文件是宇宙唯一事实源）",
+  "breadth.stock_pool(http=None, refresh=False) -> list[{symbol,name,layer}] — 625 池去重保序（layer∈US500|CN_HK|CN_ADR）；universe.py 的 channel_universe('stocks') 直接调此函数（裁决 B5 契约）",
+  "breadth.hsi_constituents(http=None, url=None) -> list[{symbol,name}] — 恒指 88 在线 CSV→刷新 data/state/hsi.json 快照，失败读快照兜底（同 ndx100 模式）；breadth.hsi_snapshot() 只读快照",
+  "knives.fetch(cfg, settings) -> dict — 板扩：T1 21 + T1F 23（+RB/HO/OJ）+ T1S 20 + T1C 6 + T2 ≤24 + T2C（ADR 27 核心固化入板 + HK -60 单级筛入围）+ ORNAMENT 7（带 ornament_reason，照常建档判定恒观赏）；产 data/state/cnhk_watchlist.json（-50~-60 观察名单展示层）",
+  "knives.grab_one(http, symbol, name, cls, tier, rng='3y', extra=None) -> (entry|None, metrics, err) — 原 grab 闭包上移为可测模块函数",
+  "knives.board_row_from_kline(symbol, name, cls, tier, extra=None, max_stale_days=7) -> (entry|None, metrics) — T2C 免重复抓取通道：直读 breadth 合并好的 kline 文件生成 k.* 序列与 board 行；缺失/<600 根/尾行过期回落网络 grab",
+  "knives.dd250_from_kline(symbol) -> (dd250_pct|None, px, asof) — 收盘口径 250 日回撤（T2C 单级筛/观察名单用）",
+  "config.yaml 新节 — t1s(20, cls=sector_etf)、t1c(6, cls=credit_etf)、t1f 补 3 条（RB=F/HO=F/OJ=F）、thresholds.sector_fall{-30,-12,28}/credit_fall{-15,-8,30}、t2c{hsi_url, eligible_dd250:-60, watch_dd250:-50, hkd_usd:7.8, adr 34 条固化清单, ornament 7 条剔除名单}"
+ ],
+ "test_results": "全部通过（模块级直调，真 store 只读、状态文件重定向 scratch、kline 写真实 docs 与生产同数据）：1) config 结构断言 t1s=20/t1c=6/t1f=23/adr=34/ornament=7/两新阈值精确匹配；2) write_kline merge 单元测试：合并去重、同日新值覆盖、日期有序、cap 1300→1100、同数据重写字节级不变；3) D9 端到端：OJ=F 经 fetch() px=1.48 USD（非 148）、K 线 6 列带量 755 根；4) 29 条新 kline（T1S20+T1C6+T1F3）实抓各 ≥600 根（min 752），k.HYG/k.IEF 序列 753 行就绪，cls/tier 正确；5) breadth 三连跑回填 625 池完成（250/250/125，74-95s/跑批），第 4 跑稳态 backfill=1（仅 0011.HK 404）、universe 624/625，广度四指标 n=503、asof=2026-09-21、口径徽章原文不变；抽样 20 股 kline 尾行=最新交易日且无重复日期；6) knives 全流程：board 123 行（T1=21 T1F=23 T1S=20 T1C=6 T2=16 T2C=30 ORNAMENT=7），HK 单级筛入板 1024/0241/0881.HK，观察名单 8 行全部 -50~-60 且无 ORNAMENT，T2 扫描池 503+13 不含港股中概，mcap 无假值；dd250 对拍 cnhk 报告：QFIN -74.4/-74.4、1810.HK -55.6/-55.6 精确一致，TME -65.8/-67.6（行情漂移）。外部端点本机实测：HSI CSV 88 行（含 9992.HK）、Yahoo 0700.HK 736 根 HKD。已知诚实缺口：0011.HK（恒生银行私有化退市中）Yahoo 404，每跑批重试；FDXF/HONA 新上市 <200 根走 5d 增量自然长齐。真实 instruments.json/ndx100.json/day_losers_promoted.json/history.sqlite 均未触碰（mtime 验证）。",
+ "notes_for_integrator": "1) run.py 顺序依赖：breadth 必须先于 knives（现有 cboe→derivs→breadth→knives 顺序已满足）——T2C 入板直读 breadth 当跑批合并好的 kline 文件（免 34 次重复抓取，47s 完成全板）；kline 文件是 625 宇宙唯一事实源（sqlite_policy），HK/ADR 不写 u.*。2) universe_crypto 槽契约：universe.py 的 channel_universe('stocks') 请直接调 breadth.stock_pool()（625 去重保序）；breadth 内建 3y 回填与状态机 stocks 相位同参数（N=250/300s）幂等收敛，两边先跑哪个都不冲突。3) D2 数据 diff 必须声明：k.HYG/k.IEF 首次入库即 blade_index 信用腿复活（补数据非改公式）——PROGRESS.md 写回（integrator writeback 清单第 2 条）连同 mcap bug 出处（knives.py:147 旧行，Yahoo chart meta 无 marketCap）与 MA-4 记录。4) instruments.json tier 枚举新增 T1S|T1C|T2C|ORNAMENT（MA-10），ORNAMENT 行带 ornament_reason 字段供前端徽章；engine 槽落地前，旧 engine 会把 ORNAMENT 当普通候选——总装时确认 engine v13『观赏刀永不发信号』先于生产跑批。5) cls 新值 sector_etf/credit_etf 走 thresholds.sector_fall/credit_fall（config 已就位）；params_registry 17+18 条登记归 integrator（MA-3，本槽未动 params_registry.json）。6) 新状态文件两枚：data/state/hsi.json（恒指快照兜底种子，已产真实 88 行，随 Actions Commit state 步进 git）；data/state/cnhk_watchlist.json（knives.fetch 每跑批产出，schema {date,source,line:{eligible_dd250,watch_dd250},note,rows:[{symbol,key,name,pool:CN_HK|CN_ADR,dd250,px,asof}]}，render/frontend『接近资格线观察名单』展示层消费，不入板不进状态机）。7) 预算实测（本机）：breadth 稳态 93s/跑批（625 增量），knives 全板 47s，回填期峰值 +40-90s/跑批×3——在 heavy 25 分钟限内。8) kline cap 756→1100（MA-11）：T1F 5y 符号的 kline 文件将从 756 根涨到 1100 根，属数据增量非口径变化。9) 已知机房差异点：Yahoo chart/screener 与 yfiua CSV 本机全通；生产按 probe.yml（MA-9 含 0700.HK 腿）结论走 B10 降级链，breadth/knives 各腿均有独立 try/except 与快照兜底，单腿失败不断主流程。"
+}

@@ -1,5 +1,22 @@
 # 刀尖舞 KnifeWaltz · 进度与断点
 
+## v1.3.0（2026-09-22）「五百刀阵与决策链条」——每月 Top5 管道成型
+
+三份规格（funnel 主轴/precision S 级/depth 广度深度）→ 总建造清单（10 槽 + 9 项去繁就简裁减 + 12 条 MA 裁决）→ 10 路并行建造 → 总装。首跑实测：heavy 320s 全链、radar 9.2s、宇宙 1195 行、板 124 标的七层、Jev 6 调用全通、Top5 恒交付（今日 5 个全部诚实标『当月最优·未达 S』——无接刀窗，制度按设计工作）。
+
+- **宇宙**：加密前 500（C-FULL 175 OKX 全K线 / C-SEED 56 种子+续写 / C-LIST 269 榜单层；CoinGecko→Paprika→快照三级降级）+ 美股 625 池（SP500∪NDX100∪恒指88∪中概34，5d 增量合并）+ 板 124（T1 21/T1F 23/T1S 20 行业 ETF/T1C 6 信用 ETF/T2 17/T2C 30/ORNAMENT 7）
+- **决策链条档案页**（#sym/{key}，124 份预生成）：判定句 + 8 环链条（宇宙资格/闸门/刀落/投降/企稳五项/时间档/语义闸/S 级）逐环实数·阈值·判·「卡在此环」+ 事实/走势/Jev 判断史（含已结对错）/新闻/资金面/快照/刀谱对照九节
+- **漏斗 IA**：顶栏漏斗计数条（全宇宙→暴动→刀落→企稳→接刀→台账）、导航四组（机会/证据/工具/制度）、「如何读」新页、Top5 卡（M3 与 S 配给合一）
+- **Jev v3**：6 调用/≤320 问；新增 J6 历史案例相似（choice 19 档）/ J7 决策弱环 / J8 消息面矛盾（noul——实测教训：类型名是 noul 非 bool，criteria 必须 dict，答案概率在 answers.*.noul）；J1/J2 事实加财报/COT/空头/脱锚四字段；每标的 Jev 判断史进档案（jev_profiles.json，对错都显示）
+- **S 级配给机**（NS-70 执行层）：H1-H8 硬条件 + H9/10/11 影子闸（纯记账 12 个月才可议转正）+ 月配给状态机（≤5、同标的月 1、不结转）+ Top5 恒交付（未达者标注差哪条）+ 36 年假想配给回放 + SR-1..3 红线；月台账 stier_ledger.json
+- **深度包**：8 道观察闸（PCR/MOVE/VVIX/陡峭化/日元套息/脱锚/VIX9D/COT——**display-only 不入刀锋指数，改动只走 2026-12 参数法庭**）+ 关键值 3 年分位 + COT 20 合约拥挤 z + 财报临近 + 美债拍卖窗 + FINRA 空头面（KW_ENABLE_FINRA 门，Actions 首跑验证后开）
+- **诚实声明（D2）**：k.HYG/k.IEF 本版首次入库——**刀锋指数信用腿自 v1.0 以来因数据缺失恒为 0，本版起复活，指数数值会变；这是补数据腿不是改公式**
+- **双端同文契约（B12）**：判定句/降级文案模板以 render.VERDICT_TEMPLATES/DEGRADE_TEXTS 为单源，app.js 逐字照抄；改一处必改两处
+- **跑批工程**：probe.yml 7 端点机房探针（本机 7/7 pass @2026-09-22，机房结论待 dispatch）；seed Release 资产（kw-seed / kw_seed_kline.tar.gz，需人工挂）；shuttle 运输带（heavy 站点产物随 cache 进 radar，`--radar` 启动先迁回）；`--backfill` 状态机步（300s 墙钟）
+- 修复：J8 类型 400/422（noul 契约实测校正）、universe_list `coins` 键契约缝、build-only 保 S 级块（E8）、mcap 假字段（Yahoo chart meta 无此键，v1.2 已修留痕）
+- MA-4 记录：S 级 H7 流动性白名单从 SP500∪NDX100 扩至 T2C 核心/T1S/T1C（NS-70 广域使命），阈值 frozen 不动，备 2026-12 法庭复议
+- 断点/待办：① dispatch probe.yml 落机房凭证；② 人工挂 kw-seed Release 资产（data/seed/kw_crypto_seed_v13.tar.gz 本地已产）；③ FINRA 首跑（dispatch 勾 enable_finra）；④ 观察 24h；⑤ 影子记账启动日已记 goals.json
+
 ## v1.2.0（2026-09-21 深夜）「秒抓雷达」：全宇宙暴动捕捉 + Jev 语义层 + 复盘自校准闭环
 
 两波研究（9 agents：数据源双侦察全实测 / Jev 插入点 / 跑批工程 / 校准体系 / 暴动算法 / 版式 / 决策路径）→ 总规格 `data/state/radar_spec.json`（12 步实施单 + 9 项裁决 + 12 条诚实底线）→ 7 路文件所有权互斥并行开发 → 总装。

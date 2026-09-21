@@ -1,18 +1,19 @@
-"""刀尖舞 KnifeWaltz · 管线入口（v1.2 秒抓雷达）
+"""刀尖舞 KnifeWaltz · 管线入口（v1.3 五百刀阵与决策链条）
 
-python run.py                          # heavy 全量：抓数 → Jev 语义层 → 引擎 → 重放 → 校准链 → 雷达 → 渲染
-python run.py --radar                  # radar 轻跑批（<150s）：movers/费率/停牌/新闻 → 引擎(不落状态) → 渲染
-python run.py --weekly-review          # 周复盘：校准 + 复盘室产物 + 站点补渲（heavy 之后跑）
+python run.py                          # heavy 全量：抓数(9 腿) → Jev 6 调用 → 引擎(链条/深度) → S 级配给
+                                       #   → 重放 → 校准链 → 档案导出 → 渲染
+python run.py --radar                  # radar 轻跑批：movers/费率/停牌/脱锚 → 引擎(零状态写) → 透传渲染
+python run.py --backfill               # 仅执行宇宙回填状态机一步（300s 墙钟）后退出（daily.yml 专用）
+python run.py --weekly-review          # 周复盘：校准 + 复盘室 + S 级归因 + 站点补渲
 python run.py --build-only             # 只用库中数据重建站点
-python run.py --skip-replay            # 跳过 36 年重放（缓存同日直接用）
 
-Jev 纪律（裁决 A1/A4）：只在 heavy 调用（≤4 次 POST，缓存防重复计费），radar 只读 heavy 落盘的
-jev_* 状态文件；无 TYPESAFE_API_KEY 时全链静默降级，站点与未接入一致。
+Jev 纪律（v1.3）：只在 heavy（≤6 次 POST/≤320 问，缓存防重复计费），radar 零 Jev；无 key 全链静默降级。
+S 级配给（NS-70）：月 ≤5 放行，影子闸纯记账，Top5 恒交付（未达者诚实标注）。
 """
 import argparse
 import json
-import math
 import os
+import shutil
 import sys
 import time
 from pathlib import Path
@@ -32,7 +33,7 @@ if _env.exists():
 
 sys.path.insert(0, str(Path(__file__).resolve().parent / "src"))
 
-from kw import calibrate, engine, jev, replay, review, settle, snapshot  # noqa: E402
+from kw import calibrate, engine, jev, replay, review, settle, snapshot, stier, universe  # noqa: E402
 from kw.fetchers import news as news_mod, radar as radar_mod  # noqa: E402
 from kw.store import Store  # noqa: E402
 from kw.utils import (DOCS_DIR, ROOT, log, now_iso, read_json, read_yaml,  # noqa: E402
@@ -56,39 +57,18 @@ def _fund_from_store(store) -> dict:
     return fund
 
 
-def _zboard(insts: list[dict], z_th: float = 3.0) -> list[dict]:
-    """日线暴动表：|昨收→今收 对数收益 z|>=3（250 日 σ 口径，spec universe.burst_detection）。"""
-    rows = []
-    for inst in insts:
-        try:
-            k = engine.load_kline(inst["key"])
-            closes = [r[4] for r in k if r[4]]
-            if len(closes) < 60:
-                continue
-            rets = [math.log(closes[i] / closes[i - 1]) for i in range(1, len(closes)) if closes[i - 1]]
-            win = rets[-250:]
-            mu = sum(win) / len(win)
-            var = sum((x - mu) ** 2 for x in win) / max(1, len(win) - 1)
-            sd = math.sqrt(var)
-            if sd <= 0:
-                continue
-            z = rets[-1] / sd
-            if abs(z) < z_th:
-                continue
-            vols = [r[5] if len(r) > 5 else 0 for r in k]
-            v20 = sum(vols[-21:-1]) / 20 if len(vols) >= 21 and any(vols[-21:-1]) else None
-            vr = round(vols[-1] / v20, 2) if v20 else None
-            rows.append({"key": inst["key"], "symbol": inst["symbol"], "name": inst.get("name"),
-                         "cls": inst.get("cls"), "state": None, "z1d": round(z, 2),
-                         "ret1d": round((closes[-1] / closes[-2] - 1) * 100, 2), "vol_ratio": vr})
-        except Exception:
-            continue
+def _zboard_from_board(board: list[dict], z_th: float = 3.0) -> list[dict]:
+    """日线暴动表：engine.detect 已产 z1d（不含当日的 250 根 σ 口径），board 直取。"""
+    rows = [{"key": b.get("key"), "symbol": b.get("symbol"), "name": b.get("name"),
+             "cls": b.get("cls"), "state": b.get("state"), "z1d": b.get("z1d"),
+             "ret1d": b.get("ret1d"), "vol_ratio": b.get("vol_ratio")}
+            for b in board or []
+            if isinstance(b.get("z1d"), (int, float)) and abs(b["z1d"]) >= z_th]
     rows.sort(key=lambda r: -abs(r["z1d"]))
     return rows[:20]
 
 
 def _snapshots_public() -> list[dict]:
-    """docs/data/snapshots_public.json：快照台账的展示子集（前端 fetch）。"""
     out = []
     for s in snapshot.load_snapshots():
         jv = s.get("jev") or {}
@@ -98,11 +78,10 @@ def _snapshots_public() -> list[dict]:
     return out
 
 
-def _shared_payload_blocks(payload: dict, insts: list[dict]) -> None:
-    """heavy/radar 共用的展示数据块（全部来自已落盘状态文件，radar 也拿得到）。"""
-    conf = read_yaml(ROOT / "config.yaml")
+def _shared_payload_blocks(payload: dict, board: list[dict], conf: dict) -> None:
+    """heavy/radar 共用展示数据块（全部来自落盘状态文件或本跑批 board）。"""
     payload["radar_thresholds"] = conf.get("radar_thresholds") or dict(radar_mod.RADAR_THRESHOLDS)
-    payload["zboard"] = _zboard(insts)
+    payload["zboard"] = _zboard_from_board(board)
     payload["jev"] = read_json(STATE / "jev_payload.json", {"enabled": False})
     payload["calibration"] = read_json(STATE / "calibration.json", None)
     payload["review"] = read_json(STATE / "weekly_review.json", None)
@@ -110,7 +89,6 @@ def _shared_payload_blocks(payload: dict, insts: list[dict]) -> None:
 
 
 def _write_side_files(radar_data: dict | None, ledger: list | None) -> None:
-    """docs/data/ 的旁路文件（页面 https 下 fetch）。"""
     if radar_data is not None:
         write_json(DOCS_DIR / "data" / "radar.json", radar_data)
     if ledger is not None:
@@ -126,6 +104,29 @@ def _spec_core() -> dict:
     return read_json(STATE / "spec_core.json", {}) or {}
 
 
+def _restore_heavy_site() -> None:
+    """radar 分支：把 shuttle 目录（随 cache 运输的 heavy 站点产物）迁回 docs/data/（B11 透传）。
+    move 而非 copy——运输目录不得被 radar 部署上 Pages。"""
+    shuttle = DOCS_DIR / "data" / "kline" / "_heavy_site"
+    if not shuttle.exists():
+        return
+    moved = 0
+    for p in shuttle.iterdir():
+        dst = DOCS_DIR / "data" / p.name
+        try:
+            if dst.exists():
+                (shutil.rmtree if dst.is_dir() else os.remove)(dst)
+            shutil.move(str(p), str(dst))
+            moved += 1
+        except Exception as e:
+            log.warning("shuttle move %s failed: %s", p.name, e)
+    try:
+        shuttle.rmdir()
+    except OSError:
+        pass
+    log.info("shuttle: %d 项 heavy 产物迁回 docs/data/", moved)
+
+
 # ---------- radar 轻跑批 ----------
 
 def _run_radar() -> int:
@@ -134,11 +135,11 @@ def _run_radar() -> int:
     store = Store()
     conf = read_yaml(ROOT / "config.yaml")
     today = today_str()
+    _restore_heavy_site()
 
     r = radar_mod.build_radar()
     r["news"] = news_mod.market_headlines()
 
-    # 新鲜费率/DVOL/FNG 喂给闸门（本跑批内存生效；radar 不保存 sqlite 缓存，无持久副作用）
     fresh = []
     for coin, v in (r.get("crypto", {}).get("funding_majors") or {}).items():
         if isinstance(v, (int, float)):
@@ -181,10 +182,15 @@ def _run_radar() -> int:
                                        "notes": ";".join(r.get("degraded", []) if isinstance(r.get("degraded"), list) else [])[:120]}},
                 "duration_s": round(time.time() - t0, 1)},
     }
-    _shared_payload_blocks(payload, insts)
+    _shared_payload_blocks(payload, result["board"], conf)
+    from kw import render
+    render.inject_payload_blocks(payload, conf, ledger=ledger,
+                                 stier_block=(read_json(STATE / "stier_ledger.json", None) and
+                                              read_json(DOCS_DIR / "data" / "payload.json", {}).get("stier")),
+                                 depth_market=result.get("depth_market"))
+    payload["board"] = render.trim_board_for_payload(result["board"], insts)
     write_json(DOCS_DIR / "data" / "payload.json", payload)
     _write_side_files(r, ledger)
-    from kw import render
     render.render_site(payload, _spec_core())
     print(json.dumps({"ok": True, "kind": "radar", "date": today,
                       "movers": len(r.get("crypto", {}).get("movers", [])),
@@ -198,11 +204,10 @@ def _run_radar() -> int:
 def _run_weekly(walkforward: bool) -> int:
     t0 = time.time()
     calibrate.build(today=today_str())
+    calibrate.build_jev_profiles()
     rv = review.run_weekly(today=today_str(), publish_docs=True)
     if walkforward:
-        # 参数法庭季度开庭（预注册网格 walk-forward）；首个季度窗 2026-12，窗外如实跳过（RL 纪律）
         log.info("walk-forward: 季度窗口外，跳过（下一窗 2026-12；预注册网格见 params_registry.json）")
-    # 补渲：把新鲜 review/calibration 注入现有 payload 重出站点
     payload = read_json(DOCS_DIR / "data" / "payload.json", None)
     if payload:
         payload["review"] = read_json(STATE / "weekly_review.json", None)
@@ -224,6 +229,7 @@ def main(argv=None) -> int:
     ap.add_argument("--build-only", action="store_true")
     ap.add_argument("--skip-replay", action="store_true")
     ap.add_argument("--radar", action="store_true")
+    ap.add_argument("--backfill", action="store_true")
     ap.add_argument("--weekly-review", action="store_true")
     ap.add_argument("--walkforward", action="store_true")
     ap.add_argument("--only", default="")
@@ -231,6 +237,11 @@ def main(argv=None) -> int:
     setup_logging()
     if a.radar:
         return _run_radar()
+    if a.backfill:
+        r = universe.run_backfill_step()
+        print(json.dumps({"ok": True, "kind": "backfill", **{k: r.get(k) for k in ("phase", "fetched", "todo", "failed_n")}},
+                         ensure_ascii=False, default=str))
+        return 0
     if a.weekly_review:
         return _run_weekly(a.walkforward)
 
@@ -242,8 +253,10 @@ def main(argv=None) -> int:
 
     status = {}
     if not a.build_only:
-        from kw.fetchers import breadth, cboe, derivs, knives
-        for name, mod in (("cboe", cboe), ("derivs", derivs), ("breadth", breadth), ("knives", knives)):
+        from kw.fetchers import breadth, cboe, depth, derivs, knives
+        from kw.fetchers import cot as cot_mod
+        for name, mod in (("cboe", cboe), ("derivs", derivs), ("breadth", breadth), ("knives", knives),
+                          ("universe", universe), ("depth", depth), ("cot", cot_mod)):
             if only and name not in only:
                 continue
             tt = time.time()
@@ -262,8 +275,8 @@ def main(argv=None) -> int:
     insts = _load_insts()
     fund = _fund_from_store(store)
 
-    # ---- Jev 语义层（引擎前）：J1 分诊 + J2 新闻热度 → 语义闸 veto 集 ----
-    jev_th = None
+    # ---- Jev 语义层（引擎前）：Call-1/2 J1+J2+J8 → Call-3 J6 ----
+    jev_th = jev_cm = None
     news_map = {}
     if not a.build_only:
         try:
@@ -285,21 +298,22 @@ def main(argv=None) -> int:
             news_map = news_mod.fetch_news(cand_insts + promoted) or {}
             cands = jev.select_candidates(board_pre, news_map, promoted=promoted)
             jev_th = jev.triage_and_heat(cands, gates_pre)
+            jev_cm = jev.case_similarity(board_pre, gates_pre)
         except Exception as e:
             log.warning("jev pre-engine layer skipped: %s", e)
 
     result = engine.run_engine(store, insts, fund, veto_keys=jev.veto_set())
 
-    # ---- Jev（引擎后）：J4 接刀先验 + J3 宏观催化 ----
-    jev_cp = jev_cat = None
+    # ---- Jev（引擎后）：Call-4 J3 → Call-5 J4+J7 ----
+    jev_cw = jev_cat = None
     if not a.build_only:
         try:
-            jev_cp = jev.catch_prior([b for b in result["board"] if b.get("state") == "CATCH"], news_map)
-            jev_cat = jev.score_catalysts(news_mod.fetch_macro_events())
+            jev_cat = jev.score_catalysts(news_mod.fetch_macro_events(store=store))
+            jev_cw = jev.catch_prior_and_weak_links(result["board"], result["gates"], jev_th)
         except Exception as e:
             log.warning("jev post-engine layer skipped: %s", e)
 
-    # ---- 雷达数据面（heavy 也产出：movers 历史 + J5 分诊素材） ----
+    # ---- 雷达数据面（heavy 侧）+ Call-6 J5 ----
     radar_data = None
     jev_mv = None
     if not a.build_only:
@@ -309,16 +323,28 @@ def main(argv=None) -> int:
             movers = (radar_data.get("crypto", {}).get("movers") or []) + \
                      (radar_data.get("crypto", {}).get("knife_candidates") or [])
             radar_mod.append_movers_history(movers)
-            heads = news_mod.crypto_headlines([m.get("sym") for m in movers if m.get("sym")][:40])
+            heads = news_mod.crypto_headlines([m.get("sym") for m in movers if m.get("sym")][:80])
             jev_mv = jev.score_movers(movers, headlines=heads)
         except Exception as e:
             log.warning("radar leg (heavy) skipped: %s", e)
 
-    jev_block = jev.build_payload_block(jev_th, jev_cat, jev_cp, jev_mv)
-    if not a.build_only:   # build-only 不产 Jev，绝不覆盖 heavy 落盘的语义层
+    jev_block = jev.build_payload_block(jev_th, jev_cat, jev_cw, jev_mv, case_map=jev_cm)
+    if not a.build_only:
         write_json(STATE / "jev_payload.json", jev_block)
 
-    # ---- 36 年 VIX 重放（缓存） ----
+    # ---- S 级配给（M1：engine 与 jev 之后、render 之前；build-only 走幂等路径 E8，jev 块用落盘版） ----
+    stier_res = {"skipped": True}
+    if True:
+        try:
+            jb_for_stier = jev_block if not a.build_only else read_json(STATE / "jev_payload.json", {"enabled": False})
+            stier_res = stier.run_stier(result["board"], result["gates"], jb_for_stier, today=today)
+            if not stier_res.get("skipped"):
+                stier.inject_board(result["board"], stier_res)
+        except Exception as e:
+            log.exception("stier failed (continuing): %s", e)
+            stier_res = {"skipped": True}
+
+    # ---- 36 年重放（缓存）+ 标的重放 ----
     vix_path = STATE / "vix_replay.json"
     vix_stats = read_json(vix_path, {}) or {}
     if not a.skip_replay and vix_stats.get("computed_at") != today and not a.build_only:
@@ -339,21 +365,26 @@ def main(argv=None) -> int:
                          "entry": b.get("px"), "stop": b.get("stop_price"), "score": b.get("score"),
                          "tier_time": b.get("tier_time"), "status": "open"})
 
-    # ---- 校准闭环：快照 → 结算 → Jev 结算 → 台账配对 → 校准产物 ----
+    # ---- 校准闭环 ----
     if not a.build_only:
         try:
             jev_blocks = {}
             tri = (jev_th or {}).get("triage") or {}
             heat = (jev_th or {}).get("news_heat") or {}
-            for k in set(list(tri.keys()) + list(heat.keys()) + list((jev_cp or {}).keys())):
+            cpm = (jev_cw or {}).get("catch_prior") if isinstance(jev_cw, dict) else {}
+            for k in set(list(tri.keys()) + list(heat.keys()) + list((cpm or {}).keys())):
                 jev_blocks[k] = {**(tri.get(k) or {}),
-                                 "news_heat": heat.get(k), "catch_prior": (jev_cp or {}).get(k)}
+                                 "news_heat": heat.get(k), "catch_prior": (cpm or {}).get(k)}
             snapshot.append(snapshot.capture(result["board"], result["gates"],
-                                             jev_blocks=jev_blocks or None, today=today))
+                                             jev_blocks=jev_blocks or None,
+                                             stier_blocks=stier_res.get("snapshot_blocks"),
+                                             today=today))
             settle.settle(today=today)
             settle.resolve_jev_log(today=today, store=store)
+            settle.settle_stier(today=today)
             _, live = settle.pair_with_ledger(ledger=live)
             calibrate.build(today=today)
+            calibrate.build_jev_profiles()
         except Exception as e:
             log.exception("calibration chain failed (continuing): %s", e)
 
@@ -374,13 +405,43 @@ def main(argv=None) -> int:
         "radar": radar_data or read_json(DOCS_DIR / "data" / "radar.json", None),
         "run": {"kind": "heavy", "fetchers": status, "duration_s": round(time.time() - t0, 1)},
     }
-    _shared_payload_blocks(payload, insts)
+    _shared_payload_blocks(payload, result["board"], conf)
     if not a.build_only:
-        payload["jev"] = jev_block  # heavy 用本跑批新鲜块；build-only 保留 _shared 读到的落盘块
+        payload["jev"] = jev_block
+
+    # ---- 档案/宇宙导出（先全量 board 导出，后瘦身注入） ----
+    from kw import render
+    universe_list = read_json(STATE / "universe_list.json", None)
+    # 宇宙展示层合成：加密 500（coins）+ 美股/港股/中概 625 池的 display 行（不进引擎，只进宇宙页与 cmdk）
+    try:
+        from kw.fetchers import breadth as breadth_mod
+        from kw.fetchers.yahoo import safe_key as _sk
+        pool = breadth_mod.stock_pool() or []
+        have = {i.get("symbol") for i in insts}
+        stock_rows = [{"key": _sk(q["symbol"]), "symbol": q["symbol"], "name": q.get("name"),
+                       "cls": "equity_single", "engine": "display", "tier": q.get("layer")}
+                      for q in pool if q.get("symbol") and q["symbol"] not in have]
+        universe_list = ((universe_list or {}).get("coins") or []) + stock_rows
+    except Exception as e:
+        log.warning("universe display merge skipped: %s", e)
+    try:
+        exp = render.export_all(payload, insts, universe_list=universe_list)
+        universe_n = None
+        if isinstance(exp, dict):
+            u = exp.get("universe") or exp.get("written")
+            universe_n = u if isinstance(u, int) else None
+    except Exception as e:
+        log.exception("export_all failed (continuing): %s", e)
+        universe_n = None
+    render.inject_payload_blocks(payload, conf, ledger=ledger, universe_n=universe_n,
+                                 stier_block=(None if stier_res.get("skipped") else stier_res.get("payload")),
+                                 depth_market=result.get("depth_market"))
+    if isinstance(payload.get("funnel"), dict) and not stier_res.get("skipped") and stier_res.get("top5"):
+        payload["funnel"]["top5"] = stier_res["top5"]
+    payload["board"] = render.trim_board_for_payload(result["board"], insts)
+
     write_json(DOCS_DIR / "data" / "payload.json", payload)
     _write_side_files(radar_data, ledger)
-
-    from kw import render
     render.render_site(payload, spec_core)
     write_json(STATE / "run_status.json", {"heavy": status, "at": now_iso()})
     store.put_run(time.time() - t0, status)
@@ -389,6 +450,7 @@ def main(argv=None) -> int:
                       "board": len(result["board"]),
                       "catch": sum(1 for b in result["board"] if b["state"] == "CATCH"),
                       "jev": jev_block.get("enabled", False),
+                      "stier": (None if stier_res.get("skipped") else (stier_res.get("payload") or {}).get("used")),
                       "duration_s": round(time.time() - t0, 1)}, ensure_ascii=False))
     return 0
 

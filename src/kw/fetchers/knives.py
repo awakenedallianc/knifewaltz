@@ -1,11 +1,22 @@
-"""刀阵标的抓取：T1 白名单 + T1F 期货（仅 A 档）全量日线 OHLCV + T2 蓝筹动态扫描（-60%/250 日资格线）。
+"""刀阵标的抓取：T1 白名单 + T1F 期货（仅 A 档）+ T1S 行业 ETF + T1C 信用 ETF 全量日线 OHLCV
++ T2 蓝筹动态扫描（-60%/250 日资格线）+ T2C 港股中概（固化池 + -60 单级筛）。
 
-T1F 期货（radar_spec universe.T1F_期货17 + ES/NQ/ZB 一次性补测通过）：连续合约 5y 日线，
-cls=futures（engine 阈值走 thresholds.futures_fall），仅 A 档（裁决 A8：期货有移仓/展期，
-36 个月价值回归口径不成立）；无量能符号在 instruments 里标 no_volume（checklist 量能项跳过并标注）。
+T1F 期货（radar_spec universe.T1F_期货17 + ES/NQ/ZB 一次性补测 + RB/HO/OJ 补 3 条，depth_spec）：
+连续合约 5y 日线，cls=futures（engine 阈值走 thresholds.futures_fall），仅 A 档（裁决 A8：期货有
+移仓/展期，36 个月价值回归口径不成立）；无量能符号在 instruments 里标 no_volume。
+
+T1S 行业 ETF 20 条（裁决 D1，cls=sector_etf 走 thresholds.sector_fall）与 T1C 信用 ETF 6 条
+（裁决 D2，cls=credit_etf 走 thresholds.credit_fall）：3y 日线入板；k.HYG/k.IEF 序列入库即
+blade_index 信用腿复活——补缺失数据不是改公式（提交说明必须声明，honesty 第 12 条）。
 
 T2 扫描：扫描池 = S&P500 广度池（u.* 收盘序列）∪ Nasdaq-100（在线拉取 + data/state/ndx100.json
-快照兜底），先按 dd250 ≤ 预筛线过滤，入围者才取全量 OHLCV。
+快照兜底），先按 dd250 ≤ 预筛线过滤，入围者才取全量 OHLCV；港股中概不走此路（见 T2C）。
+
+T2C 港股中概（裁决 B4/B5、MA-10；config t2c）：ADR 固化清单 34 只全员入板——核心 tier=T2C
+进状态机，T3 定义闸剔除者 tier=ORNAMENT（照常建档案与链条，判定恒『观赏刀 · 永不发信号』）；
+恒指 88 走 -60 单级筛入板（池小不复用 -50 预筛）；-50~-60 落『接近资格线观察名单』展示层
+（data/state/cnhk_watchlist.json，不入板不进状态机）。breadth 已把 122 池 K 线合并到最新
+（kline 文件是宇宙唯一事实源），T2C 入板优先直读文件免重复抓取，缺失/过期才回落网络。
 
 day_losers 深跌晋升（radar_spec universe.US_扩展池.j1_promotion）：Yahoo screener day_losers 中
 当日 ≤ -15% 且市值 ≥ 20 亿 的前 ≤5 名，补拉 1 年日线现算 facts（dd52w/ret10/vol_ratio），
@@ -21,17 +32,17 @@ import io
 import json
 import time
 
+from datetime import datetime, timedelta, timezone
+
 from ..utils import DOCS_DIR, Http, log, read_json, read_yaml, today_str, write_json, ROOT
-from .yahoo import chart, write_kline
+from .breadth import hsi_constituents, hsi_snapshot
+from .yahoo import chart, read_kline, safe_key, write_kline
 
 NDX_URL = "https://yfiua.github.io/index-constituents/constituents-nasdaq100.csv"
 NDX_SNAPSHOT = ROOT / "data" / "state" / "ndx100.json"
 PROMOTED_PATH = ROOT / "data" / "state" / "day_losers_promoted.json"
+WATCHLIST_PATH = ROOT / "data" / "state" / "cnhk_watchlist.json"
 SCREENER_URL = "https://query1.finance.yahoo.com/v1/finance/screener/predefined/saved"
-
-
-def safe_key(symbol: str) -> str:
-    return "".join(ch if ch.isalnum() or ch in "_-" else "_" for ch in symbol)
 
 
 def _ndx100(http: Http | None = None, url: str | None = None) -> list[str]:
@@ -115,6 +126,76 @@ def _promote_day_losers(http: Http, ucfg: dict, exclude: set[str], save: bool = 
     return out
 
 
+def grab_one(http: Http, symbol: str, name: str, cls: str, tier: str, rng: str = "3y",
+             extra: dict | None = None) -> tuple[dict | None, list[dict], str | None]:
+    """单标的全量抓取 → kline 文件 + k.* 序列 + board 行。返回 (entry, metrics, err)；
+    err 非空即失败（entry=None），不抛异常（优雅降级，调用方记 notes）。"""
+    try:
+        dates, vals, meta, ohlc = chart(http, symbol, rng=rng)
+    except Exception as e:
+        return None, [], f"{symbol}: {str(e)[:50]}"
+    if len(vals) < 60:
+        return None, [], f"{symbol}: only {len(vals)} bars"
+    # 美分（USX）报价换算美元（与 yahoo.py 同口径；比值类指标不受影响，K 线显示诚实）
+    if (meta.get("currency") or "").upper() in ("USX", "GBP0.01", "GBX"):
+        vals = [v * 0.01 for v in vals]
+        ohlc = [[d, o * 0.01, h * 0.01, lo * 0.01, c * 0.01, v] for d, o, h, lo, c, v in ohlc]
+    key = safe_key(symbol)
+    write_kline(key, symbol, ohlc, name)
+    ms = [{"key": f"k.{key}", "value": v, "source": "yahoo", "date": d, "_backfill": True}
+          for d, v in zip(dates, vals)]
+    ms.append({"key": f"k.{key}", "value": vals[-1], "source": "yahoo", "asof": dates[-1]})
+    # 注意：Yahoo v8 chart 的 meta 没有 marketCap 键（2026-09-22 AAPL/0700.HK/BABA 三验证），
+    # 此处不再记录恒为 None 的假字段。T2 的"市值>100亿蓝筹"闸由池成员资格结构性保证
+    # （SP500∪NDX100 本身即大市值门槛）；day_losers 晋升路径的市值闸用 screener 的
+    # marketCap（formatted=false，免 crumb，见 _promote_day_losers）——那条链路是真的。
+    entry = {"symbol": symbol, "key": key, "name": name, "cls": cls, "tier": tier,
+             "asof": dates[-1], "px": vals[-1], "bars": len(vals)}
+    if not any(len(r) > 5 and r[5] for r in ohlc[-30:]):
+        entry["no_volume"] = True  # checklist 量能项自动跳过，卡上标"无量能数据"
+    if extra:
+        entry.update(extra)
+    return entry, ms, None
+
+
+def board_row_from_kline(symbol: str, name: str, cls: str, tier: str,
+                         extra: dict | None = None, max_stale_days: int = 7
+                         ) -> tuple[dict | None, list[dict]]:
+    """T2C 免重复抓取通道：breadth 已把 122 池 K 线合并到最新（kline 文件是宇宙唯一事实源，
+    sqlite_policy），直接读文件生成 k.* 序列与 board 行。文件缺失/不足 600 根/尾行过期
+    （> max_stale_days 日）→ 返回 (None, [])，调用方回落网络 grab。"""
+    rows = read_kline(symbol).get("rows") or []
+    if len(rows) < 600:
+        return None, []
+    stale_line = (datetime.now(timezone.utc) - timedelta(days=max_stale_days)).strftime("%Y-%m-%d")
+    if not rows[-1] or str(rows[-1][0]) < stale_line:
+        return None, []
+    key = safe_key(symbol)
+    closes = [(r[0], float(r[4])) for r in rows if r and r[4] is not None]
+    ms = [{"key": f"k.{key}", "value": v, "source": "yahoo", "date": d, "_backfill": True}
+          for d, v in closes]
+    ms.append({"key": f"k.{key}", "value": closes[-1][1], "source": "yahoo", "asof": closes[-1][0]})
+    entry = {"symbol": symbol, "key": key, "name": name, "cls": cls, "tier": tier,
+             "asof": closes[-1][0], "px": closes[-1][1], "bars": len(closes)}
+    if not any(len(r) > 5 and r[5] for r in rows[-30:]):
+        entry["no_volume"] = True
+    if extra:
+        entry.update(extra)
+    return entry, ms
+
+
+def dd250_from_kline(symbol: str) -> tuple[float | None, float | None, str | None]:
+    """从 kline 文件算 250 日回撤（收盘口径，与 T2 扫描同式）。返回 (dd250%, px, asof)；
+    K 线不足 200 根返回 (None, None, None)——诚实缺席，回填齐后下跑批自愈。"""
+    rows = read_kline(symbol).get("rows") or []
+    closes = [float(r[4]) for r in rows if r and r[4] is not None]
+    if len(closes) < 200:
+        return None, None, None
+    hi = max(closes[-250:])
+    cur = closes[-1]
+    return ((cur / hi - 1) * 100 if hi else None), cur, str(rows[-1][0])
+
+
 def fetch(cfg: dict, settings: dict) -> dict:
     from ..store import Store
     store = Store()
@@ -124,41 +205,34 @@ def fetch(cfg: dict, settings: dict) -> dict:
     notes = []
     instruments = []
 
-    def grab(symbol: str, name: str, cls: str, tier: str, rng: str = "3y"):
-        try:
-            dates, vals, meta, ohlc = chart(http, symbol, rng=rng)
-        except Exception as e:
-            notes.append(f"{symbol}: {str(e)[:50]}")
+    def grab(symbol: str, name: str, cls: str, tier: str, rng: str = "3y", extra: dict | None = None):
+        entry, ms, err = grab_one(http, symbol, name, cls, tier, rng, extra)
+        if err:
+            notes.append(err)
             return
-        if len(vals) < 60:
-            notes.append(f"{symbol}: only {len(vals)} bars")
-            return
-        # 美分（USX）报价换算美元（与 yahoo.py 同口径；比值类指标不受影响，K 线显示诚实）
-        if (meta.get("currency") or "").upper() in ("USX", "GBP0.01", "GBX"):
-            vals = [v * 0.01 for v in vals]
-            ohlc = [[d, o * 0.01, h * 0.01, lo * 0.01, c * 0.01, v] for d, o, h, lo, c, v in ohlc]
-        key = safe_key(symbol)
-        write_kline(key, symbol, ohlc, name)
-        for d, v in zip(dates, vals):
-            metrics.append({"key": f"k.{key}", "value": v, "source": "yahoo", "date": d, "_backfill": True})
-        metrics.append({"key": f"k.{key}", "value": vals[-1], "source": "yahoo", "asof": dates[-1]})
-        # 注意：Yahoo v8 chart 的 meta 没有 marketCap 键（2026-09-22 AAPL/0700.HK/BABA 三验证），
-        # 此处不再记录恒为 None 的假字段。T2 的"市值>100亿蓝筹"闸由池成员资格结构性保证
-        # （SP500∪NDX100 本身即大市值门槛）；day_losers 晋升路径的市值闸用 screener 的
-        # marketCap（formatted=false，免 crumb，见 _promote_day_losers）——那条链路是真的。
-        entry = {"symbol": symbol, "key": key, "name": name, "cls": cls, "tier": tier,
-                 "asof": dates[-1], "px": vals[-1], "bars": len(vals)}
-        if not any(len(r) > 5 and r[5] for r in ohlc[-30:]):
-            entry["no_volume"] = True  # checklist 量能项自动跳过，卡上标"无量能数据"
+        metrics.extend(ms)
         instruments.append(entry)
         time.sleep(0.05)
 
     for it in conf.get("t1", []):
         grab(it["symbol"], it["name"], it["cls"], "T1")
 
-    # T1F 期货：连续合约 5y 日线（kline 文件仍取近 756 根），仅 A 档
+    # T1F 期货：连续合约 5y 日线，仅 A 档（含 RB/HO/OJ 补 3 条，OJ=F USX 换算自动生效）
     for it in conf.get("t1f", []):
         grab(it["symbol"], it["name"], it.get("cls", "futures"), "T1F", rng="5y")
+
+    # T1S 行业 ETF（裁决 D1）与 T1C 信用 ETF（裁决 D2）：3y 日线入板；
+    # k.HYG/k.IEF 入库 = blade_index 信用腿复活（数据 diff 非代码 diff，提交说明必须声明）
+    for it in conf.get("t1s", []):
+        grab(it["symbol"], it["name"], it.get("cls", "sector_etf"), "T1S")
+    for it in conf.get("t1c", []):
+        grab(it["symbol"], it["name"], it.get("cls", "credit_etf"), "T1C")
+
+    # T2C 池成员（恒指 + ADR 固化清单）：不走美股 T2 的 -50 预筛（B4 单级筛，见下方 T2C 节）
+    t2c_cfg = conf.get("t2c", {}) or {}
+    adr_rows = t2c_cfg.get("adr", []) or []
+    hk_rows = hsi_snapshot() or hsi_constituents(http, t2c_cfg.get("hsi_url"))
+    cnhk_syms = {r.get("symbol") for r in adr_rows} | {r.get("symbol") for r in hk_rows}
 
     # T2 动态扫描：S&P500 广度池（u.*）∪ Nasdaq-100，250 日回撤超过预筛线的蓝筹
     scan = conf.get("t2_scan", {})
@@ -168,6 +242,8 @@ def fetch(cfg: dict, settings: dict) -> dict:
     pool_syms = set()
     for row in store.conn.execute("SELECT DISTINCT key FROM metrics WHERE key LIKE 'u.%'"):
         sym = row["key"][2:]
+        if sym in cnhk_syms:  # 防御：港股中概不写 u.*，若混入也不走 -50 预筛
+            continue
         pool_syms.add(sym)
         s = store.series(row["key"], 260)
         if len(s) < 200:
@@ -200,13 +276,67 @@ def fetch(cfg: dict, settings: dict) -> dict:
     for dd, sym in cand[: int(scan.get("max_names", 24))]:
         grab(sym, sym, "equity_single", "T2")
 
+    # ---- T2C 港股中概（裁决 B4/B5、MA-10；固化清单与 T3 剔除名单见 config t2c）----
+    # 入板优先直读 breadth 合并好的 kline 文件（免重复抓取）；缺失/过期回落网络 grab。
+    ornament = {str(k): str(v) for k, v in (t2c_cfg.get("ornament") or {}).items()}
+    eligible = float(t2c_cfg.get("eligible_dd250", -60))
+    watch_line = float(t2c_cfg.get("watch_dd250", -50))
+
+    def grab_t2c(symbol: str, name: str, tier: str, extra: dict | None = None):
+        entry, ms = board_row_from_kline(symbol, name, "equity_single", tier, extra)
+        if entry is None:
+            grab(symbol, name, "equity_single", tier, extra=extra)
+            return
+        metrics.extend(ms)
+        instruments.append(entry)
+
+    watch = []
+    # ADR 固化清单 34 只全员入板：核心 tier=T2C 进状态机（≈27），T3 定义闸剔除者 tier=ORNAMENT
+    # （照常建档案与链条，判定恒『观赏刀 · 永不发信号』）
+    for it in adr_rows:
+        sym = it.get("symbol")
+        if not sym:
+            continue
+        name = it.get("name") or sym
+        if sym in ornament:
+            grab_t2c(sym, name, "ORNAMENT", extra={"ornament_reason": ornament[sym]})
+        else:
+            grab_t2c(sym, name, "T2C")
+            dd, px, asof = dd250_from_kline(sym)
+            if dd is not None and eligible < dd <= watch_line:
+                watch.append({"symbol": sym, "key": safe_key(sym), "name": name, "pool": "CN_ADR",
+                              "dd250": round(dd, 1), "px": px, "asof": asof})
+    # 恒指 88：-60 单级筛入板（tier=T2C）；-50~-60 只进观察名单（展示层，不入板）
+    for it in hk_rows:
+        sym = it.get("symbol")
+        if not sym:
+            continue
+        name = it.get("name") or sym
+        dd, px, asof = dd250_from_kline(sym)
+        if dd is None:
+            continue  # K 线未回填齐：诚实缺席，回填完成后下跑批自愈
+        if dd <= eligible:
+            grab_t2c(sym, name, "T2C")
+        elif dd <= watch_line:
+            watch.append({"symbol": sym, "key": safe_key(sym), "name": name, "pool": "CN_HK",
+                          "dd250": round(dd, 1), "px": px, "asof": asof})
+    watch.sort(key=lambda r: r["dd250"])
+    write_json(WATCHLIST_PATH, {
+        "date": today_str(), "source": "yahoo",
+        "line": {"eligible_dd250": eligible, "watch_dd250": watch_line},
+        "note": "接近资格线观察名单：dd250 在 -50%~-60% 之间（B4 单级筛展示层，不入板不进状态机；ORNAMENT 不列）",
+        "rows": watch}, indent=1)
+
     # day_losers 深跌晋升（仅 J1 分诊素材，不进状态机；排除已在阵中的标的）
     promo = _promote_day_losers(http, ucfg, exclude={i["symbol"] for i in instruments})
     if promo.get("degraded_reason"):
         notes.append(f"day_losers: {promo['degraded_reason'][:50]}")
-    log.info("knives: %d instruments (%d T1F futures, %d T2 scanned in), %d day_losers promoted",
-             len(instruments), sum(1 for i in instruments if i["tier"] == "T1F"),
-             sum(1 for i in instruments if i["tier"] == "T2"), len(promo["promoted"]))
+    tiers = {}
+    for i in instruments:
+        tiers[i["tier"]] = tiers.get(i["tier"], 0) + 1
+    log.info("knives: %d instruments (%s), %d cnhk watch, %d day_losers promoted",
+             len(instruments), " ".join(f"{k}={v}" for k, v in sorted(tiers.items())),
+             len(watch), len(promo["promoted"]))
     # 标的清单落盘（引擎与前端共用）
     (DOCS_DIR / "data").mkdir(parents=True, exist_ok=True)
     (ROOT / "data" / "state").mkdir(parents=True, exist_ok=True)

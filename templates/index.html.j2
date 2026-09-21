@@ -14,13 +14,14 @@
 
 <div class="rail" aria-hidden="true">刀尖舞 · {{ date }} · 纪律是唯一的刀鞘</div>
 
-<div class="tape" id="tape" aria-label="读数条"></div>
-
 <div class="warnbar" id="warnbar">
   <span id="warn-text">接飞刀属极高风险行为。本站为历史统计研究工具，非投资建议。</span>
   <a href="#disclaimer" data-nav="disclaimer" style="margin-left:auto">免责全文</a>
 </div>
 <div id="hazard-slot"></div>
+
+<!-- v1.3 机会漏斗条（替换 tape 原位；payload.funnel 缺块整条不渲染，由 app.js 填充） -->
+<div class="funnel" id="funnel" role="navigation" aria-label="机会漏斗" style="display:none"></div>
 
 <header class="top">
   <div class="brand" data-nav="home" role="button" tabindex="0">
@@ -29,14 +30,22 @@
   </div>
   <nav class="nav" id="nav">
     <button data-nav="home" aria-selected="true">首页</button>
+    <span class="ng">机会</span>
     <button data-nav="radar">雷达</button>
     <button data-nav="knives">刀落板</button>
+    <span class="ng">证据</span>
     <button data-nav="signals">信号规则</button>
     <button data-nav="crashes">刀谱</button>
-    <button data-nav="calc">仓位计算器</button>
-    <button data-nav="streaks">连败室</button>
     <button data-nav="review">复盘室</button>
-    <button data-nav="ledger">结算台账</button>
+    <span class="ng">工具</span>
+    <button data-nav="calc">计算器</button>
+    <button data-nav="streaks">连败室</button>
+    <button data-nav="ledger">台账</button>
+    <span class="ng">制度</span>
+    <button data-nav="howto">如何读</button>
+    <button data-nav="method">方法</button>
+    <button data-nav="datacenter">机房</button>
+    <button data-nav="disclaimer">免责</button>
   </nav>
   <span class="sp"></span>
   <button class="iconbtn" id="btn-cmdk" title="命令面板">CTRL K</button>
@@ -56,15 +65,17 @@
   <section class="view" id="v-ledger"></section>
   <section class="view" id="v-method"></section>
   <section class="view" id="v-datacenter"></section>
+  <section class="view" id="v-howto"></section>
   <section class="view" id="v-disclaimer"></section>
+  <section class="view" id="v-profile"></section>
 </main>
 
 <nav class="bottomnav" id="bottomnav">
   <button data-nav="home" aria-selected="true">首页</button>
-  <button data-nav="knives">刀落板</button>
   <button data-nav="radar">雷达</button>
-  <button data-nav="calc">计算器</button>
+  <button data-nav="knives">刀落板</button>
   <button data-nav="ledger">台账</button>
+  <button id="bn-more">更多</button>
 </nav>
 
 <footer class="site">
