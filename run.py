@@ -184,10 +184,14 @@ def _run_radar() -> int:
     }
     _shared_payload_blocks(payload, result["board"], conf)
     from kw import render
+    # heavy 站点产物（shuttle 已迁回）：stier 块与 Top5 只透传不重算（B11）
+    prev_payload = read_json(DOCS_DIR / "data" / "payload.json", {}) or {}
     render.inject_payload_blocks(payload, conf, ledger=ledger,
-                                 stier_block=(read_json(STATE / "stier_ledger.json", None) and
-                                              read_json(DOCS_DIR / "data" / "payload.json", {}).get("stier")),
+                                 stier_block=prev_payload.get("stier"),
                                  depth_market=result.get("depth_market"))
+    prev_top5 = ((prev_payload.get("funnel") or {}).get("top5"))
+    if isinstance(payload.get("funnel"), dict) and prev_top5:
+        payload["funnel"]["top5"] = prev_top5
     payload["board"] = render.trim_board_for_payload(result["board"], insts)
     write_json(DOCS_DIR / "data" / "payload.json", payload)
     _write_side_files(r, ledger)
