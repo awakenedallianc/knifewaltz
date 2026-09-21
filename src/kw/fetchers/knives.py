@@ -142,9 +142,12 @@ def fetch(cfg: dict, settings: dict) -> dict:
         for d, v in zip(dates, vals):
             metrics.append({"key": f"k.{key}", "value": v, "source": "yahoo", "date": d, "_backfill": True})
         metrics.append({"key": f"k.{key}", "value": vals[-1], "source": "yahoo", "asof": dates[-1]})
+        # 注意：Yahoo v8 chart 的 meta 没有 marketCap 键（2026-09-22 AAPL/0700.HK/BABA 三验证），
+        # 此处不再记录恒为 None 的假字段。T2 的"市值>100亿蓝筹"闸由池成员资格结构性保证
+        # （SP500∪NDX100 本身即大市值门槛）；day_losers 晋升路径的市值闸用 screener 的
+        # marketCap（formatted=false，免 crumb，见 _promote_day_losers）——那条链路是真的。
         entry = {"symbol": symbol, "key": key, "name": name, "cls": cls, "tier": tier,
-                 "asof": dates[-1], "px": vals[-1],
-                 "mcap": meta.get("marketCap"), "bars": len(vals)}
+                 "asof": dates[-1], "px": vals[-1], "bars": len(vals)}
         if not any(len(r) > 5 and r[5] for r in ohlc[-30:]):
             entry["no_volume"] = True  # checklist 量能项自动跳过，卡上标"无量能数据"
         instruments.append(entry)
