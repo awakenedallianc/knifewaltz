@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-09-21T23:41:04+07:00",
- "date": "2026-09-21",
+ "generated_at": "2026-09-22T00:34:24+07:00",
+ "date": "2026-09-22",
  "min_n": 30,
  "outcome_defs": {
   "J1": "1 若 180 日内触发 X-EVENT 类事件或较 veto 日再跌 90%",
@@ -19,7 +19,7 @@
    "question_id": "J1",
    "outcome_def": "1 若 180 日内触发 X-EVENT 类事件或较 veto 日再跌 90%",
    "n_total": 0,
-   "n_pending": 93,
+   "n_pending": 116,
    "n_unresolvable": 0,
    "conclusive": false,
    "base_rate": null,
@@ -32,7 +32,7 @@
    "question_id": "J2",
    "outcome_def": "1 若 |5 日前向收益| >= 2×ATR14%",
    "n_total": 0,
-   "n_pending": 93,
+   "n_pending": 116,
    "n_unresolvable": 0,
    "conclusive": false,
    "base_rate": null,
@@ -44,7 +44,7 @@
   "J3": {
    "question_id": "J3",
    "outcome_def": "1 若事件后 3 日 VIX 或已实现波动跳升 >15%",
-   "n_total": 0,
+   "n_total": 20,
    "n_pending": 20,
    "n_unresolvable": 0,
    "conclusive": false,
@@ -52,7 +52,7 @@
    "brier": null,
    "brier_baseline_climatology": null,
    "reliability": null,
-   "note": "收集中 0/30"
+   "note": "收集中 20/30"
   },
   "J4": {
    "question_id": "J4",
@@ -70,15 +70,65 @@
   "J5": {
    "question_id": "J5",
    "outcome_def": "1 若 3 日内 |累计收益| >= 10%（movers_history 快照价口径）",
-   "n_total": 0,
-   "n_pending": 94,
+   "n_total": 33,
+   "n_pending": 76,
    "n_unresolvable": 0,
-   "conclusive": false,
-   "base_rate": null,
-   "brier": null,
-   "brier_baseline_climatology": null,
-   "reliability": null,
-   "note": "收集中 0/30"
+   "conclusive": true,
+   "base_rate": 0.0,
+   "brier": 0.5574,
+   "brier_baseline_climatology": 0.0,
+   "reliability": [
+    {
+     "lo": 0.0,
+     "hi": 0.2,
+     "n": 0,
+     "p_mean": null,
+     "hit_rate": null,
+     "wilson95": null,
+     "small_sample": true,
+     "note": "收集中 0/30"
+    },
+    {
+     "lo": 0.2,
+     "hi": 0.4,
+     "n": 3,
+     "p_mean": null,
+     "hit_rate": null,
+     "wilson95": null,
+     "small_sample": true,
+     "note": "收集中 3/30"
+    },
+    {
+     "lo": 0.4,
+     "hi": 0.6,
+     "n": 7,
+     "p_mean": null,
+     "hit_rate": null,
+     "wilson95": null,
+     "small_sample": true,
+     "note": "收集中 7/30"
+    },
+    {
+     "lo": 0.6,
+     "hi": 0.8,
+     "n": 8,
+     "p_mean": null,
+     "hit_rate": null,
+     "wilson95": null,
+     "small_sample": true,
+     "note": "收集中 8/30"
+    },
+    {
+     "lo": 0.8,
+     "hi": 1.0,
+     "n": 15,
+     "p_mean": null,
+     "hit_rate": null,
+     "wilson95": null,
+     "small_sample": true,
+     "note": "收集中 15/30"
+    }
+   ]
   },
   "J1_shadow": {
    "outcome_def": "反事实盈亏 = atier_exec(entry, stop) 结果",
