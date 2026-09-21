@@ -1,0 +1,57 @@
+name: knifewaltz-daily
+on:
+  schedule:
+    - cron: '37 23 * * *'   # 06:37 曼谷（美股收盘后）
+    - cron: '37 11 * * *'   # 18:37 曼谷
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths: ['src/**', 'templates/**', 'config.yaml', 'run.py', 'requirements.txt', '.github/workflows/daily.yml']
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: knifewaltz-daily
+  cancel-in-progress: false
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      TZ: Asia/Bangkok
+      PYTHONUTF8: '1'
+      TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Run pipeline (fetch → gates → knives → replay → ledger → render)
+        run: python run.py
+      - name: Commit state (ledger / knife_states / replay cache — 跨跑批持久化)
+        run: |
+          git config user.name 'knifewaltz-bot'
+          git config user.email 'knifewaltz-bot@users.noreply.github.com'
+          git add data/state
+          if git diff --cached --quiet; then echo "no state change"; else
+            git commit -m "state: $(date +%F) $(date +%H:%M)"
+            git pull --rebase -X theirs origin main || { git rebase --abort; echo "::warning::rebase failed; state dropped this run"; }
+            git push || echo "::warning::push failed"
+          fi
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: docs }
+      - id: deployment
+        uses: actions/deploy-pages@v4

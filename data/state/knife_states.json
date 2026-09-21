@@ -1,0 +1,190 @@
+{
+ "SPY": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "QQQ": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "IWM": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "EEM": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "FXI": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "KWEB": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "ARKK": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "_GSPC": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "_IXIC": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "_HSI": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "_N225": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "000001_SS": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "GLD": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "SLV": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "USO": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "UNG": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "DBA": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "COPX": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "URA": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "BTC-USD": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "ETH-USD": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "CSGP": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "FISV": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "PODD": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "BSX": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "INTU": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "APP": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "CHTR": {
+  "state": "STABILIZING",
+  "since": "2026-09-21",
+  "events": [
+   {
+    "d": "2026-09-21",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -55.59% / 10日 -17.39%"
+   },
+   {
+    "d": "2026-09-21",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 2/5"
+   }
+  ]
+ },
+ "LULU": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "ORCL": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "NKE": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "ZTS": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "ROL": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "PNR": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "APTV": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ }
+}

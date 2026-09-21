@@ -1,0 +1,58 @@
+# 刀尖舞 KnifeWaltz · 标的与阈值配置
+# 阈值政策：v1 用规格书绝对值上线，分位数版本随数据积累季度校准（calibration.json 记录）。
+
+# T1：指数/指数 ETF/大宗/BTC——允许 A 档（恐慌反弹）+ B 档（价值回归）
+t1:
+  - {symbol: SPY,        name: 标普500 ETF,      cls: equity_index}
+  - {symbol: QQQ,        name: 纳指100 ETF,      cls: equity_index}
+  - {symbol: IWM,        name: 罗素2000 ETF,     cls: equity_index}
+  - {symbol: EEM,        name: 新兴市场 ETF,     cls: equity_index}
+  - {symbol: FXI,        name: 中国大盘 ETF,     cls: equity_index}
+  - {symbol: KWEB,       name: 中概互联 ETF,     cls: equity_index}
+  - {symbol: ARKK,       name: ARK 创新 ETF,     cls: equity_index}
+  - {symbol: "^GSPC",    name: 标普500 指数,     cls: equity_index}
+  - {symbol: "^IXIC",    name: 纳斯达克指数,     cls: equity_index}
+  - {symbol: "^HSI",     name: 恒生指数,         cls: equity_index}
+  - {symbol: "^N225",    name: 日经225,          cls: equity_index}
+  - {symbol: "000001.SS", name: 上证指数,        cls: equity_index}
+  - {symbol: GLD,        name: 黄金 ETF,         cls: commodity}
+  - {symbol: SLV,        name: 白银 ETF,         cls: commodity}
+  - {symbol: USO,        name: 原油 ETF,         cls: commodity}
+  - {symbol: UNG,        name: 天然气 ETF,       cls: commodity}
+  - {symbol: DBA,        name: 农产品 ETF,       cls: commodity}
+  - {symbol: COPX,       name: 铜矿 ETF,         cls: commodity}
+  - {symbol: URA,        name: 铀矿 ETF,         cls: commodity}
+  - {symbol: BTC-USD,    name: 比特币,           cls: crypto}
+  - {symbol: ETH-USD,    name: 以太坊,           cls: crypto}
+
+# T2：蓝筹个股——B 档资格线 -60%/250日，从 S&P 500 池动态扫描入选（dd250 ≤ -50% 预筛后取全量 OHLCV）
+t2_scan:
+  prefilter_dd250: -50    # 预筛（收盘价口径）
+  eligible_dd250: -60     # 正式资格线
+  max_names: 24
+
+# 阈值（绝对值 v1；来源：blade_channel_spec.json signal_engine）
+thresholds:
+  vix_gate: [36, 45, 50]
+  term_flip: {red: 1.0, flip_back: 1.05, window_days: 5}
+  breadth_90pct: 0.90
+  zweig: {from_below: 0.40, to_above: 0.615, within_days: 10}
+  fng_gate: 10
+  knife_fall: {dd52w: -40, ret10: -15, rsi14: 25}
+  index_fall: {dd52w: -20, ret10: -10, rsi14: 30}   # 指数级刀落阈值比个股宽
+  vol_climax_ratio: 3.0
+  crypto_fall: {dd52w: -50, ret10: -20, fund_8h: -0.05}
+  b_tier_dd250: -60
+  catch_window_days: 10
+  cooldown_days: 10
+
+# A 档退出（恐慌反弹交易；持有 ≤ 1 个月）
+exits_a:
+  - {id: X-STOP, rule: "跌破接刀日最低价 → 全退", plain: 跌破接刀那天的最低价就认错}
+  - {id: X-TIME, rule: "15 个交易日收盘未高于接刀价 → 退一半；60 个交易日 → 全退", plain: 一个月还没起来说明判断错了}
+  - {id: X-GATE, rule: "市场闸门回到 RED → 全退", plain: 大盘恐慌重新失控时不留恋}
+# B 档退出（价值回归仓；目标 36 个月）——时间止损不适用（评审 P0-2）
+exits_b:
+  - {id: X-LOW,   rule: "收盘创下接刀后的新低 -15% → 全退",     plain: 底不是底，认错}
+  - {id: X-DEAD,  rule: "36 个月未收复接刀价 +30% → 清仓复盘",  plain: 三年不涨的价值回归不存在}
+  - {id: X-EVENT, rule: "退市警示/违约公告（人工事件）→ 全退",   plain: 基本面死亡事件不等图表}

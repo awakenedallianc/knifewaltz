@@ -1,0 +1,772 @@
+{
+ "sources_test": {
+  "yahoo_gspc": {
+   "ok": true,
+   "rows": 10510,
+   "range": [
+    "1984-12-31",
+    "2026-09-18"
+   ],
+   "url": "https://query1.finance.yahoo.com/v8/finance/chart/^GSPC"
+  },
+  "stooq_spx": {
+   "ok": false,
+   "note": "JS browser-verification wall, not headless-readable as of 2026-09"
+  },
+  "cboe_vix": {
+   "ok": true,
+   "rows": 9276,
+   "range": [
+    "1990-01-02",
+    "2026-09-18"
+   ],
+   "url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv"
+  },
+  "yahoo": {
+   "^IXIC": {
+    "ok": true,
+    "rows": 9246,
+    "err": null
+   },
+   "^N225": {
+    "ok": true,
+    "rows": 909,
+    "err": null
+   },
+   "000001.SS": {
+    "ok": true,
+    "rows": 3091,
+    "err": null
+   },
+   "BTC-USD": {
+    "ok": true,
+    "rows": 2457,
+    "err": null
+   },
+   "KWEB": {
+    "ok": true,
+    "rows": 1688,
+    "err": null
+   },
+   "ARKK": {
+    "ok": true,
+    "rows": 1688,
+    "err": null
+   }
+  }
+ },
+ "spx_cases": [
+  {
+   "case": "1987_black_monday",
+   "peak": {
+    "date": "1987-08-25",
+    "close": 336.77
+   },
+   "trough": {
+    "date": "1987-12-04",
+    "close": 223.92
+   },
+   "drawdown_pct": -33.51,
+   "calendar_days": 101,
+   "trading_days": 71,
+   "worst_day": {
+    "date": "1987-10-19",
+    "pct": -20.47
+   },
+   "fwd_1m_pct": 15.6,
+   "fwd_3m_pct": 19.4,
+   "fwd_12m_pct": 21.4,
+   "as_of": {
+    "date": "2026-09-18",
+    "close": 7650.5,
+    "vs_trough_pct": 3316.6
+   },
+   "max_vol_vs_50d": {
+    "date": "1987-10-19",
+    "ratio": 3.21
+   }
+  },
+  {
+   "case": "2000_dotcom_spx",
+   "peak": {
+    "date": "2000-03-24",
+    "close": 1527.46
+   },
+   "trough": {
+    "date": "2002-10-09",
+    "close": 776.76
+   },
+   "drawdown_pct": -49.15,
+   "calendar_days": 929,
+   "trading_days": 637,
+   "worst_day": {
+    "date": "2000-04-14",
+    "pct": -5.83
+   },
+   "fwd_1m_pct": 16.2,
+   "fwd_3m_pct": 19.4,
+   "fwd_12m_pct": 33.7,
+   "as_of": {
+    "date": "2026-09-18",
+    "close": 7650.5,
+    "vs_trough_pct": 884.9
+   },
+   "max_vol_vs_50d": {
+    "date": "2001-09-17",
+    "ratio": 2.1
+   },
+   "vix_peak": {
+    "max_close": {
+     "date": "2002-08-05",
+     "v": 45.08
+    },
+    "max_high": {
+     "date": "2001-09-21",
+     "v": 42.66
+    }
+   }
+  },
+  {
+   "case": "2008_gfc",
+   "peak": {
+    "date": "2007-10-09",
+    "close": 1565.15
+   },
+   "trough": {
+    "date": "2009-03-09",
+    "close": 676.53
+   },
+   "drawdown_pct": -56.78,
+   "calendar_days": 517,
+   "trading_days": 355,
+   "worst_day": {
+    "date": "2008-10-15",
+    "pct": -9.03
+   },
+   "fwd_1m_pct": 20.5,
+   "fwd_3m_pct": 38.8,
+   "fwd_12m_pct": 68.6,
+   "as_of": {
+    "date": "2026-09-18",
+    "close": 7650.5,
+    "vs_trough_pct": 1030.8
+   },
+   "max_vol_vs_50d": {
+    "date": "2008-10-10",
+    "ratio": 2.04
+   },
+   "vix_peak": {
+    "max_close": {
+     "date": "2008-11-20",
+     "v": 80.86
+    },
+    "max_high": {
+     "date": "2008-10-24",
+     "v": 79.13
+    }
+   }
+  },
+  {
+   "case": "2011_euro_debt",
+   "peak": {
+    "date": "2011-04-29",
+    "close": 1363.61
+   },
+   "trough": {
+    "date": "2011-10-03",
+    "close": 1099.23
+   },
+   "drawdown_pct": -19.39,
+   "calendar_days": 157,
+   "trading_days": 108,
+   "worst_day": {
+    "date": "2011-08-08",
+    "pct": -6.66
+   },
+   "fwd_1m_pct": 10.8,
+   "fwd_3m_pct": 16.2,
+   "fwd_12m_pct": 31.5,
+   "as_of": {
+    "date": "2026-09-18",
+    "close": 7650.5,
+    "vs_trough_pct": 596.0
+   },
+   "max_vol_vs_50d": {
+    "date": "2011-08-03",
+    "ratio": 1.61
+   },
+   "vix_peak": {
+    "max_close": {
+     "date": "2011-08-08",
+     "v": 48.0
+    },
+    "max_high": {
+     "date": "2011-08-08",
+     "v": 48.0
+    }
+   }
+  },
+  {
+   "case": "2018_q4",
+   "peak": {
+    "date": "2018-09-20",
+    "close": 2930.75
+   },
+   "trough": {
+    "date": "2018-12-24",
+    "close": 2351.1001
+   },
+   "drawdown_pct": -19.78,
+   "calendar_days": 95,
+   "trading_days": 65,
+   "worst_day": {
+    "date": "2018-10-10",
+    "pct": -3.29
+   },
+   "fwd_1m_pct": 13.3,
+   "fwd_3m_pct": 19.3,
+   "fwd_12m_pct": 37.1,
+   "as_of": {
+    "date": "2026-09-18",
+    "close": 7650.5,
+    "vs_trough_pct": 225.4
+   },
+   "max_vol_vs_50d": {
+    "date": "2018-12-21",
+    "ratio": 1.85
+   },
+   "vix_peak": {
+    "max_close": {
+     "date": "2018-12-24",
+     "v": 36.07
+    },
+    "max_high": {
+     "date": "2018-12-26",
+     "v": 30.41
+    }
+   }
+  },
+  {
+   "case": "2020_covid",
+   "peak": {
+    "date": "2020-02-19",
+    "close": 3386.1499
+   },
+   "trough": {
+    "date": "2020-03-23",
+    "close": 2237.3999
+   },
+   "drawdown_pct": -33.92,
+   "calendar_days": 33,
+   "trading_days": 23,
+   "worst_day": {
+    "date": "2020-03-16",
+    "pct": -11.98
+   },
+   "fwd_1m_pct": 25.1,
+   "fwd_3m_pct": 39.4,
+   "fwd_12m_pct": 74.8,
+   "as_of": {
+    "date": "2026-09-18",
+    "close": 7650.5,
+    "vs_trough_pct": 241.9
+   },
+   "max_vol_vs_50d": {
+    "date": "2020-02-28",
+    "ratio": 2.25
+   },
+   "vix_peak": {
+    "max_close": {
+     "date": "2020-03-16",
+     "v": 82.69
+    },
+    "max_high": {
+     "date": "2020-03-18",
+     "v": 76.45
+    }
+   }
+  },
+  {
+   "case": "2025_tariff_apr",
+   "peak": {
+    "date": "2025-02-19",
+    "close": 6144.1499
+   },
+   "trough": {
+    "date": "2025-04-08",
+    "close": 4982.77
+   },
+   "drawdown_pct": -18.9,
+   "calendar_days": 48,
+   "trading_days": 34,
+   "worst_day": {
+    "date": "2025-04-04",
+    "pct": -5.97
+   },
+   "fwd_1m_pct": 13.7,
+   "fwd_3m_pct": 26.0,
+   "fwd_12m_pct": 36.8,
+   "as_of": {
+    "date": "2026-09-18",
+    "close": 7650.5,
+    "vs_trough_pct": 53.5
+   },
+   "max_vol_vs_50d": {
+    "date": "2025-03-21",
+    "ratio": 1.92
+   },
+   "vix_peak": {
+    "max_close": {
+     "date": "2025-04-08",
+     "v": 52.33
+    },
+    "max_high": {
+     "date": "2025-04-07",
+     "v": 46.98
+    }
+   }
+  },
+  {
+   "case": "2026_tariff_mar",
+   "peak": {
+    "date": "2026-01-27",
+    "close": 6978.6001
+   },
+   "trough": {
+    "date": "2026-03-30",
+    "close": 6343.7202
+   },
+   "drawdown_pct": -9.1,
+   "calendar_days": 62,
+   "trading_days": 43,
+   "worst_day": {
+    "date": "2026-03-26",
+    "pct": -1.74
+   },
+   "fwd_1m_pct": 12.5,
+   "fwd_3m_pct": 18.2,
+   "fwd_12m_pct": null,
+   "as_of": {
+    "date": "2026-09-18",
+    "close": 7650.5,
+    "vs_trough_pct": 20.6
+   },
+   "max_vol_vs_50d": {
+    "date": "2026-03-20",
+    "ratio": 1.74
+   },
+   "vix_peak": {
+    "max_close": {
+     "date": "2026-03-27",
+     "v": 31.05
+    },
+    "max_high": {
+     "date": "2026-03-09",
+     "v": 25.5
+    }
+   }
+  }
+ ],
+ "yahoo_cases": [
+  {
+   "case": "2000_dotcom_nasdaq",
+   "peak": {
+    "date": "2000-03-10",
+    "close": 5048.6201
+   },
+   "trough": {
+    "date": "2002-10-09",
+    "close": 1114.11
+   },
+   "drawdown_pct": -77.93,
+   "calendar_days": 943,
+   "trading_days": 647,
+   "worst_day": {
+    "date": "2000-04-14",
+    "pct": -9.67
+   },
+   "fwd_1m_pct": 23.6,
+   "fwd_3m_pct": 29.1,
+   "fwd_12m_pct": 71.6,
+   "as_of": {
+    "date": "2026-09-18",
+    "close": 26522.5391,
+    "vs_trough_pct": 2280.6
+   },
+   "max_vol_vs_50d": {
+    "date": "2001-09-20",
+    "ratio": 1.79
+   },
+   "vix_peak": {
+    "max_close": {
+     "date": "2002-08-05",
+     "v": 45.08
+    },
+    "max_high": {
+     "date": "2001-09-21",
+     "v": 42.66
+    }
+   }
+  },
+  {
+   "case": "2021_22_growth_nasdaq",
+   "peak": {
+    "date": "2021-11-19",
+    "close": 16057.4404
+   },
+   "trough": {
+    "date": "2022-12-28",
+    "close": 10213.29
+   },
+   "drawdown_pct": -36.4,
+   "calendar_days": 404,
+   "trading_days": 277,
+   "worst_day": {
+    "date": "2022-09-13",
+    "pct": -5.16
+   },
+   "fwd_1m_pct": 11.6,
+   "fwd_3m_pct": 17.6,
+   "fwd_12m_pct": 47.0,
+   "as_of": {
+    "date": "2026-09-18",
+    "close": 26522.5391,
+    "vs_trough_pct": 159.7
+   },
+   "max_vol_vs_50d": {
+    "date": "2022-06-24",
+    "ratio": 1.85
+   },
+   "vix_peak": {
+    "max_close": {
+     "date": "2022-03-07",
+     "v": 36.45
+    },
+    "max_high": {
+     "date": "2022-01-24",
+     "v": 29.9
+    }
+   }
+  },
+  {
+   "case": "2026_ai_nasdaq",
+   "peak": {
+    "date": "2025-10-29",
+    "close": 23958.4707
+   },
+   "trough": {
+    "date": "2026-03-30",
+    "close": 20794.6406
+   },
+   "drawdown_pct": -13.21,
+   "calendar_days": 152,
+   "trading_days": 103,
+   "worst_day": {
+    "date": "2026-01-20",
+    "pct": -2.39
+   },
+   "fwd_1m_pct": 18.7,
+   "fwd_3m_pct": 26.1,
+   "fwd_12m_pct": null,
+   "as_of": {
+    "date": "2026-09-18",
+    "close": 26522.5391,
+    "vs_trough_pct": 27.5
+   },
+   "max_vol_vs_50d": {
+    "date": "2026-01-14",
+    "ratio": 1.44
+   },
+   "vix_peak": {
+    "max_close": {
+     "date": "2026-03-27",
+     "v": 31.05
+    },
+    "max_high": {
+     "date": "2026-03-09",
+     "v": 25.5
+    }
+   }
+  },
+  {
+   "case": "2024_carry_unwind_nikkei",
+   "peak": {
+    "date": "2024-07-11",
+    "close": 42224.0195
+   },
+   "trough": {
+    "date": "2024-08-05",
+    "close": 31458.4199
+   },
+   "drawdown_pct": -25.5,
+   "calendar_days": 25,
+   "trading_days": 16,
+   "worst_day": {
+    "date": "2024-08-05",
+    "pct": -12.4
+   },
+   "fwd_1m_pct": 17.8,
+   "fwd_3m_pct": 25.2,
+   "fwd_12m_pct": 39.0,
+   "as_of": {
+    "date": "2026-09-18",
+    "close": 65018.9492,
+    "vs_trough_pct": 106.7
+   },
+   "max_vol_vs_50d": {
+    "date": "2024-08-05",
+    "ratio": 2.42
+   },
+   "vix_peak": {
+    "max_close": {
+     "date": "2024-08-05",
+     "v": 38.57
+    },
+    "max_high": {
+     "date": "2024-08-05",
+     "v": 38.57
+    }
+   }
+  },
+  {
+   "case": "2015_ashare_leg1",
+   "peak": {
+    "date": "2015-06-12",
+    "close": 5166.3501
+   },
+   "trough": {
+    "date": "2015-08-26",
+    "close": 2927.2881
+   },
+   "drawdown_pct": -43.34,
+   "calendar_days": 75,
+   "trading_days": 52,
+   "worst_day": {
+    "date": "2015-08-24",
+    "pct": -8.49
+   },
+   "fwd_1m_pct": 5.9,
+   "fwd_3m_pct": 20.8,
+   "fwd_12m_pct": 5.6,
+   "as_of": {
+    "date": "2026-09-21",
+    "close": 3949.9067,
+    "vs_trough_pct": 34.9
+   },
+   "max_vol_vs_50d": {
+    "date": "2015-07-06",
+    "ratio": 1.43
+   },
+   "vix_peak": {
+    "max_close": {
+     "date": "2015-08-24",
+     "v": 40.74
+    },
+    "max_high": {
+     "date": "2015-08-24",
+     "v": 40.74
+    }
+   }
+  },
+  {
+   "case": "2015_16_ashare_full",
+   "peak": {
+    "date": "2015-06-12",
+    "close": 5166.3501
+   },
+   "trough": {
+    "date": "2016-01-28",
+    "close": 2655.6609
+   },
+   "drawdown_pct": -48.6,
+   "calendar_days": 230,
+   "trading_days": 155,
+   "worst_day": {
+    "date": "2015-08-24",
+    "pct": -8.49
+   },
+   "fwd_1m_pct": 8.2,
+   "fwd_3m_pct": 12.9,
+   "fwd_12m_pct": 21.0,
+   "as_of": {
+    "date": "2026-09-21",
+    "close": 3949.9067,
+    "vs_trough_pct": 48.7
+   },
+   "max_vol_vs_50d": {
+    "date": "2015-11-05",
+    "ratio": 1.76
+   },
+   "vix_peak": {
+    "max_close": {
+     "date": "2015-08-24",
+     "v": 40.74
+    },
+    "max_high": {
+     "date": "2015-08-24",
+     "v": 40.74
+    }
+   }
+  },
+  {
+   "case": "2022_crypto_btc",
+   "peak": {
+    "date": "2021-11-08",
+    "close": 67566.8281
+   },
+   "trough": {
+    "date": "2022-11-21",
+    "close": 15787.2842
+   },
+   "drawdown_pct": -76.63,
+   "calendar_days": 378,
+   "trading_days": 378,
+   "worst_day": {
+    "date": "2022-06-13",
+    "pct": -15.97
+   },
+   "fwd_1m_pct": 9.0,
+   "fwd_3m_pct": 45.3,
+   "fwd_12m_pct": 85.1,
+   "as_of": {
+    "date": "2026-09-21",
+    "close": 85291.8984,
+    "vs_trough_pct": 440.3
+   },
+   "max_vol_vs_50d": {
+    "date": "2022-11-08",
+    "ratio": 3.34
+   },
+   "vix_peak": {
+    "max_close": {
+     "date": "2022-03-07",
+     "v": 36.45
+    },
+    "max_high": {
+     "date": "2022-01-24",
+     "v": 29.9
+    }
+   }
+  },
+  {
+   "case": "2025_26_crypto_btc",
+   "peak": {
+    "date": "2025-10-06",
+    "close": 124752.5312
+   },
+   "trough": {
+    "date": "2026-06-30",
+    "close": 58558.8594
+   },
+   "drawdown_pct": -53.06,
+   "calendar_days": 267,
+   "trading_days": 267,
+   "worst_day": {
+    "date": "2026-02-05",
+    "pct": -14.13
+   },
+   "fwd_1m_pct": 13.6,
+   "fwd_3m_pct": 32.2,
+   "fwd_12m_pct": null,
+   "as_of": {
+    "date": "2026-09-21",
+    "close": 85291.8984,
+    "vs_trough_pct": 45.7
+   },
+   "max_vol_vs_50d": {
+    "date": "2026-02-05",
+    "ratio": 3.11
+   },
+   "vix_peak": {
+    "max_close": {
+     "date": "2026-03-27",
+     "v": 31.05
+    },
+    "max_high": {
+     "date": "2026-03-09",
+     "v": 25.5
+    }
+   }
+  },
+  {
+   "case": "2021_22_china_adr_kweb",
+   "peak": {
+    "date": "2021-02-17",
+    "close": 103.56
+   },
+   "trough": {
+    "date": "2022-10-24",
+    "close": 18.41
+   },
+   "drawdown_pct": -82.22,
+   "calendar_days": 614,
+   "trading_days": 425,
+   "worst_day": {
+    "date": "2022-10-24",
+    "pct": -14.17
+   },
+   "fwd_1m_pct": 33.1,
+   "fwd_3m_pct": 90.9,
+   "fwd_12m_pct": 42.6,
+   "as_of": {
+    "date": "2026-09-18",
+    "close": 24.83,
+    "vs_trough_pct": 34.9
+   },
+   "max_vol_vs_50d": {
+    "date": "2021-07-27",
+    "ratio": 6.22
+   },
+   "vix_peak": {
+    "max_close": {
+     "date": "2022-03-07",
+     "v": 36.45
+    },
+    "max_high": {
+     "date": "2022-01-24",
+     "v": 29.9
+    }
+   }
+  },
+  {
+   "case": "2022_growth_arkk",
+   "peak": {
+    "date": "2021-02-12",
+    "close": 156.58
+   },
+   "trough": {
+    "date": "2022-12-28",
+    "close": 29.64
+   },
+   "drawdown_pct": -81.07,
+   "calendar_days": 684,
+   "trading_days": 472,
+   "worst_day": {
+    "date": "2022-05-11",
+    "pct": -10.1
+   },
+   "fwd_1m_pct": 29.9,
+   "fwd_3m_pct": 29.8,
+   "fwd_12m_pct": 76.7,
+   "as_of": {
+    "date": "2026-09-18",
+    "close": 88.23,
+    "vs_trough_pct": 197.7
+   },
+   "max_vol_vs_50d": {
+    "date": "2021-02-23",
+    "ratio": 4.93
+   },
+   "vix_peak": {
+    "max_close": {
+     "date": "2022-03-07",
+     "v": 36.45
+    },
+    "max_high": {
+     "date": "2022-01-24",
+     "v": 29.9
+    }
+   }
+  }
+ ]
+}

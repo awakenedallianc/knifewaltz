@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>刀尖舞 KnifeWaltz · {{ date }}</title>
+<meta name="description" content="接飞刀的纪律工具：市场闸门、刀落板、逐笔结算台账。历史统计公开可复算，不构成投资建议。">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0A0C10">
+<link rel="stylesheet" href="assets/app.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<div class="tape" id="tape" aria-label="行情条"></div>
+
+<div class="warnbar" id="warnbar">
+  <span>⚠</span><span id="warn-text">接飞刀属极高风险行为。本站为历史统计研究工具，非投资建议。</span>
+  <a href="#disclaimer" data-nav="disclaimer" style="margin-left:auto">免责全文</a>
+</div>
+
+<header class="top">
+  <div class="brand" data-nav="home" role="button" tabindex="0">
+    {% include 'assets/logo.svg' %}
+    <div><span class="cn">刀尖舞</span><br><span class="en">KnifeWaltz</span></div>
+  </div>
+  <nav class="nav" id="nav">
+    <button data-nav="home" aria-selected="true">首页</button>
+    <button data-nav="knives">刀落板</button>
+    <button data-nav="signals">信号规则</button>
+    <button data-nav="crashes">刀谱</button>
+    <button data-nav="calc">仓位计算器</button>
+    <button data-nav="streaks">连败室</button>
+    <button data-nav="ledger">结算台账</button>
+  </nav>
+  <span class="sp"></span>
+  <button class="iconbtn" id="btn-cmdk" title="命令面板">Ctrl K</button>
+  <button class="iconbtn" id="btn-dir" title="切换红涨绿跌">涨跌色</button>
+  <button class="iconbtn" id="btn-theme" title="深浅色">◐</button>
+</header>
+
+<main id="main">
+  <section class="view" id="v-home" data-active="true"></section>
+  <section class="view" id="v-knives"></section>
+  <section class="view" id="v-signals"></section>
+  <section class="view" id="v-crashes"></section>
+  <section class="view" id="v-calc"></section>
+  <section class="view" id="v-streaks"></section>
+  <section class="view" id="v-ledger"></section>
+  <section class="view" id="v-method"></section>
+  <section class="view" id="v-datacenter"></section>
+  <section class="view" id="v-disclaimer"></section>
+</main>
+
+<nav class="bottomnav" id="bottomnav">
+  <button data-nav="home" aria-selected="true">首页</button>
+  <button data-nav="knives">刀落板</button>
+  <button data-nav="signals">信号</button>
+  <button data-nav="calc">计算器</button>
+  <button data-nav="ledger">台账</button>
+</nav>
+
+<footer class="site">
+  <div>刀尖舞 KnifeWaltz —— 纪律是唯一的刀鞘 · 在坠落里找秩序</div>
+  <div>本站零收费、不设群、不代客；任何以本站名义收费的行为均系冒充。唯一站点：<span class="mono" id="site-url"></span></div>
+  <div><a data-nav="method" href="#method">方法论</a> · <a data-nav="datacenter" href="#datacenter">数据机房</a> · <a data-nav="disclaimer" href="#disclaimer">免责声明</a> · <span id="src-health"></span></div>
+  <div class="faint">生成于 {{ generated_at }} · 运行时零大模型 · 全部数字可点击「重算」核验</div>
+</footer>
+
+<div class="backdrop" id="backdrop"></div>
+<aside class="drawer" id="drawer" aria-label="详情"></aside>
+
+<div class="modal" id="disc-modal">
+  <div class="mbox">
+    <div class="mbody" id="disc-body">{{ risk.disclaimer_full }}</div>
+    <div class="mfoot">
+      <span class="dim s12" id="disc-hint">滚动读完全文后方可关闭</span>
+      <button class="btn primary" id="disc-ok" disabled>我已读完，风险自担</button>
+    </div>
+  </div>
+</div>
+
+<div class="cmdk" id="cmdk">
+  <input id="cmdk-in" placeholder="搜索标的 / 页面 / 信号…" autocomplete="off">
+  <div class="list" id="cmdk-list"></div>
+</div>
+
+<script id="__DATA__" type="application/json">{{ data_json|safe }}</script>
+<script src="assets/echarts.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

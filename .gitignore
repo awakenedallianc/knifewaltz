@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.env
+data/history.sqlite
+data/checkpoint.json
+logs/
+docs/data/
+docs/index.html
+docs/assets/
+docs/.nojekyll

@@ -1,0 +1,1646 @@
+{
+ "brand": {
+  "name_cn": "刀尖舞",
+  "name_en": "KnifeWaltz",
+  "slug": "knifewaltz",
+  "slug_backup": "daojianwu",
+  "domain": "https://knifewaltz.github.io",
+  "slogan": "纪律是唯一的刀鞘",
+  "slogan_footer": "在坠落里找秩序",
+  "tagline_vs_rivals": "别人卖恐慌，我们结算恐慌。",
+  "logo_concept": {
+   "primary": {
+    "name": "坠刀K线（方案A）",
+    "geometry": "viewBox 0 0 64 64。刀＝倒置细长三角形 path：两肩 (30,6) 与 (40,10)，刀尖 (14,54)——一把从右上向左下坠落的刀，刃线斜率贴近得意黑的 8° 右斜势。刀身内嵌一根 K 线影线：细矩形 x=27 y=14 width=2 height=28（挖空或反色）。刀尖落点下方一枚实心圆 circle cx=12 cy=60 r=3 ＝精确入场点/接住的手。共 1 path + 1 rect + 1 circle，单色成立。",
+    "svg": "<svg viewBox=\"0 0 64 64\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"currentColor\"><path d=\"M30 6 L40 10 L14 54 Z\"/><rect x=\"27\" y=\"14\" width=\"2\" height=\"28\" fill=\"var(--bg,#0A0C10)\"/><circle cx=\"12\" cy=\"60\" r=\"3\"/></svg>",
+    "color_rule": "刀身用钢银 --steel，入场圆点用入场金 --gold（全站最稀缺色只给入场点）；单色场景整体 currentColor。"
+   },
+   "favicon": {
+    "name": "临界V（方案C 极简版）",
+    "geometry": "16px 网格内两元素即可清晰：朝下锐角三角（V 的实心化，刀尖向下）+ 底部一枚圆点（接刀线/入场点）。完整版：V 左笔画粗 6px（下跌段，血红 --blood），右笔画细 2px 且只画到一半高（反弹未确认，钢银 --steel），V 底下方一条 8px 水平短线（入场金 --gold，止损/接刀线）。",
+    "svg_16px": "<svg viewBox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M3 2 L8 12 L13 2 L10 2 L8 7 L6 2 Z\" fill=\"currentColor\"/><circle cx=\"8\" cy=\"14\" r=\"1.5\" fill=\"#F5B301\"/></svg>"
+   },
+   "shared_grammar": "尖点朝下 + 一个稳定元素（圆点/横线）＝『坠落 + 纪律』。全部手写内联 SVG，零外部资源，深浅色靠 currentColor 切换。方案B『刀尖舞者』（竖刃+舞者弧线）保留为品牌页装饰插画，不作主标。"
+  },
+  "palette": {
+   "mode_default": "dark",
+   "dark": {
+    "背景/--bg": "#0A0C10",
+    "表面/--panel": "#14161C",
+    "网格边框/--grid": "#1F232B",
+    "主色钢银/--steel": "#C9CDD6",
+    "主色高光/--steel-hi": "#E8EAF0",
+    "涨/--up": "#E5484D",
+    "跌/--down": "#2ECC8F",
+    "警示·入场金/--gold": "#F5B301",
+    "文字/--text": "#E6E8ED",
+    "次级文字/--text-dim": "#9BA3B0"
+   },
+   "light": {
+    "背景/--bg": "#F5F6F8",
+    "表面/--panel": "#FFFFFF",
+    "网格边框/--grid": "#E2E5EA",
+    "主色钢银/--steel": "#3E4552",
+    "主色高光/--steel-hi": "#1F242D",
+    "涨/--up": "#D53840",
+    "跌/--down": "#0F9D6E",
+    "警示·入场金/--gold": "#B77E00",
+    "文字/--text": "#1A1D23",
+    "次级文字/--text-dim": "#5C6470"
+   },
+   "rules": [
+    "涨跌是语义 token（--up/--down），默认中国习惯红涨绿跌；设置页一个开关翻转两个变量全站生效，localStorage 记忆；全站无第三处使用红绿。",
+    "血红与入场金合计 ≤ 任何页面 5% 面积——颜色纪律就是『刀尖上的纪律』的视觉表达。入场金只用于：接刀信号点、CATCH 状态、logo 圆点、主 CTA。",
+    "对比度：钢银 on 暗底约 12:1、金约 9:1、血红约 5:1，全部过 WCAG AA；正文 --text ≥7:1、次级 --text-dim ≥4.5:1。",
+    "图表网格线 rgba(120,123,134,0.12)，绝不用纯白网格；K 线 itemStyle 直接绑 --up/--down 两 token。",
+    "暗色为主题主场；浅色为适配（打印/分享截图/系统偏好），同一套 token 名换值即可。"
+   ]
+  },
+  "typography": {
+   "标题/品牌": "得意黑 Smiley Sans（OFL 1.1 已验证，自托管 woff2）——自带 8° 右斜与锐利切角，与 logo 斜势呼应",
+   "正文": "'Noto Sans SC'（fonttools 子集化 <300KB 自托管），回退 'PingFang SC','Microsoft YaHei',sans-serif",
+   "数字": "'JetBrains Mono'（OFL），所有数字列 font-variant-numeric: tabular-nums lining-nums，价格列 9ch 定宽右对齐、涨跌幅列 7ch",
+   "英文辅助": "Space Grotesk（OFL，仅 KnifeWaltz 标识与英文口号）",
+   "字号阶梯": "锁死 6 档：12/13/14/16/20/28px；行情表 13px/行高1.45、正文 14px/行高1.6、大数字（刀锋指数/核心价）28px/600",
+   "字重": "全站仅 400/600 两档，标题不加粗到 700 以上",
+   "网络策略": "泰国+美国双端访问，全部字体 woff2 自托管进 GitHub Pages，不依赖 Google Fonts CDN"
+  },
+  "voice": {
+   "总则": "白话、少字、冷静、无感叹号；给数字不给情绪；坏结果永远先于好结果展示；每个结论可下钻到原始数据。",
+   "句式白名单": [
+    "过去 N 次该形态后 20 日中位涨幅 X%",
+    "历史统计显示……",
+    "该信号最近 20 次触发：胜率 X%、最差一次 -Y%",
+    "历史上每 100 次这样开仓，有 N 次会在爆仓价被扫"
+   ],
+   "词汇黑名单": [
+    "建议买入",
+    "目标价",
+    "上车",
+    "梭哈",
+    "抄底点",
+    "加仓到",
+    "稳赚",
+    "错过再等十年"
+   ],
+   "状态措辞": {
+    "无刀": "今日无刀落下",
+    "窗口关": "刀未落地，只看不接",
+    "动量死区": "动量死区，禁止接（3-12 个月是数学上错的时间档）",
+    "观赏刀": "观赏刀：此类标的 40% 永不回头",
+    "数据断更": "数据陈旧（模块降饱和 40% + 黄标）"
+   },
+   "执行": "黑白名单落成 data/wording.json，CI 里 wording_lint.py 扫描全部生成页面，命中黑名单即构建失败。"
+  }
+ },
+ "positioning": "全网唯一敢把每一次接飞刀公开记账的金融频道：每把刀有机读规则、明码仓位、认输线，胜率和败率一起挂在首页——别人卖恐慌，我们结算恐慌。",
+ "ia": {
+  "layers": "固定三层，可下钻性是硬性验收标准：L1 总览状态灯 → 点击到 L2 规则链（每条规则当前值 vs 阈值）→ 点击到 L3 数据源原文 URL + 本地历史曲线。三级全通才算一条线上线。",
+  "global_components": [
+   "顶部 ticker tape：32px 水平滚动条，关键标的价格+涨跌幅（移动端唯一允许横向滚动的元素）",
+   "站头警示条：32px 常驻，ESMA 式真实数字：『接飞刀策略历史上 X% 的信号止损离场，单次最大回撤 -Y%。本站为研究工具，非投资建议。』X/Y 每季度由回测表自动重算",
+   "Ctrl+K 命令面板：预生成 symbols.json + Fuse.js（<30KB），任何标的/页面 2 次击键可达；左侧导航 ≤7 项，其余全进命令面板",
+   "<data-badge> 组件：11px、--text-dim、模块右下角三段式『来源名(链接) · As of 时间(本地时区+UTC双标) · 延迟标注』；数据超更新周期 1.5 倍未刷新→模块降饱和 40%+『数据陈旧』黄标",
+   "刀锋仪表：0-100 三段色带（0-49 --down『钝』/ 50-79 琥珀『出鞘』/ 80-100 --up『落刀』），阈值 50/80 写死在规则引擎输出",
+   "「统计≠建议」微标：每张信号卡角落固定，点击弹免责全文",
+   "首访免责弹层：滚动到底才可关闭，按钮文案『我已读完，风险自担』，localStorage 记版本号，改版重弹"
+  ],
+  "nav": [
+   "首页",
+   "刀落板",
+   "信号规则",
+   "刀谱",
+   "仓位计算器",
+   "连败室",
+   "数据机房"
+  ],
+  "pages": [
+   {
+    "path": "index.html",
+    "name_cn": "首页（L1 总览）",
+    "first_screen_module_order": [
+     "1. ticker tape（顶部 32px）",
+     "2. 站头警示条（32px，真实止损率数字）",
+     "3. 刀锋指数：0-100 全局仪表，左上角第一视觉落点（F 型扫描起点），28px 数字 + 三段色带；『今天有没有刀落下来』一眼作答",
+     "4. 接刀窗口状态灯：市场闸门状态机（GREEN/YELLOW/RED/FLIP-BACK）+ 四大触发器点亮格（VIX≥36 / HY>800bp / 90%日簇 / Zweig 就绪），任一亮→全站进入『接刀窗口』模式（首页变色）；全灭→『刀未落地，只看不接』",
+     "5. 今日落刀榜：刀落板前 8 行（排序见 knife_board），空状态『今日无刀落下』",
+     "6. 站级战绩条：『本频道累计信号 N 条 · 胜率 X%±Wilson区间 · 败率 Y% · 最大单笔亏损 Z%』——败率与胜率同字号同视线",
+     "7. 五条军规卡片：只接指数/ETF · 只用现货 · 三段式建仓 · 12 个月最短持有 · B 族只认出清信号",
+     "8. 页脚：免责两行摘要 + 零收费声明（唯一域名+冒充警告）+ 『今日 X/Y 数据源健康』+ 数据机房链接"
+    ]
+   },
+   {
+    "path": "knives.html",
+    "name_cn": "刀落板（L2）",
+    "modules": [
+     "全部标的按 5 状态机分组渲染（CATCH → STABILIZING → KNIFE_FALLING → 观赏刀 → NORMAL 折叠）",
+     "每行规格见 knife_board",
+     "T3 区固定警示条：JPM 统计 40% 个股 -70% 后永不回头"
+    ]
+   },
+   {
+    "path": "signals.html",
+    "name_cn": "信号规则（L2）",
+    "modules": [
+     "signal_engine 全部规则卡：白话解释 + 公式 + 当前值 vs 阈值进度条 + 诚实统计卡 8 字段 + 放弃规则红章",
+     "每条规则『往期战绩』表（含亏损轮次，如 VIX 规则的 2001/2008/2022 三败）",
+     "『我们放弃的刀后来怎样了』：abort 后 60 日跟踪公示"
+    ]
+   },
+   {
+    "path": "crashes.html",
+    "name_cn": "刀谱（L2）+ 案例页（L3）",
+    "modules": [
+     "crash_library 全部案例卡（族别徽章 A=钢银边/B=血红边/进行中=琥珀边）",
+     "两族阶梯交互图：横轴 -30/-40/-50% 买点，纵轴到底还挨多少刀，A/B 两色线",
+     "案例页：K 线 + 峰/谷/最惨单日 markPoint + 投降日仪表盘 + 刀客对错榜两列"
+    ]
+   },
+   {
+    "path": "calculator.html",
+    "name_cn": "仓位计算器（L2 工具）",
+    "modules": [
+     "见 position_calc；首次使用强制填预承诺卡",
+     "Kelly 腰斩概率表（满/半/1/4 Kelly → x^(2/c-1)）",
+     "爆仓触及率联动（liq_touch.json）"
+    ]
+   },
+   {
+    "path": "streaks.html",
+    "name_cn": "连败室（L2 工具）",
+    "modules": [
+     "连败交互表：输入胜率/笔数 → 期望最大连败 ln(n)/ln(1/败率) 与至少一次 k 连败概率 1-(1-L^k)^(n-k+1)",
+     "回本算术表：-10→+11 · -20→+25 · -30→+43 · -50→+100 · -80→+400",
+     "预承诺卡展示区（localStorage 原样回显本人手写承诺）",
+     "亏损模拟器路径可视化（先第 5 百分位，再中位，最后才允许展开第 95）"
+    ]
+   },
+   {
+    "path": "datacenter.html",
+    "name_cn": "数据机房（L2）",
+    "modules": [
+     "40+ 数据源全清单：URL/更新频率/最近抓取状态绿黄红",
+     "sources_test 结果公示（含 Stooq 判死、EDGAR 403 等已知限制）",
+     "诚实缺口区：NYSE 官方广度、1990 前 VIX、强平历史、A 股两融——v1 不做，明示"
+    ]
+   },
+   {
+    "path": "method.html",
+    "name_cn": "方法论（L2）",
+    "modules": [
+     "时间档 A/B/死区图解",
+     "白名单三层 T1/T2/T3",
+     "两族世界观（A 流动性休克 vs B 泡沫出清 + 机读判别器）",
+     "全部学术引用（Brandes/De Bondt-Thaler/George-Hwang/Piotroski/Thorp/JPM）",
+     "复算契约说明：每个数字的『重算此数』链接规范"
+    ]
+   },
+   {
+    "path": "ledger.html",
+    "name_cn": "结算台账（L2）",
+    "modules": [
+     "全部信号逐笔结算记录（trigger_date/entry/fwd5/fwd20/fwd60/hit_abort）",
+     "按 7/30/90 天自动结算（TipRanks 三因子：胜率+平均单笔收益+样本显著性）",
+     "运营者持仓披露区（每日跑批时间戳，持有标的的信号卡自动加『作者持有』角标）"
+    ]
+   },
+   {
+    "path": "disclaimer.html",
+    "name_cn": "免责声明",
+    "modules": [
+     "全文 + 版本号 + 修订记录"
+    ]
+   },
+   {
+    "path": "symbol.html?s=XXX",
+    "name_cn": "标的页（L3）",
+    "modules": [
+     "ECharts 3 年 K 线 + 历史触发点刀形 markPoint（招牌视觉）",
+     "该标的状态机当前格 + 5 项企稳 checklist 勾选",
+     "KnifeScore 分解（40/20/20/20）",
+     "个股刀坦白框：『同类刀历史 3 年破产率≈13%（Brandes 1986-2002）』",
+     "数据 badge + 重算此数链接"
+    ]
+   }
+  ],
+  "design_rules_15": [
+   "1 底色：--bg 页面 / --panel 卡片 / --grid 边框；正文对比度≥7:1、次级≥4.5:1",
+   "2 涨跌语义 token 默认红涨绿跌，可翻转，全站无第三处红绿",
+   "3 强调色唯一（入场金），仅品牌/刀锋指数/CTA，占屏<5%",
+   "4 字体两档字重 400/600",
+   "5 字号 6 档 12/13/14/16/20/28",
+   "6 数字一律 tabular-nums、ch 定宽右对齐",
+   "7 间距 4px 栅格（4/8/12/16/24/32/48），卡片内边距 16、卡距 12",
+   "8 圆角 6px；暗色阴影用 0 1px 0 rgba(255,255,255,0.04) 内描边替代",
+   "9 表格行高桌面 34px / 移动 44px（触控 44×44 最小）",
+   "10 K 线统一 ECharts：网格 rgba(120,123,134,0.12)、无背景渐变、面积填充≤10%、十字光标常开+OHLC 浮层",
+   "11 数据模块右下角强制三段徽章（11px）",
+   "12 信号卡强制失效价+历史最大回撤；风险仪表阈值 50/80",
+   "13 移动端 16px 侧边距、底部导航≤5 项、首屏必现刀锋指数+今日触发数、无横向滚动（ticker 除外）",
+   "14 动效仅 3 种：价格闪烁 300ms / 面板展开 200ms ease-out / 骨架屏；禁止弹跳视差无限动画",
+   "15 空状态必须设计：断更黄标、无信号日『今日无刀落下』"
+  ]
+ },
+ "signal_engine": {
+  "time_tiers": {
+   "A": "恐慌反弹交易：崩盘后 0-20 交易日入场，持有≤1 个月，只做 T1（大盘/指数级）标的",
+   "B": "价值回归仓：250 日跌幅≥60% 后建仓，目标持有 36 个月（De Bondt-Thaler 长期反转）",
+   "DEAD_ZONE": "3-12 个月动量死区：硬编码禁止接（George-Hwang 2004），页面明示『数学上错的时间档』"
+  },
+  "whitelist_tiers": {
+   "T1": {
+    "定义": "指数 ETF、BTC、黄金/白银等大宗",
+    "资格线": "指数 -30% / BTC -60%（250 日滚动）",
+    "允许": "A 档 + B 档"
+   },
+   "T2": {
+    "定义": "市值 > 100 亿美元蓝筹（市值取 Yahoo chart meta.marketCap，免 crumb）",
+    "资格线": "-60%/250 日",
+    "允许": "过质量三闸（F≥7 & Z>1.8 & 估值自身 10 年低 30% 分位）后 B 档；v1 质量闸为泰国端可选腿，缺数据时只展示为观赏刀并标注缺哪一条"
+   },
+   "T3": {
+    "定义": "小盘股 + 除 BTC/ETH 外全部加密货币",
+    "允许": "永不接。固定输出『观赏刀：此类标的 40% 永不回头（JPM 1980-2014）』"
+   }
+  },
+  "state_machine": {
+   "states": [
+    "NORMAL",
+    "KNIFE_FALLING",
+    "STABILIZING",
+    "CATCH",
+    "RECOVERED",
+    "ABANDONED"
+   ],
+   "transitions": "NORMAL→KNIFE_FALLING（刀落检测触发）→STABILIZING（checklist 1-2/5）→CATCH（checklist≥3/5 起 10 个交易日窗口，过期未确认回 NORMAL）→RECOVERED（收复 20 日均线并盈利退出）或 ABANDONED（任一放弃规则触发）。ABANDONED 后该标的冷却 10 个交易日，允许重新走 STABILIZING→CATCH。",
+   "stabilize_checklist_5": [
+    "1 反转日：收盘 > 前一日最高价 且 成交量 ≥ 1.5×SMA20(vol)",
+    "2 连续 3 个交易日未创收盘新低",
+    "3 ATR14/价格 连续 3 日下降（波动压缩）",
+    "4 资产类闸门绿：股票=VIX 比值 FLIP-BACK 或 GREEN；加密=funding > -0.01%/8h 且 OI 止稳；商品=slope 年化 < +5%",
+    "5 RSI 背离：价格创 10 根 K 线内新低而 RSI14 未创新低"
+   ],
+   "position_ladder": "1/3 于 CATCH 触发 · 1/3 于 +5% 或回踩不破 · 1/3 于收复 20 日均线；接刀价下方最多补 1 次，三批用完永不加",
+   "storage": "SQLite 表 knife_states(symbol, asset_class, state, entered_state_at, checklist_json, catch_ref_price, catch_day_low, atr14, expires_at)；每日两跑 Actions 数据入库后跑状态转移"
+  },
+  "market_gates": [
+   {
+    "id": "G-VIX-36",
+    "name_cn": "恐慌闸·VIX 36（R-KNIFE-01a）",
+    "plain_cn": "恐慌指数收在 36 以上＝市场在恐慌抛售，历史上这时候买指数、拿满一年，20 次里约 19 次是赚的。",
+    "formula": "VIX_close >= 36",
+    "data_source": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv（1990 起，已实测）；当日盘中用 Yahoo ^VIX 补；降级源 FRED VIXCLS",
+    "threshold": 36,
+    "abandon_rule": "只对 A 族有效；B 族禁按 VIX 接（2001/2008/2022 三败全是 B 族/危机开场）。A 档通用退出规则适用。",
+    "stats": {
+     "backtest": "1990-01-02 至 2026-09，买于触发日收盘持有 252 交易日",
+     "trigger_days": 318,
+     "episodes": 17,
+     "win_rate_12m": 0.956,
+     "median_12m_pct": 29.1,
+     "worst_12m_pct": -18.4,
+     "losses": [
+      "2001-09-17 -15.9%",
+      "2008-09-17 -7.9%",
+      "2022-03-07 -5.0%"
+     ]
+    }
+   },
+   {
+    "id": "G-VIX-45",
+    "name_cn": "恐慌闸·VIX 45（R-KNIFE-01b）",
+    "plain_cn": "恐慌越极端、接刀越安全：VIX 到 45，历史 12 个月后最差也只亏 8%。",
+    "formula": "VIX_close >= 45",
+    "data_source": "同 G-VIX-36",
+    "threshold": 45,
+    "abandon_rule": "同 G-VIX-36",
+    "stats": {
+     "trigger_days": 115,
+     "episodes": 7,
+     "win_rate_12m": 0.965,
+     "median_12m_pct": 30.7,
+     "worst_12m_pct": -8.0
+    }
+   },
+   {
+    "id": "G-VIX-50",
+    "name_cn": "恐慌闸·VIX 50（R-KNIFE-01c）",
+    "plain_cn": "36 年里只出现过 3 轮（2008/2020/2025-04），此后一年最差 -0.2%。",
+    "formula": "VIX_close >= 50",
+    "data_source": "同 G-VIX-36",
+    "threshold": 50,
+    "abandon_rule": "同 G-VIX-36",
+    "stats": {
+     "trigger_days": 75,
+     "episodes": 3,
+     "win_rate_12m": 0.987,
+     "worst_12m_pct": -0.2
+    }
+   },
+   {
+    "id": "G-TERM-FLIP",
+    "name_cn": "期限结构闸·倒挂翻回",
+    "plain_cn": "近月恐慌贵过远月＝倒挂＝刀还在落，只看不接；倒挂翻回来那天才开窗——历史上翻回后 5 天买入胜率约 88%，倒挂中买是负期望。",
+    "formula": "ratio = VIX/VIX3M；GREEN<0.95 / YELLOW 0.95-1.0 / RED>1.0 / FLIP-BACK=前 5 日内曾>1.05 且今日收<1.0（窗口开 5 个交易日）；短端加速器 VIX9D/VIX 同法",
+    "data_source": "CBOE VIX3M_History.csv + VIX9D_History.csv（已验证）+ Yahoo ^VIX3M 当日值",
+    "threshold": {
+     "red": 1.0,
+     "flip_trigger": 1.05,
+     "window_days": 5
+    },
+    "abandon_rule": "闸门翻红（ratio 回到 >1.05）→ 全部 A 档仓位退出",
+    "stats": {
+     "inversion_days_share": "7.7-8%（2009 以来 43 个 episode）",
+     "flip_back_5d_win_rate": "约 88%",
+     "counter_example": "2008-09~11 连续倒挂期抄底再跌 30%；2020-02-24 首倒挂即接刀其后还有 -25%"
+    }
+   },
+   {
+    "id": "G-HY-800",
+    "name_cn": "信用闸·高收益债利差 800bp",
+    "plain_cn": "垃圾债利差冲过 800 基点＝信用市场投降，历史上此后 12 个月高收益债回报 15-25%。",
+    "formula": "BAMLH0A0HYM2 > 800（bp）",
+    "data_source": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLH0A0HYM2（无 key CSV）",
+    "threshold": 800,
+    "abandon_rule": "回落到 <500bp 后闸门关闭（不再作为 A 档入场环境）",
+    "stats": {
+     "fwd_12m_hy_return": "15-25%",
+     "crisis_peaks": "2008 约 2100bp / 2020-03 约 1100bp",
+     "note": "800bp+ 与衰退几乎一一对应"
+    }
+   },
+   {
+    "id": "G-90PCT",
+    "name_cn": "投降闸·90% 下跌日（自算近似）",
+    "plain_cn": "当天九成的成交量和九成的跌幅都砸在下跌股上＝恐慌抛售日；之后出现一个 90% 上涨日才算底部确认。",
+    "formula": "监控宇宙内：下跌股成交量/总成交量 ≥ 0.9 且 下跌家数点数占比 ≥ 0.9 → 90%下跌日；确认=其后出现 1 个 90% 上涨日或连续两个 80% 上涨日；单独一个信号误报率高",
+    "data_source": "自家 SQLite 监控宇宙（sp500.csv 固化成分池 + 现有 Yahoo 批量管道），不依赖付费 NYSE 数据；同池顺便算 NL%（52 周新低占比 ≥25% 洗仓日 / ≥40% 历史级）",
+    "threshold": 0.9,
+    "abandon_rule": "90% 下跌日再现→A 档减半",
+    "stats": {
+     "source": "Lowry/Paul Desmond 方法论（2002 Charles Dow Award）",
+     "note": "自算为近似口径，页面标注『非 NYSE 官方广度』；历史胜率上线前用监控宇宙重放生成"
+    }
+   },
+   {
+    "id": "G-ZWEIG",
+    "name_cn": "广度冲刺闸·Zweig",
+    "plain_cn": "10 天里市场从极弱翻到极强（上涨家数占比 <40% 冲到 >61.5%）——1957 年以来只出现 16 次，之后 12 个月标普 16 次全涨，平均 +23%。",
+    "formula": "10 日均上涨家数占比从 <0.40 在 10 个交易日内升至 >0.615",
+    "data_source": "同 G-90PCT 自算广度池",
+    "threshold": {
+     "from_below": 0.4,
+     "to_above": 0.615,
+     "within_days": 10
+    },
+    "abandon_rule": "不适用（确认型信号，只开窗不建仓）",
+    "stats": {
+     "occurrences_since_1957": 16,
+     "win_rate_12m": 1.0,
+     "avg_12m_pct": 23.3
+    }
+   },
+   {
+    "id": "G-FNG",
+    "name_cn": "情绪加分项·恐惧贪婪 ≤10",
+    "plain_cn": "极度恐惧只是加分项，不是触发器——极端读数可以持续数周，单独用它抄底就是接在刀刃上。",
+    "formula": "alternative.me FNG <= 10 → KnifeScore 加分；不独立开窗",
+    "data_source": "https://api.alternative.me/fng/?limit=0（项目已接，2018 至今全史）",
+    "threshold": 10,
+    "abandon_rule": "不适用",
+    "stats": {
+     "note": "站内『极恐回测器』展示 FNG<20 后持有 7/30/90 天全样本胜率/中位收益/最大回撤——竞品只给读数，我们给结算表"
+    }
+   }
+  ],
+  "signals": [
+   {
+    "id": "S-FALL-01",
+    "asset_class": "stock",
+    "name_cn": "个股刀落检测",
+    "plain_cn": "跌得深、跌得快、还在超卖区，三件全占才叫『刀在落』；只跌得深是阴跌僵尸股，不算。",
+    "formula": "dd52w <= -40% AND ret10 = P_t/P_{t-10}-1 <= -15% AND RSI14 < 25（Wilder 平滑：RS=EMA(gain,14)/EMA(loss,14)，RSI=100-100/(1+RS)）；指数用 Connors RSI2 < 10",
+    "data_source": "自家 SQLite 3 年日线（Yahoo v8 chart 管道，query1/query2 双回退），零新增源",
+    "threshold": {
+     "dd52w": -40,
+     "ret10": -15,
+     "rsi14": 25
+    },
+    "abandon_rule": "触发独自暴跌否决（S-VETO-LONE）则只列示不给信号",
+    "stats": {
+     "status": "上线前用 3 年 OHLCV 重放生成首日成绩单（fwd5/fwd20/fwd60、胜率、最差一次）",
+     "base_rate": "Brandes：-60% 刀 3 年内 13% 破产、中位跑输，组合均值 3 年 +18%——必须组合化"
+    }
+   },
+   {
+    "id": "S-CAP-01",
+    "asset_class": "stock",
+    "name_cn": "投降候选（成交量顶点）",
+    "plain_cn": "恐慌卖压一次性倒完的那天：天量（≥3 倍 20 日均量）+ 收盘收在当天振幅上半区（有人接住了）。",
+    "formula": "S-FALL-01 触发 AND vol_ratio = Vol/SMA20(vol) >= 3 AND close_pos = (C-L)/(H-L) >= 0.6；辅助：gap20_count（近 20 日向下跳空≥2% 天数≥3=恐慌段）、exhaustion_gap（跳空低开≥4% 收高于开盘）",
+    "data_source": "同 S-FALL-01",
+    "threshold": {
+     "vol_ratio": 3,
+     "close_pos": 0.6
+    },
+    "abandon_rule": "B 族标的的放量投降会出现多次（KWEB 6.22 倍量顶在谷底前 15 个月）——单看量能接刀必死，必须叠族别与闸门",
+    "stats": {
+     "status": "重放生成",
+     "signature_examples": "1987-10-19 量比 3.21 / 2022-11-08 FTX 日 3.34 / 2026-02-05 BTC 3.11 / 2024-08-05 日经 2.42"
+    }
+   },
+   {
+    "id": "S-ELIG-60",
+    "asset_class": "stock",
+    "name_cn": "B 档资格线·刀阵入选",
+    "plain_cn": "一年内跌掉六成才有资格进『刀阵』；刀阵是≥20 把刀的组合页，单刀永远只是组合成员。",
+    "formula": "250 交易日滚动跌幅 >= 60%（T2/BTC）；指数 30%；一条 SQL 扫全库",
+    "data_source": "自家 SQLite 3 年日线",
+    "threshold": {
+     "t2_btc": -60,
+     "index": -30
+    },
+    "abandon_rule": "结构否决：JPM 高损失率行业（科技/电信/能源/可选消费）且营收连续两季同比下滑→从一开始就不接",
+    "stats": {
+     "portfolio_3y_expect_pct": 18,
+     "annual_excess_pp": 6.6,
+     "bankruptcy_3y": 0.13,
+     "source": "Brandes 1986-2002 n>1000；每把刀页面必须展示 13% 破产坦白框"
+    }
+   },
+   {
+    "id": "S-QUAL-01",
+    "asset_class": "stock",
+    "name_cn": "质量三闸（T2 必过，v1 可选腿）",
+    "plain_cn": "便宜不是买入理由，得便宜且没在死：财务打分及格、不在破产带、比自己十年历史都便宜，三条全过。",
+    "formula": "Piotroski F-Score >= 7 AND Altman Z > 1.8 AND (P/B 或 P/E 处于该股 10 年分布低 30% 分位)；缺数据即不给信号",
+    "data_source": "理想=EDGAR companyfacts（数据中心网段 403，已记录）→ 泰国端住宅网络可选腿；替代=Yahoo quoteSummary 财报模块；v1 用纯价格否决+市值下限（chart meta.marketCap）先行",
+    "threshold": {
+     "f_score": 7,
+     "altman_z": 1.8,
+     "valuation_pct": 0.3
+    },
+    "abandon_rule": "B 档持有 12 个月时 F-Score 较入场时下降 ≥2 分 → 退出",
+    "stats": {
+     "piotroski_high_excess_pp": 13.4,
+     "long_short_spread_pct_yr": 23.0,
+     "dreman_low_pe_pct_yr": "19.0 vs 市场 15.1（1970-1996）"
+    }
+   },
+   {
+    "id": "S-VETO-LONE",
+    "asset_class": "stock",
+    "name_cn": "独自暴跌否决（红章）",
+    "plain_cn": "大盘没跌它自己崩＝多半是基本面出事（暴雷/造假/稀释），这种刀我们不接，卡片上盖红章说明原因。",
+    "formula": "ret20 <= -25% AND 同期 SPX 回撤 < 5% AND 行业 ETF 回撤 < 10% → 只列示不给信号，红章文案『独自暴跌，疑似基本面刀，本频道不接』",
+    "data_source": "纯价格自算（自家库 + ^GSPC + 行业 ETF）",
+    "threshold": {
+     "ret20": -25,
+     "spx_dd": -5,
+     "sector_dd": -10
+    },
+    "abandon_rule": "本身即否决规则",
+    "stats": {
+     "true_positives": "LUNA -100% / FTT -98% / 恒大退市 / SVB 一周归零 均会亮红",
+     "false_negatives": "2020-03、2018-12、2022-06 系统性洗仓不误伤"
+    }
+   },
+   {
+    "id": "C-FALL-01",
+    "asset_class": "crypto",
+    "name_cn": "清算瀑布检测",
+    "plain_cn": "币圈的刀落有独有指纹：价格闪崩的同时，杠杆持仓被强平清空（持仓量骤降或资金费率极负）。",
+    "formula": "24h 跌幅 <= -12%（BTC/ETH）或 <= -18%（山寨） AND (ΔOI_24h <= -15% OR funding <= 1 年滚动 5 分位)",
+    "data_source": "价格=Binance klines/CoinGecko（已接）；funding/OI=Coinalyze（美国端可达，免费 key，约 40 req/min）起步，Binance fapi 作泰国端增强——架构决定第一天定；DVOL=Deribit 公共 API（BTC 自 2021-03）",
+    "threshold": {
+     "btc_eth_24h": -12,
+     "alt_24h": -18,
+     "doi_24h": -15,
+     "funding_pctile": 0.05
+    },
+    "abandon_rule": "见 C-VETO-01；OI 只存约 30 天，必须每日入库积累",
+    "stats": {
+     "worked": "2020-03-12（funding 约 -0.3%/8h、OI 腰斩，12 个月 +1500%）/ 2021-05-19 / 2022-11-09 FTX 后",
+     "failed": "2022-05 LUNA 死亡螺旋（极值无意义）/ 2018 熊市中段负极值后继续阴跌——必须等 OI 止稳"
+    }
+   },
+   {
+    "id": "C-CATCH-01",
+    "asset_class": "crypto",
+    "name_cn": "加密接刀确认",
+    "plain_cn": "强平洗完、费率回正常、波动降温，三个条件都到才开接刀窗。",
+    "formula": "funding > -0.01%/8h AND OI 连续 2 日止稳（ΔOI > -2%） AND DVOL 从峰值回落 >= 10%",
+    "data_source": "同 C-FALL-01",
+    "threshold": {
+     "funding": -0.0001,
+     "oi_stable_days": 2,
+     "dvol_pullback": 10
+    },
+    "abandon_rule": "funding 再度 < -0.05%/8h 或跌破接刀日低点 → 退出",
+    "stats": {
+     "status": "重放生成（Deribit DVOL 自 2021-03、F&G 自 2018 可回测）",
+     "bonus": "F&G <= 10 加分项"
+    }
+   },
+   {
+    "id": "C-VETO-01",
+    "asset_class": "crypto",
+    "name_cn": "加密身份否决",
+    "plain_cn": "不是前 50 大、或已经跌掉 95%（死亡螺旋）、或稳定币在脱锚——全部不接，山寨默认永远是观赏刀。",
+    "formula": "非市值前 50 → 不接；ath_change <= -95% → 不接；USDT/USDC 偏离 1 美元 > 1% → 全线停止接刀",
+    "data_source": "CoinGecko markets（含 ath_change_percentage，管道已接）",
+    "threshold": {
+     "mcap_rank": 50,
+     "ath_dd": -95,
+     "stable_peg": 0.01
+    },
+    "abandon_rule": "本身即否决规则",
+    "stats": {
+     "base_rate": "2026-03 统计 38% 山寨币贴历史低位；2017-18 周期多数山寨从未收复前高"
+    }
+   },
+   {
+    "id": "M-FALL-01",
+    "asset_class": "commodity",
+    "name_cn": "商品刀落检测",
+    "plain_cn": "商品跌三成再加速下跌才算刀落；但商品拿着要付移仓成本，时间不是朋友，所以另有一票否决。",
+    "formula": "连续合约 dd52w <= -30% AND ret20 <= -15%",
+    "data_source": "Yahoo 连续期货（CL=F 等，换月假跳已解，meta.previousClose 法）",
+    "threshold": {
+     "dd52w": -30,
+     "ret20": -15
+    },
+    "abandon_rule": "见 M-VETO-SLOPE",
+    "stats": {
+     "status": "重放生成"
+    }
+   },
+   {
+    "id": "M-CATCH-01",
+    "asset_class": "commodity",
+    "name_cn": "商品接刀确认",
+    "plain_cn": "现货不比期货便宜太多（实体在抢货）+ 投机盘空头挤到极端（轧空燃料满仓），才接。",
+    "formula": "M-FALL-01 AND slope 年化 = (F2/F1-1)*年化 < +5% AND ManagedMoney 净持仓 3 年分位 <= 10%（Commercial 净多极端确认加分）",
+    "data_source": "期限结构=Yahoo 独立合约（月份码 FGHJKMNQUVXZ + NYM/CMX/CBT 后缀，config 内合约代码生成器）；COT=publicreporting.cftc.gov/resource/6dca-aqww.json（已接，页面标注滞后 3 天）",
+    "threshold": {
+     "slope_annual": 0.05,
+     "mm_pctile": 0.1
+    },
+    "abandon_rule": "slope 恶化到 >+15% 或跌破接刀日低点 1×ATR → 退出；升水常态化品种（天然气）用时间盒：信号有效期 20 个交易日，不 roll 长持",
+    "stats": {
+     "worked": "2016-02 原油（MM 净多 2010 以来最低+曲线走平，12 个月 +90%）/ 2016-01 铜 / 2015-12 黄金",
+     "failed": "2014-11~2015-03 每次『原油超跌』都死在超级升水（布伦特升水年化一度 >20%）"
+    }
+   },
+   {
+    "id": "M-VETO-SLOPE",
+    "asset_class": "commodity",
+    "name_cn": "超级升水硬否决",
+    "plain_cn": "期货比现货贵太多（年化升水超 15%）＝就算方向对也会被移仓成本磨死，一票否决。",
+    "formula": "slope 年化 > +15% → 拒接/清仓",
+    "data_source": "同 M-CATCH-01",
+    "threshold": 0.15,
+    "abandon_rule": "本身即否决规则",
+    "stats": {
+     "evidence": "2014H2-2016 初原油、2020-04 WTI 负油价均为超级升水段"
+    }
+   },
+   {
+    "id": "X-EXIT-SET",
+    "asset_class": "all",
+    "name_cn": "统一放弃规则集（三层并行监听）",
+    "plain_cn": "接飞刀的全部超额收益来自把 -100% 截断成 -15~-25%。放弃比入场更需要规则化，所以放弃规则印在每张卡上，不藏在逻辑里。",
+    "formula": "【硬止损】收盘 < 接刀日最低价 - 1×ATR14 → 全退 + 该标的冷却 10 个交易日；【时间止损】15 个交易日收盘未曾高于接刀价 → 退一半；A 档 60 交易日无 90% 上涨日且未收复 20 日高点 → 减半退出；【事件放弃】评级降至 CCC / 单次增发 >10% 股本 / 债务违约或展期公告 → 无条件清仓不等反弹；【闸门翻红】VIX 比值 >1.05 / funding < -0.05% / slope > +15% → 退出",
+    "data_source": "价格库自动检测（前两层）；事件层靠财报字段/公告（可选腿）",
+    "threshold": {
+     "atr_mult": 1.0,
+     "cooldown_days": 10,
+     "time_stop_days": 15,
+     "a_tier_days": 60
+    },
+    "abandon_rule": "abort 事件写入 signals 表并公开跟踪其后 60 日表现（『我们放弃的刀后来怎样了』页）",
+    "stats": {
+     "cost": "1×ATR 在 V 型底会被扫一次（2020-03-18 假跌破），由冷却+允许重进解决，不放宽止损"
+    }
+   }
+  ],
+  "knife_score": {
+   "formula": "KnifeScore 0-100 = 刀落强度 40（回撤深度/速度在该标的 3 年分布中的分位）+ 投降证据 20（量顶/清算峰/OI 洗仓）+ 企稳 checklist 20（K-of-N 完成度×20）+ 市场闸门 20（GREEN/FLIP-BACK=20, YELLOW=10, RED=0）",
+   "bands": {
+    "0-49": "钝（--down 色）",
+    "50-79": "出鞘（琥珀）",
+    "80-100": "落刀（--up 色）"
+   },
+   "threshold_policy": "所有阈值 v1 用本规格绝对值上线，同时入库分位数版本（如 funding 取 1 年 5 分位而非固定 -0.05%），季度用积累数据校准一次并记录于 calibration.json——一版到位的是架构，不是魔法数字。"
+  },
+  "backtest_ledger": "每晚在 3 年 OHLCV 上重放全部检测器；signals 表记录 (signal_id, symbol, trigger_date, state, entry_ref, fwd5, fwd20, fwd60, hit_abort)；每张信号卡渲染『最近 20 次触发：胜率、20 日中位收益、最差一次』；VIX 闸可回测到 1990、期限结构到 2009、F&G 到 2018、COT 到 2006——上线第一天就有跨周期成绩单。"
+ },
+ "knife_board": {
+  "name_cn": "刀落板",
+  "sorting": [
+   "第一序：状态优先级 CATCH > STABILIZING > KNIFE_FALLING > 观赏刀（被否决）> NORMAL（折叠不展开）",
+   "第二序：同状态内按 KnifeScore 降序",
+   "第三序：KnifeScore 相同按 dd52w 更深者先",
+   "n<30 样本的信号行灰显盖『样本不足，仅供观察』章，永不进首页前 8"
+  ],
+  "row_spec": {
+   "height": "桌面 34px / 移动 44px，数字列 tabular-nums 定宽右对齐，价格变动 300ms 背景闪烁",
+   "columns": [
+    "标的代码+名称（点击→L3 标的页）",
+    "层级徽章 T1/T2/T3（T3 恒灰 + 观赏刀标）",
+    "状态格：5 状态机当前位置（迷你五格进度条，CATCH 格用入场金）",
+    "KnifeScore：数字 + 三段色带迷你仪表",
+    "dd52w %（2 位小数）",
+    "ret10 %（2 位小数）",
+    "企稳 checklist：5 个勾选格（√/─）",
+    "时间档标签：A / B / 死区（死区=灰色禁止符）",
+    "失效价（=认错线，跌破即退，红色数字常驻）",
+    "该信号近 20 次触发：胜率 · 20 日中位 · 最差一次（三个小数字，风险与收益同字号）",
+    "红章列：否决原因（如『独自暴跌不接』『超级升水』『死亡螺旋』），无则空",
+    "data-badge（行末 11px）"
+   ]
+  },
+  "empty_state": "『今日无刀落下』+ 上一次刀落日期与其结果链接",
+  "t3_banner": "T3 区固定警示条：『JPM 统计（1980-2014，Russell 3000 约 13000 只）：40% 个股经历 ≥70% 下跌后基本未恢复。此区只展示，永不发信号。』"
+ },
+ "position_calc": {
+  "name_cn": "仓位计算器（纯前端，数据不出浏览器）",
+  "inputs": [
+   {
+    "key": "equity",
+    "label": "账户权益",
+    "type": "number"
+   },
+   {
+    "key": "max_dd_tolerance",
+    "label": "最大回撤容忍",
+    "type": "preset 10/20/30/50%，选 50% 时整档红色警告"
+   },
+   {
+    "key": "win_rate_W / odds_R",
+    "label": "所选信号历史胜率与平均赔率",
+    "type": "从 signal_stats.json 自动带入，可手改（手改后标注『用户自定参数』）"
+   },
+   {
+    "key": "leverage",
+    "label": "计划杠杆",
+    "type": "1(现货)/3/5/10/20；50x 及以上不提供任何数字，直接显示『历史触及率接近必然』"
+   }
+  ],
+  "formulas": {
+   "kelly": "f* = W - (1-W)/R；f* <= 0 时拒绝输出：『该信号历史期望为负，建议仓位 = 0』（产品与荐股工具的分水岭）",
+   "quarter_kelly": "f*/4",
+   "expected_max_streak": "ln(n)/ln(1/(1-W))，n=100 笔",
+   "streak_derived_risk": "max_dd_tolerance / (expected_max_streak × 1.5)",
+   "suggested_risk_per_trade": "min(quarter_kelly, streak_derived_risk)，硬封顶 2%",
+   "single_knife_cap": "单刀仓位上限＝组合 3%（T1 可放宽至 5%）；全部飞刀仓合计 ≤ 组合 20%；每刀固定 3 批阶梯，三批用完永不加",
+   "liq_distance": "逐仓做多爆仓距离 ≈ 1/杠杆 − MMR（MMR 静态表 mmr_binance.json，季度人工核对）；3x≈-32.8% / 5x≈-19.5% / 10x≈-9.5% / 20x≈-4.5%",
+   "kelly_drawdown_law": "按 c 倍 Kelly 下注，资金曾跌到 x 倍的概率 = x^(2/c-1)：满 Kelly 腰斩 50%、半 Kelly 12.5%、c≤0.46 → ≤10%（Thorp 2006）",
+   "ruin_probability": "10,000 × 100 笔蒙特卡洛（Web Worker，simulator.js，bootstrap 重抽样该信号历史逐笔收益，天然含肥尾）→ 破产概率 = 触及回撤容忍线路径占比"
+  },
+  "outputs": [
+   "建议单笔风险 %（min 双重封顶，≤2%）",
+   "对应仓位金额（权益 × 建议风险 / 止损距离）",
+   "名义仓位与爆仓距离 + 经验爆仓触及率：『按你选的 10x，历史上 7 天内爆仓触及率 31%』（liq_touch.json：币 × 杠杆档 3/5/10/20x × 持仓期 1/3/7/14/30 天的历史最低价触及频率，每日预计算）",
+   "破产概率（蒙特卡洛）+ 最长连败中位数"
+  ],
+  "guards": [
+   "首次使用强制填写预承诺卡：『连亏 __ 次我停手 __ 天』→ localStorage，之后每次打开原样回显",
+   "用户手改仓位超过建议值 2 倍 → 输出区整体变红 + 展示该仓位下的连败-回撤表",
+   "首次点开模拟器插入 FCA 式提问：『如果这笔钱全部亏掉，你的生活会受影响吗？』→『会——那这不适合你』（跳连败室）/『不会——继续』"
+  ]
+ },
+ "risk_framework": {
+  "disclaimer_full": "【《刀尖舞》免责声明 v1.0】\n一、本站性质。本站为个人性质的公开数据与统计展示频道，按固定时间表向不特定公众自动发布基于公开市场数据的历史统计、规则回放与风险计算工具。本站全部内容均为对历史数据的整理与呈现，不构成对任何证券、期货、数字资产或其他金融产品的投资建议、买卖推荐、要约或要约邀请。\n二、无资质与零收费声明。运营者不持有任何司法辖区的证券投资咨询、资产管理、经纪或数字资产顾问牌照；不接受委托理财、不代客操作、不收取任何形式的咨询或荐股费用、不设收费群、不提供针对特定个人情况的建议。任何以本站名义收费的行为均系冒充。\n三、历史统计与模拟业绩的固有局限。本站展示的胜率、收益率、最大回撤等均基于历史数据或模拟计算。模拟或假设性业绩具有固有局限：其通常在事后编制，未反映真实资金承受亏损时的执行偏差、流动性缺失、滑点、手续费与心理压力；任何规则的历史统计都不代表、也不预示未来表现，实际结果可能与所示统计严重不符。\n四、高风险警示。本站聚焦的「接飞刀」式左侧交易属于极高风险行为：单笔亏损可能超过历史最大亏损记录；使用杠杆可能在短时间内损失全部本金并被强制平仓。请勿投入任何你不能承受全部损失的资金。参照多国监管统计，多数散户杠杆账户长期亏损。\n五、数据与工具。本站数据来自公开免费接口，可能存在延迟、缺失或错误；计算器与模拟器的输出仅为基于用户输入的算术结果，不构成适当性判断。发现错误请通过页内渠道反馈，更正将公示。\n六、责任限制。在适用法律允许的最大范围内，运营者不对任何人因使用或依赖本站内容产生的任何直接或间接损失承担责任。你的每一笔交易决定由你独立作出、独立担责。\n七、地域限制。本站不面向禁止此类信息传播的司法辖区提供内容；访问者应自行确认并遵守所在地法律。本站内容未经任何监管机构审核。",
+  "disclaimer_delivery": [
+   "disclaimer.html 独立页：全文 + 版本号 + 修订记录",
+   "首访弹层：滚动到底才能关闭，按钮『我已读完，风险自担』（不用『我同意』），localStorage 记已读版本，改版重弹",
+   "页脚两行常驻：『历史统计，非投资建议；接飞刀可能亏光全部本金』+ 全文链接",
+   "每张信号卡『统计≠建议』微标，点击弹全文"
+  ],
+  "honest_stats_card": {
+   "规则": "每个信号卡固定 8 字段，收益与风险成对呈现、同字号、同视线、不可折叠（FCA prominence 逻辑）；n<30 整卡灰显盖『样本不足，仅供观察』章、不参与首页排序",
+   "fields": [
+    "样本数 n",
+    "胜率 ± Wilson 95% 区间（z=1.96）",
+    "平均赔率 R",
+    "历史最大单笔亏损",
+    "历史最大连败次数",
+    "跟随该信号的策略曲线最大回撤",
+    "盈亏比 profit factor",
+    "统计区间起止日期"
+   ],
+   "wilson_example": "12 胜 8 负≠『胜率 60%』：Wilson95 = [38.7%, 78.1%]，区间必须一起显示",
+   "site_level": "页脚每季度自动重算：『过去 12 个月本站全部信号中 X% 以止损离场，跟随全部信号（每笔风险 1%）的模拟净值最大回撤为 Y%』（ESMA 式自曝真实数字）"
+  },
+  "losing_streak_design": {
+   "连败室页": "交互表（期望最大连败 + 至少一次 k 连败概率 1-(1-L^k)^(n-k+1)）；回本算术表 -10→+11 / -20→+25 / -30→+43 / -50→+100 / -80→+400；核心教育文案『连败是数学必然，不是你水平崩了』",
+   "预承诺卡": "首次用计算器强制填写，localStorage 持久化，原样回显本人手写承诺（赌博研究中少数证据为正的干预）",
+   "信号卡联动": "每卡显示该信号自身历史最大连败，与胜率同字号",
+   "参考数字": "胜率 40% 时 100 笔期望最大连败 9 次、300 笔 11 次，300 笔内 13 连败概率仍 31%"
+  },
+  "loss_simulator": {
+   "engine": "simulator.js（Web Worker，10,000 × 100 笔，bootstrap 重抽样 signal_stats.json 的逐笔收益数组，<1 秒）",
+   "ethical_ordering": "默认先渲染第 5 百分位（差）路径 → 中位数 → 最后才允许展开第 95 百分位——与券商营销刻意相反",
+   "counters": [
+    "跌破回撤容忍线路径占比",
+    "触及爆仓路径占比（按杠杆档）",
+    "最长连败中位数"
+   ],
+   "reuse": "三处复用：信号卡『模拟跟单』按钮 / 仓位计算器破产概率 / 连败室路径可视化（ECharts）"
+  },
+  "cooling_off": {
+   "设计": "数据化冷静期（静态站无账户，不能技术强制）：每信号生成 t0 vs t24h 两套进场统计（胜率/中位收益/MAE），信号卡底部固定一行『历史上此类信号晚 24 小时进场：收益中位数 −X pp，最大不利偏移改善 Y pp』；统计不支持也如实展示——这本身就是公信力",
+   "倒计时条": "信号发布 24h 内访问该页，顶部显示『冷静期剩余 hh:mm』（localStorage 记首访），不锁功能只常驻可见",
+   "追高惩罚": "信号发布后已反弹 x% 再追入的历史胜率衰减曲线"
+  },
+  "compliance": {
+   "红线清单": [
+    "永久免费：无付费群/打赏/带单分成/导流开户（中国法『有偿』要件切割）",
+    "不代客操作、不答复具体个人持仓问题（美国 Lowe v. SEC 出版者豁免的 impersonal 要件）",
+    "每日定时自动发布（强化 regular circulation 要件）",
+    "禁用指令性措辞（黑名单 JSON + CI lint）",
+    "A 股标的谨慎处理",
+    "运营者持仓每日披露，涉及标的信号卡自动加『作者持有』角标（bona fide 要件）",
+    "泰国：不收费即不落入 Digital Asset Advisor 定义"
+   ],
+   "零收费声明": "页脚常驻：『本站永久免费，无付费群，无带单，唯一域名 knifewaltz.github.io，任何收费行为均系冒充。』",
+   "geo": "不面向禁止此类信息传播的司法辖区；内容未经任何监管机构审核"
+  }
+ },
+ "jev_usage": {
+  "principle": "Jev 只回概率、不生成任何文字；只在离线跑批调用，输出数值进 JSON；站点运行时零 LLM。页面上任何 Jev 概率必须带样本数与置信区间。",
+  "touchpoints": [
+   {
+    "where": "过闸刀标注",
+    "what": "对每把过闸的刀输出校准过的『3 年翻倍概率』；输入特征：跌幅深度、白名单层级、F-Score、当日触发器状态、行业、族别",
+    "output": "data/calibration.json 内 per-knife 概率字段，前端只渲染数字"
+   },
+   {
+    "where": "族别判别器",
+    "what": "A/B 族概率（特征：峰前 24 个月涨幅、杠杆指标 3 年分位——两融/永续 OI/funding）；概率 <70% 显示『未定』",
+    "output": "crash/knife 条目的 family_prob 字段"
+   },
+   {
+    "where": "季度阈值校准",
+    "what": "用积累的 signals 表结算数据重校准分位数阈值与 KnifeScore 权重，输出新 calibration.json + 校准报告存 learning/",
+    "output": "版本化 calibration.json（校准历史可回溯）"
+   },
+   {
+    "where": "学习循环",
+    "what": "每次 abort/结算样本回流 learning/（沿用 learning/LOOP.md SOP），Jev 离线重校准",
+    "output": "同上"
+   }
+  ],
+  "never": [
+   "不写任何面向用户的句子",
+   "不做信号判定（判定永远是规则引擎的确定性代码）",
+   "不在 GitHub Actions 运行时调用（校准在本机/泰国端手动触发）"
+  ]
+ },
+ "crash_library": [
+  {
+   "id": "1987_black_monday",
+   "title_cn": "1987 黑色星期一",
+   "symbol": "^GSPC",
+   "family": "A",
+   "status": "closed",
+   "peak": {
+    "date": "1987-08-25",
+    "close": 336.77
+   },
+   "trough": {
+    "date": "1987-12-04",
+    "close": 223.92
+   },
+   "drawdown_pct": -33.51,
+   "calendar_days": 101,
+   "trading_days": 71,
+   "worst_day": {
+    "date": "1987-10-19",
+    "pct": -20.47
+   },
+   "vol_climax": {
+    "date": "1987-10-19",
+    "ratio": 3.21
+   },
+   "vix_peak_close": null,
+   "fwd_1m_pct": 15.6,
+   "fwd_3m_pct": 19.4,
+   "fwd_12m_pct": 21.4,
+   "as_of": {
+    "date": "2026-09-18",
+    "close": 7650.5,
+    "vs_trough_pct": 3316.6
+   },
+   "buy_minus30_further_dd_pct": -5.0,
+   "capitulation_note": "单日 -20.47% 且成交量为 50 日均量 3.21 倍，投降签名三合一（VIX 时代之前，用跌幅+量比替代波动率）。",
+   "lesson_right": null,
+   "lesson_wrong": null,
+   "render": {
+    "chart": "ECharts K 线（复用现站 3 年 K 线组件，历史区间放开），叠 3 个 markPoint：峰(钢银)、谷(入场金)、最惨单日(血红)；进行中案例加『进行中』徽章（琥珀描边）。",
+    "capitulation_dashboard": "案例页固定一栏四个数：单日跌幅 · 量比(vs 50日均量) · VIX/对应波动率 · 距最终谷底还有几天。",
+    "data_badge": "Yahoo chart API + CBOE VIX CSV · as_of 日期 · 日频；annotation 字段与 computed 字段永不混排，annotation 用不同底色。"
+   }
+  },
+  {
+   "id": "2000_dotcom_spx",
+   "title_cn": "2000-02 互联网泡沫（标普）",
+   "symbol": "^GSPC",
+   "family": "B",
+   "status": "closed",
+   "peak": {
+    "date": "2000-03-24",
+    "close": 1527.46
+   },
+   "trough": {
+    "date": "2002-10-09",
+    "close": 776.76
+   },
+   "drawdown_pct": -49.15,
+   "calendar_days": 929,
+   "trading_days": 637,
+   "worst_day": {
+    "date": "2000-04-14",
+    "pct": -5.83
+   },
+   "vol_climax": {
+    "date": "2001-09-17",
+    "ratio": 2.1
+   },
+   "vix_peak_close": {
+    "date": "2002-08-05",
+    "v": 45.08
+   },
+   "fwd_1m_pct": 16.2,
+   "fwd_3m_pct": 19.4,
+   "fwd_12m_pct": 33.7,
+   "as_of": {
+    "date": "2026-09-18",
+    "close": 7650.5,
+    "vs_trough_pct": 884.9
+   },
+   "buy_minus30_further_dd_pct": null,
+   "capitulation_note": "B 族长熊：VIX 收盘峰 45.08 出现在 2002-08，距 2000-03 峰已两年半。",
+   "lesson_right": null,
+   "lesson_wrong": "2001-09-17 VIX≥36 首触发后 12 月 -15.9%——B 族泡沫未出清时按 VIX 接刀是三次历史亏损之一。",
+   "render": {
+    "chart": "ECharts K 线（复用现站 3 年 K 线组件，历史区间放开），叠 3 个 markPoint：峰(钢银)、谷(入场金)、最惨单日(血红)；进行中案例加『进行中』徽章（琥珀描边）。",
+    "capitulation_dashboard": "案例页固定一栏四个数：单日跌幅 · 量比(vs 50日均量) · VIX/对应波动率 · 距最终谷底还有几天。",
+    "data_badge": "Yahoo chart API + CBOE VIX CSV · as_of 日期 · 日频；annotation 字段与 computed 字段永不混排，annotation 用不同底色。"
+   }
+  },
+  {
+   "id": "2008_gfc",
+   "title_cn": "2008 全球金融危机",
+   "symbol": "^GSPC",
+   "family": "A",
+   "status": "closed",
+   "peak": {
+    "date": "2007-10-09",
+    "close": 1565.15
+   },
+   "trough": {
+    "date": "2009-03-09",
+    "close": 676.53
+   },
+   "drawdown_pct": -56.78,
+   "calendar_days": 517,
+   "trading_days": 355,
+   "worst_day": {
+    "date": "2008-10-15",
+    "pct": -9.03
+   },
+   "vol_climax": {
+    "date": "2008-10-10",
+    "ratio": 2.04
+   },
+   "vix_peak_close": {
+    "date": "2008-11-20",
+    "v": 80.86
+   },
+   "fwd_1m_pct": 20.5,
+   "fwd_3m_pct": 38.8,
+   "fwd_12m_pct": 68.6,
+   "as_of": {
+    "date": "2026-09-18",
+    "close": 7650.5,
+    "vs_trough_pct": 1030.8
+   },
+   "buy_minus30_further_dd_pct": -38.3,
+   "capitulation_note": "投降是过程不是一天：量能顶 2008-10-10（2.04 倍）、最惨单日 2008-10-15（-9.03%）、VIX 收盘顶 80.86（11-20）三者不同日。A 族唯一重灾例外：-30% 后还要再挨 -38.3%。",
+   "lesson_right": "2008-10-16 巴菲特《Buy American》方向正确。",
+   "lesson_wrong": "同一笔买入后标普又跌约 25% 才见底——正确方向也要配三段式分批与 12 个月最短持有周期；2008-09-17 VIX≥36 首触发 12 月 -7.9%（危机才开场）。",
+   "render": {
+    "chart": "ECharts K 线（复用现站 3 年 K 线组件，历史区间放开），叠 3 个 markPoint：峰(钢银)、谷(入场金)、最惨单日(血红)；进行中案例加『进行中』徽章（琥珀描边）。",
+    "capitulation_dashboard": "案例页固定一栏四个数：单日跌幅 · 量比(vs 50日均量) · VIX/对应波动率 · 距最终谷底还有几天。",
+    "data_badge": "Yahoo chart API + CBOE VIX CSV · as_of 日期 · 日频；annotation 字段与 computed 字段永不混排，annotation 用不同底色。"
+   }
+  },
+  {
+   "id": "2011_euro_debt",
+   "title_cn": "2011 欧债危机",
+   "symbol": "^GSPC",
+   "family": "A",
+   "status": "closed",
+   "peak": {
+    "date": "2011-04-29",
+    "close": 1363.61
+   },
+   "trough": {
+    "date": "2011-10-03",
+    "close": 1099.23
+   },
+   "drawdown_pct": -19.39,
+   "calendar_days": 157,
+   "trading_days": 108,
+   "worst_day": {
+    "date": "2011-08-08",
+    "pct": -6.66
+   },
+   "vol_climax": {
+    "date": "2011-08-03",
+    "ratio": 1.61
+   },
+   "vix_peak_close": {
+    "date": "2011-08-08",
+    "v": 48.0
+   },
+   "fwd_1m_pct": 10.8,
+   "fwd_3m_pct": 16.2,
+   "fwd_12m_pct": 31.5,
+   "as_of": {
+    "date": "2026-09-18",
+    "close": 7650.5,
+    "vs_trough_pct": 596.0
+   },
+   "buy_minus30_further_dd_pct": null,
+   "capitulation_note": "2011-08-08 单日 -6.66% 与 VIX 收盘峰 48.0 同日。",
+   "lesson_right": "2011-08-08 VIX 48 当日买入，12 个月 +25.2%。",
+   "lesson_wrong": null,
+   "render": {
+    "chart": "ECharts K 线（复用现站 3 年 K 线组件，历史区间放开），叠 3 个 markPoint：峰(钢银)、谷(入场金)、最惨单日(血红)；进行中案例加『进行中』徽章（琥珀描边）。",
+    "capitulation_dashboard": "案例页固定一栏四个数：单日跌幅 · 量比(vs 50日均量) · VIX/对应波动率 · 距最终谷底还有几天。",
+    "data_badge": "Yahoo chart API + CBOE VIX CSV · as_of 日期 · 日频；annotation 字段与 computed 字段永不混排，annotation 用不同底色。"
+   }
+  },
+  {
+   "id": "2018_q4",
+   "title_cn": "2018 Q4 加息杀",
+   "symbol": "^GSPC",
+   "family": "A",
+   "status": "closed",
+   "peak": {
+    "date": "2018-09-20",
+    "close": 2930.75
+   },
+   "trough": {
+    "date": "2018-12-24",
+    "close": 2351.1001
+   },
+   "drawdown_pct": -19.78,
+   "calendar_days": 95,
+   "trading_days": 65,
+   "worst_day": {
+    "date": "2018-10-10",
+    "pct": -3.29
+   },
+   "vol_climax": {
+    "date": "2018-12-21",
+    "ratio": 1.85
+   },
+   "vix_peak_close": {
+    "date": "2018-12-24",
+    "v": 36.07
+   },
+   "fwd_1m_pct": 13.3,
+   "fwd_3m_pct": 19.3,
+   "fwd_12m_pct": 37.1,
+   "as_of": {
+    "date": "2026-09-18",
+    "close": 7650.5,
+    "vs_trough_pct": 225.4
+   },
+   "buy_minus30_further_dd_pct": null,
+   "capitulation_note": "VIX 收盘峰 36.07 恰在谷底日 2018-12-24。",
+   "lesson_right": "2018-12-24 买投降日 + 2019-01-04 鲍威尔转向确认，12 个月 +37.1%。",
+   "lesson_wrong": null,
+   "render": {
+    "chart": "ECharts K 线（复用现站 3 年 K 线组件，历史区间放开），叠 3 个 markPoint：峰(钢银)、谷(入场金)、最惨单日(血红)；进行中案例加『进行中』徽章（琥珀描边）。",
+    "capitulation_dashboard": "案例页固定一栏四个数：单日跌幅 · 量比(vs 50日均量) · VIX/对应波动率 · 距最终谷底还有几天。",
+    "data_badge": "Yahoo chart API + CBOE VIX CSV · as_of 日期 · 日频；annotation 字段与 computed 字段永不混排，annotation 用不同底色。"
+   }
+  },
+  {
+   "id": "2020_covid",
+   "title_cn": "2020 疫情崩盘",
+   "symbol": "^GSPC",
+   "family": "A",
+   "status": "closed",
+   "peak": {
+    "date": "2020-02-19",
+    "close": 3386.1499
+   },
+   "trough": {
+    "date": "2020-03-23",
+    "close": 2237.3999
+   },
+   "drawdown_pct": -33.92,
+   "calendar_days": 33,
+   "trading_days": 23,
+   "worst_day": {
+    "date": "2020-03-16",
+    "pct": -11.98
+   },
+   "vol_climax": {
+    "date": "2020-02-28",
+    "ratio": 2.25
+   },
+   "vix_peak_close": {
+    "date": "2020-03-16",
+    "v": 82.69
+   },
+   "fwd_1m_pct": 25.1,
+   "fwd_3m_pct": 39.4,
+   "fwd_12m_pct": 74.8,
+   "as_of": {
+    "date": "2026-09-18",
+    "close": 7650.5,
+    "vs_trough_pct": 241.9
+   },
+   "buy_minus30_further_dd_pct": -5.6,
+   "capitulation_note": "2020-03-16 单日 -11.98% + VIX 82.69 同日；仅 23 个交易日跌完，V 型反转只给一次回踩。",
+   "lesson_right": "2020-03-23 美联储无限 QE 公告日恰为精确谷底——政策扳机优先于价格点位（A 族铁律）。",
+   "lesson_wrong": "1×ATR 硬止损在 2020-03-18 假跌破会被扫掉一次：由冷却 10 日 + 允许重新走状态机解决，而不是放宽止损。",
+   "render": {
+    "chart": "ECharts K 线（复用现站 3 年 K 线组件，历史区间放开），叠 3 个 markPoint：峰(钢银)、谷(入场金)、最惨单日(血红)；进行中案例加『进行中』徽章（琥珀描边）。",
+    "capitulation_dashboard": "案例页固定一栏四个数：单日跌幅 · 量比(vs 50日均量) · VIX/对应波动率 · 距最终谷底还有几天。",
+    "data_badge": "Yahoo chart API + CBOE VIX CSV · as_of 日期 · 日频；annotation 字段与 computed 字段永不混排，annotation 用不同底色。"
+   }
+  },
+  {
+   "id": "2025_tariff_apr",
+   "title_cn": "2025-04 关税冲击",
+   "symbol": "^GSPC",
+   "family": "A",
+   "status": "closed",
+   "peak": {
+    "date": "2025-02-19",
+    "close": 6144.1499
+   },
+   "trough": {
+    "date": "2025-04-08",
+    "close": 4982.77
+   },
+   "drawdown_pct": -18.9,
+   "calendar_days": 48,
+   "trading_days": 34,
+   "worst_day": {
+    "date": "2025-04-04",
+    "pct": -5.97
+   },
+   "vol_climax": {
+    "date": "2025-03-21",
+    "ratio": 1.92
+   },
+   "vix_peak_close": {
+    "date": "2025-04-08",
+    "v": 52.33
+   },
+   "fwd_1m_pct": 13.7,
+   "fwd_3m_pct": 26.0,
+   "fwd_12m_pct": 36.8,
+   "as_of": {
+    "date": "2026-09-18",
+    "close": 7650.5,
+    "vs_trough_pct": 53.5
+   },
+   "buy_minus30_further_dd_pct": null,
+   "capitulation_note": "VIX 收盘峰 52.33（2025-04-08），触发 R-KNIFE-01c 最深档。",
+   "lesson_right": "2025-04-04 按 VIX≥45 规则接，12 个月 +33.7%。",
+   "lesson_wrong": null,
+   "render": {
+    "chart": "ECharts K 线（复用现站 3 年 K 线组件，历史区间放开），叠 3 个 markPoint：峰(钢银)、谷(入场金)、最惨单日(血红)；进行中案例加『进行中』徽章（琥珀描边）。",
+    "capitulation_dashboard": "案例页固定一栏四个数：单日跌幅 · 量比(vs 50日均量) · VIX/对应波动率 · 距最终谷底还有几天。",
+    "data_badge": "Yahoo chart API + CBOE VIX CSV · as_of 日期 · 日频；annotation 字段与 computed 字段永不混排，annotation 用不同底色。"
+   }
+  },
+  {
+   "id": "2026_tariff_mar",
+   "title_cn": "2026-03 关税回声（标普）",
+   "symbol": "^GSPC",
+   "family": "A",
+   "status": "ongoing_fwd",
+   "peak": {
+    "date": "2026-01-27",
+    "close": 6978.6001
+   },
+   "trough": {
+    "date": "2026-03-30",
+    "close": 6343.7202
+   },
+   "drawdown_pct": -9.1,
+   "calendar_days": 62,
+   "trading_days": 43,
+   "worst_day": {
+    "date": "2026-03-26",
+    "pct": -1.74
+   },
+   "vol_climax": {
+    "date": "2026-03-20",
+    "ratio": 1.74
+   },
+   "vix_peak_close": {
+    "date": "2026-03-27",
+    "v": 31.05
+   },
+   "fwd_1m_pct": 12.5,
+   "fwd_3m_pct": 18.2,
+   "fwd_12m_pct": null,
+   "as_of": {
+    "date": "2026-09-18",
+    "close": 7650.5,
+    "vs_trough_pct": 20.6
+   },
+   "buy_minus30_further_dd_pct": null,
+   "capitulation_note": "浅刀：仅 -9.1%，VIX 峰 31.05 未触发接刀规则；此后半年 +20.6% 创新高——规则宁缺毋滥，没触发不等于不能涨，页面要写明。",
+   "lesson_right": null,
+   "lesson_wrong": null,
+   "render": {
+    "chart": "ECharts K 线（复用现站 3 年 K 线组件，历史区间放开），叠 3 个 markPoint：峰(钢银)、谷(入场金)、最惨单日(血红)；进行中案例加『进行中』徽章（琥珀描边）。",
+    "capitulation_dashboard": "案例页固定一栏四个数：单日跌幅 · 量比(vs 50日均量) · VIX/对应波动率 · 距最终谷底还有几天。",
+    "data_badge": "Yahoo chart API + CBOE VIX CSV · as_of 日期 · 日频；annotation 字段与 computed 字段永不混排，annotation 用不同底色。"
+   }
+  },
+  {
+   "id": "2000_dotcom_nasdaq",
+   "title_cn": "2000-02 互联网泡沫（纳指）",
+   "symbol": "^IXIC",
+   "family": "B",
+   "status": "closed",
+   "peak": {
+    "date": "2000-03-10",
+    "close": 5048.6201
+   },
+   "trough": {
+    "date": "2002-10-09",
+    "close": 1114.11
+   },
+   "drawdown_pct": -77.93,
+   "calendar_days": 943,
+   "trading_days": 647,
+   "worst_day": {
+    "date": "2000-04-14",
+    "pct": -9.67
+   },
+   "vol_climax": {
+    "date": "2001-09-20",
+    "ratio": 1.79
+   },
+   "vix_peak_close": {
+    "date": "2002-08-05",
+    "v": 45.08
+   },
+   "fwd_1m_pct": 23.6,
+   "fwd_3m_pct": 29.1,
+   "fwd_12m_pct": 71.6,
+   "as_of": {
+    "date": "2026-09-18",
+    "close": 26522.5391,
+    "vs_trough_pct": 2280.6
+   },
+   "buy_minus30_further_dd_pct": -68.5,
+   "capitulation_note": "B 族标本：-77.9%、647 个交易日，收复旧峰用了 15 年（2000→2015）。",
+   "lesson_right": null,
+   "lesson_wrong": "-30% 处接刀到最终谷底还要再挨 -68.5%——B 族的 -30% 连一半都不到。",
+   "render": {
+    "chart": "ECharts K 线（复用现站 3 年 K 线组件，历史区间放开），叠 3 个 markPoint：峰(钢银)、谷(入场金)、最惨单日(血红)；进行中案例加『进行中』徽章（琥珀描边）。",
+    "capitulation_dashboard": "案例页固定一栏四个数：单日跌幅 · 量比(vs 50日均量) · VIX/对应波动率 · 距最终谷底还有几天。",
+    "data_badge": "Yahoo chart API + CBOE VIX CSV · as_of 日期 · 日频；annotation 字段与 computed 字段永不混排，annotation 用不同底色。"
+   }
+  },
+  {
+   "id": "2021_22_growth_nasdaq",
+   "title_cn": "2021-22 成长股出清（纳指）",
+   "symbol": "^IXIC",
+   "family": "B",
+   "status": "closed",
+   "peak": {
+    "date": "2021-11-19",
+    "close": 16057.4404
+   },
+   "trough": {
+    "date": "2022-12-28",
+    "close": 10213.29
+   },
+   "drawdown_pct": -36.4,
+   "calendar_days": 404,
+   "trading_days": 277,
+   "worst_day": {
+    "date": "2022-09-13",
+    "pct": -5.16
+   },
+   "vol_climax": {
+    "date": "2022-06-24",
+    "ratio": 1.85
+   },
+   "vix_peak_close": {
+    "date": "2022-03-07",
+    "v": 36.45
+   },
+   "fwd_1m_pct": 11.6,
+   "fwd_3m_pct": 17.6,
+   "fwd_12m_pct": 47.0,
+   "as_of": {
+    "date": "2026-09-18",
+    "close": 26522.5391,
+    "vs_trough_pct": 159.7
+   },
+   "buy_minus30_further_dd_pct": null,
+   "capitulation_note": "2022-03-07 VIX 收盘峰仅 36.45：B 族叠加加息，VIX≥36 首触发后 12 月 -5.0%，三次历史亏损之一。",
+   "lesson_right": null,
+   "lesson_wrong": "2022-03-07 按 VIX 规则接纳指是历史三败之一——族别纪律（B 族禁按 VIX 接）与 VIX 规则互为印证。",
+   "render": {
+    "chart": "ECharts K 线（复用现站 3 年 K 线组件，历史区间放开），叠 3 个 markPoint：峰(钢银)、谷(入场金)、最惨单日(血红)；进行中案例加『进行中』徽章（琥珀描边）。",
+    "capitulation_dashboard": "案例页固定一栏四个数：单日跌幅 · 量比(vs 50日均量) · VIX/对应波动率 · 距最终谷底还有几天。",
+    "data_badge": "Yahoo chart API + CBOE VIX CSV · as_of 日期 · 日频；annotation 字段与 computed 字段永不混排，annotation 用不同底色。"
+   }
+  },
+  {
+   "id": "2026_ai_nasdaq",
+   "title_cn": "2026 AI 股回调（纳指）",
+   "symbol": "^IXIC",
+   "family": "A",
+   "status": "ongoing_fwd",
+   "peak": {
+    "date": "2025-10-29",
+    "close": 23958.4707
+   },
+   "trough": {
+    "date": "2026-03-30",
+    "close": 20794.6406
+   },
+   "drawdown_pct": -13.21,
+   "calendar_days": 152,
+   "trading_days": 103,
+   "worst_day": {
+    "date": "2026-01-20",
+    "pct": -2.39
+   },
+   "vol_climax": {
+    "date": "2026-01-14",
+    "ratio": 1.44
+   },
+   "vix_peak_close": {
+    "date": "2026-03-27",
+    "v": 31.05
+   },
+   "fwd_1m_pct": 18.7,
+   "fwd_3m_pct": 26.1,
+   "fwd_12m_pct": null,
+   "as_of": {
+    "date": "2026-09-18",
+    "close": 26522.5391,
+    "vs_trough_pct": 27.5
+   },
+   "buy_minus30_further_dd_pct": null,
+   "capitulation_note": "2026-02-03~05 软件/AI 股三日蒸发约 1 万亿美元（annotation 口径），是本轮 B 族嫌疑最重的板块；指数整体 -13.2% 属 A 族浅刀。",
+   "lesson_right": null,
+   "lesson_wrong": null,
+   "render": {
+    "chart": "ECharts K 线（复用现站 3 年 K 线组件，历史区间放开），叠 3 个 markPoint：峰(钢银)、谷(入场金)、最惨单日(血红)；进行中案例加『进行中』徽章（琥珀描边）。",
+    "capitulation_dashboard": "案例页固定一栏四个数：单日跌幅 · 量比(vs 50日均量) · VIX/对应波动率 · 距最终谷底还有几天。",
+    "data_badge": "Yahoo chart API + CBOE VIX CSV · as_of 日期 · 日频；annotation 字段与 computed 字段永不混排，annotation 用不同底色。"
+   }
+  },
+  {
+   "id": "2024_carry_unwind_nikkei",
+   "title_cn": "2024-08 日元套息平仓（日经）",
+   "symbol": "^N225",
+   "family": "A",
+   "status": "closed",
+   "peak": {
+    "date": "2024-07-11",
+    "close": 42224.0195
+   },
+   "trough": {
+    "date": "2024-08-05",
+    "close": 31458.4199
+   },
+   "drawdown_pct": -25.5,
+   "calendar_days": 25,
+   "trading_days": 16,
+   "worst_day": {
+    "date": "2024-08-05",
+    "pct": -12.4
+   },
+   "vol_climax": {
+    "date": "2024-08-05",
+    "ratio": 2.42
+   },
+   "vix_peak_close": {
+    "date": "2024-08-05",
+    "v": 38.57
+   },
+   "fwd_1m_pct": 17.8,
+   "fwd_3m_pct": 25.2,
+   "fwd_12m_pct": 39.0,
+   "as_of": {
+    "date": "2026-09-18",
+    "close": 65018.9492,
+    "vs_trough_pct": 106.7
+   },
+   "buy_minus30_further_dd_pct": null,
+   "capitulation_note": "2024-08-05 单日 -12.4% + 量比 2.42 倍 + VIX 38.57 三合一，次日即 +10.2%——教科书级单日投降。",
+   "lesson_right": "2024-08-05 VIX 38.6 触发 R-KNIFE-01a，12 个月 +22.2%（标普口径）。",
+   "lesson_wrong": null,
+   "render": {
+    "chart": "ECharts K 线（复用现站 3 年 K 线组件，历史区间放开），叠 3 个 markPoint：峰(钢银)、谷(入场金)、最惨单日(血红)；进行中案例加『进行中』徽章（琥珀描边）。",
+    "capitulation_dashboard": "案例页固定一栏四个数：单日跌幅 · 量比(vs 50日均量) · VIX/对应波动率 · 距最终谷底还有几天。",
+    "data_badge": "Yahoo chart API + CBOE VIX CSV · as_of 日期 · 日频；annotation 字段与 computed 字段永不混排，annotation 用不同底色。"
+   }
+  },
+  {
+   "id": "2015_ashare_leg1",
+   "title_cn": "2015 A 股股灾（第一段）",
+   "symbol": "000001.SS",
+   "family": "B",
+   "status": "closed",
+   "peak": {
+    "date": "2015-06-12",
+    "close": 5166.3501
+   },
+   "trough": {
+    "date": "2015-08-26",
+    "close": 2927.2881
+   },
+   "drawdown_pct": -43.34,
+   "calendar_days": 75,
+   "trading_days": 52,
+   "worst_day": {
+    "date": "2015-08-24",
+    "pct": -8.49
+   },
+   "vol_climax": {
+    "date": "2015-07-06",
+    "ratio": 1.43
+   },
+   "vix_peak_close": {
+    "date": "2015-08-24",
+    "v": 40.74
+   },
+   "fwd_1m_pct": 5.9,
+   "fwd_3m_pct": 20.8,
+   "fwd_12m_pct": 5.6,
+   "as_of": {
+    "date": "2026-09-21",
+    "close": 3949.9067,
+    "vs_trough_pct": 34.9
+   },
+   "buy_minus30_further_dd_pct": null,
+   "capitulation_note": "annotation：2015-07 逾千只跌停 + 约半数停牌；两融余额自 2015-06-18 峰值 2.27 万亿去杠杆（东财两融页人工核对，无免费机读历史源）。",
+   "lesson_right": null,
+   "lesson_wrong": "2015 年 7 月跟着国家队护盘接上证，到 2016-01 再挨 -27%——政策底≠市场底。",
+   "render": {
+    "chart": "ECharts K 线（复用现站 3 年 K 线组件，历史区间放开），叠 3 个 markPoint：峰(钢银)、谷(入场金)、最惨单日(血红)；进行中案例加『进行中』徽章（琥珀描边）。",
+    "capitulation_dashboard": "案例页固定一栏四个数：单日跌幅 · 量比(vs 50日均量) · VIX/对应波动率 · 距最终谷底还有几天。",
+    "data_badge": "Yahoo chart API + CBOE VIX CSV · as_of 日期 · 日频；annotation 字段与 computed 字段永不混排，annotation 用不同底色。"
+   }
+  },
+  {
+   "id": "2015_16_ashare_full",
+   "title_cn": "2015-16 A 股股灾（全程）",
+   "symbol": "000001.SS",
+   "family": "B",
+   "status": "closed",
+   "peak": {
+    "date": "2015-06-12",
+    "close": 5166.3501
+   },
+   "trough": {
+    "date": "2016-01-28",
+    "close": 2655.6609
+   },
+   "drawdown_pct": -48.6,
+   "calendar_days": 230,
+   "trading_days": 155,
+   "worst_day": {
+    "date": "2015-08-24",
+    "pct": -8.49
+   },
+   "vol_climax": {
+    "date": "2015-11-05",
+    "ratio": 1.76
+   },
+   "vix_peak_close": {
+    "date": "2015-08-24",
+    "v": 40.74
+   },
+   "fwd_1m_pct": 8.2,
+   "fwd_3m_pct": 12.9,
+   "fwd_12m_pct": 21.0,
+   "as_of": {
+    "date": "2026-09-21",
+    "close": 3949.9067,
+    "vs_trough_pct": 48.7
+   },
+   "buy_minus30_further_dd_pct": -26.6,
+   "capitulation_note": "峰 5166.35 十一年后（2026-09）上证 3949.9，仍 -23.5% 未收复——B 族『收复旧峰以十年计』的中国样本。",
+   "lesson_right": null,
+   "lesson_wrong": null,
+   "render": {
+    "chart": "ECharts K 线（复用现站 3 年 K 线组件，历史区间放开），叠 3 个 markPoint：峰(钢银)、谷(入场金)、最惨单日(血红)；进行中案例加『进行中』徽章（琥珀描边）。",
+    "capitulation_dashboard": "案例页固定一栏四个数：单日跌幅 · 量比(vs 50日均量) · VIX/对应波动率 · 距最终谷底还有几天。",
+    "data_badge": "Yahoo chart API + CBOE VIX CSV · as_of 日期 · 日频；annotation 字段与 computed 字段永不混排，annotation 用不同底色。"
+   }
+  },
+  {
+   "id": "2022_crypto_btc",
+   "title_cn": "2022 加密熊市（BTC）",
+   "symbol": "BTC-USD",
+   "family": "B",
+   "status": "closed",
+   "peak": {
+    "date": "2021-11-08",
+    "close": 67566.8281
+   },
+   "trough": {
+    "date": "2022-11-21",
+    "close": 15787.2842
+   },
+   "drawdown_pct": -76.63,
+   "calendar_days": 378,
+   "trading_days": 378,
+   "worst_day": {
+    "date": "2022-06-13",
+    "pct": -15.97
+   },
+   "vol_climax": {
+    "date": "2022-11-08",
+    "ratio": 3.34
+   },
+   "vix_peak_close": {
+    "date": "2022-03-07",
+    "v": 36.45
+   },
+   "fwd_1m_pct": 9.0,
+   "fwd_3m_pct": 45.3,
+   "fwd_12m_pct": 85.1,
+   "as_of": {
+    "date": "2026-09-21",
+    "close": 85291.8984,
+    "vs_trough_pct": 440.3
+   },
+   "buy_minus30_further_dd_pct": -66.6,
+   "capitulation_note": "量能顶正是 FTX 崩盘日 2022-11-08（3.34 倍），谷底 13 天后出现；最惨单日 2022-06-13（-15.97%）。",
+   "lesson_right": "2022-11 FTX 后低于链上实现价格约 1.98 万美元分批现货 BTC，12 个月 +85.1%。",
+   "lesson_wrong": "把币放 Celsius/FTX 抄底——刀接对了、币没了（托管风险是第四宗罪）。",
+   "render": {
+    "chart": "ECharts K 线（复用现站 3 年 K 线组件，历史区间放开），叠 3 个 markPoint：峰(钢银)、谷(入场金)、最惨单日(血红)；进行中案例加『进行中』徽章（琥珀描边）。",
+    "capitulation_dashboard": "案例页固定一栏四个数：单日跌幅 · 量比(vs 50日均量) · VIX/对应波动率 · 距最终谷底还有几天。",
+    "data_badge": "Yahoo chart API + CBOE VIX CSV · as_of 日期 · 日频；annotation 字段与 computed 字段永不混排，annotation 用不同底色。"
+   }
+  },
+  {
+   "id": "2025_26_crypto_btc",
+   "title_cn": "2025-26 加密熊市（BTC，进行中）",
+   "symbol": "BTC-USD",
+   "family": "B",
+   "status": "ongoing",
+   "peak": {
+    "date": "2025-10-06",
+    "close": 124752.5312
+   },
+   "trough": {
+    "date": "2026-06-30",
+    "close": 58558.8594
+   },
+   "drawdown_pct": -53.06,
+   "calendar_days": 267,
+   "trading_days": 267,
+   "worst_day": {
+    "date": "2026-02-05",
+    "pct": -14.13
+   },
+   "vol_climax": {
+    "date": "2026-02-05",
+    "ratio": 3.11
+   },
+   "vix_peak_close": {
+    "date": "2026-03-27",
+    "v": 31.05
+   },
+   "fwd_1m_pct": 13.6,
+   "fwd_3m_pct": 32.2,
+   "fwd_12m_pct": null,
+   "as_of": {
+    "date": "2026-09-21",
+    "close": 85291.8984,
+    "vs_trough_pct": 45.7
+   },
+   "buy_minus30_further_dd_pct": -32.9,
+   "capitulation_note": "2025-10-10 史上最大强平（约 190 亿美元、160 万账户，annotation 口径）只是开场而非底部；最惨单日与量能顶同日 2026-02-05（-14.13%、3.11 倍）；2026-06 初 ETF 连续 13 日净流出 44 亿美元为出清标志。fwd_12m 留空，由每日任务于 2027-06-30 自动补齐。",
+   "lesson_right": null,
+   "lesson_wrong": "2025-10-10 把闪崩当黄金坑加杠杆接 BTC（约 10.4 万美元），八个月后 5.86 万美元，再跌 -44%。",
+   "render": {
+    "chart": "ECharts K 线（复用现站 3 年 K 线组件，历史区间放开），叠 3 个 markPoint：峰(钢银)、谷(入场金)、最惨单日(血红)；进行中案例加『进行中』徽章（琥珀描边）。",
+    "capitulation_dashboard": "案例页固定一栏四个数：单日跌幅 · 量比(vs 50日均量) · VIX/对应波动率 · 距最终谷底还有几天。",
+    "data_badge": "Yahoo chart API + CBOE VIX CSV · as_of 日期 · 日频；annotation 字段与 computed 字段永不混排，annotation 用不同底色。"
+   }
+  },
+  {
+   "id": "2021_22_china_adr_kweb",
+   "title_cn": "2021-22 中概股团灭（KWEB）",
+   "symbol": "KWEB",
+   "family": "B",
+   "status": "closed",
+   "peak": {
+    "date": "2021-02-17",
+    "close": 103.56
+   },
+   "trough": {
+    "date": "2022-10-24",
+    "close": 18.41
+   },
+   "drawdown_pct": -82.22,
+   "calendar_days": 614,
+   "trading_days": 425,
+   "worst_day": {
+    "date": "2022-10-24",
+    "pct": -14.17
+   },
+   "vol_climax": {
+    "date": "2021-07-27",
+    "ratio": 6.22
+   },
+   "vix_peak_close": {
+    "date": "2022-03-07",
+    "v": 36.45
+   },
+   "fwd_1m_pct": 33.1,
+   "fwd_3m_pct": 90.9,
+   "fwd_12m_pct": 42.6,
+   "as_of": {
+    "date": "2026-09-18",
+    "close": 24.83,
+    "vs_trough_pct": 34.9
+   },
+   "buy_minus30_further_dd_pct": -74.6,
+   "capitulation_note": "量能顶 2021-07-27（6.22 倍，教培团灭日）出现在最终谷底之前 15 个月——B 族的放量投降会出现多次，单看量能接刀必死。峰后 5.5 年今日 24.83，仍 -76% 未收复。",
+   "lesson_right": null,
+   "lesson_wrong": "芒格 2021 年一季度约 220 美元接 BABA、2022 年初近腰斩减持——政治驱动的 B 族刀连大师也接不住。",
+   "render": {
+    "chart": "ECharts K 线（复用现站 3 年 K 线组件，历史区间放开），叠 3 个 markPoint：峰(钢银)、谷(入场金)、最惨单日(血红)；进行中案例加『进行中』徽章（琥珀描边）。",
+    "capitulation_dashboard": "案例页固定一栏四个数：单日跌幅 · 量比(vs 50日均量) · VIX/对应波动率 · 距最终谷底还有几天。",
+    "data_badge": "Yahoo chart API + CBOE VIX CSV · as_of 日期 · 日频；annotation 字段与 computed 字段永不混排，annotation 用不同底色。"
+   }
+  },
+  {
+   "id": "2022_growth_arkk",
+   "title_cn": "2021-22 成长泡沫出清（ARKK）",
+   "symbol": "ARKK",
+   "family": "B",
+   "status": "closed",
+   "peak": {
+    "date": "2021-02-12",
+    "close": 156.58
+   },
+   "trough": {
+    "date": "2022-12-28",
+    "close": 29.64
+   },
+   "drawdown_pct": -81.07,
+   "calendar_days": 684,
+   "trading_days": 472,
+   "worst_day": {
+    "date": "2022-05-11",
+    "pct": -10.1
+   },
+   "vol_climax": {
+    "date": "2021-02-23",
+    "ratio": 4.93
+   },
+   "vix_peak_close": {
+    "date": "2022-03-07",
+    "v": 36.45
+   },
+   "fwd_1m_pct": 29.9,
+   "fwd_3m_pct": 29.8,
+   "fwd_12m_pct": 76.7,
+   "as_of": {
+    "date": "2026-09-18",
+    "close": 88.23,
+    "vs_trough_pct": 197.7
+   },
+   "buy_minus30_further_dd_pct": -73.0,
+   "capitulation_note": "-81.1%、472 个交易日：主动管理的主题 ETF 同样走 B 族剧本。",
+   "lesson_right": null,
+   "lesson_wrong": null,
+   "render": {
+    "chart": "ECharts K 线（复用现站 3 年 K 线组件，历史区间放开），叠 3 个 markPoint：峰(钢银)、谷(入场金)、最惨单日(血红)；进行中案例加『进行中』徽章（琥珀描边）。",
+    "capitulation_dashboard": "案例页固定一栏四个数：单日跌幅 · 量比(vs 50日均量) · VIX/对应波动率 · 距最终谷底还有几天。",
+    "data_badge": "Yahoo chart API + CBOE VIX CSV · as_of 日期 · 日频；annotation 字段与 computed 字段永不混排，annotation 用不同底色。"
+   }
+  }
+ ]
+}
