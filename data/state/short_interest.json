@@ -1,0 +1,113 @@
+{
+ "settlement": "2026-08-31",
+ "staleness_note": "双月·滞后约9工作日",
+ "source": "finra",
+ "fetched_at": "2026-09-22T02:22:43+07:00",
+ "rows": {
+  "ALNY": {
+   "short": 6340087,
+   "days_to_cover": 3.9,
+   "chg_pct": 32.89
+  },
+  "APP": {
+   "short": 10555736,
+   "days_to_cover": 2.22,
+   "chg_pct": -7.18
+  },
+  "APTV": {
+   "short": 10692442,
+   "days_to_cover": 1.89,
+   "chg_pct": 14.62
+  },
+  "ASML": {
+   "short": 1524269,
+   "days_to_cover": 1.36,
+   "chg_pct": 12.71
+  },
+  "AVGO": {
+   "short": 50451889,
+   "days_to_cover": 2.42,
+   "chg_pct": -10.24
+  },
+  "BSX": {
+   "short": 48173758,
+   "days_to_cover": 2.29,
+   "chg_pct": 74.43
+  },
+  "CHTR": {
+   "short": 14985512,
+   "days_to_cover": 4.79,
+   "chg_pct": -34.8
+  },
+  "CSGP": {
+   "short": 18901758,
+   "days_to_cover": 2.51,
+   "chg_pct": 13.24
+  },
+  "FICO": {
+   "short": 1792796,
+   "days_to_cover": 7.67,
+   "chg_pct": -0.13
+  },
+  "FISV": {
+   "short": 33277836,
+   "days_to_cover": 6.28,
+   "chg_pct": 11.22
+  },
+  "INTU": {
+   "short": 7950442,
+   "days_to_cover": 1.71,
+   "chg_pct": -13.19
+  },
+  "LULU": {
+   "short": 13466687,
+   "days_to_cover": 3.34,
+   "chg_pct": 24.65
+  },
+  "MSTR": {
+   "short": 32622124,
+   "days_to_cover": 1,
+   "chg_pct": 2.33
+  },
+  "NKE": {
+   "short": 75594334,
+   "days_to_cover": 2.45,
+   "chg_pct": 9.83
+  },
+  "NVDA": {
+   "short": 298301619,
+   "days_to_cover": 2.14,
+   "chg_pct": 4.32
+  },
+  "ORCL": {
+   "short": 44597874,
+   "days_to_cover": 2.32,
+   "chg_pct": -6.64
+  },
+  "PNR": {
+   "short": 8511169,
+   "days_to_cover": 1.86,
+   "chg_pct": 13.31
+  },
+  "PODD": {
+   "short": 4447429,
+   "days_to_cover": 2.37,
+   "chg_pct": 20.32
+  },
+  "ROL": {
+   "short": 15282254,
+   "days_to_cover": 3.79,
+   "chg_pct": 15.54
+  },
+  "TSM": {
+   "short": 29835409,
+   "days_to_cover": 3.13,
+   "chg_pct": -1.08
+  },
+  "ZTS": {
+   "short": 19430882,
+   "days_to_cover": 4.13,
+   "chg_pct": 15.79
+  }
+ }
+}
