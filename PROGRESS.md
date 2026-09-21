@@ -11,7 +11,8 @@
 - **复盘自校准闭环**：信号快照（append-only + features_sha 防篡改 + 边沿检测）→ 5/20/60 日结算 + A 档执行反事实（与 36 年重放同一段代码 RL-2）→ Jev 预注册口径结算 → calibration.json（n<30 一律「收集中」不下结论）→ 周日 `--weekly-review`（红线 RL-1..10 自动审计首跑 10/10 PASS；walk-forward 季度开庭，首窗 2026-12）；16 参数预注册网格 `params_registry.json`，换参只此一条路全程留痕
 - **前端**：新增「雷达」（暴动实时表/崩落榜/逼空榜/费率极值/美股榜/停牌熔断/清算热度/日线暴动/引信/热度）与「复盘室」（本周复盘/快照台账/J1-J5 可靠性曲线/参数留痕合同/红线清单）两视图，SAYA 纪律不破（动效仍 4 种、金雷达 0 复盘室 1、账本表格、显示字体子集 196 字）
 - **跑批工程**：daily.yml 加 sqlite+kline actions/cache（第二跑广度 7 分钟→秒级）、并发组 kw-pipeline 序列化、周日第三 cron；heavy 实测 127-164s 全链
-- 已知冷启动项（如实展示）：movers vol_ratio 需 5 天历史；校准页全部「收集中 x/30」；J1 结算窗 180 日
+- **Binance 451 与 OKX 降级链**（发版当晚实测发现并修复）：GitHub 美国机房被 Binance 全线 451 地理封锁（本地不受影响，v1.0 起 derivs 的 funding/OI 腿在云端一直静默 451）→ radar.py 三腿 + derivs.py 费率/OI 全部接 OKX 兜底（云端实测 movers 14 · funding_majors 齐 · degraded 空）。口径纪律：量比强制同源（跨源分母即撒谎）；降级日榜面如实缩水（OKX $20M 门槛约 15 标的）并注明 degraded_reason；云端切换首日 oi.{C} 24h 变化有一次序列跳变假跌，忽略
+- 已知冷启动项（如实展示）：movers vol_ratio 需 5 天历史（云端 OKX 序列从 2026-09-22 起攒）；校准页全部「收集中 x/30」；J1 结算窗 180 日
 - 待办：radar 首跑前需先 dispatch 一次 heavy 建缓存；style_spec.json 显示用字清单补记 v1.2 新增字
 
 ## v1.1.0（2026-09-21 晚）视觉全面重构「鞘 SAYA」
