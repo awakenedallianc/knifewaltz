@@ -1,14 +1,97 @@
 {
  "doc": "机房数据源探针凭证（funnel 6_build_order step1 + 1_universe.datacenter_probe_gate + MA-9）。datacenter 节由 .github/workflows/probe.yml 在 GitHub Actions 美国机房 dispatch 一次写入并 commit；在此之前 status=pending_dispatch，所有 unverified 端点不得生产接入。",
  "datacenter": {
-  "status": "pending_dispatch",
-  "asof": null,
-  "run": null,
-  "endpoints": {},
+  "asof": "2026-09-21T19:17:28Z",
+  "run": {
+   "run_id": "35643291385",
+   "runner_os": "Linux",
+   "repo": "awakenedallianc/knifewaltz"
+  },
+  "endpoints": {
+   "cg_markets": {
+    "http": 200,
+    "rows": 250,
+    "ms": 152,
+    "status": "pass",
+    "note": "",
+    "url": "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&price_change_percentage=24h",
+    "min_rows": 200,
+    "purpose": "CG 榜单 p1（universe_crypto 分层主源）"
+   },
+   "cg_category_stablecoins": {
+    "http": 200,
+    "rows": 250,
+    "ms": 101,
+    "status": "pass",
+    "note": "",
+    "url": "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&category=stablecoins&per_page=250&page=1",
+    "min_rows": 20,
+    "purpose": "CG 稳定币类别（C-STABLE 层）"
+   },
+   "cg_market_chart_365": {
+    "http": 200,
+    "rows": 366,
+    "ms": 88,
+    "status": "pass",
+    "note": "",
+    "url": "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=365&interval=daily",
+    "min_rows": 300,
+    "purpose": "CG 年线（cg_1y 按需通道，close_only）"
+   },
+   "paprika_tickers": {
+    "http": 200,
+    "rows": 2000,
+    "ms": 121,
+    "status": "pass",
+    "note": "",
+    "url": "https://api.coinpaprika.com/v1/tickers",
+    "min_rows": 500,
+    "purpose": "CoinPaprika 降级源（B10 第一级）"
+   },
+   "okx_history_candles": {
+    "http": 200,
+    "rows": 100,
+    "ms": 173,
+    "status": "pass",
+    "note": "",
+    "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT&bar=1D&limit=100",
+    "min_rows": 90,
+    "purpose": "OKX 全量回填通道（backfill 状态机）"
+   },
+   "yahoo_chart_0700hk": {
+    "http": 200,
+    "rows": 22,
+    "ms": 61,
+    "status": "pass",
+    "note": "",
+    "url": "https://query1.finance.yahoo.com/v8/finance/chart/0700.HK?range=1mo&interval=1d",
+    "min_rows": 1,
+    "purpose": "Yahoo 港股腿确认（HK88 宇宙）"
+   },
+   "finra_partitions": {
+    "http": 200,
+    "rows": 209,
+    "ms": 682,
+    "status": "pass",
+    "note": "",
+    "url": "https://api.finra.org/partitions/group/otcMarket/name/consolidatedShortInterest",
+    "min_rows": 1,
+    "purpose": "FINRA 分区元数据（D7 首跑门；过则 KW_ENABLE_FINRA=1）"
+   }
+  },
   "summary": {
-   "pass": [],
+   "pass": [
+    "cg_category_stablecoins",
+    "cg_market_chart_365",
+    "cg_markets",
+    "finra_partitions",
+    "okx_history_candles",
+    "paprika_tickers",
+    "yahoo_chart_0700hk"
+   ],
    "fail": []
-  }
+  },
+  "status": "done"
  },
  "gate": {
   "rule": "端点 status=pass 才准生产接入（datacenter_probe_gate）；fail 走降级链，绝不带病接入。",
