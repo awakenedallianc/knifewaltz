@@ -1,0 +1,336 @@
+{
+  "spec": "刀尖舞 KnifeWaltz v1.3 「广度×深度」实施规格",
+  "version": "1.3.0-spec",
+  "date": "2026-09-22",
+  "synthesized_from": [
+    "符号侦察实测（yahoo.py chart() rng=3y，70 符号，2026-09-22，probe_result.json）",
+    "新源侦察实测（CBOE-PCR / CFTC-socrata / DeFiLlama / FINRA-SI / Yahoo-earnings / FiscalData-auctions，2026-09-22）",
+    "总架构师通读 radar_spec.json（honesty_gates）/ engine.py / run.py / knives.py / yahoo.py / news.py / jev.py 与 history.sqlite 实查"
+  ],
+  "iron_rules": [
+    "全部数据源免费公开无 key；未实测通过的源不进本规格（CNH=X 实测死亡已禁用）",
+    "运行时零大模型：本版新增全部为纯数字抓取与纯数学计算；Jev 不加新调用、问题集不动",
+    "统计不撒谎：每个新数字带 source+asof+延迟徽章；分位数 n<252 只显示『收集中 x/252』；观察闸永不入 BladeIndex",
+    "生产环境=GitHub Actions 美国机房：Binance 451 已接 OKX 降级；SEC/FRED 机房被屏蔽不碰；CBOE/Yahoo/OKX/Deribit/CFTC-socrata/FiscalData/DeFiLlama 机房可用；FINRA 本机过、机房未直测→首跑验证门（裁决 D7）",
+    "radar 轻跑批 contents:read 零提交不变：一切需要持久化的新数据（PCR 历史/COT/财报/拍卖/SI/闸门确认计数）全部 heavy 侧落盘，radar 只读 join"
+  ],
+
+  "adjudications": {
+    "note": "总架构师裁决（偏保守）。实施工程师以本节为准，其余各节已按裁决写定。",
+    "D1_行业ETF入板": "20 条行业 ETF 定为 knife 标的：新 tier=T1S、新 cls=sector_etf、新阈值 sector_fall {dd52w:-30, ret10:-12, rsi14:28}（介于 index_fall -20 与 knife_fall -40 之间：行业篮子波动大于宽基、小于个股崩盘）；允许 A 档 + B 档（分散篮子无归零结构，b_tier_dd250=-60 冻结线不动，极少达标属正常）",
+    "D2_信用六条入板并修复刀锋指数死腿": "LQD/BKLN/PFF/EMB/HYG/IEF 定为 knife 标的 + 信用指标双角色：tier=T1C、cls=credit_etf、新阈值 credit_fall {dd52w:-15, ret10:-8, rsi14:30}（债 ETF 的 -15% 已是危机级）。实查 history.sqlite：k.HYG/k.IEF 键从未存在——engine.market_gates 的信用代理与 blade_index 的 sev_credit 自 v1.0 起恒为 0（数据腿缺失，公式无恙）。本版 knives.grab 抓入 HYG/IEF 后该腿自动复活，blade_index 数值会变：这是补缺失数据不是改公式，机房页与 PROGRESS 必须声明（honesty 第 12 条）",
+    "D3_人民币腿与残缺符号": "CNH=X 实测死亡（rng=3y 只回 1 根，复测 2 次+USDCNH=X 同病）→ 禁用，用 CNY=X（在岸，实测 778 根全史）承担人民币腿并标注『在岸 CNY 口径』；RUB=X 制裁后离岸指示性报价→只做方向显示，禁止精确阈值规则；PA=F 成交量 51.3% 缺失且流动性薄→降为指标-only，不入 T1F",
+    "D4_观察闸治理红线": "gates_add 全部 8 道为观察闸（display-only）：只上墙展示，不进入 BladeIndex，不参与状态机与任何信号/veto 判定；公式与阈值的任何改动只能走 2026-12 参数法庭（季度 walk-forward + params_history 留痕），此前一律冻结。阈值全部预注册进 params_registry（frozen:true，冻结至 2026-12 开庭）",
+    "D5_VIX9D不重复入库": "cboe.py 已有 vix9d.close 全史（CBOE CSV + Yahoo 盘中补），G-VIX9D 直接读现有键；^VIX9D 不再经 Yahoo 3y 通道重复入库。^VIX 同理不入宇宙（radar_spec 裁决 A5 沿用）",
+    "D6_稳定币闸门口径分离": "radar 轻跑批无 state 写入通道，『连续两次确认』只能在 heavy 侧判定（12h×2）。裁决：G-STABLE 闸门判定=heavy 口径（store 序列连续 2 个 heavy 观测 |bp|≥red）；雷达页 30 分钟现值只显示 warn/red 着色不参与闸门判定，两处口径徽章分别标注",
+    "D7_FINRA首跑验证门": "api.finra.org 本机（中国网络）实测通过、Actions 机房未直测。按 radar_spec honesty_gates『新增源必须先实测再进规格』：finra 腿受 KW_ENABLE_FINRA=1 环境门保护，build_order 第 8 步在 Actions 实跑一次通过后置 1 解锁；未解锁时 short_interest 全链 None，页面无该列（与未接入一致）",
+    "D8_期货补三条与COT缺口": "RB=F/HO=F/OJ=F 实测通过入 T1F（cls=futures 走现有 futures_fall，USX 换算自动生效）；三者无已实测 COT 代码映射→cot 字段 null 如实显示『无 COT 映射』，禁止猜代码。semi 四锚（TSM/ASML/NVDA/AVGO）=指标-only 观察（T2 观察，不入 T1 不进 board），入财报临近榜 watchlist",
+    "D9_yahoo_fetch_USX解包bug必修": "yahoo.py chart() 现回 6 元素行 [d,o,h,lo,c,v]，而 fetch() 的 USX 缩放分支按 5 元素解包 `for d,o,h,lo,c in ohlc` → 任何 USX 符号走 fetch() 即 ValueError 被外层吞掉。knives.grab 已是 6 元素正确版。build_order 第 1 步修 yahoo.py（含 volume 保留），防未来复发",
+    "D10_全球股指只入指标库": "11 条全球指数（指数不可交易）入指标库 gidx.*，本版唯一消费面=global_sync 同步度元数据行（日线暴动节脚注）+ J3 事件上下文；时区接力雷达留给 v1.4，不为没有消费者的数据编造版面"
+  },
+
+  "universe_add": {
+    "rule": "只收本次实测 bars_3y≥600 的符号（全部达标，最低 ^KS11/^TWII 727）；knife 标的进 board 走状态机，indicator-only 只进指标库与闸门，绝不进刀落板",
+    "knife_targets": {
+      "T1S_行业ETF_20条": {
+        "riot_semantics": "行业刀阵暴动=危机定位器：KRE 独崩=区域银行危机(2023 剧本)，XLE/OIH 暴动=能源冲击，XBI 崩=利率杀长久期资产，ITB 崩=地产传导，GDX/GDXJ 独涨=法币信任危机——哪把刀先落地决定接哪把",
+        "cls": "sector_etf（新增，engine.detect 走 thresholds.sector_fall）",
+        "tiers": "A 档 + B 档（裁决 D1）",
+        "symbols": ["XLF", "XLE", "XLK", "XLV", "XLI", "XLY", "XLP", "XLU", "XLB", "XLRE", "XLC", "SMH", "KRE", "XBI", "ITB", "JETS", "OIH", "XME", "GDX", "GDXJ"],
+        "bars_3y_measured": "全部 752，has_volume=true，last_date=2026-09-21",
+        "config": "config.yaml 新增 t1s 节（symbol/name/cls 同 t1 格式）；knives.py 循环 grab(…, 'T1S', rng='3y')"
+      },
+      "T1C_信用ETF_6条": {
+        "riot_semantics": "信用面暴动=违约概率重定价：HYG/BKLN 崩=企业信用收缩（BKLN 浮息，与 HYG 背离可分离利率因子），PFF 崩=银行资本结构承压(优先股是银行危机温度计)，EMB 崩=主权美元债危机，LQD-IEF 差走阔=投资级信用溢价——信用先于股票认输",
+        "cls": "credit_etf（新增，engine.detect 走 thresholds.credit_fall）",
+        "tiers": "A 档 + B 档（B 资格线 -60 对债 ETF 几乎不可达属正常，诚实呈现不调线）",
+        "symbols": ["LQD", "BKLN", "PFF", "EMB", "HYG", "IEF"],
+        "bars_3y_measured": "全部 752，has_volume=true",
+        "dual_role": "knives.grab 产出的 k.HYG / k.IEF 序列同时供 engine 信用代理与 blade_index sev_credit（裁决 D2：死腿复活，零 engine 改动）",
+        "config": "config.yaml 新增 t1c 节；knives.py 循环 grab(…, 'T1C', rng='3y')"
+      },
+      "T1F_期货补3条": {
+        "riot_semantics": "补充期货暴动=实体经济的具体断点：RB/HO(成品油裂解)暴动=炼能/需求冲击，OJ(橙汁)暴动=食品通胀与气候冲击——商品刀只走 A 档，无 B 档价值回归（radar_spec 裁决 A8 沿用）",
+        "cls": "futures（现有，走 futures_fall）",
+        "tiers": "仅 A 档",
+        "symbols": ["RB=F", "HO=F", "OJ=F"],
+        "bars_3y_measured": "RB 755 / HO 755 / OJ 755，has_volume=true",
+        "caveat": "OJ=F 为 USX 美分报价：knives.grab 的 ×0.01 换算已是 6 元素正确版自动生效（LE=F 同口径已在库）；yahoo.fetch 的 5 元素解包 bug 见裁决 D9",
+        "cot": "三条均无已实测 COT 代码映射，depth.cot 字段 null 并标『无 COT 映射』（裁决 D8）"
+      }
+    },
+    "indicator_only": {
+      "note": "以下全部不进 board、不走状态机；heavy 由新 fetchers/depth.py 的 fetch_indicators 腿经 yahoo.chart(rng='3y') 抓取，按 asof 日期入库（backfill 全序列），volume 恒 0/空不入库",
+      "vol_complex": {
+        "riot_semantics": "波动率复合体暴动=市场在给尾部风险定价：VVIX/SKEW 抢跑说明有人买崩盘保护，MOVE 暴动说明债市（抵押品之锚）先于股市失稳——A 档恐慌反弹的上游雷达",
+        "keys": {"move.close": "^MOVE (746 bars)", "vvix.close": "^VVIX (752)", "skew.close": "^SKEW (734)", "vix1d.close": "^VIX1D (752)"},
+        "excluded": "^VIX9D 不入（裁决 D5，cboe.py 已有 vix9d.close 全史）",
+        "caveats": "^MOVE/^SKEW 落后 1 交易日（周一取数仍是周五值）且 ^SKEW 有缺日——按 asof 入库即已覆盖，观察闸规则勿假设 T+0"
+      },
+      "rates": {
+        "riot_semantics": "利率暴动=贴现率之锚在动：短端(^IRX)暴动指向流动性/联储路径重定价，长端(^TNX/^TYX)暴动指向财政与通胀溢价——期限利差翻正/倒挂切换是衰退时钟的指针",
+        "keys": {"rate.irx": "^IRX 13周贴现率(752)", "rate.fvx": "^FVX 5年(752)", "rate.tnx": "^TNX 10年(752)", "rate.tyx": "^TYX 30年(752)"},
+        "self_computed": "spread.3m10y = rate.tnx - rate.irx（同源 CGI 同 asof 同百分点单位，逐日相减；实测 2026-09-21 = 4.959-3.985 = 0.974）；入库 key=spread.3m10y，caliber='self'"
+      },
+      "fx_crisis": {
+        "riot_semantics": "危机汇率暴动=资本在跨境逃命：JPY 急升=套息平仓（全球风险资产被迫抛售），新兴货币齐贬=美元虹吸/EM 危机，单一货币独贬=该国主权信用事件——EM 汇率是 EMB/新兴股指刀的上游引信",
+        "keys": {"fx.jpy": "JPY=X USD/JPY，数值降=日元升=套息平仓警报 (778)", "fx.eurusd": "EURUSD=X (778)", "fx.gbpusd": "GBPUSD=X (778)", "fx.cny": "CNY=X 在岸（裁决 D3 替代 CNH=X，778）", "fx.try": "TRY=X (778)", "fx.brl": "BRL=X (778)", "fx.mxn": "MXN=X (778)", "fx.zar": "ZAR=X (778)", "fx.inr": "INR=X (778)", "fx.idr": "IDR=X (778)", "fx.krw": "KRW=X (778)", "fx.rub": "RUB=X 离岸指示性，方向-only (778)"},
+        "banned": "CNH=X / USDCNH=X 实测死亡禁用（裁决 D3）"
+      },
+      "global_indices": {
+        "riot_semantics": "全球股指暴动=危机的地理定位与时区接力：亚洲先崩→欧洲接棒→美股定调；单一国家独崩=局部事件，全线齐崩=系统性——跨市场同步度本身就是一个指标",
+        "keys": {"gidx.gdaxi": "^GDAXI (761)", "gidx.ftse": "^FTSE (759)", "gidx.stoxx50e": "^STOXX50E (750)", "gidx.fchi": "^FCHI (765)", "gidx.ks11": "^KS11 (727, asof 滞后)", "gidx.twii": "^TWII (727, asof 滞后)", "gidx.bsesn": "^BSESN (737)", "gidx.bvsp": "^BVSP (748)", "gidx.mxx": "^MXX (751)", "gidx.axjo": "^AXJO (759, asof 滞后)", "gidx.gsptse": "^GSPTSE (753)",
+          "global_sync": "自算：11 指数中最新完整日 ret1d ≤ -2% 的占比，payload.depth_market.global_sync = {\"n_down2\": k, \"of\": 11, \"asof\": 最旧成员 asof}（各成员 asof 不齐时取最旧并如实标注）"},
+        "consumption": "本版只做 global_sync 元数据行 + J3 事件上下文（裁决 D10）"
+      },
+      "futures_indicator": {
+        "keys": {"ind.pa": "PA=F 钯（753 bars，价格可用）"},
+        "caveat": "成交量字段 51.3% 缺失→量能规则禁用；流动性薄不入 T1F（裁决 D3）"
+      },
+      "semi_anchors": {
+        "riot_semantics": "半导体锚暴动=AI 资本开支叙事的生死判：四锚齐崩=周期叙事崩塌（联动 SMH/XLK），TSM 独崩=台海地缘/代工事件，ASML 独崩=设备出口管制升级",
+        "keys": {"semi.TSM": "TSM (752)", "semi.ASML": "ASML (752)", "semi.NVDA": "NVDA (752)", "semi.AVGO": "AVGO (752)"},
+        "role": "T2 观察不入 T1 不进 board（裁决 D8）；四锚入财报临近榜 watchlist；semi 同步齐崩旗标留给观察闸 v2（本版不加第 9 道闸）"
+      }
+    },
+    "board_size_estimate": "现 ~65（21 T1 + 20 T1F + ≤24 T2）→ ~94（+20 T1S +6 T1C +3 T1F）；heavy 抓取增量 29 符号 × ~1.2s ≈ +35s，仍在 timeout 内"
+  },
+
+  "gates_add": {
+    "governance_redline_verbatim": "本节全部闸门为观察闸（display-only）：只上墙展示，不进入 BladeIndex，不参与状态机、KnifeScore、veto 与任何信号判定；公式与阈值的任何改动只能走 2026-12 参数法庭（季度 walk-forward + params_history 留痕），此前一律冻结。",
+    "engine_contract": "engine.market_gates(store) 末尾追加 g['obs_gates'] = obs_gates(store)（独立列表，绝不混入 g['gates'] 八道主闸，绝不触碰 g['blade_index'] / g['state']）；每条 {id, name, value, threshold, on, warn, pct3y, asof, lag_note, caliber}；无数据 → nodata:true 灰格",
+    "gates": [
+      {"id": "G-PCR-EQ", "name": "散户过热（股票 PCR 极低）", "data_key": "pcr.equity",
+       "formula": "z60 = (pcr_equity_t − mean(近60个交易日观测，含当日)) / std(同窗)；on = z60 ≤ -2.0；warn = z60 ≤ -1.5",
+       "threshold_registry": "obs.pcr_eq.z current=-2.0 grid=[-1.5,-2.0,-2.5]",
+       "semantics": "股票期权 put/call 极低=散户全在买 call 的过热，刀落前置背景（逆向）", "lag": "EOD，CBOE 收盘后发布，asof 必标"},
+      {"id": "G-PCR-IDX", "name": "恐慌对冲（指数 PCR 极高）", "data_key": "pcr.index",
+       "formula": "z60 同口径；on = z60 ≥ +2.0；warn = z60 ≥ +1.5",
+       "threshold_registry": "obs.pcr_idx.z current=2.0 grid=[1.5,2.0,2.5]",
+       "semantics": "机构狂买指数 put=系统性对冲需求爆表，恐慌定价中", "lag": "EOD 同上"},
+      {"id": "G-MOVE", "name": "债市恐慌", "data_key": "move.close",
+       "formula": "on = move.close ≥ 120；warn = ≥ 110",
+       "threshold_registry": "obs.move.level current=120 grid=[110,120,130]",
+       "semantics": "美债隐含波动率=抵押品之锚失稳，先于股市", "lag": "asof 滞后 1 交易日（实测），规则按 asof 不假设 T+0"},
+      {"id": "G-VVIX", "name": "波动率的波动率", "data_key": "vvix.close",
+       "formula": "on = vvix.close ≥ 110；warn = ≥ 100",
+       "threshold_registry": "obs.vvix.level current=110 grid=[100,110,120]",
+       "semantics": "VIX 期权在给『VIX 本身暴走』定价=崩盘保护抢购", "lag": "T+0（Yahoo 延迟报价 1-2 分钟）"},
+      {"id": "G-3M10Y", "name": "陡峭化速度", "data_key": "spread.3m10y（自算 ^TNX-^IRX）",
+       "formula": "d5 = spread_t − spread_{t-5根}（百分点）；on = d5 ≥ +0.35；warn = ≥ +0.25；抽屉同时显示 spread 现值与倒挂状态",
+       "threshold_registry": "obs.steepen_5d.pp current=0.35 grid=[0.25,0.35,0.50]",
+       "semantics": "倒挂后 5 日内快速牛陡=联储被迫转向定价=历史上衰退开场的指针", "lag": "T+0 同源 CGI"},
+      {"id": "G-JPY", "name": "套息平仓（3 日日元急升）", "data_key": "fx.jpy",
+       "formula": "chg3 = (usdjpy_t / usdjpy_{t-3根} − 1) × 100；on = chg3 ≤ -3.0（USDJPY 3 日跌 3%=日元急升）；warn = ≤ -2.0",
+       "threshold_registry": "obs.jpy_3d.pct current=-3.0 grid=[-2.0,-3.0,-4.0]",
+       "semantics": "日元融资套息平仓=全球风险资产被迫抛售的传动轴（2024-08 剧本）", "lag": "T+0"},
+      {"id": "G-STABLE", "name": "稳定币脱锚", "data_key": "stable.USDT.depeg_bp / stable.USDC.depeg_bp / stable.DAI.depeg_bp",
+       "formula": "depeg_bp = (1 − price) × 10000；warn = 任一 |bp| ≥ 50；on(red) = 任一 |bp| ≥ 100 且连续 2 个 heavy 观测（store 序列判定，裁决 D6）；辅助显示：circ_chg1d ≤ -3%/日 = 赎回挤兑徽章",
+       "threshold_registry": "obs.stable.warn_bp current=50 grid=[25,50]；obs.stable.red_bp current=100 grid=[75,100,150]",
+       "semantics": "美元锚脱锚=加密全市场的抵押品危机（终局刀高发区）", "lag": "闸门=heavy 12h×2 确认口径；雷达现值=30 分钟口径只显示不判定"},
+      {"id": "G-VIX9D", "name": "快恐慌倒挂", "data_key": "vix9d.close / vix.close（均现有键，裁决 D5）",
+       "formula": "ratio9 = vix9d / vix；on = ratio9 ≥ 1.0；warn = ≥ 0.95",
+       "threshold_registry": "obs.vix9d_ratio current=1.0 grid=[1.0,1.05]",
+       "semantics": "9 日恐慌贵过 30 日=事件级近端恐慌（与 G-TERM-FLIP 的 30d/3m 倒挂互为快慢表）", "lag": "CBOE CSV T+1 + Yahoo 盘中补，现有口径"}
+    ],
+    "params_registry_add": {
+      "file": "data/state/params_registry.json 追加（RL-10：网格外禁止上线；网格修改按换参流程留痕）",
+      "walkforward_governed_frozen_false": {
+        "sector_fall.dd52w": {"current": -30, "grid": [-25, -30, -35], "frozen": false},
+        "sector_fall.ret10": {"current": -12, "grid": [-10, -12, -15], "frozen": false},
+        "credit_fall.dd52w": {"current": -15, "grid": [-12, -15, -20], "frozen": false},
+        "credit_fall.ret10": {"current": -8, "grid": [-6, -8, -10], "frozen": false}
+      },
+      "observation_frozen_until_2026_12_court": {
+        "obs.pcr_eq.z": {"current": -2.0, "grid": [-1.5, -2.0, -2.5], "frozen": true},
+        "obs.pcr_idx.z": {"current": 2.0, "grid": [1.5, 2.0, 2.5], "frozen": true},
+        "obs.move.level": {"current": 120, "grid": [110, 120, 130], "frozen": true},
+        "obs.vvix.level": {"current": 110, "grid": [100, 110, 120], "frozen": true},
+        "obs.steepen_5d.pp": {"current": 0.35, "grid": [0.25, 0.35, 0.5], "frozen": true},
+        "obs.jpy_3d.pct": {"current": -3.0, "grid": [-2.0, -3.0, -4.0], "frozen": true},
+        "obs.stable.warn_bp": {"current": 50, "grid": [25, 50], "frozen": true},
+        "obs.stable.red_bp": {"current": 100, "grid": [75, 100, 150], "frozen": true},
+        "obs.vix9d_ratio": {"current": 1.0, "grid": [1.0, 1.05], "frozen": true},
+        "obs.cot.z_extreme": {"current": 2.0, "grid": [1.5, 2.0, 2.5], "frozen": true},
+        "obs.si.days_to_cover": {"current": 5.0, "grid": [4.0, 5.0, 6.0], "frozen": true},
+        "obs.tvl.warn_pct": {"current": -8, "grid": [-6, -8, -10], "frozen": true},
+        "obs.tvl.red_pct": {"current": -15, "grid": [-12, -15, -20], "frozen": true},
+        "obs.earnings_window_days": {"current": 5, "grid": [3, 5], "frozen": true}
+      },
+      "note": "frozen:true 条目注 'frozen_until': '2026-12 参数法庭'；review.red_line_audit 的 RL-10 校验自动覆盖新条目"
+    }
+  },
+
+  "depth_pack": {
+    "principle": "每个深度数字回答同一个问题：『这个值放在历史里算第几？』——绝对值吓不到人，分位才有语义。全部纯数学，heavy 计算，radar 只读。",
+    "modules_ownership": {
+      "src/kw/fetchers/depth.py": "新文件：新源抓取（PCR / 指标符号 / 稳定币+TVL / 财报日历 / FINRA SI / 财政部拍卖），标准 fetch(cfg, settings)->{metrics,news,notes} 契约，每腿独立 try/except 降级",
+      "src/kw/fetchers/cot.py": "新文件：CFTC socrata 单请求全量",
+      "src/kw/engine.py": "扩展：纯函数 pct_rank / dd_rank3y / beta_corr60 / knifebook_context / obs_gates / build_depth；detect() 与 step_state() 零改动",
+      "run.py": "heavy 接入 depth/cot fetcher 与 build_depth；payload 注入"
+    },
+    "items": {
+      "a_key_value_percentiles": {
+        "what": "关键市场值的 3 年分位：VIX / PCR(equity/index) / MOVE / VVIX / 资金费率(BTC/ETH)，闸门格与抽屉显示『92 分位』",
+        "fn": "engine.pct_rank(values: list[float], v: float, min_n: int = 252) -> float | None  # 0-100，严格小于计数/n×100；n<min_n 返回 None（前端显示『收集中 x/252』）",
+        "assembly": "engine.market_gates 末尾：g['pctiles'] = {name: {'value': v, 'pct3y': p, 'n': n, 'asof': d} for name in ('vix','pcr_equity','pcr_index','move','vvix','fund_BTC','fund_ETH')}；序列窗=近 756 个观测",
+        "payload": "payload.gates.pctiles",
+        "honesty": "fund.* 云端为 OKX 序列 2026-09-22 起攒（约 33 天存量）→ 长期显示『收集中』属正常，如实展示"
+      },
+      "b_dd_rank_and_knifebook": {
+        "what": "刀的自身历史排位：当前 dd52w 在该标的 3 年滚动 dd52w 分布中的排位 + 与刀谱 18 例（knife_book_seed.json：8 spx_cases + 10 yahoo_cases）横向对比",
+        "fn": [
+          "engine.rolling_dd52(closes: list[float]) -> list[float]  # 每日 dd52w=(c/max(近252)−1)×100，需 closes≥300",
+          "engine.dd_rank3y(closes: list[float]) -> dict | None  # {'pct': pct_rank(rolling_dd52(closes), 当前dd52w, min_n=300), 'n': 样本数}；pct 高=当前回撤在自身历史中极深",
+          "engine.knifebook_context(dd52w: float, book: dict) -> dict | None  # book=knife_book_seed.json；用 spx_cases+yahoo_cases 的 drawdown_pct：{'deeper_than': 当前dd52w比其中几例更深, 'of': 18, 'nearest': 按|dd52w−case.drawdown_pct|取最近3例 [{'case','drawdown_pct','trading_days','fwd_3m_pct'}]}"
+        ],
+        "payload": "board 行 det['depth']['dd_rank'] = {'pct': …, 'n': …}；det['depth']['knifebook'] = {…}（仅 falling 或 dd52w≤-20 的行计算，省算力）"
+      },
+      "c_beta_corr_spy": {
+        "what": "beta/corr60 vs SPY：A/B 族佐证——corr 高=流动性贝塔连坐（偏 A 族恐慌反弹），corr 低且深跌=独立坏消息（偏 B 族/终局，配合 J1 分诊显示不改判定）",
+        "fn": "engine.beta_corr60(rows: list[list], spy_rows: list[list], win: int = 60) -> dict | None  # 按日期交集对齐两组 kline 行，对数收益，n<40 → None；返回 {'beta60': cov/var_spy, 'corr60': r, 'n': n, 'asof': 交集末日}",
+        "payload": "det['depth']['beta60'] / det['depth']['corr60']（SPY 自身与数据不足者省略键）",
+        "display": "抽屉一行：『β60 1.42 · 与 SPY 相关 0.78（连坐型）』/ corr<0.3 时『独立坠落型』——措辞是展示语义，不进任何判定"
+      },
+      "d_cot_crowding": {
+        "what": "期货 COT 投机净头寸 z（52 周窗）=拥挤度：z≤-2 且 net/OI≤-0.10=空头爆满可挤（逆向加分展示），z≥+2=多头拥挤慎接",
+        "module": "src/kw/fetchers/cot.py",
+        "fn": [
+          "CODES: dict[str, str] = 实测 20 条映射（CL:067651 GC:088691 SI:084691 NG:023651 HG:085692 PL:076651 ZC:002602 ZS:005602 ZW:001602 CT:033661 KC:083731 SB:080732 CC:073732 LE:057642 HE:054642 6J:097741 6E:099741 ES:13874A NQ:209742 ZB:020601）——用 cftc_contract_market_code 过滤，名称会被 CFTC 改写（CL/NG/ZB 已实锤改名），代码稳定",
+          "def fetch(cfg: dict, settings: dict) -> dict  # 单请求 publicreporting.cftc.gov/resource/6dca-aqww.json，$where code in (…) AND report_date ≥ 53 周前，$limit 5000（实测 1060 行 1.8s）；metrics: cot.{TK}.net（周度 date=report_date 前 10 位）；坑：spread 字段官方拼写 noncomm_postions_spread_all（typo 原样）",
+          "def cot_z(net_series: list[tuple[str, float]]) -> float | None  # 52 周窗 z，n<40 → None",
+          "落盘 data/state/cot_latest.json = {'asof_report': 周二日期, 'published_lag': '周五发布·滞后3天', 'rows': {TK: {'net': n, 'z52': z, 'net_oi': net/open_interest_all, 'oi': oi}}}"
+        ],
+        "payload": "T1F 行 det['depth']['cot'] = {'z52': …, 'net_oi': …, 'asof': 周二日期}；RB/HO/OJ 无映射 → 键省略，前端标『无 COT 映射』",
+        "calibration_check": "实施时用 2026-09-15 报告对拍 probe 样例：SB z=+3.0 / LE z=-2.34 / ZC z=+2.18 / 6J z=+2.15 / NG z=-1.89（±0.1 容差）"
+      },
+      "e_earnings_and_short_interest": {
+        "what": "个股财报临近标记（≤5 交易日）与空头面（FINRA 实测通过，机房首跑门后解锁）",
+        "earnings_fn": "depth.earnings_marks(http, watchlist: set[str], days: list[date]) -> list[dict]  # Yahoo calendar-events：startDate==endDate（同日毫秒）+ getDataInOneDay=1 + countPerDay=1000（上限实测 1000，1001 报错）；5 请求/跑批 1s 节流；落盘 data/state/earnings_marks.json = {'asof': …, 'marks': [{'ticker','date','when'(BMO|AMC|TAS|TNS),'eps_est','date_confirmed'(=not dateIsEstimate)}]}；watchlist = T2 成员 ∪ day_losers_promoted ∪ semi 四锚；只做未来 5 个交易日（远期日历大票缺席，实测确认，勿做远期）",
+        "si_fn": "depth.finra_short_interest(http, symbols: list[str]) -> dict | None  # 环境门 KW_ENABLE_FINRA（裁决 D7）；流程固定：先 GET partitions 拿最新 settlementDate，再 POST data/group/otcMarket/name/consolidatedShortInterest（EQUAL compareFilter 钉分区键，否则 400 'Partition keys missing'；勿用 equityShortInterest——OTC only 无 symbolCode）；落盘 data/state/short_interest.json = {'settlement': …, 'staleness_note': '双月·滞后约9工作日', 'rows': {sym: {'short','days_to_cover','chg_pct'}}}",
+        "payload": "个股行 det['depth']['earnings'] = {'days_to','when','confirmed'}（≤5 交易日才有）；det['depth']['si'] = {'days_to_cover','chg_pct','settlement'}；接刀检查表加展示项：财报前 1 日内触发的信号标『财报引信』风险徽章（display-only）",
+        "squeeze_display": "days_to_cover ≥ 5（obs.si.days_to_cover）且 chg_pct > 0 → 『轧空燃料』展示徽章；深跌+高 DTC=反弹弹药充足（逆向加分展示，不入 score）"
+      },
+      "f_auction_window": {
+        "what": "美债拍卖临近标记：10y/30y 拍卖 [D-1, D+1] 为『长债拍卖尾部风险窗』，窗内 ZB=F 与 T1C 债 ETF 的信号行加风险徽章",
+        "fn": "depth.fetch_auctions(http) -> list[dict]  # FiscalData auctions_query，filter auction_date:gte:today,lte:today+14d，timeout=60 + 重试 1（实测首连偶发 ReadTimeout）；term 桶实测措辞：10y = Note+('10-Year'|'9-Year 10-Month'|'9-Year 11-Month')，30y = Bond+('30-Year'|'29-Year 11-Month'|'29-Year 10-Month'|'29-Year 6-Month')；落盘 data/state/auction_windows.json = {'asof': …, 'caliber': '已公告场次（公告提前5-8天）', 'windows': [{'bucket':'10y|30y','auction_date','offering_amt','window':[D-1,D+1]}]}；od/upcoming_auctions 端点已死（数据冻结 2024-03）勿用",
+        "payload": "适用行（key ∈ ZB_F ∪ T1C 六条）det['depth']['auction'] = {'bucket','auction_date','offering_amt'}；J3 引信横条共用（见 jev_feed）"
+      },
+      "pcr_pipeline": {
+        "what": "CBOE PCR 四序列（total/index/equity/vix）：观察闸与分位的数据源",
+        "fn": [
+          "depth.fetch_pcr(http, dt: str | None = None) -> dict | None  # markets.cboe.com daily?mkt=cone；主解析=RSC flight 正则 \\\\\"ratios\\\\\":[…]，降级解析=纯 HTML 表；返回 {'total','index','equity','vix'} 或 None（未发布/非交易日——None 不是错误）",
+          "depth.backfill_pcr(http, store, days: int = 60) -> int  # 仅当 store pcr.equity 观测 <40 时执行；逐日 dt 回补 60 交易日，1s 节流（机房预期 2-3 分钟）；返回补入条数"
+        ],
+        "keys": "pcr.total / pcr.index / pcr.equity / pcr.vix（date=交易日 asof）；同时镜像 data/state/pcr_history.json（rolling 800 日，防 sqlite 缓存丢失后重回补）",
+        "honesty": "默认页=最新已发布日（实测周一午间仍是上周五）→ 永远按页内日期落 asof；页面结构改版正则失配 → None + 灰格降级，不得伪造"
+      },
+      "stable_tvl_pipeline": {
+        "what": "稳定币脱锚 + 链 TVL（G-STABLE 闸与雷达节的数据源）",
+        "fn": [
+          "depth.fetch_stablecoins(http) -> list[dict]  # stablecoins.llama.fi/stablecoins?includePrices=true；USDT/USDC/DAI → metrics stable.{SYM}.depeg_bp / stable.{SYM}.circ（circulating.peggedUSD）",
+          "depth.fetch_chain_tvl(http, chains=('Ethereum','Solana','Base','BSC','Tron','Arbitrum')) -> list[dict]  # api.llama.fi/v2/historicalChainTvl/{chain}；单日降幅用倒数第2/第3个完整日（末位点是今日未完盘中值——诚实口径）；metrics chain.{name}.tvl（date=完整日）"
+        ],
+        "radar_light_reuse": "radar.py 轻跑批同样调这两个函数（3 请求 <5s）但只写 radar.json 不写 store（contents:read 纪律）；G-STABLE 闸门判定只认 heavy 的 store 序列（裁决 D6）"
+      },
+      "payload_contract": {
+        "payload.gates.pctiles": "{name: {value, pct3y, n, asof}}",
+        "payload.gates.obs_gates": "[8 条观察闸对象]",
+        "payload.depth_market": "{'global_sync': {...}, 'cot_extremes': [|z52|≥2 的 {tk,z52,net_oi}], 'stable': [{sym,price,depeg_bp,circ_chg1d}], 'tvl': [{chain,drop_1d_pct,asof}], 'earnings_upcoming': [marks], 'auction_windows': [...]}",
+        "board_row_depth": "det['depth'] = {'dd_rank','knifebook','beta60','corr60','cot','earnings','si','auction'}（键不适用/无数据即省略，前端按缺键隐藏）"
+      }
+    }
+  },
+
+  "radar_add": {
+    "saya_constraints": "版式遵循鞘 SAYA v2：复用账本表格样式与 $ 元数据行（source · asof · 延迟徽章）；方角零圆角；动效不加（全站仍恰 4 种）；金不加（radar 页 --gold 使用数保持 0）；--blood 只用于 red 档图标不整行标红（面积纪律）；新增节全部 375px 零横滚",
+    "sections": [
+      {"id": "stable", "name": "稳定币脱锚监测", "place": "radar.html 资金费率极值节之后",
+       "content": "USDT/USDC/DAI 三行表：price（6 位）/ depeg_bp / 24h 流通变化 / warn·red 状态点；元数据行『DeFiLlama · 近实时（跑批 30 分钟口径）· 闸门判定=heavy 12h×2 确认』；red 触发时该节顶部灰条注明确认口径",
+       "data": "radar.json.depth.stable（radar 轻跑批直取）+ payload.gates.obs_gates 中 G-STABLE 状态"},
+      {"id": "tvl", "name": "链 TVL 异动", "place": "stable 节之后",
+       "content": "六链表：chain / TVL（$B）/ 单日降幅% / warn(-8)·red(-15) 状态点；只显示完整日口径，元数据行『DeFiLlama · 日更 · UTC 完整日（末位盘中点不用）』",
+       "data": "radar.json.depth.tvl（radar 直取）"},
+      {"id": "earn", "name": "财报临近榜", "place": "美股榜单节之后",
+       "content": "未来 5 个交易日 watchlist 命中表：ticker / 日期 / BMO·AMC / eps 预估 / 日期确认徽章（dateIsEstimate → 『日期为预估』灰徽）；与刀落板联动：板上 CATCH/STABILIZING 行若命中 → 行尾『财报引信』徽章；元数据行『Yahoo 日历 · 只做 5 日窗（远期大票缺席，实测）』",
+       "data": "payload.depth_market.earnings_upcoming（heavy 落盘，radar join）"},
+      {"id": "pcr", "name": "PCR 极值卡", "place": "日线暴动节之前",
+       "content": "四行（total/index/equity/vix）：现值 / z60 / 3 年分位（『92 分位』格式，n<252 显示『收集中 x/252』）/ G-PCR-EQ·G-PCR-IDX 观察闸状态点；元数据行『CBOE · EOD · 收盘后发布（周一午间仍是上周五属正常）· 观察闸不入刀锋指数』",
+       "data": "payload.gates.pctiles + payload.gates.obs_gates（heavy 落盘，radar join）"}
+    ],
+    "addendum": [
+      "闸门区（首页+雷达）：现有 8 主闸格下方加观察闸带（8 小格，obs_gates，每格 value+状态点+『观察』角标），VIX 主闸格与抽屉加分位角注『92 分位』",
+      "日线暴动节脚注加一行 global_sync：『全球股指同步度 k/11 跌超2% · asof …』（元数据行样式，不新增节）",
+      "COT 拥挤度入 T1F 行抽屉（z52 + net/OI + 周二 asof + 『周度·滞后3天』徽章）与 depth_market.cot_extremes 极值小表（挂日线暴动节内）"
+    ]
+  },
+
+  "jev_feed": {
+    "principle": "不加新调用（heavy 仍 ≤4 次 POST），问题集一字不动（J1-J5 instructions/criteria 文本 sha 固定，S6 验收断言）；只扩展 state 喂入的事实字段——模型看到更多事实，问题与结算口径不变（RL-6 安全）",
+    "J1_J2_state_facts_add": {
+      "where": "jev.py _candidate(det, heads) 的 facts dict",
+      "fields": {
+        "earnings_days_to": "int | null（≤5 交易日内有财报才有，来自 earnings_marks.json）",
+        "earnings_when": "'BMO'|'AMC'|null",
+        "cot_z52": "float | null（仅 T1F 且有映射）",
+        "days_to_cover": "float | null（仅个股且 FINRA 门已解锁；口径注意：双月旧数据，模型只作背景事实）"
+      },
+      "note": "null 键直接省略不发（省 token 且不误导）"
+    },
+    "J3_events_source_add": {
+      "where": "news.py fetch_macro_events() 的 union 段（seed ∪ Google News 之后追加，去重截 30 与排序逻辑不动）",
+      "sources": [
+        "财报临近：earnings_marks.json 中 watchlist 命中 → {'title': '{ticker} 财报（{when}）', 'days_to': n}",
+        "美债拍卖：auction_windows.json 的 10y/30y → {'title': '美债{bucket}拍卖 ${amt/1e9:.0f}B', 'days_to': n}",
+        "COT 极值：cot_latest.json 中 |z52| ≥ obs.cot.z_extreme → {'title': '{TK} 投机净头寸 {z52:+.1f}σ（52周）', 'days_to': 0}",
+        "脱锚事件：G-STABLE warn/red 当日 → {'title': '{SYM} 脱锚 {bp:.0f}bp', 'days_to': 0}"
+      ],
+      "cap": "总量仍 ≤30 条（days_to asc 排序后截断，seed/RSS 优先级不变——新事实排在同 days_to 的 RSS 条目之前）"
+    },
+    "no_touch": "J4/J5 state 不动；MAX_QUESTIONS=160、调用批次 Call-1..4、veto 规则、结算口径全部不动"
+  },
+
+  "build_order": [
+    {"step": 1, "owner_files": ["src/kw/fetchers/yahoo.py", "src/kw/fetchers/knives.py", "config.yaml", "data/state/params_registry.json"],
+     "do": "修 yahoo.fetch USX 6 元素解包 bug（裁决 D9，volume 保留）；config.yaml 加 t1s(20)/t1c(6)/t1f 补 3 条 + thresholds.sector_fall/credit_fall；knives.py 循环 grab T1S/T1C；params_registry 追加 18 条新参数（gates_add.params_registry_add 全表）",
+     "accept": "29 条新 kline 文件各 ≥600 根；OJ=F kline 为 USD 口径（~1.48 非 148）；board 出现 T1S/T1C 行且 cls 走新阈值；k.HYG/k.IEF 序列入库、blade_index 信用腿激活（credit_chg20 非 null）——此 diff 必须在提交说明中声明为补数据腿；RL-10 审计对新 registry 条目 pass"},
+    {"step": 2, "owner_files": ["src/kw/fetchers/depth.py"],
+     "do": "新写 depth.py 六腿：fetch_indicators（31 指标符号→move/vvix/skew/vix1d/rate.*/spread.3m10y/fx.*/gidx.*/ind.pa/semi.*）/ fetch_pcr+backfill_pcr / fetch_stablecoins / fetch_chain_tvl / earnings_marks / fetch_auctions / finra_short_interest（KW_ENABLE_FINRA 门）；标准 fetch() 契约聚合，每腿独立降级",
+     "accept": "本地跑一次：全部 store 键带 source+date/asof；PCR 未发布日返回 None 不报错；pcr_history.json/earnings_marks.json/auction_windows.json/short_interest.json（门关时不产）落盘；单腿断网其余腿照常"},
+    {"step": 3, "owner_files": ["src/kw/fetchers/cot.py"],
+     "do": "新写 cot.py：CODES 20 条实测映射、单请求 53 周、cot_z、cot_latest.json 落盘（含 published_lag 徽章文本）",
+     "accept": "1 次请求 ≈1060 行；2026-09-15 报告对拍 probe 样例 z 值 ±0.1（SB +3.0 / LE -2.34 / ZC +2.18 / 6J +2.15 / NG -1.89）；typo 字段 noncomm_postions_spread_all 按原样处理不报错"},
+    {"step": 4, "owner_files": ["src/kw/engine.py"],
+     "do": "engine 扩展：pct_rank / rolling_dd52 / dd_rank3y / beta_corr60 / knifebook_context / obs_gates(store) / build_depth(board, store, ctx)；market_gates 末尾挂 g['obs_gates'] 与 g['pctiles']；detect/step_state/blade_index 公式零改动",
+     "accept": "golden 对比：同库同 state 下 g['gates']/g['state']/g['blade_index'] 与改前逐字段一致（信用腿激活是第 1 步的数据 diff，不是本步的代码 diff——本步用第 1 步之后的库做基线）；obs_gates 8 条齐、display-only；pct_rank n<252 → None；board 行 depth 块按适用性出现/省略"},
+    {"step": 5, "owner_files": ["run.py", "src/kw/fetchers/radar.py"],
+     "do": "heavy 管线接 depth/cot fetcher（fetchers 循环加两模块）与 engine.build_depth；payload 注入 gates.pctiles/obs_gates/depth_market 与行级 depth；radar.py 轻跑批加 stable+tvl 快腿（只写 radar.json.depth，不写 store 不写 state）",
+     "accept": "heavy 全链本地实测时长增量 ≤ +120s（29 符号 + 6 新腿）；radar 实测仍 <150s 且 knife_states/vix_replay/ledger/所有 data/state 零改动；payload 合 depth_pack.payload_contract"},
+    {"step": 6, "owner_files": ["src/kw/fetchers/news.py", "src/kw/jev.py"],
+     "do": "jev_feed：_candidate facts 四字段 + fetch_macro_events 四事件源 union",
+     "accept": "J1-J5 全部 instructions/criteria 字符串 sha256 与改前一致（脚本断言）；heavy Jev 调用数仍 ≤4、MAX_QUESTIONS 仍 160；events ≤30；无 key 时全链行为与改前字节级一致"},
+    {"step": 7, "owner_files": ["templates/*", "docs 渲染产物"],
+     "do": "前端：radar.html 四新节 + 观察闸带 + 分位角注 + 行级 depth 徽章（财报引信/拍卖窗/COT 拥挤/轧空燃料/无 COT 映射/收集中）+ global_sync 脚注行；全部复用账本表格与 $ 元数据行",
+     "accept": "375px 零横滚零控制台错误；动效审计仍恰 4 种；金审计 radar 页=0；每个新数字均带 source+asof+延迟徽章（逐节目检清单过一遍 honesty 节）；缺键（si/cot/depth 任一为空）时对应列/徽章整体隐藏不留空壳"},
+    {"step": 8, "owner_files": [".github/workflows/daily.yml", "PROGRESS.md", "data/state/depth_spec.json 状态回写"],
+     "do": "Actions 实跑验证：dispatch heavy 一次，核对 PCR/DeFiLlama/COT/FiscalData 机房全绿；FINRA 首跑实测（临时置 KW_ENABLE_FINRA=1 dispatch）通过后正式写入 daily.yml env 解锁（裁决 D7），失败则保持门关并在机房页记『FINRA 机房不可达』；PROGRESS.md 记录 blade_index 信用腿激活声明；按仓库惯例发版",
+     "accept": "机房日志各源 ok 或如实 degraded；FINRA 结论二选一落档；观察闸上墙且 BladeIndex 与主闸行为与 v1.2 一致（除已声明的信用腿数据 diff）；24h 双 heavy + 48 radar 无红跑"}
+  ],
+
+  "honesty": [
+    "PCR：EOD 口径，CBOE 收盘后发布（实测周一午间仍是上周五值）——徽章『CBOE · EOD · asof YYYY-MM-DD』；未发布/非交易日=灰格 None，不是错误更不许伪造；页面结构改版正则失配→降级 HTML 表解析→再失配整节灰",
+    "COT：周二持仓、周五 15:30 ET 发布——徽章『周度 · 持仓日周二 · 滞后 3 天』；z 窗 52 周；RB/HO/OJ 无映射如实标『无 COT 映射』",
+    "财报日历：dateIsEstimate=true → 『日期为预估』徽章（date_confirmed 反转）；只做未来 5 个交易日窗——远期日历美股大票缺席是实测事实，做远期榜=撒谎",
+    "FINRA 空头面：双月结算、发布滞后约 9 个工作日——徽章『双月 · 滞后约9工作日 · 结算日 YYYY-MM-DD』并显示 staleness 天数；机房首跑验证通过前整列不存在（KW_ENABLE_FINRA 门）",
+    "链 TVL：末位数据点是今日未完盘中值——单日降幅一律用倒数第 2/3 完整日，asof=完整日，徽章『日更 · UTC 完整日』",
+    "稳定币：雷达现值=30 分钟跑批口径只显示；G-STABLE 闸门判定=heavy 12h×2 连续确认口径——两处徽章分别写明，不得混用",
+    "asof 滞后族：^MOVE/^SKEW/^KS11/^TWII/^AXJO 常态落后 1 交易日——一律按 asof 入库（现有机制已覆盖），观察闸与展示勿假设 T+0",
+    "RUB=X：制裁后离岸指示性报价——只做方向显示，禁止精确阈值；CNY=X 标『在岸 CNY 口径』（CNH 离岸腿实测死亡已禁用并留档）",
+    "PA=F：成交量字段 51.3% 缺失——量能类字段与规则全面禁用，仅价格指标",
+    "分位数：n<252 观测一律『收集中 x/252』不显示分位（RL-4 精神延伸）；资金费率云端 OKX 序列 2026-09-22 起攒，将长期『收集中』属正常，如实显示",
+    "美债拍卖：auctions_query 只含『已公告场次』（公告提前 5-8 天）——两周窗后半段 10y/30y 可能暂缺，页面注明口径，不虚构远期场次；od/upcoming_auctions 端点已死勿用",
+    "BladeIndex 信用腿：实查 v1.0 起 k.HYG/k.IEF 从未入库、sev_credit 恒 0——本版补上数据腿后指数数值会变；这是补缺失数据不是改公式，PROGRESS 与机房页必须声明（裁决 D2）",
+    "观察闸：8 道全部标『观察闸 · 不入刀锋指数』角标；治理红线原文（gates_add.governance_redline_verbatim）渲染在复盘室参数法庭节",
+    "所有新数字：source + asof + 延迟徽章三件套缺一不可；双口径统计与 Wilson 区间等既有诚实闸门（radar_spec honesty_gates 12 条）对新页面新数字继续全量适用"
+  ]
+}

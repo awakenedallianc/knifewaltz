@@ -1,0 +1,340 @@
+{
+  "meta": {
+    "title": "S 级精准度规格（precision_spec）v1 · 总架构师合成定稿",
+    "project": "D:\\knifewaltz",
+    "date": "2026-09-22",
+    "goal_ref": "NS-70：S 级 precision@budget ≥0.70（A 档执行口径），月放行 ≤5，abstention_ok=true，宁缺毋滥；同时按 goals.json 语义调和——每月 Top5 永远交付，逐个诚实分级，precision 只对标 S 者计入",
+    "baseline": {"atier_win_rate": 0.367, "n": 30, "wilson95": [0.22, 0.55], "mean_pct": 4.89, "worst_pct": -4.32, "source": "vix_replay.json vix36 atier（36 年自算）", "required_lr_point_estimate": 4.0, "sensitivity": "基线 n=30 区间宽：真实基线=0.22 则需 LR≈8.3、=0.55 则需 LR≈1.9——LR≥4 只是点估计工作假设，达标判据仍以 NS-70 滚动 30 笔实测为准"},
+    "inputs": ["挖掘员：48 切片历史挖掘（32% 假阳性预算如实申报）", "选择器设计师：H1-H9 硬条件 + 配给状态机 + ledger schema", "结算与展示设计师：判定环/配给卡/S 级战绩/归因闭环/用字"],
+    "principle": "S 层是 run_engine 之后的只读覆盖层（overlay）：零改动状态机/闸门/KnifeScore/CATCH 语义；放行只发生在 heavy 跑批；radar（contents:read）物理上不可能写配给台账；运行时零大模型",
+    "governing_docs": ["data/state/goals.json NS-70", "data/state/radar_spec.json honesty_gates + RL-1..10", "data/state/params_registry.json（RL-9/10 管辖）"]
+  },
+
+  "adjudications": [
+    {"id": "A1", "ruling": "文件命名统一 stier_ 前缀（选择器的 s_tier_ledger.json 定名为 stier_ledger.json，与 src/kw/stier.py、scripts/stier_replay.py、stier_replay.json 一致）；params_registry 键名保留选择器的 s_tier.* 命名空间"},
+    {"id": "A2", "ruling": "硬条件采选择器 H1-H8 为唯一定稿。展示方 S-R 环与之冲突处逐条裁决：S-R6 score>=80 不采（80 入预注册网格由法庭裁）；S-R4 仅 A 档不采（保留 H5 的 B 族走 B 档资格线路线）；S-R5 p_terminal<0.35 不采（取更严的 0.15）；S-R7 capitulation 必须项不采——挖掘员实证 hammer 在 T1 3 年 0 触发（vol_climax_ratio=3.0 为死条件，作硬条件将令 S 物理上不可放行）；capitulation 降为软分切片维度 cap_class，3.0→2.5 列参数法庭议题（网格内已有 2.5）"},
+    {"id": "A3", "ruling": "挖掘员唯一形式「证据」级切片（FLIP-BACK 开窗等待>=3 交易日，n=10，70.0%，Wilson [0.397,0.892]）不进硬条件：n=10 属小样本，且 48 切片挖掘下至少一个假阳性的概率约 32%——按裁决原则「样本小的组合宁可放进假想配给回放先跑 12 个月」，定为 H10 影子闸 + 假想配给回放首要对照臂，影子记账满 12 个月后走季度 walk-forward 法庭"},
+    {"id": "A4", "ruling": "「1-3 日未破位」61.1% 切片为事后分解不可交易——不进任何条件，只用于损失来源展示；其可交易替身「确认 2 日未破位」50.0%（n=20，线索）进观察名单"},
+    {"id": "A5", "ruling": "全部线索级切片（close_pos>=0.5 n=5、VIX∈[40,45) n=10 50%、触发日振幅、T1 ck_n 反向、gate RED 反向、刀谱 B 族 0/6）只进观察名单或软分，如实标「线索」，一律不上硬条件"},
+    {"id": "A6", "ruling": "判定环由展示方的 7 格改为 8 格（H1-H8）：环=硬条件的可视化，格数随硬条件数；影子闸 H9-H11 单列「影子」行不进环"},
+    {"id": "A7", "ruling": "precision 达标窗口以 NS-70 原文「滚动最近 30 笔」为准；展示方的滚动 12 个月表仅作展示辅助，不作达标判据"},
+    {"id": "A8", "ruling": "宁缺毋滥与「每月必出 Top5」按 goals.json 语义调和共存：Top5 永远交付（funnel_spec 管道责任），逐个诚实分级（达 S 标 S / 不达标标「当月最优·未达 S」+ 差哪条），precision 统计只对 S 计入，5 个的结局照样逐笔公示"},
+    {"id": "A9", "ruling": "明令不做（采纳挖掘员结论）：盲等 N 日再入场（无效且加深最差）；提高 VIX 档位到 45/50 当 S 条件（A 档口径反而更差：23.1%/16.7%）；直接采信本轮任何切片改参数（32% 假阳性预算）"},
+    {"id": "A10", "ruling": "挖掘员 H2（触发日 close_pos<0.2 为早止损 10 轮中 9 轮共同前兆，线索级）定为 H11 影子闸；其等价形态「X-STOP 锚=min(触发日低, 前 3 日低)」进每周最差归因反事实，均不改现行止损"}
+  ],
+
+  "s_tier_rules": {
+    "tiering": {
+      "S": {"name": "绝佳（本月配给）", "def": "当日新开 CATCH 窗 + H1-H8 硬条件全过 + 月配给未满，经软分排序放行；进首页配给卡与 stier_ledger.json", "monthly_max": 5},
+      "A": {"name": "合格接刀窗", "def": "state==CATCH 的现有语义完全不变；S 只是 A 的子集标注，不改任何 A 级行为/统计"},
+      "B": {"name": "观察", "def": "STABILIZING，或 CATCH 但硬条件未全过（含 S 候补之外的落选者）；如实展示未过哪条"},
+      "C": {"name": "雷达噪音层", "def": "KNIFE_FALLING / movers 榜 / 日线暴动等雷达展示层，不进状态机判定的一律 C"}
+    },
+    "hard_conditions": [
+      {"id": "H1", "rule": "state=='CATCH' 且 st['since']==today（当日 heavy 新开窗）。窗内后续跑批不再补判 S——放行时刻唯一，杜绝择时挑肥拣瘦", "computable": "knife_states.json"},
+      {"id": "H2", "rule": "checklist_valid_n = 非 None 项数；required = s_tier.checklist_min(4) 若 valid==5，否则 = valid（无量能符号须全过，保守）；checklist_n >= required", "computable": "engine.detect checklist（None=跳过项）"},
+      {"id": "H3", "rule": "tier_time ∈ {'A','B'}（期货 a_tier_only 只可能走 A）", "computable": "engine.detect"},
+      {"id": "H4", "rule": "非死区：tier_time != 'DEAD_ZONE'（H3 已蕴含，独立列出便于逐条公示）", "computable": "engine.detect"},
+      {"id": "H5", "rule": "Jev J1：payload.jev.enabled==true 且该 key 有 triage；p_terminal < s_tier.j1_p_terminal_max(0.15)；且（family != 'B_fundamental_repricing'，或 family=='B' 且 tier_time=='B' 且 dd250<=-60 走 B 档路线）。Jev 不可用/未覆盖 → 不放行 S（jev_unavailable_policy='no_grant'，方向保守只可能少放），页面标「Jev 不可用·本月 S 配给暂停」；A/B/C 分级与全站其余行为不变", "computable": "jev_semantic_gate.json / payload.jev.triage"},
+      {"id": "H6", "rule": "市场闸门 gates['state'] ∈ {'GREEN','FLIP_BACK'}", "computable": "engine.market_gates"},
+      {"id": "H7", "rule": "流动性/仙股/粉单闸：equity/equity_index 需 px>=2.0 USD 且 20 日均成交额(close×volume 均值)>=1e7 USD 且属 T1/T2 白名单池（SP500∪NDX100，天然无粉单）；crypto 需 quoteVolume>=2e7（复用雷达门槛，T1 BTC/ETH 恒过）；futures 为 T1F 实测白名单恒过、无量能符号在卡上标注", "computable": "kline + radar 门槛"},
+      {"id": "H8", "rule": "KnifeScore >= s_tier.score_min(65)", "computable": "engine.detect score"}
+    ],
+    "shadow_gates": [
+      {"id": "H9", "name": "切片 LR 影子闸（默认关闭）", "rule": "lr_gate_enabled==true 时要求命中切片 grade=='证据'(n>=10) 且 lr >= s_tier.lr_min(4.0)；启用唯一通道=季度 walk-forward 法庭。关闭期间仅记录「若启用会拦谁」", "source": "data/state/slice_lr.json（挖掘员 train 窗 1990-2013 产出，预注册维度）"},
+      {"id": "H10", "name": "FLIP-BACK 开窗时点影子闸（挖掘员最强假设，A3 裁决）", "rule": "s_tier.h10_flipback_age_min_days>0 时要求 gates['state']=='GREEN'，或 =='FLIP_BACK' 且 flip_back_age_days >= 该值(3)。当前值 0=不拦截，只落 shadow 字段 would_block+读数；须由 engine.market_gates 落盘 flip_back_age_days（gates_prev 边沿计龄，实现要求见 build_order）", "evidence_status": "形式证据 n=10 [0.397,0.892]，实质最强假设（48 切片挖掘、约 32% 假阳性预算）——12 个月影子记账 + 假想回放对照臂后进法庭"},
+      {"id": "H11", "name": "触发日 close_pos 影子闸（早止损前兆，线索级，A10 裁决）", "rule": "s_tier.h11_close_pos_min>0 时要求触发日 (close-low)/(high-low) >= 该值(0.2)。当前值 0=不拦截，只落 shadow 字段。前兆依据：X-STOP@1-2 日的 10 亏损轮中 9 轮 close_pos<=0.18（光脚阴线收底），VIX 轨迹无区分力", "evidence_status": "线索（n=10 事后共性，非独立切片检验）"}
+    ],
+    "soft_score": {
+      "formula": "soft = 0.40*(KnifeScore/100) + 0.25*J4_prior + 0.35*lr_norm，权重预注册 s_tier.softscore.weights",
+      "lr_norm": "lr_norm = clip01(0.5 + 0.5*log2(lr)/3)，即 lr=1→0.5 中性、lr=8→1.0、lr=1/8→0.0",
+      "slice_key": "预注册切片维度写死为 (J1_family, gate_state, tier_time, cap_class∈{hammer,climax,none}, cls)——维度集固定即禁止事后挑切片；挖掘员只在 train 窗(1990-2013)生成 slice_lr.json，每切片必带 {n, wins, win_rate, wilson95, lr}",
+      "missing_rules": "切片 n<10 → lr=1.0 中性且 grade='线索'（只能标线索不能标证据）；J4 缺失 → J4_prior=0.5 中性并标记；任一中性代入均在 entry.slice/entry.jev 里如实落盘；slice_lr.json 缺文件 → lr 全中性照常运行",
+      "usage": "软分只做同跑批内合格者的放行排序、Top5 排名补足与展示，绝不回写 score/状态机/ledger.json 主台账"
+    },
+    "watchlist_clues": [
+      {"clue": "确认 2 日未破位第 2 日收盘入场", "n": 20, "win": 0.50, "wilson95": [0.299, 0.701], "note": "放弃 10 轮；确认 3 日反降至 38.9%"},
+      {"clue": "触发日 close_pos>=0.5 直接入场", "n": 5, "win": 0.80, "wilson95": [0.376, 0.964], "note": "均值 +14.09%、最差 -2.34%，n 太小"},
+      {"clue": "vix36 内部 VIX∈[40,45)", "n": 10, "win": 0.50, "wilson95": [0.237, 0.763], "note": "VIX>=45 段 0/4"},
+      {"clue": "触发日振幅<中位(3.4%)", "n": 15, "win": 0.60, "note": "巨震日入场易被止损扫掉（>=中位 2/15）"},
+      {"clue": "T1 ck_n=0 反向（81.0% n=21）与 gate RED 反向（79.2% n=24）", "note": "fwd20 无止损口径≠A 档口径，且 3 年单一 regime——只证明 checklist 权重需重检，不证明反向可用"},
+      {"clue": "刀谱 B 族 -30% 后再挨刀可容忍率 0/6 [0,0.39]", "note": "方向与 A/B 档设计一致；18 例中 9 例缺 buy_minus30_further_dd_pct，补数后验证集翻倍（build_order 列任务）"}
+    ],
+    "decision_pseudocode": [
+      "def s_adjudicate(det, st, gates, jev, slice_lr, P, today):   # heavy 跑批、run_engine 与 jev.catch_prior 之后调用",
+      "    if os.environ.get('KW_RADAR')=='1': return SKIP('radar 永不判 S')",
+      "    if st['state']!='CATCH' or st.get('since')!=today: return NOT_S('H1 非当日新开 CATCH 窗')",
+      "    valid = [k for k,v in det['checklist'].items() if v is not None]",
+      "    need = P['s_tier.checklist_min'] if len(valid)==5 else len(valid)",
+      "    if det['checklist_n'] < need: return NOT_S('H2 checklist 不足')",
+      "    if det['tier_time'] not in ('A','B'): return NOT_S('H3/H4 时间档非 A/B')",
+      "    if jev is None or not jev.get('enabled'): return NOT_S('H5 Jev 不可用→S 配给暂停（保守）')",
+      "    t = (jev.get('triage') or {}).get(det['key'])",
+      "    if t is None: return NOT_S('H5 J1 未覆盖')",
+      "    if t['p_terminal'] >= P['s_tier.j1_p_terminal_max']: return NOT_S('H5 终局刀嫌疑')",
+      "    if t['family']=='B_fundamental_repricing' and not (det['tier_time']=='B' and det['dd250']<=-60):",
+      "        return NOT_S('H5 B 族只走 B 档资格线')",
+      "    if gates['state'] not in ('GREEN','FLIP_BACK'): return NOT_S('H6 闸门未放行')",
+      "    if not liquidity_ok(det): return NOT_S('H7 流动性/仙股闸')",
+      "    if det['score'] < P['s_tier.score_min']: return NOT_S('H8 KnifeScore 不足')",
+      "    # ---- 影子闸：只记录不拦截（除非法庭已启用），每一条落 shadow 字段 ----",
+      "    sl = lookup_slice(slice_lr, t['family'], gates['state'], det['tier_time'], cap_class(det), det['cls'])",
+      "    lr, grade = (sl['lr'],'证据') if sl and sl['n']>=P['s_tier.slice_evidence_min_n'] else (1.0,'线索')",
+      "    shadow = {}",
+      "    shadow['H9']  = {'would_block': grade!='证据' or lr < P['s_tier.lr_min'], 'lr': lr, 'grade': grade}",
+      "    fb_age = gates.get('flip_back_age_days')",
+      "    shadow['H10'] = {'would_block': gates['state']=='FLIP_BACK' and (fb_age is None or fb_age < 3), 'flip_back_age_days': fb_age}",
+      "    cp = close_pos(det)   # (close-low)/(high-low) 触发日",
+      "    shadow['H11'] = {'would_block': cp is not None and cp < 0.2, 'close_pos': cp}",
+      "    if P['s_tier.lr_gate_enabled'] and shadow['H9']['would_block']: return NOT_S('H9 切片 LR 硬闸（法庭启用后生效）')",
+      "    if P['s_tier.h10_flipback_age_min_days'] > 0 and shadow['H10']['would_block']: return NOT_S('H10 开窗时点闸（法庭启用后生效）')",
+      "    if P['s_tier.h11_close_pos_min'] > 0 and shadow['H11']['would_block']: return NOT_S('H11 close_pos 闸（法庭启用后生效）')",
+      "    j4 = (jev.get('catch_prior') or {}).get(det['key'], 0.5)",
+      "    w = P['s_tier.softscore.weights']",
+      "    soft = w[0]*det['score']/100 + w[1]*j4 + w[2]*clip01(0.5 + 0.5*log2(max(lr,0.125))/3)",
+      "    return QUALIFIED(soft=soft, lr=lr, grade=grade, shadow=shadow, hard_pass={'H1'..'H8': True})",
+      "",
+      "def s_grant(qualified, L, P, today):   # L = stier_ledger.json",
+      "    if L['month'] != today[:7]: L = roll_month(L)   # 归档入 history，used=0，entries=[]，不结转",
+      "    qualified.sort(key=lambda q: (-q.soft, -q.lr, -q.det['score'], q.det['dd52w']))   # dd52w 越深越先",
+      "    for q in qualified:",
+      "        eid = 'S-' + today.replace('-','') + '-' + q.det['key']",
+      "        if any(e['id']==eid for e in L['entries']): continue          # 同日重跑幂等",
+      "        if any(e['key']==q.det['key'] and e['status']=='GRANTED' for e in L['entries']):",
+      "            append(L, q, status='CANDIDATE', reason='per_key_month_max'); continue",
+      "        if L['used'] >= P['s_tier.monthly_max']:",
+      "            append(L, q, status='CANDIDATE', reason='quota_full'); continue",
+      "        L['used'] += 1",
+      "        append(L, q, status='GRANTED', entry_px=st['catch_ref_price'], stop_px=st['catch_day_low'], expires=st['expires'])",
+      "    save(L)   # daily.yml git add data/state 自动提交"
+    ]
+  },
+
+  "budget_machine": {
+    "ledger_file": "data/state/stier_ledger.json（A1 定名；daily.yml git add data/state 自动提交；>24 个月 history 轮转至 stier_archive_{YYYY}.json，永不删除）",
+    "month_states": {
+      "OPEN": "used < monthly_max：合格者按软分排序放行",
+      "FULL": "used == monthly_max：新合格者一律 CANDIDATE（S 候补），如实展示不占额",
+      "CLOSED": "heavy 跑批 run_date 进入新月 → 旧月对象整体压入 history 归档；余额清零不结转（稀缺性语义：月末未用完作废）"
+    },
+    "entry_states": {
+      "GRANTED": "已放行占额（≙展示方 kind=live）→ settle 后追加 outcome{win|loss}，状态字段本身永不改写",
+      "CANDIDATE": "S 候补（quota_full ≙ 展示方 budget_shadow / per_key_month_max）→ 同样 settle，但结算进独立的候补口径，永不并入 S 精度（RL-7）",
+      "terminal": "无 REVOKED 态：GRANTED 不可撤销、CANDIDATE 永不追授为 GRANTED"
+    },
+    "edge_rules": [
+      "E1 月归属：month = heavy 跑批 run_date（Asia/Bangkok）的 YYYY-MM；CATCH 开窗日所在月占额，月末最后一日开窗照常占当月额度",
+      "E2 跨月窗口：CATCH 窗跨月不重算不补判——归属由开窗日唯一决定",
+      "E3 同标的同月重复开窗：每标的每月最多占 1 个配给（per_key_month_max=1）；第二次合格开窗 → CANDIDATE('per_key_month_max')",
+      "E4 同标的跨月新开窗：新月可再次占额（新窗口=新机会）",
+      "E5 配给耗尽后出现更优机会：不撤销不置换已放行者（先到先得，防事后偏好）；更优者 CANDIDATE 并展示其软分，周复盘公示「满额后出现的更高分候补」",
+      "E6 同一跑批合格者多于余额：按 (soft desc, lr desc, KnifeScore desc, dd52w asc=更深优先) 排序放行前 k 名，其余 CANDIDATE",
+      "E7 X-STOP 冷却后重新开窗：视为新窗口，但 E3 月内限额仍适用",
+      "E8 同日重跑/build-only 重跑：entry id = S-{YYYYMMDD}-{key}，幂等零重复占额；月滚动只在 run_date 进入新月的 heavy 跑批发生",
+      "E9 radar 跑批：永不判 S、永不写 stier_ledger.json（contents:read 物理保证）；雷达页只读展示 used/5",
+      "E10 Jev 不可用的跑批：当日不产生任何 GRANTED 也不产生 CANDIDATE（未完成判定≠候补），页面横幅如实标注",
+      "E11 无人工授 S 通道：jev_overrides.json 只影响 J1 veto 解除，不能直接制造 S；一切人工痕迹可在复盘室追溯",
+      "E12 月配给是上限不是指标：当月 0 放行是合格输出（abstention_ok）；used/5 与精准度同表公示，防「为用满而放」",
+      "E13 Top5 交付（A8 裁决，goals.json 语义调和）：每月 Top5 = GRANTED ∪ 按软分补足的最高分候选，永远交付 5 名；非 GRANTED 者标「当月最优·未达 S」+ 差哪条硬条件；Top5 排名产出归 funnel_spec 管道，S 判定与占额归本 spec——precision 只对 GRANTED 计"
+    ],
+    "revocation_rules": [
+      "R1 放行后触发 X-STOP：记败不撤销——配给已用，outcome.result='loss' 如实入精度分母；entry.annotations 追加 {type:'x_stop'}",
+      "R2 放行后 Jev veto 升级（后续跑批 p_terminal>=0.35 或 >=0.50）：annotations 追加 {type:'jev_escalation', p_terminal, d}，卡面血色徽章标注，但不改 status、不改 hard_pass 历史快照、不退配给",
+      "R3 放行后数据修正/退市：结算用最后可得价并标注（RL-8 同款）；entry 永不删除",
+      "R4 无任何「撤销/置换/追授」操作存在于代码路径中——防事后美化精度"
+    ],
+    "ledger_schema": {
+      "top_level": {"version": "s1", "month": "YYYY-MM", "max": 5, "used": "int，只计 GRANTED", "entries": "[entry]（本月，append-only）", "history": "[{month,max,used,entries}]（已关闭月份）"},
+      "entry": {
+        "id": "S-{YYYYMMDD}-{key}",
+        "date": "CATCH 开窗日", "run_ts": "ISO8601",
+        "key": "", "symbol": "", "cls": "equity|equity_index|crypto|futures|commodity", "tier_time": "A|B",
+        "status": "GRANTED|CANDIDATE",
+        "candidate_reason": "null|quota_full|per_key_month_max",
+        "entry_px": "st.catch_ref_price（开窗日收盘）", "stop_px": "st.catch_day_low", "expires": "引擎同款窗口到期日",
+        "knife_score": 0, "score_parts": {}, "checklist": {}, "checklist_n": 0, "checklist_valid_n": 5,
+        "jev": {"p_terminal": 0.0, "family": "", "confidence": 0.0, "catch_prior": "0..1|0.5 中性标记"},
+        "slice": {"key": "family|gate|tier|cap|cls", "lr": 1.0, "n": 0, "wins": 0, "wilson95": [0, 0], "grade": "证据|线索"},
+        "soft_score": 0.0,
+        "hard_pass": {"H1": true, "H2": true, "H3": true, "H4": true, "H5": true, "H6": true, "H7": true, "H8": true},
+        "shadow": {"H9": {"would_block": false, "lr": 1.0, "grade": "线索"}, "H10": {"would_block": false, "flip_back_age_days": null}, "H11": {"would_block": false, "close_pos": null}},
+        "params_version": "", "engine_sha": "", "features_sha": "sha256(canonical_json(...))[:16] 创建时写死（RL-3 同款）",
+        "annotations": "[{d, type: jev_escalation|x_stop|note, detail}] append-only，只加不改",
+        "outcome": "null | {result: win|loss, pnl_pct, exit, exit_bar, settled_at, caliber: 'A档执行=replay.atier_exec 同一段代码（RL-2）'}",
+        "hold252_pct": "null|number（双口径后补，honesty_gates 第 1 条）",
+        "attribution": "null|参数缺口|军规违反|数据缺陷|正常概率（败笔必填，review.attribute_stier 只写一次）",
+        "attributed_at": null,
+        "hypothetical": false
+      },
+      "write_ownership": "创建/占额=stier.py 唯一写者；outcome/hold252_pct=settle.py；attribution/attributed_at=review.py；annotations=heavy 跑批 append；其余任何写入路径=bug"
+    }
+  },
+
+  "settlement": {
+    "engine": "settle.settle_stier()：对未结 entries（GRANTED 与 CANDIDATE 一视同仁结算、分列统计）复用 replay.atier_exec(closes, ohlc, i_entry, max_bars=60)——36 年回测与实盘结算同一段代码（RL-2 技术保障）；退出规则即站点 X-EXIT-SET：X-STOP 收盘破 stop_px 全退 / X-TIME 15 日未新高退半、60 日全退",
+    "outcome_write": "只允许填 {outcome, hold252_pct, settled_at}；hold252_pct 满 252 交易日后补（双口径并列，honesty_gates 第 1 条）",
+    "precision_definition": {
+      "metric": "precision@budget = 已结 GRANTED 中 atier pnl_pct>0 的比例；分母=已结 GRANTED（CANDIDATE 与假想回放永不入，RL-7）",
+      "qualifying_window": "达标判据以 NS-70 原文为准（A7 裁决）：滚动最近 30 笔已结 GRANTED 胜率 >=0.70 且期望值(mean_pct)为正 且零红线违例——三条同时成立",
+      "display_aux": "滚动 12 个月月度表仅作展示辅助；任何宣称必配 Wilson 95% + mean_pct + worst_pct 三项同表（NS-70 军规）",
+      "collecting": "n<30 → 只显「收集中 x/30」不显精度（RL-4）；距可宣称还差 k 笔如实展示",
+      "time_honesty": "月配 <=5、A 档 60 日结算、宁缺毋滥 → n=30 预计 6 个月以上；页面长期显示收集中是设计的一部分而非缺陷；单靠 VIX 线前瞻积累 n=30 需数十年——必须多线（VIX 线 + T1 线 + 刀谱 B 族排除）并行记账，这是 goals.json 广域扫描的统计学理由"
+    },
+    "loss_attribution": "每一已结败笔（pnl_pct<0）强制四选一归因（与复盘室现口径逐字一致）：参数缺口/军规违反/数据缺陷/正常概率；周日 review.attribute_stier() 填一次（复用 attribute_worst 反事实做辅证），只允许写 {attribution, attributed_at} 两键；参数缺口→季度 walk-forward 候选、军规违反→纪律审计、数据缺陷→数据机房、正常概率→防过拟合记录；已结败笔未归因 → 周审计 SR-1 FAIL；禁止「差一点就」",
+    "calibrate": "calibration.json 增 s_tier 节：{granted:{n,win,win_rate,wilson95,mean_pct,worst_pct}, candidate:{同构}, rolling30:{n,win_rate,wilson95,conclusive}, used_by_month[], shadow_counterfactual:{H9,H10,H11 各 {evaluated,would_block,blocked_outcomes}}}；n<30 → conclusive:false；wilson 复用 replay.wilson",
+    "rule_counts": "S 评估分母公示（RL-5）：每月评估过的当日新开 CATCH 窗数、各 H1-H8 拦截计数、合格数、GRANTED/CANDIDATE 数——防收窄分母凑精度",
+    "red_lines_additions": [
+      {"id": "SR-1", "rule": "S 级已结败笔必须四选一归因；未归因即 FAIL", "check": "auto: reviews.stier.unattributed_losses==0"},
+      {"id": "SR-2", "rule": "月配给超发禁止：任一月 GRANTED 笔数 >5 即 FAIL；配给不滚存", "check": "auto: stier_ledger 按月计数"},
+      {"id": "SR-3", "rule": "S 级与全信号、实盘与候补/假想回放，任何合并统计视图即 FAIL", "check": "auto: calibrate 输出结构分列 + 渲染层无合并数据路径 + 周审计静态检查"},
+      {"note": "SR-1..3 写入 red_lines.json 并入复盘室红线表渲染（RL 表之后附表），FAIL 只用血色图标不整行标红"}
+    ]
+  },
+
+  "frontend": {
+    "quota_card": {
+      "位置": "雷达页第 1 节：页首口径行之下、实时爆动之上；数据口径 = heavy（每日两跑），卡上如实标注不冒充实时",
+      "版式": "账本语系（展示方 D1 定稿）：行高 32px 横格线、mono 数字右对齐、方角、L 角括号继承 .card；行首 .stier-seal 方章「S」（1px 描边墨色非金）",
+      "内容": "本月 Top5 表（E13）：GRANTED 行带 S 章 + 配给序号 第 x/5 笔 + 窗口 Dx/10 + 判定环 + KnifeScore + 失效价 + A 档进行中/已结；未达 S 行标「当月最优·未达 S」+ 差哪条硬条件（具体读数：现值/阈值）；quota_full 候补标「质量过·配给已满（候补口径另计）」",
+      "金纪律": "展示方 D2 定稿：仅「在窗 S 级 >=1」的日子判定行用 --gold（该页唯一金；平日雷达页金回 0）；S 章、CATCH 文字一律墨色/白",
+      "空态": "展示方 D4 定稿：配给与在窗与候补全空时只渲染 h2.sec + secmeta 两行（S 级 0/5 · 宁缺毋滥——无合格者即不放行），无卡片无巨字无倒计时无 CTA；注意 E13 下 Top5 排名仍由 funnel 节交付，S 配给空态只管 S 层"
+    },
+    "review_room_section": {
+      "位置": "复盘室新 h2 节「S 级战绩」，插在本周复盘与快照台账之间；本节零金（本页金已归本周判决行）",
+      "块1_月度precision卡": "月份 × used/5 × 逐笔（A 档结果 + 败笔血点 + 归因/待归因）× 月胜；底行：n>=30 时 滚动30笔胜率+Wilson+均值+最差，n<30 时 收集中 x/30 满 30 前不宣称精度（RL-4）；NS-70 距离行：目标>=70.0% + 达标判据原文照录",
+      "块2_实盘台账": "stier_ledger GRANTED 逐笔表（append-only · settle 只填 realized）：日期/标的/配给序号/判定环/A 档/出场/归因；候补（quota_full）另卡「候补口径 · 质量过但配给满 · 反事实不入 precision · 永不与实盘合并」",
+      "块3_假想配给回放卡": "标「挖掘 · 假设生成 · 非验证」；切片表每行必配 n + Wilson + 均值 + 最差 + 级别（n<10 强制线索）；不可算条件如实列示（无历史逐日 checklist/Jev 记录，缺席即不冒充）；与实盘台账永不合并（RL-7）",
+      "三列分立": "实盘 / 候补(budget_shadow) / 假想回放三口径分立渲染，任何合并视图即 bug（SR-3）"
+    },
+    "drawer_ring": {
+      "位置": "抽屉（标的档案）决策链条：企稳 checklist 卡之后、K 线卡之前插「S 级判定」卡；仅当 board 行携带 b.stier（state ∈ {STABILIZING, CATCH} 时 heavy 评估）才渲染",
+      "形态": "A6 裁决：「环」取「环节」义不画圆（SAYA 方角零圆角）——8 格 7px 方点横条（.ring8，对应 H1-H8）+ 逐条 ✓/─/缺席 明细；过=实心 var(--ink-dim)、未过=1px 描边空心 var(--line-hi)、缺席=1px 描边空心 var(--amber)（与校准页空心点「输入不足」语义一致）；每格 title 提示条目名；零动效",
+      "影子行": "H9/H10/H11 不进环，环下单列「影子」行：影子·不影响放行 + would_block 读数——把 12 个月影子记账过程摆在明面",
+      "判定行": "用 .verdict（11px mono 临床腔），不加粗无感叹号不用金（抽屉金仍归 CATCH 金点）；非 S 时给具体差距：差 Hx 名称（现值/阈值），多条时列首条+另差 n 条",
+      "css": ".stier-seal{display:inline-block;border:1px solid var(--ink-dim);padding:0 4px;margin-right:6px;font:600 10px var(--font-mono);letter-spacing:.08em;color:var(--ink)} .ring8{display:inline-flex;gap:2px;vertical-align:middle} .ring8 i{width:7px;height:7px;background:var(--ink-dim)} .ring8 i.off{background:none;border:1px solid var(--line-hi)} .ring8 i.ab{background:none;border:1px solid var(--amber)}（方角、无 transition，动效白名单零新增，审计仍恰 4 种）"
+    },
+    "display_chars": {
+      "增量字符": "月配给级宁缺毋滥",
+      "增量数": 8,
+      "说明": "只有 KW Serif 显示字体语境（h2.sec「本月配给」「S 级战绩」/ 月度卡 0 笔行「宁缺毋滥」）需要进子集；候补/归因/判定环等词只出现在 body/mono 不进子集",
+      "操作": "追加进 scripts/display_chars.txt 首段 → python scripts/subset_font.py 重生成 docs/assets/fonts/kwserif-black.woff2；构建期缺字审计（子集外 display 汉字===0）保持强制"
+    },
+    "payload_contract_stier_block": {
+      "rules_version": "s1", "month": "YYYY-MM", "used": 0, "max": 5,
+      "in_window": "[{key,symbol,name,seq_in_month,window_day,ring,score,stop_price}]",
+      "month_rows": "本月已入笔 ∪ 在窗（含 atier 进行中/已结）",
+      "candidates": "[{key,symbol,missing:[{id,name,now,need}],budget_blocked}]",
+      "ledger_live": "近 24 笔渲染切片", "ledger_shadow": "近 12 笔",
+      "precision": "{months[], rolling30:{n,win_rate,wilson95,mean_pct,worst_pct,collecting}}",
+      "ns70": "{target:0.7, verdict_rule:'滚动 30 笔 >=70% 且期望为正 且零红线违例'}",
+      "board_row_注入": "每个评估过的 board 行加 b.stier {admitted, budget_blocked, seq_in_month, window_day, ring, readings, missing, shadow, rules_version}（抽屉数据源，前端零推断）"
+    }
+  },
+
+  "hypothetical_replay": {
+    "purpose": "冷启动期的诚实基线：实盘 n<30 的头 6-12 个月，页面唯一能给读者的历史锚是假想配给回放——必须与实盘口径分列、必须标「挖掘·假设生成·非验证」、必须每切片配 n+Wilson",
+    "leg1_vix36y": {
+      "script": "scripts/stier_replay.py（离线一次性 + 季度随 walk-forward 重跑 + 周日 --weekly-review 增量；零 LLM）",
+      "inputs": ["data/state/vix_replay.json（36 年 vix36/45/50 三档逐轮 rows，含 hold252 与 atier）", "^GSPC 全史 ohlc（挖掘员 step1 已验证等值：重建轮次与 vix_replay 逐轮日期/结果一致，差<0.35pp）", "data/history.sqlite vix/vix3m（1990-2026，FLIP-BACK 窗仅覆盖 2009-09 后 15 轮——覆盖率如实标注）"],
+      "method": "对历史逐日重建可回算硬条件子集（H1-H4、H6-H8：闸门态由 vix/vix3m 重放、checklist 由 ohlc 回算、tier_time 由 days_from_peak），按同一套 s_grant 月配给 5/月 + E1-E8 规则跑假想配给，A 档结果用 replay.atier_exec（与实盘结算同一段代码，RL-2）",
+      "primary_control_arm": "H10「FLIP-BACK 开窗等待>=3 交易日」列为首要对照臂（A3 裁决）：主列不启用 H10 的假想配给 vs 对照列启用 H10——两列并排，均标 n+Wilson，均注明 48 切片挖掘约 32% 假阳性预算",
+      "honest_limitations": ["回放无历史新闻 → H5(J1) 与 J4 软分项不可回算：回放口径 = 硬条件子集，页面标「回放缺 J1/J4，与实盘口径不同」，两口径永不合并", "软分排序只在单月合格者>5 时起作用，历史上稀少——回放报告公示「排序实际生效的月份数」", "17 年 FLIP-BACK>=3 日线仅 10 次（约 0.6 次/年）——对照臂样本天花板如实展示"]
+    },
+    "leg2_shadow_12m": {
+      "what": "影子闸 12 个月前瞻记账（小样本假设的唯一转正通道）：H9/H10/H11 每次 heavy 对每个合格者与被拦者落 shadow 字段（would_block + 读数），calibrate 每周汇总 shadow_counterfactual",
+      "graduation": "满 12 个月或 shadow 样本 n>=10（以先到者），且 walk-forward 法庭验证通过 → 才允许把对应 s_tier.* 参数从禁用值改为启用值（RL-9/10 流程）；期间任何页面均标「影子·不影响放行」",
+      "also": "H11 的等价形态「X-STOP 锚=min(触发日低, 前 3 日低)」进每周最差归因反事实（复用 attribute_worst 机制），同期记账"
+    },
+    "leg3_t1_pooled": {
+      "what": "T1 标的 3 年 kline（docs/data/kline/*.json，58 标的）pooled 回放：仅作 pooled 口径，标的级不单列；pooled n<30 不下结论（收集中 x/30）；3 年单一 regime 的局限如实标注",
+      "book_task": "刀谱 18 例补齐 9 例缺失的 buy_minus30_further_dd_pct，把 B 族排除验证集从 9 扩到 18（挖掘员产出 4 号任务，进 build_order）"
+    },
+    "output": "data/state/stier_replay.json {computed_at, rules_version, hypothetical: true, mining_not_validation: true, caliber_note, applicable_rules, skipped_rules, months, grants_n, precision, wilson95, mean_pct, worst_pct, by_decade[], control_arm_h10:{同构}, monthly_budget_counterfactual:[{month,eligible,admitted}], sort_effective_months, rows[](hypothetical:true)}",
+    "page": "首年展示双列：「假想配给回放（backtest 口径）」vs「实盘配给（live 口径）」——RL-7 永不合并；实盘 n<30 期间精度栏只显「收集中 x/30」（RL-4）"
+  },
+
+  "build_order": {
+    "note": "funnel_spec.json（Top5 广域管道实施单，并行工作流产出，写盘时点可能晚于本 spec）——合并点 M1-M4 以本节为准；funnel 侧实施单落地时须回引本节编号",
+    "steps": [
+      {"step": 1, "do": "params_registry.json 附录 s_tier 节（照抄本 spec params_registry_additions）+ params_history 留痕", "owner": "人工（法庭流程）", "accept": "RL-10 校验通过；frozen 项与用户逐字指令一致"},
+      {"step": 2, "do": "src/kw/stier.py 新建：s_adjudicate / s_grant / load_ledger / roll_month / liquidity_ok / cap_class / close_pos；engine.market_gates 增 flip_back_age_days 落盘（gates_prev 边沿计龄，H10 影子闸依赖）", "owner": "stier.py 为 stier_ledger.json 唯一创建/占额写者", "accept": "E8 幂等重跑零重复占额；KW_RADAR=1 分支零触达"},
+      {"step": 3, "do": "run.py heavy 主流程插钩：engine.run_engine → jev.catch_prior → 【M1 funnel Top5 打分（funnel_spec 实施单对应步骤在此合并；funnel 读 stier 合格者与软分，stier 不读 funnel）】→ stier.s_grant → snapshot.capture（snapshots 增 stier 子块，features_sha 覆盖，RL-3）", "owner": "run.py", "accept": "--radar 分支不触达；快照含 stier 子块"},
+      {"step": 4, "do": "settle.py settle_stier()（复用 replay.atier_exec；GRANTED/CANDIDATE 分列）+ hold252 后补任务", "owner": "settle.py 只写 outcome/hold252_pct/settled_at", "accept": "【M2】若 funnel Top5 逐笔结算同源，必须共用同一 atier_exec 调用点（禁止第二份退出规则实现）"},
+      {"step": 5, "do": "calibrate.py s_tier 节 + review.py attribute_stier() + SR-1..3 写入 red_lines.json", "owner": "calibrate.py / review.py 只写 attribution 两键", "accept": "n<30 conclusive:false；SR 审计接入周复盘"},
+      {"step": 6, "do": "前端：app.js radarMarkup 配给卡【M3 与 funnel Top5 卡合一渲染（E13），S 层字段来自 payload.stier、Top5 排名来自 payload.funnel，同一张账本卡】/ reviewMarkup S 级战绩节 / openSym 抽屉判定环 / ring8+stier-seal CSS；display_chars +8 字 → subset_font.py", "owner": "app.js / app.css", "accept": "金审计：雷达页至多 1（仅在窗日判定行）；动效仍 4 种；缺字审计 0"},
+      {"step": 7, "do": "scripts/stier_replay.py 假想配给回放（leg1+leg3）+ 周日增量；输出 stier_replay.json；render 阶段复制 docs/data/ 瘦身版 stier_public.json", "owner": "stier_replay.py 全量重生成其输出（hypothetical:true 允许覆写）", "accept": "重建轮次与 vix_replay.json 逐轮等值校验通过；每切片 n+Wilson；skipped_rules 非空即渲染"},
+      {"step": 8, "do": "挖掘员任务：slice_lr.json（train 窗 1990-2013、预注册维度）+ 刀谱补齐 9 例 buy_minus30_further_dd_pct", "owner": "挖掘员产出，运行时只读", "accept": "缺文件时 lr 全中性照常运行；每切片必带 {n,wins,win_rate,wilson95,lr}"},
+      {"step": 9, "do": "观察 2 周 + PROGRESS.md 断点 + 按仓库惯例发版；影子记账启动日写入 goals.json iterations", "owner": "人工", "accept": "【M4】funnel_spec 实施单若调整 payload 结构，stier 块字段名以本 spec payload_contract 为准"}
+    ],
+    "file_ownership": [
+      {"file": "data/state/stier_ledger.json", "write": "stier.py（创建/占额/annotations）；settle.py（outcome/hold252_pct）；review.py（attribution）；其余写入=bug"},
+      {"file": "data/state/stier_replay.json", "write": "scripts/stier_replay.py 全量重生成（假想口径唯一允许覆写的文件）"},
+      {"file": "data/state/slice_lr.json", "write": "挖掘员（train 窗）；运行时只读"},
+      {"file": "data/state/params_registry.json / params_history.json", "write": "人工经季度法庭；stier.py 只读"},
+      {"file": "data/state/snapshots.json stier 子块", "write": "snapshot.capture（append-only，RL-3）"},
+      {"file": "data/state/red_lines.json SR-1..3", "write": "一次性登记；审计结果入 reviews.json"},
+      {"file": "docs/data/stier_public.json", "write": "render 阶段生成（去内部键瘦身版）"}
+    ]
+  },
+
+  "honesty": [
+    "统计不撒谎：所有精度必配 n 与 Wilson 95% 与 mean_pct 与 worst_pct 同表；切片 n<10 只能标「线索」不能标「证据」（s_tier.slice_evidence_min_n frozen）；n<30 只显「收集中 x/30」（RL-4）",
+    "S 级与全量分列：S 精度 / 候补(budget_shadow) / 假想回放三口径永不合并（RL-7 + SR-3）；A 级（CATCH）语义与全信号统计零改动",
+    "挖掘与验证分离：本轮 48 切片挖掘的 32% 假阳性预算公开记录在案（A3）；切片维度预注册、LR 表只产自 train 窗、任何影子闸转正唯一通道=12 个月影子记账 + 季度 walk-forward 法庭（RL-1/9/10）；禁止同一数据既挑切片又宣称精度",
+    "小样本纪律：唯一形式「证据」级切片（n=10）不上硬条件，进假想配给回放对照臂先跑 12 个月——宁可慢，不可假",
+    "分母公示：每月 S 评估数、各 H 条拦截数、合格数与 used/5 同表公示（RL-5），防收窄定义凑精度、防「为用满而放」（E12）",
+    "不可篡改：entry append-only + features_sha + annotations 只加不改（RL-3/8）；无撤销/置换/追授代码路径（R4）；败笔强制四选一归因，禁止「差一点就」（SR-1）",
+    "结算同源：每笔 S 级与 36 年回测同用 replay.atier_exec 同一段代码（RL-2）；双口径 hold252 后补并列（honesty_gates 第 1 条）",
+    "保守降级：Jev 缺失只可能少放 S 绝不多放（no_grant frozen）；radar 跑批零写入（contents:read 物理保证）；运行时零大模型，S 判定全为纯规则计算",
+    "时间诚实：达标判据靠单线前瞻积累需数十年，多线并行记账（VIX 线 + T1 线 + 刀谱 B 族排除）是唯一出路；页面长期「收集中」是设计而非缺陷；假想回放首年是读者唯一历史锚，必须标「挖掘·假设生成·非验证」",
+    "明令不做（A9）：盲等 N 日、提高 VIX 档位至 45/50 作 S 条件、直接采信本轮切片改参数"
+  ],
+
+  "params_registry_additions": {
+    "s_tier.monthly_max": {"current": 5, "grid": [5], "frozen": true, "basis": "用户指令 NS-70 逐字：月不超过 5"},
+    "s_tier.per_key_month_max": {"current": 1, "grid": [1], "frozen": true},
+    "s_tier.carryover": {"current": "none", "grid": ["none"], "frozen": true},
+    "s_tier.checklist_min": {"current": 4, "grid": [4, 5], "frozen": false},
+    "s_tier.score_min": {"current": 65, "grid": [55, 65, 75, 80], "frozen": false, "note": "80 档位=展示方提案并入网格（A2），由法庭裁"},
+    "s_tier.j1_p_terminal_max": {"current": 0.15, "grid": [0.1, 0.15, 0.2], "frozen": false},
+    "s_tier.softscore.weights": {"current": [0.4, 0.25, 0.35], "grid": [[0.4, 0.25, 0.35], [0.5, 0.2, 0.3], [0.34, 0.33, 0.33]], "frozen": false},
+    "s_tier.lr_gate_enabled": {"current": false, "grid": [false, true], "frozen": false, "note": "H9 启用唯一通道=季度 walk-forward 法庭；启用前只记 shadow"},
+    "s_tier.lr_min": {"current": 4.0, "grid": [3.0, 4.0, 5.0], "frozen": false},
+    "s_tier.slice_evidence_min_n": {"current": 10, "grid": [10], "frozen": true, "note": "n<10 只能标线索——诚实规则不可调参"},
+    "s_tier.h10_flipback_age_min_days": {"current": 0, "grid": [0, 3, 5], "frozen": false, "note": "0=不拦截仅影子记账；3=挖掘员最强假设（A3）；启用走法庭"},
+    "s_tier.h11_close_pos_min": {"current": 0.0, "grid": [0.0, 0.2], "frozen": false, "note": "0=不拦截仅影子记账；0.2=早止损前兆假设（A10）；启用走法庭"},
+    "s_tier.liquidity.min_price_usd": {"current": 2.0, "grid": [2.0], "frozen": true},
+    "s_tier.liquidity.min_dollar_vol20_usd": {"current": 10000000, "grid": [10000000], "frozen": true},
+    "s_tier.liquidity.min_crypto_quote_vol_usd": {"current": 20000000, "grid": [20000000], "frozen": true, "note": "复用雷达门槛"},
+    "s_tier.jev_unavailable_policy": {"current": "no_grant", "grid": ["no_grant"], "frozen": true},
+    "court_agenda": ["vol_climax_ratio 3.0→2.5（hammer 3 年 0 触发=capitulation 20 分项恒为死项，网格内已有 2.5）", "checklist 门槛与权重重检（fwd20 口径无增益的线索，非证据）"]
+  },
+
+  "appendix_sources": {
+    "miner_essence": [
+      "方法声明：同一历史数据条件切片挖掘=生成假设非验证；约 48 切片，随机模拟下至少一个假阳性概率约 32%；判据预设：证据=n>=10 且 Wilson95 下界>0.367；重放先经等值校验（与 vix_replay.json 逐轮一致，差<0.35pp，复用 atier_exec）",
+      "基线：vix36 30 轮 11/30=36.7% [0.219,0.545]，均值 +4.89%，最差 -4.32%；达 70% 需约 4.0 倍似然比",
+      "唯一形式证据：VIX/VIX3M<1 开窗且等待>=3 交易日入场 n=10，70.0% [0.397,0.892]，均值 +8.01%、最差 -3.44%——17 年仅 10 次（约 0.6 次/年）；含挖掘自由度只能当最强假设",
+      "早止损前兆：X-STOP@1-2 日 10 亏损轮中 9 轮触发日 close_pos<=0.18（光脚阴线收底）；VIX 轨迹无区分力",
+      "反向发现：VIX 档位越高 A 档口径越差（36:36.7% / 45:23.1% / 50:16.7%，与 hold252 相反）；盲等 N 日无效且加深最差；T1 3 年 checklist 门槛在 fwd20 口径无增益、hammer 0 触发（vol_climax_ratio=3.0 死项）；gate RED 79.2% 为 fwd20 无止损口径且单一 regime，只标线索",
+      "刀谱：B 族 -30% 后再挨刀可容忍率 0/6 [0,0.39] vs A 族 2/3；9 例缺 buy_minus30_further_dd_pct 待补",
+      "叠加教训：C1+C2 等条件相关叠加互相抵消（每等一步止损锚变差）；样本天花板决定必须多线并行记账",
+      "建议产出：H1=开窗>=3 日 shadow 预注册；H2=close_pos<0.2 降级/锚改良反事实；参数法庭议题 vol_climax 2.5；刀谱补数；不做名单"
+    ],
+    "selector_essence": [
+      "S 层=run_engine 后只读覆盖层，零改动状态机/闸门/KnifeScore/CATCH 语义；radar 物理不可写配给",
+      "S/A/B/C 四级；硬条件 H1-H9（H1 当日新开窗唯一放行时刻 / H2 checklist 4/5 / H3-H4 时间档 A|B / H5 J1 p_terminal<0.15 + B 族 B 档路线 + Jev 缺失 no_grant / H6 GREEN|FLIP_BACK / H7 流动性仙股闸 / H8 score>=65 / H9 切片 LR 影子闸默认关）",
+      "软分 soft=0.40*score+0.25*J4+0.35*lr_norm，切片维度预注册五元组，n<10 中性线索；只做排序不回写",
+      "配给状态机 OPEN/FULL/CLOSED + 边界 E1-E12（月归属开窗日 / 不结转 / 每标的月 1 额 / 不撤销不置换 / 幂等 / 0 放行合格）；R1-R4 无撤销代码路径",
+      "ledger schema：append-only entry + features_sha + annotations 只加不改 + outcome 由 settle 填（atier_exec 同源）",
+      "冷启动：36 年假想配给回放（可回算子集，缺 J1/J4 如实标注，双列永不合并）；params 16 项预注册（monthly_max=5 frozen 等）"
+    ],
+    "display_essence": [
+      "精度提升三件事：组合硬条件 + 月配给强制排序 + 逐笔结算反馈；恐慌越深 A 档执行胜率越低的实证（36/45/50 递降）支持组合条件而非单一深度阈值",
+      "版式定稿：配给卡=账本不是名片（战绩名片是全站唯一亮底元素）；金纪律=仅在窗 S>=1 日判定行 1 处金；判定环=方点横条不画圆；空态两行登记不制造焦虑；动效零新增",
+      "结算闭环：settle_stier 复用 atier_exec(max_bars=60)；precision 必配 Wilson+均值+最差三项同表；败笔强制四选一归因（参数缺口/军规违反/数据缺陷/正常概率），未归因=周审计 FAIL，禁止「差一点就」",
+      "红线增补 SR-1 归因强制 / SR-2 超发禁止 / SR-3 合并视图禁止；显示字体子集 +「月配给级宁缺毋滥」8 字",
+      "时间诚实：满配一年才 60 笔，n=30 预计 6 个月以上，页面长期「收集中 x/30」是设计的一部分（0 个也是合格输出）"
+    ]
+  }
+}

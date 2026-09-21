@@ -1,0 +1,370 @@
+{
+  "spec": "刀尖舞 KnifeWaltz v1.3 「五百刀阵与决策链条」实施规格",
+  "version": "1.3.0",
+  "date": "2026-09-22",
+  "user_directive_verbatim": "数字货币和美股跟踪太少一定是各前500项，同时展现的概念和投资逻辑不太清楚，整个网页比较乱，可供查找完整链条的信息少，我要的是你雷达筛选出机会，我可以完整的看到你的决策链条及该投资标的物的所有信息，重分利用jev",
+  "synthesized_from": [
+    "宇宙500 实测报告（2026-09-22，本机曼谷出口；CoinGecko/CoinPaprika/OKX/Binance/Yahoo 全实测）",
+    "漏斗档案信息架构设计（v1.3 IA：漏斗条/导航重组/档案页九节/如何读页/鞘 SAYA 合规审计）",
+    "Jev 深化设计 v1.3（覆盖扩容 + J6/J7/J8 + 每标的 Jev 档案 + 预算降级总表）",
+    "data/raw/radar_research_cnhk.md（港股 88 + 中概 ADR 34 实测池，2026-09-22）",
+    "data/state/radar_spec.json v1.2（裁决 A1-A9 与诚实闸全部继承）"
+  ],
+  "depth_spec_status": "data/state/depth_spec.json 合成时不存在（glob 确认）——第 5 章按降级态收编，见 5_gates_depth",
+  "iron_rules": [
+    "运行时零大模型：Jev 只在 heavy/周日复盘离线跑批调用 typesafe，产出类型化概率落盘，绝不生成文字；档案页判定句与决策链条由跑批模板拼接/引擎逐环 emit 落盘，前端只显示、零规则计算",
+    "统计不撒谎：每个数字带 source+asof+口径徽章；胜率必配 Wilson 95% 与最差一次；双口径并列；n<30 只显示『收集中 x/30』（RL-4）；数据不够的节显示降级态文案，绝不伪装",
+    "全部数据源免费公开；未实测通过的源不进本规格；本机（曼谷出口）实测通过但 datacenter_status=unverified 的源必须过 build_order 第 1 步 Actions 机房探针（裁决 A5/A9 门延伸）才准生产接入",
+    "生产=GitHub Actions 美国机房：Binance 451 永不直连（仅本地种子通道）；OKX/Yahoo/CBOE/Deribit 生产在用（既有事实）；GitHub Pages 站点；actions/cache 持久化 sqlite+kline",
+    "不做自动交易，仍是研究/信号工具；v1.3 不改任何信号阈值与军规——crypto_fall 对 rank>100 收紧等参数变更走 RL-9/RL-10 预注册交 CAL 线，不在本规格先斩后奏"
+  ],
+
+  "architect_adjudications_v13": {
+    "note": "三份设计与 cnhk 报告的冲突处，总架构师裁决如下。实施工程师以本节为准，各章已按裁决改写。",
+    "B1_美股前500口径": "『美股前 500』= 现有 breadth 池 SP500∪NDX100 = 503 只（已实测、已入 sqlite），不新接『按市值 top500』榜单源（quoteSummary/其它市值源未实测，不进规格）。页面口径徽章注明『美股宇宙 = 标普500∪纳指100 成分』。",
+    "B2_加密500以cg_id为主键分四层": "宇宙500 报告的诚实分层定稿（C-FULL/C-SEED/C-LIST/C-STABLE，见第 1 章）；『前 500 全 K 线』物理上不成立是口径声明不是缺陷，页面逐币标注通道与口径。",
+    "B3_BTC_ETH单一事实源": "加密 top500 里与 T1 重复的 BTC/ETH 两行，universe.json 的 key 指向现有 T1 key（BTC-USD/ETH-USD，Yahoo 通道），不建 cg_ 双通道；CG 榜单行只 join 展示 mcap/rank。",
+    "B4_港股中概并入宇宙": "cnhk 池 122（恒指 88 + ADR 34）整体并入，全部 engine=full（bars 736/752 实测达标）；T3 定义闸剔除者（小盘流动性 NOAH/MOMO/FINV/LX、仙股<$2 IQ/LX/RLX、粉单 DIDIY）tier=ORNAMENT——照常建档案与链条，判定恒为『观赏刀 · 永不发信号』。预筛采纳 cnhk 建议：池小直接 -60 单级筛，-50~-60 做『接近资格线观察名单』展示层；B 档 -60/250 日军规不动。",
+    "B5_回填相位合并": "cnhk 122 并入 backfill 状态机的 stocks 相位（同 Yahoo chart 通道，channel_universe('stocks') = US503 + HK88 + ADR34 = 625）。",
+    "B6_档案页e节以Jev深化为准": "漏斗档案设计的 e 节 markup 作 statgrid 首卡；数据层与 e1-e4 布局以 Jev 深化 part3（jev_profiles.json）为准。J7 弱环标注入 b 节、J8 分歧徽章入 f 节、J6 case_map 入 i 节。",
+    "B7_J8类型规范化": "J8 类型按 Jev 深化的裁定取 bool（typesafe 合法类型），新增 _bool_val 解析器。",
+    "B8_mcap诚实缺口": "cnhk 发现存量 bug：Yahoo chart meta 无 marketCap → knives.py:147 mcap 恒 None、spec_core.json:257 不成立。裁决：美股/港股/中概 universe 行 mcap=null + 徽章『$ 无免费已实测市值源』；加密行用 CG mcap；中概 T2 市值闸用 cnhk 固化清单人工分层替代；bug 与出处记 PROGRESS.md。",
+    "B9_spark回归结论写回": "裁决 A6 预注册的 spark 回归已完成：≤20 符号/请求、仅收盘、无 OHLCV——『可作广度收盘快路（26 请求），不得作为 kline 源』，build_order 第 12 步写回 radar_spec.json A6 注记。v1.3 不启用 spark。",
+    "B10_探针失败降级链": "CG 榜单探针不过→退 CoinPaprika（/v1/tickers 单请求）；两者皆不过→加密宇宙退化为『OKX 交易对池 + 现有 T1 crypto』，榜单层显示降级文案并标 asof；OKX history-candles 探针不过→全量回填禁用、仅日增量（既有 candles 通道），span 如实缩短。",
+    "B11_universe与profile只由heavy产出": "radar 跑批 contents:read（裁决 A1 延伸）：universe.json/profile/*/jev_profiles.json 全部 heavy 落盘；radar 只透传 cache 内既有文件到部署，可从 universe.json 快照现算 payload.funnel 计数但口径徽章恒注『跑批口径』。",
+    "B12_双端同文契约": "verdict 判定句模板与决策链条降级拼装模板，后端（render.py/engine.py）与前端（app.js 降级路径）必须逐字同文，契约写入 PROGRESS.md；改一处必改两处。"
+  },
+
+  "1_universe": {
+    "totals": {
+      "layers_sum": "T1 21 + T1F 20（含 2026-09-21 补测通过的 ES/NQ/ZB）+ 美股 503 + 港股 88 + 中概 ADR 34 + 加密 top500（496 唯一 cg 标的，其中 BTC/ETH 归并 T1）≈ 1160 唯一标的（以 universe.json 实际去重为准）",
+      "engine_full_estimate": "≈ 900+（T1/T1F/US503/港股中概 122/C-FULL 185/C-SEED 63）",
+      "display_only_estimate": "≈ 248（C-LIST 榜单级，含稳定币）"
+    },
+    "layers": [
+      {"id": "T1", "n": 21, "desc": "现有 21 条不动（config.yaml t1）；A 档 + B 档；阈值不动", "kline": "3 年 Yahoo（既有）"},
+      {"id": "T1F", "n": 20, "desc": "期货 20 条（17 实测 + ES/NQ/ZB 补测通过）；仅 A 档（裁决 A8）；futures_fall 阈值不动；无量符号 checklist 量能项跳过", "kline": "3 年 Yahoo（既有）"},
+      {"id": "US500", "n": 503, "desc": "SP500∪NDX100 breadth 池升级：breadth.py 循环里同一 chart 调用的第 4 返回值 ohlc 加 write_kline——增量 range=5d 5 根 bar 与文件尾按日期合并去重（读文件尾日期后追加更新），首次/缺失 range=3y；T2 预筛 dd250<=-50、资格线 -60、max_names=24 不动", "kline": "3 年 752 根 ≈70-76KB raw / ≈23KB gzip；chart_3y 实测 0.43s/股、含 0.12s 节流吞吐 0.157s/股", "mcap": "null + 徽章（裁决 B8）"},
+      {"id": "CN_HK", "n": 88, "desc": "恒指 88（源 https://yfiua.github.io/index-constituents/constituents-hsi.csv，与 ndx100_url 同仓库同格式；拉取失败用仓库快照兜底，同 ndx100 模式）；HKD 口径：dd 为价格比率不受影响，成交额与美元比较 /7.8，HKD 不在 USX/GBX 换算名单无需改 yahoo.py；抽样 10/10 通过 chart 3y=736 根", "kline": "3 年 Yahoo chart，736 根", "prescreen": "-60 单级筛（不复用 T2 的 -50 预筛，池小稀缺含义失效）；-50~-60 进『接近资格线观察名单』展示层"},
+      {"id": "CN_ADR", "n": 34, "desc": "中概 ADR 固化清单 34 只（cnhk 报告逐字名单，DADA 已退市剔除；34/34 通过 chart 3y=752 根）；T3 定义闸：小盘流动性剔除 NOAH/MOMO/FINV/LX + 仙股<$2 剔除 IQ/LX/RLX + 粉单 DIDIY 仅观赏 → 被剔者 tier=ORNAMENT（照常建档案，判定恒『观赏刀 · 永不发信号』），核心 ≈25 只进状态机", "kline": "3 年 Yahoo chart，752 根", "prescreen": "同 CN_HK：-60 单级筛 + -50~-60 观察名单"},
+      {"id": "C_FULL", "n": "≈185", "desc": "加密 top500 ∩ OKX USDT 现货（实测 185/496）：全 OHLCV 进状态机；日增量 GET /market/candles?bar=1D&limit=10 每币 1 请求（实测 0.27s、1230B），8rps 节流；连续 3 次失败转 failed、退 C-LIST 层并标注下架日", "kline": "docs/data/kline/cg_{SYM}.json，3 年 1096 行 61KB raw / 24KB gzip；上市不足 3 年按实际长度回填并记 span 起点，不补假数据"},
+      {"id": "C_SEED", "n": "≈63", "desc": "Binance 有 OKX 无（实测 63）：3 年 OHLCV 由本地跑批一次性种子（Binance klines limit=1000×2 请求/币，weight 252，约 1 分钟），打包 seed tar.gz≈1.5MB 挂 GitHub Release 资产，Actions cache miss 时下载恢复——生产 451 永不直连；日常从当次 CG 榜单行免费追加收盘 bar（o=h=l=c、v=0、close_only 标志），量能/影线检测项自动 None（复用 no_volume 降级路径），卡面标『仅收盘数据』徽章；人工触发本地跑批可重刷种子资产补全历史", "kline": "同 cg_ 前缀"},
+      {"id": "C_LIST", "n": "≈248", "desc": "榜单级跟踪（价格 + 24h/7d/30d/1y 涨跌，CG 榜单请求 0 额外成本）：engine=display 不进状态机；其中 rank≤200 非稳定币的重要币可选 cg_1y 通道升级为『1年·收盘·CoinGecko』（market_chart days=365，实测 200/366 点/0.39s；公开档仅 365 天，days=1095 实测 401）；限速 6s/币、每跑批最多 10 币", "kline": "无或 1 年仅收盘"},
+      {"id": "C_STABLE", "n": "top100 内约 11 只等", "desc": "CG category=stablecoins（实测 1 请求 250 行）打『稳定币』徽章并排除刀落状态机（dd52w 无意义），榜单仍展示——诚实口径"}
+    ],
+    "crypto_binding": {
+      "primary_key": "coingecko id（500 行去重后 496 唯一 symbol、rank 有空洞/并列——绑定用 cg_id 不用 symbol）",
+      "exchange_binding_check": "OKX/Binance 绑定时校验交易对现价与 CG 现价偏差 >20% 拒绑并记 failed（防同名代币绑错）",
+      "list_request": "GET /api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1..2&price_change_percentage=24h,7d,30d,1y（实测 2 页 500 行、0.36-0.55s/页、247KB/页含多窗口字段）；客户端 6s 间隔 + 429 指数退避；失败退 CoinPaprika /v1/tickers（实测 0.49s/1.6MB/2000 行，月配额 20000 可见）；单日两者皆失败用昨日榜单快照并标注 asof",
+      "state_files": {
+        "data/state/universe_list.json": "top500 快照：cg_id→通道绑定/口径徽章/span 起止（随 Actions commit）",
+        "data/state/universe_backfill.json": "回填断点（schema 见 backfill）"
+      }
+    },
+    "backfill_state_machine_verbatim": "STATE=data/state/universe_backfill.json {phase:'crypto_okx'|'crypto_seed'|'stocks'|'cg_1y'|'done', done:[key…], failed:{key:tries}, asof}。每次 heavy 跑批、增量步之前执行：deadline = now + 300s（单跑批回填墙钟上限，防挤占主流程）；todo = channel_universe(phase) - done - (failed where tries>=3)；for key in todo[:N]（N: crypto_okx=100, stocks=250, cg_1y=10）：if now > deadline: break；rows = fetch_full(key)（okx: history-candles bar=1D 每页实返 300、after 翻页至 1100 根或数据尽头，实测 0.16-0.19s/页、单币 3 年 4 请求 0.81s；stocks: yahoo chart range=3y 1 请求 0.157s/股含节流；cg_1y: market_chart days=365 仅收盘 o=h=l=c v=0 记 close_only）；if len(rows) < 60: failed[key]+=1; continue；write_kline(key, rows); done.add(key); 记 span 起止。if not todo: phase = next_phase。写回 STATE（随 daily.yml 既有 Commit state 步进 git，断点跨跑批续传，不受 cache 驱逐影响）。channel_universe('stocks') = US503 + HK88 + ADR34 = 625（裁决 B5）。",
+    "backfill_eta": "crypto_okx 185 币 = 1-2 个 heavy（实测 740 req≈2.5-4 分钟，N=100 是 429 保险）；crypto_seed 恢复 = 1 个（Release 资产下载解包）；stocks 625 = 2-3 个（实测外推 100s 本机 / ≈3-4 分钟 Actions）；cg_1y 尾部数个；全程断点续传，中断无损",
+    "sqlite_policy": "不为宇宙新增 px 序列——kline 文件是宇宙唯一事实源，sqlite 只留 u.* 广度与既有 keys（防 26MB 库翻倍）",
+    "datacenter_probe_gate": "CoinGecko markets/category/market_chart 与 CoinPaprika tickers 四端点 datacenter_status=unverified（本机曼谷实测通过）→ 必须过 build_order 第 1 步机房探针（curl 状态码+样本行数）才准生产接入；OKX history-candles 虽同主机生产在用，探针顺带各发 1 请求确认；失败降级链见裁决 B10"
+  },
+
+  "2_dossier": {
+    "route": "#sym/{key}",
+    "skeleton": "index.html.j2 main 内追加 <section class='view' id='v-profile'>；内容全由 renderProfile 注入；节序固定 a→i；每节独立降级，缺数据显示该节空态不影响其余节",
+    "data_loading": "三源合并：① payload.board/universe 内该 key 的行（同步，秒开首屏 a/c 节）；② fetch docs/data/profile/{key}.json（heavy 落盘档案扩展：链条/Jev 史/新闻/衍生/快照切片）；③ fetch docs/data/kline/{key}.json（d 节懒加载）。②③ 404 → 对应节降级，页面不空白。e 节另 fetch docs/data/jev_profiles.json 查表。",
+    "chain_rings_definition_table": [
+      {"i": 1, "id": "universe_eligibility", "name": "宇宙资格", "inputs": "tier/engine/bars（如 T1F · 1258 根）", "rule": "≥750 根日线（或实际 span 如实标注）· T1/T1F/US500/CN 池/C-FULL/C-SEED 进状态机；C-LIST/稳定币/ORNAMENT 不进", "blocking_semantics": "engine=display → 链条只此一环 + 空态卡", "j7_map": null},
+      {"i": 2, "id": "market_gate", "name": "市场闸门", "inputs": "gate_state · 刀锋指数", "rule": "现有 8 闸不动；闸门态入 checklist gate_ok 项", "blocking_semantics": "RED 时链条在此环停", "j7_map": "gate"},
+      {"i": 3, "id": "fall_detection", "name": "刀落检测", "inputs": "dd52w · ret10 ·（rsi14）实数", "rule": "thresholds_by_cls：knife_fall/index_fall/futures_fall/crypto_fall 按 cls 选（payload 透出，前端零硬编码）", "blocking_semantics": "通过 → 转 KNIFE_FALLING", "j7_map": null},
+      {"i": 4, "id": "capitulation", "name": "投降证据", "inputs": "量比 · 收位实数", "rule": "vol_ratio >= 3.0 = 投降放量顶点", "blocking_semantics": "close_only/no_volume 标的该环值 None，整行标『仅收盘数据 · 此环免验』", "j7_map": "volume"},
+      {"i": 5, "id": "stabilization", "name": "企稳五项", "inputs": "checklist_n/5 + 5 子行各带实数（当日收盘 vs 前日最高、量 vs 1.5×均量等 checklist_facts）", "rule": ">=3/5 开 10 交易日接刀窗", "blocking_semantics": "当前阻塞时唯一使用 --signal 文本『卡在此环』（每页至多 1 处）；next_text 列缺项", "j7_map": "stabilization"},
+      {"i": 6, "id": "time_tier", "name": "时间档", "inputs": "高点后 N 日", "rule": "0-20 日=A · 3-12 月=死区 · dd250<=-60=B；期货仅 A 档（裁决 A8）", "blocking_semantics": "死区 → 禁接说明", "j7_map": "time_tier"},
+      {"i": 7, "id": "semantic_gate", "name": "语义闸 Jev", "inputs": "p_terminal · conf", "rule": "p>=0.50 且 conf>=0.60 → VETO（公开声明的第 6 道闸）", "blocking_semantics": "veto 行值染 --blood + 行首 bloodsq（本页血的授权点位）；放行时 dim", "j7_map": "semantic"},
+      {"i": 8, "id": "military_rules", "name": "军规", "inputs": "tier · 单刀仓位上限", "rule": "五条军规逐条核验后才允许执行", "blocking_semantics": "开窗后核验；未到时 faint", "j7_map": null}
+    ],
+    "chain_contract": "profile.chain = engine.detect/step_state 逐环 emit 的有序数组，每环 {id, name, inputs:{标签:实数}, rule_text, pass:true|false|null(未到), blocking:bool, next_text}；企稳五项展开 5 子行；规则单源在引擎，前端零规则计算。J7 弱环标注：payload.jev.weak_link[key] 命中的环加『Jev 提示弱环』哑面虚线标注（禁用 --gold/--blood/--signal——这是提示不是判断时刻）；none_weak 不标注。",
+    "verdict_templates_enum": {
+      "producer": "render.py 模板函数生成落 profile.verdict.text（零 LLM）；前端降级路径同文（裁决 B12）",
+      "CATCH": "判定：接刀窗 D{d}/10 · {tier_time} 档 · 三批 · 失效价 {stop}",
+      "STABILIZING": "判定：企稳中 {n}/5 · 差{缺项数}项 · 不接",
+      "KNIFE_FALLING": "判定：刀在落 · 禁止接刀 · 等待投降信号",
+      "NORMAL": "判定：常态 · 只看不接",
+      "ORNAMENT_T3": "判定：观赏刀 · 永不发信号",
+      "VETO_override_all": "判定：语义闸 VETO · 终局刀嫌疑 p={p} · 禁止（此句 --blood）",
+      "display_only": "判定：不进状态机 · 仅雷达展示（无 3 年日线）"
+    },
+    "sections": [
+      {"id": "a_判定头", "title": "判定", "content": "liverow：verdict 句 + lclock（KC=F · T1F · 仅 A 档 · asof）+ 巨字 symbol + 中文名 + state-tag。金位：判定行是本页唯一可用金位，且仅 state==CATCH 时染金，其余 0 金。降级：profile 缺 → 前端按同文模板用 board 行现拼；engine=display → display_only 句。", "data": "payload.board 行（state/checklist_n/stop_price/tier_time）+ profile.verdict + jev.triage.veto"},
+      {"id": "b_决策链条", "title": "决策链条", "content": "h2『决策链条』+ secmeta『$ 从数据到判定逐环可核查 · 引擎逐环落盘，前端零计算 · 灰环=未到该环 · 「卡在此环」=当前阻塞』+ .tbl 表：环/输入（实数）/阈值·规则/判/下一步 五列；通过环 ✓ 400 字重、阻塞环『卡在此环』--signal、未到环 dim/faint；无进度条/彩底/连线图——链条就是一页账。表尾 meta：asof · profile/{key}.json 引擎落盘 · 阈值受预注册网格管辖（RL-10）· 链接 #signals 该规则历史战绩。降级：profile 缺 → board 行 + thresholds_by_cls 前端拼简化链（宇宙资格/刀落检测/企稳 n/5/时间档 4 环，标『$ 简化链 · 完整链随 heavy 落盘』）；display 标的 → 单卡空态『$ 不进状态机 · 无 3 年日线 · 晋升 J1 分诊后建链』。", "data": "profile.chain；阈值兜底 payload.thresholds_by_cls；弱环标注 payload.jev.weak_link"},
+      {"id": "c_全量事实表", "title": "事实", "content": "全量口径事实表，每行三列：指标名/mono 数值/来源徽章。行：较 52 周高（danger）、较 250 日高、10 日收益、RSI14、量比（20日）、z1d（250 日对数波动 · 自算）、beta/corr60（对基准 250 日：加密对 BTC，美股/期货/港股中概对 ^GSPC——港股中概口径徽章写明基准与 HKD 换算）、当前跌深历史分位（自身 3 年分布）、失效价（认错线，danger + 『$ 用此价去计算器』链 #calc）。降级：新增字段缺 → 该行值『—』+ 徽章『$ 未入库 · v1.3 宇宙工程师补』；绝不隐藏行（缺数据也是事实）。", "data": "board 行现有字段（dd52w/dd250/ret10/rsi14/vol_ratio/close_pos/days_from_peak/score/score_parts/stop_price）+ 新增 z1d/beta/corr60/pctile_dd52w"},
+      {"id": "d_三年K线", "title": "走势", "content": "复用抽屉 K 线全部选项（animation:false、最后一根 live 色其余哑面）+ 两处新增：markPoint = state_events 逐条单字方角标记『落/稳/窗/常』（label mono 9px，一律 var(--ink-dim)，CATCH 事件 var(--ink) 600——金配给已归判定行）；markLine = stop_price 水平虚线 1px var(--blood)（血预算内一条 1px 线）+ label『失效 {stop}』mono 9px。高 360px。降级：kline 404 → 空态『$ 暂无 3 年日线 · movers 级标的仅 24h 行情 · 晋升 J1 后 heavy 补拉』；day_losers 晋升临时线徽章『$ 1 年 · 晋升临时口径』；C-SEED 徽章『仅收盘续写 · 量能缺』；cg_1y 徽章『1年 · 收盘 · CoinGecko』。", "data": "docs/data/kline/{key}.json + board.state_events + stop_price"},
+      {"id": "e_Jev全档", "title": "判断史", "content": "以 Jev 深化 part3 为准（裁决 B6）：e1 最新判断卡（latest 各 qid 一行，veto/warn 沿用血色徽章体系）；e2 历史判断表 ≤20 条，列=日期|问题|判断内容(claim)|置信/概率|结果(✓对 ✗错 ·待结算 ∅不可结算)|结算日——✓✗ 用哑面字符不用色块；e3 战绩窗（n<30『收集中 x/30』+ 逐笔 ✓✗ 序列条；n>=30 命中率+Wilson95；worst_miss 永远单列展示）；e4 shadow 记录（语义闸拦下的刀放行会怎样，反事实盈亏双口径）。claim 为构建期固定 Python 模板确定性渲染（运行时零大模型）。降级：payload.jev.enabled=false → 整节不渲染；jev_profiles 查无此 key → 显示『该标的暂无 Jev 判断记录』并说明为什么（未进入过刀落链条），不隐藏节标题。", "data": "docs/data/jev_profiles.json 按 key 查表 + payload.jev.triage 兜底 statgrid"},
+      {"id": "f_新闻头条", "title": "新闻", "content": "近 48h 标题列表（age_h + 标题 + 来源），secmeta『$ 近 48h 标题 · 仅供线索 · 标题不构成事实』。J8 分歧徽章：p_divergence >= 0.6 → 哑面文字徽章『消息面分歧』（悬浮显示 p 与标题条数；不用 --blood/--signal）；p<0.6 无标记。降级：空/缺 → 『$ 无近 48h 标题缓存 · 个股新闻仅对 J1 候选抓取』+ mono 外链『$ Google News 手查』（href 构建时拼 q={symbol}，浏览器不 fetch RSS——CORS 与铁律双重原因）。", "data": "profile.headlines（news_cache 该 key 切片）+ payload.jev.news_divergence"},
+      {"id": "g_资金面", "title": "资金面", "content": "按 cls 渲染对应腿：crypto=资金费率（radar.crypto.funding join by sym，跑批快照 OKX 降级链、非实时）+ OI 占位行『$ 源未实测 · v1.3 不做（诚实缺口）』；futures=整卡单行『$ COT 源未实测 · 本节缺席』；equity（含港股中概）=整卡单行『$ 财报临近/空头面源未实测 · 本节缺席』。该 cls 无任何可用腿 → 整节渲染单行缺口声明，不隐藏节——『诚实缺口』是机房页已有公文体例。实测通过后由宇宙工程师补 profile.derivs 并点亮（见第 5 章 merge 规则）。", "data": "profile.derivs + radar.crypto 费率兜底"},
+      {"id": "h_快照台账", "title": "快照台账", "content": "该标的历史信号快照（snapRows 复用复盘室行配方）+ 台账逐笔（vLedger 行配方过滤该 symbol）；secmeta 注 append-only（RL-3/RL-8）· live 与 backtest 分列（RL-7）。均前端过滤，零新文件。降级：两表皆空 → 『$ 无历史快照 · 触发事件后自动追加』单行；有一表渲染一表。", "data": "payload.snapshots / snapshots_public.json + ledger.json 按 symbol 过滤"},
+      {"id": "i_刀谱对照", "title": "刀谱对照", "content": "同族历史案例 ≤3：优先用 J6 产物 payload.jev.case_map[key].top3（按 probabilities 降序），每例复用 vCrashes card 配方显示刀谱下跌签名 + 该例 fwd_1m/3m/12m 路径（仅展示层亮出，J6 判断输入不含 fwd——防泄漏），徽章『刀谱历史路径 · n=1 · 非预测』，卡尾 mono『$ 对照：本标的 dd52w {x}% vs 该案 {y}%』；choice=none_of_book 或 p(none)>=0.5 → 整节只显示『Jev 判：与刀谱 18 例都不像』不列类比。无 Jev 时退化为按族别（J1 family 映射 A/B）匹配 |跌深差|<=20pp，再退化按 cls 粗配并标注『按资产类别粗配』。零命中 → 『$ 刀谱 18 例无同族对照 · 全库见刀谱页』+ data-nav 链。", "data": "payload.jev.case_map + payload.crash_library 前端过滤"}
+    ],
+    "data_file_mapping": [
+      {"file": "docs/data/universe.json", "producer": "heavy（radar 只读不产）", "content": "全宇宙每标的一行摘要 {key, symbol, name, cls, market, tier(T1|T1F|T2|T2C|MOVER|ORNAMENT|null), engine('full'|'display'), px, pct24, quote_vol|mcap(可 null+徽章), asof, source} + engine=full 行另附 {dd52w, dd250, ret10, rsi14, vol_ratio, z1d, close_pos, days_from_peak, state, score, checklist_n, tier_time, stop_price, bars, badges(通道/口径/span/close_only/稳定币/观察名单)}", "size": "~1160 行瘦字段目标 <450KB raw / <90KB gzip；display 行不带引擎字段；首屏不加载，cmdk/搜索/档案按需 fetch"},
+      {"file": "docs/data/profile/{key}.json", "producer": "heavy，仅活跃集（board 全体 + zboard 命中 + movers top40 + knife_candidates + snapshots/ledger 出现过的 key + 观察名单，估 ≤200 文件）", "content": "{key, symbol, name, cls, tier, asof, verdict:{state,text}, chain:[…8 环含企稳 5 子项 checklist_facts], facts:{全量+beta+corr60+pctile}, jev:{triage_full 四族概率, heat, prior}, headlines:[{t,src,age_h}], derivs:{funding,…缺源字段 null+note}, snapshots:[切片], ledger:[切片], similar:[crash id ≤3]}", "size": "单文件数 KB"},
+      {"file": "docs/data/jev_profiles.json", "producer": "heavy（calibrate.build_jev_profiles）", "content": "{key: {counts, latest, history≤20, scorecard}}，只含有 >=1 条记录的标的", "size": "实际远小于极限 2-3MB——只有刀落过的标的有记录"},
+      {"file": "docs/data/kline/{key}.json 与 cg_{SYM}.json", "producer": "heavy + backfill", "content": "与现有 write_kline 同构 {key,symbol,label,rows:[[date,o,h,l,c,v]]}，cap rows[-1100:]；cg_ 前缀防加密与美股同名冲突", "size": "≈23-24KB gzip/文件，懒加载"},
+      {"file": "docs/data/payload.json", "producer": "heavy（radar 可现算 funnel 计数）", "content": "主 payload 只放：非常态（falling/capitulation/观察/持仓状态机非 IDLE）+ KnifeScore 前 40 + 既有 yahoo 配置标的（预计 +30-60KB）；新增 payload.funnel / payload.thresholds_by_cls / board 行 z1d / payload.jev.{case_map,weak_link,news_divergence}；jev.triage 不加厚（四族概率只进 profile）", "size": "现 141KB → 预计 <220KB"}
+    ]
+  },
+
+  "3_funnel_ia": {
+    "narrative": "全站唯一主线：全宇宙 {N} 标的 → 暴动过滤 → 刀落检测 → 企稳 checklist → 接刀窗 → 结算。每个视图是漏斗的一环，每个标的在漏斗里有唯一位置，档案页是单标的的纵剖面。",
+    "levels": [
+      {"i": 0, "id": "universe", "label": "全宇宙", "count_def": "universe.json rows 总数（加密 top500 + 美股 503 + 港股 88 + 中概 34 + T1 21 + T1F 20，去重）", "click": "nav('knives') 并展开 NORMAL 折叠组；全量检索走 cmdk（宇宙表懒加载）", "data": "payload.funnel.universe_n"},
+      {"i": 1, "id": "burst", "label": "暴动", "count_def": "|z1d|>=3.0（zboard）∪ 24h 榜上榜 ∪ knife_candidates，按 key 去重；定义原文存 payload.funnel.defs.burst 随条渲染", "click": "nav('radar')", "data": "payload.funnel.burst_n"},
+      {"i": 2, "id": "falling", "label": "刀落", "count_def": "board state==KNIFE_FALLING", "click": "nav('knives') + data-goto='KNIFE_FALLING'", "data": "payload.funnel.falling_n"},
+      {"i": 3, "id": "stabilizing", "label": "企稳", "count_def": "board state==STABILIZING", "click": "同上 STABILIZING 组", "data": "payload.funnel.stabilizing_n"},
+      {"i": 4, "id": "catch", "label": "接刀窗", "count_def": "board state==CATCH", "click": "同上 CATCH 组", "data": "payload.funnel.catch_n"},
+      {"i": 5, "id": "settled", "label": "结算", "count_def": "ledger 回测+实盘总笔数（进行中另示）", "click": "nav('ledger')", "data": "payload.funnel.ledger_n / live_open"}
+    ],
+    "funnel_bar": {
+      "markup_verbatim": "<div class='funnel' id='funnel' role='navigation' aria-label='机会漏斗'>\n  <a class='fs' data-nav='knives'><b class='mono'>1,160</b><span>全宇宙</span></a>\n  <a class='fs' data-nav='radar'><b class='mono'>17</b><span>暴动</span></a>\n  <a class='fs' data-nav='knives' data-goto='KNIFE_FALLING'><b class='mono'>2</b><span>刀落</span></a>\n  <a class='fs' data-nav='knives' data-goto='STABILIZING'><b class='mono'>3</b><span>企稳</span></a>\n  <a class='fs' data-nav='knives' data-goto='CATCH'><b class='mono'>0</b><span>接刀窗</span></a>\n  <a class='fs' data-nav='ledger'><b class='mono'>49</b><span>结算</span></a>\n  <span class='meta' style='margin-left:auto'>$ {asof} · 跑批口径</span>\n</div>",
+      "css_notes": "高 44px 全宽横条，上下 hairline（同 warnbar）；格间 1px var(--line) 竖线分隔（不用箭头）；计数 mono 16px tabular，标签 10px var(--ink-faint)；计数 0 → faint；CATCH>0 → 600 字重（不给金）；零动画零 hover 位移，hover 只走现有红残影",
+      "placement": {"home": "替换 tape 读数条原位（warnbar 之下、header 之上区域首行）", "radar": "口径 liverow 之下第一元素", "howto": "漏斗图解节内复用同 markup（静态示例数）"},
+      "degrade": "payload.funnel 缺块 → 整条不渲染（防御式）；burst_n 混合口径 → meta 固定注『跑批口径』不伪装实时"
+    },
+    "funnelpos_line": {
+      "spec": "每视图 h2.sec 下 secmeta 行首增加定位句（body/mono 字体零子集成本），与现有 $ 行合并同一行开头",
+      "per_view": {"home": "$ 漏斗总览 · 六环计数皆可点", "radar": "$ 漏斗第 1-2 环 · 全宇宙的暴动过滤", "knives": "$ 漏斗第 3-5 环 · 刀落→企稳→接刀窗", "signals": "$ 证据层 · 支撑第 3-5 环的历史统计", "crashes": "$ 证据层 · 历史刀的族谱", "review": "$ 第 6 环之后 · 判断被结算与校准", "calc": "$ 第 5 环出口 · 执行前的仓位风控", "streaks": "$ 第 5 环出口 · 执行前的心理风控", "ledger": "$ 漏斗第 6 环 · 每一笔的结局", "howto": "$ 漏斗全图 · 第一次来先读这页", "method": "$ 制度层 · 规则为什么长这样", "datacenter": "$ 制度层 · 数字从哪来", "profile": "$ 单标的全链条 · 它此刻卡在第 {n} 环"}
+    },
+    "nav_reorg": {
+      "desktop_markup_verbatim": "<nav class='nav' id='nav'>\n  <button data-nav='home' aria-selected='true'>首页</button>\n  <span class='ng'>机会</span>\n  <button data-nav='radar'>雷达</button>\n  <button data-nav='knives'>刀落板</button>\n  <span class='ng'>证据</span>\n  <button data-nav='signals'>信号规则</button>\n  <button data-nav='crashes'>刀谱</button>\n  <button data-nav='review'>复盘室</button>\n  <span class='ng'>工具</span>\n  <button data-nav='calc'>计算器</button>\n  <button data-nav='streaks'>连败室</button>\n  <button data-nav='ledger'>台账</button>\n  <span class='ng'>制度</span>\n  <button data-nav='howto'>如何读</button>\n  <button data-nav='method'>方法</button>\n  <button data-nav='datacenter'>机房</button>\n  <button data-nav='disclaimer'>免责</button>\n</nav>",
+      "mobile_bottomnav": {"slots": ["首页", "雷达", "刀落板", "台账", "更多"], "bn_more": "触发现有 cmdOpen()（零新 UI）；计算器另有链路：档案页与抽屉的失效价行带『$ 用此价去计算器』mono 链接"},
+      "cmdk_update": "CMD_INDEX 补 howto『如何读』与动态项『{symbol} 档案』；标的命中默认动作改为开档案页（完整信息意图），抽屉仍由表格行点击触发（快看意图）；首次打开 cmdk 懒 fetch docs/data/universe.json 扩充索引至全宇宙（失败静默退回 BOARD 既有条目）"
+    },
+    "views_routes": {
+      "new_views": [
+        {"id": "profile", "route": "#sym/{key}", "title": "标的档案（动态）", "status": "新增 · 核心交付（第 2 章）"},
+        {"id": "howto", "route": "#howto", "title": "如何读这个站", "status": "新增"}
+      ],
+      "router_change": "nav() 改为 hashchange 驱动：route() 解析 location.hash——以 '#sym/' 开头 → renderProfile(decodeURIComponent(key)) 渲染进 <section id='v-profile'>；否则按现 VIEWS 表。nav(v) 只做 location.hash 赋值；window.addEventListener('hashchange', route) 保浏览器返回键可用（档案↔列表往返是高频路径）。profile 不进 rendered{} 永久缓存（按 key 重渲），K 线实例照旧入 instances 供主题重绘 dispose。data-goto：nav 完成后 scrollIntoView() 即时无平滑滚动（全站静止纪律）。",
+      "drawer_relation": "抽屉保留为『快看』（160ms 动效 #4 不动）：表格行点击仍开抽屉；抽屉头部元数据行追加 <a class='mono' href='#sym/{key}'>$ 完整档案</a>；cmdk 选标的直达档案页；档案页自身不再有抽屉。",
+      "knives_update": "四组 h2 加 data-group 锚（CATCH/STABILIZING/KNIFE_FALLING/NORMAL）供漏斗条定位；NORMAL 组千标的宇宙下仍折叠（只显示计数与展开）；radar 的 movers/zboard/热度行全部加 data-sym，点击进抽屉、抽屉再进档案"
+    },
+    "home_declutter": {
+      "new_order": ["1 漏斗条（新，替换 tape 原位）", "2 判定 hero（保留 + 新增 gatebar 一行）", "3 插入字卡（条件渲染，不动）", "4 今日机会（新合并节）", "5 战绩名片（不动）", "6 五条军规（不动 + 尾行『$ 第一次来？如何读这个站』链 #howto）"],
+      "deletions": [
+        {"what": "tape 静态读数条", "why": "与落刀榜信息重复；首屏最贵一行让给漏斗；标的检索走 cmdk"},
+        {"what": "首页 homeRadarCard 独立节", "why": "并入今日机会（三源合流减一个 h2）"},
+        {"what": "首页市场闸门 8 格 gate-grid", "why": "迁往信号规则页顶部（闸门属证据层）；首页保留 gatebar 压缩行：hero 构成行之下 8 个 10px 状态点 + mono『$ 闸门 0/8 点亮 · GREEN』，点击 nav('signals')；金的 FLIP-BACK 徽标逻辑随迁，首页金位判定顺序不变（插入字卡 > 判定行 > gatebar FLIP-BACK 文本）"}
+      ],
+      "today_section": "h2『今日机会』+ secmeta『$ 漏斗第 2-5 环今日切片 · 点行开抽屉 · 抽屉进完整档案』+ top8 非常态 boardTable（不动）+ grid g2 双半卡：『暴动最凶三笔』（radar top3 行，哑面色 + meta『$ 跑批快照 · 进雷达看实时』）/『未来七日引信』（J3 catalysts top3 行：D+n · 标题 · 刻度）。降级：radar/jev 块缺 → 对应半卡不渲染，boardTable 恒在；三源全空 → 空态巨字『今日无刀落下』照旧。"
+    },
+    "howto_view": {
+      "route": "#howto",
+      "sections": [
+        {"h2": "如何读", "content": "三句白话开门：本站做什么（接飞刀=在暴跌后按规则接反弹，不荐股不代客）/ 你在看什么（一条漏斗：全宇宙→暴动→刀落→企稳→接刀窗→结算）/ 数字为什么可信（每个数字带来源与口径，可点回源复算）。copy 源：spec_core.positioning + 复算契约卡原文。"},
+        {"h2": "漏斗", "content": "复用 funnel 条 markup（静态示例数）+ 六行图解账（每环：名称/进入条件原文/数据从哪来/在哪个页面看），全部复用 levels 的 count_def 文案。"},
+        {"h2": "族", "content": "两族世界观整卡照搬 vMethod（A 族=流动性休克… B 族=泡沫出清… VIX 闸三次历史亏损全在 B 族——逐字复用）。"},
+        {"h2": "档", "content": "A 档/死区/B 档时间档卡照搬 vMethod + 五条军规 CONTRACT 原文（同一 markup 复用，血字条款随行）。"},
+        {"h2": "双口径", "content": "vSignals『同一把刀，两种拿法……两套都是真的』原句 + witness 数字行复用 + Wilson 一句白话（『胜率 31% 不是 31%，是 20-45% 区间里的一个点——样本越少区间越宽』，新增显示文案走 body 字体零子集成本）。"},
+        {"h2": "名词表", "content": "18 词账本表：dd52w/dd250/ret10/RSI14/量比/z1d/beta/corr60/失效价/KnifeScore/企稳五项/时间档/FLIP-BACK/口径①②/Wilson 区间/Jev/语义闸 VETO/暴动分位——每行：词 mono · 一句白话 · 在哪个页面出现（data-nav 链）；词条白话从 GATE_DEFS/ckLab/方法页既有句子裁剪，不新造概念。"}
+      ],
+      "saya": "本页 0 金 0 血 0 新动效；巨字仅 h2.sec 级；witness 页脚照常"
+    },
+    "saya_compliance": {
+      "gold_ration_per_page": {"home": "插入字卡 > 判定行 > gatebar FLIP-BACK（不变，漏斗条 0 金）", "radar": "0", "profile": "判定行且仅 state==CATCH 时 1 处，否则 0", "howto": "0", "review": "判定行 1 处（不变）", "其余": "不变"},
+      "blood_inventory_new": "档案页：判定头 VETO 句（仅 veto 时）· 链条语义闸 veto 行值+bloodsq · 事实表 dd52w/失效价 danger 数字 · K 线失效价 1px markLine——估算 <2%/屏；漏斗条 0 血；今日机会沿用 boardTable 既有授权",
+      "signal_orange": "档案页链条『卡在此环』为每页唯一 --signal 文本；漏斗条不用橙",
+      "motion_audit": "新增动画 = 0，总数维持 4：漏斗条/链条/档案切换全部即时渲染；档案页判定行不做打字机（动效 #2 仍归首页/复盘室每会话一次）；markPoint/markLine 静态（ECharts animation:false 已有）",
+      "structure": "方角零圆角全守；档案页挂同一门框线（main 不变）；无新竖排/倾斜/倒影/双线框；ck5 的 ✓/─ 为既有符号沿用非新增",
+      "display_chars": {
+        "new_characters": "决策链事走势史新闻面对如何漏斗词表",
+        "new_characters_count": 17,
+        "update": "scripts/display_chars.txt 第 1 行末尾追加 17 字（标点/数字段不动）；159+17=176 字，woff2 预算 ≈45-60KB 仍在限内；style_spec words 同步追加 [决策链条, 事实, 走势, 判断史, 新闻, 资金面, 快照台账, 刀谱对照, 今日机会, 如何读, 漏斗, 名词表]",
+        "order_warning": "先改 display_chars.txt → 跑 subset_font.py → 再上新模板（构建扫描子集外字即失败）——build_order 第 2 步先行"
+      },
+      "new_css_verbatim": [
+        ".funnel { display:flex; align-items:stretch; min-height:44px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); margin-bottom:20px; } .funnel .fs { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1px; border-right:1px solid var(--line); text-decoration:none; cursor:pointer; } .funnel .fs:last-of-type{border-right:none} .funnel .fs b{font:400 16px var(--font-mono);color:var(--ink);font-variant-numeric:tabular-nums} .funnel .fs span{font:400 10px var(--font-mono);letter-spacing:0.12em;color:var(--ink-faint)} .funnel .fs[data-zero='true'] b{color:var(--ink-faint)}",
+        ".ng { font:400 10px var(--font-mono); letter-spacing:0.12em; color:var(--ink-faint); margin:0 2px 0 14px; user-select:none; }",
+        ".gatebar { display:flex; gap:8px; align-items:center; font:400 11px var(--font-mono); color:var(--ink-dim); cursor:pointer; } .gatebar i { width:10px; height:10px; background:var(--ink-faint); } .gatebar i[data-on='true'] { background:radial-gradient(circle at 35% 35%, #FF5A4D 0%, #C41E1E 40%, #4A0808 100%); }",
+        "链条表零新 CSS：全部复用 .tbl/.card/.dim/.faint/.signal/.bloodsq 账本体系"
+      ]
+    }
+  },
+
+  "4_jev_v3": {
+    "budget_constants_final": {
+      "MAX_CALLS": 6, "MAX_QUESTIONS": 320, "worst_case_questions": "72+72+16+30+26+80 = 296，留 24 问余量",
+      "J1_LIMIT": 48, "J1_BATCH": 24, "J1_batching": "拆两次 POST：candidates[0:24] 与 [24:48]，≤24 候选时第二次 POST 整跳（当日 5 次调用）",
+      "J2_LIMIT": "与 J1 绑定同批同 state，随动 48", "J3_LIMIT": 30, "J4_LIMIT": 10, "J5_LIMIT": 80,
+      "J5_prereq": "radar_crypto 24h 榜从涨/跌各 20 扩为各 40；movers_history.json 每日快照同步 80 行（30 日滚动 ≈+220KB）——否则 J5 结算源缺价",
+      "J6_LIMIT": 16, "J7_LIMIT": 16,
+      "HORIZONS_added": {"J6": 252, "J7": 63, "J8": 5},
+      "news_max_inst": 56,
+      "coverage_verdicts_kept": "扩容裁决全部采纳 Jev 深化 worth_it 表：J1/J2→48 值得（恐慌日=价值峰值；瓶颈是新闻抓取墙钟 +16s 非 token）；J5→80 值得（最便宜最快结算的校准样本通道）；J8 搭便车值得（+~11k tok/跑）；J6/J7 各 16 封顶；J3/J4 不扩；top500 全员每日过 Jev 不值得（生产不可消费的日志稀释校准分桶，候选制不动摇）；radar 内调 Jev 不值得（裁决 A1 不变）；movers 无 kline 不进 J6（生来 unresolvable）"
+    },
+    "J6_历史案例相似": {
+      "type": "choice",
+      "trigger": "heavy 跑批，state ∈ {KNIFE_FALLING, STABILIZING, CATCH} 且 dd52w<=-25 且库内 kline>=300 根；排序 CATCH > STABILIZING > KNIFE_FALLING > dd 最深，截 16；不需要新闻（纯结构比对），引擎前与 Call-1 同段执行",
+      "anti_leakage": "给模型的 knife_book 签名与 criteria 一律不含 fwd_1m/3m/12m 反弹路径——判断只基于下跌结构，防按反弹好坏挑案例污染结算；反弹路径只在档案页展示层亮出",
+      "state_json": {"knife_book": {"<case_id>": {"market": "spx|nasdaq|nikkei|ashare|crypto_btc|china_adr|growth_etf", "drawdown_pct": 0.0, "trading_days": 0, "worst_day_pct": 0.0, "max_vol_vs_50d": 0.0, "vix_peak_close": "float|null"}}, "instruments": [{"symbol": "", "name": "", "cls": "", "facts": {"dd52w": 0.0, "ret10": 0.0, "days_from_peak": 0, "vol_ratio": "float|null", "worst_day_252_pct": "近 252 根最差单日收益%（engine 新增本地计算）", "sigma20_ann_pct": "近 20 根日收益年化标准差%（engine 新增本地计算）", "vix": "当前 VIX"}}]},
+      "question_json_verbatim": {"k{i}": {"type": "choice", "instructions": "基于 `instruments[{i}].facts` 的下跌结构（深度、距峰速度、最差单日、量能与波动）与 `knife_book` 中 18 例历史刀案的下跌签名，判断这把正在下落的刀在结构上最像哪一例。只比对下跌本身的形态，不预测任何反弹。", "criteria": {"1987_black_monday": {"what": "美股指数 · -33.5% · 71 交易日 · 最差单日 -20.5% · 峰值量比 3.21×"}, "2000_dotcom_spx": {"what": "美股指数 · -49.2% · 637 交易日 · 最差单日 -5.8% · 峰值量比 2.10× · VIX 峰 45.1"}, "2008_gfc": {"what": "美股指数 · -56.8% · 355 交易日 · 最差单日 -9.0% · 峰值量比 2.04× · VIX 峰 80.9"}, "2011_euro_debt": {"what": "美股指数 · -19.4% · 108 交易日 · 最差单日 -6.7% · 峰值量比 1.61× · VIX 峰 48.0"}, "2018_q4": {"what": "美股指数 · -19.8% · 65 交易日 · 最差单日 -3.3% · 峰值量比 1.85× · VIX 峰 36.1"}, "2020_covid": {"what": "美股指数 · -33.9% · 23 交易日 · 最差单日 -12.0% · 峰值量比 2.25× · VIX 峰 82.7"}, "2025_tariff_apr": {"what": "美股指数 · -18.9% · 34 交易日 · 最差单日 -6.0% · 峰值量比 1.92× · VIX 峰 52.3"}, "2026_tariff_mar": {"what": "美股指数 · -9.1% · 43 交易日 · 最差单日 -1.7% · 峰值量比 1.74× · VIX 峰 31.1"}, "2000_dotcom_nasdaq": {"what": "纳指 · -77.9% · 647 交易日 · 最差单日 -9.7% · 峰值量比 1.79× · VIX 峰 45.1"}, "2021_22_growth_nasdaq": {"what": "纳指 · -36.4% · 277 交易日 · 最差单日 -5.2% · 峰值量比 1.85× · VIX 峰 36.5"}, "2026_ai_nasdaq": {"what": "纳指 · -13.2% · 103 交易日 · 最差单日 -2.4% · 峰值量比 1.44× · VIX 峰 31.1"}, "2024_carry_unwind_nikkei": {"what": "日经 · -25.5% · 16 交易日 · 最差单日 -12.4% · 峰值量比 2.42× · VIX 峰 38.6"}, "2015_ashare_leg1": {"what": "A股 · -43.3% · 52 交易日 · 最差单日 -8.5% · 峰值量比 1.43× · VIX 峰 40.7"}, "2015_16_ashare_full": {"what": "A股 · -48.6% · 155 交易日 · 最差单日 -8.5% · 峰值量比 1.76× · VIX 峰 40.7"}, "2022_crypto_btc": {"what": "加密 BTC · -76.6% · 378 自然日 · 最差单日 -16.0% · 峰值量比 3.34×"}, "2025_26_crypto_btc": {"what": "加密 BTC · -53.1% · 267 自然日 · 最差单日 -14.1% · 峰值量比 3.11×"}, "2021_22_china_adr_kweb": {"what": "中概 ETF · -82.2% · 425 交易日 · 最差单日 -14.2% · 峰值量比 6.22×"}, "2022_growth_arkk": {"what": "成长股 ETF · -81.1% · 472 交易日 · 最差单日 -10.1% · 峰值量比 4.93×"}, "none_of_book": {"what": "与以上 18 例的深度、速度、波动形态均不相似，或该标的类别与全部案例不可比"}}}},
+      "criteria_generation_rule": "18 行 what 由 build_j6_criteria() 从 knife_book_seed.json 字段按固定模板『{market_label} · {drawdown_pct}% · {trading_days} 交易日 · 最差单日 {worst_day_pct}% · 峰值量比 {ratio}×[ · VIX 峰 {v}]』确定性生成（无 vix_peak 的 1987/加密案例省略该段；加密 trading_days 即自然日标『自然日』）；模板文字视同 criteria，改动记 calibration.json 变更日志",
+      "outcome_def_preregistered_verbatim": "episode 完成日 = 判断日后价格自『判断日后最低点』反弹 >=20% 或满 252 交易日（先到者）。完成日用库内 kline 机械计算本轮实际签名 {realized_dd = 触发时 52 周峰到 episode 最低点跌幅%, realized_days = 峰到最低点交易日数}；将刀谱 18 例按签名距离 d = |dd_case - realized_dd|/25 + |ln(days_case) - ln(realized_days)|/1.2 升序排名（尺度常数 25 与 1.2 为刀谱 18 例自身 dd 标准差与 ln(days) 标准差，一次计算后冻结入 outcome_def）；hit=1 若所选案例排名 <=6（前三分之一）。choice=none_of_book、标的退市或 kline 断档 → unresolvable（计数公示，不进分母）。随机基线 = 6/18 = 1/3，与实测命中率并列公示",
+      "settlement_honesty_note": "原意『referenced 案例 fwd 路径与实际 fwd 的相关性』不可结算，改口径理由如实公示：① 刀谱 fwd 锚定各案例谷底而判断日不可知是否谷底，不同锚不可比；② 18 例 fwd_1m/3m 全为正，符号命中退化恒真；③ 3 个点的相关性统计无意义。改用『episode 完成后的下跌签名距离排名』——结算的恰是提问所测技能（下跌结构相似性）且完全可由 kline 机械计算。此改口发生在预注册之时而非结算之后（RL-2）",
+      "jev_log_record": {"question_id": "J6", "score": "p(所选案例)", "raw": {"choice": "case_id", "probabilities": "19 键全存", "confidence": 0.0}, "horizon_days": 252, "aux": {"asof_dd52w": 0.0, "asof_low": "判断日收盘（episode 最低点追踪起点）"}},
+      "calibration_bucket": "calibration.json jev.J6 新节：{outcome_def 逐字, n_total, n_pending, n_unresolvable(none_of_book 与断档分列), conclusive, hit_rate, wilson95, random_baseline: 0.3333, brier, brier_baseline_climatology, reliability 五分桶}；n<30『收集中 x/30』（RL-4）；horizon 252 是慢桶，页面如实标『长周期结算中』",
+      "consumption": "档案页 i 节（见第 2 章）；落盘 payload.jev.case_map = {key: {top_case, p, top3: [[case,p]×3], none_p}}"
+    },
+    "J7_决策链条薄弱环": {
+      "type": "choice",
+      "trigger": "heavy run_engine 之后（与 J4 同一次 POST 共享 candidates state）：本跑批 state ∈ {STABILIZING, CATCH}，CATCH 优先、组内 KnifeScore 降序，截 16",
+      "state_json": {"replay_context": "（J4 原文不动，J7 不引用）", "candidates": [{"symbol": "", "name": "", "cls": "", "state": "STABILIZING|CATCH", "facts": {"gate_state": "", "vix": 0.0, "checklist": {"reversal_day": "bool|null", "no_new_low_3d": false, "vol_compress": false, "gate_ok": false, "rsi_divergence": false}, "checklist_n": 0, "vol_ratio": "float|null", "capitulation": false, "hammer": false, "tier_time": "A|B|DEAD_ZONE|-", "days_from_peak": 0, "dd52w": 0.0, "ret10": 0.0}, "jev": {"family": "本跑 J1 结果|null", "p_terminal": "float|null", "heat": "本跑 J2|null"}}]},
+      "question_json_verbatim": {"w{i}": {"type": "choice", "instructions": "`candidates[{i}]` 是一条已进入 STABILIZING 或 CATCH 的完整决策链条证据。判断其中哪一环的证据当前最薄弱、最可能成为这次接刀失败（触发 X-STOP）的原因。", "criteria": {"gate": {"what": "闸门环最弱：VIX 闸/翻转确认代表的市场环境证据不足——闸门刚转或处于边缘，恐慌可能未出清", "examples": ["gate_state 刚由 RED 转 FLIP_BACK 的首日", "VIX 仍高位徘徊未见衰竭"]}, "volume": {"what": "量能环最弱：没有放量顶点或量能数据缺失——看不到卖压衰竭的直接证据", "examples": ["capitulation=false 且 vol_ratio 平平", "期货符号无量能数据"]}, "stabilization": {"what": "企稳环最弱：企稳 checklist 勉强过线、关键项缺失", "examples": ["checklist 3/5 且缺 reversal_day", "波动未收敛仍在放大"]}, "time_tier": {"what": "时间档环最弱：距峰时间处于档位边缘或逼近动量死区", "examples": ["days_from_peak 逼近 A 档 20 日上限", "逼近 63 日死区边界"]}, "semantic": {"what": "语义面最弱：新闻面存在未解除的坏消息风险——族别判断不清或基本面恶化仍在发酵", "examples": ["J1 判 unclear 且新闻热度高", "利空标题仍在滚动更新"]}, "none_weak": {"what": "无明显弱环：五环证据都比较扎实", "examples": ["教科书式恐慌反弹结构，全链条齐备"]}}}},
+      "outcome_def_preregistered_verbatim": "仅结算『该标的在判断后 63 交易日内实际进入 CATCH 且触发 X-STOP』的记录。settle.py 按预注册谓词对该次失败机械归因弱环集合 W：gate ∈ W 若入场日 gate_state ∉ {GREEN, FLIP_BACK} 或持仓期内闸门转 RED；volume ∈ W 若入场日 capitulation=false 或无量能数据；stabilization ∈ W 若入场日 checklist_n <= 3；time_tier ∈ W 若入场日 tier_time ∈ {DEAD_ZONE, -}；semantic ∈ W 若持仓期内任一跑批该标的 p_terminal >= 0.35 或其 J1 记录结算为 1。hit = 1 若预测环 ∈ W；W 为空 → unresolvable。预测 none_weak 的记录改按『链条守住』结算：hit = 1 若该标的接刀后 63 交易日内未触发 X-STOP（未接刀 → unresolvable）。其余未接刀或接刀后未触发 X-STOP 的记录 → unresolvable（计数公示）。随机基线 = 逐样本 mean(|W|/5)，与命中率并列公示（W 是集合命中，必须公示基线防虚高）",
+      "jev_log_record": {"question_id": "J7", "score": "p(所选弱环)", "raw": {"choice": "gate|volume|stabilization|time_tier|semantic|none_weak", "probabilities": "6 键全存", "confidence": 0.0}, "horizon_days": 63, "aux": {"state_at_ask": "STABILIZING|CATCH", "checklist_n": 0, "tier_time": ""}},
+      "calibration_bucket": "calibration.json jev.J7 新节：{outcome_def, n_total, n_pending, n_unresolvable, hit_rate, wilson95, random_baseline_mean_W_over_5, brier, brier_baseline_climatology, reliability 五分桶, confusion: 预测环×归因环 6×5 计数表（n_total>=30 才渲染，否则只存不显）}；RL-4 全程生效",
+      "consumption": "档案页 b 节弱环哑面虚线标注（第 2 章 chain_contract）；落盘 payload.jev.weak_link = {key: {link, p}}；纯展示，绝不改状态机/score/veto"
+    },
+    "J8_新闻矛盾检测": {
+      "type": "bool（原文『noul』按裁决 B7 规范化）",
+      "trigger": "与 J1/J2 同批同 state（Call-1/2 便车，零额外 state 成本）；仅对 headlines >= 2 条的候选发问（单条标题无从自相矛盾，不发问=不落记录，诚实）",
+      "question_json_verbatim": {"n{i}": {"type": "bool", "instructions": "判断 `instruments[{i}].headlines` 近两日标题集内部是否存在实质性矛盾：同时包含指向相反方向的可核实事实（明确利好与明确利空并存）。同一事件的不同转述、媒体措辞差异、纯行情涨跌快讯不算矛盾。", "criteria": ["true = 存在实质矛盾：集内至少一条可核实利好与至少一条可核实利空并存——如『获监管批准/大额回购』与『遭做空指控/业绩预警』同时出现", "false = 无实质矛盾：标题同向，或全部是行情快讯/营销稿/旧闻复述等不构成事实冲突的内容"]}},
+      "parser": "新增 _bool_val(a) -> {p_true, confidence}|None：宽容读取 a.probability / a.probabilities.true / a.answer(bool→1.0/0.0)，_clip01 归一，完全无法解析返回 None（该标的无 J8 记录）",
+      "outcome_def_preregistered_verbatim": "hit = 1 若判断日后 5 交易日已实现波动 sigma5（未来 5 根日 log 收益标准差）>= 1.25 × sigma20（判断日前 20 根日 log 收益标准差，判断时随 aux 落盘冻结）；前向不足 5 根 → pending，退市/断档 → unresolvable。与 J2 口径刻意不同：J2 结算方向性净移动（|5日收益|>=2×ATR14%），J8 结算波动放大（sigma 比值）——一概率一口径（RL-6）。另设组对比公示：p>=0.6 分歧组 vs p<0.4 无分歧组的 median(sigma5/sigma20)，0.4<=p<0.6 中间带不入组对比但正常进 Brier；任一组 n<30 该组只显示『收集中 x/30』（RL-4）",
+      "jev_log_record": {"question_id": "J8", "score": "p_divergence = p_true", "raw": {"probabilities": {"true": 0.0, "false": 0.0}, "confidence": 0.0}, "horizon_days": 5, "aux": {"sigma20_frozen": "判断日 sigma20（结算分母，问时冻结防事后重算漂移）", "n_headlines": 0}},
+      "calibration_bucket": "calibration.json jev.J8 新节：{outcome_def, n_total, n_pending, n_unresolvable, base_rate, brier, brier_baseline_climatology, reliability 五分桶, group_contrast: {divergent:{n,median_ratio}, non_divergent:{n,median_ratio}}}；RL-4 生效",
+      "consumption": "档案页 f 节哑面徽章『消息面分歧』（第 2 章）；落盘 payload.jev.news_divergence = {key: p}；纯展示"
+    },
+    "jev_profiles_builder": {
+      "builder": "calibrate.build_jev_profiles(records) 在 heavy calibrate.build 之后执行（radar 不重算只读 heavy 产物）",
+      "aggregation": {
+        "input": "全量 jev_log.jsonl（append-only，读法复用 settle._read_jsonl）",
+        "group_by": "record.instrument（'MACRO' 排除——J3 属全市场不属档案页）",
+        "per_instrument": {
+          "counts": "{qid: {n, settled, pending, unresolvable}} 按该标的出现过的 J1/J1_shadow/J2/J4/J6/J7/J8",
+          "latest": "每 qid 最近一条展示态：J1→{date,family,p_terminal,conf,veto,warn}；J2→{date,heat}；J4→{date,prior}；J6→{date,top_case,p,top3,none_p}；J7→{date,link,p}；J8→{date,p_divergence}",
+          "history": "最近 <=20 条全 qid 混排 ts 降序：{date,qid,claim,score,outcome,realized_at}；outcome ∈ {'对','错','待结算','不可结算'}；J1_shadow 显示反事实盈亏% 而非对错",
+          "scorecard": "{n_settled, n_hit, n_miss, n_unresolvable, hit_rate_display: n_settled>=30 时比率+Wilson95 否则 null+note『收集中 x/30』（RL-4：比率是统计受门禁，逐笔 ✓/✗ 是事实照常显示）, worst_miss: 置信最高却错得最实的一条 {date,qid,claim,score}}"
+        },
+        "claim_templates": "构建期固定 Python 模板确定性渲染：J1→『判族 {family}（终局 p={p_terminal}）』；J2→『新闻热度 {heat}』；J4→『接刀先验 {prior}』；J6→『最像刀谱 {top_case}（p={p}）』；J7→『弱环：{link_zh}（p={p}）』；J8→『消息面分歧 p={p}』；J1_shadow→『语义闸拦截 · 反事实 {pnl}%』"
+      },
+      "output_file": "docs/data/jev_profiles.json（render 阶段复制公开瘦身版）；history 封顶 20 条/标的控体积"
+    },
+    "call_sequence_per_heavy_run": [
+      {"call": "Call-1", "module": "triage_and_heat 批A", "questions": "J1 t{i} + J2 h{i} + J8 n{i}，candidates[0:24]，<=72 问", "stage": "news.fetch_news 之后、run_engine 之前", "state": "market + instruments（facts+headlines）"},
+      {"call": "Call-2", "module": "triage_and_heat 批B", "questions": "同上 candidates[24:48]，<=72 问", "stage": "同上", "skip_when": "候选 <=24 → 整跳"},
+      {"call": "Call-3", "module": "case_similarity（新）", "questions": "J6 k{i}，<=16 问", "stage": "引擎前（只用本地 facts + 刀谱签名，无新闻依赖）", "state": "knife_book(18 签名无 fwd) + instruments"},
+      {"call": "Call-4", "module": "score_catalysts", "questions": "J3 e{i}，<=30 问", "stage": "不变", "state": "events"},
+      {"call": "Call-5", "module": "catch_prior_and_weak_links（J4 扩展）", "questions": "J4 q{i}（<=10 CATCH）+ J7 w{i}（<=16 CATCH∪STABILIZING），<=26 问", "stage": "必须 run_engine 之后", "state": "replay_context + candidates（CATCH 行在前，q{i} 只对 CATCH 子集编号）"},
+      {"call": "Call-6", "module": "score_movers", "questions": "J5 m{i}，<=80 问", "stage": "不变", "state": "movers（涨/跌各 40 + knife_candidates）"}
+    ],
+    "pipeline_order_updated": "fetchers → news.fetch_news(候选, max_inst=56) → Call-1/2 triage_and_heat(+J8) → Call-3 case_similarity → Call-4 score_catalysts → engine.run_engine(veto_keys=jev.veto_set()) → Call-5 catch_prior_and_weak_links → Call-6 score_movers → payload 注入（新增 case_map/weak_link/news_divergence 三键）→ snapshot/settle(resolve_jev_log 扩 J6/J7/J8)/calibrate(三新节+build_jev_profiles) → render（universe.json/profile/jev_profiles 导出）",
+    "budget_guards": "MAX_CALLS=6 / MAX_QUESTIONS=320 进程级计数（缓存命中不计）；超限 → log.warning + 该模块 None 跑批继续；jev_cache {inputs_hash:{d,resp}} 6 调用独立 hash，当日保留裁剪不变，build-only 重跑与同日重试零重复计费；_logged_hashes 幂等不重复写 jev_log",
+    "degrade_matrix": [
+      {"condition": "无 TYPESAFE_API_KEY", "behavior": "8 个问题集全部静默 None；payload.jev.enabled=false；档案页 e 节、弱环标注、分歧徽章、相似案例节全部隐藏；站点与未接入字节级一致（验收标准延伸到新元素）"},
+      {"condition": "radar 轻跑批", "behavior": "零 Jev 调用（裁决 A1：contents:read 无持久化通道判断进不了校准闭环）；radar 只 join heavy 提交的 jev_semantic_gate.json / jev_movers.json / jev_profiles.json / payload.jev 块"},
+      {"condition": "无新闻 / 候选 0", "behavior": "Call-1/2 跳过；J6 不受影响（无新闻依赖）；J3 退化只用 macro_calendar_seed；J5 headlines 空数组照常问"},
+      {"condition": "headlines <2 条", "behavior": "该标的不发 J8 问（无记录非 0 分）"},
+      {"condition": "kline <300 根", "behavior": "该标的不进 J6"},
+      {"condition": "单次调用超时/异常/429×2", "behavior": "该模块 None，其余照常；跑批永不因 Jev 失败"},
+      {"condition": "bool/choice 答案不可解析", "behavior": "该问无记录、payload 键缺失、前端按 null 隐藏（诚实缺列不补零）"},
+      {"condition": "movers_history 无后续价 / J6/J7/J8 断档", "behavior": "unresolvable 不进分母（计数公示）"}
+    ],
+    "implementation_changes_concrete": [
+      "src/kw/jev.py：常量 MAX_CALLS=6、MAX_QUESTIONS=320、J1_LIMIT=48、J1_BATCH=24、J5_LIMIT=80、J6_LIMIT=16、J7_LIMIT=16；HORIZONS += {J6:252, J7:63, J8:5}；新增 J7_CRITERIA、J8_CRITERIA 常量与 build_j6_criteria()（读 knife_book_seed.json 模板生成 18+1 行）；新增 _bool_val；triage_and_heat 拆双批挂 J8；新增 case_similarity()；catch_prior 扩为 catch_prior_and_weak_links()；build_payload_block 增 case_map/weak_link/news_divergence",
+      "src/kw/fetchers/news.py：max_inst 40 → 56（抓取仍 0.5s 间隔串行）",
+      "src/kw/fetchers/radar.py + movers 持久化：24h 榜涨/跌各 20 → 各 40；movers_history.json 每日 80 行",
+      "src/kw/engine.py detect：facts 增 worst_day_252_pct 与 sigma20_ann_pct（J6/J8 输入与结算分母）",
+      "src/kw/settle.py resolve_jev_log：新增 J6（episode 完成判定+距离排名，冻结常数 DD_SCALE=25 / LNDAYS_SCALE=1.2）、J7（归因谓词集合 W + none_weak 分支，X-STOP 从台账/atier 读）、J8（sigma5/sigma20，分母用 aux.sigma20_frozen）；全部幂等只填 null 记录",
+      "src/kw/calibrate.py：jev 节新增 J6/J7/J8（含 J7 confusion 与 J8 group_contrast）；outcome_defs 新增三条逐字口径（RL-2 纯增列，J1-J5 旧键字节不动，outcome_defs_sha 变更同步写 change_log『v1.3 新增 J6/J7/J8 预注册口径』）；新增 build_jev_profiles() → docs/data/jev_profiles.json"
+    ]
+  },
+
+  "5_gates_depth": {
+    "status": "降级态（空载收编）",
+    "reason": "合成时 glob data/state/*.json 确认 depth_spec.json 不存在（2026-09-22）；按『输入不存在/实测不过的不进规格』门，本章无新闸与深度包可收编，不虚构条目。",
+    "governance_kept": [
+      "观察闸不入 BladeIndex：任何新增观察级闸门只作展示与记录，不参与刀锋指数/8 闸联动计数与 gate_ok checklist 项",
+      "2026-12 法庭：观察闸转正（进 8 闸正编）须凭 2026-12 复盘法庭成绩单（样本量、命中、误报、Wilson 区间）裁决，转正流程走 RL-9/RL-10 预注册；法庭之前一律观察态"
+    ],
+    "merge_rule_when_depth_spec_appears": "若 depth_spec.json 后续落盘（冲突时漏斗主轴优先，深度项作为档案页与闸门的子项收编）：universe_add → 并入第 1 章分层表并补 backfill 相位；gates_add → 一律先挂观察闸（受上述治理）；depth_pack → 收编为档案页 g 节（资金面）子项，逐腿机房实测通过才点亮；radar_add → 并入雷达页但零 Jev（裁决 A1）",
+    "known_depth_gaps_already_fixed_in_dossier": "COT（期货持仓）、美股/港股中概财报临近与空头面（quoteSummary）、加密 OI——三腿源未实测，档案页 g 节按『诚实缺口』单行声明固化（第 2 章 g 节降级文案），实测通过后由宇宙工程师补 profile.derivs 并点亮"
+  },
+
+  "6_build_order": {
+    "note": "12 步；每步 owns 的文件互斥，供并行开发；depends 指开发依赖（数据依赖由降级路径兜底）。并行组：G1=[1,2]；G2=[3,4,5,6,7]（文件互斥可全并行）；G3=[8]（后端合流）与 [9,10]（前端可按本规格契约与 8 并行开发）；G4=[11]；G5=[12]。",
+    "steps": [
+      {"step": 1, "name": "Actions 机房探针（裁决 A5/A9 门）", "owns": [".github/workflows/probe.yml（一次性 workflow_dispatch）", "data/state/probe_datacenter.json"], "depends": [], "do": "在 GitHub Actions 美国机房 curl 六端点各 1 请求并记状态码+样本行数：CG coins/markets p1、CG category=stablecoins、CG market_chart days=365、CoinPaprika /v1/tickers、OKX history-candles 1 页、Yahoo chart 0700.HK（港股腿确认）；结果写 probe_datacenter.json 并 commit", "accept": "六端点逐一 pass/fail 落盘；fail 通道按裁决 B10 降级链在第 3 步禁用；探针文件成为机房页数据源清单的凭证"},
+      {"step": 2, "name": "字体子集先行", "owns": ["scripts/display_chars.txt", "templates/assets/fonts/*", "data/state/style_spec.json（words 追加）"], "depends": [], "do": "display_chars.txt 第 1 行末尾追加 17 字『决策链事走势史新闻面对如何漏斗词表』→ 跑 python scripts/subset_font.py → style_spec words 同步（第 3 章 display_chars 清单）", "accept": "176 字子集 woff2 ≈45-60KB；构建扫描零子集外显示字；顺序铁律：先字体后模板"},
+      {"step": 3, "name": "加密宇宙通道", "owns": ["config.yaml", "src/kw/universe.py（新）", "src/kw/fetchers/coingecko.py（新）", "src/kw/fetchers/okx_kline.py（新）", "scripts/binance_seed.py（新，仅本地）", "data/state/universe_list.json", "data/state/universe_backfill.json"], "depends": [1], "do": "CG 榜单 2 请求（6s 间隔+退避+Paprika 降级+昨日快照兜底）→ cg_id 绑定 OKX/Binance（偏差>20% 拒绑）→ 四层分层落 universe_list.json；okx_kline：candles 日增量（8rps）+ history-candles 全量回填；backfill 状态机逐字实现（第 1 章）；binance_seed.py 本地产 seed tar.gz 挂 Release 资产；config.yaml 加 t2c 港股中概固化清单（cnhk 名单逐字）+ ORNAMENT 剔除名单", "accept": "本地跑通：universe_list.json 分层计数 ≈185/63/248/稳定币；回填断点中断重跑无损；生产零 Binance 请求；探针 fail 通道确认禁用且降级文案落 universe_list"},
+      {"step": 4, "name": "Yahoo 广度升级 + 港股中概入池", "owns": ["src/kw/fetchers/breadth.py", "src/kw/fetchers/yahoo.py", "src/kw/fetchers/knives.py"], "depends": [], "do": "breadth 循环对每股 write_kline（chart 第 4 返回值 ohlc）：增量 range=5d 与文件尾按日期合并去重，首次/缺失 range=3y；池扩为 US503+HK88+ADR34=625；yahoo.py write_kline 支持合并追加模式；修 knives.py:147 mcap bug（chart meta 无 marketCap → 置 null，出处记 PROGRESS）；HKD 无需改换算（cnhk 实测）", "accept": "抽样 20 股增量后 kline 尾行=最新交易日且无重复日期；625 池全量回填 2-3 个跑批内完成；mcap=null 不再假装有值"},
+      {"step": 5, "name": "引擎：链条 emit + 新事实量", "owns": ["src/kw/engine.py"], "depends": [], "do": "detect 增 z1d（全量落值）/worst_day_252_pct/sigma20_ann_pct/beta/corr60/pctile_dd52w（基准：加密对 BTC，其余对 ^GSPC；仅现有 kline 零新源）；detect/step_state 逐环 emit chain（8 环 schema 第 2 章 chain_contract，含企稳 5 子项 checklist_facts）；close_only 币 vol_ratio/close_pos/ATR 项 None 走 no_volume 先例；state_events 供 markPoint", "accept": "58 现有标的链条 emit 齐 8 环且实数正确；detect×1160 基准 <8s（实测 1.97ms/标的外推）；close_only 标的链条第 4 环标『此环免验』"},
+      {"step": 6, "name": "Jev v3", "owns": ["src/kw/jev.py", "src/kw/fetchers/news.py", "src/kw/fetchers/radar.py", "data/state/movers_history.json（扩 80 行）"], "depends": [], "do": "第 4 章 implementation_changes_concrete 前三条逐字实施（常量/J6/J7/J8/双批/解析器/payload 三新键/news 56/movers 40）", "accept": "无 key 站点字节级一致；有 key 单跑批 <=6 调用 <=320 问；jev_log 新增 J6/J7/J8 记录 horizon/aux 齐备；jev_cache 命中免计费"},
+      {"step": 7, "name": "结算与校准扩容", "owns": ["src/kw/settle.py", "src/kw/calibrate.py"], "depends": [], "do": "第 4 章 implementation_changes_concrete 后两条逐字实施（三条结算规则含冻结常数/三新校准节/outcome_defs 纯增列+change_log/build_jev_profiles）", "accept": "calibration.json 三新节 conclusive:false 起步；J1-J5 旧键字节不动；jev_profiles.json 产出且只含有记录的标的；结算幂等"},
+      {"step": 8, "name": "渲染与数据导出合流", "owns": ["src/kw/render.py", "run.py"], "depends": [3, 4, 5, 6, 7], "do": "render.py 新增：universe.json 导出（行 schema 第 2 章）/profile/{key}.json 导出循环（活跃集 ≤200，含 chain/verdict/jev/headlines/derivs/切片/similar）/verdict 模板函数（与前端同文，契约记 PROGRESS——裁决 B12）/payload.funnel 计数+defs/payload.thresholds_by_cls（config.yaml 透出）/board 行 z1d 透传；run.py 按第 4 章 pipeline_order 接线", "accept": "heavy 本地跑通产出全部新文件且 schema 合规；radar 模式零改动验证（只透传不重算，funnel 计数可从快照现算并恒标跑批口径）；payload <220KB"},
+      {"step": 9, "name": "模板骨架", "owns": ["templates/index.html.j2"], "depends": [2], "do": "main 增 <section class='view' id='v-profile'>；nav 四组+ng 组签、bottomnav 五槽（第 3 章 markup 逐字）；tape div 移除、funnel div 进原位", "accept": "模板渲染通过；子集外字扫描零命中"},
+      {"step": 10, "name": "前端应用层", "owns": ["templates/assets/app.js", "templates/assets/app.css"], "depends": [2], "do": "app.js：hashchange 路由 + renderProfile 九节（每节防御式降级，降级模板与后端同文）+ 首页重排（funnel/gatebar/今日机会）+ vHowto + cmdk 宇宙懒加载 + 抽屉『完整档案』链 + funnelpos 行 + knives data-group 锚；app.css：new_css 四组追加（零新动画零新 transition）", "accept": "375px 零横滚零控制台错误；三级降级实测（无 profile、无 kline、无 jev 各一遍）；返回键档案↔列表往返正常"},
+      {"step": 11, "name": "工作流与缓存", "owns": [".github/workflows/daily.yml"], "depends": [3, 4, 8], "do": "heavy 增 backfill 步（增量前执行，300s 墙钟）+ seed Release 资产恢复步（cache miss 时）+ cache 条目扩容（≈28-35MB zstd，键沿用 kw-db-v1-* 前缀）；radar.yml 零改动（只 restore cache 透传 kline/universe/profile 到部署）", "accept": "Actions 两连跑：第 1 跑回填推进且 state 提交、第 2 跑增量 <净增 5 分钟；手动清缓存验证 seed 恢复路径；radar 端到端绿且零 state 写入"},
+      {"step": 12, "name": "回归、写回与发版", "owns": ["data/state/radar_spec.json（仅 A6 注记追加）", "PROGRESS.md", "docs 回归清单"], "depends": [8, 9, 10, 11], "do": "radar_spec A6 追记『spark 回归实测完成：≤20 符号/请求、仅收盘；可作广度快路，不得作为 kline 源』（裁决 B9）；PROGRESS 记双端同文契约与 mcap bug；hard_checks 全量回归；观察 24h（deploy 时长 >90s 则 radar 降频整点——第 8 章）；按仓库惯例发版", "accept": "回归清单全绿（第 7 章 hard_checks）；24h 无红跑；版本 tag 与交接文档更新"}
+    ]
+  },
+
+  "7_honesty_gates_delta": {
+    "note": "以下为 v1.3 在 radar_spec.honesty_gates 之上的增量，旧条款全部继续有效",
+    "gates": [
+      "通道与口径徽章上墙：每个加密标的逐币标注通道（全K线 OKX / 种子+收盘续写 / 仅榜单 / 稳定币 / 1年·收盘·CoinGecko）；close_only 标的检测项跳过必须可见（『仅收盘数据』卡面+链条『此环免验』）；绝不用 CG 现价伪造 OHLC",
+      "span 诚实：上市不足 3 年按实际长度回填并公示 span 起点，不补假数据；OKX 下架币退『仅榜单』层并标注下架日",
+      "『前 500』口径上墙：美股宇宙=SP500∪NDX100 成分（非全市场市值排名）；加密=CG 市值榜 top500（rank 有并列/空洞，绑定以 cg_id 为准）——两句原文进机房页与如何读页",
+      "mcap 诚实缺口：美股/港股/中概 mcap 显示『—』+『$ 无免费已实测市值源』徽章（Yahoo chart meta 无 marketCap 为实测事实），不用任何未实测源补",
+      "港股口径：HKD 计价标注；成交额美元比较 /7.8 注明；中概 -50~-60 观察名单是展示层不是信号（B 档 -60 军规不动）；ORNAMENT 剔除理由（流动性/仙股/粉单）逐标的上墙",
+      "漏斗计数恒标『跑批口径』：burst_n 混合口径不伪装实时；payload.funnel 缺块整条不渲染",
+      "决策链条零前端计算：chain 由引擎逐环 emit 落盘，阻塞环唯一 --signal；简化链（降级拼装）必须自标『$ 简化链 · 完整链随 heavy 落盘』；verdict/链条降级模板双端同文（契约记 PROGRESS，改一处必改两处）",
+      "档案页每节独立降级且不隐藏节标题：无数据的节显示为什么没有（『未进入过刀落链条』『源未实测·本节缺席』『晋升 J1 后补拉』），缺数据也是事实",
+      "J6/J7/J8 结算口径提问时预注册（RL-6）并写入 calibration.json outcome_defs；尺度常数与 sigma20 冻结值随记录落盘杜绝事后重算漂移（RL-2）；unresolvable 分列计数公示，宁缺记录不造分母；随机基线（J6 1/3、J7 mean|W|/5）与命中率并列公示",
+      "per-instrument 战绩：逐笔 ✓/✗ 是事实照常显示，比率是统计受 RL-4 门禁（n<30『收集中 x/30』）；worst_miss 永远单列展示；标的移出监控池后档案仍在（RL-7/RL-8 防幸存者偏差）",
+      "unverified 源探针门：probe_datacenter.json 是机房页数据源清单的凭证；探针 fail 的通道禁用并显示降级文案+asof，绝不静默降级",
+      "Jev 消费边界不变：J2-J8 纯展示与排序，唯一例外 J1 语义闸（第 6 道闸声明不变）；radar 零 Jev（裁决 A1）"
+    ],
+    "hard_checks_regression": "每页 --gold <=1 / 无限 animation===1 仅 .hazard / transition 白名单外===0 / 子集外 display 汉字===0 / 375px 零横滚零控制台错误 / profile 三级降级实测（无 profile、无 kline、无 jev 各一遍）/ 无 TYPESAFE_API_KEY 时全站与改前字节级一致 / radar 跑批零 Jev 调用零 state 写入"
+  },
+
+  "8_budgets": {
+    "heavy_per_run_net_add": {
+      "CG榜单2请求+稳定币类别1请求(6s间隔)": "≈21s（Paprika 降级 1 请求 0.5s）",
+      "加密增量_OKX185": "25-50s（8rps 节流）",
+      "加密增量_Binance_only_63": "0s（CG 榜单行免费续写收盘）",
+      "美股增量503(chart 5d 兼写 kline)": "1.3-2.5 分钟（与现 breadth 增量基本重合，净增≈落盘时间）",
+      "港股中概增量122(chart 5d)": "40-60s（cnhk 实测口径）",
+      "cg_1y尾部(<=10币,6s/币)": "<=60s（仅回填期）",
+      "detect×1160": "5-8s（1.97ms/标的实测外推，Actions 放 2-3 倍）",
+      "universe.json+profile<=200+jev_profiles渲染": "<10s",
+      "Jev_6次串行POST": "典型 +10-25s，最坏 +~60s（单次 timeout 20s、429/529 退避 1 次）",
+      "合计": "净增 ≈3-5 分钟/heavy；daily.yml timeout 40 分钟余量充足；radar 跑批零改动（只 restore cache 透传，不刷新宇宙）"
+    },
+    "initial_backfill": "crypto_okx 1-2 个 heavy + seed 恢复 1 个 + stocks(US+港股中概 625) 2-3 个 + cg_1y 尾部数个——全程断点续传（universe_backfill.json 在 git 不受 cache 驱逐影响），中断无损；cache 全量重建路径实测 ≈5-8 分钟 + seed Release 资产兜底",
+    "storage": {
+      "kline文件数": "≈503(美股) + 122(港股中概) + 248(加密 OKX∪种子) + 若干 cg_1y + 现有 58（部分重叠）≈ 1180-1230 文件",
+      "docs目录": "现 5.7MB → 预计 ≈65MB raw（美股 35MB + 港股中概 9MB + 加密 15MB + 其余 6MB）；Pages 软限 1GB 余量 15 倍；访客侧每文件 gzip 23-24KB 懒加载，带宽 100GB/月无压力",
+      "pages_artifact": "每次部署上传整个 docs：压缩后 ≈28MB/次 × radar ~50 次/日，部署时长预计 +10-30s/次可接受；若 deploy 步 >90s，优先把 radar 部署降频到整点（规则链与数据不动），而非拆 kline",
+      "actions_cache": "现 kw-db-v1 ≈5.9MB(zstd) + kline ≈63MB raw（JSON zstd ≈2.5:1 ≈+25MB）≈ 单条 31-35MB；repo 上限 10GB 无忧；restore/save 增加数秒；键沿用 kw-db-v1-{run_id} 前缀",
+      "sqlite": "不为宇宙新增 px 序列（kline 是宇宙唯一事实源）；universe.json <450KB raw / <90KB gzip；payload <220KB；jev_profiles 实际远小于 2-3MB 极限"
+    },
+    "jev_cost": {
+      "unit_price": "$42 / 1e9 输入 token，输出免费（typesafe 计费页同源）",
+      "per_call_worst_tokens": {"Call-1": 28000, "Call-2": 28000, "Call-3": 14000, "Call-4": 7000, "Call-5": 20000, "Call-6": 43000},
+      "per_run": "worst ~140k tok ≈ $0.0059/跑；typical 平静日 ~65k ≈ $0.0027/跑（候选 ~12、无 Call-2、J6 ~6、J4 0-2）",
+      "annual": "782 跑/年（2/日×365 + 52 周日复盘）：worst ≈$4.6/年、typical ≈$2.1/年——旧预算 ~$1.1/年 → 新 <$5/年，仍在『年费几美元』量级",
+      "limits": "最大单请求 Call-6 ≈43k < 64k 单请求预算；限流 250k tok/s、1200 req/min 无压力"
+    },
+    "risks_condensed": [
+      {"risk": "CG/Paprika 美国机房可用性未实测（本机曼谷出口）", "mitigation": "build_order 第 1 步探针门；不过则禁用+退 Paprika/昨日快照，页面标 asof（A9 门）"},
+      {"risk": "CG 公开档限速漂移（5-15/min 无头部承诺）", "mitigation": "6s 间隔+指数退避+Paprika 降级；单日失败用昨日榜单并标注"},
+      {"risk": "前 500 里 ≈250 币无主流所 USDT 现货，K 线物理不可得", "mitigation": "诚实分层徽章（第 7 章）；口径声明不是缺陷"},
+      {"risk": "symbol 冲突（496 唯一 sym/500 行）", "mitigation": "cg_id 主键 + 币价偏差 >20% 拒绑记 failed"},
+      {"risk": "C-SEED 长期退化为收盘序列", "mitigation": "close_only 徽章+检测项跳过；人工触发本地跑批重刷种子资产"},
+      {"risk": "OKX 下架/迁移交易对增量 404", "mitigation": "连续 3 次失败转 failed 退『仅榜单』层并标注下架日"},
+      {"risk": "Actions cache 7 天未用/LRU 驱逐全量重建", "mitigation": "重建实测 ≈5-8 分钟 + seed 资产兜底；backfill state 在 git"},
+      {"risk": "Yahoo 非官方端点变更/加 crumb；spark 硬上限 20", "mitigation": "双 host 容错已有；spark 仅广度快路可整体弃用；失败股 continue、universe_n 如实缩水"},
+      {"risk": "小币 dd52w<=-50 常态化挤爆 payload/噪声", "mitigation": "payload 只收前 40 分+非常态；crypto_fall 对 rank>100 收紧走 RL-9/RL-10 预注册交 CAL 线"},
+      {"risk": "yfiua 恒指 CSV 单点（官方 hsi.com.hk 不可机读）", "mitigation": "仓库快照兜底（同 ndx100 模式）；拉取失败用快照并标 asof"},
+      {"risk": "部署体积×50 次/日", "mitigation": "监控 deploy 步时长；>90s 把 radar 部署降频到整点，规则链与数据不动"}
+    ]
+  }
+}
