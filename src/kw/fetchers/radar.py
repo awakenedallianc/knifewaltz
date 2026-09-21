@@ -2,9 +2,12 @@
 
 六条腿（全程目标 <150s，单腿失败只标 unhealthy 不整体抛）：
   1. Binance 现货+永续全市场 24h ticker → 崩落榜/逼空榜（USDT 对、quoteVolume>=2000 万过滤、
-     按 priceChangePercent 排序取涨/跌各 20；z 分按 spec daily_z_score 公式、量比见下）
+     按 priceChangePercent 排序取涨/跌各 20；z 分按 spec daily_z_score 公式、量比见下）；
+     Binance 451（GitHub Actions 美国机房 IP 被全线地理封锁，2026-09 实锤）时降级 OKX
+     tickers，行级 source 如实标 'okx'，binance-* 失败照旧记入 sources
   2. 全市场资金费率 premiumIndex 一次拿全 → 极值榜（warn 0.05% / red 0.1%）+
-     『跌得深+空头爆满』knife_candidates 组合检测
+     『跌得深+空头爆满』knife_candidates 组合检测；451 时降级 OKX 逐查（OKX 无全市场
+     费率单口，只查 BTC/ETH/SOL 三大币 + 跌幅最深永续 ≤20 个，extremes 覆盖面缩窄如实注明）
   3. OKX 强平单流（scout2 实测端点）+ Binance forceOrders 可用则并 → 小时聚合清算热度
   4. 停牌/熔断：NASDAQ Trader RSS + NYSE current CSV → halts 列表（LULD 交叉验证）
   5. Yahoo screener 三榜 day_gainers/day_losers/most_actives（UA header、间隔 1s、失败不重试）
@@ -16,7 +19,12 @@
   - vol_ratio 不能拿 Binance 24h 量对 Yahoo 日线量（单位不同源），改用 movers_history.json
     里同源 quote_vol 快照的近 20 日均值；不足 5 天为 null。
   - funding 字段为原始 8h 费率小数（0.0001 = 0.01%/8h）；funding_majors 为 %/8h（×100，
-    与 store 的 fund.{COIN} 口径一致，heavy 侧入库直接用）。
+    与 store 的 fund.{COIN} 口径一致，heavy 侧入库直接用）；OKX fundingRate 同为 8h 小数，
+    降级后口径不变（BTC 实测与 Binance 同数量级）。
+  - okx 降级的成交额口径（2026-09 实测）：SPOT 的 volCcy24h=计价币量（USDT 对即美元额，
+    与 Binance quoteVolume 同口径）；SWAP 的 volCcy24h=币量（≠计价币量！vol24h 为张数），
+    美元名义额 = volCcy24h×last（与 vol24h×ctVal×last 逐张换算完全一致）。
+    vol_ratio 只对同 source 的历史快照计算（binance 与 okx 成交额相差数倍，跨源即撒谎）。
   - 清算名义额为 sz×ctVal×bkPx 估算（ctVal 取 OKX 常见面值），只作热度序列不作精确金额。
 
 纪律：本模块不碰 sqlite；movers_history 落盘函数单列（append_movers_history，heavy 侧调用），
@@ -59,6 +67,9 @@ PERP_TICKER_URL = "https://fapi.binance.com/fapi/v1/ticker/24hr"
 PREMIUM_URL = "https://fapi.binance.com/fapi/v1/premiumIndex"
 FORCE_ORDERS_URL = "https://fapi.binance.com/fapi/v1/allForceOrders"  # 可能已下线，可用则并
 OKX_LIQ_URL = "https://www.okx.com/api/v5/public/liquidation-orders"
+# Binance 451 地理封锁时的降级源（GitHub Actions 美国机房 IP 被全线封锁，OKX 机房可达已实证）
+OKX_TICKERS_URL = "https://www.okx.com/api/v5/market/tickers"
+OKX_FUNDING_URL = "https://www.okx.com/api/v5/public/funding-rate"
 NASDAQ_HALTS_URL = "https://www.nasdaqtrader.com/rss.aspx?feed=tradehalts"
 NYSE_HALTS_URL = "https://www.nyse.com/api/trade-halts/current/download"
 SCREENER_URL = "https://query1.finance.yahoo.com/v1/finance/screener/predefined/saved"
@@ -124,33 +135,133 @@ def _crypto_z1d(base: str, pct24: float | None) -> float | None:
     return round(math.log(1 + pct24 / 100.0) / sd, 2)
 
 
-def _load_qv_history() -> dict[str, list[float]]:
-    """movers_history.json（heavy 侧滚动 30 日快照）→ {sym: [历史 quote_vol 按日期升序]}。"""
+def _load_qv_history() -> dict[str, list[tuple[str, float]]]:
+    """movers_history.json（heavy 侧滚动 30 日快照）→ {sym: [(source, quote_vol) 按日期升序]}。
+
+    旧快照无 source 字段（okx 降级链上线前全部来自 binance），按 'binance' 归位。
+    """
     hist = read_json(MOVERS_HISTORY_PATH) or {}
     days = hist.get("days") or {}
-    out: dict[str, list[float]] = {}
+    out: dict[str, list[tuple[str, float]]] = {}
     for date in sorted(days):
         for row in days[date] or []:
             qv = _f(row.get("quote_vol"))
             if row.get("sym") and qv:
-                out.setdefault(row["sym"], []).append(qv)
+                out.setdefault(row["sym"], []).append((row.get("source") or "binance", qv))
     return out
 
 
 def _vol_ratio(sym: str, quote_vol: float | None,
-               qv_hist: dict[str, list[float]]) -> float | None:
-    """量比 = 当前 24h quote_vol / 近 20 个历史快照均值（同源同单位）；不足 5 天为 null。
+               qv_hist: dict[str, list[tuple[str, float]]],
+               src: str = "binance") -> float | None:
+    """量比 = 当前 24h quote_vol / 近 20 个同源历史快照均值（同源同单位）；不足 5 天为 null。
+
+    同源硬约束：binance 与 okx 的成交额相差数倍（BTC 现货实测 24 亿 vs 9.4 亿美元/24h），
+    跨源做分母必然失真，故只取与当前行同 source 的快照；降级切换初期同源历史不足即如实 null。
 
     注：radar 只读 heavy 落盘的 movers_history，当日快照由 heavy 稍后写入，
     故历史序列天然不含当日（不自污染基准窗口）。
     """
     if not quote_vol:
         return None
-    prev = (qv_hist.get(sym) or [])[-20:]
+    prev = [qv for s, qv in (qv_hist.get(sym) or []) if s == src][-20:]
     if len(prev) < 5:
         return None
     avg = sum(prev) / len(prev)
     return round(quote_vol / avg, 2) if avg > 0 else None
+
+
+# ---------- Binance 451 降级：OKX tickers / funding（美国机房地理封锁兜底） ----------
+
+def _okx_spot_fallback(http: Http, sources: dict) -> list[dict]:
+    """Binance 现货 ticker 失败时的 OKX SPOT 降级，返回与 binance 路径同构的行。
+
+    字段语义（2026-09 实测）：pct24=(last/open24h-1)*100；SPOT 的 volCcy24h=计价币量
+    （USDT 对即美元成交额，与 Binance quoteVolume 同口径，BTC 实测同数量级：
+    okx 9.4 亿 vs binance 23.8 亿美元/24h）。instId 'BTC-USDT' 统一转 'BTCUSDT'。
+    """
+    t0 = time.time()
+    rows: list[dict] = []
+    try:
+        raw = http.get_json(OKX_TICKERS_URL, params={"instType": "SPOT"})
+        for t in raw.get("data") or []:
+            inst = t.get("instId") or ""
+            if not inst.endswith("-USDT"):
+                continue
+            base = inst[:-5]
+            sym = base + "USDT"
+            if base in STABLE_BASES or sym.endswith(LEVERAGED_SUFFIXES):
+                continue
+            last, open24h = _f(t.get("last")), _f(t.get("open24h"))
+            qv = _f(t.get("volCcy24h"), 0.0)
+            if qv < QV_MIN or not last or not open24h:
+                continue
+            rows.append({"sym": sym, "last": last,
+                         "pct24": round((last / open24h - 1) * 100, 3),
+                         "quote_vol": round(qv, 0), "src": "okx"})
+        _mark(sources, "okx-spot", t0, True, n=len(rows))
+    except Exception as e:
+        _mark(sources, "okx-spot", t0, False, err=e)
+    return rows
+
+
+def _okx_perp_fallback(http: Http, sources: dict) -> dict[str, dict]:
+    """Binance 永续 ticker 失败时的 OKX SWAP 降级（knife_candidates 的 pct24 来源）。
+
+    SWAP 的成交量字段语义与 SPOT 不同（2026-09 实测）：vol24h=张数、volCcy24h=币量
+    （不是计价币量！），美元名义额 = volCcy24h×last —— 与逐张换算 vol24h×ctVal×last
+    完全一致（BTC ctVal=0.01 实测两口径同值），且与 Binance perp quoteVolume 同数量级
+    （okx 116 亿 vs binance 220 亿美元/24h），故 quote_vol 用 volCcy24h×last 估算。
+    """
+    t0 = time.time()
+    out: dict[str, dict] = {}
+    try:
+        raw = http.get_json(OKX_TICKERS_URL, params={"instType": "SWAP"})
+        for t in raw.get("data") or []:
+            inst = t.get("instId") or ""
+            if not inst.endswith("-USDT-SWAP"):
+                continue
+            sym = inst[:-10].replace("-", "") + "USDT"  # BTC-USDT-SWAP → BTCUSDT
+            last, open24h = _f(t.get("last")), _f(t.get("open24h"))
+            vccy = _f(t.get("volCcy24h"))
+            out[sym] = {"last": last,
+                        "pct24": (round((last / open24h - 1) * 100, 3)
+                                  if (last and open24h) else None),
+                        "quote_vol": round(vccy * last, 0) if (vccy and last) else 0.0,
+                        "src": "okx"}
+        _mark(sources, "okx-perp", t0, True, n=len(out))
+    except Exception as e:
+        _mark(sources, "okx-perp", t0, False, err=e)
+    return out
+
+
+def _okx_funding_fallback(http: Http, sources: dict,
+                          perp_map: dict[str, dict]) -> tuple[dict[str, float], str]:
+    """Binance premiumIndex 失败时的 OKX 费率降级（fundingRate 为 8h 小数，同口径）。
+
+    OKX 无全市场费率单次接口（/public/funding-rate 必须逐 instId 查），预算内退化为：
+    BTC/ETH/SOL 三大币必查（funding_majors 口径不空）+ 按 pct24 最深的永续逐查 ≤20 个
+    （兜住 knife_candidates『跌深+空头爆满』检测）。funding_extremes 因此只覆盖被查符号
+    而非全市场，覆盖面缩窄由 degraded_reason 如实注明，绝不硬造。
+    """
+    t0 = time.time()
+    fmap: dict[str, float] = {}
+    err = None
+    majors = ["BTCUSDT", "ETHUSDT", "SOLUSDT"]
+    deep = sorted((s for s, p in perp_map.items()
+                   if s not in majors and p.get("pct24") is not None
+                   and (p.get("quote_vol") or 0) >= QV_MIN),
+                  key=lambda s: perp_map[s]["pct24"])[:20]
+    for sym in majors + deep:
+        try:
+            d = http.get_json(OKX_FUNDING_URL, params={"instId": f"{sym[:-4]}-USDT-SWAP"})
+            fr = _f(((d.get("data") or [{}])[0]).get("fundingRate"))
+            if fr is not None:
+                fmap[sym] = fr
+        except Exception as e:
+            err = e
+    _mark(sources, "okx-funding", t0, ok=bool(fmap), n=len(fmap), err=err)
+    return fmap, "OKX 无全市场费率单口，仅逐查三大币+跌幅最深永续 ≤20 个（extremes 非全市场）"
 
 
 # ---------- 腿 1+2：Binance 现货/永续 ticker + 全市场资金费率 ----------
@@ -182,7 +293,14 @@ def _leg_crypto(http: Http, sources: dict) -> dict:
         _mark(sources, "binance-spot", t0, True, n=len(spot))
     except Exception as e:
         _mark(sources, "binance-spot", t0, False, err=e)
-        degraded.append(f"spot: {str(e)[:60]}")
+        spot = _okx_spot_fallback(http, sources)
+        if spot:
+            # 降级已接住：binance 失败照旧记录在 sources，但不再算整体不健康
+            sources["binance-spot"]["optional"] = True
+            out["source"] = "okx"
+            degraded.append(f"spot: binance 失败({str(e)[:40]})已降级 okx")
+        else:
+            degraded.append(f"spot: {str(e)[:60]}")
 
     # ② 永续 24h ticker（weight=40）——knife_candidates 的 pct24 来源
     perp_map: dict[str, dict] = {}
@@ -198,10 +316,16 @@ def _leg_crypto(http: Http, sources: dict) -> dict:
         _mark(sources, "binance-perp", t0, True, n=len(perp_map))
     except Exception as e:
         _mark(sources, "binance-perp", t0, False, err=e)
-        degraded.append(f"perp: {str(e)[:60]}")
+        perp_map = _okx_perp_fallback(http, sources)
+        if perp_map:
+            sources["binance-perp"]["optional"] = True  # 降级已接住
+            degraded.append(f"perp: binance 失败({str(e)[:40]})已降级 okx")
+        else:
+            degraded.append(f"perp: {str(e)[:60]}")
 
-    # ③ 全市场资金费率（premiumIndex 一次拿全，weight=10）
+    # ③ 全市场资金费率（premiumIndex 一次拿全，weight=10；451 时降级 OKX 逐查）
     funding_map: dict[str, float] = {}
+    funding_src = "binance-fapi"
     t0 = time.time()
     try:
         raw = http.get_json(PREMIUM_URL)
@@ -213,7 +337,13 @@ def _leg_crypto(http: Http, sources: dict) -> dict:
         _mark(sources, "binance-premium", t0, True, n=len(funding_map))
     except Exception as e:
         _mark(sources, "binance-premium", t0, False, err=e)
-        degraded.append(f"premium: {str(e)[:60]}")
+        funding_map, note = _okx_funding_fallback(http, sources, perp_map)
+        if funding_map:
+            funding_src = "okx"
+            sources["binance-premium"]["optional"] = True  # 降级已接住
+            degraded.append(f"premium: binance 失败已降级 okx（{note}）")
+        else:
+            degraded.append(f"premium: {str(e)[:60]}")
 
     # 大币种费率（%/8h ×100，与 store fund.{COIN} 口径一致；heavy 侧入库用）
     for coin in ("BTC", "ETH", "SOL"):
@@ -227,13 +357,14 @@ def _leg_crypto(http: Http, sources: dict) -> dict:
     def _decorate(row: dict, side: str) -> dict:
         sym = row["sym"]
         j = jev.get(sym) or {}
+        src = row.get("src", "binance")  # okx 降级行如实标 'okx'
         return {"sym": sym, "last": row["last"], "pct24": row["pct24"],
                 "quote_vol": row["quote_vol"], "funding": funding_map.get(sym),
                 "z1d": _crypto_z1d(sym[:-4], row["pct24"]),
-                "vol_ratio": _vol_ratio(sym, row["quote_vol"], qv_hist),
+                "vol_ratio": _vol_ratio(sym, row["quote_vol"], qv_hist, src),
                 "side": side,
                 "jev_flavor": j.get("flavor"), "jev_family": j.get("family"),
-                "source": "binance", "asof": asof}
+                "source": src, "asof": asof}
 
     # spec：按 priceChangePercent 排序取涨/跌各 20 名（榜位=排名，绿盘日跌榜可能含小涨标的，
     # pct24 如实展示不粉饰）；宇宙不足 40 对时跌榜剔除已上涨榜的符号，防止同名双挂
@@ -256,14 +387,15 @@ def _leg_crypto(http: Http, sources: dict) -> dict:
             extremes.append({"sym": sym, "funding": fr,
                              "level": "red" if abs(fr) >= FUNDING_RED else "warn",
                              "pct24": p.get("pct24"), "quote_vol": qv,
-                             "source": "binance-fapi", "asof": asof})
+                             "source": funding_src, "asof": asof})
         if fr <= -FUNDING_RED and (p.get("pct24") or 0) <= KNIFE_PCT24:
             j = jev.get(sym) or {}
             knives.append({"sym": sym, "last": p.get("last"), "pct24": p.get("pct24"),
                            "quote_vol": qv, "funding": fr, "note": "跌深+空头爆满",
                            "z1d": _crypto_z1d(sym[:-4], p.get("pct24")),
                            "jev_flavor": j.get("flavor"), "jev_family": j.get("family"),
-                           "source": "binance-fapi", "asof": asof})
+                           "source": ("okx" if (funding_src == "okx" or p.get("src") == "okx")
+                                      else "binance-fapi"), "asof": asof})
     extremes.sort(key=lambda r: abs(r["funding"]), reverse=True)
     knives.sort(key=lambda r: r["funding"])
     out["funding_extremes"] = extremes[:40]
@@ -579,10 +711,11 @@ def build_radar(http: Http | None = None) -> dict:
 
 def append_movers_history(movers: list[dict], path: Path | None = None,
                           today: str | None = None, keep_days: int = 30) -> dict:
-    """把当日 movers 快照（date/sym/last/pct24/quote_vol/funding）写入滚动 30 日历史。
+    """把当日 movers 快照（date/sym/last/pct24/quote_vol/funding/source）写入滚动 30 日历史。
 
     结构 {"days": {date: [row...]}, "updated": iso}；同日重跑整日替换（幂等）；
     按 sym 去重；供 J5 结算（3 日后快照价）与量比基准使用。返回写入摘要。
+    source 随行落盘（binance/okx），量比分母只取同源快照（跨源成交额相差数倍）。
     """
     path = Path(path) if path else MOVERS_HISTORY_PATH
     today = today or now_iso()[:10]
@@ -596,7 +729,7 @@ def append_movers_history(movers: list[dict], path: Path | None = None,
         seen.add(sym)
         rows.append({"date": today, "sym": sym, "last": m.get("last"),
                      "pct24": m.get("pct24"), "quote_vol": m.get("quote_vol"),
-                     "funding": m.get("funding")})
+                     "funding": m.get("funding"), "source": m.get("source") or "binance"})
     days[today] = rows
     for d in sorted(days)[:-keep_days] if len(days) > keep_days else []:
         days.pop(d, None)
