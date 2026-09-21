@@ -131,464 +131,140 @@
   "2026-09-22": [
    {
     "date": "2026-09-22",
-    "sym": "PHAUSDT",
-    "last": 0.0508,
-    "pct24": 38.043,
-    "quote_vol": 24986505.3646,
-    "funding": -0.00012882,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
     "sym": "PEPEUSDT",
-    "last": 4.96e-06,
-    "pct24": 23.383,
-    "quote_vol": 115308562.73522386,
+    "last": 4.993e-06,
+    "pct24": 24.731,
+    "quote_vol": 59675622.0,
     "funding": null,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "SEIUSDT",
-    "last": 0.05866,
-    "pct24": 16.853,
-    "quote_vol": 29063706.592495,
-    "funding": 0.0001,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "PENGUUSDT",
-    "last": 0.008959,
-    "pct24": 14.727,
-    "quote_vol": 23164923.92799,
-    "funding": 5e-05,
-    "source": "binance"
+    "source": "okx"
    },
    {
     "date": "2026-09-22",
     "sym": "SUIUSDT",
-    "last": 1.0084,
-    "pct24": 14.266,
-    "quote_vol": 234213684.44777,
-    "funding": 0.0001,
-    "source": "binance"
+    "last": 1.0187,
+    "pct24": 15.512,
+    "quote_vol": 73588342.0,
+    "funding": null,
+    "source": "okx"
    },
    {
     "date": "2026-09-22",
     "sym": "DOGEUSDT",
-    "last": 0.09901,
-    "pct24": 14.054,
-    "quote_vol": 211999473.93394,
-    "funding": 0.0001,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "FETUSDT",
-    "last": 0.1993,
-    "pct24": 14.016,
-    "quote_vol": 32736009.05729,
-    "funding": 0.0001,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "PROVEUSDT",
-    "last": 0.253,
-    "pct24": 12.745,
-    "quote_vol": 20552712.9269,
-    "funding": -0.00116282,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "XPLUSDT",
-    "last": 0.09883,
-    "pct24": 11.07,
-    "quote_vol": 26299324.880794,
-    "funding": 5e-05,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "MARSCOINUSDT",
-    "last": 0.1021,
-    "pct24": 9.198,
-    "quote_vol": 23679928.81528,
-    "funding": 5e-05,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "ZAMAUSDT",
-    "last": 0.09663,
-    "pct24": 8.989,
-    "quote_vol": 33634086.9201,
-    "funding": 3.995e-05,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "TAOUSDT",
-    "last": 286.5,
-    "pct24": 8.687,
-    "quote_vol": 63909695.40834,
-    "funding": 5e-05,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "牛来USDT",
-    "last": 0.10493,
-    "pct24": 8.231,
-    "quote_vol": 21717476.01666,
-    "funding": 0.00040232,
-    "source": "binance"
+    "last": 0.09869,
+    "pct24": 13.685,
+    "quote_vol": 144034283.0,
+    "funding": null,
+    "source": "okx"
    },
    {
     "date": "2026-09-22",
     "sym": "ARBUSDT",
-    "last": 0.2263,
-    "pct24": 8.122,
-    "quote_vol": 53932234.30274,
-    "funding": 0.0001,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "SOLUSDT",
-    "last": 117.36,
-    "pct24": 6.963,
-    "quote_vol": 508251408.72952,
-    "funding": 0.0001,
-    "source": "binance"
+    "last": 0.22852,
+    "pct24": 8.855,
+    "quote_vol": 26455733.0,
+    "funding": null,
+    "source": "okx"
    },
    {
     "date": "2026-09-22",
     "sym": "XRPUSDT",
-    "last": 1.5044,
-    "pct24": 6.923,
-    "quote_vol": 394939936.82991,
-    "funding": 0.0001,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "MSTRBUSDT",
-    "last": 166.6,
-    "pct24": 6.857,
-    "quote_vol": 20187726.49988,
+    "last": 1.5045,
+    "pct24": 7.112,
+    "quote_vol": 114605713.0,
     "funding": null,
-    "source": "binance"
+    "source": "okx"
    },
    {
     "date": "2026-09-22",
-    "sym": "XLMUSDT",
-    "last": 0.209,
-    "pct24": 6.742,
-    "quote_vol": 41304856.0891,
-    "funding": 0.0001,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "ADAUSDT",
-    "last": 0.2428,
-    "pct24": 6.725,
-    "quote_vol": 64283161.70177,
-    "funding": 0.0001,
-    "source": "binance"
+    "sym": "SOLUSDT",
+    "last": 117.74,
+    "pct24": 7.095,
+    "quote_vol": 160179056.0,
+    "funding": 6.55163378002e-05,
+    "source": "okx"
    },
    {
     "date": "2026-09-22",
     "sym": "BTCUSDT",
-    "last": 86000.51,
-    "pct24": 6.018,
-    "quote_vol": 2428845497.6869383,
-    "funding": 3.074e-05,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "AAVEUSDT",
-    "last": 143.99,
-    "pct24": 5.65,
-    "quote_vol": 27521272.09056,
-    "funding": 0.0001,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "HBARUSDT",
-    "last": 0.09073,
-    "pct24": 5.28,
-    "quote_vol": 27158563.54125,
-    "funding": 1.511e-05,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "LTCUSDT",
-    "last": 61.5,
-    "pct24": 5.218,
-    "quote_vol": 46745870.00093,
-    "funding": 0.0001,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "BCHUSDT",
-    "last": 264.2,
-    "pct24": 5.217,
-    "quote_vol": 24490428.0881,
-    "funding": -9.761e-05,
-    "source": "binance"
+    "last": 86088.0,
+    "pct24": 6.171,
+    "quote_vol": 958305278.0,
+    "funding": 3.86263391751e-05,
+    "source": "okx"
    },
    {
     "date": "2026-09-22",
     "sym": "ETHUSDT",
-    "last": 2756.67,
-    "pct24": 4.863,
-    "quote_vol": 1435138219.983362,
-    "funding": 4.857e-05,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "ONDOUSDT",
-    "last": 0.4385,
-    "pct24": 4.281,
-    "quote_vol": 36443292.55961,
-    "funding": 5e-05,
-    "source": "binance"
+    "last": 2763.44,
+    "pct24": 5.187,
+    "quote_vol": 664931020.0,
+    "funding": 1.85957391705e-05,
+    "source": "okx"
    },
    {
     "date": "2026-09-22",
     "sym": "BNBUSDT",
-    "last": 800.55,
-    "pct24": 4.26,
-    "quote_vol": 221809099.6363,
-    "funding": 0.00011116,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "BANKUSDT",
-    "last": 0.0344,
-    "pct24": 3.927,
-    "quote_vol": 78803592.16501,
-    "funding": 5e-05,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "LINKUSDT",
-    "last": 12.923,
-    "pct24": 3.666,
-    "quote_vol": 56298746.36772,
-    "funding": 8.131e-05,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "TRUMPUSDT",
-    "last": 2.145,
-    "pct24": 3.623,
-    "quote_vol": 34087652.75452,
-    "funding": 5e-05,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "POLUSDT",
-    "last": 0.11057,
-    "pct24": 3.211,
-    "quote_vol": 20602433.856826,
-    "funding": 5e-05,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "CRCLBUSDT",
-    "last": 94.31,
-    "pct24": 3.15,
-    "quote_vol": 31531399.8905,
+    "last": 801.4,
+    "pct24": 4.471,
+    "quote_vol": 20368806.0,
     "funding": null,
-    "source": "binance"
+    "source": "okx"
    },
    {
     "date": "2026-09-22",
-    "sym": "ONEUSDT",
-    "last": 0.004022,
-    "pct24": 2.943,
-    "quote_vol": 50928627.8332433,
-    "funding": -9.25e-05,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "APTUSDT",
-    "last": 0.76,
-    "pct24": 2.426,
-    "quote_vol": 21182943.96856,
-    "funding": 0.0001,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "FILUSDT",
-    "last": 0.9589,
-    "pct24": 1.74,
-    "quote_vol": 21293008.499689,
-    "funding": 0.0001,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "PUMPUSDT",
-    "last": 0.004249,
-    "pct24": 1.699,
-    "quote_vol": 27531543.242507,
-    "funding": 5e-05,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "SAGAUSDT",
-    "last": 0.0397,
-    "pct24": 1.483,
-    "quote_vol": 28806303.634264,
-    "funding": 5e-05,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "WLDUSDT",
-    "last": 0.4333,
-    "pct24": 0.301,
-    "quote_vol": 37720344.0229,
-    "funding": -4.368e-05,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "ASTERUSDT",
-    "last": 0.739,
-    "pct24": 0.136,
-    "quote_vol": 21734781.96949,
-    "funding": 5e-05,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "TRXUSDT",
-    "last": 0.3439,
-    "pct24": 0.087,
-    "quote_vol": 32364025.42527,
-    "funding": -1.82e-05,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "ENAUSDT",
-    "last": 0.2101,
-    "pct24": -6.788,
-    "quote_vol": 82027935.598051,
-    "funding": 5e-05,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "AVAXUSDT",
-    "last": 10.91,
-    "pct24": -2.029,
-    "quote_vol": 110993432.78088,
-    "funding": 3.331e-05,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "INJUSDT",
-    "last": 7.76,
-    "pct24": -0.881,
-    "quote_vol": 21472977.678,
-    "funding": 0.0001,
-    "source": "binance"
+    "sym": "OKBUSDT",
+    "last": 122.65,
+    "pct24": 4.046,
+    "quote_vol": 24334375.0,
+    "funding": null,
+    "source": "okx"
    },
    {
     "date": "2026-09-22",
     "sym": "NEARUSDT",
-    "last": 4.036,
-    "pct24": -0.689,
-    "quote_vol": 278449129.8648,
+    "last": 4.109,
+    "pct24": 1.082,
+    "quote_vol": 47398885.0,
     "funding": 0.0001,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "SNDKBUSDT",
-    "last": 1759.92,
-    "pct24": -0.644,
-    "quote_vol": 26747491.873445,
-    "funding": null,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "XAUTUSDT",
-    "last": 4346.01,
-    "pct24": -0.553,
-    "quote_vol": 24067641.740539,
-    "funding": 2.073e-05,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "PAXGUSDT",
-    "last": 4341.5,
-    "pct24": -0.452,
-    "quote_vol": 20338690.891239,
-    "funding": 5e-05,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "RLUSDUSDT",
-    "last": 0.9999,
-    "pct24": -0.04,
-    "quote_vol": 112571920.4707,
-    "funding": null,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "UUSDT",
-    "last": 0.9999,
-    "pct24": -0.03,
-    "quote_vol": 50056175.4756,
-    "funding": null,
-    "source": "binance"
-   },
-   {
-    "date": "2026-09-22",
-    "sym": "ZECUSDT",
-    "last": 1476.99,
-    "pct24": 0.002,
-    "quote_vol": 399407525.93869,
-    "funding": 5.5e-06,
-    "source": "binance"
+    "source": "okx"
    },
    {
     "date": "2026-09-22",
     "sym": "UNIUSDT",
-    "last": 8.737,
-    "pct24": 0.023,
-    "quote_vol": 112813868.3195,
-    "funding": 9.46e-05,
-    "source": "binance"
+    "last": 8.809,
+    "pct24": 0.766,
+    "quote_vol": 59072609.0,
+    "funding": -1.99129802613e-05,
+    "source": "okx"
+   },
+   {
+    "date": "2026-09-22",
+    "sym": "HYPEUSDT",
+    "last": 92.949,
+    "pct24": -0.326,
+    "quote_vol": 43884125.0,
+    "funding": 0.0001,
+    "source": "okx"
+   },
+   {
+    "date": "2026-09-22",
+    "sym": "ZECUSDT",
+    "last": 1477.56,
+    "pct24": -0.329,
+    "quote_vol": 67453270.0,
+    "funding": -1.83075383105e-05,
+    "source": "okx"
+   },
+   {
+    "date": "2026-09-22",
+    "sym": "AVAXUSDT",
+    "last": 10.982,
+    "pct24": -0.615,
+    "quote_vol": 24919136.0,
+    "funding": -6.60474326277e-05,
+    "source": "okx"
    }
   ]
  },
- "updated": "2026-09-22T02:04:40+07:00"
+ "updated": "2026-09-22T02:16:48+07:00"
 }

@@ -99,7 +99,7 @@
  },
  "APTV": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-09-22",
   "clear_streak": 0,
   "top_headline": "Aptiv’s 44% decline validates InvestingPro’s overvalued call By Investing.com - Investing.com"
@@ -113,7 +113,7 @@
  },
  "PNR": {
   "veto": false,
-  "p": 0.12,
+  "p": 0.16,
   "date": "2026-09-22",
   "clear_streak": 0,
   "top_headline": "PNR Investors Have Opportunity to Lead Pentair plc Securities Fraud Lawsuit with SBS Law - GlobeNewswire"
@@ -127,7 +127,7 @@
  },
  "SLV": {
   "veto": false,
-  "p": 0.03,
+  "p": 0.01,
   "date": "2026-09-22",
   "clear_streak": 0,
   "top_headline": "About iShares Silver Trust rStock - Coinbase"
@@ -162,7 +162,7 @@
  },
  "URA": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-09-22",
   "clear_streak": 0,
   "top_headline": "$URA Launches on Solana via Sunrise by Backpack Securities - Coinfomania"
@@ -260,7 +260,7 @@
  },
  "WB": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.02,
   "date": "2026-09-22",
   "clear_streak": 0,
   "top_headline": "Paramount-WB Opponents React With Dismay About Settlement - TV News Check"
@@ -274,21 +274,21 @@
  },
  "KC": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-09-22",
   "clear_streak": 0,
   "top_headline": "Sporting KC Weekly Schedule: Sept. 21-26, 2026 - Sporting Kansas City"
  },
  "BIDU": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.01,
   "date": "2026-09-22",
   "clear_streak": 0,
   "top_headline": "IDF foils imminent terror attack in Judea and Samaria - Israel National News"
  },
  "PDD": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-09-22",
   "clear_streak": 0,
   "top_headline": "Princess Diana's brother suggested that she may have had undiagnosed ADHD - UA.NEWS"
