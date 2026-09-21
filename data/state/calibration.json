@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-21T23:06:03+07:00",
+ "generated_at": "2026-09-21T23:13:30+07:00",
  "date": "2026-09-21",
  "min_n": 30,
  "outcome_defs": {
@@ -19,7 +19,7 @@
    "question_id": "J1",
    "outcome_def": "1 若 180 日内触发 X-EVENT 类事件或较 veto 日再跌 90%",
    "n_total": 0,
-   "n_pending": 48,
+   "n_pending": 71,
    "n_unresolvable": 0,
    "conclusive": false,
    "base_rate": null,
@@ -32,7 +32,7 @@
    "question_id": "J2",
    "outcome_def": "1 若 |5 日前向收益| >= 2×ATR14%",
    "n_total": 0,
-   "n_pending": 48,
+   "n_pending": 71,
    "n_unresolvable": 0,
    "conclusive": false,
    "base_rate": null,

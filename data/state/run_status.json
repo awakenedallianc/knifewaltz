@@ -1,1 +1,1 @@
-{"heavy": {}, "at": "2026-09-21T23:08:37+07:00"}
+{"heavy": {"cboe": {"ok": true, "metrics": 17508, "s": 2.0, "notes": ""}, "derivs": {"ok": true, "metrics": 3956, "s": 3.4, "notes": "fund BTC: 451 Client Error:  for url: https://fapi.binance.com/fapi/v1; oi BTC: 451 Client Error:  for url: https://fapi.binance.com/fapi/v1; fund ETH: 451 Client Error:  for url: https://fapi.binance"}, "breadth": {"ok": true, "metrics": 4, "s": 66.0, "notes": "universe 503/503"}, "knives": {"ok": true, "metrics": 53654, "s": 31.0, "notes": ""}}, "at": "2026-09-21T23:13:30+07:00"}
