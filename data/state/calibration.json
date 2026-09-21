@@ -1,0 +1,229 @@
+{
+ "generated_at": "2026-09-21T23:06:03+07:00",
+ "date": "2026-09-21",
+ "min_n": 30,
+ "outcome_defs": {
+  "J1": "1 若 180 日内触发 X-EVENT 类事件或较 veto 日再跌 90%",
+  "J2": "1 若 |5 日前向收益| >= 2×ATR14%",
+  "J3": "1 若事件后 3 日 VIX 或已实现波动跳升 >15%",
+  "J4": "该笔 CATCH 按 A 档退出规则的胜负（从 ledger 读）",
+  "J5": "1 若 3 日内 |累计收益| >= 10%（movers_history 快照价口径）",
+  "J1_shadow": "反事实盈亏 = atier_exec(entry, stop) 结果",
+  "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+  "heat": "|5 日前向收益|>=2×ATR14%",
+  "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+ },
+ "outcome_defs_sha": "e40741506f8bfd43",
+ "jev": {
+  "J1": {
+   "question_id": "J1",
+   "outcome_def": "1 若 180 日内触发 X-EVENT 类事件或较 veto 日再跌 90%",
+   "n_total": 0,
+   "n_pending": 48,
+   "n_unresolvable": 0,
+   "conclusive": false,
+   "base_rate": null,
+   "brier": null,
+   "brier_baseline_climatology": null,
+   "reliability": null,
+   "note": "收集中 0/30"
+  },
+  "J2": {
+   "question_id": "J2",
+   "outcome_def": "1 若 |5 日前向收益| >= 2×ATR14%",
+   "n_total": 0,
+   "n_pending": 48,
+   "n_unresolvable": 0,
+   "conclusive": false,
+   "base_rate": null,
+   "brier": null,
+   "brier_baseline_climatology": null,
+   "reliability": null,
+   "note": "收集中 0/30"
+  },
+  "J3": {
+   "question_id": "J3",
+   "outcome_def": "1 若事件后 3 日 VIX 或已实现波动跳升 >15%",
+   "n_total": 0,
+   "n_pending": 20,
+   "n_unresolvable": 0,
+   "conclusive": false,
+   "base_rate": null,
+   "brier": null,
+   "brier_baseline_climatology": null,
+   "reliability": null,
+   "note": "收集中 0/30"
+  },
+  "J4": {
+   "question_id": "J4",
+   "outcome_def": "该笔 CATCH 按 A 档退出规则的胜负（从 ledger 读）",
+   "n_total": 0,
+   "n_pending": 0,
+   "n_unresolvable": 0,
+   "conclusive": false,
+   "base_rate": null,
+   "brier": null,
+   "brier_baseline_climatology": null,
+   "reliability": null,
+   "note": "收集中 0/30"
+  },
+  "J5": {
+   "question_id": "J5",
+   "outcome_def": "1 若 3 日内 |累计收益| >= 10%（movers_history 快照价口径）",
+   "n_total": 0,
+   "n_pending": 80,
+   "n_unresolvable": 0,
+   "conclusive": false,
+   "base_rate": null,
+   "brier": null,
+   "brier_baseline_climatology": null,
+   "reliability": null,
+   "note": "收集中 0/30"
+  },
+  "J1_shadow": {
+   "outcome_def": "反事实盈亏 = atier_exec(entry, stop) 结果",
+   "n": 0,
+   "mean_pct": null,
+   "median_pct": null,
+   "worst_pct": null,
+   "note": "暂无拦截样本"
+  }
+ },
+ "knifescore": {
+  "edges": [
+   0,
+   20,
+   40,
+   60,
+   80,
+   100
+  ],
+  "caliber_note": "口径①=触发日收盘持有 20 交易日；口径②=A 档执行（X-STOP/X-TIME/60日全退）；252 日口径随样本积累补列，永不与执行口径合并",
+  "live": {
+   "buckets": [
+    {
+     "score_lo": 0,
+     "score_hi": 20,
+     "n_signals": 0,
+     "hold20": {
+      "n": 0,
+      "win_rate": null,
+      "wilson95": null,
+      "median_pct": null,
+      "worst_pct": null,
+      "note": "收集中 0/30"
+     },
+     "atier": {
+      "n": 0,
+      "win_rate": null,
+      "wilson95": null,
+      "median_pct": null,
+      "worst_pct": null,
+      "note": "收集中 0/30"
+     }
+    },
+    {
+     "score_lo": 20,
+     "score_hi": 40,
+     "n_signals": 1,
+     "hold20": {
+      "n": 0,
+      "win_rate": null,
+      "wilson95": null,
+      "median_pct": null,
+      "worst_pct": null,
+      "note": "收集中 0/30"
+     },
+     "atier": {
+      "n": 0,
+      "win_rate": null,
+      "wilson95": null,
+      "median_pct": null,
+      "worst_pct": null,
+      "note": "收集中 0/30"
+     }
+    },
+    {
+     "score_lo": 40,
+     "score_hi": 60,
+     "n_signals": 1,
+     "hold20": {
+      "n": 0,
+      "win_rate": null,
+      "wilson95": null,
+      "median_pct": null,
+      "worst_pct": null,
+      "note": "收集中 0/30"
+     },
+     "atier": {
+      "n": 0,
+      "win_rate": null,
+      "wilson95": null,
+      "median_pct": null,
+      "worst_pct": null,
+      "note": "收集中 0/30"
+     }
+    },
+    {
+     "score_lo": 60,
+     "score_hi": 80,
+     "n_signals": 0,
+     "hold20": {
+      "n": 0,
+      "win_rate": null,
+      "wilson95": null,
+      "median_pct": null,
+      "worst_pct": null,
+      "note": "收集中 0/30"
+     },
+     "atier": {
+      "n": 0,
+      "win_rate": null,
+      "wilson95": null,
+      "median_pct": null,
+      "worst_pct": null,
+      "note": "收集中 0/30"
+     }
+    },
+    {
+     "score_lo": 80,
+     "score_hi": 100,
+     "n_signals": 0,
+     "hold20": {
+      "n": 0,
+      "win_rate": null,
+      "wilson95": null,
+      "median_pct": null,
+      "worst_pct": null,
+      "note": "收集中 0/30"
+     },
+     "atier": {
+      "n": 0,
+      "win_rate": null,
+      "wilson95": null,
+      "median_pct": null,
+      "worst_pct": null,
+      "note": "收集中 0/30"
+     }
+    }
+   ],
+   "n_total": 2
+  },
+  "backtest": {
+   "available": false,
+   "note": "回测分桶待 walk-forward 数据源接入；live 与 backtest 永不合并（RL-7）"
+  }
+ },
+ "rule_counts": {
+  "live": {
+   "S-FALL": 2
+  },
+  "backtest": {
+   "G-VIX-36": 30,
+   "G-VIX-45": 13,
+   "G-VIX-50": 6
+  },
+  "note": "live=真实信号快照触发数；backtest=历史重放触发数；两列永不合并（RL-7）"
+ },
+ "change_log": []
+}

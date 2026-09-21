@@ -35,6 +35,40 @@ def _episodes(trigger_days: list[int], gap: int = 30) -> list[int]:
     return eps
 
 
+def atier_exec(closes: list[float], ohlc: list[list], i: int, max_bars: int = 60) -> dict:
+    """A 档执行口径重放（唯一实现——回测口径与结算口径同一段代码，RL-2 技术保障）。
+
+    入场：第 i 根收盘价；退出规则与站点 X-EXIT-SET 一致：
+      X-STOP  收盘跌破触发日最低价 → 全退
+      X-TIME  第 15 个交易日收盘未高于入场价 → 退半仓；第 max_bars 个交易日 → 全退
+    ohlc 行为 [date, open, high, low, close(, volume)]；只用 [3] 最低与 [4] 收盘。
+    返回 {"pnl_pct": 累计盈亏%, "exit": 出场原因, "exit_bar": 最终离场距入场交易日数}。
+    """
+    entry = closes[i]
+    entry_low = ohlc[i][3]
+    pos = 1.0
+    pnl = 0.0
+    exit_reason = f"{max_bars}日全退"
+    exited = False
+    exit_bar = None
+    for j in range(i + 1, min(i + max_bars + 1, len(closes))):
+        if ohlc[j][4] < entry_low:  # 收盘跌破触发日最低 → 全退
+            pnl += pos * (closes[j] / entry - 1) * 100
+            exit_reason = f"X-STOP@{j - i}日"
+            exit_bar = j - i
+            exited = True
+            break
+        if j - i == 15 and max(closes[i + 1:j + 1]) <= entry:
+            pnl += 0.5 * (closes[j] / entry - 1) * 100
+            pos = 0.5
+            exit_reason = "X-TIME 半仓@15日"
+    if not exited:
+        j_end = min(i + max_bars, len(closes) - 1)
+        pnl += pos * (closes[j_end] / entry - 1) * 100
+        exit_bar = j_end - i
+    return {"pnl_pct": pnl, "exit": exit_reason, "exit_bar": exit_bar}
+
+
 def vix_gate_replay() -> dict:
     """36 年 VIX 闸回测（^GSPC 全史 + CBOE VIX 全史，运行现算，不引用他人数字）。"""
     http = Http(timeout=60, min_interval=0.5, retries=1)
@@ -60,30 +94,13 @@ def vix_gate_replay() -> dict:
             if i + 1 >= len(closes):
                 continue
             entry = closes[i]
-            entry_low = ohlc[i][3]
             # 口径① 持有 252
             r252 = (closes[min(i + 252, len(closes) - 1)] / entry - 1) * 100 if i + 60 < len(closes) else None
-            # 口径② A 档执行
-            pos = 1.0
-            pnl = 0.0
-            exit_reason = "60日全退"
-            exited = False
-            for j in range(i + 1, min(i + 61, len(closes))):
-                if ohlc[j][4] < entry_low:  # 收盘跌破触发日最低 → 全退
-                    pnl += pos * (closes[j] / entry - 1) * 100
-                    exit_reason = f"X-STOP@{j - i}日"
-                    exited = True
-                    break
-                if j - i == 15 and max(closes[i + 1:j + 1]) <= entry:
-                    pnl += 0.5 * (closes[j] / entry - 1) * 100
-                    pos = 0.5
-                    exit_reason = "X-TIME 半仓@15日"
-            if not exited:
-                j_end = min(i + 60, len(closes) - 1)
-                pnl += pos * (closes[j_end] / entry - 1) * 100
+            # 口径② A 档执行（公共函数 atier_exec：与结算口径同一段代码）
+            ae = atier_exec(closes, ohlc, i, max_bars=60)
             rows.append({"date": dates[i], "vix": round(vix.get(dates[i], 0), 1), "entry": round(entry, 2),
                          "hold252_pct": round(r252, 1) if r252 is not None else None,
-                         "atier_pct": round(pnl, 2), "atier_exit": exit_reason})
+                         "atier_pct": round(ae["pnl_pct"], 2), "atier_exit": ae["exit"]})
         done252 = [r["hold252_pct"] for r in rows if r["hold252_pct"] is not None]
         donea = [r["atier_pct"] for r in rows]
         w252 = sum(1 for x in done252 if x > 0)

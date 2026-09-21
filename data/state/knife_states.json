@@ -187,7 +187,143 @@
   "since": "2026-09-21",
   "events": []
  },
+ "CL_F": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "GC_F": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "SI_F": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "NG_F": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "HG_F": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "PL_F": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "ZC_F": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "ZS_F": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "ZW_F": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "CT_F": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "KC_F": {
+  "state": "STABILIZING",
+  "since": "2026-09-21",
+  "events": [
+   {
+    "d": "2026-09-21",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -34.72% / 10日 -14.9%"
+   },
+   {
+    "d": "2026-09-21",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 2/5"
+   }
+  ]
+ },
+ "SB_F": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "CC_F": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "LE_F": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "HE_F": {
+  "state": "STABILIZING",
+  "since": "2026-09-21",
+  "events": [
+   {
+    "d": "2026-09-21",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -32.13% / 10日 -14.98%"
+   },
+   {
+    "d": "2026-09-21",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 1/5"
+   }
+  ]
+ },
+ "6J_F": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "6E_F": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "ES_F": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "NQ_F": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "ZB_F": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "MSTR": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
  "FICO": {
+  "state": "NORMAL",
+  "since": "2026-09-21",
+  "events": []
+ },
+ "ALNY": {
   "state": "NORMAL",
   "since": "2026-09-21",
   "events": []

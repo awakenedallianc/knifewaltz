@@ -1,0 +1,58 @@
+name: knifewaltz-radar
+on:
+  schedule:
+    - cron: '9,39 * * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read            # radar 永不 commit —— state 竞态从源头消除
+  pages: write
+  id-token: write
+
+concurrency:
+  group: kw-pipeline
+  cancel-in-progress: false
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      TZ: Asia/Bangkok
+      PYTHONUTF8: '1'
+      KW_RADAR: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12', cache: pip }
+      - run: pip install -r requirements.txt
+      - name: Restore history db (只读，radar 无 save 步骤)
+        id: restore
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            data/history.sqlite
+            docs/data/kline
+          key: kw-db-v1-${{ github.run_id }}
+          restore-keys: kw-db-v1-
+      - name: Bail out on cache miss (维持上次部署，等 heavy 重建)
+        if: steps.restore.outputs.cache-matched-key == ''
+        run: |
+          echo '::notice::radar skipped - no db cache; run daily.yml first'
+          echo 'SKIP=1' >> "$GITHUB_ENV"
+      - name: Radar run
+        if: env.SKIP != '1'
+        run: python run.py --radar
+      - uses: actions/configure-pages@v5
+        if: env.SKIP != '1'
+        with: { enablement: true }
+      - uses: actions/upload-pages-artifact@v3
+        if: env.SKIP != '1'
+        with: { path: docs }
+      - id: deployment
+        if: env.SKIP != '1'
+        uses: actions/deploy-pages@v4

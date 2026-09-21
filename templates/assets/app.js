@@ -7,6 +7,16 @@ const D = JSON.parse(document.getElementById('__DATA__').textContent);
 const G = D.gates || {}, BOARD = D.board || [], VS = D.vix_stats || {}, VR = D.vix_rows || {};
 const SS = D.signal_stats || {}, LEDGER_TAIL = D.ledger_tail || [], LSUM = D.ledger_summary || {};
 const CRASHES = D.crash_library || [];
+/* v1.2 新块——全部防御式：缺块 = 对应视图显示「跑批未产出」空态，绝不报错 */
+const JEV = (D.jev && typeof D.jev === 'object') ? D.jev : null;           /* spec payload_contract.jev */
+const JEV_ON = !!(JEV && JEV.enabled !== false);                            /* enabled=false → 隐藏全部 Jev 元素（spec degrade） */
+const RADAR = (D.radar && typeof D.radar === 'object') ? D.radar : null;    /* radar.json 整块（总装注入；https 下再 fetch 刷新） */
+const RTH = D.radar_thresholds || (RADAR && RADAR.radar_thresholds) || null;/* 阈值全部来自跑批 payload，前端零硬编码 */
+const ZBOARD = Array.isArray(D.zboard) ? D.zboard : null;                   /* heavy 日线暴动 |z1d|>=3 */
+const REVIEW = (D.review && typeof D.review === 'object') ? D.review : null;/* reviews.json 最新一期 */
+const CALIB = (D.calibration && typeof D.calibration === 'object') ? D.calibration : null; /* calibration.json */
+const SNAPS = Array.isArray(D.snapshots) ? D.snapshots : null;              /* snapshots_public.json 瘦身台账 */
+const PHIST = Array.isArray(D.params_history) ? D.params_history : (REVIEW && Array.isArray(REVIEW.params_history) ? REVIEW.params_history : null);
 const LS = (k, v) => { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } };
 const SES = (k, v) => { try { if (v === undefined) return sessionStorage.getItem(k); sessionStorage.setItem(k, v); } catch (e) { return null; } };
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -158,6 +168,8 @@ function vHome() {
   <div class="secmeta">$ ${top8.length} 个非常态 · <a data-nav="knives" href="#knives">全部 ${BOARD.length} 个标的</a></div>
   ${top8.length ? boardTable(top8, falling.length > 0) : `<div class="card empty"><span class="big">今日无刀落下</span><span class="mono">$ 闸门 ${esc(G.state)} · 刀落板持续扫描 ${BOARD.length} 个标的 · 上一把刀的结局见台账</span></div>`}
 
+  ${homeRadarCard()}
+
   <h2 class="sec">战绩</h2>
   <div class="secmeta">$ 公开结算 · 胜率与败率同字号 · 点卡片进台账</div>
   <div class="bizcard" data-nav="ledger" role="button" tabindex="0">
@@ -173,6 +185,19 @@ function vHome() {
 }
 /* secmeta 内联版元数据（不换行右对齐，跟在状态句后） */
 function meta_inline(src, asof) { return `${esc(asof || D.date)} · ${esc(src)}`; }
+
+/* 首页压缩雷达卡：加密 24h 最凶三笔（跑批口径哑面色），链到雷达页；无数据整节不渲染 */
+function homeRadarCard() {
+  const mv = (D.radar && D.radar.crypto && Array.isArray(D.radar.crypto.movers)) ? D.radar.crypto.movers : null;
+  if (!mv || !mv.length) return '';
+  const top3 = mv.slice().sort((a, b) => Math.abs(b.pct24 || 0) - Math.abs(a.pct24 || 0)).slice(0, 3);
+  return `
+  <h2 class="sec">暴动</h2>
+  <div class="secmeta">$ 加密 24h 最凶三笔 · 跑批快照 · <a data-nav="radar" href="#radar">进雷达（实时层约 1 秒）</a></div>
+  <div class="card" style="padding:4px 8px"><div class="tbl"><table><tbody>
+    ${top3.map(m => `<tr><td><b>${esc(String(m.sym || m.symbol || '').replace(/USDT$/, ''))}</b></td><td class="num ${(m.pct24 || 0) < 0 ? 'down' : 'up'}">${pf(m.pct24, 1)}</td><td class="num dim">${fmtQV(m.quote_vol)}</td></tr>`).join('')}
+  </tbody></table></div><span class="meta">$ ${esc(hhmm(D.radar.generated_at))} · Binance 24h 榜 · 跑批口径 · 实时层在雷达页</span></div>`;
+}
 
 function boardTable(rows, tilt) {
   const st5 = b => {
@@ -492,6 +517,469 @@ function vDisclaimer() {
     <div class="card stampbox contract" style="max-width:none;white-space:pre-wrap">${esc(document.getElementById('disc-body').textContent)}${stamped}</div>`;
 }
 
+/* ---------- v1.2 雷达（秒抓）：账本式三榜 + 浏览器秒级层容器 ----------
+   数据：radar.json（payload.radar 兜底 + https 下 fetch 刷新）+ payload.zboard + payload.jev
+   颜色即口径：只有浏览器 WS/REST 实时值染 .live；radar 跑批值一律哑面 --up/--down */
+const STLAB = { CATCH: '接刀窗', STABILIZING: '企稳中', KNIFE_FALLING: '刀在落', NORMAL: '常态', ORNAMENT: '观赏刀', RECOVERED: '已回升' };
+const JEV_FAM = { A_liquidity_panic: '恐慌族', B_fundamental_repricing: '出清族', terminal: '终局', unclear: '不明',
+  noise: '噪音', liquidation_cascade: '清算连锁', event_driven: '事件驱动', systemic: '系统性' };
+const notRun = hint => `<div class="card empty"><span class="big">跑批未产出</span><span class="mono">$ ${esc(hint)}</span></div>`;
+const hhmm = t => (typeof t === 'string' && t.length >= 16) ? t.slice(11, 16) : (t ? String(t) : '—');
+const fmtQV = q => q == null ? '—' : (+q >= 1e9 ? (q / 1e9).toFixed(1) + 'B' : (q / 1e6).toFixed(0) + 'M');
+const fmtPx = x => x == null ? '—' : (Math.abs(+x) >= 0.01 ? nf(x, Math.abs(+x) < 1 ? 4 : 2) : (+x).toPrecision(3));
+const fmtFr = f => f == null ? '—' : pf(f * 100, 3);
+
+function radarMarkup(R) {
+  const gen = (R && (R.generated_at || (R.crypto && R.crypto.asof))) || null;
+  const batch = hhmm(gen || D.date);
+  const CR = R && R.crypto ? R.crypto : null;
+  const movers = CR && Array.isArray(CR.movers) ? CR.movers : null;
+  const kset = new Set((CR && Array.isArray(CR.knife_candidates) ? CR.knife_candidates : [])
+    .map(x => typeof x === 'string' ? x : (x && (x.sym || x.symbol))).filter(Boolean));
+  const hasJev = JEV_ON && !!movers && movers.some(m => m && (m.jev_flavor != null || m.jev_family));
+  const warnFr = RTH && RTH.funding_warn != null ? RTH.funding_warn : 0.0005;
+  const redFr = RTH && RTH.funding_red != null ? RTH.funding_red : 0.001;
+
+  /* 崩落 / 逼空：同一张账本，两种立案角度（radar 跑批口径 → 哑面色） */
+  const moverBoard = (rows, fall) => {
+    if (!movers) return notRun('radar.json 未产出 · 等 radar 跑批（每 30 分钟）');
+    if (!rows.length) return `<div class="card empty"><span class="big">空</span><span class="mono">$ 无 ${fall ? '下行' : '上行'}标的上榜 · 门槛 |24h| ≥ ${RTH && RTH.chg24_board_pct != null ? RTH.chg24_board_pct : 10}% 且成交额 ≥ ${fmtQV(RTH && RTH.min_quote_vol_usd)}</span></div>`;
+    return `<div class="card" style="padding:4px 8px"><div class="tbl"><table>
+      <thead><tr><th>标的</th><th class="num">现价</th><th class="num">24h</th><th class="num">成交额</th><th class="num pri2">费率/8h</th>${hasJev ? '<th class="pri2">Jev</th>' : ''}</tr></thead>
+      <tbody>${rows.map(m => {
+        const sym = m.sym || m.symbol || '';
+        const knife = fall && kset.has(sym);
+        const frCls = m.funding != null && Math.abs(m.funding) >= warnFr ? ' amber' : ' dim';
+        const jevCell = hasJev ? `<td class="pri2">${m.jev_family || m.jev_flavor != null
+          ? `${esc(JEV_FAM[m.jev_family] || m.jev_family || '')}${m.jev_flavor != null ? ` <span class="mono faint">${(+m.jev_flavor).toFixed(2)}</span>` : ''}`
+          : '<span class="faint">—</span>'}</td>` : '';
+        return `<tr>
+          <td>${knife ? '<span class="bloodsq"></span>' : ''}<b>${esc(sym.replace(/USDT$/, ''))}</b>${knife ? ' <span class="caliber">跌深+空头爆满</span>' : ''}</td>
+          <td class="num">${fmtPx(m.last)}</td>
+          <td class="num ${(m.pct24 || 0) < 0 ? 'down' : 'up'}">${pf(m.pct24, 1)}</td>
+          <td class="num dim">${fmtQV(m.quote_vol)}</td>
+          <td class="num pri2 mono${frCls}">${fmtFr(m.funding)}</td>${jevCell}</tr>`;
+      }).join('')}</tbody></table></div>
+      <span class="meta">$ ${esc(batch)} · Binance 24h 榜 · 跑批快照口径（非实时）${hasJev ? ' · Jev 族别随 heavy 离线跑批' : ''}</span></div>`;
+  };
+  const losers = movers ? movers.filter(m => m && (m.pct24 || 0) < 0).slice().sort((a, b) => a.pct24 - b.pct24).slice(0, 20) : [];
+  const gainers = movers ? movers.filter(m => m && (m.pct24 || 0) > 0).slice().sort((a, b) => b.pct24 - a.pct24).slice(0, 20) : [];
+
+  /* 资金费率极值榜 */
+  const fx = CR && Array.isArray(CR.funding_extremes) ? CR.funding_extremes : null;
+  const dvol = CR && CR.dvol ? CR.dvol : null;
+  const fundingSec = !CR ? notRun('radar.json 未产出 · 等 radar 跑批') : `
+    <div class="card" style="padding:4px 8px">
+      <div class="s13" style="padding:8px 10px 4px">DVOL BTC <b class="mono">${dvol && dvol.BTC != null ? nf(dvol.BTC, 1) : '—'}</b> · ETH <b class="mono">${dvol && dvol.ETH != null ? nf(dvol.ETH, 1) : '—'}</b> · 恐惧贪婪 <b class="mono">${CR.fng != null ? nf(CR.fng, 0) : '—'}</b>${CR.dvol_jump ? ' · <span class="amber">DVOL 单日跳升 &gt;15% · 恐慌放大器</span>' : ''}</div>
+      ${fx && fx.length ? `<div class="tbl"><table>
+        <thead><tr><th>永续</th><th class="num">费率/8h</th><th>档</th><th class="num pri2">24h</th></tr></thead>
+        <tbody>${fx.slice(0, 20).map(x => {
+          const f = x.funding != null ? x.funding : x.lastFundingRate;
+          const red = f != null && Math.abs(f) >= redFr;
+          return `<tr><td><b>${esc((x.sym || x.symbol || '').replace(/USDT$/, ''))}</b></td>
+            <td class="num mono ${red ? 'danger' : 'amber'}">${fmtFr(f)}</td>
+            <td>${red ? '<span class="bloodsq"></span><span class="s12 dim">红档</span>' : '<span class="s12 dim">警戒</span>'}${f != null && f < 0 ? ' <span class="s12 faint">空头拥挤</span>' : ' <span class="s12 faint">多头拥挤</span>'}</td>
+            <td class="num pri2 ${(x.pct24 || 0) < 0 ? 'down' : 'up'}">${x.pct24 != null ? pf(x.pct24, 1) : '—'}</td></tr>`;
+        }).join('')}</tbody></table></div>` : '<div class="empty"><span class="mono">$ 无费率越过警戒线 |8h| ≥ ' + (warnFr * 100).toFixed(2) + '%</span></div>'}
+      <span class="meta">$ ${esc(batch)} · Binance premiumIndex + Deribit DVOL + alternative.me · 跑批口径</span></div>`;
+
+  /* 美股榜单（跑批 · 永远静息色） */
+  const US = R && R.us ? R.us : null;
+  const usCol = (rows, label) => `<div class="card" style="padding:4px 8px"><div class="lbl" style="padding:8px 10px 0">${label}</div><div class="tbl"><table>
+    <tbody>${(rows || []).slice(0, 10).map(u => {
+      const pct = u.regularMarketChangePercent != null ? u.regularMarketChangePercent : (u.pct != null ? u.pct : u.chg);
+      const px = u.regularMarketPrice != null ? u.regularMarketPrice : (u.price != null ? u.price : u.last);
+      return `<tr><td><b>${esc(u.symbol || u.sym || '')}</b> <span class="dim s12">${esc(String(u.shortName || u.name || '').slice(0, 10))}</span></td>
+        <td class="num">${fmtPx(px)}</td><td class="num ${(pct || 0) < 0 ? 'down' : 'up'}">${pf(pct, 1)}</td></tr>`;
+    }).join('') || '<tr><td class="empty mono">空</td></tr>'}</tbody></table></div></div>`;
+  const usSec = !US ? notRun('radar.json 未产出 · 等 radar 跑批') : `
+    ${US.degraded_reason ? `<div class="s12 dim mono" style="padding-left:44px;margin-bottom:8px">$ 降级：${esc(US.degraded_reason)} · 该榜数据缺失如实展示</div>` : ''}
+    <div class="grid g3">${usCol(US.losers, '跌幅榜')}${usCol(US.gainers, '涨幅榜')}${usCol(US.actives, '活跃榜')}</div>
+    <span class="meta">$ ${esc(hhmm(US.asof) || batch)} · Yahoo screener · 跑批 · 约每 30 分钟 · Yahoo 延迟报价</span>`;
+
+  /* 日线暴动（全宇宙，heavy 口径） */
+  const zSec = !ZBOARD ? notRun('payload.zboard 未产出 · 等 heavy 跑批')
+    : !ZBOARD.length ? `<div class="card empty"><span class="big">今日无暴动</span><span class="mono">$ 全宇宙 |z1d| 未达 3.0 · heavy 每日两跑</span></div>`
+    : `<div class="card" style="padding:4px 8px"><div class="tbl"><table>
+      <thead><tr><th>标的</th><th>市场</th><th class="num">z</th><th class="num">1 日</th><th class="num pri2">量比</th><th class="pri2">状态</th></tr></thead>
+      <tbody>${ZBOARD.slice(0, 24).map(z => `<tr${z.key ? ` class="rowk" data-sym="${esc(z.key)}"` : ''}>
+        <td><b>${esc(z.symbol || z.key || '')}</b> <span class="dim s12">${esc(z.name || '')}</span>${z.cls === 'futures' ? ' <span class="caliber">仅 A 档</span>' : ''}</td>
+        <td><span class="mkt">${esc(z.cls === 'futures' ? '期货' : z.cls === 'crypto' ? '加密' : z.cls === 'equity_index' ? '指数' : '美股')}</span></td>
+        <td class="num mono ${Math.abs(z.z1d || 0) >= 4 ? 'danger' : ''}">${z.z1d != null ? (+z.z1d).toFixed(1) : '—'}</td>
+        <td class="num ${(z.ret1d || 0) < 0 ? 'down' : 'up'}">${pf(z.ret1d, 1)}</td>
+        <td class="num pri2 mono">${z.vol_ratio != null ? '×' + nf(z.vol_ratio, 1) : '<span class="faint">无量能数据</span>'}</td>
+        <td class="pri2"><span class="state-tag ${esc(z.state || '')}">${esc(STLAB[z.state] || z.state || '—')}</span></td></tr>`).join('')}</tbody></table></div>
+      <span class="meta">$ heavy 每日两跑 · z1d = ln 日收益 / 250 日波动 · 样本不足 120 根不算 · 期货仅 A 档</span></div>`;
+
+  /* 未来七日引信 + 新闻热度（Jev enabled=false 时整体隐藏 = 与未接入一致） */
+  let fuseSec = '', heatSec = '';
+  if (JEV_ON) {
+    const cats = Array.isArray(JEV.catalysts) ? JEV.catalysts.slice(0, 5) : null;
+    fuseSec = `<h2 class="sec">引信</h2><div class="secmeta">$ 未来七日 · Jev J3 宏观催化评分 · 随 heavy 跑批 · 纯展示不进规则</div>` +
+      (cats && cats.length ? `<div class="card">${cats.map(c => {
+        const s = +c.score > 1 ? +c.score / 2 : +c.score || 0;
+        return `<div style="display:flex;gap:10px;align-items:center;margin:6px 0">
+          <span class="mono s12" style="width:44px">D+${c.days_to != null ? esc(String(c.days_to)) : '?'}</span>
+          <span class="s13" style="flex:1">${esc(String(c.title || '').slice(0, 80))}</span>
+          <span class="calbar"><span class="fill" style="width:${Math.round(Math.max(0, Math.min(1, s)) * 100)}%"></span></span>
+          <span class="mono s12">${s.toFixed(2)}</span></div>`;
+      }).join('')}<span class="meta">$ ${esc(JEV.model || 'jev')} · ${esc(hhmm(JEV.run_ts))} 批 · 强度为模型判断非事实</span></div>`
+      : cats ? '<div class="card empty"><span class="mono">$ 未来七日无已识别引信</span></div>' : notRun('Jev J3 未跑出 · 等 heavy 跑批'));
+    const heat = JEV.news_heat && typeof JEV.news_heat === 'object' ? Object.entries(JEV.news_heat).filter(([, v]) => v >= 0.67).sort((a, b) => b[1] - a[1]) : null;
+    const news = R && Array.isArray(R.news) ? R.news.slice(0, 12) : [];
+    heatSec = `<h2 class="sec">热度</h2><div class="secmeta">$ Jev J2 新闻严重度 ≥ 0.67 蜂鸣 · RSS 标题流随 radar 跑批 · 纯展示</div>
+      <div class="card">
+      ${heat === null ? '<div class="s12 mono dim">$ Jev J2 未跑出</div>'
+        : heat.length ? `<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">${heat.slice(0, 12).map(([k, v]) => `<span class="mkt amber" data-sym="${esc(k)}" style="cursor:pointer">${esc(k)} ${(+v).toFixed(2)}</span>`).join('')}</div>`
+        : '<div class="s12 mono dim" style="margin-bottom:10px">$ 无标的越过蜂鸣线 0.67</div>'}
+      ${news.length ? news.map(n => `<div class="s12" style="margin:3px 0"><span class="mono faint">${esc(hhmm(n.published))}</span> ${esc(String(n.title || '').slice(0, 90))} <span class="faint">· ${esc(n.source || '')}</span></div>`).join('') : '<div class="s12 mono dim">$ 无 RSS 快照</div>'}
+      <span class="meta">$ ${esc(batch)} · coindesk/cointelegraph/decrypt/marketwatch/cnbc · 标题仅供线索</span></div>`;
+  }
+
+  /* 实时暴动表（radar.js 驱动；无阈值 = 实时层未接入） */
+  const liveSec = !RTH ? notRun('radar_thresholds 未产出 · 实时层未接入 · 等跑批')
+    : `<div class="card" style="padding:4px 8px" id="radar-live-card">
+      <div class="tbl"><table>
+        <thead><tr><th>标的</th><th class="num">现价</th><th class="num">Δ1m</th><th class="num pri2">Δ5m</th><th class="num">24h</th><th class="num pri2">成交额</th></tr></thead>
+        <tbody id="radar-live-body"><tr><td colspan="6" class="dim s12 mono" style="line-height:32px">$ 监听中 · 暂无越过阈值的异动</td></tr></tbody>
+      </table></div>
+      <span class="meta" id="radar-live-meta">$ 等待浏览器直连 Binance…</span></div>`;
+
+  /* 停牌/熔断（NASDAQ+NYSE 交叉）与清算热度（OKX 强平流）——跑批快照 */
+  const halts = (R && R.halts) || [];
+  const haltSec = !halts.length ? notRun('暂无停牌/熔断记录 · 休市或跑批未产出')
+    : `<div class="card" style="padding:4px 8px"><div class="tbl"><table>
+      <thead><tr><th>代码</th><th class="pri2">名称</th><th>市场</th><th>原因</th><th class="num">停牌</th><th class="num pri2">恢复</th></tr></thead>
+      <tbody>${halts.slice(0, 20).map(h => `<tr><td class="mono">${h.luld ? '<span class="bloodsq"></span>' : ''}<b>${esc(h.sym)}</b></td>
+        <td class="s12 dim pri2">${esc((h.name || '').slice(0, 26))}</td><td class="s12">${esc(h.market || '')}</td>
+        <td class="mono s12 ${h.luld ? 'danger' : ''}">${esc(h.reason || '')}</td>
+        <td class="num mono s12">${esc((h.halt_time || '').slice(0, 5))}</td>
+        <td class="num mono s12 pri2">${esc(((h.resume_time || '') || '—').slice(0, 5))}</td></tr>`).join('')}</tbody></table></div>
+      <span class="meta">$ NASDAQ Trader + NYSE 交叉去重 · 血点 = LULD 波动熔断 · 共 ${halts.length} 条</span></div>`;
+  const liq = (R && R.liquidations) || null;
+  const liqRows = liq && liq.hours ? liq.hours.slice(0, 12) : [];
+  const liqSec = !liqRows.length ? notRun('清算流未产出 · OKX 强平单流跑批采样')
+    : `<div class="card" style="padding:4px 8px"><div class="tbl"><table>
+      <thead><tr><th>UTC 小时</th><th>标的</th><th class="num">多头爆仓</th><th class="num">空头爆仓</th><th class="num pri2">多爆额</th><th class="num pri2">空爆额</th></tr></thead>
+      <tbody>${liqRows.map(b => `<tr><td class="mono s12">${esc((b.hour || '').slice(5, 14))}</td><td class="mono">${esc(b.uly || '')}</td>
+        <td class="num mono ${b.long_n >= 30 ? 'danger' : ''}">${b.long_n}</td>
+        <td class="num mono ${b.short_n >= 30 ? 'danger' : ''}">${b.short_n}</td>
+        <td class="num mono s12 pri2">${b.long_usd ? fmtQV(b.long_usd) : '—'}</td>
+        <td class="num mono s12 pri2">${b.short_usd ? fmtQV(b.short_usd) : '—'}</td></tr>`).join('')}</tbody></table></div>
+      <span class="meta">$ 近 1h ${liq.recent_1h_n != null ? liq.recent_1h_n : '—'} 笔 · 24h ${liq.total_24h_n != null ? liq.total_24h_n : '—'} 笔 · ${esc(liq.source || '')} · ${esc(liq.notional_note || '')}</span></div>`;
+
+  return `
+  <h2 class="sec">雷达</h2>
+  <div class="secmeta">$ 秒抓 · 实时层 1-3 秒 · 跑批层中位 25-30 分钟（最差 50 分钟）· 美股/期货 K 线与状态机随 heavy 日更 · <a data-nav="datacenter" href="#datacenter">数据机房</a></div>
+  <div class="liverow" id="radar-caliber">
+    <span>加密＝实时（浏览器直连 Binance，约 1 秒）· 美股/期货＝雷达跑批（约每 30 分钟）· Jev 标注与资金费率随跑批更新</span>
+    <span class="lclock mono" id="radar-clock">$ 跑批 ${esc(batch)}</span>
+  </div>
+  <h2 class="sec">暴动</h2>
+  <div class="secmeta">$ 实时 · Binance miniTicker 每秒推送 · |Δ1m| ≥ ${RTH ? esc(String(RTH.pump_1m_pct)) : '—'}% 为暴 · |Δ5m| ≥ ${RTH ? esc(String(RTH.pump_5m_pct)) : '—'}% 为动 · 成交额 ≥ ${fmtQV(RTH && RTH.min_quote_vol_usd)} 才参与 · 阈值来自跑批（纯数学）</div>
+  ${liveSec}
+  <h2 class="sec">崩落榜</h2>
+  <div class="secmeta">$ 按 24h 跌幅 · 前 20 · 跑批快照 · 血点 = 跌深+空头爆满的接飞刀候选</div>
+  ${moverBoard(losers, true)}
+  <h2 class="sec">逼空榜</h2>
+  <div class="secmeta">$ 按 24h 涨幅 · 前 20 · 跑批快照 · 负费率极值 = 空头拥挤燃料</div>
+  ${moverBoard(gainers, false)}
+  <h2 class="sec">资金费率极值榜</h2>
+  <div class="secmeta">$ 按 |费率| · 双向 · 正极值 = 多头拥挤 · 负极值 = 空头拥挤 · 仅加密永续</div>
+  ${fundingSec}
+  <h2 class="sec">美股榜单</h2>
+  <div class="secmeta">$ 跑批 · 约每 30 分钟 · Yahoo 延迟报价 · 市值 ≥ 5 亿且 |涨跌| ≥ 10% 才上涨跌榜</div>
+  ${usSec}
+  <h2 class="sec">停牌熔断</h2>
+  <div class="secmeta">$ 美股盘中停牌/LULD 波动熔断 · 暴动正在发生的确认信号 · 跑批快照</div>
+  ${haltSec}
+  <h2 class="sec">清算热度</h2>
+  <div class="secmeta">$ 加密永续强平单流 · 小时聚合 · 强平簇 = 瀑布/逼空正在发生</div>
+  ${liqSec}
+  <h2 class="sec">日线暴动</h2>
+  <div class="secmeta">$ 全宇宙 T1 + 期货 + 扩展池 · |z1d| ≥ 3.0 · heavy 口径（每日两跑）</div>
+  ${zSec}
+  ${fuseSec}${heatSec}`;
+}
+
+let RADAR_CUR = RADAR;
+function vRadar() {
+  const el = document.getElementById('v-radar');
+  el.innerHTML = radarMarkup(RADAR_CUR);
+  mountLive(RADAR_CUR);
+  if (/^https?:/.test(location.protocol)) {
+    fetch('data/radar.json').then(r => r.ok ? r.json() : null).then(j => {
+      if (j && (!RADAR_CUR || j.generated_at !== RADAR_CUR.generated_at)) { RADAR_CUR = j; el.innerHTML = radarMarkup(j); mountLive(j); }
+    }).catch(() => {});
+  }
+}
+function mountLive(R) {
+  const th = D.radar_thresholds || (R && R.radar_thresholds) || RTH;
+  if (window.KWRadar && th && th.browser_live !== false) {
+    window.KWRadar.mount({ th, batch: hhmm((R && R.generated_at) || D.date) });
+  }
+}
+/* radar.js 在 app.js 之后加载：若首屏即 #radar，由 radar.js 就绪时回调补挂 */
+if (typeof window !== 'undefined') window.__kwRadarReady = () => { if (currentView === 'radar') mountLive(RADAR_CUR); };
+
+/* ---------- v1.2 复盘室：本周复盘 / 快照台账 / 校准 / 参数留痕 / 红线 ----------
+   数据：payload.review + payload.calibration + payload.snapshots（全部防御式，缺块 = 空态） */
+const RL_DEFS = [
+  ['RL-1', '禁止用留出集调参：holdout 只做一次通过/否决，look 次数写盘公示'],
+  ['RL-2', '禁止事后改口径：结算定义预注册；改口径 = 新指标另起一列'],
+  ['RL-3', '快照不可篡改：append-only，settle 只填 realized/settled，features_sha 周审计'],
+  ['RL-4', '样本 <30 只展示不统计：不显示命中率与 Brier，只显示「收集中」'],
+  ['RL-5', '每条规则历史触发次数公示'],
+  ['RL-6', 'Jev 概率结算口径提问时预注册，禁止事后挑结局'],
+  ['RL-7', 'live 与 backtest 永远分开统计，永不合并'],
+  ['RL-8', '台账与快照永不删除，移出监控池仍参与统计'],
+  ['RL-9', '换参只有季度 walk-forward 一条路，全程留痕'],
+  ['RL-10', '预注册网格外的参数值禁止上线'],
+];
+let jevTab = 'J1', ksTab = 'backtest';
+const cnt = x => Array.isArray(x) ? x.length : (typeof x === 'number' ? x : null);
+
+function reliabilitySvg(bins) {
+  const W = 300, H = 190, P = 30;
+  const px = v => P + Math.max(0, Math.min(1, v)) * (W - 2 * P);
+  const py = v => H - P - Math.max(0, Math.min(1, v)) * (H - 2 * P);
+  let path = '', dots = '';
+  (bins || []).forEach(b => {
+    const p = b.p_mean != null ? b.p_mean : (b.pred != null ? b.pred : b.bin_mid);
+    if (p == null) return;
+    const n = b.n || 0, hit = b.hit_rate != null ? b.hit_rate : b.rate;
+    if (n >= 30 && hit != null) {
+      path += (path ? ' L' : 'M') + px(p).toFixed(1) + ' ' + py(hit).toFixed(1);
+      dots += `<circle cx="${px(p).toFixed(1)}" cy="${py(hit).toFixed(1)}" r="3.5" style="fill:var(--ink)"><title>预测 ${(p * 100).toFixed(0)}% · 实际 ${(hit * 100).toFixed(0)}% · n=${n}</title></circle>`;
+    } else {
+      dots += `<circle cx="${px(p).toFixed(1)}" cy="${py(p).toFixed(1)}" r="3.5" style="fill:none;stroke:var(--amber);stroke-width:1"><title>n=${n} 样本不足，仅供观察</title></circle>`;
+    }
+  });
+  return `<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="可靠性曲线" style="max-width:100%">
+    <line x1="${P}" y1="${H - P}" x2="${W - P}" y2="${P}" style="stroke:var(--line-hi);stroke-dasharray:3 3"/>
+    <line x1="${P}" y1="${H - P}" x2="${W - P}" y2="${H - P}" style="stroke:var(--line)"/>
+    <line x1="${P}" y1="${H - P}" x2="${P}" y2="${P}" style="stroke:var(--line)"/>
+    <text x="${P}" y="${H - 10}" style="fill:var(--ink-faint);font:10px var(--font-mono)">0</text>
+    <text x="${W - P - 8}" y="${H - 10}" style="fill:var(--ink-faint);font:10px var(--font-mono)">1</text>
+    <text x="${P + 4}" y="${P + 4}" style="fill:var(--ink-faint);font:9px var(--font-mono)">预测概率 → 实际频率 · 对角线 = 完美校准</text>
+    ${path ? `<path d="${path}" style="fill:none;stroke:var(--ink-dim);stroke-width:1"/>` : ''}${dots}</svg>`;
+}
+
+function jevCalBlock(q) {
+  const jc = CALIB && CALIB.jev && typeof CALIB.jev === 'object' ? CALIB.jev : null;
+  if (!jc || !jc[q]) return notRun(`${q} 校准未生成 · 每夜 heavy 跑批追加`);
+  const b = jc[q];
+  const n = b.n_total != null ? b.n_total : (b.n != null ? b.n : 0);
+  if (b.conclusive === false || n < 30) {
+    return `<div class="card empty"><span class="big">不下结论</span><span class="mono">$ ${esc(q)} 收集中 ${n}/30 · 距最小样本还差 ${Math.max(0, 30 - n)} · 满 30 前不显示命中率与 Brier（RL-4）</span></div>`;
+  }
+  const brier = b.brier != null ? (+b.brier).toFixed(3) : '—';
+  const base = b.brier_baseline_climatology != null ? (+b.brier_baseline_climatology).toFixed(3) : '—';
+  let extra = '';
+  if (q === 'J1' && (b.veto || jc.J1_shadow)) {
+    const v = b.veto || {}, sh = jc.J1_shadow || {};
+    extra = `<div class="s12" style="margin-top:8px"><b>语义闸双口径</b> 拦截 ${v.n != null ? v.n : '—'} 次${v.hit_rate != null ? ` · 拦对 ${Math.round(v.hit_rate * 100)}%` : ''} · shadow 反事实（放行会怎样）均值 ${pf(sh.mean_pct, 1)} · <span class="danger">最差 ${pf(sh.worst_pct, 1)}</span></div>`;
+  }
+  return `<div class="card">${reliabilitySvg(b.reliability || b.bins)}
+    <div class="s12 mono dim" style="margin-top:6px">$ Brier ${brier} · 基线（climatology）${base} · n=${n} · 空心点 = 该桶 n&lt;30 样本不足</div>${extra}
+    <span class="meta">$ jev_log.jsonl 结算口径提问时预注册（RL-6）· n&lt;30 桶弃用</span></div>`;
+}
+
+function ksCalBlock(tab) {
+  const ks = CALIB && CALIB.knifescore ? CALIB.knifescore : null;
+  const t = ks && ks[tab];
+  const buckets = t ? (Array.isArray(t) ? t : t.buckets) : null;
+  if (!buckets || !buckets.length) return notRun(`KnifeScore ${tab === 'live' ? '实盘' : '回测'}口径未生成`);
+  const bar = c => {
+    if (!c) return '<span class="faint">—</span>';
+    const n = c.n || 0;
+    if (n < 30) return `<span class="small-sample">收集中 ${n}/30</span>`;
+    const w = Math.round((c.win_rate || 0) * 100);
+    const wl = c.wilson95 || [];
+    return `<span class="calbar"><span class="fill" style="width:${w}%"></span>${wl.length === 2 ? `<span class="wl" style="left:${Math.round(wl[0] * 100)}%"></span><span class="wl" style="left:${Math.round(wl[1] * 100)}%"></span>` : ''}</span> <span class="mono s12">${w}%</span> <span class="mono faint s12">n=${n}</span>`;
+  };
+  return `<div class="card" style="padding:4px 8px"><div class="tbl"><table>
+    <thead><tr><th>KnifeScore 桶</th><th>口径① 持有 252 日</th><th>口径② A 档执行</th></tr></thead>
+    <tbody>${buckets.map(b => `<tr><td class="mono">${esc(b.bucket || b.range || ((b.lo != null ? b.lo : '') + '–' + (b.hi != null ? b.hi : '')))}</td>
+      <td>${bar(b.hold252)}</td><td>${bar(b.atier)}</td></tr>`).join('')}</tbody></table></div>
+    <span class="meta">$ 双口径并列 · Wilson 95% 须线 · live 与 backtest 永不合并（RL-7）</span></div>`;
+}
+
+function snapRows(snaps) {
+  const rows = snaps.slice().sort((a, b) => String(b.date || b.d || '').localeCompare(String(a.date || a.d || ''))).slice(0, 60);
+  return `<div class="card" style="padding:4px 8px"><div class="tbl"><table>
+    <thead><tr><th>日期</th><th>标的</th><th>信号</th><th class="num">Score</th><th class="num pri2">Jev p</th><th class="num">fwd5</th><th class="num">fwd20</th><th class="num pri2">fwd60</th><th class="num">A 档</th><th class="pri2">出场</th></tr></thead>
+    <tbody>${rows.map(s => {
+      const rz = s.realized || {};
+      const at = rz.atier || {};
+      const jp = s.jev && s.jev.p_terminal != null ? (+s.jev.p_terminal).toFixed(2) : null;
+      const fw = v => v == null ? (s.settled ? '—' : '<span class="faint s12">待结算</span>') : `<span class="${v < 0 ? 'down' : 'up'}">${pf(v, 1)}</span>`;
+      const ap = at.pnl_pct != null ? at.pnl_pct : rz.atier_pct;
+      return `<tr>
+        <td class="mono">${ap != null && ap < 0 ? '<span class="bloodsq"></span>' : ''}${esc(String(s.date || s.d || '').slice(0, 10))}</td>
+        <td><b>${esc(s.symbol || s.sym || s.key || (s.instrument === 'MACRO' ? '宏观' : s.instrument) || '')}</b></td>
+        <td class="s12 mono dim">${esc(s.kind || s.signal || '')}</td>
+        <td class="num mono">${s.score != null ? s.score : '—'}</td>
+        <td class="num mono pri2">${jp != null ? jp : '—'}</td>
+        <td class="num">${fw(rz.fwd5_pct)}</td><td class="num">${fw(rz.fwd20_pct)}</td><td class="num pri2">${fw(rz.fwd60_pct)}</td>
+        <td class="num">${ap != null ? `<span class="${ap < 0 ? 'down' : 'up'}">${pf(ap, 1)}</span>` : '<span class="faint s12">待结算</span>'}</td>
+        <td class="s12 dim pri2">${esc(at.exit || '')}</td></tr>`;
+    }).join('')}</tbody></table></div>
+    <span class="meta">$ snapshots append-only · settle 只填 realized/settled（RL-3）· 台账与快照永不删除（RL-8）· 实盘快照与历史回测永不合并（RL-7）</span></div>`;
+}
+
+function reviewMarkup(snaps) {
+  const nothing = !REVIEW && !CALIB && !snaps;
+  /* 判定行：本页唯一 --gold；打字机每会话一次（动效 #2 复用） */
+  let vtxt = '判定：跑批未产出 · 等周日复盘跑批';
+  if (REVIEW) {
+    const ns = cnt(REVIEW.new_signals), st = cnt(REVIEW.settled);
+    const wins = REVIEW.wins != null ? REVIEW.wins : (Array.isArray(REVIEW.settled) ? REVIEW.settled.filter(x => (x.result_pct != null ? x.result_pct : x.pnl_pct) > 0).length : null);
+    const losses = REVIEW.losses != null ? REVIEW.losses : (Array.isArray(REVIEW.settled) && st != null ? st - (wins || 0) : null);
+    const wo = REVIEW.worst_of_week || REVIEW.worst || {};
+    const wpct = wo.pnl_pct != null ? wo.pnl_pct : (wo.result_pct != null ? wo.result_pct : REVIEW.worst_pct);
+    vtxt = `判定：本周新信号 ${ns != null ? ns : '—'} · 结清 ${st != null ? st : '—'}${wins != null ? ` · 胜 ${wins} / 败 ${losses != null ? losses : '—'}` : ''}${wpct != null ? ` · 最差 ${pf(wpct, 1)}` : ''}`;
+  }
+  let vline = esc(vtxt);
+  if (REVIEW && !SES('kw_typed_rv')) { vline = `<span class="typed">${vline}</span><span class="cursor"></span>`; SES('kw_typed_rv', '1'); }
+  const head = `
+  <h2 class="sec">复盘室</h2>
+  <div class="secmeta">$ 每周日跑批固化 · 复盘不改历史，只改参数 · 改参数必留痕 · <a data-nav="signals" href="#signals">双口径全表</a></div>
+  <div class="liverow"><span class="verdict gold">${vline}</span><span class="lclock mono">$ ${esc(REVIEW && (REVIEW.week || REVIEW.range) ? String(REVIEW.week || REVIEW.range) : D.date)}</span></div>`;
+  if (nothing) return head + notRun('review / calibration / snapshots 均未产出 · 等 heavy 与周日复盘跑批');
+
+  /* 本周复盘 */
+  let weekSec;
+  if (!REVIEW) weekSec = notRun('reviews.json 未产出 · 等周日复盘跑批');
+  else {
+    const st = REVIEW.settled;
+    const settledRows = Array.isArray(st) ? st : [];
+    const wo = REVIEW.worst_of_week || REVIEW.worst || null;
+    const cf = wo && (Array.isArray(wo.counterfactuals) ? wo.counterfactuals : null);
+    const left = cnt(st) === 0 || (Array.isArray(st) && !st.length)
+      ? `<div class="card empty"><span class="big">本周无结算</span><span class="mono">$ 新信号 ${cnt(REVIEW.new_signals) != null ? cnt(REVIEW.new_signals) : '—'} · 未结 ${REVIEW.open_n != null ? REVIEW.open_n : '—'} · 下次固化见跑批日程</span></div>`
+      : `<div class="card lbr">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px"><b class="s13">新信号结局</b><span class="caliber">A 档执行</span></div>
+        ${settledRows.length ? `<div class="tbl"><table>
+          <thead><tr><th>日期</th><th>标的</th><th>信号</th><th class="num">结果</th><th>出场</th></tr></thead>
+          <tbody>${settledRows.slice(0, 12).map(x => {
+            const p = x.result_pct != null ? x.result_pct : x.pnl_pct;
+            return `<tr><td class="mono">${p != null && p < 0 ? '<span class="bloodsq"></span>' : ''}${esc(String(x.date || '').slice(5, 10))}</td>
+            <td><b>${esc(x.symbol || x.sym || '')}</b></td><td class="s12 mono dim">${esc(x.signal || x.kind || '')}</td>
+            <td class="num ${p < 0 ? 'down' : 'up'}">${pf(p, 1)}</td><td class="s12 dim">${esc(x.exit || '')}</td></tr>`;
+          }).join('')}</tbody></table></div>` : `<div class="s12 mono dim">$ 结清 ${cnt(st)} 笔（明细见台账）</div>`}
+        <span class="meta">$ ledger 周切片 · 与结算台账同源同数</span></div>`;
+    const right = wo ? `<div class="card lbr cuttop">
+      <b class="s13">最差一刀归因</b>
+      <div class="s12 mono dim" style="margin:6px 0">$ ${esc(wo.symbol || wo.sym || '')} · ${esc(String(wo.date || '').slice(0, 10))}${wo.score != null ? ` · Score ${wo.score}` : ''} · <span class="danger">${pf(wo.pnl_pct != null ? wo.pnl_pct : wo.result_pct, 1)}</span></div>
+      ${wo.gate_failed || wo.attribution ? `<div class="abandon"><b>归因</b> ${esc(wo.attribution || wo.gate_failed)}</div>` : ''}
+      ${cf && cf.length ? `<div class="tbl" style="margin-top:8px"><table>
+        <thead><tr><th>反事实（单规则替换）</th><th class="num">结果</th></tr></thead>
+        <tbody>${cf.map(c => `<tr><td class="s12 mono">${esc(c.rule || c.name || '')}</td><td class="num ${(c.pnl_pct || 0) < 0 ? 'down' : 'up'}">${pf(c.pnl_pct, 1)}</td></tr>`).join('')}</tbody></table></div>` : ''}
+      <div class="s12 faint" style="margin-top:8px">反事实只用于归因，永不作为换参依据（RL-9）。</div></div>` : '';
+    weekSec = `<div class="grid g2">${left}${right}</div>`;
+  }
+
+  /* 快照台账 */
+  const snapSec = snaps && snaps.length ? snapRows(snaps)
+    : snaps ? '<div class="card empty"><span class="mono">$ 快照台账为空 · 触发事件（S-CATCH / S-FALL / 闸门边沿）后自动追加</span></div>'
+    : notRun('snapshots_public.json 未产出 · 等 heavy 跑批');
+
+  /* 校准（Jev J1..J5 分 tab + KnifeScore 双口径） */
+  const jtabs = ['J1', 'J2', 'J3', 'J4', 'J5'].map(q =>
+    `<button class="btn" data-jtab="${q}" aria-pressed="${String(q === jevTab)}">${q}</button>`).join('');
+  const ktabs = [['backtest', '回测'], ['live', '实盘']].map(([k, l]) =>
+    `<button class="btn" data-ktab="${k}" aria-pressed="${String(k === ksTab)}">${l}</button>`).join('');
+  const calSec = `
+    <b class="s13" style="display:block;padding-left:44px;margin-bottom:6px">Jev 语义层 · 按问题分桶</b>
+    <div class="presets" style="padding-left:44px;margin-bottom:10px">${jtabs}</div>
+    ${jevCalBlock(jevTab)}
+    <b class="s13" style="display:block;padding-left:44px;margin:18px 0 6px">KnifeScore 五桶 · 双口径</b>
+    <div class="presets" style="padding-left:44px;margin-bottom:10px">${ktabs}</div>
+    ${ksCalBlock(ksTab)}`;
+
+  /* 参数留痕（合同式） */
+  const P = (REVIEW && REVIEW.params) || D.params_registry || null;
+  let paramSec;
+  if (!P && !PHIST) paramSec = notRun('params_registry / params_history 未产出');
+  else {
+    const items = P ? (Array.isArray(P) ? P : Object.entries(P).filter(([, v]) => v && typeof v === 'object' && (v.current !== undefined || v.grid)).map(([k, v]) => ({ name: k, ...v }))) : [];
+    const clauses = items.map((p, i) => `<div class="cl">第${i + 1}条　${esc(p.name || p.param || '')}：现行 <b class="mono">${esc(String(p.current != null ? p.current : '—'))}</b>${Array.isArray(p.grid) ? ` · 预注册网格 [${p.grid.map(g => esc(String(g))).join(', ')}]` : ''}${p.frozen ? ' · <span class="caliber">冻结</span>' : ''}</div>`).join('');
+    const hist = PHIST ? PHIST.slice(-10).reverse() : [];
+    paramSec = `
+      <div class="contract" style="max-width:none">
+        <div class="cl">现行参数合同${P && P.version ? ` · ${esc(String(P.version))}` : ''}${P && P.effective ? ` · 自 ${esc(String(P.effective))} 生效` : ''} · 网格外取值禁止上线（RL-10）</div>
+        ${clauses || '<div class="cl">（预注册网格未落盘，等 params_registry.json）</div>'}
+        <div class="cl blood">末条　n&lt;30 的任何桶不得触发参数修订；换参只走季度 walk-forward + params_history 留痕，从不回溯改写历史。</div>
+      </div>
+      ${hist.length ? `<div class="card" style="padding:4px 8px;margin-top:12px"><div class="tbl"><table>
+        <thead><tr><th>日期</th><th>参数</th><th class="num">旧值</th><th class="num">新值</th><th class="num pri2">依据 n</th><th class="pri2">经手</th></tr></thead>
+        <tbody>${hist.map(h => `<tr><td class="mono">${esc(String(h.date || h.d || '').slice(0, 10))}</td><td class="mono s12">${esc(h.param || h.key || h.name || '')}</td>
+          <td class="num mono">${esc(String(h.old != null ? h.old : '—'))}</td><td class="num mono">${esc(String(h.new != null ? h.new : '—'))}</td>
+          <td class="num mono pri2">${h.basis && h.basis.validate && h.basis.validate.n != null ? h.basis.validate.n : (h.n != null ? h.n : '—')}</td>
+          <td class="s12 dim pri2">${esc(h.decided_by || h.reason || '')}</td></tr>`).join('')}</tbody></table></div>
+        <span class="meta">$ params_history.json · 追加式 · 只增不删</span></div>`
+      : '<div class="s12 mono dim" style="padding-left:44px;margin-top:10px">$ 参数零漂移 · params_history 尚无条目</div>'}
+      ${REVIEW && REVIEW.next_walkforward ? `<div class="s12 mono dim" style="padding-left:44px;margin-top:6px">$ 下次 walk-forward：${esc(String(REVIEW.next_walkforward))}</div>` : ''}`;
+  }
+
+  /* 红线 */
+  const auditRaw = REVIEW && REVIEW.red_line_audit;
+  const auditMap = {};
+  if (Array.isArray(auditRaw)) auditRaw.forEach(a => { if (a && a.id) auditMap[a.id] = a; });
+  else if (auditRaw && typeof auditRaw === 'object') Object.entries(auditRaw).forEach(([k, v]) => { auditMap[k] = typeof v === 'object' ? v : { pass: !!v }; });
+  const rlRows = RL_DEFS.map(([id, txt]) => {
+    const a = auditMap[id];
+    const pass = a ? (a.pass != null ? a.pass : (a.ok != null ? a.ok : a.status === 'pass')) : null;
+    const badge = pass === true ? '<span class="mono dim">PASS</span>' : pass === false ? '<span class="bloodsq"></span><span class="mono danger">FAIL</span>' : '<span class="mono faint">未审计</span>';
+    return `<tr><td class="mono">${id}</td><td class="s12 dim">${esc(txt)}${a && a.note ? ` <span class="faint">· ${esc(a.note)}</span>` : ''}</td><td>${badge}</td></tr>`;
+  }).join('');
+  const rc = CALIB && CALIB.rule_counts && typeof CALIB.rule_counts === 'object' ? Object.entries(CALIB.rule_counts).sort((a, b) => b[1] - a[1]) : null;
+  const rlSec = `<div class="card" style="padding:4px 8px"><div class="tbl"><table>
+      <thead><tr><th>红线</th><th>规则</th><th>状态</th></tr></thead><tbody>${rlRows}</tbody></table></div>
+      <span class="meta">$ ${auditRaw ? '每周复盘自动审计' : '审计结果未产出 · 定义静态展示'} · FAIL 只用血色图标不整行标红</span></div>
+    ${rc ? `<div class="card" style="padding:4px 8px;margin-top:12px"><div class="lbl" style="padding:8px 10px 0">每条规则历史触发次数（RL-5：触发 3 次的规则说自己 100% 胜率是笑话）</div>
+      <div class="tbl"><table><tbody>${rc.map(([k, v]) => `<tr><td class="mono s12">${esc(k)}</td><td class="num mono">${v}</td></tr>`).join('')}</tbody></table></div></div>` : ''}`;
+
+  return head + `
+  <h2 class="sec">本周复盘</h2>
+  <div class="secmeta">$ A 档执行口径 · 归因四选一：参数缺口 / 军规违反 / 数据缺陷 / 正常概率 · 禁止「差一点就」</div>
+  ${weekSec}
+  <h2 class="sec">快照台账</h2>
+  <div class="secmeta">$ 信号触发即拍快照 · 未结算明示 · fwd5/20/60 与 A 档双口径并列</div>
+  ${snapSec}
+  <h2 class="sec">校准</h2>
+  <div class="secmeta">$ 预测概率 vs 实际频率 · n&lt;30 不下结论（RL-4）· Brier 必配 climatology 基线</div>
+  ${calSec}
+  <h2 class="sec">参数留痕</h2>
+  <div class="secmeta">$ params_history · 只增不删 · 每次修订须给依据样本数 · <a data-nav="method" href="#method">方法论</a></div>
+  ${paramSec}
+  <h2 class="sec">红线</h2>
+  <div class="secmeta">$ RL-1..10 · 自动审计逐条公示 · 红线本身也是可复核的口径</div>
+  ${rlSec}`;
+}
+
+let SNAP_CACHE = SNAPS;
+function vReview() {
+  const el = document.getElementById('v-review');
+  el.innerHTML = reviewMarkup(SNAP_CACHE);
+  if (!el.dataset.bound) {
+    el.dataset.bound = '1';
+    el.addEventListener('click', e => {
+      const j = e.target.closest('[data-jtab]');
+      if (j) { jevTab = j.dataset.jtab; el.innerHTML = reviewMarkup(SNAP_CACHE); return; }
+      const k = e.target.closest('[data-ktab]');
+      if (k) { ksTab = k.dataset.ktab; el.innerHTML = reviewMarkup(SNAP_CACHE); }
+    });
+  }
+  if (!SNAP_CACHE && /^https?:/.test(location.protocol)) {
+    fetch('data/snapshots_public.json').then(r => r.ok ? r.json() : null).then(j => {
+      const rows = Array.isArray(j) ? j : (j && Array.isArray(j.snapshots) ? j.snapshots : null);
+      if (rows) { SNAP_CACHE = rows; el.innerHTML = reviewMarkup(SNAP_CACHE); }
+    }).catch(() => {});
+  }
+}
+
 /* ---------- 抽屉：标的详情 + K 线 ---------- */
 const drawer = document.getElementById('drawer'), backdrop = document.getElementById('backdrop');
 function openSym(key) {
@@ -542,7 +1030,7 @@ backdrop.addEventListener('click', closeDrawer);
 document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeDrawer(); cmdk.dataset.open = 'false'; } });
 
 /* ---------- 路由（计算器页耳语升档） ---------- */
-const VIEWS = { home: vHome, knives: vKnives, signals: vSignals, crashes: vCrashes, calc: vCalc, streaks: vStreaks, ledger: vLedger, method: vMethod, datacenter: vDatacenter, disclaimer: vDisclaimer };
+const VIEWS = { home: vHome, radar: vRadar, review: vReview, knives: vKnives, signals: vSignals, crashes: vCrashes, calc: vCalc, streaks: vStreaks, ledger: vLedger, method: vMethod, datacenter: vDatacenter, disclaimer: vDisclaimer };
 const rendered = {};
 let currentView = 'home';
 function syncRisk() { document.body.dataset.risk = currentView === 'calc' ? 'high' : ''; }
@@ -553,6 +1041,7 @@ function nav(v) {
   document.querySelectorAll('[data-nav]').forEach(b => b.setAttribute && b.setAttribute('aria-selected', String(b.dataset.nav === v)));
   if (!rendered[v]) { try { VIEWS[v](); } catch (e) { console.error(e); document.getElementById('v-' + v).innerHTML = `<div class="card empty">渲染错误：${esc(e.message)}</div>`; } rendered[v] = true; }
   syncRisk();
+  if (window.KWRadar) { try { window.KWRadar.setActive(v === 'radar'); } catch (e) {} }
   history.replaceState(null, '', '#' + v);
   window.scrollTo({ top: 0 });
 }
@@ -566,7 +1055,7 @@ function rerenderCharts() { instances.forEach(c => { try { c.dispose(); } catch 
 /* ---------- 命令面板 ---------- */
 const cmdk = document.getElementById('cmdk');
 const CMD_INDEX = [
-  ...Object.keys(VIEWS).map(v => ({ t: 'page', label: { home: '首页', knives: '刀落板', signals: '信号规则', crashes: '刀谱', calc: '仓位计算器', streaks: '连败室', ledger: '结算台账', method: '方法论', datacenter: '数据机房', disclaimer: '免责声明' }[v], v })),
+  ...Object.keys(VIEWS).map(v => ({ t: 'page', label: { home: '首页', radar: '雷达', review: '复盘室', knives: '刀落板', signals: '信号规则', crashes: '刀谱', calc: '仓位计算器', streaks: '连败室', ledger: '结算台账', method: '方法论', datacenter: '数据机房', disclaimer: '免责声明' }[v], v })),
   ...BOARD.map(b => ({ t: 'sym', label: b.symbol + ' ' + b.name, v: b.key })),
 ];
 function cmdOpen() { cmdk.dataset.open = 'true'; const i = document.getElementById('cmdk-in'); i.value = ''; cmdRun(''); i.focus(); }

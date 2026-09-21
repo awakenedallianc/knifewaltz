@@ -29,11 +29,13 @@
   </div>
   <nav class="nav" id="nav">
     <button data-nav="home" aria-selected="true">首页</button>
+    <button data-nav="radar">雷达</button>
     <button data-nav="knives">刀落板</button>
     <button data-nav="signals">信号规则</button>
     <button data-nav="crashes">刀谱</button>
     <button data-nav="calc">仓位计算器</button>
     <button data-nav="streaks">连败室</button>
+    <button data-nav="review">复盘室</button>
     <button data-nav="ledger">结算台账</button>
   </nav>
   <span class="sp"></span>
@@ -44,6 +46,8 @@
 
 <main id="main">
   <section class="view" id="v-home" data-active="true"></section>
+  <section class="view" id="v-radar"></section>
+  <section class="view" id="v-review"></section>
   <section class="view" id="v-knives"></section>
   <section class="view" id="v-signals"></section>
   <section class="view" id="v-crashes"></section>
@@ -58,7 +62,7 @@
 <nav class="bottomnav" id="bottomnav">
   <button data-nav="home" aria-selected="true">首页</button>
   <button data-nav="knives">刀落板</button>
-  <button data-nav="signals">信号</button>
+  <button data-nav="radar">雷达</button>
   <button data-nav="calc">计算器</button>
   <button data-nav="ledger">台账</button>
 </nav>
@@ -92,5 +96,6 @@
 <script id="__DATA__" type="application/json">{{ data_json|safe }}</script>
 <script src="assets/echarts.min.js"></script>
 <script src="assets/app.js"></script>
+<script src="assets/radar.js"></script>
 </body>
 </html>

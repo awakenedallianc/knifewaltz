@@ -1,5 +1,19 @@
 # 刀尖舞 KnifeWaltz · 进度与断点
 
+## v1.2.0（2026-09-21 深夜）「秒抓雷达」：全宇宙暴动捕捉 + Jev 语义层 + 复盘自校准闭环
+
+两波研究（9 agents：数据源双侦察全实测 / Jev 插入点 / 跑批工程 / 校准体系 / 暴动算法 / 版式 / 决策路径）→ 总规格 `data/state/radar_spec.json`（12 步实施单 + 9 项裁决 + 12 条诚实底线）→ 7 路文件所有权互斥并行开发 → 总装。
+
+- **宇宙扩张**：T1 21 + **期货 T1F 20 条**（CL/GC/SI/NG/HG/PL/农产品/软商品/畜牧/6J/6E/ES/NQ/ZB，实测 3-5 年日线，仅 A 档、无量能项自动跳过）+ T2 扫描池 SP500∪NDX100（516 名）+ day_losers 深跌晋升（≤5/日）+ 加密全市场动态 movers（quoteVolume≥$20M）
+- **雷达跑批**（`run.py --radar`，实测 9.4s）：Binance 现货+永续全市场 24h 榜、全市场资金费率极值（warn 0.05%/red 0.1%、跌深+空头爆满组合检测）、OKX 强平单流小时聚合（免费替代 Coinglass）、NASDAQ+NYSE 停牌/LULD 熔断交叉去重、Yahoo screener 三榜、市场头条 RSS；`radar.yml` 每 30 分钟（:09/:39），contents:read 零提交、cache 只读、miss 即跳过保上一版
+- **浏览器秒级层**（运行时零 LLM 不破）：radar.js 直连 Binance WebSocket miniTicker（实测监听 53 对、~1s），REST 轮询→跑批静态三级降级，阈值全部来自构建时 payload 纯数学；口径行诚实标注「加密=实时 · 美股/期货=跑批约 30 分钟」
+- **Jev 语义层**（全部 heavy 侧，≤4 次 POST/跑批，jev_cache 防重复计费，无 key 全链静默降级）：J1 刀落分诊（A 族/B 族/终局 veto——语义闸只可能少接刀，veto 粘滞 3 跑批解除+shadow 反事实记录）/ J2 新闻严重度 / J3 宏观催化（FOMC 种子日历 federalreserve.gov 已核实）/ J4 接刀先验 / J5 movers 分诊；首跑实测 24 标的分诊（CHTR 判 B 族✓）+ 20 催化 + 40 movers，108 条判断已落 `jev_log.jsonl` 待结算
+- **复盘自校准闭环**：信号快照（append-only + features_sha 防篡改 + 边沿检测）→ 5/20/60 日结算 + A 档执行反事实（与 36 年重放同一段代码 RL-2）→ Jev 预注册口径结算 → calibration.json（n<30 一律「收集中」不下结论）→ 周日 `--weekly-review`（红线 RL-1..10 自动审计首跑 10/10 PASS；walk-forward 季度开庭，首窗 2026-12）；16 参数预注册网格 `params_registry.json`，换参只此一条路全程留痕
+- **前端**：新增「雷达」（暴动实时表/崩落榜/逼空榜/费率极值/美股榜/停牌熔断/清算热度/日线暴动/引信/热度）与「复盘室」（本周复盘/快照台账/J1-J5 可靠性曲线/参数留痕合同/红线清单）两视图，SAYA 纪律不破（动效仍 4 种、金雷达 0 复盘室 1、账本表格、显示字体子集 196 字）
+- **跑批工程**：daily.yml 加 sqlite+kline actions/cache（第二跑广度 7 分钟→秒级）、并发组 kw-pipeline 序列化、周日第三 cron；heavy 实测 127-164s 全链
+- 已知冷启动项（如实展示）：movers vol_ratio 需 5 天历史；校准页全部「收集中 x/30」；J1 结算窗 180 日
+- 待办：radar 首跑前需先 dispatch 一次 heavy 建缓存；style_spec.json 显示用字清单补记 v1.2 新增字
+
 ## v1.1.0（2026-09-21 晚）视觉全面重构「鞘 SAYA」
 
 用户判定 v1.0 界面「太 low」，要求按「表面平静内心疯批」美学重构。4 域研究（EVA/PSYCHO-PASS · 今敏/死亡笔记 · 库布里克/美国精神病人/Drive/Mr.Robot · 福本伸行赌博漫画）32 条视觉手法 → 设计总监合成规格 `data/state/style_spec.json` → 全量重写 app.css / app.js 视图层 / index.html.j2 / logo / favicon。

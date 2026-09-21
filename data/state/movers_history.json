@@ -1,0 +1,327 @@
+{
+ "days": {
+  "2026-09-21": [
+   {
+    "date": "2026-09-21",
+    "sym": "PHAUSDT",
+    "last": 0.0508,
+    "pct24": 36.927,
+    "quote_vol": 23345396.6232,
+    "funding": -5.725e-05
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "PEPEUSDT",
+    "last": 5.12e-06,
+    "pct24": 29.62,
+    "quote_vol": 95687098.05681077,
+    "funding": null
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "SEIUSDT",
+    "last": 0.05865,
+    "pct24": 21.908,
+    "quote_vol": 30620454.893239,
+    "funding": 0.0001
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "SUIUSDT",
+    "last": 1.0172,
+    "pct24": 19.981,
+    "quote_vol": 252770519.69078,
+    "funding": 0.0001
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "FETUSDT",
+    "last": 0.2029,
+    "pct24": 17.08,
+    "quote_vol": 34199783.08205,
+    "funding": 0.0001
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "ZAMAUSDT",
+    "last": 0.10129,
+    "pct24": 16.225,
+    "quote_vol": 30131606.79629,
+    "funding": 5e-05
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "牛来USDT",
+    "last": 0.11208,
+    "pct24": 15.416,
+    "quote_vol": 20411513.19588,
+    "funding": 0.0002697
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "XPLUSDT",
+    "last": 0.1005,
+    "pct24": 14.91,
+    "quote_vol": 26766020.084278,
+    "funding": 5e-05
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "DOGEUSDT",
+    "last": 0.09772,
+    "pct24": 13.946,
+    "quote_vol": 176884754.09561,
+    "funding": 0.0001
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "ONEUSDT",
+    "last": 0.004313,
+    "pct24": 13.709,
+    "quote_vol": 52855495.6492647,
+    "funding": -0.00028545
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "ARBUSDT",
+    "last": 0.2313,
+    "pct24": 13.549,
+    "quote_vol": 55840629.57058,
+    "funding": 0.0001
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "RENDERUSDT",
+    "last": 1.792,
+    "pct24": 13.131,
+    "quote_vol": 20944239.45882,
+    "funding": 5e-05
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "MARSCOINUSDT",
+    "last": 0.1042,
+    "pct24": 12.406,
+    "quote_vol": 22725017.69196,
+    "funding": 0.00011886
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "TAOUSDT",
+    "last": 286.8,
+    "pct24": 11.682,
+    "quote_vol": 65779955.56477,
+    "funding": 5e-05
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "SAGAUSDT",
+    "last": 0.03571,
+    "pct24": 11.629,
+    "quote_vol": 34245297.730881,
+    "funding": -1.911e-05
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "LTCUSDT",
+    "last": 63.19,
+    "pct24": 9.838,
+    "quote_vol": 46858491.12566,
+    "funding": 0.0001
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "PROVEUSDT",
+    "last": 0.246,
+    "pct24": 9.577,
+    "quote_vol": 55343867.06559,
+    "funding": -0.0016874
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "ADAUSDT",
+    "last": 0.2453,
+    "pct24": 9.168,
+    "quote_vol": 68317016.99698,
+    "funding": 0.0001
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "POLUSDT",
+    "last": 0.1135,
+    "pct24": 8.936,
+    "quote_vol": 22073610.750905,
+    "funding": 5e-05
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "SOLUSDT",
+    "last": 117.69,
+    "pct24": 8.3,
+    "quote_vol": 517585343.77715,
+    "funding": 0.0001
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "INJUSDT",
+    "last": 7.775,
+    "pct24": -3.691,
+    "quote_vol": 21696515.54295,
+    "funding": 7.138e-05
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "AVAXUSDT",
+    "last": 11.066,
+    "pct24": -2.027,
+    "quote_vol": 124335912.0291,
+    "funding": 4.93e-06
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "XAUTUSDT",
+    "last": 4350.48,
+    "pct24": -0.458,
+    "quote_vol": 23058069.902765,
+    "funding": 3.591e-05
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "PAXGUSDT",
+    "last": 4347.4,
+    "pct24": -0.312,
+    "quote_vol": 20080097.005639,
+    "funding": 5e-05
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "SNDKBUSDT",
+    "last": 1771.63,
+    "pct24": -0.114,
+    "quote_vol": 24270173.017548,
+    "funding": null
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "RLUSDUSDT",
+    "last": 0.9999,
+    "pct24": -0.04,
+    "quote_vol": 116019877.8956,
+    "funding": null
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "UUSDT",
+    "last": 0.9999,
+    "pct24": -0.03,
+    "quote_vol": 46784816.2471,
+    "funding": null
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "TRXUSDT",
+    "last": 0.3453,
+    "pct24": 0.203,
+    "quote_vol": 30470749.76836,
+    "funding": 7.41e-06
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "ASTERUSDT",
+    "last": 0.743,
+    "pct24": 1.226,
+    "quote_vol": 21587445.38528,
+    "funding": 5e-05
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "UNIUSDT",
+    "last": 8.871,
+    "pct24": 1.802,
+    "quote_vol": 114744059.53779,
+    "funding": 7.369e-05
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "WLDUSDT",
+    "last": 0.4404,
+    "pct24": 1.992,
+    "quote_vol": 39626112.69835,
+    "funding": -4.5e-05
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "NEARUSDT",
+    "last": 4.049,
+    "pct24": 2.273,
+    "quote_vol": 332783157.4342,
+    "funding": 0.0001
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "CRCLBUSDT",
+    "last": 93.86,
+    "pct24": 3.098,
+    "quote_vol": 30077760.5275,
+    "funding": null
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "ZECUSDT",
+    "last": 1494.96,
+    "pct24": 3.778,
+    "quote_vol": 410695877.11833,
+    "funding": -4.37e-06
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "ENAUSDT",
+    "last": 0.2136,
+    "pct24": 4.297,
+    "quote_vol": 98433886.189482,
+    "funding": 5e-05
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "FILUSDT",
+    "last": 0.9714,
+    "pct24": 4.699,
+    "quote_vol": 23343893.799234,
+    "funding": -2.78e-05
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "AAVEUSDT",
+    "last": 142.95,
+    "pct24": 5.133,
+    "quote_vol": 28144865.90983,
+    "funding": 6.567e-05
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "ETHUSDT",
+    "last": 2746.1,
+    "pct24": 5.249,
+    "quote_vol": 1356335095.530063,
+    "funding": 8.468e-05
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "LINKUSDT",
+    "last": 12.978,
+    "pct24": 5.255,
+    "quote_vol": 56118143.30932,
+    "funding": 4.109e-05
+   },
+   {
+    "date": "2026-09-21",
+    "sym": "ONDOUSDT",
+    "last": 0.4445,
+    "pct24": 5.382,
+    "quote_vol": 36280647.81728,
+    "funding": 5e-05
+   }
+  ]
+ },
+ "updated": "2026-09-21T23:05:36+07:00"
+}

@@ -1,0 +1,24 @@
+{
+ "version": "v1.2-preregistered",
+ "registered_at": "2026-09-21",
+ "source": "radar_spec.json calibration.files.params_registry（CAL 14 参数表照抄 + 期货腿新增 2 条）",
+ "note": "预注册参数网格：网格外的参数值禁止上线（RL-10）；换参唯一通道=季度 walk-forward（验证集入选+留出集一次性否决）→ params_history 留痕 → 人工改 config.yaml（RL-9）；网格本身的修改按换参同等流程留痕。",
+ "params": {
+  "vix_gate.primary": {"current": 36, "grid": [33, 36, 39, 42], "frozen": false},
+  "index_fall.dd52w": {"current": -20, "grid": [-15, -20, -25], "frozen": false},
+  "index_fall.ret10": {"current": -10, "grid": [-8, -10, -12], "frozen": false},
+  "knife_fall.dd52w": {"current": -40, "grid": [-35, -40, -45, -50], "frozen": false},
+  "knife_fall.ret10": {"current": -15, "grid": [-10, -15, -20], "frozen": false},
+  "crypto_fall.dd52w": {"current": -50, "grid": [-40, -50, -60], "frozen": false},
+  "crypto_fall.ret10": {"current": -20, "grid": [-15, -20, -25], "frozen": false},
+  "vol_climax_ratio": {"current": 3.0, "grid": [2.5, 3.0, 3.5, 4.0], "frozen": false},
+  "checklist.catch_min": {"current": 3, "grid": [3, 4], "frozen": false},
+  "catch_window_days": {"current": 10, "grid": [7, 10, 15], "frozen": false},
+  "knifescore.weights": {"current": [40, 20, 20, 20], "grid": [[40, 20, 20, 20], [30, 30, 20, 20], [35, 25, 20, 20]], "frozen": false},
+  "term_flip.red": {"current": 1.0, "grid": [1.0], "frozen": true},
+  "b_tier_dd250": {"current": -60, "grid": [-60], "frozen": true},
+  "cooldown_days": {"current": 10, "grid": [10], "frozen": true},
+  "futures_fall.dd52w": {"current": -30, "grid": [-25, -30, -35], "frozen": false},
+  "futures_fall.ret10": {"current": -12, "grid": [-10, -12, -15], "frozen": false}
+ }
+}

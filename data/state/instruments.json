@@ -6,7 +6,7 @@
   "cls": "equity_index",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 768.9299926757812,
+  "px": 771.0850219726562,
   "mcap": null,
   "bars": 752
  },
@@ -17,7 +17,7 @@
   "cls": "equity_index",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 734.9199829101562,
+  "px": 737.6699829101562,
   "mcap": null,
   "bars": 752
  },
@@ -28,7 +28,7 @@
   "cls": "equity_index",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 285.6600036621094,
+  "px": 285.92498779296875,
   "mcap": null,
   "bars": 752
  },
@@ -39,7 +39,7 @@
   "cls": "equity_index",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 68.36499786376953,
+  "px": 68.53500366210938,
   "mcap": null,
   "bars": 752
  },
@@ -50,7 +50,7 @@
   "cls": "equity_index",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 34.67499923706055,
+  "px": 34.7599983215332,
   "mcap": null,
   "bars": 752
  },
@@ -61,7 +61,7 @@
   "cls": "equity_index",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 24.924999237060547,
+  "px": 25.059999465942383,
   "mcap": null,
   "bars": 752
  },
@@ -72,7 +72,7 @@
   "cls": "equity_index",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 90.75,
+  "px": 90.6500015258789,
   "mcap": null,
   "bars": 752
  },
@@ -83,7 +83,7 @@
   "cls": "equity_index",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 7720.31005859375,
+  "px": 7741.330078125,
   "mcap": null,
   "bars": 752
  },
@@ -94,7 +94,7 @@
   "cls": "equity_index",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 26911.751953125,
+  "px": 26998.8359375,
   "mcap": null,
   "bars": 752
  },
@@ -104,10 +104,10 @@
   "name": "恒生指数",
   "cls": "equity_index",
   "tier": "T1",
-  "asof": "2026-09-21",
-  "px": 25042.7109375,
+  "asof": "2026-09-18",
+  "px": 24750.779296875,
   "mcap": null,
-  "bars": 737
+  "bars": 736
  },
  {
   "symbol": "^N225",
@@ -126,10 +126,10 @@
   "name": "上证指数",
   "cls": "equity_index",
   "tier": "T1",
-  "asof": "2026-09-21",
-  "px": 3949.90673828125,
+  "asof": "2026-09-18",
+  "px": 3911.87109375,
   "mcap": null,
-  "bars": 726
+  "bars": 725
  },
  {
   "symbol": "GLD",
@@ -138,7 +138,7 @@
   "cls": "commodity",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 398.1050109863281,
+  "px": 398.8999938964844,
   "mcap": null,
   "bars": 752
  },
@@ -149,7 +149,7 @@
   "cls": "commodity",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 59.665000915527344,
+  "px": 59.834999084472656,
   "mcap": null,
   "bars": 752
  },
@@ -160,7 +160,7 @@
   "cls": "commodity",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 148.0850067138672,
+  "px": 147.90499877929688,
   "mcap": null,
   "bars": 752
  },
@@ -171,7 +171,7 @@
   "cls": "commodity",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 10.305000305175781,
+  "px": 10.3149995803833,
   "mcap": null,
   "bars": 752
  },
@@ -182,7 +182,7 @@
   "cls": "commodity",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 28.56999969482422,
+  "px": 28.640100479125977,
   "mcap": null,
   "bars": 752
  },
@@ -193,7 +193,7 @@
   "cls": "commodity",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 86.6449966430664,
+  "px": 87.27999877929688,
   "mcap": null,
   "bars": 752
  },
@@ -204,7 +204,7 @@
   "cls": "commodity",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 42.65999984741211,
+  "px": 42.8650016784668,
   "mcap": null,
   "bars": 752
  },
@@ -215,7 +215,7 @@
   "cls": "crypto",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 86085.296875,
+  "px": 85744.0,
   "mcap": null,
   "bars": 1097
  },
@@ -226,9 +226,229 @@
   "cls": "crypto",
   "tier": "T1",
   "asof": "2026-09-21",
-  "px": 2751.85009765625,
+  "px": 2746.39990234375,
   "mcap": null,
   "bars": 1097
+ },
+ {
+  "symbol": "CL=F",
+  "key": "CL_F",
+  "name": "WTI原油期货",
+  "cls": "futures",
+  "tier": "T1F",
+  "asof": "2026-09-21",
+  "px": 92.2699966430664,
+  "mcap": null,
+  "bars": 1257
+ },
+ {
+  "symbol": "GC=F",
+  "key": "GC_F",
+  "name": "黄金期货",
+  "cls": "futures",
+  "tier": "T1F",
+  "asof": "2026-09-21",
+  "px": 4386.0,
+  "mcap": null,
+  "bars": 1258
+ },
+ {
+  "symbol": "SI=F",
+  "key": "SI_F",
+  "name": "白银期货",
+  "cls": "futures",
+  "tier": "T1F",
+  "asof": "2026-09-21",
+  "px": 66.62999725341797,
+  "mcap": null,
+  "bars": 1257
+ },
+ {
+  "symbol": "NG=F",
+  "key": "NG_F",
+  "name": "天然气期货",
+  "cls": "futures",
+  "tier": "T1F",
+  "asof": "2026-09-21",
+  "px": 2.8499999046325684,
+  "mcap": null,
+  "bars": 1258
+ },
+ {
+  "symbol": "HG=F",
+  "key": "HG_F",
+  "name": "铜期货",
+  "cls": "futures",
+  "tier": "T1F",
+  "asof": "2026-09-21",
+  "px": 6.765500068664551,
+  "mcap": null,
+  "bars": 1258
+ },
+ {
+  "symbol": "PL=F",
+  "key": "PL_F",
+  "name": "铂金期货",
+  "cls": "futures",
+  "tier": "T1F",
+  "asof": "2026-09-21",
+  "px": 1803.5,
+  "mcap": null,
+  "bars": 1257
+ },
+ {
+  "symbol": "ZC=F",
+  "key": "ZC_F",
+  "name": "玉米期货",
+  "cls": "futures",
+  "tier": "T1F",
+  "asof": "2026-09-21",
+  "px": 5.4275,
+  "mcap": null,
+  "bars": 1256
+ },
+ {
+  "symbol": "ZS=F",
+  "key": "ZS_F",
+  "name": "大豆期货",
+  "cls": "futures",
+  "tier": "T1F",
+  "asof": "2026-09-21",
+  "px": 13.255,
+  "mcap": null,
+  "bars": 1256
+ },
+ {
+  "symbol": "ZW=F",
+  "key": "ZW_F",
+  "name": "小麦期货",
+  "cls": "futures",
+  "tier": "T1F",
+  "asof": "2026-09-21",
+  "px": 7.29,
+  "mcap": null,
+  "bars": 1256
+ },
+ {
+  "symbol": "CT=F",
+  "key": "CT_F",
+  "name": "棉花期货",
+  "cls": "futures",
+  "tier": "T1F",
+  "asof": "2026-09-21",
+  "px": 0.8352999877929688,
+  "mcap": null,
+  "bars": 1258
+ },
+ {
+  "symbol": "KC=F",
+  "key": "KC_F",
+  "name": "咖啡期货",
+  "cls": "futures",
+  "tier": "T1F",
+  "asof": "2026-09-21",
+  "px": 2.765,
+  "mcap": null,
+  "bars": 1258
+ },
+ {
+  "symbol": "SB=F",
+  "key": "SB_F",
+  "name": "糖期货",
+  "cls": "futures",
+  "tier": "T1F",
+  "asof": "2026-09-21",
+  "px": 0.185,
+  "mcap": null,
+  "bars": 1258
+ },
+ {
+  "symbol": "CC=F",
+  "key": "CC_F",
+  "name": "可可期货",
+  "cls": "futures",
+  "tier": "T1F",
+  "asof": "2026-09-21",
+  "px": 5342.0,
+  "mcap": null,
+  "bars": 1257
+ },
+ {
+  "symbol": "LE=F",
+  "key": "LE_F",
+  "name": "活牛期货",
+  "cls": "futures",
+  "tier": "T1F",
+  "asof": "2026-09-21",
+  "px": 2.205,
+  "mcap": null,
+  "bars": 1256
+ },
+ {
+  "symbol": "HE=F",
+  "key": "HE_F",
+  "name": "瘦肉猪期货",
+  "cls": "futures",
+  "tier": "T1F",
+  "asof": "2026-09-21",
+  "px": 0.700999984741211,
+  "mcap": null,
+  "bars": 1256
+ },
+ {
+  "symbol": "6J=F",
+  "key": "6J_F",
+  "name": "日元期货",
+  "cls": "futures",
+  "tier": "T1F",
+  "asof": "2026-09-21",
+  "px": 0.006393000017851591,
+  "mcap": null,
+  "bars": 1258
+ },
+ {
+  "symbol": "6E=F",
+  "key": "6E_F",
+  "name": "欧元期货",
+  "cls": "futures",
+  "tier": "T1F",
+  "asof": "2026-09-21",
+  "px": 1.1507999897003174,
+  "mcap": null,
+  "bars": 1257
+ },
+ {
+  "symbol": "ES=F",
+  "key": "ES_F",
+  "name": "标普500期货",
+  "cls": "futures",
+  "tier": "T1F",
+  "asof": "2026-09-21",
+  "px": 7805.25,
+  "mcap": null,
+  "bars": 1258
+ },
+ {
+  "symbol": "NQ=F",
+  "key": "NQ_F",
+  "name": "纳指100期货",
+  "cls": "futures",
+  "tier": "T1F",
+  "asof": "2026-09-21",
+  "px": 30614.5,
+  "mcap": null,
+  "bars": 1258
+ },
+ {
+  "symbol": "ZB=F",
+  "key": "ZB_F",
+  "name": "美债30年期货",
+  "cls": "futures",
+  "tier": "T1F",
+  "asof": "2026-09-21",
+  "px": 107.53125,
+  "mcap": null,
+  "bars": 1258
  },
  {
   "symbol": "CSGP",
@@ -237,7 +457,7 @@
   "cls": "equity_single",
   "tier": "T2",
   "asof": "2026-09-21",
-  "px": 29.399999618530273,
+  "px": 29.424999237060547,
   "mcap": null,
   "bars": 752
  },
@@ -259,7 +479,7 @@
   "cls": "equity_single",
   "tier": "T2",
   "asof": "2026-09-21",
-  "px": 139.52999877929688,
+  "px": 138.9600067138672,
   "mcap": null,
   "bars": 752
  },
@@ -270,7 +490,7 @@
   "cls": "equity_single",
   "tier": "T2",
   "asof": "2026-09-21",
-  "px": 43.244998931884766,
+  "px": 43.165000915527344,
   "mcap": null,
   "bars": 752
  },
@@ -281,7 +501,7 @@
   "cls": "equity_single",
   "tier": "T2",
   "asof": "2026-09-21",
-  "px": 302.4599914550781,
+  "px": 302.7699890136719,
   "mcap": null,
   "bars": 752
  },
@@ -292,7 +512,7 @@
   "cls": "equity_single",
   "tier": "T2",
   "asof": "2026-09-21",
-  "px": 323.3299865722656,
+  "px": 325.29998779296875,
   "mcap": null,
   "bars": 752
  },
@@ -303,7 +523,18 @@
   "cls": "equity_single",
   "tier": "T2",
   "asof": "2026-09-21",
-  "px": 125.52999877929688,
+  "px": 126.4395980834961,
+  "mcap": null,
+  "bars": 752
+ },
+ {
+  "symbol": "MSTR",
+  "key": "MSTR",
+  "name": "MSTR",
+  "cls": "equity_single",
+  "tier": "T2",
+  "asof": "2026-09-21",
+  "px": 166.27999877929688,
   "mcap": null,
   "bars": 752
  },
@@ -314,7 +545,7 @@
   "cls": "equity_single",
   "tier": "T2",
   "asof": "2026-09-21",
-  "px": 99.25,
+  "px": 101.36000061035156,
   "mcap": null,
   "bars": 752
  },
@@ -325,18 +556,7 @@
   "cls": "equity_single",
   "tier": "T2",
   "asof": "2026-09-21",
-  "px": 148.1999969482422,
-  "mcap": null,
-  "bars": 752
- },
- {
-  "symbol": "NKE",
-  "key": "NKE",
-  "name": "NKE",
-  "cls": "equity_single",
-  "tier": "T2",
-  "asof": "2026-09-21",
-  "px": 35.595001220703125,
+  "px": 148.50999450683594,
   "mcap": null,
   "bars": 752
  },
@@ -347,18 +567,18 @@
   "cls": "equity_single",
   "tier": "T2",
   "asof": "2026-09-21",
-  "px": 71.40499877929688,
+  "px": 71.1500015258789,
   "mcap": null,
   "bars": 752
  },
  {
-  "symbol": "APTV",
-  "key": "APTV",
-  "name": "APTV",
+  "symbol": "NKE",
+  "key": "NKE",
+  "name": "NKE",
   "cls": "equity_single",
   "tier": "T2",
   "asof": "2026-09-21",
-  "px": 43.54999923706055,
+  "px": 36.02799987792969,
   "mcap": null,
   "bars": 752
  },
@@ -369,7 +589,18 @@
   "cls": "equity_single",
   "tier": "T2",
   "asof": "2026-09-21",
-  "px": 931.6500244140625,
+  "px": 927.4600219726562,
+  "mcap": null,
+  "bars": 752
+ },
+ {
+  "symbol": "APTV",
+  "key": "APTV",
+  "name": "APTV",
+  "cls": "equity_single",
+  "tier": "T2",
+  "asof": "2026-09-21",
+  "px": 44.064998626708984,
   "mcap": null,
   "bars": 752
  },
@@ -380,7 +611,18 @@
   "cls": "equity_single",
   "tier": "T2",
   "asof": "2026-09-21",
-  "px": 32.529998779296875,
+  "px": 32.650001525878906,
+  "mcap": null,
+  "bars": 752
+ },
+ {
+  "symbol": "ALNY",
+  "key": "ALNY",
+  "name": "ALNY",
+  "cls": "equity_single",
+  "tier": "T2",
+  "asof": "2026-09-21",
+  "px": 244.89500427246094,
   "mcap": null,
   "bars": 752
  },
@@ -391,7 +633,7 @@
   "cls": "equity_single",
   "tier": "T2",
   "asof": "2026-09-21",
-  "px": 55.8849983215332,
+  "px": 55.994998931884766,
   "mcap": null,
   "bars": 752
  }

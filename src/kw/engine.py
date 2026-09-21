@@ -14,6 +14,7 @@
 from __future__ import annotations
 
 import json
+import os
 from datetime import datetime, timedelta
 
 from .utils import DOCS_DIR, ROOT, log, read_yaml, today_str
@@ -161,12 +162,18 @@ def detect(inst: dict, th: dict, gates: dict, fund_last: float | None) -> dict:
     h, lo = rows[-1][2], rows[-1][3]
     if h > lo:
         close_pos = (cur - lo) / (h - lo)
+    # 无量能符号（部分期货合约 Yahoo 不给量）：量能相关项跳过并标注，绝不用假数据凑
+    no_volume = inst["cls"] == "futures" and not any(vols)
     # 刀落判定（按类别取阈值）
     if inst["cls"] == "crypto":
         t = th["crypto_fall"]
         falling = dd52 <= t["dd52w"] and ret10 <= t["ret10"]
         if fund_last is not None and fund_last <= t.get("fund_8h", -0.05):
             falling = falling or (dd52 <= t["dd52w"] * 0.6 and ret10 <= t["ret10"] * 0.75)
+    elif inst["cls"] == "futures":
+        # T1F 期货（裁决 A5/A8）：阈值介于 index_fall 与 knife_fall 之间；config 缺失时用规格默认（优雅降级）
+        t = th.get("futures_fall") or {"dd52w": -30, "ret10": -12, "rsi14": 28}
+        falling = dd52 <= t["dd52w"] and ret10 <= t["ret10"]
     elif inst["cls"] == "equity_index" or inst["tier"] == "T1":
         t = th["index_fall"]
         falling = dd52 <= t["dd52w"] and ret10 <= t["ret10"]
@@ -175,9 +182,12 @@ def detect(inst: dict, th: dict, gates: dict, fund_last: float | None) -> dict:
         falling = dd52 <= t["dd52w"] and ret10 <= t["ret10"]
     capitulation = bool(vol_ratio is not None and vol_ratio >= th["vol_climax_ratio"])
     hammer = bool(capitulation and close_pos is not None and close_pos >= 0.5)
-    # 企稳 checklist 5 项
+    # 企稳 checklist 5 项（无量能符号：量能项置 None=跳过不计数，卡上标『无量能数据』）
     ck = {}
-    ck["reversal_day"] = bool(len(rows) >= 2 and cur > rows[-2][2] and vol_ratio is not None and vol_ratio >= 1.5)
+    if no_volume:
+        ck["reversal_day"] = None
+    else:
+        ck["reversal_day"] = bool(len(rows) >= 2 and cur > rows[-2][2] and vol_ratio is not None and vol_ratio >= 1.5)
     ck["no_new_low_3d"] = bool(len(closes) >= 4 and min(closes[-3:]) > min(closes[-10:-3] or closes[:1]))
     a_now = atr14(rows)
     a_prev = atr14(rows[:-3]) if len(rows) > 18 else None
@@ -187,10 +197,10 @@ def detect(inst: dict, th: dict, gates: dict, fund_last: float | None) -> dict:
     rsi_prev = rsi14(closes[:-5]) if len(closes) > 20 else None
     ck["rsi_divergence"] = bool(cur <= min(lows10) * 1.005 and rsi is not None and rsi_prev is not None and rsi > rsi_prev)
     ck_n = sum(1 for x in ck.values() if x)
-    # 时间档
+    # 时间档（期货仅 A 档——裁决 A8：移仓/展期结构下 36 个月价值回归口径不成立，永不判 B）
     peak_idx = closes.index(max(closes))
     days_from_peak = len(closes) - 1 - peak_idx
-    if dd250 <= th["b_tier_dd250"]:
+    if inst["cls"] != "futures" and dd250 <= th["b_tier_dd250"]:
         tier_time = "B"
     elif days_from_peak <= 20 and falling:
         tier_time = "A"
@@ -204,6 +214,13 @@ def detect(inst: dict, th: dict, gates: dict, fund_last: float | None) -> dict:
     cap_score = 1.0 if hammer else (0.6 if capitulation else 0.0)
     gate_score = {"GREEN": 1.0, "FLIP_BACK": 1.0, "YELLOW": 0.5, "RED": 0.0}.get(gates.get("state"), 0.5)
     score = round(40 * fall_str + 20 * cap_score + 20 * (ck_n / 5) + 20 * gate_score)
+    # KnifeScore 分项（40/20/20/20，供快照台账与分项悬浮；总分口径不变）
+    score_parts = {"fall_40": round(40 * fall_str, 1), "capitulation_20": round(20 * cap_score, 1),
+                   "checklist_20": round(20 * (ck_n / 5), 1), "gate_20": round(20 * gate_score, 1)}
+    if no_volume:
+        out["no_volume_data"] = True     # 前端在卡上标『无量能数据』
+    if inst["cls"] == "futures":
+        out["a_tier_only"] = True        # 前端在期货行标『仅 A 档』
     out.update({
         "dd52w": round(dd52, 2), "dd250": round(dd250, 2), "ret10": round(ret10, 2),
         "rsi14": round(rsi, 1) if rsi is not None else None,
@@ -212,7 +229,7 @@ def detect(inst: dict, th: dict, gates: dict, fund_last: float | None) -> dict:
         "falling": falling, "capitulation": capitulation, "hammer": hammer,
         "checklist": ck, "checklist_n": ck_n,
         "tier_time": tier_time, "days_from_peak": days_from_peak,
-        "score": score,
+        "score": score, "score_parts": score_parts,
         "stop_price": round(rows[-1][3], 4),          # 失效价=当日最低（接刀参考认错线）
         "last_date": rows[-1][0],
     })
@@ -238,8 +255,12 @@ def save_states(states: dict) -> None:
     STATE_PATH.write_text(json.dumps(states, ensure_ascii=False, indent=1), encoding="utf-8")
 
 
-def step_state(prev: dict | None, det: dict, th: dict, today: str) -> dict:
+def step_state(prev: dict | None, det: dict, th: dict, today: str, veto: bool = False) -> dict:
+    """单标的状态推进。veto=J1 语义闸（终局刀嫌疑）：CATCH 禁开、改判 STABILIZING——
+    只可能少接刀不可能多接刀；veto 为 False/None 时行为与未接入 Jev 完全一致。"""
     st = dict(prev or {"state": "NORMAL", "since": today, "events": []})
+    if not veto:
+        st.pop("jev_veto", None)  # 语义闸解除后清标记（历史状态无此键时为空操作）
     s = st.get("state", "NORMAL")
     ck_n = det.get("checklist_n", 0)
     falling = det.get("falling")
@@ -262,6 +283,10 @@ def step_state(prev: dict | None, det: dict, th: dict, today: str) -> dict:
             to("NORMAL")
     elif s == "KNIFE_FALLING":
         if ck_n >= 3:
+            if veto:  # 语义闸 VETO：不动 checklist_n、不动 score，只拦 CATCH 开门
+                to("STABILIZING", "语义闸 VETO：终局刀嫌疑")
+                st["jev_veto"] = True
+                return st
             to("CATCH", f"checklist {ck_n}/5")
             st["catch_ref_price"] = det.get("px")
             st["catch_day_low"] = det.get("stop_price")
@@ -272,6 +297,10 @@ def step_state(prev: dict | None, det: dict, th: dict, today: str) -> dict:
             to("NORMAL", "刀势解除")
     elif s == "STABILIZING":
         if ck_n >= 3:
+            if veto:  # 语义闸 VETO：维持 STABILIZING，不开接刀窗
+                to("STABILIZING", "语义闸 VETO：终局刀嫌疑")
+                st["jev_veto"] = True
+                return st
             to("CATCH", f"checklist {ck_n}/5")
             st["catch_ref_price"] = det.get("px")
             st["catch_day_low"] = det.get("stop_price")
@@ -289,7 +318,11 @@ def step_state(prev: dict | None, det: dict, th: dict, today: str) -> dict:
     return st
 
 
-def run_engine(store, insts: list[dict], fund: dict[str, float]) -> dict:
+def run_engine(store, insts: list[dict], fund: dict[str, float], veto_keys=frozenset()) -> dict:
+    """veto_keys：J1 语义闸 veto 的 key 集合（set/frozenset/dict 均可，做成员判断；None=空=全放行）。
+    KW_RADAR=1（radar 轻跑批）：引擎只读现算，不落 knife_states.json——state 竞态从源头消除。"""
+    radar_mode = os.environ.get("KW_RADAR") == "1"
+    veto_keys = veto_keys or frozenset()
     conf = read_yaml(ROOT / "config.yaml")
     th = conf["thresholds"]
     gates = market_gates(store)
@@ -303,12 +336,15 @@ def run_engine(store, insts: list[dict], fund: dict[str, float]) -> dict:
             continue
         det["px"] = inst.get("px")
         prev = states.get(inst["key"])
-        st = step_state(prev, det, th, today)
+        st = step_state(prev, det, th, today, veto=inst["key"] in veto_keys)
         states[inst["key"]] = st
         det["state"] = st["state"]
         det["state_since"] = st.get("since")
         det["state_events"] = st.get("events", [])[-4:]
+        if st.get("jev_veto"):
+            det["jev_veto"] = True
         board.append(det)
-    save_states(states)
+    if not radar_mode:
+        save_states(states)
     board.sort(key=lambda x: (STATE_ORDER.get(x["state"], 9), -x.get("score", 0), x.get("dd52w", 0)))
     return {"gates": gates, "board": board, "exits_a": conf.get("exits_a"), "exits_b": conf.get("exits_b")}

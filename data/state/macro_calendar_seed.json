@@ -1,0 +1,12 @@
+{
+  "note": "人工维护的宏观日历种子（J3 事件源之一）。只录官方源核实过的日期；CPI/NFP 等经由新闻 RSS 兜底。维护 SOP：每季度复盘时对照 federalreserve.gov/monetarypolicy/fomccalendars.htm 补下一季度。",
+  "verified_at": "2026-09-21",
+  "source": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+  "events": [
+    { "date": "2026-10-27", "title": "FOMC 议息会议第一天（10 月）" },
+    { "date": "2026-10-28", "title": "FOMC 利率决议 + 记者会（10 月）" },
+    { "date": "2026-12-08", "title": "FOMC 议息会议第一天（12 月，含 SEP 点阵图）" },
+    { "date": "2026-12-09", "title": "FOMC 利率决议 + SEP 点阵图 + 记者会（12 月）" },
+    { "date": "2026-12-18", "title": "四巫日（股指期货/期权、个股期货/期权同日到期）" }
+  ]
+}

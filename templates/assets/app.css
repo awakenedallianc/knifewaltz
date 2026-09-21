@@ -80,7 +80,8 @@ body[data-risk="high"]::after { opacity: 0.035; }
 
 /* ---------- 竖排侧标（全站唯一竖排） ---------- */
 .rail { position: fixed; left: 14px; top: 50%; transform: translateY(-50%); writing-mode: vertical-rl;
-  font: 900 12px var(--font-display); letter-spacing: 0.5em; color: var(--ink-faint); pointer-events: none; z-index: 5; }
+  font: 900 12px var(--font-display); letter-spacing: 0.5em; color: var(--ink-faint); pointer-events: none; z-index: 5;
+  white-space: nowrap; max-height: 92vh; overflow: hidden; }
 @media (max-width: 1099px) { .rail { display: none; } }
 
 /* ---------- 读数条（静态，无跑马灯） ---------- */
@@ -133,7 +134,7 @@ h2.sec::before { content: ''; position: absolute; left: 8px; top: 50%; width: 12
 .secmeta a { text-decoration: underline dotted; text-underline-offset: 2px; }
 
 /* ---------- HERO：走廊尽头 ---------- */
-.hero { min-height: 82vh; display: grid; place-items: center; text-align: center; position: relative; }
+.hero { min-height: 82vh; display: grid; place-items: center; text-align: center; position: relative; overflow: hidden; }
 .hero .blueprint { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); opacity: 0.5; pointer-events: none; z-index: 0; }
 .hero-stack { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 18px; padding: 48px 0; }
 .verdict { font: 400 11px var(--font-mono); letter-spacing: 0.08em; color: var(--ink-dim); }
@@ -334,6 +335,35 @@ footer.site a { text-decoration: underline dotted; }
 /* ---------- 动效 #3：hover 迟到红残影（本体不动，残影慢半拍） ---------- */
 nav.nav button:hover, .tape .t:hover, tr.rowk:hover td b, [data-sym]:hover > b, .brand:hover .cn, a:hover {
   text-shadow: 1px 0 0 rgba(196,30,47,0.5); transition: text-shadow 0s linear 0.1s; }
+
+/* ---------- v1.2 雷达 / 复盘室（radar_research_ui.md new_css；零新动画、零新 transition、零新颜色 token） ---------- */
+/* 雷达：实时判定行（44px 对齐门框内容轴，上下 hairline 同 warnbar 规格） */
+.liverow { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; min-height: 40px; margin: 0 0 20px;
+  padding: 8px 0 8px 44px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  font: 400 11px var(--font-mono); color: var(--ink-dim); letter-spacing: 0.08em; }
+.liverow .lclock { margin-left: auto; color: var(--ink-faint); font-variant-numeric: tabular-nums; }
+.liverow .stale { color: var(--amber); }
+/* 降级态：live 色整层回收为静息哑面——灯灭即警报（NERV 法则，颜色即口径） */
+#v-radar[data-degraded="true"] .live.up { color: var(--up); }
+#v-radar[data-degraded="true"] .live.down { color: var(--down); }
+/* 市场章（章票同配方，比 .tier 再淡一档） */
+.mkt { font: 400 10px var(--font-mono); border: 1px solid var(--line-hi); padding: 1px 5px; color: var(--ink-faint); background: none; border-radius: 0; }
+/* Jev 严重度三格（.st5 同族；sev3 为血的授权点位） */
+.jv3 { display: inline-flex; gap: 2px; }
+.jv3 i { width: 9px; height: 9px; background: var(--line); }
+.jv3[data-sev="1"] i:nth-child(1) { background: var(--ink-faint); }
+.jv3[data-sev="2"] i:nth-child(-n+2) { background: var(--amber); }
+.jv3[data-sev="3"] i { background: var(--blood); }
+/* burst 级行首 4px 橙方点（--signal 的合法使用：此刻需要判断） */
+.sigsq { display: inline-block; width: 4px; height: 4px; background: var(--signal); margin-right: 8px; vertical-align: 2px; }
+/* 网格子项允许收缩：卡内表格交给 .tbl 横向滚动，页面本身 375px 零横滚 */
+.grid > * { min-width: 0; }
+/* 校准行内测量尺（复用 .ruler 子件 .tk/.th/.ndl，仅改宿主盒型） */
+.ruler--row { display: inline-block; width: 160px; vertical-align: middle; }
+/* 校准柱（静态条 + Wilson 须线；不着彩，中立测量仪） */
+.calbar { position: relative; display: inline-block; width: 120px; height: 10px; background: var(--paper-2); vertical-align: middle; }
+.calbar .fill { position: absolute; left: 0; top: 0; bottom: 0; background: var(--ink-faint); }
+.calbar .wl { position: absolute; top: -2px; bottom: -2px; width: 1px; background: var(--ink-dim); }
 
 /* ---------- 无障碍：减motion ---------- */
 @media (prefers-reduced-motion: reduce) {

@@ -1,0 +1,366 @@
+{
+  "spec": "刀尖舞 KnifeWaltz v1.2 「秒抓雷达」实施规格",
+  "version": "1.2.0",
+  "date": "2026-09-21",
+  "synthesized_from": ["侦察兵实测报告（泰国住宅IP curl，2026-09-21）", "Jev 判断层设计 v1", "OPS 双档跑批+浏览器秒级层方案", "CAL 复盘回溯自校准闭环 v1"],
+  "iron_rules": [
+    "运行时零大模型：Jev 只在 Actions/本机离线跑批调用，产出纯数字落盘；浏览器端只跑纯 JS 数学（WebSocket/fetch + 阈值比较）",
+    "统计不撒谎：每个数字带数据源与口径（source+asof）；胜率必配 Wilson 95% 区间与最差一次；口径①持有252日 与 口径②A档执行 双列并示",
+    "全部数据源免费公开；未实测通过的源不进本规格",
+    "不做自动交易，仍是研究/信号工具"
+  ],
+
+  "adjudications": {
+    "note": "四份研究存在冲突处，总架构师裁决如下（偏保守）。实施工程师以本节为准，其余各节已按裁决改写。",
+    "A1_radar_内_Jev_调用_砍掉": "OPS 方案在 radar 轻跑批内调 Jev（score_news/score_movers，2 请求/跑）。裁决：砍。radar 的 permissions 是 contents:read 且无 cache save 通道，跑批内产生的 Jev 判断无法落 jev_log.jsonl 持久化 → 判断无法进校准闭环，违反『每次判断落盘校准日志』诚实底线。Jev 全部集中在 heavy（06:37/18:37 曼谷）与周日复盘跑。OPS 的 movers 判断意图保留，改为 J5 移入 heavy（见 jev_layer.J5）。",
+    "A2_Jev_问题集_以设计师_J1J4_为准": "CAL 的快照 jev 块（p_fwd20_up/p_no_new_low_5d/regime_crash，jev.score_signal_batch）与 Jev 设计师的 J1-J4 是两套问题集。裁决：采纳 J1-J4（+J5），CAL 的问题集废弃。snapshots.json 的 jev 块 schema 改为存 J1-J4 输出（见 calibration.snapshots_jev_block）。",
+    "A3_校准产物合一": "Jev 设计师的 data/state/jev_calibration.json 与 CAL 的 data/state/calibration.json 重复。裁决：只留 calibration.json 一个文件，内含 jev（按 question_id J1..J5 分桶）+ knifescore + rule_counts 三节。scripts/jev_review.py 取消，其回填职责并入 settle.py（resolve_jev_log），其指标计算并入 calibrate.py。",
+    "A4_heavy_Jev_调用上限_3改4": "设计师 MAX_CALLS=3/跑批。因 J5（movers 分诊）从 radar 移入 heavy，裁决上限改为 4：Call-1=J1+J2 合批、Call-2=J3、Call-3=J4（必须在引擎后）、Call-4=J5。最坏 ~35k 输入 token ≈ $0.0015/跑批，日两跑年费 < $2。",
+    "A5_期货只收实测19条中的17条": "侦察兵实测 19 符号全有 ≥3 年日线。裁决：17 条商品/外汇期货入监控宇宙（T1F）；^VIX 是闸门输入、DX-Y.NYB 是背景指标，二者不作为接刀标的。OPS radar_us 里的 ES=F/NQ=F/ZB=F 未实测，不进规格（build_order 第5步含一次性验证，通过后可补入）。",
+    "A6_spark_端点未实测_radar不拉美股期货增量价": "OPS 的 radar_us 用 /v8/finance/spark 批量增量价，该端点侦察兵未实测。裁决：不进规格。radar 的美股腿只用已实测的 screener 三榜（自带 regularMarketPrice/ChangePercent）；美股/期货 K 线与状态机以 heavy 为准，页面如实标注口径。spark 若后续实测通过，v1.3 再考虑。",
+    "A7_浏览器秒级层_保留": "Binance 现货/合约/费率三端点 CORS=* 实测确认，WebSocket 不受 CORS 约束。浏览器直连秒级层可行，保留 OPS 三级降级设计（WS → REST 30s 轮询 → radar.json 跑批数据）。",
+    "A8_期货只做A档": "期货有移仓/展期结构，36 个月价值回归口径不成立。裁决：T1F 仅 A 档（恐慌反弹），B 档资格线不适用；页面口径徽章注明。",
+    "A9_废弃源记录": "CryptoCompare 新闻 API（401 强制要 key）、Wikipedia Nasdaq-100 成分表（页面已无表）、StockTwits trending（Cloudflare 盾）——三者实测死亡，勿写解析器；替代分别为 RSS 三件套、yfiua.github.io CSV、Yahoo most_actives。"
+  },
+
+  "universe": {
+    "final": {
+      "T1_现有21": {
+        "list": "config.yaml t1 现有 21 条不动（SPY QQQ IWM EEM FXI KWEB ARKK ^GSPC ^IXIC ^HSI ^N225 000001.SS GLD SLV USO UNG DBA COPX URA BTC-USD ETH-USD）",
+        "scan": "现有引擎全量：状态机 5 态 + 8 闸门 + KnifeScore 40/20/20/20，阈值不动",
+        "tiers": "A 档 + B 档"
+      },
+      "T1F_期货17": {
+        "list": ["CL=F", "GC=F", "SI=F", "NG=F", "HG=F", "PL=F", "ZC=F", "ZS=F", "ZW=F", "CT=F", "KC=F", "SB=F", "CC=F", "LE=F", "HE=F", "6J=F", "6E=F"],
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/{SYM}?range=5y&interval=1d，必带 header User-Agent: Mozilla/5.0，URL-encode（= 为 %3D）；复用 fetchers/yahoo.py 现有抓取代码，请求间隔 0.5s",
+        "key_convention": "safe_key = symbol.replace('^','_').replace('=','_').replace('.','_') → CL=F → CL_F；kline 文件 docs/data/kline/CL_F.json",
+        "cls": "futures（新 cls，engine.detect 选阈值时 futures 走 thresholds.futures_fall）",
+        "thresholds_new_config_yaml": {"futures_fall": {"dd52w": -30, "ret10": -12, "rsi14": 28}, "note": "介于 index_fall(-20) 与 knife_fall(-40) 之间；商品波动大于指数、小于个股崩盘。6J/6E 外汇腿极少触发属正常（诚实呈现，不为触发而调低）"},
+        "tiers": "仅 A 档（裁决 A8）；volume 缺失的符号 checklist 量能项自动跳过并在卡上标『无量能数据』",
+        "indicators_not_instruments": {"DX-Y.NYB": "美元指数入库 key=macro.dxy，仅作背景指标", "^VIX": "已是闸门输入，不重复入宇宙"}
+      },
+      "CRYPTO_动态movers": {
+        "source_spot": "https://api.binance.com/api/v3/ticker/24hr（weight=80，一次全 3708 对，1.9MB）",
+        "source_perp": "https://fapi.binance.com/fapi/v1/ticker/24hr（weight=40，774 合约）与 https://fapi.binance.com/fapi/v1/premiumIndex（weight=10，908 合约费率）",
+        "filter": "symbol 以 USDT 结尾 且 float(quoteVolume) >= 20000000（2000万美元门槛去僵尸币/拉盘盘）",
+        "board": "按 priceChangePercent 排序取涨/跌各 20 名",
+        "scope": "雷达展示层 + J1/J5 素材层；不进状态机（无 3 年日线，engine 不碰）。BTC/ETH 仍走 T1 状态机不变",
+        "persistence": "heavy 每跑把当日 movers 快照（date, sym, last, pct24, quote_vol, funding）追加入 data/state/movers_history.json（滚动 30 日），供 J5 结算与复盘"
+      },
+      "US_扩展池": {
+        "scan_pool": "T2 扫描池扩为 S&P500（现有 sp500.csv）∪ Nasdaq-100；NDX 成分源 https://yfiua.github.io/index-constituents/constituents-nasdaq100.csv（CORS=*，101 行 CSV：Symbol,Name），heavy 每跑拉一次落 data/state/ndx100.json，仓库内存一份快照兜底（拉取失败用快照）",
+        "t2_rule": "预筛 dd250<=-50、资格线 -60、max_names=24 不动（config.yaml t2_scan）",
+        "movers_lists": "https://query1.finance.yahoo.com/v1/finance/screener/predefined/saved?scrIds={day_gainers|day_losers|most_actives}&count=50&formatted=false，必带 UA header，3 请求/跑，间隔 1s；失败则该榜 null + degraded_reason，不重试",
+        "movers_scope": "雷达展示层（marketCap>=5e8 且 price>=2 且 |regularMarketChangePercent|>=10 才上榜）；不进状态机",
+        "j1_promotion": "day_losers 中 pct<=-15 且 marketCap>=2e9 的前 5 名：heavy 补拉 1 年日线（chart 端点，5 请求）现算 facts（dd52w/ret10/vol_ratio），连同新闻进 J1 分诊（见 jev_layer）"
+      }
+    },
+    "burst_detection": {
+      "daily_z_score": {
+        "formula": "z1d = ln(C_t / C_{t-1}) / std( ln(C_i/C_{i-1}), 最近250根，不含当日 )；样本不足 120 根不算（显示『历史不足』）",
+        "trigger": "|z1d| >= 3.0 → 日线异动，进雷达『日线暴动』表（T1 + T1F + T2 全体，heavy/radar 用库内现价算）",
+        "vol_ratio": "vol_ratio = volume / SMA20(volume) >= 3.0 为放量确认项；期货无量数据时跳过该项并标注"
+      },
+      "crypto_realtime": {
+        "browser_ws": "Δ1m >= +1.5% 或 <= -1.5% → burst 级；Δ5m >= +3.0% 或 <= -3.0% → move 级；仅 quoteVolume >= 20000000 的对参与（防僵尸币假信号）",
+        "board_24h": "|priceChangePercent| >= 10.0 上 24h 榜"
+      },
+      "funding_extremes": {
+        "warn": "|lastFundingRate| >= 0.0005（0.05%/8h）",
+        "red": "|lastFundingRate| >= 0.001（0.1%/8h）",
+        "short_crowded_knife": "lastFundingRate <= -0.001 且 pct24 <= -10 → 『跌得深+空头爆满』接飞刀候选，写入 radar.json.crypto.knife_candidates，并作为下一次 heavy 的 J1/J5 素材"
+      },
+      "panic_amplifier": "Deribit DVOL（BTC/ETH）单日跳升 > 15% → 恐慌放大器旗标（雷达页横幅条件项）；源 https://www.deribit.com/api/v2/public/get_volatility_index_data?currency=BTC&resolution=3600（CORS 回显放行）",
+      "fng": "https://api.alternative.me/fng/?limit=2（CORS=*）；<=10 触发现有 G-FNG 闸不变；数据日更，radar 层页面加载时可直连取当日值"
+    }
+  },
+
+  "jev_layer": {
+    "principles": "同设计师 v1 四原则：runtime_zero_llm / rules_untouched（唯一例外 J1 语义闸是声明在案的第 6 道闸，自身战绩独立公示）/ honest_stats / graceful_degrade（无 key/无新闻/超时/异常 → None，站点与未接入完全一致）",
+    "prerequisite_news_fetcher": {
+      "file": "D:/knifewaltz/src/kw/fetchers/news.py",
+      "api": "fetch_news(insts: list[dict], max_inst=40) -> dict[key, list[{t,src,age_h}]]；缓存 data/state/news_cache.json（当日同 key 命中直接复用）",
+      "sources": [
+        {"scope": "美股/ETF/指数", "url": "https://feeds.finance.yahoo.com/rss/2.0/headline?s={SYMBOL}&region=US&lang=en-US", "note": "^GSPC → %5EGSPC；免 key，UA header，0.5s 间隔"},
+        {"scope": "任意标的补充", "url": "https://news.google.com/rss/search?q=%22{NAME_OR_SYMBOL}%22+when:2d&hl=en-US&gl=US&ceid=US:en", "note": "UA header；每标的 1 次，间隔 0.5s；when:2d 实测生效"},
+        {"scope": "加密全局", "url": ["https://www.coindesk.com/arc/outboundfeeds/rss/", "https://cointelegraph.com/rss", "https://decrypt.co/feed"], "note": "各抓一次，按币名/ticker 过滤分发"}
+      ],
+      "hygiene": "只留 pubDate 48h 内；标题小写去标点 hash 去重；每标的最多 8 条、标题截 160 字符；全部失败返回 {}"
+    },
+    "insertion_points": {
+      "J1_刀落分诊_choice": {
+        "trigger": "heavy 跑批中，prev_state ∈ {KNIFE_FALLING, STABILIZING, CATCH} 或本地快算 dd52w<=-30 的标的（含 US day_losers 晋升的 ≤5 名），且近 2 日新闻 >=1 条；候选按 CATCH > STABILIZING > KNIFE_FALLING > dd 最深排序截 32",
+        "question_json_verbatim": {"t{i}": {"type": "choice", "instructions": "基于 `instruments[{i}].headlines` 近两日新闻与 `instruments[{i}].facts`，判断这把正在下落的刀的卖压性质属于哪一族。", "criteria": {"A_liquidity_panic": {"what": "流动性恐慌族：全市场或全行业恐慌抛售连带砸下来的刀，卖压来自情绪与被迫平仓，标的自身经营没有出现新的坏消息", "examples": ["指数熔断连带蓝筹齐跌", "加密全网连环爆仓清算", "基金被迫减仓的无差别抛售"]}, "B_fundamental_repricing": {"what": "基本面出清族：业绩塌方、行业逻辑恶化、监管重锤等真实坏消息驱动的重定价，但公司或项目仍在正常经营", "examples": ["业绩大幅下修后的连续下跌", "行业价格战导致盈利预期重置", "主营产品需求坍塌"]}, "terminal": {"what": "终局性坠落：欺诈、财务造假、退市、清算、挤兑、协议崩盘这类大概率没有企稳反弹的死亡事件", "examples": ["审计师辞任并指控造假", "交易所公告摘牌", "稳定币脱锚且储备无法兑付", "申请破产清算"]}, "unclear": {"what": "新闻不足以判断族别：标题只是价格波动本身的行情报道，看不出卖压来源", "examples": ["某标的暴跌的纯行情快讯"]}}}},
+        "state_input": {"market": {"blade_index": 0, "gate_state": "GREEN|YELLOW|RED|FLIP_BACK", "vix": 0.0}, "instruments": [{"symbol": "", "name": "", "cls": "crypto|equity|equity_index|commodity|futures", "facts": {"dd52w": 0.0, "ret10": 0.0, "vol_ratio": 0.0, "days_from_peak": 0}, "headlines": [{"t": "", "src": "", "age_h": 0}]}]},
+        "veto_rule": "probabilities.terminal >= 0.50 且 confidence >= 0.60 → jev_veto=true；0.35 <= p_terminal < 0.50 → 仅『疑似终局刀』血色徽章不 veto；veto 粘滞跨跑批，解除=连续 3 个跑批 p_terminal<0.35 或人工写 data/state/jev_overrides.json（{key:\"allow\"}，留痕）",
+        "veto_effect": "写 data/state/jev_semantic_gate.json {key:{veto,p,date,clear_streak,top_headline}}；engine.step_state(prev, det, th, today, veto=False) 加参——两处 to('CATCH',...) 前：if veto: to('STABILIZING','语义闸 VETO：终局刀嫌疑'); st['jev_veto']=True; return st（不动 checklist_n、不动 score）；run_engine(store, insts, fund, veto_keys=frozenset()) 传入 inst['key'] in veto_keys",
+        "shadow": "veto 生效当日向 jev_log 追加 question_id='J1_shadow'（aux={entry: px, stop: stop_price}），settle 按 A 档退出规则算反事实盈亏 → 复盘室公示『语义闸拦下的刀，放行会怎样』双口径",
+        "family_badge": "A/B 族别只做展示徽章，绝不改 tier_time 判定"
+      },
+      "J2_新闻严重度_score": {
+        "trigger": "与 J1 同一次请求（同批 state），每标的多问一个 score",
+        "question_json_verbatim": {"h{i}": {"type": "score", "instructions": "评估 `instruments[{i}].headlines` 这些近两日新闻，与该标的未来五个交易日发生剧烈波动的相关严重程度。", "criteria": ["噪音：旧闻复述、营销稿、或只是擦边提及该标的", "背景信息：涉及该标的但不构成新的波动催化剂", "波动催化剂：出现新的事实——业绩预警、监管动作、大额资金异动、产品事故——足以在最近几个交易日放大波动", "剧烈波动引信：退市、清算、欺诈指控、收购要约、爆仓连锁这类历史上伴随暴涨暴跌的事件"]}},
+        "normalize": "score/3 → heat ∈ [0,1]；payload.jev.news_heat={key:heat}；board 同状态组内次级排序键（主排序 STATE_ORDER+KnifeScore 不变），heat>=0.67 蜂鸣徽章；纯展示"
+      },
+      "J3_宏观催化_score": {
+        "trigger": "每 heavy 跑批一次；事件源 data/state/macro_calendar_seed.json（FOMC/CPI/NFP/四巫日/大额代币解锁，年度人工维护，核对 federalreserve.gov/monetarypolicy/fomccalendars.htm 与 bls.gov/schedule/news_release/cpi.htm）∪ Google News RSS q=(Fed OR CPI OR \"rate decision\" OR \"ETF approval\" OR liquidation)+when:2d；只取未来 14 日内 days_to>=0 的 <=30 条",
+        "question_json_verbatim": {"e{i}": {"type": "score", "instructions": "评估 `events[{i}]` 作为未来全市场剧烈波动催化剂的强度。", "criteria": ["例行事件：通常被市场提前消化，不改变波动格局", "值得留意：可能放大某类资产的波动", "强催化剂：大概率引发跨资产的剧烈波动——议息转向、恶性通胀数据、系统性爆仓、重大监管落地这类"]}},
+        "normalize": "score/2；payload.jev.catalysts = 按 (score desc, days_to asc) 的 [{title, days_to, score}]；首页 hero 下方『未来七日引信』横条 <=5 条；纯展示"
+      },
+      "J4_接刀先验_score": {
+        "trigger": "仅当本 heavy 跑批存在 state==CATCH（含当日新开）的标的，<=10 个；必须在 run_engine 之后调用",
+        "question_json_verbatim": {"q{i}": {"type": "score", "instructions": "综合 `candidates[{i}]` 的结构化事实与新闻，评估此接刀机会与 `replay_context` 描述的历史高胜样本的相似程度。", "criteria": ["更像历史亏损样本：死区时间档、闸门未转绿、没有放量顶点、新闻指向基本面持续恶化", "混合特征：部分企稳条件达成，但量能、时间档或族别不配合", "普通合格样本：企稳条件过半、时间档明确、闸门放行、无明显新闻风险", "接近高胜样本：恐慌族刀叠加放量锤子，或期限倒挂刚回正的窗口内企稳", "教科书样本：恐慌族确认、放量顶点后的反转日、倒挂回正窗口、全部企稳条件近乎齐备且无基本面恶化新闻"]}},
+        "replay_context_verbatim": "历史双口径事实（逐字给模型）：A 档执行口径为低胜率正期望——胜率约三分之一、平均小赚、最差单笔小亏；持有一年口径胜率高、中位数大赚。高胜样本共性：恐慌族刀、放量顶点后的反转日、期限倒挂刚回正、闸门转绿。",
+        "normalize": "score/4 → prior ∈ [0,1]；payload.jev.catch_prior={key:prior}；只决定多张 CATCH 卡片展示先后与卡上一枚小刻度（标注『Jev 先验 · 仅排序展示，不参与信号与统计』）；绝不写入 score/ledger/状态机"
+      },
+      "J5_movers分诊_choice_新增": {
+        "origin": "OPS score_movers 意图，裁决 A1 移入 heavy 并由 score 改为 choice（四类是类别不是序数档，choice 更合规且带 catch-all）",
+        "trigger": "heavy 跑批，radar_crypto 已取全市场 movers（涨/跌各 20 + knife_candidates），<=40 条；每条附 RSS 三件套中币名/代号命中的标题 <=3 条",
+        "question_json_verbatim": {"m{i}": {"type": "choice", "instructions": "基于 `movers[{i}]` 的 24 小时行情事实（涨跌幅、成交额、资金费率、与 BTC 同向性）与新闻标题，判断这次异动的性质属于哪一族。", "criteria": {"noise": {"what": "无信息噪音：低流动性拉盘、庄家行为或无任何可核实信息的波动", "examples": ["小市值币无消息单边拉升", "成交额刚过门槛的异常波动"]}, "liquidation_cascade": {"what": "杠杆清算连锁：资金费率与持仓同向骤变引发的爆仓踩踏", "examples": ["负费率极值叠加深跌", "全网连环爆仓时段的同步暴跌"]}, "event_driven": {"what": "可核实事件驱动：上所、黑客、监管、升级、合作等有新闻佐证的异动", "examples": ["交易所公告上新后的暴涨", "协议被盗新闻后的暴跌"]}, "systemic": {"what": "系统性恐慌外溢：与大盘或 BTC 同向共振的贝塔行情", "examples": ["BTC 大跌当日全市场普跌"]}, "unclear": {"what": "信息不足以判断族别", "examples": ["无新闻且行情特征不典型"]}}}},
+        "state_per_mover": {"symbol": "", "pct24": 0.0, "quote_vol": 0.0, "funding": 0.0, "btc_pct24": 0.0, "headlines": ["<=3 条截 160 字符"]},
+        "consumption": "jev_flavor = 1 - p_noise（信息含量 0..1）+ family 标签，写 data/state/jev_movers.json {sym:{family,flavor,probs,date}} 并入 payload；radar 轻跑批 join 该文件按 sym 匹配填 radar.json 的 jev_flavor（30 分钟后的新 mover 匹配不上则 null，前端隐藏该列——诚实）",
+        "calibration": "p_informative = 1 - p_noise，horizon 3 日；结算源 = data/state/movers_history.json 后续 heavy 快照价：hit=1 若 3 日内 |累计收益| >= 10%（剧烈波动延续）；无后续价格（下架/改名）记 unresolvable 不进分母"
+      }
+    },
+    "batching_and_budget": {
+      "calls_per_heavy_run": "<=4 次 POST 顺序执行：Call-1=J1+J2 合批（<=32 标的 × 2 问）；Call-2=J3（<=30 问）；Call-3=J4（<=10 问，引擎后）；Call-4=J5（<=40 问）。MAX_QUESTIONS=160/跑批",
+      "api": "POST https://api.typesafe.ai/v1/systemone，model jev-latest（回显如 jev-1.13.0），Authorization: Bearer $TYPESAFE_API_KEY，timeout=20s，429/529 指数退避重试 1 次",
+      "token_math": "最坏 ~35k 输入 token/跑批（单请求预算 64k、state+最长问题 32k 内）≈ $0.0015/跑批（$42/十亿输入 token，输出免费）；限流 250k tok/s、1200 req/min 无压力；墙钟 +3-6s 对 ~7 分钟跑批不可感",
+      "cache": "data/state/jev_cache.json {inputs_hash: {d: 今天, resp}}——build-only 重跑与同日重试零重复计费；inputs_hash = sha256(canonical_json(state, questions))[:16]",
+      "degrade": "无 TYPESAFE_API_KEY / 无新闻 / 候选为空 / 任何异常 → 对应模块返回 None，payload.jev.enabled=false 时前端隐藏全部 Jev 元素；veto 集为空=全放行=与 v1.1 行为一致；跑批永不因 Jev 失败"
+    },
+    "calibration_log_schema": {
+      "file": "data/state/jev_log.jsonl（追加式，daily.yml Commit state 步骤已覆盖 data/state 自动提交）",
+      "record": {"ts": "ISO8601", "run_date": "YYYY-MM-DD", "instrument": "key 或 'MACRO' 或 mover sym", "question_id": "J1|J1_shadow|J2|J3|J4|J5", "model": "resp.model 回显", "inputs_hash": "sha256[:16]", "score": "归一化 0-1（J1 存 p_terminal，J5 存 p_informative）", "raw": {"choice": "J1/J5 才有", "probabilities": {}, "confidence": 0.0}, "horizon_days": "J1:180 / J2:5 / J3:days_to+3 / J4:63 / J5:3", "realized_outcome": null, "realized_at": null, "aux": {"entry": "J1_shadow 才有", "stop": ""}},
+      "resolution_rules": {"J1_terminal": "1 若 180 日内触发 X-EVENT 类事件或较 veto 日再跌 90%；族别按该轮走势归档（恐慌反弹 vs 价值回归）", "J2": "1 若 |5 日前向收益| >= 2×ATR14%", "J3": "1 若事件后 3 日 VIX 或已实现波动跳升 >15%", "J4": "该笔 CATCH 按 A 档退出规则的胜负（从 ledger 读）", "J5": "1 若 3 日内 |累计收益| >= 10%（movers_history 快照价口径）", "J1_shadow": "反事实盈亏 = atier_exec(entry, stop) 结果"},
+      "improvement_loop": "校准结果驱动的唯一改动面 = criteria 措辞与 veto 阈值（记入 calibration.json 变更日志）；分桶显著失准的问题先降级为『仅展示不 veto』再迭代——规则链永不因校准漂移"
+    },
+    "payload_contract": {"payload.json 新增 jev 块": {"enabled": true, "model": "jev-1.13.0", "run_ts": "", "triage": {"<key>": {"family": "A_liquidity_panic", "p_terminal": 0.07, "conf": 0.81, "veto": false, "warn": false}}, "news_heat": {"<key>": 0.66}, "catalysts": [{"title": "", "days_to": 2, "score": 1.0}], "catch_prior": {"<key>": 0.75}, "movers": {"<sym>": {"family": "event_driven", "flavor": 0.8}}}},
+    "code_skeleton_reference": "src/kw/jev.py 按 Jev 设计师骨架重写（现文件是机会监控拷贝，废弃）：常量 API/MODEL/路径/上限、_hash/_ask（缓存+退避）、_log_judgment、select_candidates、triage_and_heat(Call-1)、score_catalysts(Call-2)、catch_prior(Call-3)，新增 score_movers(Call-4，choice 版)；veto_set() 供 run_engine 消费。管线顺序：fetchers → news.fetch_news(候选) → jev.triage_and_heat → engine.run_engine(store, insts, fund, veto_keys=jev.veto_set()) → jev.catch_prior(board CATCH 行) → jev.score_catalysts(events) → jev.score_movers(movers) → payload 注入 → snapshot/settle/calibrate → render"
+  },
+
+  "ops": {
+    "cron": [
+      {"workflow": "daily.yml (heavy)", "cron": ["37 23 * * *", "37 11 * * *", "37 1 * * 0"], "note": "前两条不变（06:37/18:37 曼谷）；新增周日 08:37 曼谷第三条跑周复盘（与 CAL 一致），步骤内用 if: github.event.schedule == '37 1 * * 0' 附加 --weekly-review --walkforward"},
+      {"workflow": "radar.yml (light)", "cron": ["9,39 * * * *"], "note": "每 30 分钟 48 跑/日；:09/:39 避开整点/半点 GitHub 调度拥堵；与 heavy :37 相邻由共享并发组排队"}
+    ],
+    "latency_honest_table": [
+      {"层": "加密价格异动（浏览器 WS 层）", "实测可达延迟": "1-3 秒", "路径": "Binance !miniTicker@arr 每 1s 推送 → 纯 JS 阈值 → 即时高亮"},
+      {"层": "加密费率/DVOL/F&G/美股榜单/新闻（radar 跑批）", "实测可达延迟": "中位 ≈ 25-30 分钟，最差 ≈ 50 分钟", "路径": "等 30 分钟 tick(均值15) + 调度延迟(3-15) + 跑批(~2.5) + 部署(~1)；页面必须如实标注，不伪装实时"},
+      {"层": "美股/期货 K 线、状态机、Jev 标注", "实测可达延迟": "每日 2 次 heavy + Yahoo 报价自身 1-2 分钟延迟", "路径": "现状"}
+    ],
+    "cache": {
+      "选型": "actions/cache restore/save 拆开；否决日线增量转 JSON 提交（u.* 广度池 22.6MB 会污染 git 历史）",
+      "path": ["data/history.sqlite", "docs/data/kline"],
+      "why_kline": "docs/ 整体 gitignore、Pages 部署整站替换；radar 拿不到 heavy 的 K 线文件会把全站 K 线抹掉",
+      "keys": {"save_key": "kw-db-v1-${{ github.run_id }}", "restore_keys": "kw-db-v1-", "原因": "GitHub 缓存同 key 不可覆盖，保存键带 run_id，恢复用前缀命中最近一份"},
+      "谁存谁取": "heavy: restore + 成功后 save（if: success()）；radar: 只 restore 绝不 save——这就是防 light 冲掉 heavy 缓存的机制",
+      "降级": ["heavy miss → breadth.py 现有逻辑自动逐股回填 1 年（~7-8 分钟，timeout 40min 内），跑完重建缓存", "radar miss（steps.restore.outputs.cache-matched-key == ''）→ 跳过跑批与部署（exit 0 + ::notice），站点维持上一版，等 heavy 重建", "命中但库陈旧 → 不特殊处理，asof 字段如实显示旧日期"]
+    },
+    "daily_yml_edits": [
+      "concurrency.group: 'knifewaltz-daily' → 'kw-pipeline'（与 radar.yml 共用，序列化一切跑批+部署）",
+      "schedule 增加第三条 '37 1 * * 0'",
+      "'Run pipeline' 前插 actions/cache/restore@v4（id: restore, key: kw-db-v1-${{ github.run_id }}, restore-keys: kw-db-v1-, path: data/history.sqlite + docs/data/kline）",
+      "'Run pipeline' 后插 Weekly review 步骤：if: github.event.schedule == '37 1 * * 0' → run: python run.py --weekly-review --walkforward",
+      "再后插 actions/cache/save@v4（if: success()，同 key/path）",
+      "其余（state 提交、pull --rebase -X theirs、Pages 三步）零改动"
+    ],
+    "radar_yml_full": [
+      "name: knifewaltz-radar",
+      "on:",
+      "  schedule:",
+      "    - cron: '9,39 * * * *'",
+      "  workflow_dispatch: {}",
+      "",
+      "permissions:",
+      "  contents: read            # radar 永不 commit —— state 竞态从源头消除",
+      "  pages: write",
+      "  id-token: write",
+      "",
+      "concurrency:",
+      "  group: kw-pipeline",
+      "  cancel-in-progress: false",
+      "",
+      "jobs:",
+      "  radar:",
+      "    runs-on: ubuntu-latest",
+      "    timeout-minutes: 8",
+      "    environment:",
+      "      name: github-pages",
+      "      url: ${{ steps.deployment.outputs.page_url }}",
+      "    env:",
+      "      TZ: Asia/Bangkok",
+      "      PYTHONUTF8: '1'",
+      "      KW_RADAR: '1'",
+      "    steps:",
+      "      - uses: actions/checkout@v4",
+      "        with: { fetch-depth: 1 }",
+      "      - uses: actions/setup-python@v5",
+      "        with: { python-version: '3.12', cache: pip }",
+      "      - run: pip install -r requirements.txt",
+      "      - name: Restore history db (只读，radar 无 save 步骤)",
+      "        id: restore",
+      "        uses: actions/cache/restore@v4",
+      "        with:",
+      "          path: |",
+      "            data/history.sqlite",
+      "            docs/data/kline",
+      "          key: kw-db-v1-${{ github.run_id }}",
+      "          restore-keys: kw-db-v1-",
+      "      - name: Bail out on cache miss (维持上次部署，等 heavy 重建)",
+      "        if: steps.restore.outputs.cache-matched-key == ''",
+      "        run: |",
+      "          echo '::notice::radar skipped - no db cache; run daily.yml first'",
+      "          echo 'SKIP=1' >> \"$GITHUB_ENV\"",
+      "      - name: Radar run",
+      "        if: env.SKIP != '1'",
+      "        run: python run.py --radar",
+      "      - uses: actions/configure-pages@v5",
+      "        if: env.SKIP != '1'",
+      "        with: { enablement: true }",
+      "      - uses: actions/upload-pages-artifact@v3",
+      "        if: env.SKIP != '1'",
+      "        with: { path: docs }",
+      "      - id: deployment",
+      "        if: env.SKIP != '1'",
+      "        uses: actions/deploy-pages@v4"
+    ],
+    "radar_yml_note": "与 OPS 原稿两处差异（裁决 A1/A6）：env 不含 TYPESAFE_API_KEY（radar 零 Jev 调用），radar 内无 Jev 步骤",
+    "run_py_radar_mode": {
+      "argparse": "ap.add_argument('--radar', action='store_true')；--radar 设 os.environ['KW_RADAR']='1'，隐含跳过 replay 全量/knives 扫描/台账 live 追加/Jev 全部",
+      "steps_budget_python_side_target_120s": [
+        {"step": "radar_crypto（新 src/kw/fetchers/radar_crypto.py）", "s": 12, "do": "① GET api.binance.com/api/v3/ticker/24hr → USDT 对 + quoteVolume>=2e7 → 涨/跌各 20 movers + knife_candidates；② GET fapi.binance.com/fapi/v1/premiumIndex → funding_extremes，BTC/ETH/SOL fr*100 入库 fund.{coin}；③ Deribit DVOL BTC/ETH 增量（start_timestamp=now-3d）入库 dvol.*；④ alternative.me/fng/?limit=2 入库 fng.crypto"},
+        {"step": "radar_us（新 src/kw/fetchers/radar_us.py）", "s": 15, "do": "仅 screener 三榜（day_gainers/day_losers/most_actives，count=50，UA header，间隔 1s）；401/403/429 → 该榜 null + degraded_reason，不重试。不拉 spark、不拉个股 K 线（裁决 A6）"},
+        {"step": "radar_rss（新 src/kw/fetchers/radar_rss.py）", "s": 25, "do": "feeds=[coindesk, cointelegraph, decrypt, feeds.marketwatch.com/marketwatch/marketpulse/, search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100003114]；Http(timeout=8, retries=0) 逐抓，title/link/pubDate，id=sha1(link)，store.put_news 复用现有 news 表去重"},
+        {"step": "engine.run_engine", "s": 5, "do": "insts 读 data/state/instruments.json（checkout 自带）；engine.py 第 312 行改 if os.environ.get('KW_RADAR') != '1': save_states(states) —— radar 不落 knife_states.json；veto_keys 读 checkout 里 heavy 提交的 jev_semantic_gate.json"},
+        {"step": "replay.signal_replay", "s": 10, "do": "从库现算；vix_stats 只读 data/state/vix_replay.json（绝不写）"},
+        {"step": "payload + radar.json + render", "s": 5, "do": "ledger 只读原样不追加；payload 增 radar_thresholds 与 run.kind='radar'；jev 块 join heavy 提交的 jev_* state 文件；render.render_site 全站重渲"}
+      ],
+      "radar_json_schema": {
+        "generated_at": "ISO", "kind": "radar",
+        "crypto": {"movers": [{"sym": "XUSDT", "last": 0.0, "pct24": 0.0, "quote_vol": 0.0, "funding": 0.0, "jev_flavor": "0..1|null（join heavy 的 jev_movers.json，匹配不上=null）", "jev_family": "string|null", "source": "binance", "asof": "ISO"}], "knife_candidates": [], "funding_extremes": [], "dvol": {"BTC": 0, "ETH": 0}, "fng": 0},
+        "us": {"gainers": [], "losers": [], "actives": [], "source": "yahoo-screener", "asof": "ISO", "degraded_reason": "string|null"},
+        "news": [{"id": "", "title": "", "source": "", "published": ""}],
+        "radar_thresholds": {"pump_1m_pct": 1.5, "dump_1m_pct": -1.5, "pump_5m_pct": 3.0, "dump_5m_pct": -3.0, "chg24_board_pct": 10.0, "min_quote_vol_usd": 20000000, "funding_warn": 0.0005, "funding_red": 0.001, "browser_live": true}
+      }
+    },
+    "browser_seconds_layer": {
+      "verdict": "保留（裁决 A7）。CORS 实测支持：Binance 三 REST 端点 Access-Control-Allow-Origin:* 确认；WS 不受 CORS 约束",
+      "primary": "WebSocket wss://stream.binance.com:9443/ws/!miniTicker@arr —— 每 1s 全市场推送；页面维护 Map<sym, 环形缓冲[{t,close}]> 保留 6 分钟，算 Δ1m/Δ5m；阈值全部读 payload.radar_thresholds，前端零硬编码",
+      "degrade_1": "WS 连续 3 次重连失败（退避 1s/5s/30s+抖动）→ REST fetch api.binance.com/api/v3/ticker/24hr 每 30s（weight 80×2/min ≪ 6000/min 限额；AbortController 8s 超时）",
+      "degrade_2": "REST 也连续 3 次失败 → 隐藏实时列，整卡切 radar.json + 徽标『实时层不可用 · 显示跑批数据（HH:MM）』；每 5 分钟恢复探测",
+      "politeness": "document.hidden 时关 WS/停轮询（visibilitychange 恢复）；全页仅 1 条 WS；服务端 24h 强断收 close 即退避重连；418/429 读 Retry-After 停够再试",
+      "js_skeleton": "templates/assets/radar.js 按 OPS 骨架实现：push/delta/judge/connectWs/pollRest/startRest/showBatchFallback + visibilitychange；judge 中 quoteVolume < TH.min_quote_vol_usd 直接 null",
+      "page_label_verbatim": "加密＝实时（浏览器直连 Binance，约 1 秒）· 美股/期货＝雷达跑批（约每 30 分钟）· Jev 标注与资金费率随跑批更新"
+    },
+    "concurrency_guards": [
+      "daily.yml 与 radar.yml 共用 concurrency.group='kw-pipeline'、cancel-in-progress:false → 任意时刻最多 1 跑 + 1 排队，GitHub 只保留最新 pending（最新一跑胜出）",
+      "radar contents:read 且无 commit/save 步骤 → state 与缓存竞态为零",
+      "heavy 现有 pull --rebase -X theirs 保留（rebase 语境 theirs=本地最新计算值，对纯机器派生 state 语义正确）；rebase 失败 abort+warning 兜底",
+      "Pages 部署 ~50 次/日安全（自定义 workflow 部署不受分支自动构建的 10 builds/小时软限）"
+    ]
+  },
+
+  "calibration": {
+    "adopted": "CAL 方案整体采纳，本节只列文件清单、裁决改动与红线原文；schema 细节以 CAL 设计 JSON 为实施蓝本（本 spec 同目录归档）",
+    "files": {
+      "data/state/snapshots.json": "信号快照台账 append-only；触发事件 S-CATCH / S-FALL / G-VIX-36|45|50 on 边沿 / G-FLIP-BACK；features_sha=sha256(canonical_json(features,score,market,jev))[:16] 创建时写死；>1500 条按年轮转 snapshots_archive_{YYYY}.json；settle 只允许填 realized/settled 两键",
+      "data/state/gates_prev.json": "上一跑批闸门 on/off 与 flip_back，供边沿检测",
+      "data/state/params_registry.json": "预注册参数网格（CAL 14 参数表照抄：vix_gate.primary [33,36,39,42] / index_fall.dd52w [-15,-20,-25] / index_fall.ret10 [-8,-10,-12] / knife_fall.dd52w [-35,-40,-45,-50] / knife_fall.ret10 [-10,-15,-20] / crypto_fall.* / vol_climax_ratio [2.5,3.0,3.5,4.0] / checklist.catch_min [3,4] / catch_window_days [7,10,15] / knifescore.weights 三组 / frozen: term_flip.red、b_tier_dd250、cooldown_days）；新增 futures_fall.dd52w {current:-30, grid:[-25,-30,-35], frozen:false} 与 futures_fall.ret10 {current:-12, grid:[-10,-12,-15], frozen:false}",
+      "data/state/params_history.json": "参数漂移 append-only 留痕（old/new/basis{train,validate,holdout,looks_used}/decided_by/engine_sha/commit）",
+      "data/state/calibration.json": "唯一校准产物（裁决 A3）：{jev: 按 question_id J1..J5 各一节（n_total/brier/brier_baseline_climatology/reliability 五分桶+Wilson+small_sample），knifescore: 五桶双口径+Wilson+live/backtest 分列, rule_counts}；n_total<30 → conclusive:false、brier:null、页面只显示『收集中 x/30』",
+      "data/state/reviews.json": "每周复盘滚动 26 周；最新一期同步 docs/data/review.json；含 new_signals/settled/calibration_delta/worst_of_week（单规则替换反事实，永不作为换参依据）/red_line_audit/params",
+      "data/state/walkforward_latest.json": "季度 walk-forward 完整输出，只推荐不落地；窗口锚定预注册 train 1990-2013 / validate 2014-2019 / holdout 2020-今；坐标下降一次只动一个参数；holdout 只做一次通过/否决且 looks_used 计数写盘",
+      "data/state/red_lines.json": "红线定义静态落盘（下方 red_lines_verbatim 原文）",
+      "data/state/jev_log.jsonl + jev_cache.json + jev_semantic_gate.json + jev_overrides.json + jev_movers.json + movers_history.json + macro_calendar_seed.json + ndx100.json": "Jev 层与宇宙扩展的持久化文件（daily.yml git add data/state 自动纳入）",
+      "docs/data/": "calibration.json / review.json / snapshots_public.json（瘦身版，去 features_sha/ts）由 render 阶段复制"
+    },
+    "snapshots_jev_block": {
+      "裁决A2后的schema": {"model": "jev-1.13.0", "asked_at": "ISO", "p_terminal": 0.07, "family": "A_liquidity_panic", "family_probs": {"A_liquidity_panic": 0.6, "B_fundamental_repricing": 0.2, "terminal": 0.07, "unclear": 0.13}, "confidence": 0.81, "heat": 0.66, "catch_prior": 0.75, "outcome_defs": {"p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%", "heat": "|5 日前向收益|>=2×ATR14%", "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"}, "nullable": "无 key/失败整块 null，站点行为不变"}
+    },
+    "modules": {
+      "refactor_first": "① replay.py 把 vix_gate_replay 内联 A 档执行循环抽为 atier_exec(closes, ohlc, i, max_bars=60)->{pnl_pct,exit,exit_bar}，回测口径与结算口径同一段代码（RL-2 技术保障）；② engine.detect() 返回值增加 score_parts {fall_40,capitulation_20,checklist_20,gate_20}（数据已在函数内）",
+      "src/kw/snapshot.py": "load_snapshots / capture(board,gates,jev_block,params_version,engine_sha,today)（边沿检测读写 gates_prev，去重键 (kind,symbol,date)）/ append（>1500 轮转）/ features_sha / verify_immutable（周审计）",
+      "src/kw/settle.py": "settle(snaps)：engine.load_kline 定位触发日，剩余 bar>=w 填 fwdW_pct；fwd20 时一并填 mae20_pct 与 atier=replay.atier_exec(...)；只写 realized/settled；新增 resolve_jev_log()（裁决 A3）：按 jev_layer.calibration_log_schema.resolution_rules 回填 jev_log.jsonl 的 realized_outcome（J5 用 movers_history，J1_shadow 用 atier_exec 反事实）；pair_with_ledger 互写引用；每日跑批幂等",
+      "src/kw/calibrate.py": "brier / reliability(edges=(0,.2,.4,.6,.8,1.0001), small_sample=n<30, wilson 复用 replay.wilson) / jev_calibration(jev_log 按 question_id 分桶) / score_calibration(五桶双口径, live 与 backtest 永远分列) / rule_counts / build → data/state/calibration.json；Brier 必须与 climatology 基线 mean((base_rate-hit)^2) 并列",
+      "src/kw/walkforward.py": "run(registry)（季度首个周日）/ evaluate（replay 同源数据 A 档口径 {n,win,wilson95,median_pct,worst_pct}，episode 间隔>=30 交易日沿用 _episodes）/ select_on_validate（validate.n>=5 且 wilson 下界、median、worst 三条件）/ holdout_veto（唯一入选者一次性，looks_used 写盘）/ recommend（只写文件不改 config）；标的级阈值仅 3 年 kline → T1 池 pooled 重放，pooled n<30 本季不下结论",
+      "src/kw/review.py": "build_weekly / attribute_worst（反事实候选写死 [checklist>=4, gate_ok限FLIP_BACK, vol_climax_ratio=4.0, X-STOP上移2%]）/ red_line_audit / save（26 周滚动）",
+      "run.py_integration": "主流程 engine 之后：jev 四调用 → snapshot.capture → snapshot.append → settle.settle（含 resolve_jev_log）→ calibrate.build → payload 注入 → render；新增 --weekly-review 与 --walkforward 分支（周日 cron 传入）"
+    },
+    "encoding_bug_fix": "CAL 实锤：data/state/ledger.json 中文字段乱码（'X-STOP@21日'→'X-STOP@21��'）。build_order 第 1 步修 utils.write_json（encoding='utf-8', ensure_ascii=False）并重生成台账",
+    "red_lines_verbatim": [
+      {"id": "RL-1", "rule": "禁止用留出集调参：holdout 只对验证集选出的唯一候选做一次通过/否决检查，每次 look 计数写盘公示（basis.holdout.looks_used 必须==1）", "check": "auto: params_history 审计"},
+      {"id": "RL-2", "rule": "禁止事后改口径：hit/fwd/A档执行的定义预注册在 outcome_defs 与 Jev 提问里；改口径=新指标另起一列，旧列数据保留并标注停用日期", "check": "auto: calibration.outcome_defs 文本 sha 入库，变更即 fail 并要求 caliber_history 记录"},
+      {"id": "RL-3", "rule": "快照不可篡改：snapshots append-only，settle 只填 realized/settled；features_sha 每周全量复核", "check": "auto: snapshot.verify_immutable"},
+      {"id": "RL-4", "rule": "样本<30 只展示不统计：任何桶/曲线点/总体 n<30 时不显示命中率与 Brier，只显示 n 与『收集中』", "check": "auto: review.red_line_audit 扫描 calibration 输出"},
+      {"id": "RL-5", "rule": "每条规则历史触发次数公示（触发 3 次的规则说自己 100% 胜率是笑话，让读者看得见）", "check": "auto: rule_counts 必须渲染在复盘室与方法页"},
+      {"id": "RL-6", "rule": "Jev 概率的结算口径在提问时预注册（问的是什么事件，就用什么事件结算），禁止拿同一概率对多个事后挑选的结局算命中", "check": "manual+auto: 快照 jev.outcome_def 字段必填"},
+      {"id": "RL-7", "rule": "live 与 backtest 永远分开统计，永不合并成一个胜率", "check": "auto: calibrate 输出结构上就分列，页面无合并视图"},
+      {"id": "RL-8", "rule": "台账与快照永不删除：标的移出监控池后其历史快照仍参与统计（防幸存者偏差）；退市标的结算用最后可得价并标注", "check": "auto: instruments 移除不触达 snapshots"},
+      {"id": "RL-9", "rule": "换参只有一条路：季度 walk-forward（验证集入选+留出集一次性否决）→ 写 params_history → 人工改 config.yaml；周复盘的反事实归因、单笔亏损、页面观感都不是换参理由", "check": "auto: config.yaml 中受管参数变更但 params_history 无对应条目 → 红线 fail"},
+      {"id": "RL-10", "rule": "预注册网格外的参数值禁止上线；网格本身的修改按换参同等流程留痕", "check": "auto: config.yaml 值 ∈ registry.grid 校验"}
+    ]
+  },
+
+  "frontend": {
+    "design_language": "鞘 SAYA v2（data/state/style_spec.json）全约束继承：方角零圆角、门框线 x 全站一致、--gold 每页<=1 元素、--blood 面积<2%、--signal 面积<5% 且只标注『此刻需要判断』、全站默认静止 *{transition:none}、动效白名单只有现有 4 种（hazard 无限 / typing 一次性 / hover 红残影 / 抽屉 160ms）——雷达页与复盘室不得新增第 5 种",
+    "live_color_discipline": "实时数字跳动 = DOM 内容更新，不是动画，不加 transition/keyframes；颜色纪律：只有浏览器 WS/REST 实时值可用 --up-live/--down-live 全饱和色，radar 跑批值与历史值一律哑面 --up/--down；实时层降级到跑批数据时颜色必须同步降为哑面（颜色即口径）",
+    "nav": "首页 index.html（现有）＋ 雷达 radar.html（新）＋ 复盘室 review.html（新）；导航入口按现有门框线体系挂",
+    "radar_view": {
+      "file": "docs/radar.html ← templates/radar.html.j2 + templates/assets/radar.js；首页另放一张压缩『爆动雷达』卡（top3 异动 + 链到 radar.html）",
+      "sections_in_order": [
+        {"id": "live", "name": "实时爆动（加密）", "content": "WS 层命中表：sym / 现价（--up-live/--down-live）/ Δ1m / Δ5m / 24h% / 成交额；burst 级行首 4px --signal 方点（『此刻需要判断』合法使用）；表头口径徽章『实时 · 浏览器直连 · ~1s』", "data": "WS/REST 层 + radar_thresholds"},
+        {"id": "board24", "name": "24h 涨跌榜（加密）", "content": "涨/跌各 20 双列；jev_family/jev_flavor 列（null 时整列隐藏）；knife_candidates 行注『跌深+空头爆满』", "data": "radar.json.crypto"},
+        {"id": "funding", "name": "资金费率极值", "content": "warn/red 分档表 + BTC/ETH DVOL 与跳升旗标 + F&G；红档用 --blood 图标不整行标红（面积纪律）", "data": "radar.json.crypto.funding_extremes/dvol/fng"},
+        {"id": "us", "name": "美股榜单", "content": "gainers/losers/actives 三列各 top10（过滤后）；口径徽章『跑批 · 约每30分钟 · Yahoo 延迟报价』；degraded_reason 非空时显示灰条", "data": "radar.json.us"},
+        {"id": "zboard", "name": "日线暴动（全宇宙）", "content": "T1+T1F+T2 中 |z1d|>=3.0 的表：sym / z 值 / ret1d / vol_ratio / 状态机态；期货行注『仅 A 档』", "data": "payload（heavy 口径徽章）"},
+        {"id": "fuse", "name": "未来七日引信", "content": "J3 catalysts <=5 条横条（days_to + score 刻度）", "data": "payload.jev.catalysts"},
+        {"id": "heat", "name": "新闻热度", "content": "J2 news_heat>=0.67 蜂鸣徽章标的清单 + 最新 RSS 标题流（来源+时间戳）", "data": "payload.jev.news_heat + radar.json.news"}
+      ],
+      "header_label": "页首固定口径行（page_label_verbatim 原文），不得省略",
+      "mobile": "375px 宽零横滚：榜单双列降单列、表格横向裁列（sym/关键值优先）；零控制台错误"
+    },
+    "review_room_view": {
+      "file": "docs/review.html ← templates/review.html.j2；图表纯 JS/SVG 无第三方库",
+      "sections_in_order": [
+        {"id": "verdict", "name": "本周判决", "note": "金色判定行（本页唯一 --gold）+ 打字机动效（复用白名单动效 #2，每会话一次）"},
+        {"id": "ledger", "name": "信号快照台账", "note": "日期|标的|信号|KnifeScore(分项悬浮)|Jev p|fwd5|fwd20|fwd60|A档结果|出场原因；未结算格『待结算·还差N根K线』；live/backtest 分组永不合并；每列口径徽章"},
+        {"id": "jev_cal", "name": "Jev 校准", "note": "按 question_id J1..J5 分 tab；可靠性曲线 SVG 折线+对角线，n<30 bin 空心点『样本不足』；Brier 与 climatology 基线并列；n_total<30 整节只显示『收集中 x/30』灰横幅；J1 veto 另出双口径：拦截命中率 vs shadow 反事实盈亏"},
+        {"id": "score_cal", "name": "KnifeScore 校准", "note": "五桶柱状双口径两组柱 + Wilson 须线 + 每桶 n；backtest/live 双 tab"},
+        {"id": "worst", "name": "最差一刀归因", "note": "触发日特征全量回显 + 哪道闸失灵 + 反事实表；脚注『反事实不作换参依据』"},
+        {"id": "params", "name": "参数法庭", "note": "当前值|预注册网格|frozen 徽章|上次变更；漂移时间线；下次 walk-forward 日期；最近推荐与 no_change_reasons 原文"},
+        {"id": "redlines", "name": "红线", "note": "RL-1..10 逐条 pass/fail 徽章（fail 只用 --blood 图标）+ 每条规则历史触发次数表"}
+      ]
+    }
+  },
+
+  "build_order": [
+    {"step": 1, "do": "修 utils.write_json 编码（encoding='utf-8', ensure_ascii=False）并重生成 ledger.json", "accept": "ledger.json 无乱码（'X-STOP@21日' 正确）；全站重渲后 git diff 只含编码修复"},
+    {"step": 2, "do": "replay.py 抽 atier_exec 公共函数 + engine.detect 落 score_parts", "accept": "vix_gate_replay 输出与抽取前逐字段一致（golden 对比）；payload 其余不变"},
+    {"step": 3, "do": "snapshot.py + gates_prev.json + run.py 接入采集（样本等不起，最早做）", "accept": "本地跑批产出 snapshots.json（含 features_sha）；同日重跑幂等零新增"},
+    {"step": 4, "do": "news.py 新写 + jev.py 按骨架重写（J1-J5）+ engine step_state/run_engine 加 veto 参 + run.py 四调用接入 + payload.jev 块", "accept": "无 TYPESAFE_API_KEY 时站点与改前字节级一致；有 key 时 jev_log.jsonl 追加、<=4 次调用、jev_cache 命中免计费；veto 只可能少接刀"},
+    {"step": 5, "do": "期货宇宙：config.yaml 加 t1f 17 符号 + futures_fall 阈值 + yahoo.py 复用抓 5y + kline 导出 + engine cls=futures 走新阈值且仅 A 档；顺手一次性实测 ES=F/NQ=F/ZB=F chart 端点，通过则补入", "accept": "17 条 kline 各 >=750 根；board 出现期货行且标『仅 A 档』；无量符号 checklist 量能项标注跳过"},
+    {"step": 6, "do": "美股扩展：ndx100.json 拉取+快照兜底，T2 扫描池 = SP500 ∪ NDX100；day_losers 深跌晋升 J1 逻辑", "accept": "扫描日志显示池 ~600 名；拉取失败自动用仓库快照；晋升数 <=5"},
+    {"step": 7, "do": "settle.py（含 resolve_jev_log）+ calibrate.py + params_registry/red_lines 落盘 + review.py + daily.yml 周日 cron 与 weekly 步骤", "accept": "calibration.json 生成且 n<30 全部 conclusive:false；RL 自动审计全 pass；周日分支本地演练通过"},
+    {"step": 8, "do": "daily.yml：并发组改 kw-pipeline + cache restore/save 两步；手动 dispatch 一次 heavy", "accept": "Actions Caches 页出现 kw-db-v1-*；第二跑 breadth 从 ~7 分钟降到 ~1-2 分钟；state 提交正常"},
+    {"step": 9, "do": "radar fetchers 三件 + run.py --radar 分支 + engine.py 312 行 KW_RADAR 守卫 + movers_history 落盘（heavy 侧）", "accept": "本地 python run.py --radar 实测 <150s；radar.json 合 schema；knife_states.json/vix_replay.json/ledger.json 零改动"},
+    {"step": 10, "do": "radar.yml 上线 → dispatch 实测端到端 + 手动清缓存验证 miss 跳过路径", "accept": "端到端绿；miss 时 ::notice 跳过且站点维持上一版；与 heavy 并发排队正常"},
+    {"step": 11, "do": "前端：radar.html.j2 + radar.js（WS 三级降级）+ 首页雷达卡 + 口径标注行", "accept": "375px 零横滚零控制台错误；WS 命中 <3s 渲染；断 WS 断 REST 双降级实测各自生效且颜色降为哑面；动效审计仍=4 种"},
+    {"step": 12, "do": "review.html.j2 复盘室 + 导航 + 观察 24h（radar 平均时长/排队/部署 ~50 次/日）+ PROGRESS.md + 按仓库惯例发版", "accept": "RL-4 展示规则页面逐项核验；24h 无红跑；版本 tag 与交接文档更新"}
+  ],
+
+  "honesty_gates": [
+    "双口径永远并列：口径①持有252日 与 口径②A档执行 双列，任何新页面（雷达/复盘室）不得只示其一",
+    "胜率必配 Wilson 95% 区间与最差一次；n<30 只显示『收集中 x/30』不显示命中率与 Brier（RL-4）",
+    "Jev 不碰规则链：J2/J3/J4/J5 纯排序与展示；唯一例外 J1 语义闸是公开声明的第 6 道闸，失败方向天然保守（只可能少接刀），且拦截战绩 + shadow 反事实双口径独立公示",
+    "每次 Jev 判断落盘 jev_log.jsonl（含 inputs_hash/model 回显/预注册 horizon），无持久化通道的跑批（radar）禁止调 Jev——这是裁决 A1 的根本理由",
+    "Jev 概率结算口径提问时预注册（RL-6）；criteria 措辞与 veto 阈值是唯一可迭代面，变更记 calibration.json 日志",
+    "参数改动只走季度 walk-forward + params_history 留痕（RL-9/RL-10）；本次扩张新增的 futures_fall 阈值一并入预注册网格管辖",
+    "live 与 backtest 永不合并统计（RL-7）；快照 append-only + features_sha 周审计（RL-3）；台账与快照永不删除（RL-8）",
+    "每个数字带 source 与 asof；『秒抓』延迟诚实标注：加密实时层 ~1-3s、跑批层中位 25-30 分钟、美股/期货日更——不伪装实时（页首口径行强制渲染）",
+    "颜色即口径：--up-live/--down-live 只准染真实时值，跑批/历史值哑面；降级时颜色同步降级",
+    "数据源白名单 = 本 spec 实测通过清单；CryptoCompare/Wikipedia成分表/StockTwits 已死禁用；新增源必须先实测（curl 带 Origin 验证 CORS）再进规格",
+    "radar 跑批 contents:read、零 commit、零 cache save——物理上不可能污染 heavy 的 state 与重放缓存",
+    "人工干预必留痕：jev_overrides.json 强制放行、macro_calendar_seed.json 维护、参数落地 commit，全部可在复盘室追溯"
+  ]
+}

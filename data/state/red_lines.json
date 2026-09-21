@@ -1,0 +1,12 @@
+[
+ {"id": "RL-1", "rule": "禁止用留出集调参：holdout 只对验证集选出的唯一候选做一次通过/否决检查，每次 look 计数写盘公示（basis.holdout.looks_used 必须==1）", "check": "auto: params_history 审计"},
+ {"id": "RL-2", "rule": "禁止事后改口径：hit/fwd/A档执行的定义预注册在 outcome_defs 与 Jev 提问里；改口径=新指标另起一列，旧列数据保留并标注停用日期", "check": "auto: calibration.outcome_defs 文本 sha 入库，变更即 fail 并要求 caliber_history 记录"},
+ {"id": "RL-3", "rule": "快照不可篡改：snapshots append-only，settle 只填 realized/settled；features_sha 每周全量复核", "check": "auto: snapshot.verify_immutable"},
+ {"id": "RL-4", "rule": "样本<30 只展示不统计：任何桶/曲线点/总体 n<30 时不显示命中率与 Brier，只显示 n 与『收集中』", "check": "auto: review.red_line_audit 扫描 calibration 输出"},
+ {"id": "RL-5", "rule": "每条规则历史触发次数公示（触发 3 次的规则说自己 100% 胜率是笑话，让读者看得见）", "check": "auto: rule_counts 必须渲染在复盘室与方法页"},
+ {"id": "RL-6", "rule": "Jev 概率的结算口径在提问时预注册（问的是什么事件，就用什么事件结算），禁止拿同一概率对多个事后挑选的结局算命中", "check": "manual+auto: 快照 jev.outcome_def 字段必填"},
+ {"id": "RL-7", "rule": "live 与 backtest 永远分开统计，永不合并成一个胜率", "check": "auto: calibrate 输出结构上就分列，页面无合并视图"},
+ {"id": "RL-8", "rule": "台账与快照永不删除：标的移出监控池后其历史快照仍参与统计（防幸存者偏差）；退市标的结算用最后可得价并标注", "check": "auto: instruments 移除不触达 snapshots"},
+ {"id": "RL-9", "rule": "换参只有一条路：季度 walk-forward（验证集入选+留出集一次性否决）→ 写 params_history → 人工改 config.yaml；周复盘的反事实归因、单笔亏损、页面观感都不是换参理由", "check": "auto: config.yaml 中受管参数变更但 params_history 无对应条目 → 红线 fail"},
+ {"id": "RL-10", "rule": "预注册网格外的参数值禁止上线；网格本身的修改按换参同等流程留痕", "check": "auto: config.yaml 值 ∈ registry.grid 校验"}
+]

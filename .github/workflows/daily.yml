@@ -3,6 +3,7 @@ on:
   schedule:
     - cron: '37 23 * * *'   # 06:37 曼谷（美股收盘后）
     - cron: '37 11 * * *'   # 18:37 曼谷
+    - cron: '37 1 * * 0'    # 08:37 曼谷 周日（周复盘跑：--weekly-review --walkforward）
   workflow_dispatch: {}
   push:
     branches: [main]
@@ -14,7 +15,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: knifewaltz-daily
+  group: kw-pipeline        # 与 radar.yml 共用：任意时刻最多 1 跑 + 1 排队，序列化一切跑批+部署
   cancel-in-progress: false
 
 jobs:
@@ -36,8 +37,28 @@ jobs:
           python-version: '3.12'
           cache: pip
       - run: pip install -r requirements.txt
+      - name: Restore history db + kline (miss 时 breadth 现有逻辑自动逐股回填重建)
+        id: restore
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            data/history.sqlite
+            docs/data/kline
+          key: kw-db-v1-${{ github.run_id }}
+          restore-keys: kw-db-v1-
       - name: Run pipeline (fetch → gates → knives → replay → ledger → render)
         run: python run.py
+      - name: Weekly review (仅周日 08:37 曼谷 cron 触发)
+        if: github.event.schedule == '37 1 * * 0'
+        run: python run.py --weekly-review --walkforward
+      - name: Save history db + kline (保存键带 run_id，恢复用前缀命中最近一份；radar 只 restore 不 save)
+        if: success()
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            data/history.sqlite
+            docs/data/kline
+          key: kw-db-v1-${{ github.run_id }}
       - name: Commit state (ledger / knife_states / replay cache — 跨跑批持久化)
         run: |
           git config user.name 'knifewaltz-bot'

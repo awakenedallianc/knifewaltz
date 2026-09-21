@@ -25,11 +25,46 @@ t1:
   - {symbol: BTC-USD,    name: 比特币,           cls: crypto}
   - {symbol: ETH-USD,    name: 以太坊,           cls: crypto}
 
-# T2：蓝筹个股——B 档资格线 -60%/250日，从 S&P 500 池动态扫描入选（dd250 ≤ -50% 预筛后取全量 OHLCV）
+# T1F：期货连续合约（=F）——仅 A 档（恐慌反弹）；期货有移仓/展期结构，36 个月价值回归口径不成立（radar_spec 裁决 A8）
+# 前 17 条为侦察兵实测清单（radar_spec universe.T1F_期货17）；ES/NQ/ZB 为 2026-09-21 一次性 curl 补测通过（3 年日线各 755 根、带量）后补入（裁决 A5 预留通道）
+t1f:
+  - {symbol: "CL=F", name: WTI原油期货,    cls: futures}
+  - {symbol: "GC=F", name: 黄金期货,       cls: futures}
+  - {symbol: "SI=F", name: 白银期货,       cls: futures}
+  - {symbol: "NG=F", name: 天然气期货,     cls: futures}
+  - {symbol: "HG=F", name: 铜期货,         cls: futures}
+  - {symbol: "PL=F", name: 铂金期货,       cls: futures}
+  - {symbol: "ZC=F", name: 玉米期货,       cls: futures}
+  - {symbol: "ZS=F", name: 大豆期货,       cls: futures}
+  - {symbol: "ZW=F", name: 小麦期货,       cls: futures}
+  - {symbol: "CT=F", name: 棉花期货,       cls: futures}
+  - {symbol: "KC=F", name: 咖啡期货,       cls: futures}
+  - {symbol: "SB=F", name: 糖期货,         cls: futures}
+  - {symbol: "CC=F", name: 可可期货,       cls: futures}
+  - {symbol: "LE=F", name: 活牛期货,       cls: futures}
+  - {symbol: "HE=F", name: 瘦肉猪期货,     cls: futures}
+  - {symbol: "6J=F", name: 日元期货,       cls: futures}
+  - {symbol: "6E=F", name: 欧元期货,       cls: futures}
+  - {symbol: "ES=F", name: 标普500期货,    cls: futures}
+  - {symbol: "NQ=F", name: 纳指100期货,    cls: futures}
+  - {symbol: "ZB=F", name: 美债30年期货,   cls: futures}
+
+# T2：蓝筹个股——B 档资格线 -60%/250日，从扫描池动态入选（dd250 ≤ -50% 预筛后取全量 OHLCV）
+# 扫描池 = S&P 500（sp500.csv 广度池）∪ Nasdaq-100（在线拉取，data/state/ndx100.json 快照兜底）
 t2_scan:
   prefilter_dd250: -50    # 预筛（收盘价口径）
   eligible_dd250: -60     # 正式资格线
   max_names: 24
+
+# 美股扩展池与 day_losers 深跌晋升（radar_spec universe.US_扩展池；knives.py / radar_us.py 共用）
+us_pool:
+  ndx100_url: "https://yfiua.github.io/index-constituents/constituents-nasdaq100.csv"  # CORS=*，101 行 Symbol,Name
+  movers_min_mcap: 500000000     # 榜单展示过滤：市值 ≥ 5 亿
+  movers_min_price: 2.0          # 且价格 ≥ 2 美元
+  movers_min_abs_pct: 10.0       # 且 |当日涨跌| ≥ 10%
+  promote_max: 5                 # day_losers 深跌晋升 J1 分诊：每日 ≤ 5 名
+  promote_pct: -15.0             # 晋升门槛：当日跌幅 ≤ -15%
+  promote_min_mcap: 2000000000   # 且市值 ≥ 20 亿
 
 # 阈值（绝对值 v1；来源：blade_channel_spec.json signal_engine）
 thresholds:
@@ -40,11 +75,32 @@ thresholds:
   fng_gate: 10
   knife_fall: {dd52w: -40, ret10: -15, rsi14: 25}
   index_fall: {dd52w: -20, ret10: -10, rsi14: 30}   # 指数级刀落阈值比个股宽
+  # 期货刀落：介于 index_fall(-20) 与 knife_fall(-40) 之间——商品波动大于指数、小于个股崩盘；
+  # 6J/6E 外汇腿极少触发属正常（诚实呈现，不为触发而调低）。受 params_registry 预注册网格管辖（RL-9/10）
+  futures_fall: {dd52w: -30, ret10: -12, rsi14: 28}
   vol_climax_ratio: 3.0
   crypto_fall: {dd52w: -50, ret10: -20, fund_8h: -0.05}
   b_tier_dd250: -60
   catch_window_days: 10
   cooldown_days: 10
+
+# 日线暴动检测（radar_spec universe.burst_detection.daily_z_score；T1+T1F+T2 全体，heavy/radar 用库内现价算）
+burst:
+  z1d_abs: 3.0            # |z1d| ≥ 3.0 → 进雷达"日线暴动"表；z1d = ln(C_t/C_{t-1}) / std(最近250根对数收益，不含当日)
+  min_bars: 120           # 收益样本不足 120 根不算（显示"历史不足"）
+  vol_ratio_confirm: 3.0  # volume/SMA20 ≥ 3.0 为放量确认项；期货无量数据时跳过并标注
+
+# 雷达阈值（radar_spec radar_json_schema.radar_thresholds；随 payload/radar.json 下发，浏览器秒级层前端零硬编码）
+radar_thresholds:
+  pump_1m_pct: 1.5            # Δ1m ≥ +1.5% → burst 级
+  dump_1m_pct: -1.5           # Δ1m ≤ -1.5% → burst 级
+  pump_5m_pct: 3.0            # Δ5m ≥ +3.0% → move 级
+  dump_5m_pct: -3.0           # Δ5m ≤ -3.0% → move 级
+  chg24_board_pct: 10.0       # |24h 涨跌| ≥ 10% 上 24h 榜
+  min_quote_vol_usd: 20000000 # quoteVolume ≥ 2000 万美元才参与（防僵尸币假信号）
+  funding_warn: 0.0005        # |资金费率| ≥ 0.05%/8h → warn 档
+  funding_red: 0.001          # |资金费率| ≥ 0.1%/8h → red 档；≤ -0.1% 且 24h ≤ -10% → 接飞刀候选
+  dvol_jump_pct: 15.0         # Deribit DVOL 单日跳升 > 15% → 恐慌放大器旗标
 
 # A 档退出（恐慌反弹交易；持有 ≤ 1 个月）
 exits_a:

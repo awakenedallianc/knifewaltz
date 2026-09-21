@@ -1,0 +1,382 @@
+{
+ "week_of": "2026-09-21",
+ "generated_at": "2026-09-21T23:06:03+07:00",
+ "new_signals": [
+  {
+   "kind": "S-FALL",
+   "symbol": "HE_F",
+   "date": "2026-09-21",
+   "score": 36,
+   "tier_time": "-",
+   "fwd5_pct": null,
+   "fwd20_pct": null,
+   "fwd60_pct": null,
+   "atier_pct": null,
+   "atier_exit": null,
+   "settled": false
+  },
+  {
+   "kind": "S-FALL",
+   "symbol": "KC_F",
+   "date": "2026-09-21",
+   "score": 53,
+   "tier_time": "-",
+   "fwd5_pct": null,
+   "fwd20_pct": null,
+   "fwd60_pct": null,
+   "atier_pct": null,
+   "atier_exit": null,
+   "settled": false
+  }
+ ],
+ "settled": [],
+ "worst_of_week": null,
+ "jev_summary": {
+  "J1": {
+   "n": 0,
+   "brier": null,
+   "baseline": null,
+   "note": "收集中 0/30"
+  },
+  "J2": {
+   "n": 0,
+   "brier": null,
+   "baseline": null,
+   "note": "收集中 0/30"
+  },
+  "J3": {
+   "n": 0,
+   "brier": null,
+   "baseline": null,
+   "note": "收集中 0/30"
+  },
+  "J4": {
+   "n": 0,
+   "brier": null,
+   "baseline": null,
+   "note": "收集中 0/30"
+  },
+  "J5": {
+   "n": 0,
+   "brier": null,
+   "baseline": null,
+   "note": "收集中 0/30"
+  }
+ },
+ "calibration_delta": {
+  "brier": {
+   "J1": null,
+   "J2": null,
+   "J3": null,
+   "J4": null,
+   "J5": null
+  },
+  "note": "对上一期复盘的 Brier 变化；任一侧未成样（n<30）则 null"
+ },
+ "red_line_audit": [
+  {
+   "id": "RL-1",
+   "rule": "禁止用留出集调参：holdout 只对验证集选出的唯一候选做一次通过/否决检查，每次 look 计数写盘公示（basis",
+   "pass": true,
+   "detail": "无参数变更记录"
+  },
+  {
+   "id": "RL-2",
+   "rule": "禁止事后改口径：hit/fwd/A档执行的定义预注册在 outcome_defs 与 Jev 提问里；改口径=新指标另起",
+   "pass": true,
+   "detail": "outcome_defs sha 无未确认变更"
+  },
+  {
+   "id": "RL-3",
+   "rule": "快照不可篡改：snapshots append-only，settle 只填 realized/settled；feat",
+   "pass": true,
+   "detail": "features_sha 复核 2 条"
+  },
+  {
+   "id": "RL-4",
+   "rule": "样本<30 只展示不统计：任何桶/曲线点/总体 n<30 时不显示命中率与 Brier，只显示 n 与『收集中』",
+   "pass": true,
+   "detail": "小样本桶全部只显示『收集中』"
+  },
+  {
+   "id": "RL-5",
+   "rule": "每条规则历史触发次数公示（触发 3 次的规则说自己 100% 胜率是笑话，让读者看得见）",
+   "pass": true,
+   "detail": "rule_counts 已生成（复盘室/方法页由 render 渲染）"
+  },
+  {
+   "id": "RL-6",
+   "rule": "Jev 概率的结算口径在提问时预注册（问的是什么事件，就用什么事件结算），禁止拿同一概率对多个事后挑选的结局算命中",
+   "pass": true,
+   "detail": "快照 jev.outcome_defs 与 jev_log.horizon_days 全部预注册"
+  },
+  {
+   "id": "RL-7",
+   "rule": "live 与 backtest 永远分开统计，永不合并成一个胜率",
+   "pass": true,
+   "detail": "knifescore 输出结构 live/backtest 分列"
+  },
+  {
+   "id": "RL-8",
+   "rule": "台账与快照永不删除：标的移出监控池后其历史快照仍参与统计（防幸存者偏差）；退市标的结算用最后可得价并标注",
+   "pass": true,
+   "detail": "快照全量 2 条（首期基线）"
+  },
+  {
+   "id": "RL-9",
+   "rule": "换参只有一条路：季度 walk-forward（验证集入选+留出集一次性否决）→ 写 params_history → ",
+   "pass": true,
+   "detail": "受管参数与注册值一致或变更有留痕"
+  },
+  {
+   "id": "RL-10",
+   "rule": "预注册网格外的参数值禁止上线；网格本身的修改按换参同等流程留痕",
+   "pass": true,
+   "detail": "上线值全部在预注册网格内"
+  }
+ ],
+ "red_lines_pass": true,
+ "params": {
+  "registry_version": "v1.2-preregistered",
+  "asof": "2026-09-21",
+  "rows": [
+   {
+    "param": "vix_gate.primary",
+    "registered": 36,
+    "deployed": 36,
+    "source": "config",
+    "grid": [
+     33,
+     36,
+     39,
+     42
+    ],
+    "frozen": false,
+    "last_change": null
+   },
+   {
+    "param": "index_fall.dd52w",
+    "registered": -20,
+    "deployed": -20,
+    "source": "config",
+    "grid": [
+     -15,
+     -20,
+     -25
+    ],
+    "frozen": false,
+    "last_change": null
+   },
+   {
+    "param": "index_fall.ret10",
+    "registered": -10,
+    "deployed": -10,
+    "source": "config",
+    "grid": [
+     -8,
+     -10,
+     -12
+    ],
+    "frozen": false,
+    "last_change": null
+   },
+   {
+    "param": "knife_fall.dd52w",
+    "registered": -40,
+    "deployed": -40,
+    "source": "config",
+    "grid": [
+     -35,
+     -40,
+     -45,
+     -50
+    ],
+    "frozen": false,
+    "last_change": null
+   },
+   {
+    "param": "knife_fall.ret10",
+    "registered": -15,
+    "deployed": -15,
+    "source": "config",
+    "grid": [
+     -10,
+     -15,
+     -20
+    ],
+    "frozen": false,
+    "last_change": null
+   },
+   {
+    "param": "crypto_fall.dd52w",
+    "registered": -50,
+    "deployed": -50,
+    "source": "config",
+    "grid": [
+     -40,
+     -50,
+     -60
+    ],
+    "frozen": false,
+    "last_change": null
+   },
+   {
+    "param": "crypto_fall.ret10",
+    "registered": -20,
+    "deployed": -20,
+    "source": "config",
+    "grid": [
+     -15,
+     -20,
+     -25
+    ],
+    "frozen": false,
+    "last_change": null
+   },
+   {
+    "param": "vol_climax_ratio",
+    "registered": 3.0,
+    "deployed": 3.0,
+    "source": "config",
+    "grid": [
+     2.5,
+     3.0,
+     3.5,
+     4.0
+    ],
+    "frozen": false,
+    "last_change": null
+   },
+   {
+    "param": "checklist.catch_min",
+    "registered": 3,
+    "deployed": 3,
+    "source": "builtin",
+    "grid": [
+     3,
+     4
+    ],
+    "frozen": false,
+    "last_change": null
+   },
+   {
+    "param": "catch_window_days",
+    "registered": 10,
+    "deployed": 10,
+    "source": "config",
+    "grid": [
+     7,
+     10,
+     15
+    ],
+    "frozen": false,
+    "last_change": null
+   },
+   {
+    "param": "knifescore.weights",
+    "registered": [
+     40,
+     20,
+     20,
+     20
+    ],
+    "deployed": [
+     40,
+     20,
+     20,
+     20
+    ],
+    "source": "builtin",
+    "grid": [
+     [
+      40,
+      20,
+      20,
+      20
+     ],
+     [
+      30,
+      30,
+      20,
+      20
+     ],
+     [
+      35,
+      25,
+      20,
+      20
+     ]
+    ],
+    "frozen": false,
+    "last_change": null
+   },
+   {
+    "param": "term_flip.red",
+    "registered": 1.0,
+    "deployed": 1.0,
+    "source": "config",
+    "grid": [
+     1.0
+    ],
+    "frozen": true,
+    "last_change": null
+   },
+   {
+    "param": "b_tier_dd250",
+    "registered": -60,
+    "deployed": -60,
+    "source": "config",
+    "grid": [
+     -60
+    ],
+    "frozen": true,
+    "last_change": null
+   },
+   {
+    "param": "cooldown_days",
+    "registered": 10,
+    "deployed": 10,
+    "source": "config",
+    "grid": [
+     10
+    ],
+    "frozen": true,
+    "last_change": null
+   },
+   {
+    "param": "futures_fall.dd52w",
+    "registered": -30,
+    "deployed": -30,
+    "source": "config",
+    "grid": [
+     -25,
+     -30,
+     -35
+    ],
+    "frozen": false,
+    "last_change": null
+   },
+   {
+    "param": "futures_fall.ret10",
+    "registered": -12,
+    "deployed": -12,
+    "source": "config",
+    "grid": [
+     -10,
+     -12,
+     -15
+    ],
+    "frozen": false,
+    "last_change": null
+   }
+  ],
+  "history_n": 0,
+  "note": "换参唯一通道：季度 walk-forward → params_history 留痕 → 人工改 config.yaml（RL-9）"
+ },
+ "snapshots_total": 2,
+ "footnotes": [
+  "反事实归因不作换参依据（RL-9）；换参唯一通道 = 季度 walk-forward + params_history 留痕",
+  "n<30 一律只显示『收集中』，不显示命中率与 Brier（RL-4）",
+  "live 与 backtest 永不合并统计（RL-7）"
+ ]
+}
