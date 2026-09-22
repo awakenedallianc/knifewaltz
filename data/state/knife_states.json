@@ -654,8 +654,15 @@
   "events": []
  },
  "0881_HK": {
-  "state": "NORMAL",
+  "state": "KNIFE_FALLING",
   "since": "2026-09-22",
-  "events": []
+  "events": [
+   {
+    "d": "2026-09-22",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -81.26% / 10日 -17.32%"
+   }
+  ]
  }
 }

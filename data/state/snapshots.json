@@ -117,5 +117,71 @@
   "features_sha": "054137a67183bb3e",
   "realized": {},
   "settled": false
+ },
+ {
+  "id": "S-FALL:0881_HK:2026-09-22",
+  "kind": "S-FALL",
+  "symbol": "0881_HK",
+  "date": "2026-09-22",
+  "trigger_px": 2.934999942779541,
+  "stop_price": 2.91,
+  "features": {
+   "dd52w": -81.26,
+   "dd250": -80.85,
+   "ret10": -17.32,
+   "rsi14": 8.1,
+   "vol_ratio": 1.22,
+   "close_pos": 0.12,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": true,
+    "gate_ok": true,
+    "rsi_divergence": false
+   },
+   "checklist_n": 2,
+   "tier_time": "B",
+   "days_from_peak": 731,
+   "stop_price": 2.91,
+   "last_date": "2026-09-22",
+   "cls": "equity_single",
+   "tier": "T2C",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 31.9,
+    "capitulation_20": 0.0,
+    "checklist_20": 8.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 60,
+  "market": {
+   "blade_index": 0,
+   "gate_state": "GREEN",
+   "vix": 14.300000190734863,
+   "vix_ratio": 0.8060879580176863
+  },
+  "jev": {
+   "family": "unclear",
+   "p_terminal": 0.0,
+   "conf": 0.85,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.01,
+   "catch_prior": null,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "9ffc8804cd7f930c",
+  "realized": {},
+  "settled": false
  }
 ]
