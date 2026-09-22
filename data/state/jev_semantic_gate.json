@@ -99,7 +99,7 @@
  },
  "APTV": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.05,
   "date": "2026-09-22",
   "clear_streak": 0,
   "top_headline": "Aptiv’s 44% decline validates InvestingPro’s overvalued call By Investing.com - Investing.com"
@@ -113,7 +113,7 @@
  },
  "PNR": {
   "veto": false,
-  "p": 0.17,
+  "p": 0.14,
   "date": "2026-09-22",
   "clear_streak": 0,
   "top_headline": "PNR Investors Have Opportunity to Lead Pentair plc Securities Fraud Lawsuit with SBS Law - GlobeNewswire"
@@ -127,21 +127,21 @@
  },
  "SLV": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.03,
   "date": "2026-09-22",
   "clear_streak": 0,
   "top_headline": "About iShares Silver Trust rStock - Coinbase"
  },
  "SI_F": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-09-22",
   "clear_streak": 0,
   "top_headline": "Silver Price Forecast: $60–$70 Range Holds as Rates Weigh - FXEmpire"
  },
  "UNG": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.03,
   "date": "2026-09-22",
   "clear_streak": 0,
   "top_headline": "Tinubu mandates Shettima to lead Nigeria’s delegation to UNGA - Punch Newspapers"
@@ -162,7 +162,7 @@
  },
  "URA": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-09-22",
   "clear_streak": 0,
   "top_headline": "$URA Launches on Solana via Sunrise by Backpack Securities - Coinfomania"
@@ -260,7 +260,7 @@
  },
  "WB": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.01,
   "date": "2026-09-22",
   "clear_streak": 0,
   "top_headline": "Paramount-WB Opponents React With Dismay About Settlement - TV News Check"
@@ -281,21 +281,21 @@
  },
  "BIDU": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.02,
   "date": "2026-09-22",
   "clear_streak": 0,
   "top_headline": "IDF foils imminent terror attack in Judea and Samaria - Israel National News"
  },
  "PDD": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-09-22",
   "clear_streak": 0,
   "top_headline": "Princess Diana's brother suggested that she may have had undiagnosed ADHD - UA.NEWS"
  },
  "FUTU": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-09-22",
   "clear_streak": 0,
   "top_headline": "S&P: Banks' adoption of artificial intelligence will soon impact their credit ratings - 富途牛牛"
@@ -330,7 +330,7 @@
  },
  "NOAH": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-09-22",
   "clear_streak": 0,
   "top_headline": "Noah Drenda Causey Obituary (1944 - 2026) - Senath, MO - WMC - Legacy obituary"
