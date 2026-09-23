@@ -183,5 +183,71 @@
   "features_sha": "9ffc8804cd7f930c",
   "realized": {},
   "settled": false
+ },
+ {
+  "id": "S-FALL:URA:2026-09-23",
+  "kind": "S-FALL",
+  "symbol": "URA",
+  "date": "2026-09-23",
+  "trigger_px": 42.41999816894531,
+  "stop_price": 42.108,
+  "features": {
+   "dd52w": -31.37,
+   "dd250": -31.37,
+   "ret10": -10.69,
+   "rsi14": 44.5,
+   "vol_ratio": 0.21,
+   "close_pos": 0.35,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": true,
+    "vol_compress": true,
+    "gate_ok": true,
+    "rsi_divergence": false
+   },
+   "checklist_n": 3,
+   "tier_time": "DEAD_ZONE",
+   "days_from_peak": 163,
+   "stop_price": 42.108,
+   "last_date": "2026-09-23",
+   "cls": "commodity",
+   "tier": "T1",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 9.1,
+    "capitulation_20": 0.0,
+    "checklist_20": 12.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 41,
+  "market": {
+   "blade_index": 5,
+   "gate_state": "GREEN",
+   "vix": 14.649999618530273,
+   "vix_ratio": 0.8207282524060108
+  },
+  "jev": {
+   "family": "unclear",
+   "p_terminal": 0.0,
+   "conf": 0.56,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.127,
+   "catch_prior": null,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "8a3519344ef97540",
+  "realized": {},
+  "settled": false
  }
 ]
