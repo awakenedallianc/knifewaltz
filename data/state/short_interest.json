@@ -2,8 +2,13 @@
  "settlement": "2026-08-31",
  "staleness_note": "双月·滞后约9工作日",
  "source": "finra",
- "fetched_at": "2026-09-22T22:42:00+07:00",
+ "fetched_at": "2026-09-23T08:45:17+07:00",
  "rows": {
+  "ALNY": {
+   "short": 6340087,
+   "days_to_cover": 3.9,
+   "chg_pct": 32.89
+  },
   "APP": {
    "short": 10555736,
    "days_to_cover": 2.22,
