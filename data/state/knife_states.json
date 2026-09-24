@@ -90,7 +90,7 @@
   "events": []
  },
  "URA": {
-  "state": "CATCH",
+  "state": "NORMAL",
   "since": "2026-09-24",
   "events": [
    {
@@ -104,11 +104,18 @@
     "from": "KNIFE_FALLING",
     "to": "CATCH",
     "note": "checklist 3/5"
+   },
+   {
+    "d": "2026-09-24",
+    "from": "CATCH",
+    "to": "NORMAL",
+    "note": "跌破接刀日低点（X-STOP）"
    }
   ],
   "catch_ref_price": 41.9900016784668,
   "catch_day_low": 41.96,
-  "expires": "2026-10-10"
+  "expires": "2026-10-10",
+  "cooldown_until": "2026-10-10"
  },
  "BTC-USD": {
   "state": "NORMAL",

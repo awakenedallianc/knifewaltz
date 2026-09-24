@@ -2,12 +2,17 @@
  "settlement": "2026-08-31",
  "staleness_note": "双月·滞后约9工作日",
  "source": "finra",
- "fetched_at": "2026-09-24T08:39:35+07:00",
+ "fetched_at": "2026-09-24T22:56:48+07:00",
  "rows": {
   "APP": {
    "short": 10555736,
    "days_to_cover": 2.22,
    "chg_pct": -7.18
+  },
+  "APTV": {
+   "short": 10692442,
+   "days_to_cover": 1.89,
+   "chg_pct": 14.62
   },
   "ASML": {
    "short": 1524269,
