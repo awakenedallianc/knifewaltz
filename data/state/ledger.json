@@ -488,5 +488,17 @@
   "result_pct": 25.03,
   "exit": "60日全退",
   "caliber": "A档执行口径"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "URA",
+  "date": "2026-09-24",
+  "entry": 41.9900016784668,
+  "stop": 41.96,
+  "score": 42,
+  "tier_time": "DEAD_ZONE",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:URA:2026-09-24"
  }
 ]
