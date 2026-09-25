@@ -500,5 +500,17 @@
   "tier_time": "DEAD_ZONE",
   "status": "open",
   "snapshot_ref": "S-CATCH:URA:2026-09-24"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "0881.HK",
+  "date": "2026-09-25",
+  "entry": 2.869999885559082,
+  "stop": 2.865,
+  "score": 59,
+  "tier_time": "B",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:0881_HK:2026-09-25"
  }
 ]

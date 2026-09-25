@@ -356,5 +356,107 @@
     "grade": "线索"
    }
   }
+ },
+ {
+  "id": "S-CATCH:0881_HK:2026-09-25",
+  "kind": "S-CATCH",
+  "symbol": "0881_HK",
+  "date": "2026-09-25",
+  "trigger_px": 2.869999885559082,
+  "stop_price": 2.865,
+  "features": {
+   "dd52w": -81.12,
+   "dd250": -81.12,
+   "ret10": -10.03,
+   "rsi14": 13.1,
+   "vol_ratio": 0.02,
+   "close_pos": 0.05,
+   "falling": false,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": true,
+    "gate_ok": true,
+    "rsi_divergence": true
+   },
+   "checklist_n": 3,
+   "tier_time": "B",
+   "days_from_peak": 734,
+   "stop_price": 2.865,
+   "last_date": "2026-09-25",
+   "cls": "equity_single",
+   "tier": "T2C",
+   "state": "CATCH",
+   "score_parts": {
+    "fall_40": 27.2,
+    "capitulation_20": 0.0,
+    "checklist_20": 12.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 59,
+  "market": {
+   "blade_index": 11,
+   "gate_state": "GREEN",
+   "vix": 15.670000076293945,
+   "vix_ratio": 0.8502441571795996
+  },
+  "jev": {
+   "news_heat": null,
+   "catch_prior": 0.33,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "ac470fc484e32eab",
+  "realized": {
+   "ledger_ref": "0881.HK@2026-09-25"
+  },
+  "settled": false,
+  "stier": {
+   "rules_version": "s1",
+   "admitted": false,
+   "status": null,
+   "soft_score": 0.4935,
+   "hard_pass": {
+    "H1": true,
+    "H2": false,
+    "H3": true,
+    "H4": true,
+    "H5": false,
+    "H6": true,
+    "H7": false,
+    "H8": false
+   },
+   "shadow": {
+    "H9": {
+     "would_block": true,
+     "lr": 1.0,
+     "grade": "线索"
+    },
+    "H10": {
+     "would_block": false,
+     "flip_back_age_days": null
+    },
+    "H11": {
+     "would_block": true,
+     "close_pos": 0.05
+    }
+   },
+   "slice": {
+    "key": "None|GREEN|B|none|equity_single",
+    "lr": 1.0,
+    "n": 0,
+    "wins": 0,
+    "wilson95": null,
+    "grade": "线索"
+   }
+  }
  }
 ]
