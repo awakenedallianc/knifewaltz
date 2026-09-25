@@ -261,8 +261,8 @@
   "events": []
  },
  "KC_F": {
-  "state": "STABILIZING",
-  "since": "2026-09-21",
+  "state": "CATCH",
+  "since": "2026-09-25",
   "events": [
    {
     "d": "2026-09-21",
@@ -275,8 +275,17 @@
     "from": "KNIFE_FALLING",
     "to": "STABILIZING",
     "note": "checklist 2/5"
+   },
+   {
+    "d": "2026-09-25",
+    "from": "STABILIZING",
+    "to": "CATCH",
+    "note": "checklist 3/5"
    }
-  ]
+  ],
+  "catch_ref_price": 2.8095001220703124,
+  "catch_day_low": 2.7425,
+  "expires": "2026-10-11"
  },
  "SB_F": {
   "state": "NORMAL",
@@ -702,5 +711,10 @@
   "catch_ref_price": 2.869999885559082,
   "catch_day_low": 2.865,
   "expires": "2026-10-11"
+ },
+ "COIN": {
+  "state": "NORMAL",
+  "since": "2026-09-25",
+  "events": []
  }
 }

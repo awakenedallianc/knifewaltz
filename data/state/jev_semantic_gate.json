@@ -183,7 +183,7 @@
  },
  "QFIN": {
   "veto": false,
-  "p": 0.04,
+  "p": 0.07,
   "date": "2026-09-25",
   "clear_streak": 0,
   "top_headline": "INVESTOR ALERT: Pomerantz Law Firm Investigates Claims On Behalf of Investors of Qfin Holdings, Inc. - QFIN - PR Newswire"
@@ -253,7 +253,7 @@
  },
  "VNET": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-09-25",
   "clear_streak": 0,
   "top_headline": "A 650 million-share purchase closes at VNET Group (VNET), with founder parties directing some buyer votes. - Stock Titan"
@@ -362,5 +362,12 @@
   "date": "2026-09-25",
   "clear_streak": 0,
   "top_headline": "(YMM) Volatility Zones as Tactical Triggers - Stock Traders Daily"
+ },
+ "COIN": {
+  "veto": false,
+  "p": 0.01,
+  "date": "2026-09-25",
+  "clear_streak": 0,
+  "top_headline": "What Would You Have Needed To Notice In Coinbase Stock?"
  }
 }

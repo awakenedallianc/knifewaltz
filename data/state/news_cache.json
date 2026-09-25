@@ -1780,7 +1780,108 @@
    }
   ],
   "0241_HK": [],
-  "0881_HK": []
+  "0881_HK": [],
+  "COIN": [
+   {
+    "t": "What Would You Have Needed To Notice In Coinbase Stock?",
+    "src": "yahoo",
+    "age_h": 1.8
+   },
+   {
+    "t": "Elon Musk’s Bitcoin ‘Trade’ Button Under Fire as Coinbase CEO Eyes $400K Target",
+    "src": "yahoo",
+    "age_h": 3.2
+   },
+   {
+    "t": "Coinbase Tokenized Stocks Just Passed $1B in Volume on Base. The Real Story Is What Comes Next.",
+    "src": "yahoo",
+    "age_h": 10.1
+   },
+   {
+    "t": "Coinbase CEO Brian Armstrong Pushes Back on AI ‘Doomers’: ‘Slowing Progress Doesn’t Keep Us Safer’",
+    "src": "yahoo",
+    "age_h": 18.5
+   },
+   {
+    "t": "Community banks are struggling, crypto isn’t to blame",
+    "src": "yahoo",
+    "age_h": 19.2
+   },
+   {
+    "t": "100 Coinbase users lose millions to fake support calls",
+    "src": "yahoo",
+    "age_h": 19.6
+   },
+   {
+    "t": "What's next for crypto after the Clarity Act collapse",
+    "src": "yahoo",
+    "age_h": 22.0
+   },
+   {
+    "t": "The real reason crypto is bouncing back",
+    "src": "yahoo",
+    "age_h": 22.8
+   }
+  ],
+  "YUMC": [
+   {
+    "t": "Is Yum China Holdings (YUMC) Undervalued After Its Technical Selloff? - simplywall.st",
+    "src": "simplywall.st",
+    "age_h": 24.9
+   },
+   {
+    "t": "Price-Driven Insight from (YUMC) for Rule-Based Strategy - news.stocktradersdaily.com",
+    "src": "news.stocktradersdaily.com",
+    "age_h": 25.4
+   },
+   {
+    "t": "YUMC Oct 2026 35.000 call (YUMC261016C00035000) Interactive Stock Chart - Yahoo! Finance Canada",
+    "src": "Yahoo! Finance Canada",
+    "age_h": 29.8
+   }
+  ],
+  "GDS": [
+   {
+    "t": "GdS: Rearguard leader to rarely-used sub – why Gabbia is playing less under Amorim - SempreMilan",
+    "src": "SempreMilan",
+    "age_h": 0.3
+   },
+   {
+    "t": "When Will India Post GDS Result 1st Merit List 2026 Be Released - PW",
+    "src": "PW",
+    "age_h": 1.3
+   },
+   {
+    "t": "Travel agents continue to rely on GDS, with usage rising 43% globally over the past two years: Amadeus - travtalkindia.com",
+    "src": "travtalkindia.com",
+    "age_h": 3.8
+   },
+   {
+    "t": "GDS Technology Named a 2026 Nationwide / Multi-Location Finalist in MSP Titans of the Industry Awards - markets.businessinsider.com",
+    "src": "markets.businessinsider.com",
+    "age_h": 4.4
+   },
+   {
+    "t": "German-Backed GDS Launches 21-Hectare Residential Project Near Kyiv. - ubn.news",
+    "src": "ubn.news",
+    "age_h": 4.5
+   },
+   {
+    "t": "Helsinki tops GDS-Index for third year amid record scores across the board - micebook.",
+    "src": "micebook.",
+    "age_h": 4.5
+   },
+   {
+    "t": "GdS: Cardinale to keep up appearance record by attending Lecce game - LiveScore",
+    "src": "LiveScore",
+    "age_h": 4.8
+   },
+   {
+    "t": "GdS: ‘Running is not enough’ – Milan need goals from Ramos as price tag looms - SempreMilan",
+    "src": "SempreMilan",
+    "age_h": 6.5
+   }
+  ]
  },
  "feeds": {
   "macro": [

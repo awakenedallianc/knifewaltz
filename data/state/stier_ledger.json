@@ -30,9 +30,9 @@
    "jev_unavailable": false
   },
   "2026-09-25": {
-   "windows": 1,
+   "windows": 2,
    "blocked": {
-    "H2": 1
+    "H2": 2
    },
    "qualified": 0,
    "granted": 0,
