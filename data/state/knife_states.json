@@ -303,8 +303,8 @@
   "events": []
  },
  "HE_F": {
-  "state": "STABILIZING",
-  "since": "2026-09-21",
+  "state": "CATCH",
+  "since": "2026-09-26",
   "events": [
    {
     "d": "2026-09-21",
@@ -317,8 +317,17 @@
     "from": "KNIFE_FALLING",
     "to": "STABILIZING",
     "note": "checklist 1/5"
+   },
+   {
+    "d": "2026-09-26",
+    "from": "STABILIZING",
+    "to": "CATCH",
+    "note": "checklist 3/5"
    }
-  ]
+  ],
+  "catch_ref_price": 0.782249984741211,
+  "catch_day_low": 0.7818,
+  "expires": "2026-10-12"
  },
  "6J_F": {
   "state": "NORMAL",

@@ -57,7 +57,7 @@
  },
  "ORCL": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-09-26",
   "clear_streak": 0,
   "top_headline": "Bloom Energy (BE) Is Up 8.7% After Oracle Reaffirms 2.4 GW AI Fuel Cell Deal Commitment – Has The Bull Case Changed?"
@@ -113,7 +113,7 @@
  },
  "PNR": {
   "veto": false,
-  "p": 0.2,
+  "p": 0.16,
   "date": "2026-09-26",
   "clear_streak": 0,
   "top_headline": "PNR STOCKHOLDER ALERT: Bronstein, Gewirtz and Grossman, LLC Announces that Pentair plc Investors with Losses Have Opportunity to Lead Class Action Lawsuit! - ac"
@@ -183,7 +183,7 @@
  },
  "QFIN": {
   "veto": false,
-  "p": 0.31,
+  "p": 0.24,
   "date": "2026-09-26",
   "clear_streak": 0,
   "top_headline": "Asian Equities Traded in the US as American Depositary Receipts Rise in Friday Trading; Down for Week - Bitget"
@@ -281,7 +281,7 @@
  },
  "BIDU": {
   "veto": false,
-  "p": 0.11,
+  "p": 0.12,
   "date": "2026-09-26",
   "clear_streak": 0,
   "top_headline": "Trump-Xi Meeting Puts These 5 Chinese AI Stocks in Focus"

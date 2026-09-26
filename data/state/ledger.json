@@ -524,5 +524,17 @@
   "tier_time": "-",
   "status": "open",
   "snapshot_ref": "S-CATCH:KC_F:2026-09-25"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "HE=F",
+  "date": "2026-09-26",
+  "entry": 0.782249984741211,
+  "stop": 0.7818,
+  "score": 34,
+  "tier_time": "-",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:HE_F:2026-09-26"
  }
 ]

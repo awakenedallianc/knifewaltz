@@ -565,5 +565,107 @@
     "grade": "线索"
    }
   }
+ },
+ {
+  "id": "S-CATCH:HE_F:2026-09-26",
+  "kind": "S-CATCH",
+  "symbol": "HE_F",
+  "date": "2026-09-26",
+  "trigger_px": 0.782249984741211,
+  "stop_price": 0.7818,
+  "features": {
+   "dd52w": -24.13,
+   "dd250": -24.13,
+   "ret10": -4.05,
+   "rsi14": 33.2,
+   "vol_ratio": 0.35,
+   "close_pos": 0.03,
+   "falling": false,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": true,
+    "vol_compress": true,
+    "gate_ok": true,
+    "rsi_divergence": false
+   },
+   "checklist_n": 3,
+   "tier_time": "-",
+   "days_from_peak": 1035,
+   "stop_price": 0.7818,
+   "last_date": "2026-09-25",
+   "cls": "futures",
+   "tier": "T1F",
+   "state": "CATCH",
+   "score_parts": {
+    "fall_40": 2.0,
+    "capitulation_20": 0.0,
+    "checklist_20": 12.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 34,
+  "market": {
+   "blade_index": 0,
+   "gate_state": "GREEN",
+   "vix": 14.869999885559082,
+   "vix_ratio": 0.8293362873656293
+  },
+  "jev": {
+   "news_heat": null,
+   "catch_prior": 0.28,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "cae1a2d8b8b1c640",
+  "realized": {
+   "ledger_ref": "HE=F@2026-09-26"
+  },
+  "settled": false,
+  "stier": {
+   "rules_version": "s1",
+   "admitted": false,
+   "status": null,
+   "soft_score": 0.381,
+   "hard_pass": {
+    "H1": true,
+    "H2": false,
+    "H3": false,
+    "H4": true,
+    "H5": false,
+    "H6": true,
+    "H7": true,
+    "H8": false
+   },
+   "shadow": {
+    "H9": {
+     "would_block": true,
+     "lr": 1.0,
+     "grade": "线索"
+    },
+    "H10": {
+     "would_block": false,
+     "flip_back_age_days": null
+    },
+    "H11": {
+     "would_block": true,
+     "close_pos": 0.03
+    }
+   },
+   "slice": {
+    "key": "None|GREEN|-|none|futures",
+    "lr": 1.0,
+    "n": 0,
+    "wins": 0,
+    "wilson95": null,
+    "grade": "线索"
+   }
+  }
  }
 ]
