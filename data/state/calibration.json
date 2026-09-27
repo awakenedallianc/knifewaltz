@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-27T14:07:39+07:00",
+ "generated_at": "2026-09-27T22:50:31+07:00",
  "date": "2026-09-27",
  "min_n": 30,
  "outcome_defs": {
@@ -129,13 +129,13 @@
   "J5": {
    "question_id": "J5",
    "outcome_def": "1 若 3 日内 |累计收益| >= 10%（movers_history 快照价口径）",
-   "n_total": 223,
-   "n_pending": 43,
+   "n_total": 225,
+   "n_pending": 51,
    "n_unresolvable": 146,
    "conclusive": true,
    "base_rate": 0.036,
-   "brier": 0.6244,
-   "brier_baseline_climatology": 0.0346,
+   "brier": 0.6227,
+   "brier_baseline_climatology": 0.0343,
    "reliability": [
     {
      "lo": 0.0,
@@ -160,24 +160,24 @@
     {
      "lo": 0.4,
      "hi": 0.6,
-     "n": 36,
-     "p_mean": 0.52,
+     "n": 37,
+     "p_mean": 0.521,
      "hit_rate": 0.0,
      "wilson95": [
       0.0,
-      0.096
+      0.094
      ],
      "small_sample": false
     },
     {
      "lo": 0.6,
      "hi": 0.8,
-     "n": 51,
-     "p_mean": 0.694,
-     "hit_rate": 0.137,
+     "n": 52,
+     "p_mean": 0.695,
+     "hit_rate": 0.135,
      "wilson95": [
-      0.068,
-      0.257
+      0.067,
+      0.253
      ],
      "small_sample": false
     },
@@ -207,7 +207,7 @@
    "question_id": "J6",
    "outcome_def": "episode 完成日 = 判断日后价格自『判断日后最低点』反弹 >=20% 或满 252 交易日（先到者）。完成日用库内 kline 机械计算本轮实际签名 {realized_dd = 触发时 52 周峰到 episode 最低点跌幅%, realized_days = 峰到最低点交易日数}；将刀谱 18 例按签名距离 d = |dd_case - realized_dd|/25 + |ln(days_case) - ln(realized_days)|/1.2 升序排名（尺度常数 25 与 1.2 为刀谱 18 例自身 dd 标准差与 ln(days) 标准差，一次计算后冻结入 outcome_def）；hit=1 若所选案例排名 <=6（前三分之一）。choice=none_of_book、标的退市或 kline 断档 → unresolvable（计数公示，不进分母）。随机基线 = 6/18 = 1/3，与实测命中率并列公示",
    "n_total": 0,
-   "n_pending": 49,
+   "n_pending": 52,
    "n_unresolvable": {
     "none_of_book": 6,
     "broken": 0
