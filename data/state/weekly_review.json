@@ -1,6 +1,6 @@
 {
- "week_of": "2026-09-21",
- "generated_at": "2026-09-21T23:06:03+07:00",
+ "week_of": "2026-09-27",
+ "generated_at": "2026-09-27T14:07:40+07:00",
  "new_signals": [
   {
    "kind": "S-FALL",
@@ -27,6 +27,84 @@
    "atier_pct": null,
    "atier_exit": null,
    "settled": false
+  },
+  {
+   "kind": "S-FALL",
+   "symbol": "0881_HK",
+   "date": "2026-09-22",
+   "score": 60,
+   "tier_time": "B",
+   "fwd5_pct": null,
+   "fwd20_pct": null,
+   "fwd60_pct": null,
+   "atier_pct": null,
+   "atier_exit": null,
+   "settled": false
+  },
+  {
+   "kind": "S-FALL",
+   "symbol": "URA",
+   "date": "2026-09-23",
+   "score": 41,
+   "tier_time": "DEAD_ZONE",
+   "fwd5_pct": null,
+   "fwd20_pct": null,
+   "fwd60_pct": null,
+   "atier_pct": null,
+   "atier_exit": null,
+   "settled": false
+  },
+  {
+   "kind": "S-CATCH",
+   "symbol": "URA",
+   "date": "2026-09-24",
+   "score": 42,
+   "tier_time": "DEAD_ZONE",
+   "fwd5_pct": null,
+   "fwd20_pct": null,
+   "fwd60_pct": null,
+   "atier_pct": null,
+   "atier_exit": null,
+   "settled": false
+  },
+  {
+   "kind": "S-CATCH",
+   "symbol": "0881_HK",
+   "date": "2026-09-25",
+   "score": 59,
+   "tier_time": "B",
+   "fwd5_pct": null,
+   "fwd20_pct": null,
+   "fwd60_pct": null,
+   "atier_pct": null,
+   "atier_exit": null,
+   "settled": false
+  },
+  {
+   "kind": "S-CATCH",
+   "symbol": "KC_F",
+   "date": "2026-09-25",
+   "score": 42,
+   "tier_time": "-",
+   "fwd5_pct": null,
+   "fwd20_pct": null,
+   "fwd60_pct": null,
+   "atier_pct": null,
+   "atier_exit": null,
+   "settled": false
+  },
+  {
+   "kind": "S-CATCH",
+   "symbol": "HE_F",
+   "date": "2026-09-26",
+   "score": 34,
+   "tier_time": "-",
+   "fwd5_pct": null,
+   "fwd20_pct": null,
+   "fwd60_pct": null,
+   "atier_pct": null,
+   "atier_exit": null,
+   "settled": false
   }
  ],
  "settled": [],
@@ -45,10 +123,10 @@
    "note": "收集中 0/30"
   },
   "J3": {
-   "n": 0,
-   "brier": null,
-   "baseline": null,
-   "note": "收集中 0/30"
+   "n": 160,
+   "brier": 0.1205,
+   "baseline": 0.0,
+   "note": null
   },
   "J4": {
    "n": 0,
@@ -57,10 +135,10 @@
    "note": "收集中 0/30"
   },
   "J5": {
-   "n": 0,
-   "brier": null,
-   "baseline": null,
-   "note": "收集中 0/30"
+   "n": 223,
+   "brier": 0.6244,
+   "baseline": 0.0346,
+   "note": null
   }
  },
  "calibration_delta": {
@@ -77,8 +155,8 @@
   {
    "id": "RL-1",
    "rule": "禁止用留出集调参：holdout 只对验证集选出的唯一候选做一次通过/否决检查，每次 look 计数写盘公示（basis",
-   "pass": true,
-   "detail": "无参数变更记录"
+   "pass": false,
+   "detail": "1 条变更 holdout.looks_used != 1"
   },
   {
    "id": "RL-2",
@@ -90,7 +168,7 @@
    "id": "RL-3",
    "rule": "快照不可篡改：snapshots append-only，settle 只填 realized/settled；feat",
    "pass": true,
-   "detail": "features_sha 复核 2 条"
+   "detail": "features_sha 复核 8 条"
   },
   {
    "id": "RL-4",
@@ -120,7 +198,7 @@
    "id": "RL-8",
    "rule": "台账与快照永不删除：标的移出监控池后其历史快照仍参与统计（防幸存者偏差）；退市标的结算用最后可得价并标注",
    "pass": true,
-   "detail": "快照全量 2 条（首期基线）"
+   "detail": "快照全量 8 条（上期 2）"
   },
   {
    "id": "RL-9",
@@ -133,12 +211,30 @@
    "rule": "预注册网格外的参数值禁止上线；网格本身的修改按换参同等流程留痕",
    "pass": true,
    "detail": "上线值全部在预注册网格内"
+  },
+  {
+   "id": "SR-1",
+   "rule": "S 级已结败笔必须四选一归因；未归因即 FAIL",
+   "pass": true,
+   "detail": "已结败笔 0 条全部四选一归因"
+  },
+  {
+   "id": "SR-2",
+   "rule": "月配给超发禁止：任一月 GRANTED 笔数 >5 即 FAIL；配给不滚存",
+   "pass": true,
+   "detail": "无月份 GRANTED >5（配给不滚存）"
+  },
+  {
+   "id": "SR-3",
+   "rule": "S 级与全信号、实盘与候补/假想回放，任何合并统计视图即 FAIL",
+   "pass": true,
+   "detail": "s_tier 输出 GRANTED/CANDIDATE 结构分列；台账无假想口径混入"
   }
  ],
- "red_lines_pass": true,
+ "red_lines_pass": false,
  "params": {
   "registry_version": "v1.2-preregistered",
-  "asof": "2026-09-21",
+  "asof": "2026-09-27",
   "rows": [
    {
     "param": "vix_gate.primary",
@@ -368,15 +464,469 @@
     ],
     "frozen": false,
     "last_change": null
+   },
+   {
+    "param": "s_tier.monthly_max",
+    "registered": 5,
+    "deployed": null,
+    "source": "absent",
+    "grid": [
+     5
+    ],
+    "frozen": true,
+    "last_change": null
+   },
+   {
+    "param": "s_tier.per_key_month_max",
+    "registered": 1,
+    "deployed": null,
+    "source": "absent",
+    "grid": [
+     1
+    ],
+    "frozen": true,
+    "last_change": null
+   },
+   {
+    "param": "s_tier.carryover",
+    "registered": "none",
+    "deployed": null,
+    "source": "absent",
+    "grid": [
+     "none"
+    ],
+    "frozen": true,
+    "last_change": null
+   },
+   {
+    "param": "s_tier.checklist_min",
+    "registered": 4,
+    "deployed": null,
+    "source": "absent",
+    "grid": [
+     4,
+     5
+    ],
+    "frozen": false,
+    "last_change": null
+   },
+   {
+    "param": "s_tier.score_min",
+    "registered": 65,
+    "deployed": null,
+    "source": "absent",
+    "grid": [
+     55,
+     65,
+     75,
+     80
+    ],
+    "frozen": false,
+    "last_change": null
+   },
+   {
+    "param": "s_tier.j1_p_terminal_max",
+    "registered": 0.15,
+    "deployed": null,
+    "source": "absent",
+    "grid": [
+     0.1,
+     0.15,
+     0.2
+    ],
+    "frozen": false,
+    "last_change": null
+   },
+   {
+    "param": "s_tier.softscore.weights",
+    "registered": [
+     0.4,
+     0.25,
+     0.35
+    ],
+    "deployed": null,
+    "source": "absent",
+    "grid": [
+     [
+      0.4,
+      0.25,
+      0.35
+     ],
+     [
+      0.5,
+      0.2,
+      0.3
+     ],
+     [
+      0.34,
+      0.33,
+      0.33
+     ]
+    ],
+    "frozen": false,
+    "last_change": null
+   },
+   {
+    "param": "s_tier.lr_gate_enabled",
+    "registered": false,
+    "deployed": null,
+    "source": "absent",
+    "grid": [
+     false,
+     true
+    ],
+    "frozen": false,
+    "last_change": null
+   },
+   {
+    "param": "s_tier.lr_min",
+    "registered": 4.0,
+    "deployed": null,
+    "source": "absent",
+    "grid": [
+     3.0,
+     4.0,
+     5.0
+    ],
+    "frozen": false,
+    "last_change": null
+   },
+   {
+    "param": "s_tier.slice_evidence_min_n",
+    "registered": 10,
+    "deployed": null,
+    "source": "absent",
+    "grid": [
+     10
+    ],
+    "frozen": true,
+    "last_change": null
+   },
+   {
+    "param": "s_tier.h10_flipback_age_min_days",
+    "registered": 0,
+    "deployed": null,
+    "source": "absent",
+    "grid": [
+     0,
+     3,
+     5
+    ],
+    "frozen": false,
+    "last_change": null
+   },
+   {
+    "param": "s_tier.h11_close_pos_min",
+    "registered": 0.0,
+    "deployed": null,
+    "source": "absent",
+    "grid": [
+     0.0,
+     0.2
+    ],
+    "frozen": false,
+    "last_change": null
+   },
+   {
+    "param": "s_tier.liquidity.min_price_usd",
+    "registered": 2.0,
+    "deployed": null,
+    "source": "absent",
+    "grid": [
+     2.0
+    ],
+    "frozen": true,
+    "last_change": null
+   },
+   {
+    "param": "s_tier.liquidity.min_dollar_vol20_usd",
+    "registered": 10000000,
+    "deployed": null,
+    "source": "absent",
+    "grid": [
+     10000000
+    ],
+    "frozen": true,
+    "last_change": null
+   },
+   {
+    "param": "s_tier.liquidity.min_crypto_quote_vol_usd",
+    "registered": 20000000,
+    "deployed": null,
+    "source": "absent",
+    "grid": [
+     20000000
+    ],
+    "frozen": true,
+    "last_change": null
+   },
+   {
+    "param": "s_tier.jev_unavailable_policy",
+    "registered": "no_grant",
+    "deployed": null,
+    "source": "absent",
+    "grid": [
+     "no_grant"
+    ],
+    "frozen": true,
+    "last_change": null
+   },
+   {
+    "param": "sector_fall.dd52w",
+    "registered": -30,
+    "deployed": -30,
+    "source": "config",
+    "grid": [
+     -25,
+     -30,
+     -35
+    ],
+    "frozen": false,
+    "last_change": null
+   },
+   {
+    "param": "sector_fall.ret10",
+    "registered": -12,
+    "deployed": -12,
+    "source": "config",
+    "grid": [
+     -10,
+     -12,
+     -15
+    ],
+    "frozen": false,
+    "last_change": null
+   },
+   {
+    "param": "credit_fall.dd52w",
+    "registered": -15,
+    "deployed": -15,
+    "source": "config",
+    "grid": [
+     -12,
+     -15,
+     -20
+    ],
+    "frozen": false,
+    "last_change": null
+   },
+   {
+    "param": "credit_fall.ret10",
+    "registered": -8,
+    "deployed": -8,
+    "source": "config",
+    "grid": [
+     -6,
+     -8,
+     -10
+    ],
+    "frozen": false,
+    "last_change": null
+   },
+   {
+    "param": "obs.pcr_eq.z",
+    "registered": -2.0,
+    "deployed": null,
+    "source": "absent",
+    "grid": [
+     -1.5,
+     -2.0,
+     -2.5
+    ],
+    "frozen": true,
+    "last_change": null
+   },
+   {
+    "param": "obs.pcr_idx.z",
+    "registered": 2.0,
+    "deployed": null,
+    "source": "absent",
+    "grid": [
+     1.5,
+     2.0,
+     2.5
+    ],
+    "frozen": true,
+    "last_change": null
+   },
+   {
+    "param": "obs.move.level",
+    "registered": 120,
+    "deployed": null,
+    "source": "absent",
+    "grid": [
+     110,
+     120,
+     130
+    ],
+    "frozen": true,
+    "last_change": null
+   },
+   {
+    "param": "obs.vvix.level",
+    "registered": 110,
+    "deployed": null,
+    "source": "absent",
+    "grid": [
+     100,
+     110,
+     120
+    ],
+    "frozen": true,
+    "last_change": null
+   },
+   {
+    "param": "obs.steepen_5d.pp",
+    "registered": 0.35,
+    "deployed": null,
+    "source": "absent",
+    "grid": [
+     0.25,
+     0.35,
+     0.5
+    ],
+    "frozen": true,
+    "last_change": null
+   },
+   {
+    "param": "obs.jpy_3d.pct",
+    "registered": -3.0,
+    "deployed": null,
+    "source": "absent",
+    "grid": [
+     -2.0,
+     -3.0,
+     -4.0
+    ],
+    "frozen": true,
+    "last_change": null
+   },
+   {
+    "param": "obs.stable.warn_bp",
+    "registered": 50,
+    "deployed": null,
+    "source": "absent",
+    "grid": [
+     25,
+     50
+    ],
+    "frozen": true,
+    "last_change": null
+   },
+   {
+    "param": "obs.stable.red_bp",
+    "registered": 100,
+    "deployed": null,
+    "source": "absent",
+    "grid": [
+     75,
+     100,
+     150
+    ],
+    "frozen": true,
+    "last_change": null
+   },
+   {
+    "param": "obs.vix9d_ratio",
+    "registered": 1.0,
+    "deployed": null,
+    "source": "absent",
+    "grid": [
+     1.0,
+     1.05
+    ],
+    "frozen": true,
+    "last_change": null
+   },
+   {
+    "param": "obs.cot.z_extreme",
+    "registered": 2.0,
+    "deployed": null,
+    "source": "absent",
+    "grid": [
+     1.5,
+     2.0,
+     2.5
+    ],
+    "frozen": true,
+    "last_change": null
+   },
+   {
+    "param": "obs.si.days_to_cover",
+    "registered": 5.0,
+    "deployed": null,
+    "source": "absent",
+    "grid": [
+     4.0,
+     5.0,
+     6.0
+    ],
+    "frozen": true,
+    "last_change": null
+   },
+   {
+    "param": "obs.tvl.warn_pct",
+    "registered": -8,
+    "deployed": null,
+    "source": "absent",
+    "grid": [
+     -6,
+     -8,
+     -10
+    ],
+    "frozen": true,
+    "last_change": null
+   },
+   {
+    "param": "obs.tvl.red_pct",
+    "registered": -15,
+    "deployed": null,
+    "source": "absent",
+    "grid": [
+     -12,
+     -15,
+     -20
+    ],
+    "frozen": true,
+    "last_change": null
+   },
+   {
+    "param": "obs.earnings_window_days",
+    "registered": 5,
+    "deployed": null,
+    "source": "absent",
+    "grid": [
+     3,
+     5
+    ],
+    "frozen": true,
+    "last_change": null
    }
   ],
-  "history_n": 0,
+  "history_n": 1,
   "note": "换参唯一通道：季度 walk-forward → params_history 留痕 → 人工改 config.yaml（RL-9）"
  },
- "snapshots_total": 2,
+ "stier": {
+  "month": {
+   "month": "2026-09",
+   "max": 5,
+   "used": 0
+  },
+  "entries_total": 0,
+  "granted_total": 0,
+  "candidate_total": 0,
+  "settled_total": 0,
+  "settled_week": [],
+  "losses": 0,
+  "unattributed_losses": 0,
+  "attribution_counts": {},
+  "note": "GRANTED 与 CANDIDATE 分列；假想回放（hypothetical）永不入内（SR-3）"
+ },
+ "snapshots_total": 8,
  "footnotes": [
   "反事实归因不作换参依据（RL-9）；换参唯一通道 = 季度 walk-forward + params_history 留痕",
   "n<30 一律只显示『收集中』，不显示命中率与 Brier（RL-4）",
-  "live 与 backtest 永不合并统计（RL-7）"
+  "live 与 backtest 永不合并统计（RL-7）",
+  "S 级三口径（实盘 GRANTED / 候补 CANDIDATE / 假想回放）永不合并统计（SR-3）"
  ]
 }

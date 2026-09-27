@@ -197,7 +197,7 @@
  },
  "IQ": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-09-27",
   "clear_streak": 0,
   "top_headline": "Abridged - Capital Cycle IQ & Forensic Files on the Big 5 Hyperscalers (MSFT, AMZN, ORCL, META, GOOG) - Cassandra Unchained | Michael Burry"
@@ -281,7 +281,7 @@
  },
  "BIDU": {
   "veto": false,
-  "p": 0.04,
+  "p": 0.03,
   "date": "2026-09-27",
   "clear_streak": 0,
   "top_headline": "Diniz leads tactical session as Matheus Bidu returns to Corinthians training - OneFootball"
