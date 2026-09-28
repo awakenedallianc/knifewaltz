@@ -1,6 +1,22 @@
 {
- "date": "2026-09-28",
+ "date": "2026-09-29",
  "source": "yahoo-screener",
- "promoted": [],
+ "promoted": [
+  {
+   "symbol": "MDB",
+   "key": "MDB",
+   "name": "MongoDB, Inc.",
+   "cls": "equity",
+   "pct_day": -16.41,
+   "mcap": 7064949760,
+   "dd52w": -27.34,
+   "ret10": -10.23,
+   "vol_ratio": 7.44,
+   "days_from_peak": 31,
+   "px": 343.17449951171875,
+   "asof": "2026-09-28",
+   "bars": 251
+  }
+ ],
  "degraded_reason": null
 }

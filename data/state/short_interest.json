@@ -2,12 +2,22 @@
  "settlement": "2026-09-15",
  "staleness_note": "双月·滞后约9工作日",
  "source": "finra",
- "fetched_at": "2026-09-28T08:58:38+07:00",
+ "fetched_at": "2026-09-29T01:46:12+07:00",
  "rows": {
+  "ALB": {
+   "short": 11113554,
+   "days_to_cover": 4.2,
+   "chg_pct": 15.37
+  },
   "APP": {
    "short": 10944088,
    "days_to_cover": 2.52,
    "chg_pct": 3.68
+  },
+  "APTV": {
+   "short": 7383432,
+   "days_to_cover": 2.09,
+   "chg_pct": -30.95
   },
   "ASML": {
    "short": 1477623,
@@ -28,6 +38,11 @@
    "short": 15404722,
    "days_to_cover": 5.66,
    "chg_pct": 2.8
+  },
+  "COIN": {
+   "short": 25234463,
+   "days_to_cover": 2.78,
+   "chg_pct": -7.83
   },
   "CSGP": {
    "short": 14839529,
@@ -53,6 +68,11 @@
    "short": 13779085,
    "days_to_cover": 1.33,
    "chg_pct": 2.32
+  },
+  "MDB": {
+   "short": 2879053,
+   "days_to_cover": 1.13,
+   "chg_pct": -2.29
   },
   "MSTR": {
    "short": 30741182,
