@@ -128,9 +128,16 @@
   "events": []
  },
  "CSGP": {
-  "state": "NORMAL",
-  "since": "2026-09-21",
-  "events": []
+  "state": "KNIFE_FALLING",
+  "since": "2026-09-30",
+  "events": [
+   {
+    "d": "2026-09-30",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -68.58% / 10日 -15.57%"
+   }
+  ]
  },
  "FISV": {
   "state": "NORMAL",
@@ -383,8 +390,8 @@
   "events": []
  },
  "FICO": {
-  "state": "CATCH",
-  "since": "2026-09-29",
+  "state": "NORMAL",
+  "since": "2026-09-30",
   "events": [
    {
     "d": "2026-09-29",
@@ -397,11 +404,18 @@
     "from": "KNIFE_FALLING",
     "to": "CATCH",
     "note": "checklist 3/5"
+   },
+   {
+    "d": "2026-09-30",
+    "from": "CATCH",
+    "to": "NORMAL",
+    "note": "跌破接刀日低点（X-STOP）"
    }
   ],
   "catch_ref_price": 840.8900146484375,
   "catch_day_low": 832.0,
-  "expires": "2026-10-15"
+  "expires": "2026-10-15",
+  "cooldown_until": "2026-10-16"
  },
  "ALNY": {
   "state": "NORMAL",
@@ -788,6 +802,11 @@
  "ALB": {
   "state": "NORMAL",
   "since": "2026-09-29",
+  "events": []
+ },
+ "FIS": {
+  "state": "NORMAL",
+  "since": "2026-09-30",
   "events": []
  }
 }
