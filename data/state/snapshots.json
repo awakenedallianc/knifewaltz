@@ -185,7 +185,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "9ffc8804cd7f930c",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": -6.81
+  },
   "settled": false
  },
  {
@@ -664,6 +666,220 @@
    },
    "slice": {
     "key": "None|GREEN|-|none|futures",
+    "lr": 1.0,
+    "n": 0,
+    "wins": 0,
+    "wilson95": null,
+    "grade": "线索"
+   }
+  }
+ },
+ {
+  "id": "S-CATCH:FICO:2026-09-29",
+  "kind": "S-CATCH",
+  "symbol": "FICO",
+  "date": "2026-09-29",
+  "trigger_px": 840.8900146484375,
+  "stop_price": 832.0,
+  "features": {
+   "dd52w": -55.26,
+   "dd250": -55.26,
+   "ret10": -16.04,
+   "rsi14": 34.5,
+   "vol_ratio": 0.85,
+   "close_pos": 0.41,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": true,
+    "gate_ok": true,
+    "rsi_divergence": true
+   },
+   "checklist_n": 3,
+   "tier_time": "-",
+   "days_from_peak": 458,
+   "stop_price": 832.0,
+   "last_date": "2026-09-28",
+   "cls": "equity_single",
+   "tier": "T2",
+   "state": "CATCH",
+   "score_parts": {
+    "fall_40": 24.0,
+    "capitulation_20": 0.0,
+    "checklist_20": 12.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 56,
+  "market": {
+   "blade_index": 8,
+   "gate_state": "GREEN",
+   "vix": 16.06999969482422,
+   "vix_ratio": 0.8815139933268953
+  },
+  "jev": {
+   "family": "unclear",
+   "p_terminal": 0.0,
+   "conf": 0.81,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.037,
+   "catch_prior": 0.273,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "e797f427627c6bc2",
+  "realized": {
+   "ledger_ref": "FICO@2026-09-29"
+  },
+  "settled": false,
+  "stier": {
+   "rules_version": "s1",
+   "admitted": false,
+   "status": null,
+   "soft_score": 0.4672,
+   "hard_pass": {
+    "H1": true,
+    "H2": false,
+    "H3": false,
+    "H4": true,
+    "H5": true,
+    "H6": true,
+    "H7": true,
+    "H8": false
+   },
+   "shadow": {
+    "H9": {
+     "would_block": true,
+     "lr": 1.0,
+     "grade": "线索"
+    },
+    "H10": {
+     "would_block": false,
+     "flip_back_age_days": null
+    },
+    "H11": {
+     "would_block": false,
+     "close_pos": 0.41
+    }
+   },
+   "slice": {
+    "key": "unclear|GREEN|-|none|equity_single",
+    "lr": 1.0,
+    "n": 0,
+    "wins": 0,
+    "wilson95": null,
+    "grade": "线索"
+   }
+  }
+ },
+ {
+  "id": "S-CATCH:INTU:2026-09-29",
+  "kind": "S-CATCH",
+  "symbol": "INTU",
+  "date": "2026-09-29",
+  "trigger_px": 269.3999938964844,
+  "stop_price": 262.32,
+  "features": {
+   "dd52w": -61.42,
+   "dd250": -60.58,
+   "ret10": -20.57,
+   "rsi14": 26.2,
+   "vol_ratio": 1.05,
+   "close_pos": 0.72,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": true,
+    "gate_ok": true,
+    "rsi_divergence": true
+   },
+   "checklist_n": 3,
+   "tier_time": "B",
+   "days_from_peak": 292,
+   "stop_price": 262.32,
+   "last_date": "2026-09-28",
+   "cls": "equity_single",
+   "tier": "T2",
+   "state": "CATCH",
+   "score_parts": {
+    "fall_40": 29.8,
+    "capitulation_20": 0.0,
+    "checklist_20": 12.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 62,
+  "market": {
+   "blade_index": 8,
+   "gate_state": "GREEN",
+   "vix": 16.06999969482422,
+   "vix_ratio": 0.8815139933268953
+  },
+  "jev": {
+   "family": "unclear",
+   "p_terminal": 0.0,
+   "conf": 0.5,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.117,
+   "catch_prior": 0.312,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "7f81fa95d2fcfa98",
+  "realized": {
+   "ledger_ref": "INTU@2026-09-29"
+  },
+  "settled": false,
+  "stier": {
+   "rules_version": "s1",
+   "admitted": false,
+   "status": null,
+   "soft_score": 0.501,
+   "hard_pass": {
+    "H1": true,
+    "H2": false,
+    "H3": true,
+    "H4": true,
+    "H5": true,
+    "H6": true,
+    "H7": true,
+    "H8": false
+   },
+   "shadow": {
+    "H9": {
+     "would_block": true,
+     "lr": 1.0,
+     "grade": "线索"
+    },
+    "H10": {
+     "would_block": false,
+     "flip_back_age_days": null
+    },
+    "H11": {
+     "would_block": false,
+     "close_pos": 0.72
+    }
+   },
+   "slice": {
+    "key": "unclear|GREEN|B|none|equity_single",
     "lr": 1.0,
     "n": 0,
     "wins": 0,

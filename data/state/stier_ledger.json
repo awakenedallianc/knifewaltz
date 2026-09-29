@@ -66,8 +66,10 @@
    "jev_unavailable": false
   },
   "2026-09-29": {
-   "windows": 0,
-   "blocked": {},
+   "windows": 2,
+   "blocked": {
+    "H2": 2
+   },
    "qualified": 0,
    "granted": 0,
    "candidate": 0,

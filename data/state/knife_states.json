@@ -148,7 +148,7 @@
   "events": []
  },
  "INTU": {
-  "state": "KNIFE_FALLING",
+  "state": "CATCH",
   "since": "2026-09-29",
   "events": [
    {
@@ -156,8 +156,17 @@
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -61.45% / 10日 -20.63%"
+   },
+   {
+    "d": "2026-09-29",
+    "from": "KNIFE_FALLING",
+    "to": "CATCH",
+    "note": "checklist 3/5"
    }
-  ]
+  ],
+  "catch_ref_price": 269.3999938964844,
+  "catch_day_low": 262.32,
+  "expires": "2026-10-15"
  },
  "APP": {
   "state": "NORMAL",
@@ -374,7 +383,7 @@
   "events": []
  },
  "FICO": {
-  "state": "KNIFE_FALLING",
+  "state": "CATCH",
   "since": "2026-09-29",
   "events": [
    {
@@ -382,8 +391,17 @@
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -55.34% / 10日 -16.19%"
+   },
+   {
+    "d": "2026-09-29",
+    "from": "KNIFE_FALLING",
+    "to": "CATCH",
+    "note": "checklist 3/5"
    }
-  ]
+  ],
+  "catch_ref_price": 840.8900146484375,
+  "catch_day_low": 832.0,
+  "expires": "2026-10-15"
  },
  "ALNY": {
   "state": "NORMAL",
@@ -651,7 +669,7 @@
   "events": []
  },
  "QFIN": {
-  "state": "KNIFE_FALLING",
+  "state": "STABILIZING",
   "since": "2026-09-29",
   "events": [
    {
@@ -659,6 +677,12 @@
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -76.64% / 10日 -15.41%"
+   },
+   {
+    "d": "2026-09-29",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 2/5"
    }
   ]
  },

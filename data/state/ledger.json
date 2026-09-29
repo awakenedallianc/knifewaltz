@@ -536,5 +536,29 @@
   "tier_time": "-",
   "status": "open",
   "snapshot_ref": "S-CATCH:HE_F:2026-09-26"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "INTU",
+  "date": "2026-09-29",
+  "entry": 269.3999938964844,
+  "stop": 262.32,
+  "score": 62,
+  "tier_time": "B",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:INTU:2026-09-29"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "FICO",
+  "date": "2026-09-29",
+  "entry": 840.8900146484375,
+  "stop": 832.0,
+  "score": 56,
+  "tier_time": "-",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:FICO:2026-09-29"
  }
 ]
