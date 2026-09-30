@@ -1,6 +1,37 @@
 {
- "date": "2026-09-30",
+ "date": "2026-10-01",
  "source": "yahoo-screener",
- "promoted": [],
+ "promoted": [
+  {
+   "symbol": "LQDA",
+   "key": "LQDA",
+   "name": "Liquidia Corporation",
+   "cls": "equity",
+   "pct_day": -24.71,
+   "mcap": 5517643264,
+   "dd52w": -41.54,
+   "ret10": -22.25,
+   "vol_ratio": 2.2,
+   "days_from_peak": 36,
+   "px": 53.220001220703125,
+   "asof": "2026-09-30",
+   "bars": 252
+  },
+  {
+   "symbol": "TRLV",
+   "key": "TRLV",
+   "name": "Trulieve Cannabis Corp. Subordi",
+   "cls": "equity",
+   "pct_day": -15.75,
+   "mcap": 5517643264,
+   "dd52w": -19.58,
+   "ret10": -9.48,
+   "vol_ratio": 2.17,
+   "days_from_peak": 79,
+   "px": 10.454999923706055,
+   "asof": "2026-09-30",
+   "bars": 252
+  }
+ ],
  "degraded_reason": null
 }
