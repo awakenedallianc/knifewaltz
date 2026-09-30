@@ -128,7 +128,7 @@
   "events": []
  },
  "CSGP": {
-  "state": "KNIFE_FALLING",
+  "state": "CATCH",
   "since": "2026-09-30",
   "events": [
    {
@@ -136,8 +136,17 @@
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -68.58% / 10日 -15.57%"
+   },
+   {
+    "d": "2026-09-30",
+    "from": "KNIFE_FALLING",
+    "to": "CATCH",
+    "note": "checklist 3/5"
    }
-  ]
+  ],
+  "catch_ref_price": 26.950000762939453,
+  "catch_day_low": 26.52,
+  "expires": "2026-10-16"
  },
  "FISV": {
   "state": "NORMAL",

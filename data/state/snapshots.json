@@ -1085,5 +1085,112 @@
   "features_sha": "d38e3bfca81092ff",
   "realized": {},
   "settled": false
+ },
+ {
+  "id": "S-CATCH:CSGP:2026-09-30",
+  "kind": "S-CATCH",
+  "symbol": "CSGP",
+  "date": "2026-09-30",
+  "trigger_px": 26.950000762939453,
+  "stop_price": 26.52,
+  "features": {
+   "dd52w": -68.22,
+   "dd250": -68.22,
+   "ret10": -14.61,
+   "rsi14": 31.8,
+   "vol_ratio": 0.68,
+   "close_pos": 0.65,
+   "falling": false,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": true,
+    "gate_ok": true,
+    "rsi_divergence": true
+   },
+   "checklist_n": 3,
+   "tier_time": "B",
+   "days_from_peak": 632,
+   "stop_price": 26.52,
+   "last_date": "2026-09-29",
+   "cls": "equity_single",
+   "tier": "T2",
+   "state": "CATCH",
+   "score_parts": {
+    "fall_40": 29.3,
+    "capitulation_20": 0.0,
+    "checklist_20": 12.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 61,
+  "market": {
+   "blade_index": 4,
+   "gate_state": "GREEN",
+   "vix": 16.040000915527344,
+   "vix_ratio": 0.8866777656291351
+  },
+  "jev": {
+   "family": "unclear",
+   "p_terminal": 0.0,
+   "conf": 0.76,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.153,
+   "catch_prior": 0.302,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "e164ac150b662d7a",
+  "realized": {
+   "ledger_ref": "CSGP@2026-09-30"
+  },
+  "settled": false,
+  "stier": {
+   "rules_version": "s1",
+   "admitted": false,
+   "status": null,
+   "soft_score": 0.4945,
+   "hard_pass": {
+    "H1": true,
+    "H2": false,
+    "H3": true,
+    "H4": true,
+    "H5": true,
+    "H6": true,
+    "H7": true,
+    "H8": false
+   },
+   "shadow": {
+    "H9": {
+     "would_block": true,
+     "lr": 1.0,
+     "grade": "线索"
+    },
+    "H10": {
+     "would_block": false,
+     "flip_back_age_days": null
+    },
+    "H11": {
+     "would_block": false,
+     "close_pos": 0.65
+    }
+   },
+   "slice": {
+    "key": "unclear|GREEN|B|none|equity_single",
+    "lr": 1.0,
+    "n": 0,
+    "wins": 0,
+    "wilson95": null,
+    "grade": "线索"
+   }
+  }
  }
 ]

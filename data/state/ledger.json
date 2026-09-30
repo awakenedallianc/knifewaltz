@@ -560,5 +560,17 @@
   "tier_time": "-",
   "status": "open",
   "snapshot_ref": "S-CATCH:FICO:2026-09-29"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "CSGP",
+  "date": "2026-09-30",
+  "entry": 26.950000762939453,
+  "stop": 26.52,
+  "score": 61,
+  "tier_time": "B",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:CSGP:2026-09-30"
  }
 ]
