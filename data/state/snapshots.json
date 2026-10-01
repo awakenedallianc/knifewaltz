@@ -322,7 +322,8 @@
   "engine_sha": "69e75ef468979668",
   "features_sha": "be3e279017171db9",
   "realized": {
-   "ledger_ref": "URA@2026-09-24"
+   "ledger_ref": "URA@2026-09-24",
+   "fwd5_pct": -2.94
   },
   "settled": false,
   "stier": {
@@ -1194,5 +1195,71 @@
     "grade": "线索"
    }
   }
+ },
+ {
+  "id": "S-FALL:CTVA:2026-10-02",
+  "kind": "S-FALL",
+  "symbol": "CTVA",
+  "date": "2026-10-02",
+  "trigger_px": 12.265000343322754,
+  "stop_price": 11.84,
+  "features": {
+   "dd52w": -86.45,
+   "dd250": -86.45,
+   "ret10": -84.96,
+   "rsi14": 3.6,
+   "vol_ratio": 11.87,
+   "close_pos": 0.16,
+   "falling": true,
+   "capitulation": true,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": false,
+    "gate_ok": true,
+    "rsi_divergence": false
+   },
+   "checklist_n": 1,
+   "tier_time": "B",
+   "days_from_peak": 45,
+   "stop_price": 11.84,
+   "last_date": "2026-10-01",
+   "cls": "equity_single",
+   "tier": "T2",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 40.0,
+    "capitulation_20": 12.0,
+    "checklist_20": 4.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 76,
+  "market": {
+   "blade_index": 6,
+   "gate_state": "GREEN",
+   "vix": 16.780000686645508,
+   "vix_ratio": 0.8935037312633218
+  },
+  "jev": {
+   "family": "B_fundamental_repricing",
+   "p_terminal": 0.01,
+   "conf": 0.8,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.597,
+   "catch_prior": null,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "08f74123ede1dcf3",
+  "realized": {},
+  "settled": false
  }
 ]

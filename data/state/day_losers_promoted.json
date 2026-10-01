@@ -1,22 +1,6 @@
 {
- "date": "2026-10-01",
+ "date": "2026-10-02",
  "source": "yahoo-screener",
- "promoted": [
-  {
-   "symbol": "LQDA",
-   "key": "LQDA",
-   "name": "Liquidia Corporation",
-   "cls": "equity",
-   "pct_day": -57.19,
-   "mcap": 10752316416,
-   "dd52w": -66.76,
-   "ret10": -55.79,
-   "vol_ratio": 18.32,
-   "days_from_peak": 36,
-   "px": 30.260000228881836,
-   "asof": "2026-09-30",
-   "bars": 251
-  }
- ],
+ "promoted": [],
  "degraded_reason": null
 }

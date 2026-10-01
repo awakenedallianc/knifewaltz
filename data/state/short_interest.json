@@ -2,12 +2,17 @@
  "settlement": "2026-09-15",
  "staleness_note": "双月·滞后约9工作日",
  "source": "finra",
- "fetched_at": "2026-10-01T09:21:54+07:00",
+ "fetched_at": "2026-10-02T00:31:59+07:00",
  "rows": {
   "ALB": {
    "short": 11113554,
    "days_to_cover": 4.2,
    "chg_pct": 15.37
+  },
+  "ALNY": {
+   "short": 7194097,
+   "days_to_cover": 4.13,
+   "chg_pct": 13.47
   },
   "APP": {
    "short": 10944088,
@@ -49,6 +54,11 @@
    "days_to_cover": 2.68,
    "chg_pct": -21.49
   },
+  "CTVA": {
+   "short": 20671603,
+   "days_to_cover": 4.06,
+   "chg_pct": 15.51
+  },
   "FICO": {
    "short": 1939188,
    "days_to_cover": 4.03,
@@ -68,11 +78,6 @@
    "short": 7016125,
    "days_to_cover": 2.27,
    "chg_pct": -11.75
-  },
-  "LQDA": {
-   "short": 12377976,
-   "days_to_cover": 11.45,
-   "chg_pct": 4.38
   },
   "LULU": {
    "short": 13779085,

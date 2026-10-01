@@ -817,5 +817,17 @@
   "state": "NORMAL",
   "since": "2026-09-30",
   "events": []
+ },
+ "CTVA": {
+  "state": "KNIFE_FALLING",
+  "since": "2026-10-02",
+  "events": [
+   {
+    "d": "2026-10-02",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -86.45% / 10日 -84.96%"
+   }
+  ]
  }
 }
