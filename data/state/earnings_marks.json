@@ -1,5 +1,5 @@
 {
- "asof": "2026-10-01T00:02:44+07:00",
+ "asof": "2026-10-01T09:21:53+07:00",
  "source": "yahoo-calendar",
  "caliber": "未来 5 个交易日窗（远期日历大票缺席是实测事实，不做远期）",
  "days": [
@@ -11,7 +11,7 @@
  ],
  "days_failed": [],
  "truncated_days": [],
- "watchlist_n": 25,
+ "watchlist_n": 24,
  "marks": [
   {
    "ticker": "NKE",
