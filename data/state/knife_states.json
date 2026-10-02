@@ -819,7 +819,7 @@
   "events": []
  },
  "CTVA": {
-  "state": "KNIFE_FALLING",
+  "state": "STABILIZING",
   "since": "2026-10-02",
   "events": [
    {
@@ -827,7 +827,18 @@
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -86.45% / 10日 -84.96%"
+   },
+   {
+    "d": "2026-10-02",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 1/5"
    }
   ]
+ },
+ "PSKY": {
+  "state": "NORMAL",
+  "since": "2026-10-02",
+  "events": []
  }
 }

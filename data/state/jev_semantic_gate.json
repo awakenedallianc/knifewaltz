@@ -29,7 +29,7 @@
  },
  "PODD": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-02",
   "clear_streak": 0,
   "top_headline": "2 Safe-and-Steady Stocks to Consider Right Now and 1 Facing Challenges"
@@ -113,7 +113,7 @@
  },
  "PNR": {
   "veto": false,
-  "p": 0.25,
+  "p": 0.16,
   "date": "2026-10-02",
   "clear_streak": 0,
   "top_headline": "DEADLINE ALERT for PNR: The Law Offices of Frank R. Cruz - GlobeNewswire"
@@ -127,7 +127,7 @@
  },
  "SLV": {
   "veto": false,
-  "p": 0.03,
+  "p": 0.01,
   "date": "2026-10-02",
   "clear_streak": 0,
   "top_headline": "El Salvador vs. Jamaica - Live Score - October 02, 2026 - FOX Sports"
@@ -169,7 +169,7 @@
  },
  "LX": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-02",
   "clear_streak": 0,
   "top_headline": "The Supreme Court confirmed the confiscation of a Lexus and over 4 million UAH from the family of a police officer from Kharkiv - Судово-юридична газета"
@@ -183,7 +183,7 @@
  },
  "QFIN": {
   "veto": false,
-  "p": 0.39,
+  "p": 0.48,
   "date": "2026-10-02",
   "clear_streak": 0,
   "top_headline": "Deadline Soon: Qfin Holdings, Inc. (QFIN) Shareholders Who Lost Money Urged To Contact The Law Offices of Frank R. Cruz About Securities Fraud Lawsuit - Busines"
@@ -225,7 +225,7 @@
  },
  "TIGR": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-02",
   "clear_streak": 0,
   "top_headline": "Azerbaijan showcases locally developed armed robots at ADEX-2026 (PHOTO) - trend.az"
@@ -274,7 +274,7 @@
  },
  "KC": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-02",
   "clear_streak": 0,
   "top_headline": "Everything you need to know for Sounders-Sporting KC - Sounder at Heart"
@@ -373,9 +373,9 @@
  "GDS": {
   "veto": false,
   "p": 0.0,
-  "date": "2026-09-29",
+  "date": "2026-10-02",
   "clear_streak": 0,
-  "top_headline": "India Post GDS Document Verification 2026: Check Documents Required for DV Round, Complete List and Guidelines - Jagran Josh"
+  "top_headline": "India Post GDS Result 2026 Soon, 1st Merit List PDF Download - Adda247"
  },
  "YUMC": {
   "veto": false,
@@ -400,9 +400,16 @@
  },
  "CTVA": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-02",
   "clear_streak": 0,
   "top_headline": "Stock Market Midday, Oct. 1: Stocks Edge Lower as Treasury Yields Surge to 24-Year High"
+ },
+ "PSKY": {
+  "veto": false,
+  "p": 0.0,
+  "date": "2026-10-02",
+  "clear_streak": 0,
+  "top_headline": "2 New Names Are Joining the S&P 500—and Their Stocks Are Climbing"
  }
 }
