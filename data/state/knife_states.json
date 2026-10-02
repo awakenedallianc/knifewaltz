@@ -667,14 +667,28 @@
   "events": []
  },
  "GDS": {
-  "state": "NORMAL",
-  "since": "2026-09-22",
-  "events": []
+  "state": "KNIFE_FALLING",
+  "since": "2026-10-02",
+  "events": [
+   {
+    "d": "2026-10-02",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -41.59% / 10日 -15.36%"
+   }
+  ]
  },
  "VNET": {
-  "state": "NORMAL",
-  "since": "2026-09-22",
-  "events": []
+  "state": "KNIFE_FALLING",
+  "since": "2026-10-02",
+  "events": [
+   {
+    "d": "2026-10-02",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -62.75% / 10日 -19.85%"
+   }
+  ]
  },
  "WB": {
   "state": "NORMAL",

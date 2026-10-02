@@ -50,7 +50,7 @@
  },
  "APP": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-02",
   "clear_streak": 0,
   "top_headline": "AppLovin Falls 3% as Wells Fargo Calls Pixel Install Spike a False Start; Trade Desk Sits Out the Selloff, Magnite Dips"
@@ -113,7 +113,7 @@
  },
  "PNR": {
   "veto": false,
-  "p": 0.16,
+  "p": 0.23,
   "date": "2026-10-02",
   "clear_streak": 0,
   "top_headline": "DEADLINE ALERT for PNR: The Law Offices of Frank R. Cruz - GlobeNewswire"
@@ -127,7 +127,7 @@
  },
  "SLV": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-02",
   "clear_streak": 0,
   "top_headline": "El Salvador vs. Jamaica - Live Score - October 02, 2026 - FOX Sports"
@@ -169,7 +169,7 @@
  },
  "LX": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-02",
   "clear_streak": 0,
   "top_headline": "The Supreme Court confirmed the confiscation of a Lexus and over 4 million UAH from the family of a police officer from Kharkiv - Судово-юридична газета"
@@ -183,7 +183,7 @@
  },
  "QFIN": {
   "veto": false,
-  "p": 0.48,
+  "p": 0.37,
   "date": "2026-10-02",
   "clear_streak": 0,
   "top_headline": "Deadline Soon: Qfin Holdings, Inc. (QFIN) Shareholders Who Lost Money Urged To Contact The Law Offices of Frank R. Cruz About Securities Fraud Lawsuit - Busines"
@@ -197,7 +197,7 @@
  },
  "IQ": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-02",
   "clear_streak": 0,
   "top_headline": "Trump insists he has the ‘highest of IQs’ and it’s something he got from his uncle who taught at MIT - The Independent"
@@ -281,7 +281,7 @@
  },
  "BIDU": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.02,
   "date": "2026-10-02",
   "clear_streak": 0,
   "top_headline": "DEADLINE ALERT for BIDU, DOCS, BETR, HONA: The Law Offices - GlobeNewswire"
@@ -324,9 +324,9 @@
  "MOMO": {
   "veto": false,
   "p": 0.0,
-  "date": "2026-10-01",
+  "date": "2026-10-02",
   "clear_streak": 0,
-  "top_headline": "Kinaata’s messages are deep — MoMo CEO - Graphic Online"
+  "top_headline": "Gov’t outlines measures to support Ghana’s growing population of older persons - MyJoyOnline"
  },
  "NOAH": {
   "veto": false,
@@ -400,7 +400,7 @@
  },
  "CTVA": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-02",
   "clear_streak": 0,
   "top_headline": "Stock Market Midday, Oct. 1: Stocks Edge Lower as Treasury Yields Surge to 24-Year High"
