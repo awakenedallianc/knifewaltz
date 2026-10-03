@@ -1548,131 +1548,104 @@
   "2026-10-03": [
    {
     "date": "2026-10-03",
-    "sym": "CTUSDT",
-    "last": 0.55218,
-    "pct24": 14.548,
-    "quote_vol": 89131339.0,
+    "sym": "XDPUSDT",
+    "last": 0.020869,
+    "pct24": 6.851,
+    "quote_vol": 24637217.0,
     "funding": null,
     "source": "okx"
    },
    {
     "date": "2026-10-03",
     "sym": "WLDUSDT",
-    "last": 0.5753,
-    "pct24": 12.188,
-    "quote_vol": 39657131.0,
-    "funding": null,
-    "source": "okx"
-   },
-   {
-    "date": "2026-10-03",
-    "sym": "TRUMPUSDT",
-    "last": 2.1,
-    "pct24": 1.498,
-    "quote_vol": 24312425.0,
-    "funding": null,
-    "source": "okx"
-   },
-   {
-    "date": "2026-10-03",
-    "sym": "UNIUSDT",
-    "last": 9.111,
-    "pct24": 1.188,
-    "quote_vol": 21672093.0,
-    "funding": null,
-    "source": "okx"
-   },
-   {
-    "date": "2026-10-03",
-    "sym": "HYPEUSDT",
-    "last": 89.019,
-    "pct24": 0.819,
-    "quote_vol": 39181370.0,
-    "funding": null,
-    "source": "okx"
-   },
-   {
-    "date": "2026-10-03",
-    "sym": "BTCUSDT",
-    "last": 84665.9,
-    "pct24": -0.385,
-    "quote_vol": 880072961.0,
-    "funding": -1.2744345199e-05,
-    "source": "okx"
-   },
-   {
-    "date": "2026-10-03",
-    "sym": "SOLUSDT",
-    "last": 119.3,
-    "pct24": -0.451,
-    "quote_vol": 137737353.0,
-    "funding": -1.4675208207e-06,
-    "source": "okx"
-   },
-   {
-    "date": "2026-10-03",
-    "sym": "XRPUSDT",
-    "last": 1.4909,
-    "pct24": -0.593,
-    "quote_vol": 90918999.0,
-    "funding": null,
-    "source": "okx"
-   },
-   {
-    "date": "2026-10-03",
-    "sym": "DOGEUSDT",
-    "last": 0.0934,
-    "pct24": -0.754,
-    "quote_vol": 64541414.0,
+    "last": 0.6027,
+    "pct24": 6.09,
+    "quote_vol": 30583504.0,
     "funding": null,
     "source": "okx"
    },
    {
     "date": "2026-10-03",
     "sym": "SUIUSDT",
-    "last": 1.1769,
-    "pct24": -1.076,
-    "quote_vol": 34504637.0,
+    "last": 1.1768,
+    "pct24": 0.59,
+    "quote_vol": 27052619.0,
     "funding": null,
     "source": "okx"
    },
    {
     "date": "2026-10-03",
-    "sym": "ZECUSDT",
-    "last": 1321.24,
-    "pct24": -1.239,
-    "quote_vol": 62779763.0,
+    "sym": "SOLUSDT",
+    "last": 119.59,
+    "pct24": -0.325,
+    "quote_vol": 51826557.0,
+    "funding": 9.35050600179e-05,
+    "source": "okx"
+   },
+   {
+    "date": "2026-10-03",
+    "sym": "HYPEUSDT",
+    "last": 88.687,
+    "pct24": -0.753,
+    "quote_vol": 24975171.0,
     "funding": null,
+    "source": "okx"
+   },
+   {
+    "date": "2026-10-03",
+    "sym": "BTCUSDT",
+    "last": 84847.3,
+    "pct24": -0.793,
+    "quote_vol": 366315273.0,
+    "funding": 2.1991147038e-05,
     "source": "okx"
    },
    {
     "date": "2026-10-03",
     "sym": "ETHUSDT",
-    "last": 2680.72,
-    "pct24": -1.294,
-    "quote_vol": 469466863.0,
-    "funding": 4.27170398386e-05,
+    "last": 2681.57,
+    "pct24": -0.806,
+    "quote_vol": 264167639.0,
+    "funding": -2.1016161766e-06,
     "source": "okx"
    },
    {
     "date": "2026-10-03",
-    "sym": "PEPEUSDT",
-    "last": 4.277e-06,
-    "pct24": -3.996,
-    "quote_vol": 26737446.0,
-    "funding": -0.0001413438797874,
+    "sym": "XRPUSDT",
+    "last": 1.4879,
+    "pct24": -1.555,
+    "quote_vol": 47061492.0,
+    "funding": null,
     "source": "okx"
    },
    {
     "date": "2026-10-03",
-    "sym": "NEARUSDT",
-    "last": 4.72,
-    "pct24": -4.434,
-    "quote_vol": 35496044.0,
-    "funding": -0.0001926786019836,
+    "sym": "DOGEUSDT",
+    "last": 0.09318,
+    "pct24": -2.07,
+    "quote_vol": 35646476.0,
+    "funding": null,
+    "source": "okx"
+   },
+   {
+    "date": "2026-10-03",
+    "sym": "CTUSDT",
+    "last": 0.49292,
+    "pct24": -2.523,
+    "quote_vol": 82630505.0,
+    "funding": 5e-05,
+    "source": "okx"
+   },
+   {
+    "date": "2026-10-03",
+    "sym": "ZECUSDT",
+    "last": 1298.26,
+    "pct24": -5.539,
+    "quote_vol": 45568906.0,
+    "funding": 0.0001,
     "source": "okx"
    }
   ]
  },
- "updated": "2026-10-03T09:19:42+07:00"
+ "updated": "2026-10-03T22:17:28+07:00"
 }

@@ -15,21 +15,21 @@
  },
  "FISV": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-03",
   "clear_streak": 0,
   "top_headline": "Fiserv enters stablecoin race with Roughrider on Solana"
  },
  "NG_F": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-03",
   "clear_streak": 0,
   "top_headline": "Natural Gas News: Sellers Overshoot as November Rebounds Above $3.00 - FXEmpire"
  },
  "PODD": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-03",
   "clear_streak": 0,
   "top_headline": "PODD261218C00125000 Interactive Stock Chart | PODD Dec 2026 125.000 call Stock - Yahoo Finance"
@@ -50,7 +50,7 @@
  },
  "APP": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-03",
   "clear_streak": 0,
   "top_headline": "AppLovin Took Unity to Court Over Ad Data. Here’s Where the Stock Could Go by 2030"
@@ -64,14 +64,14 @@
  },
  "MSTR": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.0,
   "date": "2026-10-03",
   "clear_streak": 0,
   "top_headline": "Strategy Stock is Riding Bitcoin’s Climb"
  },
  "LULU": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.0,
   "date": "2026-10-03",
   "clear_streak": 0,
   "top_headline": "Nike (NKE) vs Lululemon (LULU): Which is a Better Stock to Buy?"
@@ -92,7 +92,7 @@
  },
  "FICO": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-03",
   "clear_streak": 0,
   "top_headline": "Investing.com’s stocks of the week"
@@ -113,21 +113,21 @@
  },
  "PNR": {
   "veto": false,
-  "p": 0.23,
+  "p": 0.29,
   "date": "2026-10-03",
   "clear_streak": 0,
   "top_headline": "PNR Investors Have Opportunity to Lead Pentair plc Securities Fraud Lawsuit with SBS Law - Business Wire"
  },
  "ALNY": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.16,
   "date": "2026-10-03",
   "clear_streak": 0,
   "top_headline": "Securities Fraud Investigation Into Alnylam Pharmaceuticals, Inc. (ALNY) Continues – Shareholders Who Lost Money Urged To Contact The Law Offices of Frank R. Cr"
  },
  "SLV": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.01,
   "date": "2026-10-03",
   "clear_streak": 0,
   "top_headline": "El Salvador vs. Jamaica (3 Oct, 2026) Team Stats - ESPN"
@@ -183,7 +183,7 @@
  },
  "QFIN": {
   "veto": false,
-  "p": 0.56,
+  "p": 0.54,
   "date": "2026-10-03",
   "clear_streak": 0,
   "top_headline": "ROSEN, GLOBAL INVESTOR RIGHTS COUNSEL, Encourages Qfin - GlobeNewswire"
@@ -197,7 +197,7 @@
  },
  "IQ": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-03",
   "clear_streak": 0,
   "top_headline": "Springfield pair angles for success with Hook IQ fishing app - Springfield Business Journal"
@@ -226,20 +226,20 @@
  "TIGR": {
   "veto": false,
   "p": 0.01,
-  "date": "2026-10-02",
+  "date": "2026-10-03",
   "clear_streak": 0,
-  "top_headline": "Azerbaijan showcases locally developed armed robots at ADEX-2026 (PHOTO) - trend.az"
+  "top_headline": "3 Brokerage Stocks Tied To Higher Treasury Yields"
  },
  "LI": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-03",
   "clear_streak": 0,
   "top_headline": "Li Auto Inc. Sponsored ADR (LI) Stock Sinks As Market Gains: Here's Why"
  },
  "NIO": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-03",
   "clear_streak": 0,
   "top_headline": "Rivian Jumps 4% After Delivering 19,248 Vehicles and Reaffirming Full-Year Guidance; Tesla Rises 2%"
@@ -281,7 +281,7 @@
  },
  "BIDU": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-03",
   "clear_streak": 0,
   "top_headline": "BIDU Oct 2026 107.000 call (BIDU261009C00107000) Stock Price, News, Quote & History - Yahoo! Finance Canada"
