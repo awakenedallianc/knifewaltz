@@ -667,26 +667,38 @@
   "events": []
  },
  "GDS": {
-  "state": "KNIFE_FALLING",
-  "since": "2026-10-02",
+  "state": "STABILIZING",
+  "since": "2026-10-03",
   "events": [
    {
     "d": "2026-10-02",
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -41.59% / 10日 -15.36%"
+   },
+   {
+    "d": "2026-10-03",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 1/5"
    }
   ]
  },
  "VNET": {
-  "state": "KNIFE_FALLING",
-  "since": "2026-10-02",
+  "state": "STABILIZING",
+  "since": "2026-10-03",
   "events": [
    {
     "d": "2026-10-02",
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -62.75% / 10日 -19.85%"
+   },
+   {
+    "d": "2026-10-03",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 1/5"
    }
   ]
  },
