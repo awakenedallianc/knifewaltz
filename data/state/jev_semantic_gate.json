@@ -50,7 +50,7 @@
  },
  "APP": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-04",
   "clear_streak": 0,
   "top_headline": "AppLovin Stock Is Down 49% in Three Months. Bargain or Falling Knife?"
@@ -64,21 +64,21 @@
  },
  "MSTR": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-04",
   "clear_streak": 0,
   "top_headline": "214-year-old bank sees 50% upside in beaten-down stock"
  },
  "LULU": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-04",
   "clear_streak": 0,
   "top_headline": "Nike’s Contrarian Strategy: Cut Volume, Restore Prestige"
  },
  "ZTS": {
   "veto": false,
-  "p": 0.09,
+  "p": 0.0,
   "date": "2026-10-04",
   "clear_streak": 0,
   "top_headline": "Zoetis EVP Julie Fuller Reports RSU Vesting and Stock Transactions on September 30, 2026 - Kalkine Media"
@@ -113,14 +113,14 @@
  },
  "PNR": {
   "veto": false,
-  "p": 0.31,
+  "p": 0.15,
   "date": "2026-10-04",
   "clear_streak": 0,
   "top_headline": "Pantoro Gold Ltd (ASX:PNR) Prepares Five-Year Norseman Plan With Racetrack in Focus - Kalkine"
  },
  "ALNY": {
   "veto": false,
-  "p": 0.12,
+  "p": 0.01,
   "date": "2026-10-04",
   "clear_streak": 0,
   "top_headline": "Alnylam Pharmaceuticals, Inc. (ALNY) Stock Price, News, Quote & History - Yahoo! Finance Canada"
@@ -183,7 +183,7 @@
  },
  "QFIN": {
   "veto": false,
-  "p": 0.59,
+  "p": 0.62,
   "date": "2026-10-04",
   "clear_streak": 0,
   "top_headline": "Understanding the Setup: (QFIN) and Scalable Risk - Stock Traders Daily"
@@ -204,7 +204,7 @@
  },
  "XPEV": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-04",
   "clear_streak": 0,
   "top_headline": "3 Robotaxi Stocks Retail Investors Are Screening After Tesla Cybercab Headlines - Simply Wall Street"
@@ -239,7 +239,7 @@
  },
  "NIO": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-04",
   "clear_streak": 0,
   "top_headline": "Intel, Sandisk, Chevron, Boeing, NIO, and More Stocks That Explain Today's Market -- Barrons.com - Moomoo"
@@ -331,9 +331,9 @@
  "NOAH": {
   "veto": false,
   "p": 0.0,
-  "date": "2026-10-03",
+  "date": "2026-10-04",
   "clear_streak": 0,
-  "top_headline": "All-DMV with Washington Sun's Noah Ferguson - NBC4 Washington"
+  "top_headline": "Photo gallery: Riverfront Parks Committee hosts ChalkFest - The Citizens' Voice"
  },
  "FINV": {
   "veto": false,

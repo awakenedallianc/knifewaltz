@@ -1,13 +1,13 @@
 {
  "WLDUSDT": {
   "family": "noise",
-  "flavor": 0.29,
+  "flavor": 0.25,
   "probs": {
-   "noise": 0.71,
+   "noise": 0.75,
    "liquidation_cascade": 0.0,
    "event_driven": 0.0,
-   "systemic": 0.14,
-   "unclear": 0.15
+   "systemic": 0.12,
+   "unclear": 0.13
   },
   "date": "2026-10-04"
  },
@@ -25,13 +25,13 @@
  },
  "SOLUSDT": {
   "family": "systemic",
-  "flavor": 0.9,
+  "flavor": 0.88,
   "probs": {
-   "noise": 0.1,
+   "noise": 0.12,
    "liquidation_cascade": 0.0,
    "event_driven": 0.0,
-   "systemic": 0.63,
-   "unclear": 0.27
+   "systemic": 0.66,
+   "unclear": 0.22
   },
   "date": "2026-10-04"
  },
@@ -41,9 +41,9 @@
   "probs": {
    "noise": 0.02,
    "liquidation_cascade": 0.0,
-   "event_driven": 0.8,
+   "event_driven": 0.81,
    "systemic": 0.14,
-   "unclear": 0.04
+   "unclear": 0.03
   },
   "date": "2026-10-04"
  },
@@ -53,33 +53,33 @@
   "probs": {
    "noise": 0.01,
    "liquidation_cascade": 0.0,
-   "event_driven": 0.51,
-   "systemic": 0.46,
+   "event_driven": 0.58,
+   "systemic": 0.39,
    "unclear": 0.02
   },
   "date": "2026-10-04"
  },
  "ZECUSDT": {
-  "family": "unclear",
-  "flavor": 0.56,
+  "family": "noise",
+  "flavor": 0.49,
   "probs": {
-   "noise": 0.44,
-   "liquidation_cascade": 0.02,
+   "noise": 0.51,
+   "liquidation_cascade": 0.01,
    "event_driven": 0.0,
    "systemic": 0.04,
-   "unclear": 0.5
+   "unclear": 0.44
   },
   "date": "2026-10-04"
  },
  "CTUSDT": {
-  "family": "liquidation_cascade",
-  "flavor": 0.78,
+  "family": "noise",
+  "flavor": 0.43,
   "probs": {
-   "noise": 0.22,
-   "liquidation_cascade": 0.64,
-   "event_driven": 0.0,
+   "noise": 0.57,
+   "liquidation_cascade": 0.08,
+   "event_driven": 0.01,
    "systemic": 0.01,
-   "unclear": 0.13
+   "unclear": 0.33
   },
   "date": "2026-10-04"
  }
