@@ -22,7 +22,8 @@ const PHIST = Array.isArray(D.params_history) ? D.params_history : (REVIEW && Ar
 /* v1.3 块（render_backend/integrator 落盘后点亮；缺块 = 对应版面整体不渲染，不留空壳） */
 const FUNNEL = (D.funnel && typeof D.funnel === 'object') ? D.funnel : null;              /* payload.funnel */
 const THRESH = (D.thresholds_by_cls && typeof D.thresholds_by_cls === 'object') ? D.thresholds_by_cls : null;
-const STIER = (D.stier && typeof D.stier === 'object') ? D.stier : null;                  /* payload.stier（M4 契约） */
+const STIER = (D.stier && typeof D.stier === 'object') ? D.stier : null;
+const EVOLVE = Array.isArray(D.evolve) && D.evolve.length ? D.evolve : null;               /* 进化循环 B 型报告（run._evolve_public） */                  /* payload.stier（M4 契约） */
 const DEPTHM = (D.depth_market && typeof D.depth_market === 'object') ? D.depth_market : null;
 const GPCT = (G.pctiles && typeof G.pctiles === 'object') ? G.pctiles : null;             /* payload.gates.pctiles */
 const OBS = Array.isArray(G.obs_gates) ? G.obs_gates : null;                              /* payload.gates.obs_gates（display-only） */
@@ -1118,6 +1119,44 @@ function snapRows(snaps) {
 
 /* ---------- S 级战绩节（precision frontend.review_room_section；本节零金） ---------- */
 let SPUB = undefined; /* stier_public.json：undefined 未取 · null 取败 · object 已取 */
+/* ---------- 复盘回放：进化循环 B 型报告（回测口径 · 只做研究不改参数 · 实装只走季度法庭 RL-9） ---------- */
+function evolveSec() {
+  if (!EVOLVE) return notRun('evolve_reports.json 未产出 · 进化循环 B 期后出现');
+  const r = EVOLVE[EVOLVE.length - 1];
+  const P = r.primary || {}, C = P.combos || {}, L = r.labels || {};
+  const wr = s => s && s.n ? `${(s.win_rate * 100).toFixed(0)}%` : '—';
+  const wil = s => s && s.wilson95 ? `${(s.wilson95[0] * 100).toFixed(0)}–${(s.wilson95[1] * 100).toFixed(0)}` : '—';
+  const name = k => `${esc(L[k.slice(0, 2)] || k.slice(0, 2))} × ${esc(L[k.slice(2)] || k.slice(2))}`;
+  const hl = r.holdout_look || {};
+  const rows = Object.keys(C).map(k => {
+    const a = C[k].all || {}, t = C[k].train || {}, h = C[k].holdout || {};
+    const tag = k === 'E0S0' ? ' <span class="caliber">现行</span>' : (k === r.champion ? ' <span class="caliber">训练窗冠军</span>' : '');
+    return `<tr><td class="mono s12">${esc(k)}</td><td class="s12">${name(k)}${tag}</td>
+      <td class="num mono">${a.n != null ? a.n : '—'}</td><td class="num mono">${wr(a)}</td><td class="num mono pri2">${wil(a)}</td>
+      <td class="num ${(a.mean_pct || 0) < 0 ? 'down' : 'up'}">${pf(a.mean_pct, 1)}</td><td class="num down">${pf(a.worst_pct, 1)}</td>
+      <td class="num mono pri2">${wr(t)}</td><td class="num mono pri2">${wr(h)}</td></tr>`;
+  }).join('');
+  const rob = r.robustness || {};
+  const robRows = Object.entries(rob).filter(([, v]) => v && v.combos).map(([sym, v]) => {
+    const keys = Object.keys(v.combos);
+    return `<tr><td class="mono s12">${esc(sym)}</td><td class="num mono">${v.episodes != null ? v.episodes : '—'}</td>
+      <td class="s12 mono dim">${keys.map(k => `${esc(k)} ${wr(v.combos[k])}/${pf(v.combos[k].worst_pct, 0)}`).join(' · ')}</td></tr>`;
+  }).join('');
+  const at = r.attribution || {};
+  const verdict = `判定：训练窗冠军 ${esc(r.champion || '—')} · 留出集看过 ${hl.looks_used != null ? hl.looks_used : '—'} 次 · ${hl.pass ? '通过' : '未通过'} · 不改参数`;
+  return `<div class="card lbr">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px"><b class="s13">${esc(r.theme || '')}</b><span class="caliber">回测 · ${esc(r.date || '')}</span></div>
+    <div class="s12 mono dim" style="margin-bottom:8px">$ ${verdict}</div>
+    <div class="tbl"><table>
+      <thead><tr><th>组合</th><th>入场 × 止损</th><th class="num">n</th><th class="num">胜率</th><th class="num pri2">Wilson95</th><th class="num">均值</th><th class="num">最差</th><th class="num pri2">训练窗</th><th class="num pri2">留出集</th></tr></thead>
+      <tbody>${rows}</tbody></table></div>
+    <span class="meta">$ ${esc(P.symbol || '')} · VIX≥${esc(String(P.threshold || ''))} · ${esc(String(P.episodes || ''))} 个 episode · 训练 &lt; ${esc(r.split || '')} ≤ 留出 · 9 组合全部公示 · 预注册 ${esc(r.prereg || '')}</span>
+    ${robRows ? `<div class="tbl" style="margin-top:10px"><table><thead><tr><th>稳健性面板</th><th class="num">ep</th><th>组合 胜率/最差</th></tr></thead><tbody>${robRows}</tbody></table></div>
+    <span class="meta">$ 与 ^GSPC 高度相关，不当独立样本 · 不参与选择</span>` : ''}
+    ${at.x_stop_n != null ? `<div class="abandon" style="margin-top:10px"><b>X-STOP 归因</b> 现行 ${at.x_stop_n} 次止损里 ${at.x_stop_le3d} 次在 3 日内触发；${at.x_stop_then_hold60_positive} 次若持满 60 日是正收益；另外 ${at.x_stop_n - at.x_stop_then_hold60_positive} 次持满仍为负${Array.isArray(at.rows) && at.rows.length ? `，最深 ${pf(Math.min(...at.rows.map(w => w.hold60_pct)), 1)}（${esc(String(at.rows.reduce((m, w) => w.hold60_pct < m.hold60_pct ? w : m).date || ''))}）` : ''}——止损在续跌里保住了最差一笔。</div>` : ''}
+    <div class="s12 faint" style="margin-top:8px">${esc(r.verdict_rule || '')}</div></div>`;
+}
+
 function stierWarSec() {
   const pr = STIER && STIER.precision && typeof STIER.precision === 'object' ? STIER.precision : null;
   const r30 = pr && pr.rolling30 ? pr.rolling30 : null;
@@ -1312,6 +1351,9 @@ function reviewMarkup(snaps) {
   <h2 class="sec">S 级战绩</h2>
   <div class="secmeta">$ 实盘 / 候补（budget_shadow）/ 假想回放三口径分立渲染 · 任何合并视图即 bug（SR-3）· 影子·不影响放行 · 本节零金</div>
   ${stierWarSec()}
+  <h2 class="sec">复盘回放</h2>
+  <div class="secmeta">$ 进化循环 B 期 · 更大范围反事实重放 · 预注册 → 训练窗选 → 留出集只看一次 · 胜率/均值/最差同表 · 结论只进法庭不进参数</div>
+  ${evolveSec()}
   <h2 class="sec">快照台账</h2>
   <div class="secmeta">$ 信号触发即拍快照 · 未结算明示 · fwd5/20/60 与 A 档双口径并列</div>
   ${snapSec}

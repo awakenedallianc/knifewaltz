@@ -86,6 +86,22 @@ def _shared_payload_blocks(payload: dict, board: list[dict], conf: dict) -> None
     payload["calibration"] = read_json(STATE / "calibration.json", None)
     payload["review"] = read_json(STATE / "weekly_review.json", None)
     payload["params_history"] = read_json(STATE / "params_history.json", None)
+    payload["evolve"] = _evolve_public()
+
+
+def _evolve_public() -> list | None:
+    """复盘室「复盘回放」节：进化循环 B 型报告（scripts/evolve_*.py 产）最近 3 期瘦身版。
+    逐笔明细只留归因行；文件缺席 → None，站点字节级不变。"""
+    reps = read_json(STATE / "evolve_reports.json", None)
+    if not isinstance(reps, list) or not reps:
+        return None
+    out = []
+    for r in reps[-3:]:
+        thin = {k: v for k, v in r.items() if k not in ("primary",)}
+        prim = r.get("primary") or {}
+        thin["primary"] = {k: v for k, v in prim.items() if not k.endswith("_rows")}
+        out.append(thin)
+    return out
 
 
 def _write_side_files(radar_data: dict | None, ledger: list | None) -> None:
