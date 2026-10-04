@@ -1645,7 +1645,72 @@
     "funding": 0.0001,
     "source": "okx"
    }
+  ],
+  "2026-10-04": [
+   {
+    "date": "2026-10-04",
+    "sym": "WLDUSDT",
+    "last": 0.5943,
+    "pct24": 4.318,
+    "quote_vol": 22315821.0,
+    "funding": null,
+    "source": "okx"
+   },
+   {
+    "date": "2026-10-04",
+    "sym": "XDPUSDT",
+    "last": 0.020042,
+    "pct24": 2.365,
+    "quote_vol": 24689861.0,
+    "funding": null,
+    "source": "okx"
+   },
+   {
+    "date": "2026-10-04",
+    "sym": "SOLUSDT",
+    "last": 120.24,
+    "pct24": 0.957,
+    "quote_vol": 32605643.0,
+    "funding": 3.17482160624e-05,
+    "source": "okx"
+   },
+   {
+    "date": "2026-10-04",
+    "sym": "ETHUSDT",
+    "last": 2692.64,
+    "pct24": 0.453,
+    "quote_vol": 153506474.0,
+    "funding": 2.32739607194e-05,
+    "source": "okx"
+   },
+   {
+    "date": "2026-10-04",
+    "sym": "BTCUSDT",
+    "last": 84800.1,
+    "pct24": 0.186,
+    "quote_vol": 211808847.0,
+    "funding": 2.90039902354e-05,
+    "source": "okx"
+   },
+   {
+    "date": "2026-10-04",
+    "sym": "ZECUSDT",
+    "last": 1305.09,
+    "pct24": -1.19,
+    "quote_vol": 41864716.0,
+    "funding": 0.0001,
+    "source": "okx"
+   },
+   {
+    "date": "2026-10-04",
+    "sym": "CTUSDT",
+    "last": 0.48018,
+    "pct24": -10.458,
+    "quote_vol": 110137235.0,
+    "funding": -0.000102712333238,
+    "source": "okx"
+   }
   ]
  },
- "updated": "2026-10-03T22:17:28+07:00"
+ "updated": "2026-10-04T09:53:51+07:00"
 }
