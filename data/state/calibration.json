@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-04T11:14:42+07:00",
+ "generated_at": "2026-10-04T14:25:16+07:00",
  "date": "2026-10-04",
  "min_n": 30,
  "outcome_defs": {
@@ -186,7 +186,7 @@
    "question_id": "J5",
    "outcome_def": "1 若 3 日内 |累计收益| >= 10%（movers_history 快照价口径）",
    "n_total": 399,
-   "n_pending": 38,
+   "n_pending": 45,
    "n_unresolvable": 170,
    "conclusive": true,
    "base_rate": 0.04,

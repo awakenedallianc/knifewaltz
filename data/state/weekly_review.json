@@ -1,12 +1,12 @@
 {
- "week_of": "2026-09-27",
- "generated_at": "2026-09-27T14:07:40+07:00",
+ "week_of": "2026-10-04",
+ "generated_at": "2026-10-04T14:25:16+07:00",
  "new_signals": [
   {
-   "kind": "S-FALL",
-   "symbol": "HE_F",
-   "date": "2026-09-21",
-   "score": 36,
+   "kind": "S-CATCH",
+   "symbol": "FICO",
+   "date": "2026-09-29",
+   "score": 56,
    "tier_time": "-",
    "fwd5_pct": null,
    "fwd20_pct": null,
@@ -16,23 +16,10 @@
    "settled": false
   },
   {
-   "kind": "S-FALL",
-   "symbol": "KC_F",
-   "date": "2026-09-21",
-   "score": 53,
-   "tier_time": "-",
-   "fwd5_pct": null,
-   "fwd20_pct": null,
-   "fwd60_pct": null,
-   "atier_pct": null,
-   "atier_exit": null,
-   "settled": false
-  },
-  {
-   "kind": "S-FALL",
-   "symbol": "0881_HK",
-   "date": "2026-09-22",
-   "score": 60,
+   "kind": "S-CATCH",
+   "symbol": "INTU",
+   "date": "2026-09-29",
+   "score": 62,
    "tier_time": "B",
    "fwd5_pct": null,
    "fwd20_pct": null,
@@ -43,10 +30,10 @@
   },
   {
    "kind": "S-FALL",
-   "symbol": "URA",
-   "date": "2026-09-23",
-   "score": 41,
-   "tier_time": "DEAD_ZONE",
+   "symbol": "FICO",
+   "date": "2026-09-29",
+   "score": 56,
+   "tier_time": "-",
    "fwd5_pct": null,
    "fwd20_pct": null,
    "fwd60_pct": null,
@@ -55,11 +42,11 @@
    "settled": false
   },
   {
-   "kind": "S-CATCH",
-   "symbol": "URA",
-   "date": "2026-09-24",
-   "score": 42,
-   "tier_time": "DEAD_ZONE",
+   "kind": "S-FALL",
+   "symbol": "INTU",
+   "date": "2026-09-29",
+   "score": 62,
+   "tier_time": "B",
    "fwd5_pct": null,
    "fwd20_pct": null,
    "fwd60_pct": null,
@@ -68,9 +55,9 @@
    "settled": false
   },
   {
-   "kind": "S-CATCH",
-   "symbol": "0881_HK",
-   "date": "2026-09-25",
+   "kind": "S-FALL",
+   "symbol": "QFIN",
+   "date": "2026-09-29",
    "score": 59,
    "tier_time": "B",
    "fwd5_pct": null,
@@ -82,9 +69,35 @@
   },
   {
    "kind": "S-CATCH",
-   "symbol": "KC_F",
-   "date": "2026-09-25",
-   "score": 42,
+   "symbol": "CSGP",
+   "date": "2026-09-30",
+   "score": 61,
+   "tier_time": "B",
+   "fwd5_pct": null,
+   "fwd20_pct": null,
+   "fwd60_pct": null,
+   "atier_pct": null,
+   "atier_exit": null,
+   "settled": false
+  },
+  {
+   "kind": "S-FALL",
+   "symbol": "CTVA",
+   "date": "2026-10-02",
+   "score": 76,
+   "tier_time": "B",
+   "fwd5_pct": null,
+   "fwd20_pct": null,
+   "fwd60_pct": null,
+   "atier_pct": null,
+   "atier_exit": null,
+   "settled": false
+  },
+  {
+   "kind": "S-FALL",
+   "symbol": "GDS",
+   "date": "2026-10-02",
+   "score": 41,
    "tier_time": "-",
    "fwd5_pct": null,
    "fwd20_pct": null,
@@ -94,11 +107,11 @@
    "settled": false
   },
   {
-   "kind": "S-CATCH",
-   "symbol": "HE_F",
-   "date": "2026-09-26",
-   "score": 34,
-   "tier_time": "-",
+   "kind": "S-FALL",
+   "symbol": "VNET",
+   "date": "2026-10-02",
+   "score": 54,
+   "tier_time": "B",
    "fwd5_pct": null,
    "fwd20_pct": null,
    "fwd60_pct": null,
@@ -117,14 +130,14 @@
    "note": "收集中 0/30"
   },
   "J2": {
-   "n": 0,
-   "brier": null,
-   "baseline": null,
-   "note": "收集中 0/30"
+   "n": 819,
+   "brier": 0.2317,
+   "baseline": 0.2036,
+   "note": null
   },
   "J3": {
-   "n": 160,
-   "brier": 0.1205,
+   "n": 333,
+   "brier": 0.1186,
    "baseline": 0.0,
    "note": null
   },
@@ -135,9 +148,9 @@
    "note": "收集中 0/30"
   },
   "J5": {
-   "n": 223,
-   "brier": 0.6244,
-   "baseline": 0.0346,
+   "n": 399,
+   "brier": 0.6238,
+   "baseline": 0.0385,
    "note": null
   }
  },
@@ -145,9 +158,9 @@
   "brier": {
    "J1": null,
    "J2": null,
-   "J3": null,
+   "J3": -0.0019,
    "J4": null,
-   "J5": null
+   "J5": -0.0006
   },
   "note": "对上一期复盘的 Brier 变化；任一侧未成样（n<30）则 null"
  },
@@ -168,7 +181,7 @@
    "id": "RL-3",
    "rule": "快照不可篡改：snapshots append-only，settle 只填 realized/settled；feat",
    "pass": true,
-   "detail": "features_sha 复核 8 条"
+   "detail": "features_sha 复核 17 条"
   },
   {
    "id": "RL-4",
@@ -198,7 +211,7 @@
    "id": "RL-8",
    "rule": "台账与快照永不删除：标的移出监控池后其历史快照仍参与统计（防幸存者偏差）；退市标的结算用最后可得价并标注",
    "pass": true,
-   "detail": "快照全量 8 条（上期 2）"
+   "detail": "快照全量 17 条（上期 8）"
   },
   {
    "id": "RL-9",
@@ -234,7 +247,7 @@
  "red_lines_pass": false,
  "params": {
   "registry_version": "v1.2-preregistered",
-  "asof": "2026-09-27",
+  "asof": "2026-10-04",
   "rows": [
    {
     "param": "vix_gate.primary",
@@ -908,7 +921,7 @@
  },
  "stier": {
   "month": {
-   "month": "2026-09",
+   "month": "2026-10",
    "max": 5,
    "used": 0
   },
@@ -922,7 +935,7 @@
   "attribution_counts": {},
   "note": "GRANTED 与 CANDIDATE 分列；假想回放（hypothetical）永不入内（SR-3）"
  },
- "snapshots_total": 8,
+ "snapshots_total": 17,
  "footnotes": [
   "反事实归因不作换参依据（RL-9）；换参唯一通道 = 季度 walk-forward + params_history 留痕",
   "n<30 一律只显示『收集中』，不显示命中率与 Brier（RL-4）",

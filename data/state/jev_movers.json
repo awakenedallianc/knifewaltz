@@ -1,37 +1,49 @@
 {
  "WLDUSDT": {
   "family": "noise",
-  "flavor": 0.25,
+  "flavor": 0.22,
   "probs": {
-   "noise": 0.75,
+   "noise": 0.78,
    "liquidation_cascade": 0.0,
    "event_driven": 0.0,
-   "systemic": 0.12,
+   "systemic": 0.09,
    "unclear": 0.13
   },
   "date": "2026-10-04"
  },
  "XDPUSDT": {
   "family": "noise",
-  "flavor": 0.51,
+  "flavor": 0.49,
   "probs": {
-   "noise": 0.49,
+   "noise": 0.51,
    "liquidation_cascade": 0.0,
    "event_driven": 0.0,
-   "systemic": 0.31,
-   "unclear": 0.2
+   "systemic": 0.28,
+   "unclear": 0.21
   },
   "date": "2026-10-04"
  },
  "SOLUSDT": {
   "family": "systemic",
-  "flavor": 0.88,
+  "flavor": 0.91,
   "probs": {
-   "noise": 0.12,
+   "noise": 0.09,
    "liquidation_cascade": 0.0,
    "event_driven": 0.0,
-   "systemic": 0.66,
-   "unclear": 0.22
+   "systemic": 0.68,
+   "unclear": 0.23
+  },
+  "date": "2026-10-04"
+ },
+ "ZECUSDT": {
+  "family": "systemic",
+  "flavor": 0.83,
+  "probs": {
+   "noise": 0.17,
+   "liquidation_cascade": 0.0,
+   "event_driven": 0.0,
+   "systemic": 0.51,
+   "unclear": 0.32
   },
   "date": "2026-10-04"
  },
@@ -41,45 +53,33 @@
   "probs": {
    "noise": 0.02,
    "liquidation_cascade": 0.0,
-   "event_driven": 0.81,
-   "systemic": 0.14,
+   "event_driven": 0.77,
+   "systemic": 0.18,
    "unclear": 0.03
   },
   "date": "2026-10-04"
  },
  "BTCUSDT": {
-  "family": "event_driven",
+  "family": "systemic",
   "flavor": 0.99,
   "probs": {
    "noise": 0.01,
    "liquidation_cascade": 0.0,
-   "event_driven": 0.58,
-   "systemic": 0.39,
-   "unclear": 0.02
-  },
-  "date": "2026-10-04"
- },
- "ZECUSDT": {
-  "family": "noise",
-  "flavor": 0.49,
-  "probs": {
-   "noise": 0.51,
-   "liquidation_cascade": 0.01,
-   "event_driven": 0.0,
-   "systemic": 0.04,
-   "unclear": 0.44
+   "event_driven": 0.47,
+   "systemic": 0.49,
+   "unclear": 0.03
   },
   "date": "2026-10-04"
  },
  "CTUSDT": {
   "family": "noise",
-  "flavor": 0.43,
+  "flavor": 0.49,
   "probs": {
-   "noise": 0.57,
+   "noise": 0.51,
    "liquidation_cascade": 0.08,
    "event_driven": 0.01,
    "systemic": 0.01,
-   "unclear": 0.33
+   "unclear": 0.39
   },
   "date": "2026-10-04"
  }
