@@ -425,7 +425,8 @@
   "engine_sha": "69e75ef468979668",
   "features_sha": "ac470fc484e32eab",
   "realized": {
-   "ledger_ref": "0881.HK@2026-09-25"
+   "ledger_ref": "0881.HK@2026-09-25",
+   "fwd5_pct": -12.24
   },
   "settled": false,
   "stier": {
