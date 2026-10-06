@@ -2,7 +2,7 @@
  "settlement": "2026-09-15",
  "staleness_note": "双月·滞后约9工作日",
  "source": "finra",
- "fetched_at": "2026-10-05T09:21:24+07:00",
+ "fetched_at": "2026-10-06T10:19:17+07:00",
  "rows": {
   "ALB": {
    "short": 11113554,
@@ -74,6 +74,11 @@
    "days_to_cover": 3.96,
    "chg_pct": -9.76
   },
+  "INSM": {
+   "short": 10802070,
+   "days_to_cover": 5.27,
+   "chg_pct": -5.58
+  },
   "INTU": {
    "short": 7016125,
    "days_to_cover": 2.27,
@@ -113,11 +118,6 @@
    "short": 5082203,
    "days_to_cover": 3.15,
    "chg_pct": 14.27
-  },
-  "PSKY": {
-   "short": 85017055,
-   "days_to_cover": 7.69,
-   "chg_pct": 11.25
   },
   "ROL": {
    "short": 18225533,

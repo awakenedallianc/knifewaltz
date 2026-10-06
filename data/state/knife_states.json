@@ -866,5 +866,10 @@
   "state": "NORMAL",
   "since": "2026-10-02",
   "events": []
+ },
+ "INSM": {
+  "state": "NORMAL",
+  "since": "2026-10-06",
+  "events": []
  }
 }
