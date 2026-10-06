@@ -1,6 +1,37 @@
 {
- "date": "2026-10-06",
+ "date": "2026-10-07",
  "source": "yahoo-screener",
- "promoted": [],
+ "promoted": [
+  {
+   "symbol": "TWST",
+   "key": "TWST",
+   "name": "Twist Bioscience Corporation",
+   "cls": "equity",
+   "pct_day": -15.4,
+   "mcap": 2955935232,
+   "dd52w": -15.37,
+   "ret10": 5.4,
+   "vol_ratio": 2.08,
+   "days_from_peak": 1,
+   "px": 173.4936981201172,
+   "asof": "2026-10-06",
+   "bars": 252
+  },
+  {
+   "symbol": "TXG",
+   "key": "TXG",
+   "name": "10x Genomics, Inc.",
+   "cls": "equity",
+   "pct_day": -15.22,
+   "mcap": 2955935232,
+   "dd52w": -15.22,
+   "ret10": 2.68,
+   "vol_ratio": 1.85,
+   "days_from_peak": 1,
+   "px": 82.86070251464844,
+   "asof": "2026-10-06",
+   "bars": 252
+  }
+ ],
  "degraded_reason": null
 }

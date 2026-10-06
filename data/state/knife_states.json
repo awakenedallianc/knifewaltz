@@ -185,9 +185,16 @@
   "expires": "2026-10-15"
  },
  "APP": {
-  "state": "NORMAL",
-  "since": "2026-09-21",
-  "events": []
+  "state": "KNIFE_FALLING",
+  "since": "2026-10-07",
+  "events": [
+   {
+    "d": "2026-10-07",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -62.16% / 10日 -15.54%"
+   }
+  ]
  },
  "CHTR": {
   "state": "STABILIZING",
