@@ -584,5 +584,17 @@
   "tier_time": "B",
   "status": "open",
   "snapshot_ref": "S-CATCH:CTVA:2026-10-07"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "APP",
+  "date": "2026-10-08",
+  "entry": 276.7699890136719,
+  "stop": 269.41,
+  "score": 57,
+  "tier_time": "B",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:APP:2026-10-08"
  }
 ]

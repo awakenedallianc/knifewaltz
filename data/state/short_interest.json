@@ -2,17 +2,12 @@
  "settlement": "2026-09-15",
  "staleness_note": "双月·滞后约9工作日",
  "source": "finra",
- "fetched_at": "2026-10-07T09:41:16+07:00",
+ "fetched_at": "2026-10-08T01:00:21+07:00",
  "rows": {
   "ALB": {
    "short": 11113554,
    "days_to_cover": 4.2,
    "chg_pct": 15.37
-  },
-  "ALMR": {
-   "short": 2122340,
-   "days_to_cover": 7.95,
-   "chg_pct": 0.05
   },
   "ALNY": {
    "short": 7194097,
@@ -23,6 +18,11 @@
    "short": 10944088,
    "days_to_cover": 2.52,
    "chg_pct": 3.68
+  },
+  "APTV": {
+   "short": 7383432,
+   "days_to_cover": 2.09,
+   "chg_pct": -30.95
   },
   "ASML": {
    "short": 1477623,
@@ -38,6 +38,11 @@
    "short": 46504769,
    "days_to_cover": 2.35,
    "chg_pct": -3.46
+  },
+  "BULL": {
+   "short": 36168205,
+   "days_to_cover": 2.71,
+   "chg_pct": 12.36
   },
   "CHTR": {
    "short": 15404722,
@@ -128,16 +133,6 @@
    "short": 27789695,
    "days_to_cover": 2.84,
    "chg_pct": -6.86
-  },
-  "TWST": {
-   "short": 12505220,
-   "days_to_cover": 8.92,
-   "chg_pct": 3.65
-  },
-  "TXG": {
-   "short": 16692300,
-   "days_to_cover": 7.09,
-   "chg_pct": 3.28
   },
   "ZTS": {
    "short": 17390071,

@@ -1164,7 +1164,8 @@
   "engine_sha": "69e75ef468979668",
   "features_sha": "e164ac150b662d7a",
   "realized": {
-   "ledger_ref": "CSGP@2026-09-30"
+   "ledger_ref": "CSGP@2026-09-30",
+   "fwd5_pct": 0.97
   },
   "settled": false,
   "stier": {
@@ -1577,5 +1578,112 @@
   "features_sha": "bcbc7d08cc26ac33",
   "realized": {},
   "settled": false
+ },
+ {
+  "id": "S-CATCH:APP:2026-10-08",
+  "kind": "S-CATCH",
+  "symbol": "APP",
+  "date": "2026-10-08",
+  "trigger_px": 276.7699890136719,
+  "stop_price": 269.41,
+  "features": {
+   "dd52w": -62.27,
+   "dd250": -62.27,
+   "ret10": -12.21,
+   "rsi14": 30.8,
+   "vol_ratio": 0.36,
+   "close_pos": 0.83,
+   "falling": false,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": true,
+    "vol_compress": true,
+    "gate_ok": true,
+    "rsi_divergence": false
+   },
+   "checklist_n": 3,
+   "tier_time": "B",
+   "days_from_peak": 198,
+   "stop_price": 269.41,
+   "last_date": "2026-10-07",
+   "cls": "equity_single",
+   "tier": "T2",
+   "state": "CATCH",
+   "score_parts": {
+    "fall_40": 24.9,
+    "capitulation_20": 0.0,
+    "checklist_20": 12.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 57,
+  "market": {
+   "blade_index": 4,
+   "gate_state": "GREEN",
+   "vix": 15.149999618530273,
+   "vix_ratio": 0.8540022443064191
+  },
+  "jev": {
+   "family": "B_fundamental_repricing",
+   "p_terminal": 0.04,
+   "conf": 0.91,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.71,
+   "catch_prior": 0.31,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "22895c39205d1604",
+  "realized": {
+   "ledger_ref": "APP@2026-10-08"
+  },
+  "settled": false,
+  "stier": {
+   "rules_version": "s1",
+   "admitted": false,
+   "status": null,
+   "soft_score": 0.4805,
+   "hard_pass": {
+    "H1": true,
+    "H2": false,
+    "H3": true,
+    "H4": true,
+    "H5": true,
+    "H6": true,
+    "H7": true,
+    "H8": false
+   },
+   "shadow": {
+    "H9": {
+     "would_block": true,
+     "lr": 1.0,
+     "grade": "线索"
+    },
+    "H10": {
+     "would_block": false,
+     "flip_back_age_days": null
+    },
+    "H11": {
+     "would_block": false,
+     "close_pos": 0.83
+    }
+   },
+   "slice": {
+    "key": "B_fundamental_repricing|GREEN|B|none|equity_single",
+    "lr": 1.0,
+    "n": 0,
+    "wins": 0,
+    "wilson95": null,
+    "grade": "线索"
+   }
+  }
  }
 ]

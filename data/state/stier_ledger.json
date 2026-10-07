@@ -62,6 +62,16 @@
    "granted": 0,
    "candidate": 0,
    "jev_unavailable": false
+  },
+  "2026-10-08": {
+   "windows": 1,
+   "blocked": {
+    "H2": 1
+   },
+   "qualified": 0,
+   "granted": 0,
+   "candidate": 0,
+   "jev_unavailable": false
   }
  },
  "history": [
