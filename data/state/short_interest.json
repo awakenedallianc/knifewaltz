@@ -2,12 +2,17 @@
  "settlement": "2026-09-15",
  "staleness_note": "双月·滞后约9工作日",
  "source": "finra",
- "fetched_at": "2026-10-07T00:26:35+07:00",
+ "fetched_at": "2026-10-07T09:41:16+07:00",
  "rows": {
   "ALB": {
    "short": 11113554,
    "days_to_cover": 4.2,
    "chg_pct": 15.37
+  },
+  "ALMR": {
+   "short": 2122340,
+   "days_to_cover": 7.95,
+   "chg_pct": 0.05
   },
   "ALNY": {
    "short": 7194097,

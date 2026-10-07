@@ -15,7 +15,7 @@
  },
  "FISV": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-07",
   "clear_streak": 0,
   "top_headline": "FISV Stock Rises Premarket After Posting Best Day In Nearly A Month: Burry Says Fiserv Is Cheap Enough to Hold Despite Buying It 'Poorly'"
@@ -50,7 +50,7 @@
  },
  "APP": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.05,
   "date": "2026-10-07",
   "clear_streak": 0,
   "top_headline": "AppLovin (APP) Is Down 8.5% After AI Tool Delays Spark Securities Fraud Lawsuit What’s Changed"
@@ -92,7 +92,7 @@
  },
  "FICO": {
   "veto": false,
-  "p": 0.04,
+  "p": 0.01,
   "date": "2026-10-07",
   "clear_streak": 0,
   "top_headline": "Pennymac Takes VantageScore Across Retail, Broker, And Correspondent - National Mortgage Professional"
@@ -120,7 +120,7 @@
  },
  "ALNY": {
   "veto": false,
-  "p": 0.17,
+  "p": 0.23,
   "date": "2026-10-07",
   "clear_streak": 0,
   "top_headline": "PCRX Expands Exparel Commercial Reach in Europe Through Molteni Deal"
@@ -134,7 +134,7 @@
  },
  "SI_F": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.02,
   "date": "2026-10-07",
   "clear_streak": 0,
   "top_headline": "Silver Price Forecast – Silver Continues to Follow Rates on Tuesday - FXEmpire"
@@ -183,7 +183,7 @@
  },
  "QFIN": {
   "veto": false,
-  "p": 0.4,
+  "p": 0.41,
   "date": "2026-10-07",
   "clear_streak": 0,
   "top_headline": "QFIN Investors Have Opportunity to Lead Qfin Holdings, Inc. Securities Fraud Lawsuit with SBS Law - The Daily Tribune News"
@@ -225,7 +225,7 @@
  },
  "TIGR": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-07",
   "clear_streak": 0,
   "top_headline": "Zacks upgrades UP Fintech Holding stock to Hold - AD HOC NEWS"
@@ -260,7 +260,7 @@
  },
  "WB": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-07",
   "clear_streak": 0,
   "top_headline": "WB Clears Rs 50,000 Aid For Women - BW Education"
@@ -274,7 +274,7 @@
  },
  "KC": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-07",
   "clear_streak": 0,
   "top_headline": "KC Theatre to present ‘The Legend of Sleepy Hollow’ Oct. 8-11 - The Gilmer Mirror"
@@ -295,14 +295,14 @@
  },
  "FUTU": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-07",
   "clear_streak": 0,
   "top_headline": "How Nvidia Stock Gets to $6 Trillion -- Barrons.com - 富途牛牛"
  },
  "BZ": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-07",
   "clear_streak": 0,
   "top_headline": "Oil Price Forecast — WTI CL=F Breaks $88.06 as Saudi Deepens Discount to $5, Brent Loses $100 — $84.35 Target - TradingNEWS"
@@ -414,7 +414,7 @@
  },
  "INSM": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-07",
   "clear_streak": 0,
   "top_headline": "BMO Capital reiterates Insmed stock rating on CFO transition - Investing.com"

@@ -572,5 +572,17 @@
   "tier_time": "B",
   "status": "open",
   "snapshot_ref": "S-CATCH:CSGP:2026-09-30"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "CTVA",
+  "date": "2026-10-07",
+  "entry": 13.90999984741211,
+  "stop": 12.85,
+  "score": 72,
+  "tier_time": "B",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:CTVA:2026-10-07"
  }
 ]

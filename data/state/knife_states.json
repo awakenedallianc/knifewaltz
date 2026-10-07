@@ -185,7 +185,7 @@
   "expires": "2026-10-15"
  },
  "APP": {
-  "state": "KNIFE_FALLING",
+  "state": "STABILIZING",
   "since": "2026-10-07",
   "events": [
    {
@@ -193,6 +193,12 @@
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -62.16% / 10日 -15.54%"
+   },
+   {
+    "d": "2026-10-07",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 2/5"
    }
   ]
  },
@@ -852,8 +858,8 @@
   "events": []
  },
  "CTVA": {
-  "state": "STABILIZING",
-  "since": "2026-10-02",
+  "state": "CATCH",
+  "since": "2026-10-07",
   "events": [
    {
     "d": "2026-10-02",
@@ -866,8 +872,17 @@
     "from": "KNIFE_FALLING",
     "to": "STABILIZING",
     "note": "checklist 1/5"
+   },
+   {
+    "d": "2026-10-07",
+    "from": "STABILIZING",
+    "to": "CATCH",
+    "note": "checklist 3/5"
    }
-  ]
+  ],
+  "catch_ref_price": 13.90999984741211,
+  "catch_day_low": 12.85,
+  "expires": "2026-10-23"
  },
  "PSKY": {
   "state": "NORMAL",
