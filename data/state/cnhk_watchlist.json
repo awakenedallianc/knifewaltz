@@ -12,8 +12,8 @@
    "key": "BILI",
    "name": "哔哩哔哩",
    "pool": "CN_ADR",
-   "dd250": -58.4,
-   "px": 14.944999694824219,
+   "dd250": -58.5,
+   "px": 14.920000076293945,
    "asof": "2026-10-07"
   },
   {
@@ -21,27 +21,18 @@
    "key": "2015_HK",
    "name": "Li Auto Inc",
    "pool": "CN_HK",
-   "dd250": -57.8,
-   "px": 43.0,
-   "asof": "2026-10-07"
+   "dd250": -57.9,
+   "px": 42.97999954223633,
+   "asof": "2026-10-08"
   },
   {
    "symbol": "1810.HK",
    "key": "1810_HK",
    "name": "Xiaomi Corp",
    "pool": "CN_HK",
-   "dd250": -57.4,
-   "px": 23.760000228881836,
-   "asof": "2026-10-07"
-  },
-  {
-   "symbol": "0960.HK",
-   "key": "0960_HK",
-   "name": "Longfor Group Holdings Ltd",
-   "pool": "CN_HK",
-   "dd250": -56.2,
-   "px": 5.204999923706055,
-   "asof": "2026-10-07"
+   "dd250": -57.0,
+   "px": 23.979999542236328,
+   "asof": "2026-10-08"
   },
   {
    "symbol": "LI",
@@ -49,16 +40,7 @@
    "name": "理想汽车",
    "pool": "CN_ADR",
    "dd250": -53.5,
-   "px": 10.975000381469727,
-   "asof": "2026-10-07"
-  },
-  {
-   "symbol": "0968.HK",
-   "key": "0968_HK",
-   "name": "Xinyi Solar Holdings Ltd",
-   "pool": "CN_HK",
-   "dd250": -53.0,
-   "px": 1.8799999952316284,
+   "px": 10.989999771118164,
    "asof": "2026-10-07"
   },
   {
@@ -66,18 +48,27 @@
    "key": "NIO",
    "name": "蔚来",
    "pool": "CN_ADR",
-   "dd250": -52.9,
-   "px": 3.515000104904175,
+   "dd250": -52.5,
+   "px": 3.5399999618530273,
    "asof": "2026-10-07"
   },
   {
-   "symbol": "2313.HK",
-   "key": "2313_HK",
-   "name": "Shenzhou International Group Holdings Ltd",
+   "symbol": "0960.HK",
+   "key": "0960_HK",
+   "name": "Longfor Group Holdings Ltd",
    "pool": "CN_HK",
-   "dd250": -52.8,
-   "px": 34.040000915527344,
-   "asof": "2026-10-07"
+   "dd250": -52.4,
+   "px": 5.355000019073486,
+   "asof": "2026-10-08"
+  },
+  {
+   "symbol": "0968.HK",
+   "key": "0968_HK",
+   "name": "Xinyi Solar Holdings Ltd",
+   "pool": "CN_HK",
+   "dd250": -52.0,
+   "px": 1.9199999570846558,
+   "asof": "2026-10-08"
   },
   {
    "symbol": "TCOM",
@@ -85,17 +76,26 @@
    "name": "携程集团",
    "pool": "CN_ADR",
    "dd250": -51.8,
-   "px": 38.084999084472656,
+   "px": 38.09000015258789,
    "asof": "2026-10-07"
+  },
+  {
+   "symbol": "2313.HK",
+   "key": "2313_HK",
+   "name": "Shenzhou International Group Holdings Ltd",
+   "pool": "CN_HK",
+   "dd250": -51.5,
+   "px": 35.0,
+   "asof": "2026-10-08"
   },
   {
    "symbol": "9961.HK",
    "key": "9961_HK",
    "name": "Trip.com Group Ltd",
    "pool": "CN_HK",
-   "dd250": -50.7,
-   "px": 300.20001220703125,
-   "asof": "2026-10-07"
+   "dd250": -50.6,
+   "px": 300.79998779296875,
+   "asof": "2026-10-08"
   }
  ]
 }

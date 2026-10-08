@@ -71,7 +71,7 @@
  },
  "LULU": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-08",
   "clear_streak": 0,
   "top_headline": "lululemon athletica inc. (LULU) is Attracting Investor Attention: Here is What You Should Know"
@@ -127,14 +127,14 @@
  },
  "SLV": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-08",
   "clear_streak": 0,
   "top_headline": "SLV Oct 2026 56.000 call (SLV261007C00056000) Stock Price, News, Quote & History - Yahoo! Finance Canada"
  },
  "SI_F": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-08",
   "clear_streak": 0,
   "top_headline": "ICE brings futures trading to London’s $190 billion-a-day physical gold market - Kitco"
@@ -163,9 +163,9 @@
  "URA": {
   "veto": false,
   "p": 0.0,
-  "date": "2026-09-29",
+  "date": "2026-10-08",
   "clear_streak": 0,
-  "top_headline": "Russian Cyberattacks Disrupt rdo.in.ua; URA Job Openings Now Listed on LinkedIn - inkorr.com"
+  "top_headline": "Konatar: Pensioners are not looking for occasional gifts, but for the certainty that they can live with dignity - vijesti.me"
  },
  "LX": {
   "veto": false,
@@ -183,7 +183,7 @@
  },
  "QFIN": {
   "veto": false,
-  "p": 0.61,
+  "p": 0.54,
   "date": "2026-10-08",
   "clear_streak": 0,
   "top_headline": "Qfin Holdings, Inc. (QFIN) Shareholders Who Lost Money Have Opportunity to Lead Securities Fraud Lawsuit - PR Newswire"
@@ -260,7 +260,7 @@
  },
  "WB": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.0,
   "date": "2026-10-08",
   "clear_streak": 0,
   "top_headline": "Paramount takes over WB - LAist"
@@ -337,7 +337,7 @@
  },
  "FINV": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-08",
   "clear_streak": 0,
   "top_headline": "Chinese fintech stocks drop during morning trading on Wednesday (FUTU:NASDAQ) - Seeking Alpha"

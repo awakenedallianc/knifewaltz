@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-08T01:01:27+07:00",
+ "generated_at": "2026-10-08T09:54:39+07:00",
  "date": "2026-10-08",
  "min_n": 30,
  "outcome_defs": {
@@ -22,7 +22,7 @@
    "question_id": "J1",
    "outcome_def": "1 若 180 日内触发 X-EVENT 类事件或较 veto 日再跌 90%",
    "n_total": 0,
-   "n_pending": 1733,
+   "n_pending": 1781,
    "n_unresolvable": 0,
    "conclusive": false,
    "base_rate": null,
@@ -34,59 +34,59 @@
   "J2": {
    "question_id": "J2",
    "outcome_def": "1 若 |5 日前向收益| >= 2×ATR14%",
-   "n_total": 1059,
-   "n_pending": 674,
+   "n_total": 1069,
+   "n_pending": 712,
    "n_unresolvable": 0,
    "conclusive": true,
-   "base_rate": 0.229,
-   "brier": 0.2019,
-   "brier_baseline_climatology": 0.1763,
+   "base_rate": 0.228,
+   "brier": 0.2018,
+   "brier_baseline_climatology": 0.1762,
    "reliability": [
     {
      "lo": 0.0,
      "hi": 0.2,
-     "n": 463,
-     "p_mean": 0.101,
-     "hit_rate": 0.233,
+     "n": 469,
+     "p_mean": 0.1,
+     "hit_rate": 0.23,
      "wilson95": [
-      0.197,
-      0.274
+      0.194,
+      0.27
      ],
      "small_sample": false
     },
     {
      "lo": 0.2,
      "hi": 0.4,
-     "n": 350,
+     "n": 352,
      "p_mean": 0.294,
-     "hit_rate": 0.214,
+     "hit_rate": 0.219,
      "wilson95": [
-      0.175,
-      0.26
+      0.179,
+      0.265
      ],
      "small_sample": false
     },
     {
      "lo": 0.4,
      "hi": 0.6,
-     "n": 194,
+     "n": 195,
      "p_mean": 0.481,
-     "hit_rate": 0.17,
+     "hit_rate": 0.169,
      "wilson95": [
-      0.124,
-      0.229
+      0.123,
+      0.228
      ],
      "small_sample": false
     },
     {
      "lo": 0.6,
      "hi": 0.8,
-     "n": 41,
-     "p_mean": 0.659,
-     "hit_rate": 0.561,
+     "n": 42,
+     "p_mean": 0.658,
+     "hit_rate": 0.548,
      "wilson95": [
-      0.41,
-      0.701
+      0.399,
+      0.688
      ],
      "small_sample": false
     },
@@ -175,7 +175,7 @@
    "question_id": "J4",
    "outcome_def": "该笔 CATCH 按 A 档退出规则的胜负（从 ledger 读）",
    "n_total": 0,
-   "n_pending": 70,
+   "n_pending": 75,
    "n_unresolvable": 0,
    "conclusive": false,
    "base_rate": null,
@@ -188,7 +188,7 @@
    "question_id": "J5",
    "outcome_def": "1 若 3 日内 |累计收益| >= 10%（movers_history 快照价口径）",
    "n_total": 470,
-   "n_pending": 20,
+   "n_pending": 31,
    "n_unresolvable": 185,
    "conclusive": true,
    "base_rate": 0.036,
@@ -265,9 +265,9 @@
    "question_id": "J6",
    "outcome_def": "episode 完成日 = 判断日后价格自『判断日后最低点』反弹 >=20% 或满 252 交易日（先到者）。完成日用库内 kline 机械计算本轮实际签名 {realized_dd = 触发时 52 周峰到 episode 最低点跌幅%, realized_days = 峰到最低点交易日数}；将刀谱 18 例按签名距离 d = |dd_case - realized_dd|/25 + |ln(days_case) - ln(realized_days)|/1.2 升序排名（尺度常数 25 与 1.2 为刀谱 18 例自身 dd 标准差与 ln(days) 标准差，一次计算后冻结入 outcome_def）；hit=1 若所选案例排名 <=6（前三分之一）。choice=none_of_book、标的退市或 kline 断档 → unresolvable（计数公示，不进分母）。随机基线 = 6/18 = 1/3，与实测命中率并列公示",
    "n_total": 4,
-   "n_pending": 142,
+   "n_pending": 149,
    "n_unresolvable": {
-    "none_of_book": 18,
+    "none_of_book": 19,
     "broken": 0
    },
    "conclusive": false,
@@ -284,7 +284,7 @@
    "question_id": "J7",
    "outcome_def": "仅结算『该标的在判断后 63 交易日内实际进入 CATCH 且触发 X-STOP』的记录。settle.py 按预注册谓词对该次失败机械归因弱环集合 W：gate ∈ W 若入场日 gate_state ∉ {GREEN, FLIP_BACK} 或持仓期内闸门转 RED；volume ∈ W 若入场日 capitulation=false 或无量能数据；stabilization ∈ W 若入场日 checklist_n <= 3；time_tier ∈ W 若入场日 tier_time ∈ {DEAD_ZONE, -}；semantic ∈ W 若持仓期内任一跑批该标的 p_terminal >= 0.35 或其 J1 记录结算为 1。hit = 1 若预测环 ∈ W；W 为空 → unresolvable。预测 none_weak 的记录改按『链条守住』结算：hit = 1 若该标的接刀后 63 交易日内未触发 X-STOP（未接刀 → unresolvable）。其余未接刀或接刀后未触发 X-STOP 的记录 → unresolvable（计数公示）。随机基线 = 逐样本 mean(|W|/5)，与命中率并列公示（W 是集合命中，必须公示基线防虚高）",
    "n_total": 0,
-   "n_pending": 178,
+   "n_pending": 187,
    "n_unresolvable": 0,
    "conclusive": false,
    "hit_rate": null,
@@ -347,8 +347,8 @@
   "J8": {
    "question_id": "J8",
    "outcome_def": "hit = 1 若判断日后 5 交易日已实现波动 sigma5（未来 5 根日 log 收益标准差）>= 1.25 × sigma20（判断日前 20 根日 log 收益标准差，判断时随 aux 落盘冻结）；前向不足 5 根 → pending，退市/断档 → unresolvable。与 J2 口径刻意不同：J2 结算方向性净移动（|5日收益|>=2×ATR14%），J8 结算波动放大（sigma 比值）——一概率一口径（RL-6）。另设组对比公示：p>=0.6 分歧组 vs p<0.4 无分歧组的 median(sigma5/sigma20)，0.4<=p<0.6 中间带不入组对比但正常进 Brier；任一组 n<30 该组只显示『收集中 x/30』（RL-4）",
-   "n_total": 905,
-   "n_pending": 659,
+   "n_total": 915,
+   "n_pending": 696,
    "n_unresolvable": 0,
    "conclusive": true,
    "hit_rate": 1.0,
@@ -356,13 +356,13 @@
     0.996,
     1.0
    ],
-   "brier": 0.7247,
+   "brier": 0.7246,
    "brier_baseline_climatology": 0.0,
    "reliability": [
     {
      "lo": 0.0,
      "hi": 0.2,
-     "n": 720,
+     "n": 728,
      "p_mean": 0.119,
      "hit_rate": 1.0,
      "wilson95": [
@@ -386,12 +386,12 @@
     {
      "lo": 0.4,
      "hi": 0.6,
-     "n": 15,
+     "n": 17,
      "p_mean": null,
      "hit_rate": null,
      "wilson95": null,
      "small_sample": true,
-     "note": "收集中 15/30"
+     "note": "收集中 17/30"
     },
     {
      "lo": 0.6,
@@ -422,8 +422,8 @@
      "note": "收集中 9/30"
     },
     "non_divergent": {
-     "n": 881,
-     "median_ratio": 1130.522
+     "n": 889,
+     "median_ratio": 1140.46
     },
     "note": "0.4<=p<0.6 中间带不入组对比但正常进 Brier（预注册口径）"
    }

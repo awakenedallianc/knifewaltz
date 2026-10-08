@@ -8,14 +8,14 @@
    "name": "Webull Corporation",
    "cls": "equity",
    "pct_day": -19.09,
-   "mcap": 4199124480,
-   "dd52w": -54.06,
-   "ret10": -23.14,
-   "vol_ratio": 5.34,
-   "days_from_peak": 251,
-   "px": 5.880000114440918,
+   "mcap": 2187782912,
+   "dd52w": -53.48,
+   "ret10": -23.01,
+   "vol_ratio": 6.64,
+   "days_from_peak": 250,
+   "px": 5.889999866485596,
    "asof": "2026-10-07",
-   "bars": 252
+   "bars": 251
   }
  ],
  "degraded_reason": null

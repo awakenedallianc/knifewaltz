@@ -1913,6 +1913,43 @@
     "src": "AD HOC NEWS",
     "age_h": 43.2
    }
+  ],
+  "GDXJ": [
+   {
+    "t": "GDXJ Oct 2026 111.000 call (GDXJ261030C00111000) stock price, news, quote and history - Yahoo Finance UK",
+    "src": "Yahoo Finance UK",
+    "age_h": 11.9
+   },
+   {
+    "t": "GDXJ Oct 2026 127.000 call (GDXJ261009C00127000) stock price, news, quote and history - Yahoo Finance UK",
+    "src": "Yahoo Finance UK",
+    "age_h": 14.8
+   },
+   {
+    "t": "GDXJ261009P00131000 Interactive Stock Chart | GDXJ Oct 2026 131.000 put Stock - Yahoo Finance",
+    "src": "Yahoo Finance",
+    "age_h": 19.4
+   },
+   {
+    "t": "GDXJ261009C00129000 interactive stock chart | GDXJ Oct 2026 129.000 call stock - Yahoo Finance Australia",
+    "src": "Yahoo Finance Australia",
+    "age_h": 29.9
+   },
+   {
+    "t": "GDXJ Jan 2028 220.000 call (GDXJ280121C00220000) Interactive Stock Chart - Yahoo! Finance Canada",
+    "src": "Yahoo! Finance Canada",
+    "age_h": 30.2
+   },
+   {
+    "t": "GDXJ Oct 2026 135.000 call (GDXJ261023C00135000) Interactive Stock Chart - Yahoo! Finance Canada",
+    "src": "Yahoo! Finance Canada",
+    "age_h": 39.3
+   },
+   {
+    "t": "GDXJ Oct 2026 100.000 put (GDXJ261030P00100000) stock price, news, quote and history - Yahoo Finance Australia",
+    "src": "Yahoo Finance Australia",
+    "age_h": 47.1
+   }
   ]
  },
  "feeds": {
