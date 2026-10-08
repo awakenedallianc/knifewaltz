@@ -1685,5 +1685,71 @@
     "grade": "线索"
    }
   }
+ },
+ {
+  "id": "S-FALL:INSM:2026-10-09",
+  "kind": "S-FALL",
+  "symbol": "INSM",
+  "date": "2026-10-09",
+  "trigger_px": 99.2750015258789,
+  "stop_price": 96.68,
+  "features": {
+   "dd52w": -53.04,
+   "dd250": -53.04,
+   "ret10": -18.33,
+   "rsi14": 22.0,
+   "vol_ratio": 0.81,
+   "close_pos": 0.59,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": false,
+    "gate_ok": true,
+    "rsi_divergence": false
+   },
+   "checklist_n": 1,
+   "tier_time": "DEAD_ZONE",
+   "days_from_peak": 214,
+   "stop_price": 96.68,
+   "last_date": "2026-10-08",
+   "cls": "equity_single",
+   "tier": "T2",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 24.4,
+    "capitulation_20": 0.0,
+    "checklist_20": 4.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 48,
+  "market": {
+   "blade_index": 0,
+   "gate_state": "GREEN",
+   "vix": 15.859999656677246,
+   "vix_ratio": 0.8652482118216283
+  },
+  "jev": {
+   "family": "B_fundamental_repricing",
+   "p_terminal": 0.0,
+   "conf": 0.45,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.417,
+   "catch_prior": null,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "55c9f0b97cc178b8",
+  "realized": {},
+  "settled": false
  }
 ]

@@ -1,21 +1,21 @@
 {
- "date": "2026-10-08",
+ "date": "2026-10-09",
  "source": "yahoo-screener",
  "promoted": [
   {
-   "symbol": "BULL",
-   "key": "BULL",
-   "name": "Webull Corporation",
+   "symbol": "EQPT",
+   "key": "EQPT",
+   "name": "EquipmentShare.com Inc",
    "cls": "equity",
-   "pct_day": -19.09,
-   "mcap": 2187782912,
-   "dd52w": -53.48,
-   "ret10": -23.01,
-   "vol_ratio": 6.64,
-   "days_from_peak": 250,
-   "px": 5.889999866485596,
-   "asof": "2026-10-07",
-   "bars": 251
+   "pct_day": -16.66,
+   "mcap": 5738832896,
+   "dd52w": -57.45,
+   "ret10": -9.71,
+   "vol_ratio": 1.67,
+   "days_from_peak": 175,
+   "px": 14.734999656677246,
+   "asof": "2026-10-08",
+   "bars": 179
   }
  ],
  "degraded_reason": null

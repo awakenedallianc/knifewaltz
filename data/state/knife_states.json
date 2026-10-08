@@ -899,8 +899,15 @@
   "events": []
  },
  "INSM": {
-  "state": "NORMAL",
-  "since": "2026-10-06",
-  "events": []
+  "state": "KNIFE_FALLING",
+  "since": "2026-10-09",
+  "events": [
+   {
+    "d": "2026-10-09",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -53.04% / 10日 -18.33%"
+   }
+  ]
  }
 }
