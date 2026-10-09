@@ -1,22 +1,6 @@
 {
  "date": "2026-10-09",
  "source": "yahoo-screener",
- "promoted": [
-  {
-   "symbol": "EQPT",
-   "key": "EQPT",
-   "name": "EquipmentShare.com Inc",
-   "cls": "equity",
-   "pct_day": -16.66,
-   "mcap": 5738832896,
-   "dd52w": -57.45,
-   "ret10": -9.71,
-   "vol_ratio": 1.67,
-   "days_from_peak": 175,
-   "px": 14.734999656677246,
-   "asof": "2026-10-08",
-   "bars": 179
-  }
- ],
+ "promoted": [],
  "degraded_reason": null
 }

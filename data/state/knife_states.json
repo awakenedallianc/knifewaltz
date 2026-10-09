@@ -707,8 +707,8 @@
   ]
  },
  "VNET": {
-  "state": "STABILIZING",
-  "since": "2026-10-03",
+  "state": "CATCH",
+  "since": "2026-10-09",
   "events": [
    {
     "d": "2026-10-02",
@@ -721,8 +721,17 @@
     "from": "KNIFE_FALLING",
     "to": "STABILIZING",
     "note": "checklist 1/5"
+   },
+   {
+    "d": "2026-10-09",
+    "from": "STABILIZING",
+    "to": "CATCH",
+    "note": "checklist 3/5"
    }
-  ]
+  ],
+  "catch_ref_price": 5.170000076293945,
+  "catch_day_low": 5.07,
+  "expires": "2026-10-25"
  },
  "WB": {
   "state": "NORMAL",
@@ -899,7 +908,7 @@
   "events": []
  },
  "INSM": {
-  "state": "KNIFE_FALLING",
+  "state": "STABILIZING",
   "since": "2026-10-09",
   "events": [
    {
@@ -907,6 +916,12 @@
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -53.04% / 10日 -18.33%"
+   },
+   {
+    "d": "2026-10-09",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 2/5"
    }
   ]
  }

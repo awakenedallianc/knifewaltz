@@ -92,7 +92,7 @@
  },
  "FICO": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-09",
   "clear_streak": 0,
   "top_headline": "FICO Stock Layoffs: What to Know About the Latest FICO Job Cuts"
@@ -120,14 +120,14 @@
  },
  "ALNY": {
   "veto": false,
-  "p": 0.1,
+  "p": 0.13,
   "date": "2026-10-09",
   "clear_streak": 0,
   "top_headline": "ALNY Maintained by RBC Capital -- Price Target Lowered to $345 - GuruFocus"
  },
  "SLV": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.01,
   "date": "2026-10-09",
   "clear_streak": 0,
   "top_headline": "SLVI Silver Income ETF: Where Does the Monthly Income Come From? - EBC Financial Group"
@@ -169,7 +169,7 @@
  },
  "LX": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-09",
   "clear_streak": 0,
   "top_headline": "Linebacker Signs with Texans after Steelers Tryout - Steelers Now"
@@ -183,14 +183,14 @@
  },
  "QFIN": {
   "veto": false,
-  "p": 0.3,
+  "p": 0.28,
   "date": "2026-10-09",
   "clear_streak": 0,
   "top_headline": "QFIN DEADLINE: SueWallSt Reminds Qfin Holdings, Inc. Investors of Upcoming Securities Class Action Deadline - Morningstar"
  },
  "TME": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-09",
   "clear_streak": 0,
   "top_headline": "Tencent Music stock gains 0.76 percent after a weak year - AD HOC NEWS"
@@ -204,7 +204,7 @@
  },
  "XPEV": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-09",
   "clear_streak": 0,
   "top_headline": "XPeng (XPEV) Unveils G9L And Delivery Gains, Is The Stock Cheap? - Simply Wall Street"
@@ -225,7 +225,7 @@
  },
  "TIGR": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-09",
   "clear_streak": 0,
   "top_headline": "Webull Just Exposed a Bigger China Risk for Futu and UP Fintech - Benzinga"
@@ -260,7 +260,7 @@
  },
  "WB": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.02,
   "date": "2026-10-09",
   "clear_streak": 0,
   "top_headline": "WB Sees Nigeria Growth Averaging 4.4% Through 2028 - DNE Africa"
@@ -303,9 +303,9 @@
  "BZ": {
   "veto": false,
   "p": 0.0,
-  "date": "2026-10-08",
+  "date": "2026-10-09",
   "clear_streak": 0,
-  "top_headline": "From Beyoncé To Blur To B’z, Japan’s Summer Sonic Celebrates 25 Years - Pollstar News"
+  "top_headline": "2026 Tesla Model Y vs 2026 Toyota bZ Woodland - Driving"
  },
  "BABA": {
   "veto": false,

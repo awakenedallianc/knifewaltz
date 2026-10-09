@@ -596,5 +596,17 @@
   "tier_time": "B",
   "status": "open",
   "snapshot_ref": "S-CATCH:APP:2026-10-08"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "VNET",
+  "date": "2026-10-09",
+  "entry": 5.170000076293945,
+  "stop": 5.07,
+  "score": 66,
+  "tier_time": "B",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:VNET:2026-10-09"
  }
 ]
