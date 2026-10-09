@@ -689,8 +689,8 @@
   "events": []
  },
  "GDS": {
-  "state": "STABILIZING",
-  "since": "2026-10-03",
+  "state": "CATCH",
+  "since": "2026-10-10",
   "events": [
    {
     "d": "2026-10-02",
@@ -703,8 +703,17 @@
     "from": "KNIFE_FALLING",
     "to": "STABILIZING",
     "note": "checklist 1/5"
+   },
+   {
+    "d": "2026-10-10",
+    "from": "STABILIZING",
+    "to": "CATCH",
+    "note": "checklist 3/5"
    }
-  ]
+  ],
+  "catch_ref_price": 30.770000457763672,
+  "catch_day_low": 30.7,
+  "expires": "2026-10-26"
  },
  "VNET": {
   "state": "CATCH",

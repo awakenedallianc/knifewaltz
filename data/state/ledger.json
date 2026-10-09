@@ -608,5 +608,17 @@
   "tier_time": "B",
   "status": "open",
   "snapshot_ref": "S-CATCH:VNET:2026-10-09"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "GDS",
+  "date": "2026-10-10",
+  "entry": 30.770000457763672,
+  "stop": 30.7,
+  "score": 40,
+  "tier_time": "-",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:GDS:2026-10-10"
  }
 ]

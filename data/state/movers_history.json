@@ -2242,7 +2242,108 @@
     "funding": -0.0020464431785305,
     "source": "okx"
    }
+  ],
+  "2026-10-10": [
+   {
+    "date": "2026-10-10",
+    "sym": "STRKUSDT",
+    "last": 0.07539,
+    "pct24": 28.96,
+    "quote_vol": 42170604.0,
+    "funding": null,
+    "source": "okx"
+   },
+   {
+    "date": "2026-10-10",
+    "sym": "ONDOUSDT",
+    "last": 0.4796,
+    "pct24": 7.534,
+    "quote_vol": 21479300.0,
+    "funding": null,
+    "source": "okx"
+   },
+   {
+    "date": "2026-10-10",
+    "sym": "ZECUSDT",
+    "last": 1217.57,
+    "pct24": 6.799,
+    "quote_vol": 42823668.0,
+    "funding": null,
+    "source": "okx"
+   },
+   {
+    "date": "2026-10-10",
+    "sym": "XRPUSDT",
+    "last": 1.388,
+    "pct24": 4.361,
+    "quote_vol": 42015604.0,
+    "funding": null,
+    "source": "okx"
+   },
+   {
+    "date": "2026-10-10",
+    "sym": "NEARUSDT",
+    "last": 4.703,
+    "pct24": 4.256,
+    "quote_vol": 33992424.0,
+    "funding": null,
+    "source": "okx"
+   },
+   {
+    "date": "2026-10-10",
+    "sym": "DOGEUSDT",
+    "last": 0.08481,
+    "pct24": 3.642,
+    "quote_vol": 27074228.0,
+    "funding": null,
+    "source": "okx"
+   },
+   {
+    "date": "2026-10-10",
+    "sym": "SOLUSDT",
+    "last": 109.71,
+    "pct24": 2.715,
+    "quote_vol": 81430502.0,
+    "funding": 2.48547993469e-05,
+    "source": "okx"
+   },
+   {
+    "date": "2026-10-10",
+    "sym": "ETHUSDT",
+    "last": 2487.34,
+    "pct24": 2.714,
+    "quote_vol": 252173649.0,
+    "funding": -1.2479563404e-05,
+    "source": "okx"
+   },
+   {
+    "date": "2026-10-10",
+    "sym": "BTCUSDT",
+    "last": 82696.6,
+    "pct24": 2.309,
+    "quote_vol": 496467931.0,
+    "funding": 3.96240147961e-05,
+    "source": "okx"
+   },
+   {
+    "date": "2026-10-10",
+    "sym": "HYPEUSDT",
+    "last": 84.894,
+    "pct24": 1.833,
+    "quote_vol": 27066994.0,
+    "funding": null,
+    "source": "okx"
+   },
+   {
+    "date": "2026-10-10",
+    "sym": "USDGUSDT",
+    "last": 1.0007,
+    "pct24": 0.02,
+    "quote_vol": 33136190.0,
+    "funding": null,
+    "source": "okx"
+   }
   ]
  },
- "updated": "2026-10-09T10:05:57+07:00"
+ "updated": "2026-10-10T00:36:25+07:00"
 }
