@@ -134,7 +134,7 @@
  },
  "SI_F": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-10",
   "clear_streak": 0,
   "top_headline": "Gold, Silver Rally on Weak Dollar and Global Cues; Gold Up Rs 1,900 to Rs 1,54,400 - RTV English"
@@ -162,7 +162,7 @@
  },
  "URA": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-10",
   "clear_streak": 0,
   "top_headline": "URA reproaches the Rural Environment counselor for his announcements and demands that the aid reaches the countryside. - Demócrata"
@@ -183,7 +183,7 @@
  },
  "QFIN": {
   "veto": false,
-  "p": 0.3,
+  "p": 0.28,
   "date": "2026-10-10",
   "clear_streak": 0,
   "top_headline": "Kaplan Fox Encourages Investors of Qfin Holdings, Inc. (NASDAQ: QFIN) to Contact the Firm Before Lead Plaintiff Deadline on November 27, 2026 - The Globe and Ma"
@@ -274,7 +274,7 @@
  },
  "KC": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.01,
   "date": "2026-10-10",
   "clear_streak": 0,
   "top_headline": "‘This is historic’: Transportation secretary pushes $30B air traffic control bill during KC visit - KCTV"
@@ -288,7 +288,7 @@
  },
  "PDD": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-10",
   "clear_streak": 0,
   "top_headline": "PDD Holdings shares technical analysis: $82.43 resistance in focus - Traders Union"
