@@ -1847,6 +1847,90 @@
     "src": "Yahoo Finance",
     "age_h": 10.4
    }
+  ],
+  "COIN": [
+   {
+    "t": "Chevron’s Venezuela Plan Will Pay Off, Says Analyst. Plus, Coinbase and 3 More Stocks.",
+    "src": "yahoo",
+    "age_h": 4.4
+   },
+   {
+    "t": "Weekly Wrap: Rising Treasury Yields Sink Bitcoin",
+    "src": "yahoo",
+    "age_h": 5.8
+   },
+   {
+    "t": "Circle Internet Spikes 7% After Backing OKX at $25B Valuation; Coinbase Rallies 6%, Strategy Climbs 3%",
+    "src": "yahoo",
+    "age_h": 8.7
+   },
+   {
+    "t": "Can You Borrow Against Your Bitcoin Without Selling It? Costs and Risks You Should Know",
+    "src": "yahoo",
+    "age_h": 9.2
+   },
+   {
+    "t": "Blockchain is having a moment: A look at Citrini Research's map of winners",
+    "src": "yahoo",
+    "age_h": 9.7
+   },
+   {
+    "t": "Coinbase Has Lost 56% in a Year: Citizens JMP Sees 63% Upside",
+    "src": "yahoo",
+    "age_h": 10.3
+   },
+   {
+    "t": "JPMorgan forecasts $50B in crypto inflows this year",
+    "src": "yahoo",
+    "age_h": 10.5
+   },
+   {
+    "t": "Coinbase-Samsung Deal Expands USDC Access Through Samsung Wallet",
+    "src": "yahoo",
+    "age_h": 12.4
+   }
+  ],
+  "NKE": [
+   {
+    "t": "Estimates Keep Rising as Q3 Earnings Season Takes Center Stage",
+    "src": "yahoo",
+    "age_h": 4.1
+   },
+   {
+    "t": "Micron Is Now Worth More Than Coca-Cola, PepsiCo, McDonald’s, Disney, Starbucks, Nike and Chipotle Combined",
+    "src": "yahoo",
+    "age_h": 13.8
+   },
+   {
+    "t": "Investors Heavily Search NIKE, Inc. (NKE): Here is What You Need to Know",
+    "src": "yahoo",
+    "age_h": 14.7
+   },
+   {
+    "t": "TNC launches apparel industry alliance to curb microfibre pollution",
+    "src": "yahoo",
+    "age_h": 16.7
+   },
+   {
+    "t": "Stocktwits Wall Street Wrap: Analysts Turn Bullish On Palantir, Marvell And Cava As Nike Faces Downgrade",
+    "src": "yahoo",
+    "age_h": 17.6
+   },
+   {
+    "t": "Nike made Jordans too easy to buy, and Bank of America noticed",
+    "src": "yahoo",
+    "age_h": 23.6
+   },
+   {
+    "t": "With a Yield Fast Approaching 5%, Nike Says Its Dividend Is the ‘Top Priority’",
+    "src": "yahoo",
+    "age_h": 27.2
+   },
+   {
+    "t": "Stock Market Today, Oct. 8: Tech Stocks Slide as Treasury Yields and Oil Prices Surge",
+    "src": "yahoo",
+    "age_h": 29.3
+   }
   ]
  },
  "feeds": {

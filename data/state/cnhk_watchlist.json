@@ -8,12 +8,21 @@
  "note": "接近资格线观察名单：dd250 在 -50%~-60% 之间（B4 单级筛展示层，不入板不进状态机；ORNAMENT 不列）",
  "rows": [
   {
+   "symbol": "TIGR",
+   "key": "TIGR",
+   "name": "老虎证券",
+   "pool": "CN_ADR",
+   "dd250": -60.0,
+   "px": 4.449999809265137,
+   "asof": "2026-10-09"
+  },
+  {
    "symbol": "BILI",
    "key": "BILI",
    "name": "哔哩哔哩",
    "pool": "CN_ADR",
-   "dd250": -56.8,
-   "px": 15.505000114440918,
+   "dd250": -56.9,
+   "px": 15.489999771118164,
    "asof": "2026-10-09"
   },
   {
@@ -22,7 +31,7 @@
    "name": "Li Auto Inc",
    "pool": "CN_HK",
    "dd250": -55.2,
-   "px": 44.63999938964844,
+   "px": 44.65999984741211,
    "asof": "2026-10-09"
   },
   {
@@ -30,35 +39,8 @@
    "key": "1810_HK",
    "name": "Xiaomi Corp",
    "pool": "CN_HK",
-   "dd250": -53.2,
-   "px": 25.760000228881836,
-   "asof": "2026-10-09"
-  },
-  {
-   "symbol": "0960.HK",
-   "key": "0960_HK",
-   "name": "Longfor Group Holdings Ltd",
-   "pool": "CN_HK",
-   "dd250": -52.0,
-   "px": 5.269999980926514,
-   "asof": "2026-10-09"
-  },
-  {
-   "symbol": "2313.HK",
-   "key": "2313_HK",
-   "name": "Shenzhou International Group Holdings Ltd",
-   "pool": "CN_HK",
-   "dd250": -51.9,
-   "px": 34.68000030517578,
-   "asof": "2026-10-09"
-  },
-  {
-   "symbol": "0968.HK",
-   "key": "0968_HK",
-   "name": "Xinyi Solar Holdings Ltd",
-   "pool": "CN_HK",
-   "dd250": -51.9,
-   "px": 1.9249999523162842,
+   "dd250": -52.8,
+   "px": 25.959999084472656,
    "asof": "2026-10-09"
   },
   {
@@ -67,7 +49,34 @@
    "name": "蔚来",
    "pool": "CN_ADR",
    "dd250": -51.8,
-   "px": 3.575000047683716,
+   "px": 3.5799999237060547,
+   "asof": "2026-10-09"
+  },
+  {
+   "symbol": "2313.HK",
+   "key": "2313_HK",
+   "name": "Shenzhou International Group Holdings Ltd",
+   "pool": "CN_HK",
+   "dd250": -51.8,
+   "px": 34.779998779296875,
+   "asof": "2026-10-09"
+  },
+  {
+   "symbol": "0968.HK",
+   "key": "0968_HK",
+   "name": "Xinyi Solar Holdings Ltd",
+   "pool": "CN_HK",
+   "dd250": -51.6,
+   "px": 1.934999942779541,
+   "asof": "2026-10-09"
+  },
+  {
+   "symbol": "0960.HK",
+   "key": "0960_HK",
+   "name": "Longfor Group Holdings Ltd",
+   "pool": "CN_HK",
+   "dd250": -51.3,
+   "px": 5.34499979019165,
    "asof": "2026-10-09"
   },
   {
@@ -75,8 +84,26 @@
    "key": "TCOM",
    "name": "携程集团",
    "pool": "CN_ADR",
-   "dd250": -50.9,
-   "px": 38.77000045776367,
+   "dd250": -50.7,
+   "px": 38.900001525878906,
+   "asof": "2026-10-09"
+  },
+  {
+   "symbol": "LI",
+   "key": "LI",
+   "name": "理想汽车",
+   "pool": "CN_ADR",
+   "dd250": -50.1,
+   "px": 11.539999961853027,
+   "asof": "2026-10-09"
+  },
+  {
+   "symbol": "9961.HK",
+   "key": "9961_HK",
+   "name": "Trip.com Group Ltd",
+   "pool": "CN_HK",
+   "dd250": -50.0,
+   "px": 304.3999938964844,
    "asof": "2026-10-09"
   }
  ]
