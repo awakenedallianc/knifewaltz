@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-11T14:51:08+07:00",
+ "generated_at": "2026-10-11T23:48:14+07:00",
  "date": "2026-10-11",
  "min_n": 30,
  "outcome_defs": {
@@ -187,13 +187,13 @@
   "J5": {
    "question_id": "J5",
    "outcome_def": "1 若 3 日内 |累计收益| >= 10%（movers_history 快照价口径）",
-   "n_total": 527,
-   "n_pending": 35,
+   "n_total": 530,
+   "n_pending": 38,
    "n_unresolvable": 190,
    "conclusive": true,
-   "base_rate": 0.061,
-   "brier": 0.6483,
-   "brier_baseline_climatology": 0.057,
+   "base_rate": 0.06,
+   "brier": 0.6486,
+   "brier_baseline_climatology": 0.0567,
    "reliability": [
     {
      "lo": 0.0,
@@ -244,9 +244,9 @@
     {
      "lo": 0.8,
      "hi": 1.0,
-     "n": 296,
-     "p_mean": 0.944,
-     "hit_rate": 0.014,
+     "n": 299,
+     "p_mean": 0.943,
+     "hit_rate": 0.013,
      "wilson95": [
       0.005,
       0.034
