@@ -620,5 +620,17 @@
   "tier_time": "-",
   "status": "open",
   "snapshot_ref": "S-CATCH:GDS:2026-10-10"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "CHTR",
+  "date": "2026-10-13",
+  "entry": 102.4800033569336,
+  "stop": 101.63,
+  "score": 54,
+  "tier_time": "B",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:CHTR:2026-10-13"
  }
 ]

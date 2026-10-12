@@ -212,8 +212,8 @@
   "expires": "2026-10-24"
  },
  "CHTR": {
-  "state": "STABILIZING",
-  "since": "2026-09-21",
+  "state": "CATCH",
+  "since": "2026-10-13",
   "events": [
    {
     "d": "2026-09-21",
@@ -226,8 +226,17 @@
     "from": "KNIFE_FALLING",
     "to": "STABILIZING",
     "note": "checklist 2/5"
+   },
+   {
+    "d": "2026-10-13",
+    "from": "STABILIZING",
+    "to": "CATCH",
+    "note": "checklist 3/5"
    }
-  ]
+  ],
+  "catch_ref_price": 102.4800033569336,
+  "catch_day_low": 101.63,
+  "expires": "2026-10-29"
  },
  "LULU": {
   "state": "NORMAL",
@@ -363,8 +372,8 @@
   "events": []
  },
  "HE_F": {
-  "state": "NORMAL",
-  "since": "2026-09-27",
+  "state": "KNIFE_FALLING",
+  "since": "2026-10-13",
   "events": [
    {
     "d": "2026-09-21",
@@ -389,6 +398,12 @@
     "from": "CATCH",
     "to": "NORMAL",
     "note": "跌破接刀日低点（X-STOP）"
+   },
+   {
+    "d": "2026-10-13",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -33.71% / 10日 -12.65%"
    }
   ],
   "catch_ref_price": 0.782249984741211,
@@ -695,8 +710,8 @@
   "events": []
  },
  "GDS": {
-  "state": "CATCH",
-  "since": "2026-10-10",
+  "state": "NORMAL",
+  "since": "2026-10-13",
   "events": [
    {
     "d": "2026-10-02",
@@ -715,11 +730,18 @@
     "from": "STABILIZING",
     "to": "CATCH",
     "note": "checklist 3/5"
+   },
+   {
+    "d": "2026-10-13",
+    "from": "CATCH",
+    "to": "NORMAL",
+    "note": "跌破接刀日低点（X-STOP）"
    }
   ],
   "catch_ref_price": 30.770000457763672,
   "catch_day_low": 30.7,
-  "expires": "2026-10-26"
+  "expires": "2026-10-26",
+  "cooldown_until": "2026-10-29"
  },
  "VNET": {
   "state": "CATCH",
