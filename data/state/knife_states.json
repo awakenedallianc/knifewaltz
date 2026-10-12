@@ -315,8 +315,8 @@
   "events": []
  },
  "KC_F": {
-  "state": "CATCH",
-  "since": "2026-09-25",
+  "state": "NORMAL",
+  "since": "2026-10-12",
   "events": [
    {
     "d": "2026-09-21",
@@ -335,6 +335,12 @@
     "from": "STABILIZING",
     "to": "CATCH",
     "note": "checklist 3/5"
+   },
+   {
+    "d": "2026-10-12",
+    "from": "CATCH",
+    "to": "NORMAL",
+    "note": "接刀窗过期未确认"
    }
   ],
   "catch_ref_price": 2.8095001220703124,

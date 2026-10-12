@@ -1,63 +1,75 @@
 {
- "STRKUSDT": {
+ "FILUSDT": {
   "family": "noise",
-  "flavor": 0.26,
+  "flavor": 0.21,
   "probs": {
-   "noise": 0.74,
+   "noise": 0.79,
    "liquidation_cascade": 0.0,
-   "event_driven": 0.01,
-   "systemic": 0.03,
-   "unclear": 0.22
+   "event_driven": 0.0,
+   "systemic": 0.05,
+   "unclear": 0.16
   },
-  "date": "2026-10-11"
+  "date": "2026-10-12"
  },
  "NEARUSDT": {
+  "family": "unclear",
+  "flavor": 0.67,
+  "probs": {
+   "noise": 0.33,
+   "liquidation_cascade": 0.0,
+   "event_driven": 0.0,
+   "systemic": 0.31,
+   "unclear": 0.36
+  },
+  "date": "2026-10-12"
+ },
+ "STRKUSDT": {
+  "family": "unclear",
+  "flavor": 0.7,
+  "probs": {
+   "noise": 0.3,
+   "liquidation_cascade": 0.0,
+   "event_driven": 0.0,
+   "systemic": 0.32,
+   "unclear": 0.38
+  },
+  "date": "2026-10-12"
+ },
+ "ZECUSDT": {
   "family": "unclear",
   "flavor": 0.82,
   "probs": {
    "noise": 0.18,
    "liquidation_cascade": 0.0,
-   "event_driven": 0.01,
-   "systemic": 0.37,
+   "event_driven": 0.0,
+   "systemic": 0.38,
    "unclear": 0.44
   },
-  "date": "2026-10-11"
- },
- "ZECUSDT": {
-  "family": "systemic",
-  "flavor": 0.69,
-  "probs": {
-   "noise": 0.31,
-   "liquidation_cascade": 0.0,
-   "event_driven": 0.0,
-   "systemic": 0.37,
-   "unclear": 0.32
-  },
-  "date": "2026-10-11"
+  "date": "2026-10-12"
  },
  "SOLUSDT": {
-  "family": "event_driven",
-  "flavor": 0.99,
+  "family": "systemic",
+  "flavor": 0.96,
   "probs": {
-   "noise": 0.01,
+   "noise": 0.04,
    "liquidation_cascade": 0.0,
-   "event_driven": 0.94,
-   "systemic": 0.05,
-   "unclear": 0.0
+   "event_driven": 0.28,
+   "systemic": 0.62,
+   "unclear": 0.06
   },
-  "date": "2026-10-11"
+  "date": "2026-10-12"
  },
  "ETHUSDT": {
-  "family": "event_driven",
-  "flavor": 0.99,
+  "family": "systemic",
+  "flavor": 0.98,
   "probs": {
-   "noise": 0.01,
+   "noise": 0.02,
    "liquidation_cascade": 0.0,
-   "event_driven": 0.9,
-   "systemic": 0.08,
-   "unclear": 0.01
+   "event_driven": 0.27,
+   "systemic": 0.66,
+   "unclear": 0.04
   },
-  "date": "2026-10-11"
+  "date": "2026-10-12"
  },
  "BTCUSDT": {
   "family": "event_driven",
@@ -65,10 +77,10 @@
   "probs": {
    "noise": 0.02,
    "liquidation_cascade": 0.0,
-   "event_driven": 0.65,
-   "systemic": 0.28,
+   "event_driven": 0.55,
+   "systemic": 0.38,
    "unclear": 0.05
   },
-  "date": "2026-10-11"
+  "date": "2026-10-12"
  }
 }
