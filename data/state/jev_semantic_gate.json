@@ -120,14 +120,14 @@
  },
  "ALNY": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.0,
   "date": "2026-10-13",
   "clear_streak": 0,
   "top_headline": "Alnylam Pharmaceuticals (NDQ:ALNY): This RNAi Pioneer Is Becoming A Cardiometabolic Heavyweight Right Before Our Eyes - Stocks Down Under"
  },
  "SLV": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-13",
   "clear_streak": 0,
   "top_headline": "Heritage for All adds nine SLV sites - Alamosa Citizen"
@@ -176,21 +176,21 @@
  },
  "0881_HK": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-13",
   "clear_streak": 0,
   "top_headline": "China Overseas Grand Oceans Group (SEHK:81) Just Gave Investors Something To Think About - Yahoo Finance"
  },
  "QFIN": {
   "veto": false,
-  "p": 0.18,
+  "p": 0.28,
   "date": "2026-10-13",
   "clear_streak": 0,
   "top_headline": "QFIN Shareholder Alert: Qfin Holdings, Inc. Securities Class Action Lawsuit - Investors Should Contact Levi & Korsinsky - GlobeNewswire"
  },
  "TME": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-13",
   "clear_streak": 0,
   "top_headline": "\"Ethics\" expelled him from the Parliament for 60 days/ Bardhi: Rama thinks he will shut me up - www.cna.al"
@@ -204,7 +204,7 @@
  },
  "XPEV": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-13",
   "clear_streak": 0,
   "top_headline": "XPeng turns heads at the Paris Motor Show (XPEV:NYSE) - Seeking Alpha"
@@ -225,7 +225,7 @@
  },
  "TIGR": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-13",
   "clear_streak": 0,
   "top_headline": "In a British zoo, a tiger mauled a man who jumped into its enclosure. - open.kg"
@@ -260,7 +260,7 @@
  },
  "WB": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-13",
   "clear_streak": 0,
   "top_headline": "WB Games Has Huge Expectations From Hogwarts Legacy 2, Says It Will Drive Gaming Growth - Tech4Gamers"
@@ -351,7 +351,7 @@
  },
  "1024_HK": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-13",
   "clear_streak": 0,
   "top_headline": "Tencent Holdings Limited (0700.HK) stock price, news, quote and history - Yahoo Finance Singapore"

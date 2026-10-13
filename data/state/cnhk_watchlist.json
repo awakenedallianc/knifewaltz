@@ -21,9 +21,18 @@
    "key": "1810_HK",
    "name": "Xiaomi Corp",
    "pool": "CN_HK",
+   "dd250": -54.7,
+   "px": 24.399999618530273,
+   "asof": "2026-10-13"
+  },
+  {
+   "symbol": "2015.HK",
+   "key": "2015_HK",
+   "name": "Li Auto Inc",
+   "pool": "CN_HK",
    "dd250": -53.4,
-   "px": 25.1200008392334,
-   "asof": "2026-10-12"
+   "px": 44.540000915527344,
+   "asof": "2026-10-13"
   },
   {
    "symbol": "NIO",
@@ -35,40 +44,31 @@
    "asof": "2026-10-12"
   },
   {
-   "symbol": "2015.HK",
-   "key": "2015_HK",
-   "name": "Li Auto Inc",
+   "symbol": "0968.HK",
+   "key": "0968_HK",
+   "name": "Xinyi Solar Holdings Ltd",
    "pool": "CN_HK",
    "dd250": -53.1,
-   "px": 45.18000030517578,
-   "asof": "2026-10-12"
+   "px": 1.875,
+   "asof": "2026-10-13"
   },
   {
    "symbol": "0960.HK",
    "key": "0960_HK",
    "name": "Longfor Group Holdings Ltd",
    "pool": "CN_HK",
-   "dd250": -51.6,
-   "px": 5.230000019073486,
-   "asof": "2026-10-12"
+   "dd250": -52.1,
+   "px": 5.110000133514404,
+   "asof": "2026-10-13"
   },
   {
    "symbol": "2313.HK",
    "key": "2313_HK",
    "name": "Shenzhou International Group Holdings Ltd",
    "pool": "CN_HK",
-   "dd250": -51.3,
-   "px": 35.119998931884766,
-   "asof": "2026-10-12"
-  },
-  {
-   "symbol": "0968.HK",
-   "key": "0968_HK",
-   "name": "Xinyi Solar Holdings Ltd",
-   "pool": "CN_HK",
    "dd250": -51.0,
-   "px": 1.9600000381469727,
-   "asof": "2026-10-12"
+   "px": 35.34000015258789,
+   "asof": "2026-10-13"
   },
   {
    "symbol": "TCOM",
@@ -84,9 +84,9 @@
    "key": "9961_HK",
    "name": "Trip.com Group Ltd",
    "pool": "CN_HK",
-   "dd250": -50.2,
-   "px": 303.3999938964844,
-   "asof": "2026-10-12"
+   "dd250": -50.1,
+   "px": 303.6000061035156,
+   "asof": "2026-10-13"
   }
  ]
 }

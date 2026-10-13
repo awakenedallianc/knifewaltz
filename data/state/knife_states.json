@@ -372,7 +372,7 @@
   "events": []
  },
  "HE_F": {
-  "state": "KNIFE_FALLING",
+  "state": "STABILIZING",
   "since": "2026-10-13",
   "events": [
    {
@@ -404,6 +404,12 @@
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -33.71% / 10日 -12.65%"
+   },
+   {
+    "d": "2026-10-13",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 1/5"
    }
   ],
   "catch_ref_price": 0.782249984741211,
