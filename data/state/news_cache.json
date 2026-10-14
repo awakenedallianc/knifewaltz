@@ -1785,6 +1785,127 @@
     "src": "ad-hoc-news.de",
     "age_h": 16.1
    }
+  ],
+  "GDXJ": [
+   {
+    "t": "GDXJ261030C00128000 Interactive Stock Chart | GDXJ Oct 2026 128.000 call Stock - Yahoo! Finance Canada",
+    "src": "Yahoo! Finance Canada",
+    "age_h": 10.1
+   },
+   {
+    "t": "GDXJ Dec 2026 87.000 call (GDXJ261218C00087000) Interactive Stock Chart - Yahoo Finance - Yahoo! Finance Canada",
+    "src": "Yahoo! Finance Canada",
+    "age_h": 18.0
+   },
+   {
+    "t": "GDXJ261218P00144000 Interactive Stock Chart | GDXJ Dec 2026 144.000 put Stock - Yahoo Finance",
+    "src": "Yahoo Finance",
+    "age_h": 18.1
+   },
+   {
+    "t": "GDXJ Dec 2026 65.000 put (GDXJ261218P00065000) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+    "src": "Yahoo! Finance Canada",
+    "age_h": 20.8
+   },
+   {
+    "t": "GDXJ Stock Price, Quote & News - Syfe",
+    "src": "Syfe",
+    "age_h": 23.8
+   },
+   {
+    "t": "GDXJ261030C00160000 Interaktive Aktienkurve | GDXJ Oct 2026 160.000 call Aktie - Yahoo Finanzen Deutschland",
+    "src": "Yahoo Finanzen Deutschland",
+    "age_h": 27.3
+   },
+   {
+    "t": "GDXJ261023C00125500 Interactive Stock Chart | GDXJ Oct 2026 125.500 call Stock - Yahoo Finance",
+    "src": "Yahoo Finance",
+    "age_h": 37.4
+   }
+  ],
+  "MSTR": [
+   {
+    "t": "Strategy’s Michael Saylor Says Bitcoin Bull Market Is Just Beginning",
+    "src": "yahoo",
+    "age_h": 2.5
+   },
+   {
+    "t": "Michael Saylor Cheered a Rival’s $280 Million Bitcoin Buy Despite His Own Company Buying 85% Less the Same Week.",
+    "src": "yahoo",
+    "age_h": 2.9
+   },
+   {
+    "t": "Is Trending Stock Strategy Inc (MSTR) a Buy Now?",
+    "src": "yahoo",
+    "age_h": 4.0
+   },
+   {
+    "t": "Michael Saylor Says Bitcoin Has Bottomed And Should Get Back Above $100,000: ‘Long-Term Forecast Is…’",
+    "src": "yahoo",
+    "age_h": 11.6
+   },
+   {
+    "t": "Michael Saylor drops bold Bitcoin call ahead of major index review",
+    "src": "yahoo",
+    "age_h": 16.2
+   },
+   {
+    "t": "Strategy (MSTR) Stock Still Looks Like A Bargain Despite Its 354% Run",
+    "src": "yahoo",
+    "age_h": 17.8
+   },
+   {
+    "t": "MSCI's Index Position Disappointing: Michael Saylor",
+    "src": "yahoo",
+    "age_h": 21.0
+   },
+   {
+    "t": "'Inoculating' Investors, Could Buy Or Sell Bitcoin: Saylor",
+    "src": "yahoo",
+    "age_h": 21.2
+   }
+  ],
+  "WDC": [
+   {
+    "t": "AI Memory Chip Selloff Looks Overblown: 2 Stocks to Buy on the Dip",
+    "src": "yahoo",
+    "age_h": 1.9
+   },
+   {
+    "t": "Western Digital Lost One Third Its Value Over 3 Months: It’S Ready to Provide 175% Returns Says This Wall Street Pro",
+    "src": "yahoo",
+    "age_h": 3.2
+   },
+   {
+    "t": "Is Trending Stock Western Digital Corporation (WDC) a Buy Now?",
+    "src": "yahoo",
+    "age_h": 4.0
+   },
+   {
+    "t": "Applied Materials Cratered in The last 3 Months: One Wall Street Sell Side Firm Predicts it Will Nearly Double Within 12 Months",
+    "src": "yahoo",
+    "age_h": 4.7
+   },
+   {
+    "t": "China Spooked Memory Stocks. Investors Picked Their Losers.",
+    "src": "yahoo",
+    "age_h": 19.5
+   },
+   {
+    "t": "Western Digital (WDC) Faces Fresh Pressure In The Memory Market",
+    "src": "yahoo",
+    "age_h": 20.8
+   },
+   {
+    "t": "What Is Next For Micron Stock?",
+    "src": "yahoo",
+    "age_h": 20.9
+   },
+   {
+    "t": "Seagate and Western Digital Shares Plummet, What You Need To Know",
+    "src": "yahoo",
+    "age_h": 21.4
+   }
   ]
  },
  "feeds": {

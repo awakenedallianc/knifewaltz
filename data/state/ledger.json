@@ -632,5 +632,17 @@
   "tier_time": "B",
   "status": "open",
   "snapshot_ref": "S-CATCH:CHTR:2026-10-13"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "QFIN",
+  "date": "2026-10-14",
+  "entry": 5.644999980926514,
+  "stop": 5.62,
+  "score": 63,
+  "tier_time": "B",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:QFIN:2026-10-14"
  }
 ]

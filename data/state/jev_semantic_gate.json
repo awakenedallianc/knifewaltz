@@ -15,7 +15,7 @@
  },
  "FISV": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.05,
   "date": "2026-10-14",
   "clear_streak": 0,
   "top_headline": "Stablecoin startups advance payments"
@@ -65,9 +65,9 @@
  "MSTR": {
   "veto": false,
   "p": 0.0,
-  "date": "2026-10-12",
+  "date": "2026-10-14",
   "clear_streak": 0,
-  "top_headline": "Strategy Nears 850K Bitcoin Milestone as Saylor Teases Fresh Buy - CoinMarketCap"
+  "top_headline": "Strategy’s Michael Saylor Says Bitcoin Bull Market Is Just Beginning"
  },
  "LULU": {
   "veto": false,
@@ -92,7 +92,7 @@
  },
  "FICO": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.02,
   "date": "2026-10-14",
   "clear_streak": 0,
   "top_headline": "Fair Isaac (FICO) Could Be 41% Undervalued Following UWM’s FICO Score Commitment"
@@ -134,7 +134,7 @@
  },
  "SI_F": {
   "veto": false,
-  "p": 0.13,
+  "p": 0.0,
   "date": "2026-10-14",
   "clear_streak": 0,
   "top_headline": "The SLVR ETF Remains A Buy So Long As Critical Technical Support Holds (NASDAQ:SLVR) - Seeking Alpha"
@@ -169,7 +169,7 @@
  },
  "LX": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-14",
   "clear_streak": 0,
   "top_headline": "Resonant clinical solutions and Haier Biomedical introduce an innovative Benchtop centrifuge with a nantural refrigerant - Manufacturing Chemist"
@@ -225,7 +225,7 @@
  },
  "TIGR": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.01,
   "date": "2026-10-14",
   "clear_streak": 0,
   "top_headline": "3 Financial Stocks Riding Fixed Income Trading Demand In US Markets"
@@ -281,7 +281,7 @@
  },
  "BIDU": {
   "veto": false,
-  "p": 0.12,
+  "p": 0.0,
   "date": "2026-10-14",
   "clear_streak": 0,
   "top_headline": "BIDU Investors Have Opportunity to Lead Baidu, Inc. Securities Fraud Lawsuit with SBS Law - GlobeNewswire"
@@ -351,7 +351,7 @@
  },
  "1024_HK": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-14",
   "clear_streak": 0,
   "top_headline": "Top Tokenized Interactive Media & Services Stocks by Market Cap - CoinGecko"
@@ -418,5 +418,12 @@
   "date": "2026-10-14",
   "clear_streak": 0,
   "top_headline": "Analysts Offer Insights on Healthcare Companies: Pfizer (PFE), ACADIA Pharmaceuticals (ACAD) and Insmed (INSM) - The Globe and Mail"
+ },
+ "WDC": {
+  "veto": false,
+  "p": 0.02,
+  "date": "2026-10-14",
+  "clear_streak": 0,
+  "top_headline": "AI Memory Chip Selloff Looks Overblown: 2 Stocks to Buy on the Dip"
  }
 }

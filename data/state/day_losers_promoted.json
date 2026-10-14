@@ -1,6 +1,37 @@
 {
  "date": "2026-10-14",
  "source": "yahoo-screener",
- "promoted": [],
+ "promoted": [
+  {
+   "symbol": "SKYD",
+   "key": "SKYD",
+   "name": "Skydance Corporation",
+   "cls": "equity",
+   "pct_day": -25.38,
+   "mcap": 48504561664,
+   "dd52w": -61.16,
+   "ret10": -34.46,
+   "vol_ratio": 0.91,
+   "days_from_peak": 250,
+   "px": 6.770100116729736,
+   "asof": "2026-10-14",
+   "bars": 252
+  },
+  {
+   "symbol": "CRWV",
+   "key": "CRWV",
+   "name": "CoreWeave, Inc.",
+   "cls": "equity",
+   "pct_day": -15.24,
+   "mcap": 48504561664,
+   "dd52w": -53.47,
+   "ret10": -24.3,
+   "vol_ratio": 1.83,
+   "days_from_peak": 249,
+   "px": 65.94999694824219,
+   "asof": "2026-10-14",
+   "bars": 252
+  }
+ ],
  "degraded_reason": null
 }
