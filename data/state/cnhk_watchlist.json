@@ -12,44 +12,8 @@
    "key": "BILI",
    "name": "哔哩哔哩",
    "pool": "CN_ADR",
-   "dd250": -58.2,
-   "px": 15.015000343322754,
-   "asof": "2026-10-13"
-  },
-  {
-   "symbol": "1810.HK",
-   "key": "1810_HK",
-   "name": "Xiaomi Corp",
-   "pool": "CN_HK",
-   "dd250": -54.7,
-   "px": 24.399999618530273,
-   "asof": "2026-10-13"
-  },
-  {
-   "symbol": "2015.HK",
-   "key": "2015_HK",
-   "name": "Li Auto Inc",
-   "pool": "CN_HK",
-   "dd250": -53.4,
-   "px": 44.540000915527344,
-   "asof": "2026-10-13"
-  },
-  {
-   "symbol": "0968.HK",
-   "key": "0968_HK",
-   "name": "Xinyi Solar Holdings Ltd",
-   "pool": "CN_HK",
-   "dd250": -53.1,
-   "px": 1.875,
-   "asof": "2026-10-13"
-  },
-  {
-   "symbol": "NIO",
-   "key": "NIO",
-   "name": "蔚来",
-   "pool": "CN_ADR",
-   "dd250": -52.2,
-   "px": 3.5450000762939453,
+   "dd250": -58.3,
+   "px": 14.979999542236328,
    "asof": "2026-10-13"
   },
   {
@@ -57,18 +21,45 @@
    "key": "0960_HK",
    "name": "Longfor Group Holdings Ltd",
    "pool": "CN_HK",
-   "dd250": -52.1,
-   "px": 5.110000133514404,
+   "dd250": -53.6,
+   "px": 4.949999809265137,
+   "asof": "2026-10-14"
+  },
+  {
+   "symbol": "1810.HK",
+   "key": "1810_HK",
+   "name": "Xiaomi Corp",
+   "pool": "CN_HK",
+   "dd250": -52.6,
+   "px": 25.280000686645508,
+   "asof": "2026-10-14"
+  },
+  {
+   "symbol": "0968.HK",
+   "key": "0968_HK",
+   "name": "Xinyi Solar Holdings Ltd",
+   "pool": "CN_HK",
+   "dd250": -52.6,
+   "px": 1.8949999809265137,
+   "asof": "2026-10-14"
+  },
+  {
+   "symbol": "NIO",
+   "key": "NIO",
+   "name": "蔚来",
+   "pool": "CN_ADR",
+   "dd250": -52.0,
+   "px": 3.559999942779541,
    "asof": "2026-10-13"
   },
   {
-   "symbol": "2313.HK",
-   "key": "2313_HK",
-   "name": "Shenzhou International Group Holdings Ltd",
+   "symbol": "2015.HK",
+   "key": "2015_HK",
+   "name": "Li Auto Inc",
    "pool": "CN_HK",
-   "dd250": -51.0,
-   "px": 35.34000015258789,
-   "asof": "2026-10-13"
+   "dd250": -51.5,
+   "px": 45.91999816894531,
+   "asof": "2026-10-14"
   },
   {
    "symbol": "TCOM",
@@ -84,9 +75,9 @@
    "key": "9961_HK",
    "name": "Trip.com Group Ltd",
    "pool": "CN_HK",
-   "dd250": -50.1,
-   "px": 303.6000061035156,
-   "asof": "2026-10-13"
+   "dd250": -50.4,
+   "px": 302.0,
+   "asof": "2026-10-14"
   }
  ]
 }
