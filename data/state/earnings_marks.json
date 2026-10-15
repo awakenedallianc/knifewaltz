@@ -1,30 +1,32 @@
 {
- "asof": "2026-10-14T23:00:23+07:00",
+ "asof": "2026-10-15T08:46:29+07:00",
  "source": "yahoo-calendar",
  "caliber": "未来 5 个交易日窗（远期日历大票缺席是实测事实，不做远期）",
  "days": [
-  "2026-10-14",
   "2026-10-15",
   "2026-10-16",
   "2026-10-19",
-  "2026-10-20"
+  "2026-10-20",
+  "2026-10-21"
  ],
  "days_failed": [],
- "truncated_days": [],
+ "truncated_days": [
+  "2026-10-21"
+ ],
  "watchlist_n": 26,
  "marks": [
-  {
-   "ticker": "ASML",
-   "date": "2026-10-14",
-   "when": "TAS",
-   "eps_est": 10.76,
-   "date_confirmed": true
-  },
   {
    "ticker": "TSM",
    "date": "2026-10-15",
    "when": "BMO",
    "eps_est": 4.52,
+   "date_confirmed": true
+  },
+  {
+   "ticker": "ROL",
+   "date": "2026-10-21",
+   "when": "AMC",
+   "eps_est": 0.35,
    "date_confirmed": true
   }
  ]

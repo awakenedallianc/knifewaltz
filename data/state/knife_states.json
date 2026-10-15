@@ -90,8 +90,8 @@
   "events": []
  },
  "URA": {
-  "state": "KNIFE_FALLING",
-  "since": "2026-10-14",
+  "state": "STABILIZING",
+  "since": "2026-10-15",
   "events": [
    {
     "d": "2026-09-23",
@@ -116,6 +116,12 @@
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -42.15% / 10日 -10.26%"
+   },
+   {
+    "d": "2026-10-15",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 2/5"
    }
   ],
   "catch_ref_price": 41.9900016784668,
@@ -998,14 +1004,20 @@
   ]
  },
  "WDC": {
-  "state": "KNIFE_FALLING",
-  "since": "2026-10-14",
+  "state": "STABILIZING",
+  "since": "2026-10-15",
   "events": [
    {
     "d": "2026-10-14",
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -50.33% / 10日 -18.44%"
+   },
+   {
+    "d": "2026-10-15",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 2/5"
    }
   ]
  }
