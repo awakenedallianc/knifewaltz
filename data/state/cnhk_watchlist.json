@@ -8,76 +8,76 @@
  "note": "接近资格线观察名单：dd250 在 -50%~-60% 之间（B4 单级筛展示层，不入板不进状态机；ORNAMENT 不列）",
  "rows": [
   {
+   "symbol": "BILI",
+   "key": "BILI",
+   "name": "哔哩哔哩",
+   "pool": "CN_ADR",
+   "dd250": -60.0,
+   "px": 14.375,
+   "asof": "2026-10-15"
+  },
+  {
    "symbol": "0960.HK",
    "key": "0960_HK",
    "name": "Longfor Group Holdings Ltd",
    "pool": "CN_HK",
-   "dd250": -54.5,
-   "px": 4.849999904632568,
-   "asof": "2026-10-14"
-  },
-  {
-   "symbol": "NIO",
-   "key": "NIO",
-   "name": "蔚来",
-   "pool": "CN_ADR",
-   "dd250": -54.0,
-   "px": 3.4100000858306885,
-   "asof": "2026-10-14"
+   "dd250": -55.5,
+   "px": 4.75,
+   "asof": "2026-10-15"
   },
   {
    "symbol": "0968.HK",
    "key": "0968_HK",
    "name": "Xinyi Solar Holdings Ltd",
    "pool": "CN_HK",
-   "dd250": -52.9,
-   "px": 1.8849999904632568,
-   "asof": "2026-10-14"
+   "dd250": -53.7,
+   "px": 1.850000023841858,
+   "asof": "2026-10-15"
   },
   {
-   "symbol": "2015.HK",
-   "key": "2015_HK",
-   "name": "Li Auto Inc",
-   "pool": "CN_HK",
-   "dd250": -52.1,
-   "px": 45.29999923706055,
-   "asof": "2026-10-14"
+   "symbol": "NIO",
+   "key": "NIO",
+   "name": "蔚来",
+   "pool": "CN_ADR",
+   "dd250": -53.2,
+   "px": 3.4700000286102295,
+   "asof": "2026-10-15"
   },
   {
    "symbol": "KC",
    "key": "KC",
    "name": "金山云",
    "pool": "CN_ADR",
-   "dd250": -51.9,
-   "px": 8.760000228881836,
-   "asof": "2026-10-14"
+   "dd250": -52.4,
+   "px": 8.664999961853027,
+   "asof": "2026-10-15"
   },
   {
-   "symbol": "TCOM",
-   "key": "TCOM",
-   "name": "携程集团",
-   "pool": "CN_ADR",
-   "dd250": -50.8,
-   "px": 38.880001068115234,
-   "asof": "2026-10-14"
-  },
-  {
-   "symbol": "1810.HK",
-   "key": "1810_HK",
-   "name": "Xiaomi Corp",
+   "symbol": "2015.HK",
+   "key": "2015_HK",
+   "name": "Li Auto Inc",
    "pool": "CN_HK",
-   "dd250": -50.6,
-   "px": 26.3799991607666,
-   "asof": "2026-10-14"
+   "dd250": -51.8,
+   "px": 44.439998626708984,
+   "asof": "2026-10-15"
   },
   {
-   "symbol": "LI",
-   "key": "LI",
-   "name": "理想汽车",
-   "pool": "CN_ADR",
-   "dd250": -50.1,
-   "px": 11.260000228881836,
-   "asof": "2026-10-14"
+   "symbol": "1378.HK",
+   "key": "1378_HK",
+   "name": "China Hongqiao Group Ltd",
+   "pool": "CN_HK",
+   "dd250": -51.5,
+   "px": 19.510000228881836,
+   "asof": "2026-10-15"
+  },
+  {
+   "symbol": "9888.HK",
+   "key": "9888_HK",
+   "name": "Baidu Inc",
+   "pool": "CN_HK",
+   "dd250": -51.2,
+   "px": 78.3499984741211,
+   "asof": "2026-10-15"
   }
  ]
 }

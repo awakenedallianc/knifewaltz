@@ -29,7 +29,7 @@
  },
  "PODD": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-15",
   "clear_streak": 0,
   "top_headline": "NOSTALGIA: Wanted Cooke runs York ragged but City top scorer soon says goodbye - Telegraph and Argus"
@@ -134,7 +134,7 @@
  },
  "SI_F": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.02,
   "date": "2026-10-15",
   "clear_streak": 0,
   "top_headline": "US September CPI exceeds expectations, metals fall across the board, LME aluminum, SHFE tin, coking coal and coke lead declines, silver futures plunge [Overnigh"
@@ -142,9 +142,9 @@
  "UNG": {
   "veto": false,
   "p": 0.0,
-  "date": "2026-10-14",
+  "date": "2026-10-15",
   "clear_streak": 0,
-  "top_headline": "Greek Life Grows: - Vanguard"
+  "top_headline": "Han Yoon-seo's Fiancé Gets Scolded for Robotic Dress Tour Reactions - 조선일보"
  },
  "PL_F": {
   "veto": false,
@@ -183,7 +183,7 @@
  },
  "QFIN": {
   "veto": false,
-  "p": 0.24,
+  "p": 0.28,
   "date": "2026-10-15",
   "clear_streak": 0,
   "top_headline": "ROSEN, TOP-RANKED INVESTOR COUNSEL, Encourages Qfin - GlobeNewswire"
@@ -359,20 +359,20 @@
  "YMM": {
   "veto": false,
   "p": 0.0,
-  "date": "2026-10-14",
+  "date": "2026-10-15",
   "clear_streak": 0,
-  "top_headline": "Ottawa wants to expand the oilsands, but the industry's wastewater problem will grow with it - CBC"
+  "top_headline": "Full Truck Alliance Co Ltd's Dividend Analysis - GuruFocus"
  },
  "COIN": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-15",
   "clear_streak": 0,
   "top_headline": "Coinbase Global, Inc. (COIN) Registers a Bigger Fall Than the Market: Important Facts to Note"
  },
  "GDS": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-15",
   "clear_streak": 0,
   "top_headline": "OneneBio GDS RegS (ONES-USD.LU) Stock Forum & Discussion - Yahoo! Finance Canada"

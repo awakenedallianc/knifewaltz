@@ -954,8 +954,8 @@
   "events": []
  },
  "CTVA": {
-  "state": "CATCH",
-  "since": "2026-10-07",
+  "state": "NORMAL",
+  "since": "2026-10-15",
   "events": [
    {
     "d": "2026-10-02",
@@ -974,11 +974,18 @@
     "from": "STABILIZING",
     "to": "CATCH",
     "note": "checklist 3/5"
+   },
+   {
+    "d": "2026-10-15",
+    "from": "CATCH",
+    "to": "NORMAL",
+    "note": "跌破接刀日低点（X-STOP）"
    }
   ],
   "catch_ref_price": 13.90999984741211,
   "catch_day_low": 12.85,
-  "expires": "2026-10-23"
+  "expires": "2026-10-23",
+  "cooldown_until": "2026-10-31"
  },
  "PSKY": {
   "state": "NORMAL",

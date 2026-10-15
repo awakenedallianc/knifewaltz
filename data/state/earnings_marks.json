@@ -1,5 +1,5 @@
 {
- "asof": "2026-10-15T08:46:29+07:00",
+ "asof": "2026-10-15T22:46:02+07:00",
  "source": "yahoo-calendar",
  "caliber": "未来 5 个交易日窗（远期日历大票缺席是实测事实，不做远期）",
  "days": [
@@ -13,20 +13,20 @@
  "truncated_days": [
   "2026-10-21"
  ],
- "watchlist_n": 26,
+ "watchlist_n": 23,
  "marks": [
   {
-   "ticker": "TSM",
+   "ticker": "MAN",
    "date": "2026-10-15",
-   "when": "BMO",
-   "eps_est": 4.52,
+   "when": "TAS",
+   "eps_est": 1.01,
    "date_confirmed": true
   },
   {
-   "ticker": "ROL",
-   "date": "2026-10-21",
-   "when": "AMC",
-   "eps_est": 0.35,
+   "ticker": "TSM",
+   "date": "2026-10-15",
+   "when": "TAS",
+   "eps_est": 4.52,
    "date_confirmed": true
   }
  ]

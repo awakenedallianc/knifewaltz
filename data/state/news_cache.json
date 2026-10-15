@@ -1959,7 +1959,45 @@
     "src": "Yahoo Finance Singapore",
     "age_h": 13.9
    }
-  ]
+  ],
+  "KC_F": [
+   {
+    "t": "Coffee prices rose for the third consecutive session, while silver hit a 10-week low. - Vietnam.vn",
+    "src": "Vietnam.vn",
+    "age_h": 6.9
+   },
+   {
+    "t": "Coffee prices today, October 15th: Rising due to supply concerns. - Vietnam.vn",
+    "src": "Vietnam.vn",
+    "age_h": 13.8
+   },
+   {
+    "t": "Daily Coffee Report 10/14/26 - StoneX",
+    "src": "StoneX",
+    "age_h": 14.5
+   },
+   {
+    "t": "CPI read: Coffee prices rise 7% in September (KC1:COM:Commodity) - Seeking Alpha",
+    "src": "Seeking Alpha",
+    "age_h": 27.0
+   },
+   {
+    "t": "Coffee futures price outlook: Buyers dominate as bullish momentum signals possible breakout attempt - Traders Union",
+    "src": "Traders Union",
+    "age_h": 27.1
+   },
+   {
+    "t": "Arabica futures extend recovery, Nestlé to invest US$2bn in Mexico - Comunicaffe International",
+    "src": "Comunicaffe International",
+    "age_h": 30.3
+   },
+   {
+    "t": "Coffee prices today, October 14th: Mixed trends, robusta prices fall. - Vietnam.vn",
+    "src": "Vietnam.vn",
+    "age_h": 40.3
+   }
+  ],
+  "0881_HK": []
  },
  "feeds": {
   "macro": [

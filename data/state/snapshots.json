@@ -1652,7 +1652,8 @@
   "engine_sha": "69e75ef468979668",
   "features_sha": "22895c39205d1604",
   "realized": {
-   "ledger_ref": "APP@2026-10-08"
+   "ledger_ref": "APP@2026-10-08",
+   "fwd5_pct": -1.21
   },
   "settled": false,
   "stier": {
