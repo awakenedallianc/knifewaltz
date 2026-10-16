@@ -8,76 +8,94 @@
  "note": "接近资格线观察名单：dd250 在 -50%~-60% 之间（B4 单级筛展示层，不入板不进状态机；ORNAMENT 不列）",
  "rows": [
   {
-   "symbol": "BILI",
-   "key": "BILI",
-   "name": "哔哩哔哩",
-   "pool": "CN_ADR",
-   "dd250": -59.8,
-   "px": 14.430000305175781,
-   "asof": "2026-10-15"
-  },
-  {
-   "symbol": "0960.HK",
-   "key": "0960_HK",
-   "name": "Longfor Group Holdings Ltd",
-   "pool": "CN_HK",
-   "dd250": -55.5,
-   "px": 4.75,
-   "asof": "2026-10-15"
-  },
-  {
-   "symbol": "0968.HK",
-   "key": "0968_HK",
-   "name": "Xinyi Solar Holdings Ltd",
-   "pool": "CN_HK",
-   "dd250": -53.7,
-   "px": 1.850000023841858,
-   "asof": "2026-10-15"
-  },
-  {
    "symbol": "NIO",
    "key": "NIO",
    "name": "蔚来",
    "pool": "CN_ADR",
-   "dd250": -52.8,
-   "px": 3.5,
-   "asof": "2026-10-15"
-  },
-  {
-   "symbol": "2015.HK",
-   "key": "2015_HK",
-   "name": "Li Auto Inc",
-   "pool": "CN_HK",
-   "dd250": -51.8,
-   "px": 44.439998626708984,
-   "asof": "2026-10-15"
+   "dd250": -53.4,
+   "px": 3.4600000381469727,
+   "asof": "2026-10-16"
   },
   {
    "symbol": "KC",
    "key": "KC",
    "name": "金山云",
    "pool": "CN_ADR",
-   "dd250": -51.5,
-   "px": 8.84000015258789,
-   "asof": "2026-10-15"
+   "dd250": -52.7,
+   "px": 8.609999656677246,
+   "asof": "2026-10-16"
+  },
+  {
+   "symbol": "0960.HK",
+   "key": "0960_HK",
+   "name": "Longfor Group Holdings Ltd",
+   "pool": "CN_HK",
+   "dd250": -52.7,
+   "px": 5.045000076293945,
+   "asof": "2026-10-16"
+  },
+  {
+   "symbol": "0968.HK",
+   "key": "0968_HK",
+   "name": "Xinyi Solar Holdings Ltd",
+   "pool": "CN_HK",
+   "dd250": -52.0,
+   "px": 1.9199999570846558,
+   "asof": "2026-10-16"
   },
   {
    "symbol": "1378.HK",
    "key": "1378_HK",
    "name": "China Hongqiao Group Ltd",
    "pool": "CN_HK",
-   "dd250": -51.5,
-   "px": 19.510000228881836,
-   "asof": "2026-10-15"
+   "dd250": -51.2,
+   "px": 19.639999389648438,
+   "asof": "2026-10-16"
+  },
+  {
+   "symbol": "GDS",
+   "key": "GDS",
+   "name": "万国数据",
+   "pool": "CN_ADR",
+   "dd250": -50.9,
+   "px": 23.350000381469727,
+   "asof": "2026-10-16"
+  },
+  {
+   "symbol": "9992.HK",
+   "key": "9992_HK",
+   "name": "Pop Mart International Group Ltd",
+   "pool": "CN_HK",
+   "dd250": -50.7,
+   "px": 142.1999969482422,
+   "asof": "2026-10-16"
   },
   {
    "symbol": "9888.HK",
    "key": "9888_HK",
    "name": "Baidu Inc",
    "pool": "CN_HK",
-   "dd250": -51.2,
-   "px": 78.3499984741211,
-   "asof": "2026-10-15"
+   "dd250": -50.5,
+   "px": 79.44999694824219,
+   "asof": "2026-10-16"
+  },
+  {
+   "symbol": "BIDU",
+   "key": "BIDU",
+   "name": "百度",
+   "pool": "CN_ADR",
+   "dd250": -50.1,
+   "px": 81.0199966430664,
+   "asof": "2026-10-16"
+  },
+  {
+   "symbol": "2015.HK",
+   "key": "2015_HK",
+   "name": "Li Auto Inc",
+   "pool": "CN_HK",
+   "dd250": -50.1,
+   "px": 44.7599983215332,
+   "asof": "2026-10-16"
   }
  ]
 }

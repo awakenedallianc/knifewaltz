@@ -15,7 +15,7 @@
  },
  "FISV": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-16",
   "clear_streak": 0,
   "top_headline": "Fiserv ‘reset’ bolsters case, litigants say"
@@ -50,7 +50,7 @@
  },
  "APP": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-16",
   "clear_streak": 0,
   "top_headline": "AppLovin Stock Has One Thing Left To Prove"
@@ -65,9 +65,9 @@
  "MSTR": {
   "veto": false,
   "p": 0.0,
-  "date": "2026-10-15",
+  "date": "2026-10-16",
   "clear_streak": 0,
-  "top_headline": "Michael Saylor predicts bitcoin will blow past $100K as he declares new bull market underway"
+  "top_headline": "Strategy stock falls as Michael Saylor's bitcoin giant faces index-level threat"
  },
  "LULU": {
   "veto": false,
@@ -183,7 +183,7 @@
  },
  "QFIN": {
   "veto": false,
-  "p": 0.15,
+  "p": 0.16,
   "date": "2026-10-16",
   "clear_streak": 0,
   "top_headline": "Qfin Holdings names Yan Zheng CEO as analysts set a USD 12.29 target for Qfin Holdings stock - ad-hoc-news.de"
@@ -225,7 +225,7 @@
  },
  "TIGR": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-16",
   "clear_streak": 0,
   "top_headline": "UP Fintech stock costs EUR 3.69 with a USD 8.16 analyst target - ad-hoc-news.de"
@@ -421,7 +421,7 @@
  },
  "WDC": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.02,
   "date": "2026-10-16",
   "clear_streak": 0,
   "top_headline": "Supermicro promised a new CFO in December 2024. A $2.5 billion smuggling case and a co-founder’s arrest later, it has one"

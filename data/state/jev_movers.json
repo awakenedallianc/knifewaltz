@@ -1,109 +1,37 @@
 {
- "STRKUSDT": {
+ "FILUSDT": {
   "family": "noise",
-  "flavor": 0.23,
+  "flavor": 0.1,
   "probs": {
-   "noise": 0.77,
+   "noise": 0.9,
    "liquidation_cascade": 0.0,
    "event_driven": 0.0,
    "systemic": 0.02,
-   "unclear": 0.21
-  },
-  "date": "2026-10-16"
- },
- "NEARUSDT": {
-  "family": "noise",
-  "flavor": 0.48,
-  "probs": {
-   "noise": 0.52,
-   "liquidation_cascade": 0.0,
-   "event_driven": 0.01,
-   "systemic": 0.13,
-   "unclear": 0.34
-  },
-  "date": "2026-10-16"
- },
- "XCRCLUSDT": {
-  "family": "noise",
-  "flavor": 0.22,
-  "probs": {
-   "noise": 0.78,
-   "liquidation_cascade": 0.0,
-   "event_driven": 0.01,
-   "systemic": 0.06,
-   "unclear": 0.15
+   "unclear": 0.08
   },
   "date": "2026-10-16"
  },
  "ZECUSDT": {
-  "family": "unclear",
-  "flavor": 0.64,
+  "family": "systemic",
+  "flavor": 0.76,
   "probs": {
-   "noise": 0.36,
-   "liquidation_cascade": 0.0,
-   "event_driven": 0.01,
-   "systemic": 0.13,
-   "unclear": 0.5
-  },
-  "date": "2026-10-16"
- },
- "FILUSDT": {
-  "family": "unclear",
-  "flavor": 0.69,
-  "probs": {
-   "noise": 0.31,
-   "liquidation_cascade": 0.0,
-   "event_driven": 0.01,
-   "systemic": 0.12,
-   "unclear": 0.56
-  },
-  "date": "2026-10-16"
- },
- "UNIUSDT": {
-  "family": "unclear",
-  "flavor": 0.65,
-  "probs": {
-   "noise": 0.35,
-   "liquidation_cascade": 0.0,
-   "event_driven": 0.01,
-   "systemic": 0.16,
-   "unclear": 0.48
-  },
-  "date": "2026-10-16"
- },
- "HYPEUSDT": {
-  "family": "unclear",
-  "flavor": 0.59,
-  "probs": {
-   "noise": 0.41,
+   "noise": 0.24,
    "liquidation_cascade": 0.0,
    "event_driven": 0.0,
-   "systemic": 0.14,
-   "unclear": 0.45
+   "systemic": 0.46,
+   "unclear": 0.3
   },
   "date": "2026-10-16"
  },
- "SUIUSDT": {
+ "NEARUSDT": {
   "family": "unclear",
-  "flavor": 0.63,
+  "flavor": 0.78,
   "probs": {
-   "noise": 0.37,
+   "noise": 0.22,
    "liquidation_cascade": 0.0,
-   "event_driven": 0.0,
-   "systemic": 0.17,
-   "unclear": 0.46
-  },
-  "date": "2026-10-16"
- },
- "SOLUSDT": {
-  "family": "event_driven",
-  "flavor": 0.99,
-  "probs": {
-   "noise": 0.01,
-   "liquidation_cascade": 0.0,
-   "event_driven": 0.93,
-   "systemic": 0.04,
-   "unclear": 0.02
+   "event_driven": 0.01,
+   "systemic": 0.37,
+   "unclear": 0.4
   },
   "date": "2026-10-16"
  },
@@ -119,51 +47,63 @@
   },
   "date": "2026-10-16"
  },
+ "DOGEUSDT": {
+  "family": "systemic",
+  "flavor": 0.81,
+  "probs": {
+   "noise": 0.19,
+   "liquidation_cascade": 0.0,
+   "event_driven": 0.0,
+   "systemic": 0.6,
+   "unclear": 0.21
+  },
+  "date": "2026-10-16"
+ },
  "BTCUSDT": {
   "family": "systemic",
-  "flavor": 0.98,
+  "flavor": 1.0,
   "probs": {
-   "noise": 0.02,
-   "liquidation_cascade": 0.06,
-   "event_driven": 0.44,
-   "systemic": 0.44,
-   "unclear": 0.04
+   "noise": 0.0,
+   "liquidation_cascade": 0.09,
+   "event_driven": 0.25,
+   "systemic": 0.66,
+   "unclear": 0.0
+  },
+  "date": "2026-10-16"
+ },
+ "SOLUSDT": {
+  "family": "event_driven",
+  "flavor": 0.99,
+  "probs": {
+   "noise": 0.01,
+   "liquidation_cascade": 0.0,
+   "event_driven": 0.57,
+   "systemic": 0.41,
+   "unclear": 0.01
   },
   "date": "2026-10-16"
  },
  "XRPUSDT": {
   "family": "systemic",
-  "flavor": 0.98,
+  "flavor": 0.99,
   "probs": {
-   "noise": 0.02,
-   "liquidation_cascade": 0.09,
-   "event_driven": 0.35,
-   "systemic": 0.51,
-   "unclear": 0.03
+   "noise": 0.01,
+   "liquidation_cascade": 0.12,
+   "event_driven": 0.14,
+   "systemic": 0.72,
+   "unclear": 0.01
   },
   "date": "2026-10-16"
  },
- "DOGEUSDT": {
-  "family": "noise",
-  "flavor": 0.54,
+ "STRKUSDT": {
+  "family": "liquidation_cascade",
+  "flavor": 0.78,
   "probs": {
-   "noise": 0.46,
-   "liquidation_cascade": 0.03,
-   "event_driven": 0.01,
-   "systemic": 0.11,
-   "unclear": 0.39
-  },
-  "date": "2026-10-16"
- },
- "OKBUSDT": {
-  "family": "noise",
-  "flavor": 0.48,
-  "probs": {
-   "noise": 0.52,
-   "liquidation_cascade": 0.04,
-   "event_driven": 0.01,
+   "noise": 0.22,
+   "liquidation_cascade": 0.51,
+   "event_driven": 0.09,
    "systemic": 0.09,
-   "unclear": 0.34
+   "unclear": 0.09
   },
   "date": "2026-10-16"
  }

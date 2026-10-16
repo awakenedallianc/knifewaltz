@@ -1760,7 +1760,8 @@
   "engine_sha": "69e75ef468979668",
   "features_sha": "252c740baf8b97a8",
   "realized": {
-   "ledger_ref": "VNET@2026-10-09"
+   "ledger_ref": "VNET@2026-10-09",
+   "fwd5_pct": -27.58
   },
   "settled": false,
   "stier": {
@@ -1866,7 +1867,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "55c9f0b97cc178b8",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": -3.96
+  },
   "settled": false
  },
  {
@@ -1933,7 +1936,8 @@
   "engine_sha": "69e75ef468979668",
   "features_sha": "984ba14f2c92867a",
   "realized": {
-   "ledger_ref": "GDS@2026-10-10"
+   "ledger_ref": "GDS@2026-10-10",
+   "fwd5_pct": -24.6
   },
   "settled": false,
   "stier": {
