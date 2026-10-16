@@ -1,32 +1,26 @@
 {
- "asof": "2026-10-15T22:46:02+07:00",
+ "asof": "2026-10-16T08:38:40+07:00",
  "source": "yahoo-calendar",
  "caliber": "未来 5 个交易日窗（远期日历大票缺席是实测事实，不做远期）",
  "days": [
-  "2026-10-15",
   "2026-10-16",
   "2026-10-19",
   "2026-10-20",
-  "2026-10-21"
+  "2026-10-21",
+  "2026-10-22"
  ],
  "days_failed": [],
  "truncated_days": [
-  "2026-10-21"
+  "2026-10-21",
+  "2026-10-22"
  ],
- "watchlist_n": 23,
+ "watchlist_n": 21,
  "marks": [
   {
-   "ticker": "MAN",
-   "date": "2026-10-15",
-   "when": "TAS",
-   "eps_est": 1.01,
-   "date_confirmed": true
-  },
-  {
-   "ticker": "TSM",
-   "date": "2026-10-15",
-   "when": "TAS",
-   "eps_est": 4.52,
+   "ticker": "WDC",
+   "date": "2026-10-22",
+   "when": "AMC",
+   "eps_est": 4.08,
    "date_confirmed": true
   }
  ]

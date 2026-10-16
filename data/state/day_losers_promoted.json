@@ -1,5 +1,5 @@
 {
- "date": "2026-10-15",
+ "date": "2026-10-16",
  "source": "yahoo-screener",
  "promoted": [
   {
@@ -7,15 +7,15 @@
    "key": "MAN",
    "name": "ManpowerGroup",
    "cls": "equity",
-   "pct_day": -15.26,
-   "mcap": 340124631040,
-   "dd52w": -30.06,
-   "ret10": -21.77,
-   "vol_ratio": 1.76,
+   "pct_day": -15.82,
+   "mcap": 9455505408,
+   "dd52w": -30.52,
+   "ret10": -22.28,
+   "vol_ratio": 4.24,
    "days_from_peak": 32,
-   "px": 44.029998779296875,
+   "px": 43.7400016784668,
    "asof": "2026-10-15",
-   "bars": 252
+   "bars": 251
   }
  ],
  "degraded_reason": null
