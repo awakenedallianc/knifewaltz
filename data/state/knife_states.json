@@ -140,8 +140,8 @@
   "events": []
  },
  "CSGP": {
-  "state": "CATCH",
-  "since": "2026-09-30",
+  "state": "NORMAL",
+  "since": "2026-10-17",
   "events": [
    {
     "d": "2026-09-30",
@@ -154,6 +154,12 @@
     "from": "KNIFE_FALLING",
     "to": "CATCH",
     "note": "checklist 3/5"
+   },
+   {
+    "d": "2026-10-17",
+    "from": "CATCH",
+    "to": "NORMAL",
+    "note": "接刀窗过期未确认"
    }
   ],
   "catch_ref_price": 26.950000762939453,

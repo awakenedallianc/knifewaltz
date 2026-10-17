@@ -1,6 +1,22 @@
 {
- "date": "2026-10-16",
+ "date": "2026-10-17",
  "source": "yahoo-screener",
- "promoted": [],
+ "promoted": [
+  {
+   "symbol": "BSP",
+   "key": "BSP",
+   "name": "Bending Spoons S.p.A.",
+   "cls": "equity",
+   "pct_day": -15.6,
+   "mcap": 2098158848,
+   "dd52w": 0.0,
+   "ret10": 71.6,
+   "vol_ratio": 1.89,
+   "days_from_peak": 0,
+   "px": 55.77000045776367,
+   "asof": "2026-10-15",
+   "bars": 75
+  }
+ ],
  "degraded_reason": null
 }
