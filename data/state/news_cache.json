@@ -1785,6 +1785,90 @@
     "src": "yahoo",
     "age_h": 37.7
    }
+  ],
+  "MSTR": [
+   {
+    "t": "Hyperliquid, Monero or Bitcoin: Which Could Hit a New All Time High First?",
+    "src": "yahoo",
+    "age_h": 0.4
+   },
+   {
+    "t": "MSCI Is Moving to Drop Strategy From Its Indexes. Could That Hit Bitcoin?",
+    "src": "yahoo",
+    "age_h": 7.2
+   },
+   {
+    "t": "Is Uptober Over for BTC? Bitcoin Is Down Nearly 4% So Far This October.",
+    "src": "yahoo",
+    "age_h": 7.2
+   },
+   {
+    "t": "Nasdaq 100 Records Worst Week In 18 Months As Investors Steer Clear Of Chipmakers — AAPL, MSTR, UBER, SOXX In Focus",
+    "src": "yahoo",
+    "age_h": 16.2
+   },
+   {
+    "t": "Weekly Wrap: Crypto Under Pressure As A.I. Trade Unwinds",
+    "src": "yahoo",
+    "age_h": 16.7
+   },
+   {
+    "t": "Strategy (MSTR) Falls More Steeply Than Broader Market: What Investors Need to Know",
+    "src": "yahoo",
+    "age_h": 17.6
+   },
+   {
+    "t": "Why Strategy (MSTR) Stock Is Down Today",
+    "src": "yahoo",
+    "age_h": 17.8
+   },
+   {
+    "t": "Tesla, SpaceX, CoreWeave, Lam Research, Netflix, Strategy, and More Stocks That Explain Today’s Market",
+    "src": "yahoo",
+    "age_h": 17.9
+   }
+  ],
+  "COIN": [
+   {
+    "t": "Mastercard Puts $1.8 Billion BVNK Deal to Work With Global Money Platform Launch",
+    "src": "yahoo",
+    "age_h": 7.8
+   },
+   {
+    "t": "Weekly Wrap: Crypto Under Pressure As A.I. Trade Unwinds",
+    "src": "yahoo",
+    "age_h": 16.7
+   },
+   {
+    "t": "Charles Schwab CEO: AI agents trading on your behalf need 'rules of the road'",
+    "src": "yahoo",
+    "age_h": 17.9
+   },
+   {
+    "t": "Circle Stock Jumped 9% in a Day as Crypto Stocks Rebounded. Here’s Where the Stock Could Go by 2030",
+    "src": "yahoo",
+    "age_h": 18.2
+   },
+   {
+    "t": "Quantum could end bitcoin — or not. Here's why not to panic.",
+    "src": "yahoo",
+    "age_h": 21.4
+   },
+   {
+    "t": "Hot PPI report throws cold water on rate cuts",
+    "src": "yahoo",
+    "age_h": 22.5
+   },
+   {
+    "t": "Marqeta, Coinbase to Bring Stablecoin-Backed Cards to Businesses",
+    "src": "yahoo",
+    "age_h": 23.0
+   },
+   {
+    "t": "Prediction Markets to Let Users Bet on Coinbase, Robinhood and Marathon Targets",
+    "src": "yahoo",
+    "age_h": 25.7
+   }
   ]
  },
  "feeds": {

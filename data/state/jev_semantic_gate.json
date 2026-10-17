@@ -15,7 +15,7 @@
  },
  "FISV": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-17",
   "clear_streak": 0,
   "top_headline": "FIS Stock Down Nearly 48% From 52-Week High: Is a Rebound Ahead?"
@@ -65,13 +65,13 @@
  "MSTR": {
   "veto": false,
   "p": 0.0,
-  "date": "2026-10-16",
+  "date": "2026-10-17",
   "clear_streak": 0,
-  "top_headline": "Strategy stock falls as Michael Saylor's bitcoin giant faces index-level threat"
+  "top_headline": "Hyperliquid, Monero or Bitcoin: Which Could Hit a New All Time High First?"
  },
  "LULU": {
   "veto": false,
-  "p": 0.17,
+  "p": 0.1,
   "date": "2026-10-17",
   "clear_streak": 0,
   "top_headline": "Why Lululemon (LULU) Dipped More Than Broader Market Today"
@@ -169,14 +169,14 @@
  },
  "LX": {
   "veto": false,
-  "p": 0.52,
+  "p": 0.43,
   "date": "2026-10-17",
   "clear_streak": 0,
   "top_headline": "Super Bowl LX - NBC Sports"
  },
  "0881_HK": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.17,
   "date": "2026-10-17",
   "clear_streak": 0,
   "top_headline": "Zhongsheng stock trades at EUR 0.27, volume 7.40 percent below average - ad-hoc-news.de"
@@ -190,7 +190,7 @@
  },
  "TME": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-17",
   "clear_streak": 0,
   "top_headline": "Thurgood Marshall Elementary - Chesapeake Public Schools"
@@ -204,7 +204,7 @@
  },
  "XPEV": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-17",
   "clear_streak": 0,
   "top_headline": "XPEV Oct 2026 8.000 call (XPEV261030C00008000) Stock Historical Prices & Data - Yahoo! Finance Canada"
@@ -225,7 +225,7 @@
  },
  "TIGR": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-17",
   "clear_streak": 0,
   "top_headline": "UP Fintech stock costs EUR 3.69 with a USD 8.16 analyst target - ad-hoc-news.de"
@@ -344,7 +344,7 @@
  },
  "KWEB": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-17",
   "clear_streak": 0,
   "top_headline": "KWEB Jan 2028 56.000 call (KWEB280121C00056000) Interactive Stock Chart - Yahoo! Finance Canada"
@@ -365,10 +365,10 @@
  },
  "COIN": {
   "veto": false,
-  "p": 0.01,
-  "date": "2026-10-15",
+  "p": 0.0,
+  "date": "2026-10-17",
   "clear_streak": 0,
-  "top_headline": "Coinbase Global, Inc. (COIN) Registers a Bigger Fall Than the Market: Important Facts to Note"
+  "top_headline": "Mastercard Puts $1.8 Billion BVNK Deal to Work With Global Money Platform Launch"
  },
  "GDS": {
   "veto": false,

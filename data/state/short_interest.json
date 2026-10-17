@@ -2,7 +2,7 @@
  "settlement": "2026-09-30",
  "staleness_note": "双月·滞后约9工作日",
  "source": "finra",
- "fetched_at": "2026-10-17T08:30:30+07:00",
+ "fetched_at": "2026-10-17T21:26:11+07:00",
  "rows": {
   "ALB": {
    "short": 11764871,
@@ -44,6 +44,11 @@
    "days_to_cover": 5.01,
    "chg_pct": 7.15
   },
+  "COIN": {
+   "short": 24374578,
+   "days_to_cover": 2.5,
+   "chg_pct": -3.41
+  },
   "CSGP": {
    "short": 13284736,
    "days_to_cover": 1.97,
@@ -78,6 +83,11 @@
    "short": 15378052,
    "days_to_cover": 3.15,
    "chg_pct": 11.6
+  },
+  "MSTR": {
+   "short": 29376814,
+   "days_to_cover": 1.23,
+   "chg_pct": -4.44
   },
   "NVDA": {
    "short": 311389688,

@@ -1,13 +1,13 @@
 {
- "ETHUSDT": {
+ "BTCUSDT": {
   "family": "systemic",
   "flavor": 1.0,
   "probs": {
    "noise": 0.0,
    "liquidation_cascade": 0.0,
-   "event_driven": 0.32,
-   "systemic": 0.68,
-   "unclear": 0.0
+   "event_driven": 0.34,
+   "systemic": 0.65,
+   "unclear": 0.01
   },
   "date": "2026-10-17"
  },
@@ -16,34 +16,34 @@
   "flavor": 0.99,
   "probs": {
    "noise": 0.01,
-   "liquidation_cascade": 0.0,
-   "event_driven": 0.12,
-   "systemic": 0.87,
+   "liquidation_cascade": 0.01,
+   "event_driven": 0.1,
+   "systemic": 0.88,
    "unclear": 0.0
   },
   "date": "2026-10-17"
  },
- "BTCUSDT": {
+ "ETHUSDT": {
   "family": "systemic",
   "flavor": 1.0,
   "probs": {
    "noise": 0.0,
    "liquidation_cascade": 0.0,
-   "event_driven": 0.15,
-   "systemic": 0.85,
+   "event_driven": 0.43,
+   "systemic": 0.57,
    "unclear": 0.0
   },
   "date": "2026-10-17"
  },
  "DOGEUSDT": {
   "family": "systemic",
-  "flavor": 0.86,
+  "flavor": 0.97,
   "probs": {
-   "noise": 0.14,
+   "noise": 0.03,
    "liquidation_cascade": 0.0,
    "event_driven": 0.0,
-   "systemic": 0.77,
-   "unclear": 0.09
+   "systemic": 0.91,
+   "unclear": 0.06
   },
   "date": "2026-10-17"
  },
@@ -52,34 +52,34 @@
   "flavor": 1.0,
   "probs": {
    "noise": 0.0,
-   "liquidation_cascade": 0.07,
-   "event_driven": 0.04,
-   "systemic": 0.89,
+   "liquidation_cascade": 0.08,
+   "event_driven": 0.02,
+   "systemic": 0.9,
    "unclear": 0.0
   },
   "date": "2026-10-17"
  },
  "NEARUSDT": {
   "family": "systemic",
-  "flavor": 0.69,
+  "flavor": 0.94,
   "probs": {
-   "noise": 0.31,
-   "liquidation_cascade": 0.01,
+   "noise": 0.06,
+   "liquidation_cascade": 0.0,
    "event_driven": 0.0,
-   "systemic": 0.53,
-   "unclear": 0.15
+   "systemic": 0.86,
+   "unclear": 0.08
   },
   "date": "2026-10-17"
  },
  "ZECUSDT": {
   "family": "systemic",
-  "flavor": 0.8,
+  "flavor": 0.97,
   "probs": {
-   "noise": 0.2,
-   "liquidation_cascade": 0.01,
+   "noise": 0.03,
+   "liquidation_cascade": 0.0,
    "event_driven": 0.0,
-   "systemic": 0.71,
-   "unclear": 0.08
+   "systemic": 0.92,
+   "unclear": 0.05
   },
   "date": "2026-10-17"
  }

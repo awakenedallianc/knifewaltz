@@ -9,13 +9,13 @@
    "cls": "equity",
    "pct_day": -15.6,
    "mcap": 2098158848,
-   "dd52w": 0.0,
-   "ret10": 71.6,
-   "vol_ratio": 1.89,
-   "days_from_peak": 0,
-   "px": 55.77000045776367,
-   "asof": "2026-10-15",
-   "bars": 75
+   "dd52w": -15.6,
+   "ret10": 46.96,
+   "vol_ratio": 1.37,
+   "days_from_peak": 1,
+   "px": 47.06999969482422,
+   "asof": "2026-10-16",
+   "bars": 76
   }
  ],
  "degraded_reason": null
