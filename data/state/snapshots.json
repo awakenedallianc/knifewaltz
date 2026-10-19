@@ -50,7 +50,14 @@
   "engine_sha": "a2e9a743b753529d",
   "features_sha": "8d6083ab29e5c388",
   "realized": {
-   "fwd5_pct": -12.35
+   "fwd5_pct": -12.35,
+   "fwd20_pct": -14.78,
+   "mae20_pct": -15.8,
+   "atier": {
+    "pnl_pct": -0.83,
+    "exit": "X-STOP@8日",
+    "exit_bar": 8
+   }
   },
   "settled": false
  },
@@ -118,7 +125,14 @@
   "engine_sha": "a2e9a743b753529d",
   "features_sha": "054137a67183bb3e",
   "realized": {
-   "fwd5_pct": 4.34
+   "fwd5_pct": 4.34,
+   "fwd20_pct": 13.8,
+   "mae20_pct": -2.41,
+   "atier": {
+    "pnl_pct": -1.48,
+    "exit": "X-STOP@1日",
+    "exit_bar": 1
+   }
   },
   "settled": false
  },
@@ -2376,6 +2390,179 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "e7eec579627815a7",
+  "realized": {},
+  "settled": false
+ },
+ {
+  "id": "S-CATCH:INSM:2026-10-20",
+  "kind": "S-CATCH",
+  "symbol": "INSM",
+  "date": "2026-10-20",
+  "trigger_px": 96.21499633789062,
+  "stop_price": 94.38,
+  "features": {
+   "dd52w": -54.49,
+   "dd250": -54.49,
+   "ret10": -7.33,
+   "rsi14": 20.0,
+   "vol_ratio": 0.47,
+   "close_pos": 0.52,
+   "falling": false,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": true,
+    "gate_ok": true,
+    "rsi_divergence": true
+   },
+   "checklist_n": 3,
+   "tier_time": "DEAD_ZONE",
+   "days_from_peak": 221,
+   "stop_price": 94.38,
+   "last_date": "2026-10-19",
+   "cls": "equity_single",
+   "tier": "T2",
+   "state": "CATCH",
+   "score_parts": {
+    "fall_40": 18.0,
+    "capitulation_20": 0.0,
+    "checklist_20": 12.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 50,
+  "market": {
+   "blade_index": 8,
+   "gate_state": "GREEN",
+   "vix": 18.3799991607666,
+   "vix_ratio": 0.9363219534671042
+  },
+  "jev": {
+   "family": "unclear",
+   "p_terminal": 0.0,
+   "conf": 0.55,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.4,
+   "catch_prior": 0.25,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "ef52e63e1904ebc1",
+  "realized": {
+   "ledger_ref": "INSM@2026-10-20"
+  },
+  "settled": false,
+  "stier": {
+   "rules_version": "s1",
+   "admitted": false,
+   "status": null,
+   "soft_score": 0.4375,
+   "hard_pass": {
+    "H1": true,
+    "H2": false,
+    "H3": false,
+    "H4": false,
+    "H5": true,
+    "H6": true,
+    "H7": true,
+    "H8": false
+   },
+   "shadow": {
+    "H9": {
+     "would_block": true,
+     "lr": 1.0,
+     "grade": "线索"
+    },
+    "H10": {
+     "would_block": false,
+     "flip_back_age_days": null
+    },
+    "H11": {
+     "would_block": false,
+     "close_pos": 0.52
+    }
+   },
+   "slice": {
+    "key": "unclear|GREEN|DEAD_ZONE|none|equity_single",
+    "lr": 1.0,
+    "n": 0,
+    "wins": 0,
+    "wilson95": null,
+    "grade": "线索"
+   }
+  }
+ },
+ {
+  "id": "S-FALL:MSTR:2026-10-20",
+  "kind": "S-FALL",
+  "symbol": "MSTR",
+  "date": "2026-10-20",
+  "trigger_px": 137.02999877929688,
+  "stop_price": 136.8775,
+  "features": {
+   "dd52w": -54.61,
+   "dd250": -54.61,
+   "ret10": -16.66,
+   "rsi14": 36.2,
+   "vol_ratio": 0.38,
+   "close_pos": 0.04,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": false,
+    "gate_ok": true,
+    "rsi_divergence": true
+   },
+   "checklist_n": 2,
+   "tier_time": "-",
+   "days_from_peak": 477,
+   "stop_price": 136.8775,
+   "last_date": "2026-10-19",
+   "cls": "equity_single",
+   "tier": "T2",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 24.1,
+    "capitulation_20": 0.0,
+    "checklist_20": 8.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 52,
+  "market": {
+   "blade_index": 8,
+   "gate_state": "GREEN",
+   "vix": 18.3799991607666,
+   "vix_ratio": 0.9363219534671042
+  },
+  "jev": {
+   "family": "unclear",
+   "p_terminal": 0.0,
+   "conf": 0.31,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.48,
+   "catch_prior": null,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "2a98db117751f713",
   "realized": {},
   "settled": false
  }

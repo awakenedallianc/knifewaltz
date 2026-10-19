@@ -644,5 +644,17 @@
   "tier_time": "B",
   "status": "open",
   "snapshot_ref": "S-CATCH:QFIN:2026-10-14"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "INSM",
+  "date": "2026-10-20",
+  "entry": 96.21499633789062,
+  "stop": 94.38,
+  "score": 50,
+  "tier_time": "DEAD_ZONE",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:INSM:2026-10-20"
  }
 ]
