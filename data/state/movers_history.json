@@ -2968,59 +2968,68 @@
   "2026-10-20": [
    {
     "date": "2026-10-20",
-    "sym": "SOLUSDT",
-    "last": 104.7,
-    "pct24": -0.381,
-    "quote_vol": 54932678.0,
-    "funding": 6.26240683111e-05,
-    "source": "okx"
-   },
-   {
-    "date": "2026-10-20",
-    "sym": "XRPUSDT",
-    "last": 1.2994,
-    "pct24": -0.885,
-    "quote_vol": 24274264.0,
+    "sym": "WLDUSDT",
+    "last": 0.5617,
+    "pct24": 10.658,
+    "quote_vol": 31335981.0,
     "funding": null,
     "source": "okx"
    },
    {
     "date": "2026-10-20",
-    "sym": "BTCUSDT",
-    "last": 81671.8,
-    "pct24": -0.994,
-    "quote_vol": 389321820.0,
-    "funding": 0.0001,
+    "sym": "ZECUSDT",
+    "last": 1184.2,
+    "pct24": 5.411,
+    "quote_vol": 83459938.0,
+    "funding": null,
     "source": "okx"
    },
    {
     "date": "2026-10-20",
     "sym": "ETHUSDT",
-    "last": 2394.3,
-    "pct24": -1.347,
-    "quote_vol": 199913712.0,
-    "funding": 6.99279755214e-05,
+    "last": 2436.41,
+    "pct24": 1.617,
+    "quote_vol": 300211661.0,
+    "funding": 5.66733904484e-05,
     "source": "okx"
    },
    {
     "date": "2026-10-20",
-    "sym": "ZECUSDT",
-    "last": 1143.33,
-    "pct24": -2.612,
-    "quote_vol": 49965250.0,
-    "funding": 0.0001,
+    "sym": "DOGEUSDT",
+    "last": 0.08034,
+    "pct24": 1.427,
+    "quote_vol": 20943454.0,
+    "funding": null,
+    "source": "okx"
+   },
+   {
+    "date": "2026-10-20",
+    "sym": "SOLUSDT",
+    "last": 105.42,
+    "pct24": 1.093,
+    "quote_vol": 53031576.0,
+    "funding": 4.68843726244e-05,
+    "source": "okx"
+   },
+   {
+    "date": "2026-10-20",
+    "sym": "BTCUSDT",
+    "last": 82464.6,
+    "pct24": 0.508,
+    "quote_vol": 368249311.0,
+    "funding": 5.28365174218e-05,
     "source": "okx"
    },
    {
     "date": "2026-10-20",
     "sym": "NEARUSDT",
-    "last": 4.833,
-    "pct24": -4.656,
-    "quote_vol": 24077221.0,
-    "funding": -0.0001777901195949,
+    "last": 4.804,
+    "pct24": -2.516,
+    "quote_vol": 37150164.0,
+    "funding": -2.49574641634e-05,
     "source": "okx"
    }
   ]
  },
- "updated": "2026-10-20T09:04:02+07:00"
+ "updated": "2026-10-20T22:52:17+07:00"
 }

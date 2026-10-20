@@ -2058,7 +2058,8 @@
   "engine_sha": "69e75ef468979668",
   "features_sha": "e0257c073bc71779",
   "realized": {
-   "ledger_ref": "CHTR@2026-10-13"
+   "ledger_ref": "CHTR@2026-10-13",
+   "fwd5_pct": 3.25
   },
   "settled": false,
   "stier": {
@@ -2151,7 +2152,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "857c8f7e16855529",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": -11.77
+  },
   "settled": false
  },
  {
@@ -2499,6 +2502,59 @@
     "grade": "线索"
    }
   }
+ },
+ {
+  "id": "S-FALL:DIDIY:2026-10-20",
+  "kind": "S-FALL",
+  "symbol": "DIDIY",
+  "date": "2026-10-20",
+  "trigger_px": 3.119999885559082,
+  "stop_price": 3.11,
+  "features": {
+   "dd52w": -52.73,
+   "dd250": -52.73,
+   "ret10": -16.58,
+   "rsi14": 16.9,
+   "vol_ratio": 0.36,
+   "close_pos": 0.1,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": false,
+    "gate_ok": true,
+    "rsi_divergence": false
+   },
+   "checklist_n": 1,
+   "tier_time": "-",
+   "days_from_peak": 278,
+   "stop_price": 3.11,
+   "last_date": "2026-10-20",
+   "cls": "equity_single",
+   "tier": "ORNAMENT",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 23.1,
+    "capitulation_20": 0.0,
+    "checklist_20": 4.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 47,
+  "market": {
+   "blade_index": 5,
+   "gate_state": "GREEN",
+   "vix": 17.989999771118164,
+   "vix_ratio": 0.9301964647973862
+  },
+  "jev": null,
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "0c3b7c5872806f92",
+  "realized": {},
+  "settled": false
  },
  {
   "id": "S-FALL:MSTR:2026-10-20",

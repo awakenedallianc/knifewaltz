@@ -15,7 +15,7 @@
  },
  "FISV": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-20",
   "clear_streak": 0,
   "top_headline": "CC,ANGX,CDNL,IDAI,BCDA,AMRC,CUEN,LIEN,FISV,STRR,DFH,RSG,SELF,CWBC,PSNY,SPG,FRST,EQPT,REFI,MTDR,AFCG,SRTS,BGDE,ACON | Stock Prices | Quote Comparison - Yahoo! Fi"
@@ -50,7 +50,7 @@
  },
  "APP": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-20",
   "clear_streak": 0,
   "top_headline": "Nine Public Companies Object to OKX-ICE Tokenized Stock Plans"
@@ -127,7 +127,7 @@
  },
  "SLV": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.14,
   "date": "2026-10-20",
   "clear_streak": 0,
   "top_headline": "The Silver Dilemma: Why Risk-Takers Choose SLVP and Purists Choose SLV - The Motley Fool"
@@ -169,21 +169,21 @@
  },
  "LX": {
   "veto": false,
-  "p": 0.37,
+  "p": 0.4,
   "date": "2026-10-20",
   "clear_streak": 0,
   "top_headline": "Save a colossal 64% on this gorgeous white Corsair PC case, if you're quick - outstanding value - Club386"
  },
  "0881_HK": {
   "veto": false,
-  "p": 0.12,
+  "p": 0.06,
   "date": "2026-10-20",
   "clear_streak": 0,
   "top_headline": "Seazen Group (SEHK:1030) Reported September Contracted Sales, Is The Stock Still Overvalued? - Yahoo Finance"
  },
  "QFIN": {
   "veto": false,
-  "p": 0.16,
+  "p": 0.2,
   "date": "2026-10-20",
   "clear_streak": 0,
   "top_headline": "QFIN Shareholder Alert: November 27, 2026 Lead Plaintiff - GlobeNewswire"
@@ -204,21 +204,21 @@
  },
  "XPEV": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-20",
   "clear_streak": 0,
   "top_headline": "Weekly Recap: XPEV launches XPENG AI Engineering and EU sales reach 29k - TradingView"
  },
  "0241_HK": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-20",
   "clear_streak": 0,
   "top_headline": "Alibaba Health (SEHK:241) Stock Could Be 49% Undervalued On Cash Flow"
  },
  "BILI": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-20",
   "clear_streak": 0,
   "top_headline": "CHL regular season wrap-up - IIHF"
@@ -253,7 +253,7 @@
  },
  "VNET": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-20",
   "clear_streak": 0,
   "top_headline": "What Investors Got Wrong About VNET Group Before A 58% Slide"
@@ -295,7 +295,7 @@
  },
  "FUTU": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-20",
   "clear_streak": 0,
   "top_headline": "Turmoil in France weighs on European stocks; focus shifts to corporate earnings - 富途牛牛"
@@ -324,13 +324,13 @@
  "MOMO": {
   "veto": false,
   "p": 0.0,
-  "date": "2026-10-17",
+  "date": "2026-10-20",
   "clear_streak": 0,
-  "top_headline": "PickMe Explore activates ‘Momo’ naming initiative - Daily FT"
+  "top_headline": "Putin’s Proposed Trump-Xi Summit In China Could Hurt US Stocks Long Term; Meta And Tesla Earnings Ahead - Benzinga"
  },
  "NOAH": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-20",
   "clear_streak": 0,
   "top_headline": "'The Pitt' Star Noah Wyle and Wife Sara Share Heartbreaking News About Unexpected Family Loss - Parade Magazine"
@@ -351,7 +351,7 @@
  },
  "1024_HK": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-20",
   "clear_streak": 0,
   "top_headline": "Baidu, Inc. (9888.HK) stock price, news, quote and history - Yahoo Finance UK"
