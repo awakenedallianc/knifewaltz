@@ -15,7 +15,7 @@
  },
  "FISV": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-20",
   "clear_streak": 0,
   "top_headline": "CC,ANGX,CDNL,IDAI,BCDA,AMRC,CUEN,LIEN,FISV,STRR,DFH,RSG,SELF,CWBC,PSNY,SPG,FRST,EQPT,REFI,MTDR,AFCG,SRTS,BGDE,ACON | Stock Prices | Quote Comparison - Yahoo! Fi"
@@ -127,7 +127,7 @@
  },
  "SLV": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.0,
   "date": "2026-10-20",
   "clear_streak": 0,
   "top_headline": "The Silver Dilemma: Why Risk-Takers Choose SLVP and Purists Choose SLV - The Motley Fool"
@@ -169,21 +169,21 @@
  },
  "LX": {
   "veto": false,
-  "p": 0.32,
+  "p": 0.37,
   "date": "2026-10-20",
   "clear_streak": 0,
   "top_headline": "Save a colossal 64% on this gorgeous white Corsair PC case, if you're quick - outstanding value - Club386"
  },
  "0881_HK": {
   "veto": false,
-  "p": 0.06,
+  "p": 0.12,
   "date": "2026-10-20",
   "clear_streak": 0,
   "top_headline": "Seazen Group (SEHK:1030) Reported September Contracted Sales, Is The Stock Still Overvalued? - Yahoo Finance"
  },
  "QFIN": {
   "veto": false,
-  "p": 0.07,
+  "p": 0.16,
   "date": "2026-10-20",
   "clear_streak": 0,
   "top_headline": "QFIN Shareholder Alert: November 27, 2026 Lead Plaintiff - GlobeNewswire"
@@ -225,7 +225,7 @@
  },
  "TIGR": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-20",
   "clear_streak": 0,
   "top_headline": "Should Value Investors Buy UP Fintech Holding Limited (TIGR) Stock?"
@@ -253,7 +253,7 @@
  },
  "VNET": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-20",
   "clear_streak": 0,
   "top_headline": "What Investors Got Wrong About VNET Group Before A 58% Slide"
@@ -351,7 +351,7 @@
  },
  "1024_HK": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-20",
   "clear_streak": 0,
   "top_headline": "Baidu, Inc. (9888.HK) stock price, news, quote and history - Yahoo Finance UK"
@@ -359,7 +359,7 @@
  "YMM": {
   "veto": false,
   "p": 0.0,
-  "date": "2026-10-19",
+  "date": "2026-10-20",
   "clear_streak": 0,
   "top_headline": "Learn Why The Bull Case For Full Truck Alliance Stock Could Change Following Analyst Upgrade - Simply Wall Street"
  },

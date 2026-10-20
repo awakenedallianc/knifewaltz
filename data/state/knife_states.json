@@ -474,7 +474,7 @@
   "events": []
  },
  "MSTR": {
-  "state": "KNIFE_FALLING",
+  "state": "STABILIZING",
   "since": "2026-10-20",
   "events": [
    {
@@ -482,6 +482,12 @@
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -54.61% / 10日 -16.66%"
+   },
+   {
+    "d": "2026-10-20",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 2/5"
    }
   ]
  },
