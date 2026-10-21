@@ -1,2393 +1,2565 @@
 {
- "date": "2026-10-20",
+ "date": "2026-10-21",
  "by_key": {
   "KWEB": [
    {
+    "t": "KWEB 261023 16.00C (KWEB261023C16000) Stock Options Chain | Quotes & News - Moomoo",
+    "src": "Moomoo",
+    "age_h": 23.4
+   },
+   {
+    "t": "KWEB Nov 2026 19.000 put (KWEB261120P00019000) stock price, news, quote and history - Yahoo Finance UK",
+    "src": "Yahoo Finance UK",
+    "age_h": 28.8
+   },
+   {
+    "t": "KWEB Oct 2026 28.500 call (KWEB261023C00028500) Interactive Stock Chart - Yahoo! Finance Canada",
+    "src": "Yahoo! Finance Canada",
+    "age_h": 30.1
+   },
+   {
+    "t": "KWEB Nov 2026 25.000 call (KWEB261127C00025000) Interactive Stock Chart - Yahoo! Finance Canada",
+    "src": "Yahoo! Finance Canada",
+    "age_h": 36.1
+   },
+   {
+    "t": "KWEB261127C00025000 Gráfico interactivo de acciones | KWEB Nov 2026 25.000 call Acciones - Yahoo",
+    "src": "Yahoo",
+    "age_h": 36.2
+   },
+   {
     "t": "Trading Systems Reacting to (KBUF) Volatility - Stock Traders Daily",
     "src": "Stock Traders Daily",
-    "age_h": 9.7
-   },
-   {
-    "t": "KWEB261016C00022000 Interactive Stock Chart | KWEB Oct 2026 22.000 call Stock - Yahoo Finance",
-    "src": "Yahoo Finance",
-    "age_h": 25.7
-   },
-   {
-    "t": "KWEB270115C00046000 interactive stock chart | KWEB Jan 2027 46.000 call stock - Yahoo Finance Australia",
-    "src": "Yahoo Finance Australia",
-    "age_h": 32.7
-   },
-   {
-    "t": "KWEB Jan 2029 19.000 put (KWEB290119P00019000) Interactive Stock Chart - Yahoo! Finance Canada",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 40.4
-   },
-   {
-    "t": "KWEB May 2027 24.000 put (KWEB270521P00024000) stock price, news, quote and history - Yahoo Finance UK",
-    "src": "Yahoo Finance UK",
-    "age_h": 47.4
+    "age_h": 41.9
    }
   ],
   "SLV": [
    {
-    "t": "The Silver Dilemma: Why Risk-Takers Choose SLVP and Purists Choose SLV - The Motley Fool",
-    "src": "The Motley Fool",
-    "age_h": 4.7
+    "t": "SLV Oct 2026 58.500 call (SLV261026C00058500) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+    "src": "Yahoo! Finance Canada",
+    "age_h": 4.5
    },
    {
-    "t": "Faces of the San Luis Valley | 101-150 - Alamosa Citizen",
+    "t": "SLV Sep 2028 79.000 call (SLV280915C00079000) Interactive Stock Chart - Yahoo! Finance Canada",
+    "src": "Yahoo! Finance Canada",
+    "age_h": 7.7
+   },
+   {
+    "t": "Silver Extends Losses to $56.50 as Dollar, Yields Climb; Pan American Silver (NYSE: PAAS), SLV in Focus - kalkine.ca",
+    "src": "kalkine.ca",
+    "age_h": 12.4
+   },
+   {
+    "t": "SLV Health CEO Konnie Martin recognized for health leadership - Alamosa Citizen",
     "src": "Alamosa Citizen",
-    "age_h": 7.3
+    "age_h": 12.9
    },
    {
-    "t": "SLV Nov 2026 49.500 put (SLV261127P00049500) interactive stock chart - Yahoo Finance UK",
-    "src": "Yahoo Finance UK",
-    "age_h": 8.0
+    "t": "(SLV) and the Role of Price-Sensitive Allocations - Stock Traders Daily",
+    "src": "Stock Traders Daily",
+    "age_h": 14.0
    },
    {
-    "t": "SLV Nov 2026 35.000 put (SLV261127P00035000) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+    "t": "iShares Silver Trust (SLV) Stock Price, News, Quote & History - Yahoo! Finance Canada",
     "src": "Yahoo! Finance Canada",
-    "age_h": 8.7
+    "age_h": 14.5
    },
    {
-    "t": "SLV Nov 2026 62.000 put (SLV261127P00062000) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+    "t": "SLV Jun 2027 130.000 call (SLV270617C00130000) Interactive Stock Chart - Yahoo Finance - Yahoo! Finance Canada",
     "src": "Yahoo! Finance Canada",
-    "age_h": 8.7
+    "age_h": 14.5
    },
    {
-    "t": "SLV Nov 2026 70.000 call (SLV261127C00070000) stock price, news, quote and history - Yahoo Finance UK",
-    "src": "Yahoo Finance UK",
-    "age_h": 12.3
-   },
-   {
-    "t": "SLV261019C00053000 Gráfico interactivo de acciones | SLV Oct 2026 53.000 call Acciones - Yahoo",
-    "src": "Yahoo",
-    "age_h": 13.1
-   },
-   {
-    "t": "SLV Oct 2026 66.000 put (SLV261021P00066000) stock price, news, quote and history - Yahoo Finance Australia",
+    "t": "SLV Oct 2026 52.500 call (SLV261021C00052500) interactive stock chart - Yahoo Finance Australia",
     "src": "Yahoo Finance Australia",
-    "age_h": 16.3
+    "age_h": 16.4
    }
   ],
   "UNG": [
    {
-    "t": "Interim UNG president named - 97.5 Glory FM",
-    "src": "97.5 Glory FM",
-    "age_h": 1.3
+    "t": "Tis the Spooky Season: UNG’s Annual Fright Jam Returns Tomorrow - ungvanguard.org",
+    "src": "ungvanguard.org",
+    "age_h": 6.0
    },
    {
-    "t": "Gille named interim president - University of North Georgia",
-    "src": "University of North Georgia",
-    "age_h": 3.1
-   },
-   {
-    "t": "Brown creates mural at Lumpkin senior center - University of North Georgia",
-    "src": "University of North Georgia",
-    "age_h": 3.7
-   },
-   {
-    "t": "'Macbeth' under direction of UNG professor - University of North Georgia",
-    "src": "University of North Georgia",
-    "age_h": 3.7
-   },
-   {
-    "t": "UNG Oct 2026 14.500 call (UNG261021C00014500) stock price, news, quote and history - Yahoo Finance UK",
-    "src": "Yahoo Finance UK",
-    "age_h": 5.7
-   },
-   {
-    "t": "Gia Lai participates in the online competition to learn about the national digital transformation. - Vietnam.vn",
-    "src": "Vietnam.vn",
+    "t": "UNG Student Made, Cutting Hair and Bartending by Trade - Vanguard",
+    "src": "Vanguard",
     "age_h": 8.1
    },
    {
-    "t": "S. Korean manufacturers look to circular economy as EU green rules threaten exports - 헤럴드경제",
-    "src": "헤럴드경제",
-    "age_h": 12.2
+    "t": "UNG Professors Explore Georgia’s Biodiversity Through Fish and Viruses - Vanguard",
+    "src": "Vanguard",
+    "age_h": 8.1
    },
    {
-    "t": "UNG261021C00018000 interactive stock chart | UNG Oct 2026 18.000 call stock - Yahoo Finance Australia",
-    "src": "Yahoo Finance Australia",
-    "age_h": 17.0
+    "t": "Historic Athens Porchfest Fills Neighborhoods with Live Music - Vanguard",
+    "src": "Vanguard",
+    "age_h": 8.1
+   },
+   {
+    "t": "Cost of Romance on a Budget - Vanguard",
+    "src": "Vanguard",
+    "age_h": 8.5
+   },
+   {
+    "t": "UNG Students Celebrate Fall at Annual Fall Fest - Vanguard",
+    "src": "Vanguard",
+    "age_h": 8.6
+   },
+   {
+    "t": "UNG Senior Dean of Students Named to Georgia Trend’s 40 Under 40 - Vanguard",
+    "src": "Vanguard",
+    "age_h": 8.8
+   },
+   {
+    "t": "Spontaneous Anti-Flock Camera Protest Breaks Out at UNG - Vanguard",
+    "src": "Vanguard",
+    "age_h": 8.8
    }
   ],
   "URA": [
    {
-    "t": "Thornton Standoff Ends With Stabbing Suspect's Surrender After Shot Fired, SWAT Called - Hoodline",
-    "src": "Hoodline",
-    "age_h": 2.8
+    "t": "Urban Renewal Bill to factor in developers’ projected profits in valuing replacement properties - KLSE Screener",
+    "src": "KLSE Screener",
+    "age_h": 0.8
    },
    {
-    "t": "Tax clinic to help businesses cope with URA’s widening tax net - PML Daily",
-    "src": "PML Daily",
-    "age_h": 3.2
+    "t": "Nebbi Traders Urged to Keep Books to Avoid Heavy URA Tax Bills - Nilepost",
+    "src": "Nilepost",
+    "age_h": 8.8
    },
    {
-    "t": "Radovanić: URA will not vote for constitutional amendments related to integrity - vijesti.me",
+    "t": "Golović: We welcome the return of social dialogue between employers and unions, the Government should join - vijesti.me",
     "src": "vijesti.me",
-    "age_h": 7.2
+    "age_h": 12.3
    },
    {
-    "t": "URA seeks increase in benefits for mothers with three or more children - vijesti.me",
-    "src": "vijesti.me",
-    "age_h": 7.3
+    "t": "NuScale Power Sinks 7% to New 52-Week Low as Barclays Cuts to Underweight; Oklo Falls 5%, Centrus Energy Drops 3%",
+    "src": "yahoo",
+    "age_h": 13.1
    },
    {
-    "t": "URA demands to review the Land Bank and set the payment date for the pending agricultural aids. - Demócrata",
-    "src": "Demócrata",
-    "age_h": 9.7
-   },
-   {
-    "t": "URA Jun 2027 45.000 call (URA270617C00045000) Stock Price, News, Quote & History - Yahoo! Finance Canada",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 10.3
-   },
-   {
-    "t": "FUFA Women Super League: Lady Doves pounce late to floor URA Ladies - Kawowo Sports",
-    "src": "Kawowo Sports",
-    "age_h": 11.8
-   },
-   {
-    "t": "Don’t weaponise the LAA against the URA dissenting minority – Chang Kim Loong - scoop.my",
-    "src": "scoop.my",
+    "t": "Soon Lian Realty Pte Ltd - EdgeProp.sg",
+    "src": "EdgeProp.sg",
     "age_h": 16.9
+   },
+   {
+    "t": "Radovanic: URA not to support constitutional amendments on integrity checks - mina.news",
+    "src": "mina.news",
+    "age_h": 22.0
+   },
+   {
+    "t": "Batter Ura confident of Barramundis opener - The National | Your Number One Daily!",
+    "src": "The National | Your Number One Daily!",
+    "age_h": 23.3
+   },
+   {
+    "t": "URA Jan 2029 34.000 call (URA290119C00034000) interactive stock chart - Yahoo Finance Australia",
+    "src": "Yahoo Finance Australia",
+    "age_h": 26.4
    }
   ],
   "SI_F": [
    {
-    "t": "Exchange-Traded Funds Higher, Equity Futures Mixed Pre-Bell Monday as Tech Stocks Recover - Yahoo Finance",
-    "src": "Yahoo Finance",
-    "age_h": 4.5
+    "t": "Silver Price October 21 2026 - Robinhood",
+    "src": "Robinhood",
+    "age_h": 7.9
    },
    {
-    "t": "Silver Claws Back Ground as Traders Eye Fed Verdict and PCE Print - ad-hoc-news.de",
+    "t": "Silver Clings to $57 as Solar Slowdown and Fed Anxiety Offset Bullish Long-Term Bets - ad-hoc-news.de",
     "src": "ad-hoc-news.de",
-    "age_h": 4.6
+    "age_h": 14.9
    },
    {
-    "t": "Silver prices this week, October 19-25: Market monitors US economic data. - Vietnam.vn",
-    "src": "Vietnam.vn",
-    "age_h": 7.0
+    "t": "Dussehra 2026: Gold remains above Rs 1,47,000, silver near Rs 2.10 lakh - The Statesman",
+    "src": "The Statesman",
+    "age_h": 16.4
    },
    {
-    "t": "Gold, silver futures rise on MCX amid easing Fed rate concerns - Daijiworld",
-    "src": "Daijiworld",
-    "age_h": 7.6
+    "t": "Gold Rate Today: Yellow Metal Above Rs 1,47,000 Per 10 Grams On Dussehra, Silver Near Rs 2,10,000 Per Kg - NDTV Profit",
+    "src": "NDTV Profit",
+    "age_h": 18.8
    },
    {
-    "t": "Gold Silver Prices Record Sharp Rise - UdaipurTimes.com",
-    "src": "UdaipurTimes.com",
-    "age_h": 7.6
+    "t": "Gold, Silver Price Outlook: Key MCX Levels To Watch Today - Times Now",
+    "src": "Times Now",
+    "age_h": 19.0
    },
    {
-    "t": "CME Group to Launch Tungsten Futures to Meet Rising Demand for Critical Minerals - Yahoo Finance",
-    "src": "Yahoo Finance",
-    "age_h": 7.8
+    "t": "DSP Silver ETF Physical Holdings, Futures and Tracking Explained - Kalkine India",
+    "src": "Kalkine India",
+    "age_h": 19.5
    },
    {
-    "t": "Silver Futures Rise to Rs 2.11 Lakh/kg Amid Firm Global Trend - Rediff MoneyWiz",
-    "src": "Rediff MoneyWiz",
-    "age_h": 8.9
+    "t": "Angel One Silver ETF Holdings, Derivatives and Tracking Explained - Kalkine India",
+    "src": "Kalkine India",
+    "age_h": 19.5
    },
    {
-    "t": "Silver (XAG) Forecast: Bounce Builds but Rate Trade Keeps Sellers in Control - FXEmpire",
-    "src": "FXEmpire",
-    "age_h": 8.9
+    "t": "NYMEX: Precious Metals Prices Down - 19-10-26 - Armenpress",
+    "src": "Armenpress",
+    "age_h": 21.3
    }
   ],
   "NG_F": [
    {
-    "t": "Natural Gas Futures Forfeit Momentum as Weather Forecasts Lean Bearish - Natural Gas Intelligence",
+    "t": "Natural Gas Price Forecast: Rising Channel Faces a Critical Test - FXEmpire",
+    "src": "FXEmpire",
+    "age_h": 0.7
+   },
+   {
+    "t": "European Gas Futures Retreat Below €90 After Reaching €90.235 - www.tokenpost.com",
+    "src": "www.tokenpost.com",
+    "age_h": 1.9
+   },
+   {
+    "t": "US Natural Gas Prices Fall 4% to 11-Week Low on Record Output - EnergyNow.com",
+    "src": "EnergyNow.com",
+    "age_h": 3.9
+   },
+   {
+    "t": "Natural Gas Spot Prices Find Strength Where Futures Falter - Natural Gas Intelligence",
     "src": "Natural Gas Intelligence",
-    "age_h": 1.7
+    "age_h": 4.8
    },
    {
-    "t": "Production Hits and LNG Strength Bolster Weekly Natural Gas Prices - Natural Gas Intelligence",
+    "t": "Warm Forecasts Knock US Natural Gas Off A Two-Week Low - Finimize",
+    "src": "Finimize",
+    "age_h": 5.4
+   },
+   {
+    "t": "November NG Slips to $2.975 as Mild Weather Masks 45 Bcf Storage Surplus and First-Ever 20 Bcf/d LNG Demand - TradingNEWS",
+    "src": "TradingNEWS",
+    "age_h": 5.9
+   },
+   {
+    "t": "The Winter Waiting Game Gets Costlier for Natural Gas Bulls - Natural Gas Intelligence",
     "src": "Natural Gas Intelligence",
-    "age_h": 2.4
+    "age_h": 6.9
    },
    {
-    "t": "EEX NBP EGSI Natural Gas Weekend Futures (Nov 2026 W1) Trade Ideas — EEX:G9W1X2026 - TradingView",
-    "src": "TradingView",
-    "age_h": 3.2
-   },
-   {
-    "t": "US Natural Gas Inches Up on Colder Weather, Higher Flows to LNG - Bloomberg.com",
-    "src": "Bloomberg.com",
-    "age_h": 4.1
-   },
-   {
-    "t": "MDN’s Energy Stories of Interest: Mon, Oct 19, 2026 - Marcellus Drilling News",
-    "src": "Marcellus Drilling News",
-    "age_h": 4.1
-   },
-   {
-    "t": "Marcellus Drilling News - Marcellus Drilling News",
-    "src": "Marcellus Drilling News",
-    "age_h": 4.1
-   },
-   {
-    "t": "Record LNG Feedgas Lifts Natural Gas Futures, Outweighs TCO Supply Return - Natural Gas Intelligence",
+    "t": "Momentum Proves Elusive for Struggling Natural Gas Futures - Natural Gas Intelligence",
     "src": "Natural Gas Intelligence",
-    "age_h": 5.1
-   },
-   {
-    "t": "It's going to be another fairly affordable year to heat your home - Buffalo News",
-    "src": "Buffalo News",
-    "age_h": 7.3
+    "age_h": 9.8
    }
   ],
   "PL_F": [
    {
+    "t": "What I Am Watching Today – Yields, Platinum, NASDAQ and DAX - FXEmpire",
+    "src": "FXEmpire",
+    "age_h": 12.2
+   },
+   {
+    "t": "NYMEX: Precious Metals Prices Down - 19-10-26 - Armenpress",
+    "src": "Armenpress",
+    "age_h": 21.3
+   },
+   {
+    "t": "Platinum Price October 20 2026 - Robinhood",
+    "src": "Robinhood",
+    "age_h": 31.7
+   },
+   {
     "t": "Gold, silver, platinum, and palladium rebound; platinum main contract rises for two consecutive days; precious metals sector strengthens; spot silver trading ov",
     "src": "Shanghai Metals Market",
-    "age_h": 11.2
+    "age_h": 43.4
    }
   ],
   "HE_F": [],
   "OJ_F": [],
   "GDXJ": [
    {
-    "t": "GDXJ261106C00110000 Gráfico interactivo de acciones | GDXJ Nov 2026 110.000 call Acciones - Yahoo",
-    "src": "Yahoo",
-    "age_h": 5.7
-   },
-   {
-    "t": "GDXJ Nov 2026 122.000 put (GDXJ261106P00122000) Interactive Stock Chart - Yahoo! Finance Canada",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 8.8
-   },
-   {
-    "t": "GDXJ Nov 2026 105.000 put (GDXJ261113P00105000) interactive stock chart - Yahoo Finance UK",
+    "t": "GDXJ Feb 2027 104.000 put (GDXJ270219P00104000) stock price, news, quote and history - Yahoo Finance UK",
     "src": "Yahoo Finance UK",
-    "age_h": 22.1
+    "age_h": 13.2
    },
    {
-    "t": "GDXJ261023P00104000 interactive stock chart | GDXJ Oct 2026 104.000 put stock - Yahoo Finance UK",
+    "t": "GDXJ Feb 2027 104.000 put (GDXJ270219P00104000) Interactive Stock Chart - Yahoo Finance - Yahoo! Finance Canada",
+    "src": "Yahoo! Finance Canada",
+    "age_h": 19.1
+   },
+   {
+    "t": "GDXJ Nov 2026 121.500 call (GDXJ261106C00121500) interactive stock chart - Yahoo Finance Australia",
+    "src": "Yahoo Finance Australia",
+    "age_h": 19.4
+   },
+   {
+    "t": "GDXJ Nov 2026 100.000 put (GDXJ261127P00100000) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+    "src": "Yahoo! Finance Canada",
+    "age_h": 20.2
+   },
+   {
+    "t": "GDXJ Nov 2026 100.000 put (GDXJ261127P00100000) stock price, news, quote and history - Yahoo Finance Australia",
+    "src": "Yahoo Finance Australia",
+    "age_h": 20.2
+   },
+   {
+    "t": "Discipline and Rules-Based Execution in GDXJ Response - Stock Traders Daily",
+    "src": "Stock Traders Daily",
+    "age_h": 22.5
+   },
+   {
+    "t": "GDXJ May 2027 70.000 call (GDXJ270521C00070000) Interactive Stock Chart - Yahoo! Finance Canada",
+    "src": "Yahoo! Finance Canada",
+    "age_h": 28.0
+   },
+   {
+    "t": "GDXJ261106P00122000 interactive stock chart | GDXJ Nov 2026 122.000 put stock - Yahoo Finance UK",
     "src": "Yahoo Finance UK",
-    "age_h": 22.4
-   },
-   {
-    "t": "GDXJ280121C00118000 Interactive Stock Chart | GDXJ Jan 2028 118.000 call Stock - Yahoo Finance",
-    "src": "Yahoo Finance",
-    "age_h": 23.9
-   },
-   {
-    "t": "GDXJ May 2027 125.000 call (GDXJ270521C00125000) Stock Price, News, Quote & History - Yahoo! Finance Canada",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 26.9
-   },
-   {
-    "t": "GDXJ Nov 2026 129.000 call (GDXJ261106C00129000) Stock Price, News, Quote & History - Yahoo! Finance Canada",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 46.3
-   },
-   {
-    "t": "GDXJ Nov 2026 100.000 call (GDXJ261106C00100000) Stock Price, News, Quote & History - Yahoo! Finance Canada",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 46.4
+    "age_h": 28.0
    }
   ],
   "APP": [
    {
-    "t": "Nine Public Companies Object to OKX-ICE Tokenized Stock Plans",
-    "src": "yahoo",
-    "age_h": 1.3
-   },
-   {
-    "t": "AppLovin Corporation (APP) Grew Revenue 53%. What Must Happen to Defend Its Valuation?",
-    "src": "yahoo",
-    "age_h": 2.2
-   },
-   {
-    "t": "The Trade Desk Broadens CTV Ad Reach in Italy: A New Catalyst for TTD?",
-    "src": "yahoo",
-    "age_h": 4.5
-   },
-   {
-    "t": "AppLovin Corporation (APP) is Attracting Investor Attention: Here is What You Should Know",
+    "t": "3 Top Growth Stocks With Revenue Growth Up To 58%",
     "src": "yahoo",
     "age_h": 5.8
    },
    {
-    "t": "Objections to ICE and OKX’s Tokenized Stock Venue Climb to Nine as Broadcom, Verizon Opt Out",
+    "t": "Microsoft, Alphabet Bar Their Tokenized Shares From OKX-ICE Venue as Objections Hit 16",
     "src": "yahoo",
-    "age_h": 7.5
+    "age_h": 11.4
+   },
+   {
+    "t": "What to Expect From AppLovin’s Q3 2026 Earnings Report",
+    "src": "yahoo",
+    "age_h": 12.7
+   },
+   {
+    "t": "Why AppLovin’s Discount May Be Unwarranted Ahead of Q3",
+    "src": "yahoo",
+    "age_h": 23.7
+   },
+   {
+    "t": "AppLovin (APP) Stock Could Trade At a Discount After a 7x Run",
+    "src": "yahoo",
+    "age_h": 28.8
+   },
+   {
+    "t": "AppLovin (APP) Beats Stock Market Upswing: What Investors Need to Know",
+    "src": "yahoo",
+    "age_h": 29.2
+   },
+   {
+    "t": "How Quarterly Results Will Impact AppLovin Stock Investors",
+    "src": "yahoo",
+    "age_h": 29.7
+   },
+   {
+    "t": "Why Some of America’s Biggest Companies Are Objecting to Tokenized Shares",
+    "src": "yahoo",
+    "age_h": 31.2
    }
   ],
   "FISV": [
    {
-    "t": "CC,ANGX,CDNL,IDAI,BCDA,AMRC,CUEN,LIEN,FISV,STRR,DFH,RSG,SELF,CWBC,PSNY,SPG,FRST,EQPT,REFI,MTDR,AFCG,SRTS,BGDE,ACON | Stock Prices | Quote Comparison - Yahoo! Fi",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 0.7
+    "t": "Is The Market Underpricing Mastercard Stock?",
+    "src": "yahoo",
+    "age_h": 0.4
    },
    {
-    "t": "ANGX,CDNL,CC,IDAI,BCDA,AMRC,CUEN,LIEN,FISV,STRR,RSG,MSIF,SELF,CWBC,SPG,PSNY,TISI,FRST,REFI,MTDR,AWRE,AFCG,SRTS,BGDE | Stock Prices | Quote Comparison - Yahoo! F",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 0.7
+    "t": "Equifax Q3 Earnings Beat Estimates, Revenues Increase Y/Y",
+    "src": "yahoo",
+    "age_h": 14.0
    },
    {
-    "t": "CDNL,ANGX,CC,IDAI,BCDA,AMRC,CUEN,LIEN,FISV,STRR,RSG,MSIF,SELF,CWBC,SPG,PSNY,FRST,EQPT,REFI,MTDR,AWRE,AFCG,SRTS,BGDE | Stock Prices | Quote Comparison - Yahoo! F",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 0.7
+    "t": "Pelican AI Appoints Former Mastercard and Interac Executive Maria Papas and Alliances Leader Doug Drummond to Drive Sales and Partner Growth",
+    "src": "yahoo",
+    "age_h": 15.2
    },
    {
-    "t": "CC,CDNL,ANGX,IDAI,BCDA,AMRC,CUEN,LIEN,FISV,STRR,MSIF,RSG,CWBC,SELF,PSNY,SPG,FRST,EQPT,REFI,MTDR,AFCG,SRTS,BGDE,ACON | Stock Prices | Quote Comparison - Yahoo! F",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 0.7
+    "t": "Klarna Expands Fiserv Partnership to Enterprise Merchants After Going Live at 100,000 U.S. Locations via Clover",
+    "src": "yahoo",
+    "age_h": 37.0
    },
    {
-    "t": "CC,ANGX,CDNL,BCDA,IDAI,AMRC,CUEN,LIEN,STRR,FISV,MSIF,RSG,CWBC,SELF,PSNY,SPG,FRST,TISI,REFI,MTDR,AFCG,AWRE,SRTS,BGDE | Stock Prices | Quote Comparison - Yahoo! F",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 1.5
-   },
-   {
-    "t": "CC,CDNL,ANGX,BCDA,IDAI,AMRC,CUEN,LIEN,STRR,FISV,MSIF,RSG,CWBC,SELF,SPG,PSNY,FRST,TISI,REFI,MTDR,AFCG,AWRE,BGDE,ACON | Stock Prices | Quote Comparison - Yahoo! F",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 1.5
-   },
-   {
-    "t": "CC,CDNL,ANGX,BCDA,IDAI,AMRC,CUEN,LIEN,STRR,FISV,RSG,DFH,CWBC,SELF,PSNY,SPG,FRST,REFI,EQPT,MTDR,AFCG,SRTS,BGDE,ACON | Stock Prices | Quote Comparison - Yahoo! Fi",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 1.5
-   },
-   {
-    "t": "ANGX,CDNL,CC,BCDA,IDAI,AMRC,CUEN,LIEN,FISV,STRR,RSG,MSIF,CWBC,SELF,PSNY,SPG,FRST,REFI,EQPT,MTDR,AFCG,SRTS,BGDE,ACON | Stock Prices | Quote Comparison - Yahoo! F",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 2.5
-   }
-  ],
-  "CSGP": [
-   {
-    "t": "S&P 500 Gap-Down Stocks in Today's Session - ChartMill",
-    "src": "ChartMill",
-    "age_h": 3.2
-   },
-   {
-    "t": "CSGP270917P00020000 interactive stock chart | CSGP Sep 2027 20.000 put stock - Yahoo Finance UK",
-    "src": "Yahoo Finance UK",
-    "age_h": 8.0
-   },
-   {
-    "t": "CSGP Nov 2026 22.500 put (CSGP261120P00022500) Stock Price, News, Quote & History - Yahoo! Finance Canada",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 13.3
-   },
-   {
-    "t": "Is CoStar Group (CSGP) A Bargain After Q3 Expectations Put Apartments.com In Focus? - Simply Wall Street",
-    "src": "Simply Wall Street",
-    "age_h": 40.1
+    "t": "Fiserv Simplifies Cross-Border Commerce with Commerce Hub™",
+    "src": "yahoo",
+    "age_h": 37.5
    }
   ],
   "PODD": [
    {
-    "t": "2 Profitable Stocks to Keep an Eye On and 1 We Question",
-    "src": "yahoo",
-    "age_h": 3.2
+    "t": "Bronstein, Gewirtz & Grossman (PODD) Investigation: Bronstein, Ge - The National Law Review",
+    "src": "The National Law Review",
+    "age_h": 8.3
    },
    {
-    "t": "Press Release Distribution & Media Outreach Platform for PR Agencies - ACCESS Newswire",
-    "src": "ACCESS Newswire",
-    "age_h": 8.9
+    "t": "DexCom's G7 Shows Strong Results in Type 2 Diabetes CONNECT Study",
+    "src": "yahoo",
+    "age_h": 12.1
+   },
+   {
+    "t": "DexCom's G7 Shows Strong Results in Type 2 Diabetes CONNECT Study - TradingView",
+    "src": "TradingView",
+    "age_h": 12.1
+   },
+   {
+    "t": "Insulet (PODD) Rolls Out Omnipod Discover On A Narrative That May Still Be Undervalued - Simply Wall Street",
+    "src": "Simply Wall Street",
+    "age_h": 14.4
+   },
+   {
+    "t": "2 Profitable Stocks to Keep an Eye On and 1 We Question",
+    "src": "yahoo",
+    "age_h": 35.4
    },
    {
     "t": "2 Profitable Stocks to Keep an Eye On and 1 We Question - FinancialContent",
     "src": "FinancialContent",
-    "age_h": 13.2
+    "age_h": 45.4
+   }
+  ],
+  "CSGP": [
+   {
+    "t": "RBC keeps USD 34.00 target for CoStar Group stock - ad-hoc-news.de",
+    "src": "ad-hoc-news.de",
+    "age_h": 6.0
    },
    {
-    "t": "Platform Launch Might Change The Case For Investing In Insulet Stock (PODD) - Simply Wall Street",
-    "src": "Simply Wall Street",
-    "age_h": 46.0
+    "t": "BizBuySell Releases Q3 2026 Insight Report",
+    "src": "yahoo",
+    "age_h": 13.0
+   },
+   {
+    "t": "Buyer and seller confidence fell for two straight years, first time since tracking began in 2013. - Stock Titan",
+    "src": "Stock Titan",
+    "age_h": 13.0
+   },
+   {
+    "t": "CSGP261120C00045000 Gráfico interactivo de acciones | CSGP Nov 2026 45.000 call Acciones - Yahoo",
+    "src": "Yahoo",
+    "age_h": 28.0
+   },
+   {
+    "t": "CSGP Nov 2026 45.000 call (CSGP261120C00045000) interactive stock chart - Yahoo Finance UK",
+    "src": "Yahoo Finance UK",
+    "age_h": 31.4
+   },
+   {
+    "t": "CSGP Nov 2026 45.000 call (CSGP261120C00045000) Interactive Stock Chart - Yahoo! Finance Canada",
+    "src": "Yahoo! Finance Canada",
+    "age_h": 31.4
+   },
+   {
+    "t": "CSGP270917P00020000 interactive stock chart | CSGP Sep 2027 20.000 put stock - Yahoo Finance UK",
+    "src": "Yahoo Finance UK",
+    "age_h": 40.2
+   },
+   {
+    "t": "CSGP261120C00035000 Interactive Stock Chart | CSGP Nov 2026 35.000 call Stock - Yahoo Finance",
+    "src": "Yahoo Finance",
+    "age_h": 42.4
    }
   ],
   "FICO": [
    {
-    "t": "FICO price target lowered to $1,063 from $1,344 at Mizuho - TipRanks",
-    "src": "TipRanks",
-    "age_h": 5.3
+    "t": "Fair Isaac (FICO) Stock Still Looks Like A Bargain Following Its 95% Five Year Run",
+    "src": "yahoo",
+    "age_h": 0.7
    },
    {
-    "t": "Raffaella Fico - Say Who - le média des communautés influentes de notre époque - saywhomedia.com",
-    "src": "saywhomedia.com",
-    "age_h": 9.7
+    "t": "Equifax Q3 Earnings Call Highlights",
+    "src": "yahoo",
+    "age_h": 5.9
    },
    {
-    "t": "FICO Nov 2026 590.000 put (FICO261120P00590000) Interactive Stock Chart - Yahoo! Finance Canada",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 10.0
+    "t": "Equifax Is Today’s Best Stock in the S&P 500. VantageScore Has Something to Do With That.",
+    "src": "yahoo",
+    "age_h": 11.2
    },
    {
-    "t": "Fair Isaac (NYSE:FICO): What Is Changing in Its NYSE Story? - Kalkine Media",
-    "src": "Kalkine Media",
-    "age_h": 10.4
-   },
-   {
-    "t": "FICO Nov 2026 590.000 put (FICO261120P00590000) Stock Price, News, Quote & History - Yahoo! Finance Canada",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 10.5
+    "t": "August Breaks UK Credit Card Record as Balances Soar",
+    "src": "yahoo",
+    "age_h": 18.0
    },
    {
     "t": "FICO Stock Rose 16% Last Week With No News. The Street’s Targets Fell 18%.",
     "src": "yahoo",
-    "age_h": 10.9
-   },
-   {
-    "t": "FICO Stock Rose 16% Last Week With No News. The Street’s Targets Fell 18%. - Yahoo Finance",
-    "src": "Yahoo Finance",
-    "age_h": 10.9
-   },
-   {
-    "t": "Last Week: Where the Slovak prime minister feels at home - The Slovak Spectator",
-    "src": "The Slovak Spectator",
-    "age_h": 14.2
+    "age_h": 43.1
    }
   ],
   "BSX": [
    {
-    "t": "BSX Nov 2026 44.000 call (BSX261113C00044000) Interactive Stock Chart - Yahoo! Finance Canada",
+    "t": "Should Becton Dickinson Stock Holders Look At Boston Scientific Instead?",
+    "src": "yahoo",
+    "age_h": 2.9
+   },
+   {
+    "t": "Butterfield jumps $1 on BSX - Royal Gazette | Bermuda",
+    "src": "Royal Gazette | Bermuda",
+    "age_h": 5.7
+   },
+   {
+    "t": "Vertex Appoints Daniel Brennan to its Board of Directors",
+    "src": "yahoo",
+    "age_h": 5.9
+   },
+   {
+    "t": "Boston Scientific (NYSE:BSX) Share Price, Forecast & Analysis - Stocks Down Under",
+    "src": "Stocks Down Under",
+    "age_h": 6.5
+   },
+   {
+    "t": "Investing.com cites CAD 4.08 target for Belo Sun Mining stock - ad-hoc-news.de",
+    "src": "ad-hoc-news.de",
+    "age_h": 7.7
+   },
+   {
+    "t": "Abbott Laboratories Earnings Ahead: What Past Reactions Say About The Stock",
+    "src": "yahoo",
+    "age_h": 8.3
+   },
+   {
+    "t": "DE,PFE,TSLA,SBUX,VRT,CME,MDT,META,MO,TJX,BSX,HCA,AMT,ORCL,LOW,XOM,NOW,ADBE,GEV,CRM,MAR,BA,BLK,AVGO,INTU,CVX,UNH,DHR,MSFT,COST,ABT,WFC,BX,WM,RTX,SPGI,DUK,SO,BKNG",
     "src": "Yahoo! Finance Canada",
-    "age_h": 14.6
+    "age_h": 17.8
    },
    {
-    "t": "BSX Dec 2026 65.000 put (BSX261218P00065000) interactive stock chart - Yahoo Finance UK",
-    "src": "Yahoo Finance UK",
-    "age_h": 21.0
-   },
-   {
-    "t": "BSX261127P00047000 Interactive Stock Chart | BSX Nov 2026 47.000 put Stock - Yahoo Finance",
-    "src": "Yahoo Finance",
-    "age_h": 23.9
-   },
-   {
-    "t": "APP,PFE,TSLA,SBUX,VRT,CME,MDT,MO,TJX,SYK,BSX,AMT,ORCL,LOW,XOM,NOW,ADBE,GEV,BA,MAR,BLK,CVS,AVGO,CVX,INTU,UNH,DHR,MSFT,COST,WFC,BX,WM,RTX,SPGI,DUK,SO,BKNG,GD,GE,N",
+    "t": "BSX Oct 2026 42.500 put (BSX261023P00042500) Interactive Stock Chart - Yahoo! Finance Canada",
     "src": "Yahoo! Finance Canada",
-    "age_h": 27.3
-   },
-   {
-    "t": "BSX Oct 2026 41.500 call (BSX261023C00041500) Stock Price, News, Quote & History - Yahoo! Finance Canada",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 31.2
-   },
-   {
-    "t": "DE,PFE,TSLA,SBUX,VRT,CME,MDT,META,MO,TJX,BSX,HCA,AMT,ORCL,LOW,XOM,NOW,ADBE,GEV,MAR,BA,CRM,BLK,AVGO,INTU,CVX,UNH,DHR,MSFT,COST,ABT,WFC,WM,BX,RTX,SPGI,DUK,SO,GD,B",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 37.5
-   },
-   {
-    "t": "Why Did BSX, LI, BJ Stocks Hit 52-Week Lows Today? - Stocktwits",
-    "src": "Stocktwits",
-    "age_h": 38.7
+    "age_h": 21.1
    }
   ],
   "CHTR": [
    {
-    "t": "CHTR270319C00155000 Gráfico interactivo de acciones | CHTR Mar 2027 155.000 call Acciones - Yahoo",
-    "src": "Yahoo",
-    "age_h": 14.0
+    "t": "The Dates That Matter Most For Verizon Stock",
+    "src": "yahoo",
+    "age_h": 0.6
    },
    {
-    "t": "CHTR Nov 2026 108.000 call (CHTR261113C00108000) Interactive Stock Chart - Yahoo! Finance Canada",
+    "t": "Fund Update: 212,328 CHARTER COMMUNICATIONS (CHTR) shares added to Rothschild & Co Wealth Management UK Ltd portfolio - Quiver Quantitative",
+    "src": "Quiver Quantitative",
+    "age_h": 8.6
+   },
+   {
+    "t": "How Do You Invest For A Crash And A Rally?",
+    "src": "yahoo",
+    "age_h": 14.1
+   },
+   {
+    "t": "Does Cash Beat Debt When Markets Turn?",
+    "src": "yahoo",
+    "age_h": 14.1
+   },
+   {
+    "t": "INVESTIGATION NOTICE: Girard Sharp Law Firm Encourages - GlobeNewswire",
+    "src": "GlobeNewswire",
+    "age_h": 16.0
+   },
+   {
+    "t": "INVESTIGATION NOTICE: Girard Sharp Law Firm Encourages Former Liberty Broadband Corporation Investors Who Received Charter Communications, Inc. (NASDAQ: CHTR) S",
+    "src": "lincolnjournal.com",
+    "age_h": 16.0
+   },
+   {
+    "t": "CHTR Oct 2026 147.000 call (CHTR261023C00147000) Stock Price, News, Quote & History - Yahoo! Finance Canada",
     "src": "Yahoo! Finance Canada",
-    "age_h": 14.5
+    "age_h": 16.4
    },
    {
-    "t": "CHTR Oct 2026 155.000 call (CHTR261023C00155000) Stock Price, News, Quote & History - Yahoo! Finance Canada",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 18.7
-   },
-   {
-    "t": "CHTR Stock Plummets To Record Low Despite Q2 Beat – CEO Eyes Pending Cox Deal To Add Scale, New Products - Stocktwits",
-    "src": "Stocktwits",
-    "age_h": 20.5
-   },
-   {
-    "t": "21,690 Charter Communications, Inc. $CHTR Shares Purchased by Vontobel Holding Ltd. - MarketBeat",
+    "t": "58,607 Charter Communications, Inc. $CHTR Shares Acquired by TD Waterhouse Canada Inc. - MarketBeat",
     "src": "MarketBeat",
-    "age_h": 32.3
-   },
-   {
-    "t": "342,668 Charter Communications, Inc. $CHTR Shares Acquired by Assenagon Asset Management S.A. - MarketBeat",
-    "src": "MarketBeat",
-    "age_h": 34.4
-   },
-   {
-    "t": "CHTR Oct 2026 128.000 call (CHTR261016C00128000) Interactive Stock Chart - Yahoo! Finance Canada",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 37.5
-   },
-   {
-    "t": "Charter Stock Outlook: Can the $34.5B Cox Merger Help CHTR Recover Before Earnings? - TradingKey",
-    "src": "TradingKey",
-    "age_h": 45.3
+    "age_h": 16.6
    }
   ],
   "ALB": [
    {
-    "t": "Albania’s Alb-Star wins road upgrade tender worth 3.4 mln euro - SeeNews",
-    "src": "SeeNews",
-    "age_h": 3.7
-   },
-   {
-    "t": "ALB Oct 2026 104.000 put (ALB261023P00104000) stock price, news, quote and history - Yahoo Finance Australia",
-    "src": "Yahoo Finance Australia",
-    "age_h": 4.9
-   },
-   {
-    "t": "BofA Securities Maintains Albemarle(ALB.US) With Buy Rating, Cuts Target Price to $131 - Moomoo",
-    "src": "Moomoo",
-    "age_h": 5.9
-   },
-   {
-    "t": "Investor backing delivers $1.8m for ALB’s Gidgee drilling - The Australian",
-    "src": "The Australian",
-    "age_h": 11.5
-   },
-   {
-    "t": "Albion Resources (ASX:ALB) Advances Gidgee Gold Drilling as Exploration Results Emerge - Kalkine",
-    "src": "Kalkine",
-    "age_h": 11.8
-   },
-   {
-    "t": "Karnataka HC Refuses to Quash Case Against Advocate Who Practised Without Clearing AlB Examination - Court Book",
-    "src": "Court Book",
-    "age_h": 12.0
-   },
-   {
-    "t": "Albion Resources (ASX:ALB) Secures Placement to Fund Expanded Drilling at the Gidgee Gold Project - Kalkine",
-    "src": "Kalkine",
-    "age_h": 16.4
-   },
-   {
-    "t": "Albemarle has surprising new reason to rally",
-    "src": "yahoo",
-    "age_h": 16.7
-   }
-  ],
-  "LULU": [
-   {
-    "t": "Canadian Stocks Slide After Hot Inflation Report: LULU, SHOP, QSR - TipRanks",
-    "src": "TipRanks",
-    "age_h": 0.6
-   },
-   {
-    "t": "Is Lululemon's Next Big Thing Already Here?",
-    "src": "yahoo",
+    "t": "Kim Dae-yeon earns ALB Asia 40 Under 40 honor for labor law work in Korea - CHOSUNBIZ - Chosunbiz",
+    "src": "Chosunbiz",
     "age_h": 0.7
    },
    {
-    "t": "LULU Maintained by Wells Fargo -- Price Target Lowered to $90 - GuruFocus",
-    "src": "GuruFocus",
-    "age_h": 2.1
-   },
-   {
-    "t": "Lulu announces Glasgow homecoming show as she returns with first album in 12 years - ScottishNews.com",
-    "src": "ScottishNews.com",
-    "age_h": 2.1
-   },
-   {
-    "t": "lululemon athletica (NASDAQ:LULU) Stock Price Target Cut by Wells Fargo & Company - MarketBeat",
-    "src": "MarketBeat",
-    "age_h": 2.9
-   },
-   {
-    "t": "Why Is Lululemon Stock Rising, and Is It a Buying Opportunity?",
+    "t": "How Bad Would It Get If China Blocks Rare Earths to America?",
     "src": "yahoo",
-    "age_h": 4.8
+    "age_h": 2.0
    },
    {
-    "t": "ETFs Are Buying Lululemon (LULU) on Thursday - Yahoo Finance",
-    "src": "Yahoo Finance",
-    "age_h": 6.8
+    "t": "Amazon ECS Gateway automates ingress for Amazon ECS workloads - news.lavx.hu",
+    "src": "news.lavx.hu",
+    "age_h": 5.3
    },
    {
-    "t": "Lulu Guinness shoppers get 40% off 'roomy' crossbody bag for 'essentials' - Liverpool Echo",
-    "src": "Liverpool Echo",
-    "age_h": 6.9
-   }
-  ],
-  "MSTR": [
-   {
-    "t": "Nvidia (NVDA) Stock Price Lags Massive Earnings Growth—A Compelling Value Opportunity",
+    "t": "Leverage Shares Is Shutting Down 13 Single-Stock Leveraged ETFs. None Drew Enough Money to Survive",
     "src": "yahoo",
-    "age_h": 0.3
+    "age_h": 5.9
    },
    {
-    "t": "Strategy Buys Back Their bitcoin, Closing in on 850K BTC",
-    "src": "yahoo",
-    "age_h": 0.9
+    "t": "Truist Financial Maintains Albemarle(ALB.US) With Buy Rating, Cuts Target Price to $185 - Moomoo",
+    "src": "Moomoo",
+    "age_h": 10.4
    },
    {
-    "t": "The Investment Case for JPMorgan Chase & Co. (JPM)",
-    "src": "yahoo",
-    "age_h": 1.2
+    "t": "Calvin Tinlop Chui Named to Thomson Reuters’ Asian Legal Business “Asia 40 Under 40” List - The Macau Post Daily",
+    "src": "The Macau Post Daily",
+    "age_h": 20.7
    },
    {
-    "t": "Michael Saylor's Strategy buys 267 bitcoin, repurchases $193M in STRC",
-    "src": "yahoo",
-    "age_h": 1.8
+    "t": "F,KHC,EXPE,O,CTSH,DOC,LPLA,ZBH,RPRX,ALLY,GM,EL,OKTA,ES,ROK,MOS,APA,HAL,MGM,SSNC,LKQ,ZM,ALB,ZS,ALLE,WTRG,CNH,IEX | Stock Prices | Quote Comparison - Yahoo! Finan",
+    "src": "Yahoo! Finance Canada",
+    "age_h": 20.7
    },
    {
-    "t": "JPMorgan brings JPM Coin to Ethereum",
-    "src": "yahoo",
-    "age_h": 2.3
-   },
-   {
-    "t": "Ameren Corp. (AEE): Regulated Utility Moat Offers Attractive Long-Term Outlook",
-    "src": "yahoo",
-    "age_h": 2.8
-   },
-   {
-    "t": "Mixed Results Pressured Carrier Global Corporation (CARR)",
-    "src": "yahoo",
-    "age_h": 2.9
-   },
-   {
-    "t": "Aon plc (AON) Underperforms Amid Scrutiny Over USI Deal Price Tag",
-    "src": "yahoo",
-    "age_h": 2.9
+    "t": "F,KHC,FTV,O,EFX,DOC,CTSH,DKNG,RPRX,ALLY,GM,DINO,EL,OTIS,OKTA,DOW,ES,MGM,APA,LKQ,SSNC,ZM,ALB,CNC,WTRG,ALLE,MRNA,CNH,KEY | Stock Prices | Quote Comparison - Yahoo",
+    "src": "Yahoo! Finance Canada",
+    "age_h": 21.2
    }
   ],
   "INSM": [
    {
-    "t": "Insmed Incorporated (INSM) Stock Price, News, Quote & History - Yahoo! Finance Canada",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 6.1
+    "t": "INSM 8-K & SEC Filings - Yahoo Finance",
+    "src": "Yahoo Finance",
+    "age_h": 2.5
    },
    {
-    "t": "Insmed Launches BRINSUPRI® Tablets 25 mg (brensocatib hydrate) for the Treatment of Non-Cystic Fibrosis Bronchiectasis in Japan",
-    "src": "yahoo",
-    "age_h": 6.8
-   },
-   {
-    "t": "In Japan, patients can now get the only approved treatment for a lung disease that permanently widens airways. - Stock Titan",
+    "t": "A no-cost grant gives Insmed (INSM) director Utpal Koppikar 6,139 stock units. - Stock Titan",
     "src": "Stock Titan",
-    "age_h": 6.8
+    "age_h": 4.8
    },
    {
-    "t": "INSM, FSLR, APTV: Dreaded Death Cross Has Formed On These Stocks — What It Means For Investors - Stocktwits",
-    "src": "Stocktwits",
-    "age_h": 18.6
+    "t": "A no-cost grant gives Insmed (INSM) director Paul Hudson 6,139 stock units. - Stock Titan",
+    "src": "Stock Titan",
+    "age_h": 4.8
    },
    {
-    "t": "INSM Nov 2027 105.000 call (INSM271119C00105000) stock price, news, quote and history - Yahoo Finance UK",
-    "src": "Yahoo Finance UK",
-    "age_h": 24.2
+    "t": "Utpal Koppikar Appointed to Insmed Board, Reports No Ownership of Company Securities - Kalkine Media",
+    "src": "Kalkine Media",
+    "age_h": 4.8
    },
    {
-    "t": "INSM Nov 2027 97.500 put (INSM271119P00097500) Interactive Stock Chart - Yahoo! Finance Canada",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 25.6
+    "t": "HC Wainwright keeps USD 220.00 target for Insmed stock - ad-hoc-news.de",
+    "src": "ad-hoc-news.de",
+    "age_h": 6.5
    },
    {
-    "t": "INSM Nov 2027 75.000 put (INSM271119P00075000) Stock Price, News, Quote & History - Yahoo! Finance Canada",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 26.3
+    "t": "Insmed appoints Paul Hudson and Utpal Koppikar to its Board - TradingView",
+    "src": "TradingView",
+    "age_h": 14.9
    },
    {
-    "t": "Insmed Incorporated (INSM) Options Chain - Yahoo! Finance Canada",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 27.1
+    "t": "Insmed Appoints Two New Directors to Its Board",
+    "src": "yahoo",
+    "age_h": 15.0
+   },
+   {
+    "t": "Insmed Appoints Two New Directors to Its Board - Yahoo Finance",
+    "src": "Yahoo Finance",
+    "age_h": 15.0
    }
   ],
   "ORCL": [
    {
-    "t": "Marvell Technology (MRVL) Forms Cloud Security Alliance After New CXL And Connectivity Launches",
+    "t": "Oracle Calls Force Majeure Already?",
     "src": "yahoo",
-    "age_h": 1.6
+    "age_h": 1.1
    },
    {
-    "t": "Veteran Strategist Warns: Meta Skyrocketed Off-Balance-Sheet Financing by 17X, From “$35 Billion to $600 Billion”",
+    "t": "Oracle Just Dropped 12% in a Month. Is It Time to Sell, or Load Up?",
     "src": "yahoo",
-    "age_h": 2.6
+    "age_h": 9.5
    },
    {
-    "t": "2 charts show why Wall Street is right to worry about tech stocks",
+    "t": "Oracle (ORCL) Expands Its AI Healthcare Push With A New Drugmaker Partnership",
     "src": "yahoo",
-    "age_h": 2.9
+    "age_h": 9.7
    },
    {
-    "t": "Can AI hyperscalers afford to build the infrastructure to meet long-term demand?",
+    "t": "Tech Tuesday: AliExpress Teams with YouTube",
     "src": "yahoo",
-    "age_h": 4.6
+    "age_h": 9.8
    },
    {
-    "t": "Prediction: Oracle’s Next Chapter Could Be Huge for Shareholders",
+    "t": "Will AI Data Center Launches Change Marvell Stock Narrative",
     "src": "yahoo",
-    "age_h": 4.8
+    "age_h": 10.8
    },
    {
-    "t": "CoreWeave Jumps 6% on Goldman Sachs Upgrade; Nebius Rises 7%, Oracle Edges Higher",
+    "t": "IBM Ventures Invests in Leena AI to Accelerate Agentic AI Across the Enterprise Back Office",
     "src": "yahoo",
-    "age_h": 4.8
+    "age_h": 11.1
    },
    {
-    "t": "Rimini Street to Report Third Quarter 2026 Financial Results on October 29, 2026",
+    "t": "What Is Oracle’s (ORCL) Economic Moat, and Is It Widening or Narrowing?",
     "src": "yahoo",
-    "age_h": 4.8
+    "age_h": 11.2
    },
    {
-    "t": "Red Hat Expands Availability of Its Industry-Leading Hybrid Cloud Platforms on Oracle Cloud Infrastructure",
+    "t": "Nucleus Research Releases 2026 Full Suite Talent Acquisition Technology Value Matrix",
     "src": "yahoo",
-    "age_h": 4.8
+    "age_h": 12.0
    }
   ],
-  "WDC": [
+  "LULU": [
    {
-    "t": "Chip Stocks Set to Snap Longest Losing Streak Since 2008",
+    "t": "How Has Nike's Story Changed Since Last Year?",
     "src": "yahoo",
-    "age_h": 2.3
+    "age_h": 5.7
    },
    {
-    "t": "Micron, Intel lead chip recovery, adding nearly $250B as most of Wall Street falls: Chart of the Day",
+    "t": "Investors Heavily Search lululemon athletica inc. (LULU): Here is What You Need to Know",
     "src": "yahoo",
-    "age_h": 3.1
+    "age_h": 14.0
    },
    {
-    "t": "Is Seagate Stock Still Leading Its Industry?",
+    "t": "Is Lululemon's Next Big Thing Already Here?",
     "src": "yahoo",
-    "age_h": 4.9
+    "age_h": 32.8
    },
    {
-    "t": "Tech Rebound Lifts Wall Street Pre-Bell; Asia Mixed, Europe Off",
+    "t": "Why Is Lululemon Stock Rising, and Is It a Buying Opportunity?",
     "src": "yahoo",
-    "age_h": 6.6
-   },
-   {
-    "t": "Chip Investors, Watch Out: China’s CXMT Plunges Despite Record Forecast After Samsung’s Post-Outlook Slide",
-    "src": "yahoo",
-    "age_h": 9.9
-   },
-   {
-    "t": "Stocktwits Tech Watch: Netflix And Meta Report Earnings As Nvidia, Oracle Product Events Loom",
-    "src": "yahoo",
-    "age_h": 11.3
-   },
-   {
-    "t": "SanDisk (SNDK) Is Now Worth More Than the Company That Spun It Off",
-    "src": "yahoo",
-    "age_h": 27.2
+    "age_h": 37.0
    }
   ],
   "COIN": [
    {
-    "t": "The CFTC's Proposed Rules to Reshape U.S. Crypto Markets",
+    "t": "Stablecoin Transfers Hit $891 Billion in Third Quarter: Report",
     "src": "yahoo",
-    "age_h": 0.2
+    "age_h": 3.1
    },
    {
-    "t": "Nine Public Companies Object to OKX-ICE Tokenized Stock Plans",
+    "t": "Is Current Price Of Robinhood Stock A Strong Support?",
     "src": "yahoo",
-    "age_h": 1.3
+    "age_h": 4.6
    },
    {
-    "t": "CME vs. Coinbase Global: Which Financial Stock Is a Better Buy in 2026?",
+    "t": "Coinbase Global, Inc. (COIN) Outpaces Stock Market Gains: What You Should Know",
     "src": "yahoo",
-    "age_h": 2.3
+    "age_h": 5.2
    },
    {
-    "t": "JPMorgan brings JPM Coin to Ethereum",
+    "t": "Visa partners with Mesh for seamless stablecoin payments at stores",
     "src": "yahoo",
-    "age_h": 2.3
+    "age_h": 5.7
    },
    {
-    "t": "Bitmine’s Holdings Value Falls to $15.1 Billion Even as Its Ether Stash Keeps Growing",
+    "t": "JPMorgan Brings JPM Coin To Ether For Clients",
     "src": "yahoo",
-    "age_h": 3.0
+    "age_h": 7.3
    },
    {
-    "t": "JPMorgan Expands Access To JPM Coin Among Institutional Investors",
+    "t": "Major UK Banks Including Lloyds, Barclays Block Crypto Transfers: Report",
     "src": "yahoo",
-    "age_h": 4.5
+    "age_h": 8.1
    },
    {
-    "t": "What Happens To Robinhood Stock If Its Growth Stalls?",
+    "t": "Webull to Launch Crypto Perpetual Futures with Kalshi",
     "src": "yahoo",
-    "age_h": 4.9
+    "age_h": 8.1
    },
    {
-    "t": "Hyperliquid’s CEO Explained How Americans Could Legally Use It. What Would US Access Mean for HYPE?",
+    "t": "Euronet and Fireblocks Expand Stablecoin-Funded Card Programs to Every Bank’s Existing Portfolio",
     "src": "yahoo",
-    "age_h": 5.3
+    "age_h": 11.1
    }
   ],
   "PNR": [
    {
+    "t": "Pentair: Pool Recovery And Taco Synergies Should Drive 2027 Upside (NYSE:PNR) - Seeking Alpha",
+    "src": "Seeking Alpha",
+    "age_h": 13.1
+   },
+   {
+    "t": "(PNR) Price Dynamics and Execution-Aware Positioning - Stock Traders Daily",
+    "src": "Stock Traders Daily",
+    "age_h": 16.7
+   },
+   {
+    "t": "PNR261120C00050000 Gráfico interactivo de acciones | PNR Nov 2026 50.000 call Acciones - Yahoo",
+    "src": "Yahoo",
+    "age_h": 32.8
+   },
+   {
+    "t": "PNR Feb 2027 67.500 put (PNR270219P00067500) Interactive Stock Chart - Yahoo! Finance Canada",
+    "src": "Yahoo! Finance Canada",
+    "age_h": 33.5
+   },
+   {
     "t": "Higher Platelet-to-Neutrophil Ratio Linked With Lower MASLD Odds - The American Journal of Managed Care",
     "src": "The American Journal of Managed Care",
-    "age_h": 3.6
+    "age_h": 35.8
    },
    {
     "t": "Pentair names new chief executive for its pool business - TradingView",
     "src": "TradingView",
-    "age_h": 6.8
+    "age_h": 39.0
    },
    {
     "t": "Pentair Names Josh Cowley Executive Vice President and Chief Executive Officer, Pentair Pool",
     "src": "yahoo",
-    "age_h": 7.0
+    "age_h": 39.1
    },
    {
     "t": "The former head of a hot tub and swim spa maker will lead Pentair Pool starting Nov. 9. - Stock Titan",
     "src": "Stock Titan",
-    "age_h": 7.0
-   },
-   {
-    "t": "Gabon and US Discuss Aviation Security Cooperation - https://streamlinefeed.co.ke/",
-    "src": "https://streamlinefeed.co.ke/",
-    "age_h": 7.6
-   },
-   {
-    "t": "Pentair plc (PNR) stock price, news, quote and history - Yahoo Finance UK",
-    "src": "Yahoo Finance UK",
-    "age_h": 8.8
-   },
-   {
-    "t": "Pentair plc. (PNR) Stock Forecasts - Yahoo! Finance Canada",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 28.5
-   },
-   {
-    "t": "Indian Railways to Change PNR Number Series for Vande Bharat and Shatabdi Trains, Check Rules - Times Bull",
-    "src": "Times Bull",
-    "age_h": 30.9
-   }
-  ],
-  "INTU": [
-   {
-    "t": "How Investors Are Reacting To Intuit (INTU) Global AI Rollout",
-    "src": "yahoo",
-    "age_h": 2.6
-   },
-   {
-    "t": "How Investors Are Reacting To Intuit (INTU) Global AI Rollout - Yahoo Finance",
-    "src": "Yahoo Finance",
-    "age_h": 2.6
-   },
-   {
-    "t": "Intuit to Acquire Sequence to Boost AI-Powered Mid-Market Offerings - The Globe and Mail",
-    "src": "The Globe and Mail",
-    "age_h": 2.9
-   },
-   {
-    "t": "INTU Mar 2027 680.000 put (INTU270319P00680000) Stock Price, News, Quote & History - Yahoo! Finance Canada",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 4.7
-   },
-   {
-    "t": "Intuit to Acquire Sequence to Boost AI-Powered Mid-Market Offerings",
-    "src": "yahoo",
-    "age_h": 5.5
-   },
-   {
-    "t": "Intuit Inc. $INTU Stock: TD Waterhouse Canada Inc. Increases Position - MarketBeat",
-    "src": "MarketBeat",
-    "age_h": 8.9
-   },
-   {
-    "t": "7,913 Intuit Inc. $INTU Shares Sold by Cyndeo Wealth Partners LLC - MarketBeat",
-    "src": "MarketBeat",
-    "age_h": 9.4
-   },
-   {
-    "t": "INTU261030C00300000 interactive stock chart | INTU Oct 2026 300.000 call stock - Yahoo Finance UK",
-    "src": "Yahoo Finance UK",
-    "age_h": 10.2
+    "age_h": 39.1
    }
   ],
   "ALNY": [
    {
-    "t": "Merck KgaA Is Paying More Than Double for This Gene-Silencing Biotech, Which Is Soaring 125%",
+    "t": "Why Should You Think About Vertex Differently Now?",
     "src": "yahoo",
-    "age_h": 1.7
+    "age_h": 1.0
    },
    {
-    "t": "ALNY Dec 2026 210.000 put (ALNY261218P00210000) stock price, news, quote and history - Yahoo Finance Australia",
-    "src": "Yahoo Finance Australia",
-    "age_h": 9.0
+    "t": "Alnylam (ALNY): Can the RNAi Franchise Get it an Entry into the S&P 500 Index?",
+    "src": "yahoo",
+    "age_h": 8.4
+   },
+   {
+    "t": "Merck KgaA Is Paying More Than Double for This Gene-Silencing Biotech, Which Is Soaring 125%",
+    "src": "yahoo",
+    "age_h": 33.8
    },
    {
     "t": "Stocktwits Pharma Pulse: Moderna-Merck Cancer Vaccine Grabs Spotlight As Kidney-Cancer And MS Data Pour In",
     "src": "yahoo",
-    "age_h": 14.5
-   },
-   {
-    "t": "ALNYLAM PHARMACEUTICALS INC (ALNY.MX) Q4 FY2025 earnings call transcript - Yahoo Finance",
-    "src": "Yahoo Finance",
-    "age_h": 34.5
-   },
-   {
-    "t": "ALNY Jan 2029 200.000 put (ALNY290119P00200000) Interactive Stock Chart - Yahoo! Finance Canada",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 37.5
-   },
-   {
-    "t": "ALNY Jan 2029 125.000 put (ALNY290119P00125000) Stock Price, News, Quote & History - Yahoo! Finance Canada",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 38.5
-   },
-   {
-    "t": "ALNY Nov 2026 250.000 put (ALNY261120P00250000) stock price, news, quote and history - Yahoo Finance UK",
-    "src": "Yahoo Finance UK",
-    "age_h": 40.9
-   },
-   {
-    "t": "ALNY Jan 2027 195.000 call (ALNY270115C00195000) Stock Price, News, Quote & History - Yahoo! Finance Canada",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 40.9
+    "age_h": 46.7
    }
   ],
-  "ROL": [
+  "MSTR": [
    {
-    "t": "Rollins rated Buy with $57 target, seen as unde... - Pluang",
-    "src": "Pluang",
-    "age_h": 2.7
+    "t": "What Is Strategy (MSTR)? The Bitcoin Treasury Company",
+    "src": "yahoo",
+    "age_h": 9.7
    },
    {
-    "t": "Rollins: De-Rated, But A Great Mousetrap In A Secular Growth Market (NYSE:ROL) - Seeking Alpha",
-    "src": "Seeking Alpha",
-    "age_h": 3.1
+    "t": "Michael Saylor Says Bitcoin's Next Bull Run Has Begun, Sees It Back In 'Six Figures' Within A Year",
+    "src": "yahoo",
+    "age_h": 9.9
    },
    {
-    "t": "ROL Jan 2028 50.000 call (ROL280121C00050000) Interactive Stock Chart - Yahoo! Finance Canada",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 15.4
+    "t": "Super League Holders Approve Metaplanet’s 2100 Bitcoin Deal, Clearing Way for U.S. BTC Treasury",
+    "src": "yahoo",
+    "age_h": 12.2
    },
    {
-    "t": "he regretted divorcing the genius doctor full episodes - 白鲸出海",
-    "src": "白鲸出海",
-    "age_h": 19.3
+    "t": "Strategy Spent 3 Times More on Stock Buybacks Than Bitcoin in 5 Weeks. So Who Is Buying BTC?",
+    "src": "yahoo",
+    "age_h": 13.5
    },
    {
-    "t": "TOP Porn AI Rol Yapma Platformları Nerede Bulunur 2026 - Universidad de Córdoba (UCO)",
-    "src": "Universidad de Córdoba (UCO)",
-    "age_h": 30.2
+    "t": "What Capital Group Core Balanced ETF (CGBL) Bought: JNJ Leads on Oct. 16",
+    "src": "yahoo",
+    "age_h": 14.9
+   },
+   {
+    "t": "Accelerating Ad Business and Distribution Scale Create Compelling Value at Meta Platforms (META)",
+    "src": "yahoo",
+    "age_h": 22.6
+   },
+   {
+    "t": "Is Stryker Corp. (SYK) Positioned for Above-Market Growth?",
+    "src": "yahoo",
+    "age_h": 22.6
+   },
+   {
+    "t": "Aon plc (AON) Underperforms Amid Scrutiny Over USI Deal Price Tag",
+    "src": "yahoo",
+    "age_h": 22.7
+   }
+  ],
+  "WDC": [
+   {
+    "t": "Could SanDisk Be The Value Stock For Your Portfolio?",
+    "src": "yahoo",
+    "age_h": 0.8
+   },
+   {
+    "t": "Microsoft, Alphabet, Goldman Sachs Join Growing List of Companies Objecting to Tokenized Stocks",
+    "src": "yahoo",
+    "age_h": 5.7
+   },
+   {
+    "t": "META Earnings & 2 Other AI-Related Reports to Watch This Week",
+    "src": "yahoo",
+    "age_h": 6.6
+   },
+   {
+    "t": "80% Upside? Why Morgan Stanley Is Pounding the Table on Battered Seagate and Western Digital Stocks",
+    "src": "yahoo",
+    "age_h": 8.3
+   },
+   {
+    "t": "Not Micron. Not Sandisk. This Storage Stock Is Riding the Same AI Infrastructure Wave.",
+    "src": "yahoo",
+    "age_h": 8.4
+   },
+   {
+    "t": "Microsoft, Alphabet Bar Their Tokenized Shares From OKX-ICE Venue as Objections Hit 16",
+    "src": "yahoo",
+    "age_h": 11.4
+   },
+   {
+    "t": "Stocks making big moves yesterday: Datadog, SolarEdge, AMD, Western Digital, and Amazon",
+    "src": "yahoo",
+    "age_h": 12.1
+   },
+   {
+    "t": "Morgan Stanley cuts Western Digital target, raises Seagate amid HDD selloff",
+    "src": "yahoo",
+    "age_h": 12.7
+   }
+  ],
+  "INTU": [
+   {
+    "t": "Intuit (INTU) Outperforms Broader Market: What You Need to Know",
+    "src": "yahoo",
+    "age_h": 5.1
+   },
+   {
+    "t": "Top Stock Reports for SAP, Accenture & Moody's",
+    "src": "yahoo",
+    "age_h": 6.6
+   },
+   {
+    "t": "INTU vs. MSFT: Which Stock Is the Better Value Option?",
+    "src": "yahoo",
+    "age_h": 11.3
+   },
+   {
+    "t": "Intuit (INTU): Can Credit Karma Grow Beyond the Lending Cycle?",
+    "src": "yahoo",
+    "age_h": 12.1
+   },
+   {
+    "t": "Intuit Launches Credit Karma Tax: Free Federal Filing With Faster Refunds, Expanding Its Daily AI-Powered Financial Assistance",
+    "src": "yahoo",
+    "age_h": 12.5
+   },
+   {
+    "t": "Aprio Broadens its AI-Powered Advisory Partnership with Intuit to Further Accelerate Mid-Market Business Growth",
+    "src": "yahoo",
+    "age_h": 13.0
+   },
+   {
+    "t": "Wall Street Analysts Think Intuit (INTU) Could Surge 26.36%: Read This Before Placing a Bet",
+    "src": "yahoo",
+    "age_h": 13.0
+   },
+   {
+    "t": "Yoodli Named 2026 Inc. Power Partner for Helping Enterprise Teams Build Skills That Show Up on the Job",
+    "src": "yahoo",
+    "age_h": 16.0
    }
   ],
   "BABA": [
    {
-    "t": "No effigy burning in this village in MP's Vidisha where the King of Lanka is worshipped - India Tribune - Chicago",
-    "src": "India Tribune - Chicago",
-    "age_h": 0.5
+    "t": "Alibaba vs. Home Depot: Which Consumer Stock Is a Better Buy in 2026?",
+    "src": "yahoo",
+    "age_h": 4.9
    },
    {
-    "t": "Golf clubhouse by Graham Baba nods to farm structures in rural Washington - Dezeen",
-    "src": "Dezeen",
-    "age_h": 0.8
+    "t": "Not Even Rumors of a Big China Chip Purchase Can Lift Nvidia Stock",
+    "src": "yahoo",
+    "age_h": 7.3
    },
    {
-    "t": "2027: North Will Reject Tinubu Despite Money – PRP Chairman - Politics Digest",
-    "src": "Politics Digest",
-    "age_h": 1.4
+    "t": "What Do Tencent Holdings (SEHK:700) Chip Orders Mean For Its AI Push?",
+    "src": "yahoo",
+    "age_h": 10.8
    },
    {
-    "t": "You Can’t Buy Northerners Dignity With Money -Baba-Ahmed Fires at Tinubu Ahead of 2027 Election - Gistmania",
-    "src": "Gistmania",
-    "age_h": 1.4
+    "t": "Chinese Tech Giants Order $35 Billion In Compliant Nvidia Chips",
+    "src": "yahoo",
+    "age_h": 10.9
    },
    {
-    "t": "\"Mu rike mutuncin mu,\"Hakeem Baba-Ahmed ya hango shirin yaran Tinubu a 2027 - Legit.ng",
-    "src": "Legit.ng",
-    "age_h": 2.3
+    "t": "Nvidia Reportedly Sees Alibaba, ByteDance, Tencent Order $35B In RTX PRO 5500 Chips Amid US Export Curbs",
+    "src": "yahoo",
+    "age_h": 15.2
    },
    {
-    "t": "The ex-wife of 'El Baba' points him out as the one who started the shooting at El Torrejón and claims that he \"always\" went armed. - Demócrata",
-    "src": "Demócrata",
-    "age_h": 2.4
+    "t": "ByteDance, Alibaba and Tencent order $35 billion of Nvidia chips: Reuters",
+    "src": "yahoo",
+    "age_h": 16.1
    },
    {
-    "t": "Hakeem Baba-Ahmed: North will resist APC’s vote-buying moves in 2027 poll - The Informant247",
-    "src": "The Informant247",
-    "age_h": 2.9
+    "t": "Market Chatter: Nvidia Receives Over $35 Billion in Chip Orders From ByteDance, Tencent, Alibaba",
+    "src": "yahoo",
+    "age_h": 16.2
    },
    {
-    "t": "Alibaba Group Holding (BABA) After Its ESOP Filing And The Undervalued Narrative - Simply Wall Street",
-    "src": "Simply Wall Street",
-    "age_h": 3.0
+    "t": "Can Alibaba (BABA) Cover the AI Bill?",
+    "src": "yahoo",
+    "age_h": 23.7
    }
   ],
   "PDD": [
    {
-    "t": "Apple Stock Dips as iPhone 18 Pro Weakness Centers on China - TradingView",
-    "src": "TradingView",
-    "age_h": 0.6
+    "t": "Power curtailments raise concern in Ganderbal - Rising Kashmir",
+    "src": "Rising Kashmir",
+    "age_h": 5.9
    },
    {
-    "t": "Estimates Committee Reviews Power Scenario in J&K, Seeks Timely Completion of RDSS Projects - Kashmir News Service",
-    "src": "Kashmir News Service",
-    "age_h": 1.4
+    "t": "Texas-Temu judgment limits China-based access to Texans’ data, enforced by audits Temu pays for - JD Supra",
+    "src": "JD Supra",
+    "age_h": 6.8
    },
    {
-    "t": "Temu agrees $3m settlement over Texas data privacy claims - Retail Systems",
-    "src": "Retail Systems",
-    "age_h": 2.6
+    "t": "ETF liquidations accelerate as issuers cut losses on young, small funds - Pensions & Investments",
+    "src": "Pensions & Investments",
+    "age_h": 7.0
    },
    {
-    "t": "PDD Holdings stock: USD 110.31 target stands for PDD Holdings stock - ad-hoc-news.de",
+    "t": "Penalties for Repeat DUI Offenders – Persistent Drunk Driver designation - The Prowers Journal",
+    "src": "The Prowers Journal",
+    "age_h": 9.7
+   },
+   {
+    "t": "PDD Holdings stock: MarketBeat cites a Hold consensus at USD 110.31 for PDD Holdings stock - ad-hoc-news.de",
     "src": "ad-hoc-news.de",
-    "age_h": 3.9
+    "age_h": 12.1
    },
    {
-    "t": "Texans Win New Safeguards in Temu Settlement - KSST Radio",
-    "src": "KSST Radio",
-    "age_h": 4.6
+    "t": "PDD Nov 2026 75.000 call (PDD261113C00075000) Interactive Stock Chart - Yahoo Finance - Yahoo! Finance Canada",
+    "src": "Yahoo! Finance Canada",
+    "age_h": 13.7
    },
    {
-    "t": "Analyst says iPhone 18 demand weakness is \"intensifying\" - StreetInsider",
-    "src": "StreetInsider",
-    "age_h": 5.6
+    "t": "P&Z Mulls Text Change For Old Mill Grocery, Similar Markets - 06880",
+    "src": "06880",
+    "age_h": 14.0
    },
    {
-    "t": "Temu concedes hefty settlement over data privacy and product safety concerns - Retail Gazette",
-    "src": "Retail Gazette",
-    "age_h": 10.5
-   },
-   {
-    "t": "Buchwara feeder moves towards round the clock power supply, curtailment limited to 30 minutes - Greater Kashmir",
-    "src": "Greater Kashmir",
-    "age_h": 12.4
+    "t": "Reliable Power - The Kashmir Monitor",
+    "src": "The Kashmir Monitor",
+    "age_h": 15.4
    }
   ],
   "BIDU": [
    {
-    "t": "How a Possible Dead-Cat Bounce May Trigger a 135% Options Payout for Baidu (BIDU) Stock - Barchart.com",
-    "src": "Barchart.com",
-    "age_h": 3.3
+    "t": "BIDU SHAREHOLDER ALERT: Bronstein, Gewirtz and Grossman, LLC Anno - The National Law Review",
+    "src": "The National Law Review",
+    "age_h": 8.3
    },
    {
-    "t": "BIDU Investors Have Opportunity to Lead Baidu, Inc. Securities Fraud Lawsuit with SBS Law - GlobeNewswire",
-    "src": "GlobeNewswire",
-    "age_h": 3.7
+    "t": "Baidu, Inc. (BIDU) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+    "src": "Yahoo! Finance Canada",
+    "age_h": 8.8
    },
    {
-    "t": "BIDU Investors Have Opportunity to Lead Baidu, Inc. Securities Fraud Lawsuit with SBS Law - lincolnjournal.com",
-    "src": "lincolnjournal.com",
-    "age_h": 3.7
+    "t": "Baidu, Inc. (BIDU) stock price, news, quote and history - Yahoo Finance Singapore",
+    "src": "Yahoo Finance Singapore",
+    "age_h": 9.5
    },
    {
-    "t": "BIDU Shareholder Alert: November 13, 2026 Lead Plaintiff - GlobeNewswire",
-    "src": "GlobeNewswire",
-    "age_h": 3.7
+    "t": "3 AI Stocks With Revenue Growth Over 6%",
+    "src": "yahoo",
+    "age_h": 9.8
    },
    {
-    "t": "BIDU Nov 2026 87.000 put (BIDU261106P00087000) stock price, news, quote and history - Yahoo Finance UK",
+    "t": "Baidu (NASDAQ:BIDU) Hits New 12-Month Low - Here's Why - MarketBeat",
+    "src": "MarketBeat",
+    "age_h": 10.8
+   },
+   {
+    "t": "Is It Worth Investing in Baidu Inc. (BIDU) Based on Wall Street's Bullish Views?",
+    "src": "yahoo",
+    "age_h": 13.5
+   },
+   {
+    "t": "Is It Worth Investing in Baidu Inc. (BIDU) Based on Wall Street's Bullish Views? - Yahoo Finance",
+    "src": "Yahoo Finance",
+    "age_h": 13.5
+   },
+   {
+    "t": "BIDU Nov 2026 94.000 put (BIDU261113P00094000) stock price, news, quote and history - Yahoo Finance UK",
     "src": "Yahoo Finance UK",
-    "age_h": 4.8
-   },
-   {
-    "t": "Lead Plaintiff Deadlines in Shareholder Class Action Lawsuits Against Baidu, Inc. (BIDU), Ardelyx, Inc. (ARDX), and Better Home & Finance Holding Company (BETR)",
-    "src": "WBOC TV",
-    "age_h": 6.8
-   },
-   {
-    "t": "Baidu, Inc. (9888.HK) stock price, news, quote and history - Yahoo Finance UK",
-    "src": "Yahoo Finance UK",
-    "age_h": 7.9
-   },
-   {
-    "t": "Press Release Distribution & Media Outreach Platform for PR Agencies - ACCESS Newswire",
-    "src": "ACCESS Newswire",
-    "age_h": 8.9
+    "age_h": 20.1
    }
   ],
   "TME": [
    {
-    "t": "A director's 9,271-unit stock grant at Tencent Music (TME) will vest after one year. - Stock Titan",
-    "src": "Stock Titan",
-    "age_h": 7.4
+    "t": "San Bernardino Airport Deploys Collins Tower MicroElite System - Aviation International News",
+    "src": "Aviation International News",
+    "age_h": 14.3
    },
    {
-    "t": "A director’s 9,271-unit stock grant at Tencent Music (TME) vests one year after the grant date. - Stock Titan",
+    "t": "JJ Lin, Tia Ray & Lil Ghost Take the Formula 1 Singapore Grand Prix Stage With Support From TME",
+    "src": "yahoo",
+    "age_h": 18.1
+   },
+   {
+    "t": "A 20-song Singapore Grand Prix set hid snippets from JJ Lin's upcoming 2027 album - Stock Titan",
     "src": "Stock Titan",
-    "age_h": 7.5
+    "age_h": 18.2
+   },
+   {
+    "t": "1,906,905 Shares in Tencent Music Entertainment Group Sponsored ADR $TME Bought by Assenagon Asset Management S.A. - MarketBeat",
+    "src": "MarketBeat",
+    "age_h": 18.8
+   },
+   {
+    "t": "TME adds Raytac Bluetooth low energy modules to wireless connectivity portfolio - New Electronics",
+    "src": "New Electronics",
+    "age_h": 19.4
+   },
+   {
+    "t": "Tencent Music Entertainment Group Sponsored ADR (NYSE:TME) Stock Now Rated \"Hold\" by Wall Street Brokerages - MarketBeat",
+    "src": "MarketBeat",
+    "age_h": 19.5
+   },
+   {
+    "t": "A director's 9,271-unit stock grant at Tencent Music (TME) will vest after one year. - Stock Titan",
+    "src": "Stock Titan",
+    "age_h": 39.6
    },
    {
     "t": "A director receives 9,271 share rights at Tencent Music (TME), vesting in one year. - Stock Titan",
     "src": "Stock Titan",
-    "age_h": 7.5
-   },
-   {
-    "t": "TME expands wireless catalogue with high-performance Bluetooth Low Energy modules - Bisinfotech",
-    "src": "Bisinfotech",
-    "age_h": 12.4
-   },
-   {
-    "t": "Tencent Music (TME) Stock May Be 15% Undervalued After DeepSeek AI News",
-    "src": "yahoo",
-    "age_h": 39.6
-   },
-   {
-    "t": "Tencent Music (TME) Stock May Be 15% Undervalued After DeepSeek AI News - Yahoo Finance",
-    "src": "Yahoo Finance",
-    "age_h": 39.6
-   },
-   {
-    "t": "TME Nov 2026 8.000 put (TME261120P00008000) Interactive Stock Chart - Yahoo! Finance Canada",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 41.8
-   },
-   {
-    "t": "TME Nov 2026 9.000 call (TME261120C00009000) Stock Price, News, Quote & History - Yahoo! Finance Canada",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 42.4
+    "age_h": 39.7
    }
   ],
   "BILI": [
    {
-    "t": "CHL regular season wrap-up - IIHF",
-    "src": "IIHF",
-    "age_h": 0.9
+    "t": "CICC sets HKD 159.20 target for Bilibili stock - ad-hoc-news.de",
+    "src": "ad-hoc-news.de",
+    "age_h": 5.9
+   },
+   {
+    "t": "BILI 261120 17.00C (BILI261120C17000) Stock Options Chain | Quotes & News - Moomoo",
+    "src": "Moomoo",
+    "age_h": 20.3
+   },
+   {
+    "t": "Caru Canu on S4C: full details and when it's on - TVGuide.co.uk",
+    "src": "TVGuide.co.uk",
+    "age_h": 26.3
+   },
+   {
+    "t": "European Growth Stocks Insiders Are Betting On - Simply Wall Street",
+    "src": "Simply Wall Street",
+    "age_h": 31.1
+   },
+   {
+    "t": "Radulović: I deal with suspicions that deserve verification, I reported former officials while they were in power - vijesti.me",
+    "src": "vijesti.me",
+    "age_h": 37.7
    },
    {
     "t": "Bilia (OM:BILI A) Stock Could Be Undervalued On Cash Flow - Yahoo Finance",
     "src": "Yahoo Finance",
-    "age_h": 5.6
+    "age_h": 37.8
    },
    {
     "t": "Pinoy appeals for support for elderly fruit vendor spotted in Pasig - Interaksyon",
     "src": "Interaksyon",
-    "age_h": 13.7
-   },
-   {
-    "t": "Baby gorilla rescued from traffickers gets second chance at life after three years - Geo News",
-    "src": "Geo News",
-    "age_h": 45.2
+    "age_h": 45.8
    }
   ],
   "IQ": [
    {
-    "t": "Surprised By iQIYI's 57% Slide? What Investors Overlooked - Simply Wall Street",
-    "src": "Simply Wall Street",
-    "age_h": 0.1
+    "t": "Auto tech startup claims it traced hack attempt back to rival's IP address - The Register",
+    "src": "The Register",
+    "age_h": 4.0
    },
    {
-    "t": "Eberspaecher Vecture introduces GuardIon-IQ modular BMS for 12 to 1,500 V battery systems - Charged EVs",
-    "src": "Charged EVs",
-    "age_h": 1.3
+    "t": "Armed with a proven basketball IQ, Chloe Clardy is ready to school her opponents - The Daily Tar Heel",
+    "src": "The Daily Tar Heel",
+    "age_h": 4.3
    },
    {
-    "t": "iQ Offices Adds L-Acoustics to a Historic Banking Hall - Residential Tech Today",
-    "src": "Residential Tech Today",
-    "age_h": 1.9
+    "t": "Climate Change IQ | Fires, Fall, and Nature's Fury - firstcoastnews.com",
+    "src": "firstcoastnews.com",
+    "age_h": 5.4
    },
    {
-    "t": "IQ Option Joins Financial Commission, Passes 5,000-Trade Execution Audit - FinanceFeeds",
-    "src": "FinanceFeeds",
-    "age_h": 3.1
+    "t": "Climate Change IQ | Fires, Fall, and Nature's Fury - fox43.com",
+    "src": "fox43.com",
+    "age_h": 5.4
    },
    {
-    "t": "IQ Option Traders Gain Financial Commission Access with €20K Protection - Finance Magnates",
-    "src": "Finance Magnates",
-    "age_h": 3.9
+    "t": "Morning Report - Westpac IQ",
+    "src": "Westpac IQ",
+    "age_h": 5.4
    },
    {
-    "t": "How restaurant managers use AI: Findings from Toast IQ data - Restaurant Dive",
-    "src": "Restaurant Dive",
-    "age_h": 5.2
+    "t": "California Account’s ‘Trump Hates Black People’ Post Draws Mockery Over ‘Low IQ’ List: ‘Gavin Newsom’s Press Office Is Dumb AF’ - NewsBreak: Local News & Alerts",
+    "src": "NewsBreak: Local News & Alerts",
+    "age_h": 7.1
    },
    {
-    "t": "Santana and Toto to lead new ‘world-class’ Helsinki festival - IQ Magazine",
-    "src": "IQ Magazine",
-    "age_h": 5.2
+    "t": "2026 Rising Star: Aleyna Groves - HousingWire",
+    "src": "HousingWire",
+    "age_h": 7.2
    },
    {
-    "t": "Incident IQ Extends iiQ Facilities to Give K–12 Districts More Intuitive, Intentional Facilities Management - Business Wire",
-    "src": "Business Wire",
-    "age_h": 5.8
+    "t": "California Account’s ‘Trump Hates Black People’ Post Draws Mockery Over ‘Low IQ’ List: ‘Gavin Newsom’s Press Office Is Dumb AF’ - The Nerd Stash",
+    "src": "The Nerd Stash",
+    "age_h": 7.2
    }
   ],
   "NIO": [
    {
-    "t": "China Tells UK to ‘Think Twice’ Before Following EU on EV Tariffs - Electric Vehicles",
-    "src": "Electric Vehicles",
-    "age_h": 1.4
+    "t": "Upgradeable City Car Batteries: Nio Lets Firefly Owners Swap Up to a Bigger 60 kWh… - Trend Hunter",
+    "src": "Trend Hunter",
+    "age_h": 2.5
    },
    {
-    "t": "Failure by Sinn Féin and DUP to agree Stormont budget ‘beyond alarming’, says NIO minister - The Irish Times",
-    "src": "The Irish Times",
-    "age_h": 2.0
-   },
-   {
-    "t": "Rivian CEO Says Memory Prices Add ‘Many Hundreds of Dollars’ Per Vehicle - Electric Vehicles",
-    "src": "Electric Vehicles",
-    "age_h": 3.0
-   },
-   {
-    "t": "Firefly Offers 99 Discounted EVs in Thailand After Registering 20 Since March - Electric Vehicles",
-    "src": "Electric Vehicles",
-    "age_h": 3.3
-   },
-   {
-    "t": "This platform $NIO community is very quiet - Moomoo",
-    "src": "Moomoo",
-    "age_h": 3.4
-   },
-   {
-    "t": "Nio expands Firefly business in Thailand with standalone store and updated EV - CnEVPost",
-    "src": "CnEVPost",
+    "t": "NIO (NYSE:NIO) Stock Jumps 1.3% - Still a Buy? - MarketBeat",
+    "src": "MarketBeat",
     "age_h": 4.2
    },
    {
-    "t": "Nio's Firefly upgrades lineup with new 60kWh battery model launching October 23, report says - CarNewsChina.com",
-    "src": "CarNewsChina.com",
-    "age_h": 4.5
+    "t": "NIO (NIO) Shares Rise Amid Bullish Options Activity and Market O - GuruFocus",
+    "src": "GuruFocus",
+    "age_h": 5.3
    },
    {
-    "t": "Nio's third-gen ES8 nears 160,000 deliveries about a month after last milestone - CnEVPost",
-    "src": "CnEVPost",
-    "age_h": 5.6
+    "t": "NIO Inc. (9866.HK) stock price, news, quote and history - Yahoo Finance UK",
+    "src": "Yahoo Finance UK",
+    "age_h": 6.5
+   },
+   {
+    "t": "NIO News | NIO INC - ADR (NYSE:NIO) - ChartMill",
+    "src": "ChartMill",
+    "age_h": 7.8
+   },
+   {
+    "t": "Nio Pushes All-In Subscription in Netherlands as Own-Brand Registrations Plunge - Electric Vehicles",
+    "src": "Electric Vehicles",
+    "age_h": 8.0
+   },
+   {
+    "t": "Goldman Sachs raises target for NIO Inc. stock to USD 7.00 - ad-hoc-news.de",
+    "src": "ad-hoc-news.de",
+    "age_h": 8.6
+   },
+   {
+    "t": "Huawei's Yinwang joins CATL's 2,520-station swap network, first car due 2027 - GlobalChinaEV",
+    "src": "GlobalChinaEV",
+    "age_h": 11.0
    }
   ],
   "XPEV": [
    {
-    "t": "Weekly Recap: XPEV launches XPENG AI Engineering and EU sales reach 29k - TradingView",
-    "src": "TradingView",
-    "age_h": 6.8
+    "t": "XPEV Stock Falls On $500M AI Bet For Self-Driving Tech — Exec Says Xpeng Is Following Google’s Pixel Playbook - Stocktwits",
+    "src": "Stocktwits",
+    "age_h": 1.9
    },
    {
-    "t": "XPeng (NYSE:XPEV): What Comes Next After a Sharp Decline? - Kalkine Media",
-    "src": "Kalkine Media",
-    "age_h": 11.1
+    "t": "NIO News | NIO INC - ADR (NYSE:NIO) - ChartMill",
+    "src": "ChartMill",
+    "age_h": 7.8
    },
    {
-    "t": "XPEV Oct 2026 9.000 call (XPEV261023C00009000) Stock Price, News, Quote & History - Yahoo! Finance Canada",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 17.3
+    "t": "XPEV Stock Climbs As Paris G9L Launch Fuels Global Ambitions - Timothy Sykes",
+    "src": "Timothy Sykes",
+    "age_h": 9.4
    },
    {
-    "t": "XPEV261016C00013500 Interactive Stock Chart | XPEV Oct 2026 13.500 call Stock - Yahoo Finance",
-    "src": "Yahoo Finance",
-    "age_h": 22.2
+    "t": "XPEV Stock Eyes Breakout As XPeng Drives AI EV Push - StocksToTrade",
+    "src": "StocksToTrade",
+    "age_h": 9.4
    },
    {
-    "t": "XPEV Oct 2026 16.000 put (XPEV261023P00016000) stock price, news, quote and history - Yahoo Finance UK",
-    "src": "Yahoo Finance UK",
-    "age_h": 22.4
+    "t": "XPENG (NYSE:XPEV) Shares Gap Up - Here's Why - MarketBeat",
+    "src": "MarketBeat",
+    "age_h": 10.0
    },
    {
-    "t": "What Comes Next For XPeng After A 56% Slide - Simply Wall Street",
-    "src": "Simply Wall Street",
-    "age_h": 25.2
+    "t": "Technical Reactions to XPEV Trends in Macro Strategies - Stock Traders Daily",
+    "src": "Stock Traders Daily",
+    "age_h": 10.3
    },
    {
-    "t": "XPEV261016C00005500 Interactive Stock Chart | XPEV Oct 2026 5.500 call Stock - Yahoo Finance",
-    "src": "Yahoo Finance",
-    "age_h": 25.3
+    "t": "XPeng Inc. (9868.HK) stock price, news, quote and history - Yahoo Finance - Yahoo Finance Singapore",
+    "src": "Yahoo Finance Singapore",
+    "age_h": 15.3
    },
    {
-    "t": "XPEV261016C00012500 Interactive Stock Chart | XPEV Oct 2026 12.500 call Stock - Yahoo Finance",
-    "src": "Yahoo Finance",
-    "age_h": 28.1
+    "t": "Jefferies Eyes Mid-Teens Returns as Investment Banking Scale Drives Growth",
+    "src": "yahoo",
+    "age_h": 28.9
    }
   ],
   "LI": [
    {
-    "t": "Form 4 JX Luxventure Group Inc.: Huidan Li (Director, Co-Chairman of the board) For: 15 October - Investing.com India",
-    "src": "Investing.com India",
-    "age_h": 0.2
+    "t": "12 LI Water Infrastructure Projects Get Over $56M in Funding - Long Island Life & Politics",
+    "src": "Long Island Life & Politics",
+    "age_h": 0.1
    },
    {
-    "t": "After nine years performing on the TTC, this Toronto busker has her sights set on City Hall - Streets Of Toronto",
-    "src": "Streets Of Toronto",
+    "t": "China's Xiang, Li into men's singles last 64 at Asian Table Tennis Championships - chinadailyhk",
+    "src": "chinadailyhk",
     "age_h": 0.4
    },
    {
-    "t": "CASSIUS Gems: ‘Street Fighter’s’ Callina Liang Understood The Assigment As Chun-Li - Cassius Life",
-    "src": "Cassius Life",
+    "t": "Zane Li Wins 2026 CFDA/Vogue Fashion Fund - The Business of Fashion",
+    "src": "The Business of Fashion",
     "age_h": 0.6
    },
    {
-    "t": "Ann Li vs Emerson Jones · Round 1 · WTA Osaka - Tennis.com",
-    "src": "Tennis.com",
-    "age_h": 0.7
+    "t": "Sea Group explores Monee IPO to accelerate expansion - IDNFinancials",
+    "src": "IDNFinancials",
+    "age_h": 1.3
    },
    {
-    "t": "Li Huidan Acquires 250,000 Shares at No Cost Through JX Luxventure's 2026 Equity Incentive Plan - Kalkine Media",
-    "src": "Kalkine Media",
-    "age_h": 0.7
+    "t": "Chinese premier says to promote deeper, more substantive, more resilient cooperation with Russia - Xinhua",
+    "src": "Xinhua",
+    "age_h": 1.4
    },
    {
-    "t": "Li Xiaoran announces divorce. - Vietnam.vn",
-    "src": "Vietnam.vn",
-    "age_h": 0.7
+    "t": "Munmu — Yang Hyun-min to Lee Ji-hoon Lead Tang Dynasty Power Struggle - The Korea Daily",
+    "src": "The Korea Daily",
+    "age_h": 1.4
    },
    {
-    "t": "A 250,000-share grant forms part of an officer’s stake in JX Luxventure (JXG). - Stock Titan",
-    "src": "Stock Titan",
-    "age_h": 1.1
+    "t": "Zane Li Wins 2026 CFDA/Vogue Fashion Fund Award - WWD",
+    "src": "WWD",
+    "age_h": 1.6
    },
    {
-    "t": "'Street Fighter' Star Callina Liang Embraces the \"Huge Honour\" of Playing \"Someone Who Looked Like Me in a Video Game\" - Exclaim!",
-    "src": "Exclaim!",
-    "age_h": 1.5
+    "t": "Yang Hyun-min, Lee Ji-hoon lead Tang power struggle in The Great King Munmu - CHOSUNBIZ - Chosunbiz",
+    "src": "Chosunbiz",
+    "age_h": 1.6
    }
   ],
   "TCOM": [
    {
-    "t": "Trip.com Group (TCOM) Signs Malta Tourism Deal, Is The Stock Still A Bargain? - Simply Wall Street",
-    "src": "Simply Wall Street",
-    "age_h": 45.2
+    "t": "Trip.com (TCOM) Laps the Stock Market: Here's Why",
+    "src": "yahoo",
+    "age_h": 5.0
+   },
+   {
+    "t": "Trip.com (TCOM) Laps the Stock Market: Here's Why - Yahoo Finance Australia",
+    "src": "Yahoo Finance Australia",
+    "age_h": 5.0
+   },
+   {
+    "t": "MarketBeat cites USD 60.45 target for Trip.com stock - ad-hoc-news.de",
+    "src": "ad-hoc-news.de",
+    "age_h": 5.6
    }
   ],
   "GDS": [
    {
-    "t": "India Post GDS 2nd Merit List 2026: Result, PDF Link - Praveen Singh",
-    "src": "Praveen Singh",
-    "age_h": 4.3
+    "t": "GDS Holdings Ltd (GDS) Shares Surge 3.8% -- What GF Score of 68 Tells Investors - GuruFocus",
+    "src": "GuruFocus",
+    "age_h": 2.6
    },
    {
-    "t": "GdS: Summer doubts, present certainty – Maignan earns Milan more points with huge save - SempreMilan",
-    "src": "SempreMilan",
-    "age_h": 4.8
+    "t": "GdS: Rabiot leads everywhere – Milan ready to offer Frenchman a renewal until 2030 - LiveScore",
+    "src": "LiveScore",
+    "age_h": 7.0
    },
    {
-    "t": "GdS: Rabiot the leader – Milan’s star sets example with performances and harsh words - SempreMilan",
-    "src": "SempreMilan",
-    "age_h": 7.8
+    "t": "GdS: Milan ‘get it right’ – how Amorim’s chameleonic moves have unlocked new potential - LiveScore",
+    "src": "LiveScore",
+    "age_h": 7.0
    },
    {
-    "t": "GdS: Milan ‘picking up speed’ – how Amorim’s side overwhelmed Atalanta then nearly collapsed - SempreMilan",
+    "t": "MarketBeat cites USD 48.12 target for GDS Holdings stock - ad-hoc-news.de",
+    "src": "ad-hoc-news.de",
+    "age_h": 9.1
+   },
+   {
+    "t": "GdS: The ‘quick-change artist’ – all the formations Amorim has used at Milan - SempreMilan",
     "src": "SempreMilan",
     "age_h": 9.3
    },
    {
-    "t": "Postal department bonus 2025-26: Eligible employees, GDS can get up to ₹13,816 under 60-day bonus scheme - Upstox",
-    "src": "Upstox",
-    "age_h": 11.8
+    "t": "Train travel round-up: Condor Rail & Fly exits GDS - eTNW",
+    "src": "eTNW",
+    "age_h": 9.9
    },
    {
-    "t": "GDS261120P00025000 interactive stock chart | GDS Nov 2026 25.000 put stock - Yahoo Finance UK",
-    "src": "Yahoo Finance UK",
-    "age_h": 26.5
-   },
-   {
-    "t": "GdS: ‘Show what you’re worth’ – Amorim hopes for ‘vitamin boost’ from Ramos goals - SempreMilan",
+    "t": "GdS: Amorim expected to rotate again vs. Bournemouth – who should get a chance - SempreMilan",
     "src": "SempreMilan",
-    "age_h": 33.3
+    "age_h": 12.0
    },
    {
-    "t": "Kenya Flight Bookings Through Travel Intermediaries Rise 9% as International Demand Strengthens - Kenya Association of Travel Agents",
-    "src": "Kenya Association of Travel Agents",
-    "age_h": 34.5
+    "t": "GdS: Milan ‘get it right’ – how Amorim’s chameleonic moves have unlocked new potential - SempreMilan",
+    "src": "SempreMilan",
+    "age_h": 13.1
    }
   ],
   "VNET": [
    {
+    "t": "ChowChow Cloud reports unusual trading on NYSE with no new business developments found. - Pluang",
+    "src": "Pluang",
+    "age_h": 7.7
+   },
+   {
+    "t": "Asian ADRs Traded Higher As Telecomunikasi Indonesia Jumped 9.7% - Finimize",
+    "src": "Finimize",
+    "age_h": 10.1
+   },
+   {
+    "t": "VNET closes 38.1 percent stake deal while VNET stock sits at USD 1.1 billion value - ad-hoc-news.de",
+    "src": "ad-hoc-news.de",
+    "age_h": 14.2
+   },
+   {
+    "t": "VNET Group (NASDAQ:VNET) Sets New 52-Week Low - Time to Sell? - MarketBeat",
+    "src": "MarketBeat",
+    "age_h": 16.8
+   },
+   {
+    "t": "VNET Nov 2026 4.000 put (VNET261120P00004000) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+    "src": "Yahoo! Finance Canada",
+    "age_h": 29.9
+   },
+   {
     "t": "What Investors Got Wrong About VNET Group Before A 58% Slide",
     "src": "yahoo",
-    "age_h": 8.6
+    "age_h": 40.8
    },
    {
-    "t": "Inside China's \"unlikely\" AI computing hub - People's Daily Online",
-    "src": "People's Daily Online",
-    "age_h": 17.6
+    "t": "What Investors Got Wrong About VNET Group Before A 58% Slide - Yahoo Finance",
+    "src": "Yahoo Finance",
+    "age_h": 40.8
    },
    {
-    "t": "WisdomTree Cloud Computing Fund (WCLD) upgraded to buy on valuation and technical strength. - Pluang",
-    "src": "Pluang",
-    "age_h": 21.4
-   },
-   {
-    "t": "Ulanqab Expands Green AI Computing With Renewable Energy - SuaraGarut.ID",
-    "src": "SuaraGarut.ID",
-    "age_h": 21.5
-   },
-   {
-    "t": "VNET Group stock fell as its second-quarter loss missed expectations - ad-hoc-news.de",
-    "src": "ad-hoc-news.de",
-    "age_h": 31.2
+    "t": "Inside China's \"unlikely\" AI computing hub - Beijing Review",
+    "src": "Beijing Review",
+    "age_h": 43.0
    }
   ],
   "WB": [
    {
-    "t": "Tourism: SL and WB discuss destination marketing campaign - The Morning",
-    "src": "The Morning",
-    "age_h": 1.2
+    "t": "\"Viksit Bharat 2047 under PM Modi's leadership is my only prayer\": WB CM Suvendu Adhikari - India's News.Net",
+    "src": "India's News.Net",
+    "age_h": 2.9
    },
    {
-    "t": "RSS leader, W.B. Minister oppose attacks on book stalls set up by Left parties at Durga Puja pandals - The Hindu",
-    "src": "The Hindu",
-    "age_h": 2.4
+    "t": "When: October 21, 2026 What: Traffic Update EDSA SB Timog to Cubao Monte moderate traffic EDSA SB Santolan moderate traffic EDSA SB Ortigas moderate traffic EDS",
+    "src": "Facebook",
+    "age_h": 3.7
    },
    {
-    "t": "WBPSC Stenographer Recruitment 2026 Short Notice Out, Check Exam Date, Online Form - Adda247",
-    "src": "Adda247",
-    "age_h": 3.0
-   },
-   {
-    "t": "Settler attacks on journalist, foreign diplomats in WB: Daily terrorism, double standards - وكالة سبأ",
-    "src": "وكالة سبأ",
+    "t": "Final pre-merger WB release ‘Digger’ scores 19-year US box-office low for Tom Cruise - IMDb",
+    "src": "IMDb",
     "age_h": 4.0
    },
    {
-    "t": "RED ALERT - WB I-20 shut down at Mountain Creek Parkway - Audacy",
-    "src": "Audacy",
-    "age_h": 4.3
+    "t": "WB mission’s visits put off due to travel curbs in KP - Business Recorder",
+    "src": "Business Recorder",
+    "age_h": 4.5
    },
    {
-    "t": "CBA, WB mull trends in financial sector development - Report.az",
-    "src": "Report.az",
-    "age_h": 5.2
+    "t": "Has Weibo (WB) Fallen Far Enough to Look Cheap on Earnings? - Simply Wall Street",
+    "src": "Simply Wall Street",
+    "age_h": 5.5
    },
    {
-    "t": "Verité Research takes debt agenda to IMF-WB meetings - Daily Mirror - Sri Lanka",
-    "src": "Daily Mirror - Sri Lanka",
-    "age_h": 5.9
+    "t": "Transport groups oppose DOTr-WB modernization pact - Negros Now Daily",
+    "src": "Negros Now Daily",
+    "age_h": 6.1
    },
    {
-    "t": "WB NEET UG 2026 Stray Round: Last Chance for MBBS/BDS Seats - medadmit.in",
-    "src": "medadmit.in",
-    "age_h": 6.2
+    "t": "KY 54 on-ramps to westbound U.S. 60 closing overnight for repairs - 14 News",
+    "src": "14 News",
+    "age_h": 6.3
+   },
+   {
+    "t": "Ranbir, Yash Starrer Ramayana Declared Tax Free in WB - Lokmarg",
+    "src": "Lokmarg",
+    "age_h": 8.3
    }
   ],
   "MOMO": [
    {
-    "t": "Putin’s Proposed Trump-Xi Summit In China Could Hurt US Stocks Long Term; Meta And Tesla Earnings Ahead - Benzinga",
+    "t": "Kelvin Momo – Amalobolo Ft.Babalwa M, Stixx & Nia Pearl - TrendyHipHop",
+    "src": "TrendyHipHop",
+    "age_h": 4.1
+   },
+   {
+    "t": "Weiss downgrades Hello Group stock from Sell D+ to Sell D - ad-hoc-news.de",
+    "src": "ad-hoc-news.de",
+    "age_h": 5.8
+   },
+   {
+    "t": "Asian comfort food comes to Fruitvale Public Market, plus new taco and Vietnamese options hit Oakland - The Oaklandside",
+    "src": "The Oaklandside",
+    "age_h": 7.5
+   },
+   {
+    "t": "408x Oversubscribed AI IPO Crashes 32%—Democratic Sweep Prospects Trigger Selling in Data Center Stocks - Benzinga",
     "src": "Benzinga",
-    "age_h": 2.3
+    "age_h": 9.6
    },
    {
-    "t": "MTN MoMo and Micro Finance Zambia explore collaboration to promote financial inclusion - Tech Review Africa",
-    "src": "Tech Review Africa",
-    "age_h": 4.3
-   },
-   {
-    "t": "Kimino Momo Sparkling Juice - Falstaff",
-    "src": "Falstaff",
-    "age_h": 5.2
-   },
-   {
-    "t": "Director Tenzin Yeshi Talks Midnight Momo - FILMHOUNDS Magazine",
-    "src": "FILMHOUNDS Magazine",
-    "age_h": 6.8
-   },
-   {
-    "t": "Momo Nation Cafe Takes Its Next Growth Step with New Restaurant and Cafe Models - India CSR",
-    "src": "India CSR",
-    "age_h": 6.8
-   },
-   {
-    "t": "MoMo co-founder calls for simpler, more user-friendly technology - VnExpress International",
-    "src": "VnExpress International",
-    "age_h": 14.0
-   },
-   {
-    "t": "MMFL Expands Digital Financial Ecosystem to Drive Ghana’s Cashless Future - News Ghana",
-    "src": "News Ghana",
+    "t": "Momo Inn changes Bogura’s hospitality landscape with unique luxury, services - The Bangladesh Monitor",
+    "src": "The Bangladesh Monitor",
     "age_h": 14.6
    },
    {
-    "t": "[Photo] MEOVV Ella 'Cutest Momo' - CHOSUNBIZ - Chosunbiz",
-    "src": "Chosunbiz",
-    "age_h": 17.0
+    "t": "Grand Christmas, New Year's Eve celebration at Momo Inn - The Bangladesh Monitor",
+    "src": "The Bangladesh Monitor",
+    "age_h": 14.6
+   },
+   {
+    "t": "Meet Dorcas Dwommoh-Mensah, the lawyer steering corporate governance at MTN MoMo - GhanaWeb",
+    "src": "GhanaWeb",
+    "age_h": 15.6
+   },
+   {
+    "t": "\"We deserved to lose\": Ashley Westwood speaks after 4-1 loss against NorthEast United FC - Khel Now",
+    "src": "Khel Now",
+    "age_h": 15.8
    }
   ],
   "QFIN": [
    {
-    "t": "QFIN Shareholder Alert: November 27, 2026 Lead Plaintiff - GlobeNewswire",
-    "src": "GlobeNewswire",
-    "age_h": 3.6
+    "t": "QFIN Investors Have Opportunity to Lead Qfin Holdings, Inc. Securities Fraud Lawsuit - Morningstar",
+    "src": "Morningstar",
+    "age_h": 6.3
    },
    {
-    "t": "QFIN Deadline Reminder: Qfin Holdings Investors are - GlobeNewswire",
+    "t": "QFIN Investors Have Opportunity to Lead Qfin Holdings, Inc. Securities Fraud Lawsuit with SBS Law - GlobeNewswire",
     "src": "GlobeNewswire",
-    "age_h": 7.7
+    "age_h": 12.0
+   },
+   {
+    "t": "What Should Qfin Holdings, Inc. Investors Know After 18.91% Stock Drop? The Law Offices of Frank R. Cruz Outlines Securities Fraud Class Action Lead Plaintiff D",
+    "src": "PR Newswire",
+    "age_h": 24.9
+   },
+   {
+    "t": "Deadline Alert: Qfin Holdings, Inc. Investors Have Until - GlobeNewswire",
+    "src": "GlobeNewswire",
+    "age_h": 27.9
    },
    {
     "t": "Press Release Distribution & Media Outreach Platform for PR Agencies - ACCESS Newswire",
     "src": "ACCESS Newswire",
-    "age_h": 8.9
+    "age_h": 31.0
    },
    {
-    "t": "ROSEN, A RANKED AND LEADING LAW FIRM, Encourages Qfin Holdings, Inc. Investors to Secure ... - Black Hills Pioneer",
-    "src": "Black Hills Pioneer",
-    "age_h": 32.8
+    "t": "Qfin (NASDAQ:QFIN) Sets New 52-Week Low - Here's Why - MarketBeat",
+    "src": "MarketBeat",
+    "age_h": 31.2
    },
    {
-    "t": "QFIN Oct 2026 12.500 put (QFIN261016P00012500) stock price, news, quote and history - Yahoo Finance UK",
-    "src": "Yahoo Finance UK",
-    "age_h": 36.7
+    "t": "QFIN Shareholder Alert: November 27, 2026 Lead Plaintiff - GlobeNewswire",
+    "src": "GlobeNewswire",
+    "age_h": 35.8
    },
    {
-    "t": "QFIN Feb 2027 25.000 call (QFIN270219C00025000) interactive stock chart - Yahoo Finance Australia",
-    "src": "Yahoo Finance Australia",
-    "age_h": 37.6
-   },
-   {
-    "t": "QFIN Feb 2027 25.000 call (QFIN270219C00025000) Stock Price, News, Quote & History - Yahoo! Finance Canada",
-    "src": "Yahoo! Finance Canada",
-    "age_h": 38.6
+    "t": "QFIN Deadline Reminder: Qfin Holdings Investors are - GlobeNewswire",
+    "src": "GlobeNewswire",
+    "age_h": 39.8
    }
   ],
-  "FINV": [],
+  "FINV": [
+   {
+    "t": "PPDAI Group (NYSE:FINV) Shares Down 3.4% - Should You Sell? - MarketBeat",
+    "src": "MarketBeat",
+    "age_h": 8.8
+   }
+  ],
   "LX": [
    {
-    "t": "Save a colossal 64% on this gorgeous white Corsair PC case, if you're quick - outstanding value - Club386",
-    "src": "Club386",
-    "age_h": 2.1
-   },
-   {
-    "t": "Nasdaq gives LexinFintech (Nasdaq: LX) 180 days to regain bid-price compliance. - Stock Titan",
-    "src": "Stock Titan",
-    "age_h": 7.6
-   },
-   {
-    "t": "Australia's coolest LX Torana hatchbacks! - Street Machine",
+    "t": "Street Machine Podcast 2: Repco-Mod Porsche and more! - Street Machine",
     "src": "Street Machine",
-    "age_h": 9.3
+    "age_h": 1.3
    },
    {
-    "t": "Week 6 photo album, 2026 - Football Zebras",
-    "src": "Football Zebras",
-    "age_h": 14.1
+    "t": "Tropic Thunder: 2026 Cairns Show Auto Spectacular - Street Machine",
+    "src": "Street Machine",
+    "age_h": 3.3
    },
    {
-    "t": "2027 Volkswagen Tiguan vs 2027 Lexus LX 700h - driving.ca",
-    "src": "driving.ca",
-    "age_h": 14.5
+    "t": "MLB Playoffs: Unbelievable! World Series Ticket Prices Top the Super Bowl - Al Bat",
+    "src": "Al Bat",
+    "age_h": 4.0
    },
    {
-    "t": "Drake Maye Shouts Out His Wife Ann Michael After Patriots O-Line Impressed in Win Against the Jets - EssentiallySports",
-    "src": "EssentiallySports",
-    "age_h": 15.0
+    "t": "LX-2 hepatic stellate cells alter 3D HepG2 hepatocellular carcinoma - Bioengineer.org",
+    "src": "Bioengineer.org",
+    "age_h": 5.0
    },
    {
-    "t": "Tennessee Titans at Indianapolis Colts - NFL Game Summary - Oct 18, 2026 - USA Today",
+    "t": "Lexus Kills the Plug-In Hybrid TX550h+ for 2027, but the Gas-Fed TX and Regular Hybrid Model Remain - Car and Driver",
+    "src": "Car and Driver",
+    "age_h": 5.2
+   },
+   {
+    "t": "Slumping Seahawks Doing Things in 2026 They Didn't Do in 2025 - Yahoo Sports",
+    "src": "Yahoo Sports",
+    "age_h": 5.5
+   },
+   {
+    "t": "See the stars and spectacle of Super Bowl halftime shows - USA Today",
     "src": "USA Today",
-    "age_h": 16.8
+    "age_h": 6.1
    },
    {
-    "t": "Pittsburgh Steelers at Tampa Bay Buccaneers - NFL Game Summary - Oct 18, 2026 - USA Today",
-    "src": "USA Today",
-    "age_h": 16.8
+    "t": "World Series Game 1 tickets surge above $3K, nearing Super Bowl level - KMJ Now",
+    "src": "KMJ Now",
+    "age_h": 6.6
    }
   ],
   "NOAH": [
    {
-    "t": "'The Pitt' Star Noah Wyle and Wife Sara Share Heartbreaking News About Unexpected Family Loss - Parade Magazine",
-    "src": "Parade Magazine",
-    "age_h": 0.2
+    "t": "The Independent says AI-enabled editors are six times more productive - Tomorrow's Publisher",
+    "src": "Tomorrow's Publisher",
+    "age_h": 1.0
    },
    {
-    "t": "Noah Wyle and Wife Sara Share the Unexpected Loss of a Family Member - InStyle",
-    "src": "InStyle",
-    "age_h": 0.3
+    "t": "Weather Company co-pilot turns one forecast into stories for every screen - Tomorrow's Publisher",
+    "src": "Tomorrow's Publisher",
+    "age_h": 2.0
    },
    {
-    "t": "Noah Otshudi Earns Preseason All-SBC First Team Honors - Marshall University Athletics",
-    "src": "Marshall University Athletics",
-    "age_h": 0.8
+    "t": "'The Pitt' star Noah Wyle, family mourn death of beloved dog - AOL.co.uk",
+    "src": "AOL.co.uk",
+    "age_h": 2.1
    },
    {
-    "t": "‘The Pitt’ Star Noah Wyle Mourns Heartbreaking Family Loss: ‘Devastated’ - IMDb",
+    "t": "Cortez ‘Super Dad’ Noah Herrmann advances to competition’s quarter final - The Journal",
+    "src": "The Journal",
+    "age_h": 2.8
+   },
+   {
+    "t": "FFE Player of the Week 8: Noah Paxton - WDBJ7",
+    "src": "WDBJ7",
+    "age_h": 3.6
+   },
+   {
+    "t": "Despite having zero goals, Zach Benson off to strong start, displaying chemistry with Jack Quinn, Noah Ostlund - Buffalo Hockey Beat",
+    "src": "Buffalo Hockey Beat",
+    "age_h": 3.7
+   },
+   {
+    "t": "Star quarterback Noah Fifita can't be replaced so Arizona is hunting for the next best thing - On3",
+    "src": "On3",
+    "age_h": 4.1
+   },
+   {
+    "t": "‘Nobody Wants This’ Recap: What Happened to Joanne, Noah & More Before Season 3 - IMDb",
     "src": "IMDb",
-    "age_h": 0.8
-   },
-   {
-    "t": "Abandoned Bitcoin? Wallet Targeted by Noah Doe Lawsuit Moves $33 Million - Yahoo Finance",
-    "src": "Yahoo Finance",
-    "age_h": 1.0
-   },
-   {
-    "t": "Abandoned Bitcoin? Wallet Targeted by Noah Doe Lawsuit Moves $33 Million - Decrypt",
-    "src": "Decrypt",
-    "age_h": 1.0
-   },
-   {
-    "t": "Noah Adams - Legacy | Obituary",
-    "src": "Legacy | Obituary",
-    "age_h": 1.0
-   },
-   {
-    "t": "Noah Adams, Beloved NPR Broadcaster Who Helped Define Public Radio Storytelling, Dies at 84 - That Eric Alper",
-    "src": "That Eric Alper",
-    "age_h": 1.7
+    "age_h": 4.2
    }
   ],
   "RLX": [
    {
-    "t": "AFFINITY X RALPH LAUREN RLX CONCEPT BIKES - Cycling News | Bike Reviews - Road.cc",
-    "src": "Road.cc",
-    "age_h": 21.9
+    "t": "Buducnost vs. Neptunas | Round 4 Highlights | 2026-27 BKT EuroCup - Euroleague Basketball",
+    "src": "Euroleague Basketball",
+    "age_h": 4.6
    },
    {
-    "t": "Why RLX Technology Bears Were Right Before The Drop - Simply Wall Street",
-    "src": "Simply Wall Street",
-    "age_h": 24.2
-   },
-   {
-    "t": "OH WFO CHARLESTON Warnings, Watches, and Advisories - Bryan Times",
+    "t": "OH Charleston WV Zone Forecast - Bryan Times",
     "src": "Bryan Times",
-    "age_h": 24.4
-   }
-  ],
-  "YMM": [
+    "age_h": 9.1
+   },
    {
-    "t": "Learn Why The Bull Case For Full Truck Alliance Stock Could Change Following Analyst Upgrade - Simply Wall Street",
-    "src": "Simply Wall Street",
-    "age_h": 17.5
+    "t": "RLX Technology (NYSE:RLX) Shares Up 0.9% - Still a Buy? - MarketBeat",
+    "src": "MarketBeat",
+    "age_h": 20.5
+   },
+   {
+    "t": "Is RLX Technology (RLX) Cheap Enough to Justify Its Earnings?",
+    "src": "yahoo",
+    "age_h": 22.8
+   },
+   {
+    "t": "Best Titanium Watches for Understated Luxury and Lasting Value - Prestige Online - Singapore",
+    "src": "Prestige Online - Singapore",
+    "age_h": 24.0
    }
   ],
+  "YMM": [],
   "DIDIY": [],
   "KC": [
    {
-    "t": "Driver hits parked patrol vehicle, nearly strikes officers at KC Marathon before chase into KCK - KMBC",
-    "src": "KMBC",
-    "age_h": 0.3
-   },
-   {
-    "t": "How to watch Kansas City Chiefs vs. Seattle Seahawks Week 7 game: Time, TV, odds - Kansas City Star",
-    "src": "Kansas City Star",
+    "t": "Over 1,000 meals served, Another Successful KC BBQ - Missouri Valley Times News",
+    "src": "Missouri Valley Times News",
     "age_h": 0.7
    },
    {
-    "t": "KC Spotlight | One Class at a Time Winner Is Ms. Swete From Boone Elementary! - KSHB 41 Kansas City",
-    "src": "KSHB 41 Kansas City",
-    "age_h": 2.2
+    "t": "3 Cloud Infrastructure Stocks Investors May Watch After The London Outage",
+    "src": "yahoo",
+    "age_h": 1.6
    },
    {
-    "t": "Live Kansas City traffic updates: Accidents, road closures, delays on KC-area highways - Kansas City Star",
-    "src": "Kansas City Star",
-    "age_h": 2.3
+    "t": "Retired KC-10 Extender Tanker Has Risen From Boneyard To Fly Again - TWZ",
+    "src": "TWZ",
+    "age_h": 2.8
    },
    {
-    "t": "Chiefs vs. Seahawks Opening Odds for Sunday Night Football in Week 7 (Seattle Favored to Hand KC First Loss) - Sports Illustrated",
-    "src": "Sports Illustrated",
-    "age_h": 2.3
+    "t": "Kansas City Mavericks plan Sensory Sundays for fans with special needs - FOX4KC.com",
+    "src": "FOX4KC.com",
+    "age_h": 3.0
    },
    {
-    "t": "FOOTBALL-NFL-KC-LAC/ - Lake Geneva News",
-    "src": "Lake Geneva News",
-    "age_h": 2.4
+    "t": "KC Mavericks plan Sensory Sundays for fans with special needs - FOX4KC.com",
+    "src": "FOX4KC.com",
+    "age_h": 3.1
    },
    {
-    "t": "FOOTBALL-NFL-KC-LAC/ - Twin Falls Times-News",
-    "src": "Twin Falls Times-News",
-    "age_h": 2.5
+    "t": "Chiefs' Red Thursday flag sale raises $1M for Ronald McDonald House Kansas City - KMBC",
+    "src": "KMBC",
+    "age_h": 3.5
    },
    {
-    "t": "FOOTBALL-NFL-KC-LAC/ - Wisconsin State Journal",
-    "src": "Wisconsin State Journal",
-    "age_h": 2.6
+    "t": "Worthy leads KC in targets in Week 6 - NBC Sports",
+    "src": "NBC Sports",
+    "age_h": 3.8
+   },
+   {
+    "t": "KC Concepcion or Will Reichard: Who Should I Start in Week 7? - RotoWire",
+    "src": "RotoWire",
+    "age_h": 3.9
    }
   ],
   "TIGR": [
    {
+    "t": "Tiger Gold Extends Ceibal Mineralization, Advances Resource Work at Quinchía - The Globe and Mail",
+    "src": "The Globe and Mail",
+    "age_h": 12.7
+   },
+   {
+    "t": "Sorrento Research issues a sell rating for UP Fintech stock - ad-hoc-news.de",
+    "src": "ad-hoc-news.de",
+    "age_h": 14.5
+   },
+   {
+    "t": "UP Fintech: Regulatory Risk And Likely 3Q26 Weakness Leads To A Sell Rating (NASDAQ:TIGR) - Seeking Alpha",
+    "src": "Seeking Alpha",
+    "age_h": 26.7
+   },
+   {
+    "t": "TIGR270416P00004000 interactive stock chart | TIGR Apr 2027 4.000 put stock - Yahoo Finance UK",
+    "src": "Yahoo Finance UK",
+    "age_h": 34.7
+   },
+   {
     "t": "Should Value Investors Buy UP Fintech Holding Limited (TIGR) Stock?",
     "src": "yahoo",
-    "age_h": 5.1
+    "age_h": 37.3
    },
    {
     "t": "Should Value Investors Buy UP Fintech Holding Limited (TIGR) Stock? - Yahoo Finance Australia",
     "src": "Yahoo Finance Australia",
-    "age_h": 5.1
+    "age_h": 37.3
    },
    {
     "t": "Tiger Gold Extends Mineralization to the South at Ceibal, Drilling 268 m @ 0.5 g/t Au from Surface - Junior Mining Network",
     "src": "Junior Mining Network",
-    "age_h": 5.2
-   },
-   {
-    "t": "Seven analysts set a USD 8.16 target for UP Fintech stock - ad-hoc-news.de",
-    "src": "ad-hoc-news.de",
-    "age_h": 30.8
+    "age_h": 37.3
    }
   ],
   "FUTU": [
    {
-    "t": "Turmoil in France weighs on European stocks; focus shifts to corporate earnings - 富途牛牛",
+    "t": "Media reports: Amazon Web Services faces power shortages, leaving billions of NVIDIA chips gathering dust in warehouses - 富途牛牛",
     "src": "富途牛牛",
-    "age_h": 0.5
+    "age_h": 0.3
    },
    {
-    "t": "Moomoo Launches Extended Trading Hours for U.S.-Listed Options on Cboe Exchange - Quiver Quantitative",
-    "src": "Quiver Quantitative",
-    "age_h": 2.1
-   },
-   {
-    "t": "Moomoo Extends Options Trading Hours* with Pre-Market and Post-Close Sessions",
-    "src": "yahoo",
-    "age_h": 2.2
-   },
-   {
-    "t": "Investors can trade options before the opening bell and after the close on Moomoo. - Stock Titan",
-    "src": "Stock Titan",
-    "age_h": 2.2
-   },
-   {
-    "t": "Moomoo Extends Options Trading Hours* with Pre-Market and Post-Close Sessions - www.marketscreener.com",
-    "src": "www.marketscreener.com",
-    "age_h": 2.2
-   },
-   {
-    "t": "BofA Securities Maintains Moderna(MRNA.US) With Hold Rating, Announces Target Price $220 - 富途牛牛",
+    "t": "Super Micro Computer's earnings significantly exceeded expectations, prompting a rebound in \"AI trades\" and sharp gains for server giants Dell and Hewlett Packa",
     "src": "富途牛牛",
-    "age_h": 2.5
+    "age_h": 0.4
    },
    {
-    "t": "Update: Microsoft's Business Software Proposed to Receive Increased UK Regulatory Scrutiny - 富途牛牛",
+    "t": "The CFTC Won't Wait for Congress: Retail Crypto Leverage Trading to Return to U.S. Shores, State Licenses May Be Unified and Replaced - 富途牛牛",
     "src": "富途牛牛",
-    "age_h": 2.7
+    "age_h": 1.1
    },
    {
-    "t": "U.S. Stock Market Moves | Rumors of a Merger with SpaceX Intensify, Tesla (TSLA.US) Rises Over 3% - 富途牛牛",
+    "t": "Micron to Host Technical Webinar; Technological Innovations May Sustain Industry Boom - 富途牛牛",
     "src": "富途牛牛",
-    "age_h": 2.8
+    "age_h": 1.6
+   },
+   {
+    "t": "SpaceX (SPCX.US) invests heavily, spending $16.4 billion on AI infrastructure; three U.S. stocks stand to gain. - 富途牛牛",
+    "src": "富途牛牛",
+    "age_h": 1.6
+   },
+   {
+    "t": "Apple officially announced the addition of a new titanium supplier in the United States, and the supply shortage for the iPhone Duo persists. - 富途牛牛",
+    "src": "富途牛牛",
+    "age_h": 2.3
+   },
+   {
+    "t": "Netflix plunges after earnings! Its guidance falls short of expectations, with revenue growth projected to decline for the fourth consecutive quarter, and ad re",
+    "src": "富途牛牛",
+    "age_h": 2.4
+   },
+   {
+    "t": "SpaceX's Q3 AI business surged, with revenue soaring 830% and profits far exceeding expectations, while capital expenditures approached $20 billion. - 富途牛牛",
+    "src": "富途牛牛",
+    "age_h": 2.9
    }
   ],
   "1024_HK": [
    {
-    "t": "Baidu, Inc. (9888.HK) stock price, news, quote and history - Yahoo Finance UK",
-    "src": "Yahoo Finance UK",
-    "age_h": 7.9
+    "t": "Baidu, Inc. (9888.HK) stock price, news, quote and history - Yahoo Finance Singapore",
+    "src": "Yahoo Finance Singapore",
+    "age_h": 8.5
    },
    {
-    "t": "Tencent Holdings Limited (0700.HK) stock price, news, quote and history - Yahoo Finance UK",
-    "src": "Yahoo Finance UK",
-    "age_h": 10.2
+    "t": "Karooooo Ltd. (KARO) Q2 Earnings Match Estimates - Yahoo Finance Singapore",
+    "src": "Yahoo Finance Singapore",
+    "age_h": 29.4
    },
    {
-    "t": "Tencent Music Entertainment Group (1698.HK) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+    "t": "JD.com, Inc. (9618.HK) Stock Price, News, Quote & History - Yahoo! Finance Canada",
     "src": "Yahoo! Finance Canada",
-    "age_h": 23.8
-   },
-   {
-    "t": "Alibaba Group Holding Limited (9988.HK) stock price, news, quote and history - Yahoo Finance UK",
-    "src": "Yahoo Finance UK",
-    "age_h": 38.2
+    "age_h": 37.5
    }
   ],
   "0241_HK": [
    {
     "t": "Alibaba Health (SEHK:241) Stock Could Be 49% Undervalued On Cash Flow",
     "src": "yahoo",
-    "age_h": 11.6
+    "age_h": 43.7
    },
    {
     "t": "Alibaba Health (SEHK:241) Stock Could Be 49% Undervalued On Cash Flow - Yahoo Finance",
     "src": "Yahoo Finance",
-    "age_h": 11.6
-   },
-   {
-    "t": "Alibaba Health stock stood at HKD 3.00 on October 16, 2026, at 21.39 times earnings - ad-hoc-news.de",
-    "src": "ad-hoc-news.de",
-    "age_h": 47.8
+    "age_h": 43.8
    }
   ],
-  "0881_HK": [
-   {
-    "t": "Seazen Group (SEHK:1030) Reported September Contracted Sales, Is The Stock Still Overvalued? - Yahoo Finance",
-    "src": "Yahoo Finance",
-    "age_h": 44.5
-   }
-  ]
+  "0881_HK": []
  },
  "feeds": {
   "macro": [
    {
-    "t": "3 Consumer Lender Stocks Facing Higher Rates as Fed Inflation Risks Grow - Simply Wall Street",
-    "src": "Simply Wall Street",
+    "t": "British Pound edges lower below 1.3400 ahead of UK CPI inflation release - FXStreet",
+    "src": "FXStreet",
     "age_h": 0.1
    },
    {
-    "t": "BGB: Tactical Opportunity With Liquidation Potential (NYSE:BGB) - Seeking Alpha",
-    "src": "Seeking Alpha",
+    "t": "Gold slips as investors await Fed rate signals - The Business Times",
+    "src": "The Business Times",
+    "age_h": 0.4
+   },
+   {
+    "t": "Gold falls near $4,110 as Iran peace hopes fade, Fed rate outlook clouds demand - Investing.com",
+    "src": "Investing.com",
     "age_h": 0.5
    },
    {
-    "t": "Silver advances above $57 as safe-haven demand offsets Fed fears - FXStreet",
-    "src": "FXStreet",
+    "t": "Fed up with Trump, Maine mulls sticking with GOP 'devil you know' - Yahoo",
+    "src": "Yahoo",
     "age_h": 0.6
    },
    {
-    "t": "Fed Balance Sheet Debate Puts Orchid Island Capital Stock And Mortgage REITs In Focus - Simply Wall Street",
-    "src": "Simply Wall Street",
-    "age_h": 1.1
+    "t": "Gold slips as investors await Fed rate signals - The Edge Malaysia",
+    "src": "The Edge Malaysia",
+    "age_h": 0.9
    },
    {
-    "t": "Fed issues guidance implementing $6B threshold for 18-month exam cycle - JD Supra",
-    "src": "JD Supra",
-    "age_h": 1.7
+    "t": "Gold slips as investors await Fed rate signals - marketscreener.com",
+    "src": "marketscreener.com",
+    "age_h": 1.0
    },
    {
-    "t": "Gold stalls below $4,200 as Fed rate-hike bets limit upside - FXStreet",
-    "src": "FXStreet",
-    "age_h": 2.1
+    "t": "What will it take to be confident about inflation? - Stay-At-Home Macro",
+    "src": "Stay-At-Home Macro",
+    "age_h": 1.6
    },
    {
-    "t": "Swiss Franc struggles as Fed-SNB policy divergence favours Greenback - FXStreet",
-    "src": "FXStreet",
-    "age_h": 2.1
-   },
-   {
-    "t": "Markets expect steady Fed policy as French debt spread nears 150 basis points - Cryptonews.net",
-    "src": "Cryptonews.net",
-    "age_h": 2.4
-   },
-   {
-    "t": "Canadian Dollar: CPI weighs on outlook against US Dollar – TD Securities - www.tmgm.com",
-    "src": "www.tmgm.com",
-    "age_h": 2.5
-   },
-   {
-    "t": "Hassett Says Inflation 'Needs Some Work' as Strong Spending Complicates Fed's Path - BigGo Finance",
-    "src": "BigGo Finance",
-    "age_h": 2.7
-   },
-   {
-    "t": "Fed Eyes Rate Hikes as AI Boom Drives Inflation | October 2026 - News and Statistics - IndexBox",
+    "t": "RBA's Hauser Says Inflation Outlook Has Deteriorated Ahead of November 3 Meeting - News and Statistics - IndexBox",
     "src": "IndexBox",
+    "age_h": 1.9
+   },
+   {
+    "t": "South Korea’s Export Boom Stays Strong Ahead of BOK Rate Decision - Bloomberg.com",
+    "src": "Bloomberg.com",
+    "age_h": 2.0
+   },
+   {
+    "t": "[Today’s Key Economic and Crypto Events] U.K. September CPI, U.S. Crude Inventories - bloomingbit",
+    "src": "bloomingbit",
+    "age_h": 2.0
+   },
+   {
+    "t": "Fed Circ refuses to rehear Insulet’s $59.4m trade secret loss - Life Sciences IP Review",
+    "src": "Life Sciences IP Review",
+    "age_h": 2.3
+   },
+   {
+    "t": "She Went Through an Extensive Interview Process for a Serving Job at IHOP. She Got Fed Up and Walked Out - TwistedSifter",
+    "src": "TwistedSifter",
+    "age_h": 2.3
+   },
+   {
+    "t": "Gold declines below $4,150 as elevated oil prices reinforce prospects of further Fed tightening - FXStreet",
+    "src": "FXStreet",
+    "age_h": 2.6
+   },
+   {
+    "t": "Every 1% Fed Hike Adds $95 Billion a Year to U.S. Debt Interest, BofA Says - BigGo Finance",
+    "src": "BigGo Finance",
     "age_h": 2.9
    },
    {
-    "t": "Will CPI coming below estimates affect BoC rates? - BNN Bloomberg",
-    "src": "BNN Bloomberg",
+    "t": "New Zealand Dollar has one CPI release left before the RBNZ - FXStreet",
+    "src": "FXStreet",
     "age_h": 3.0
    },
    {
-    "t": "Kevin Hassett Says The Economy Is In A Boom – ‘People Are Really Euphoric’ - TradingView",
-    "src": "TradingView",
+    "t": "British Pound Rallies into CPI as BoE Hike Bets Firm - GBP/USD, GBP/AUD - FOREX.com",
+    "src": "FOREX.com",
     "age_h": 3.1
    },
    {
-    "t": "Pre Brands Expands BJ’s Offering With Grass-Fed Filet Mignon - Supermarket Perimeter",
-    "src": "Supermarket Perimeter",
-    "age_h": 3.2
-   },
-   {
-    "t": "Canadian Dollar: CPI weighs on outlook against US Dollar – TD Securities - FXStreet",
-    "src": "FXStreet",
+    "t": "How Does Your Retirement Savings Stack Up? New Fed Data Shows Where Each Age Group Stands - Investopedia",
+    "src": "Investopedia",
     "age_h": 3.4
    },
    {
-    "t": "'I am so fed up': Farmers face hurdles from tariffs, diesel, and blame GOP as Trump heads to Kansas - Fortune",
-    "src": "Fortune",
+    "t": "At least $963K in trading cards were stolen from a FedEx truck in California - Baltimore Sun",
+    "src": "Baltimore Sun",
+    "age_h": 3.5
+   },
+   {
+    "t": "Canadian dollar outlook: oil prices and Fed signals drive the loonie - Investing.com Nigeria",
+    "src": "Investing.com Nigeria",
+    "age_h": 3.5
+   },
+   {
+    "t": "\"Trash mountain\": Punta Gorda neighbors fed up with decade of landfill odors - WINK News",
+    "src": "WINK News",
     "age_h": 3.6
-   },
-   {
-    "t": "Hassett Says CPI Data Shows Inflation Needs ‘Some Work’ - Bloomberg.com",
-    "src": "Bloomberg.com",
-    "age_h": 3.7
-   },
-   {
-    "t": "Fed officials flag AI boom as inflation driver before October vote - InvestmentNews",
-    "src": "InvestmentNews",
-    "age_h": 3.7
-   },
-   {
-    "t": "Hassett Says CPI Data Shows Inflation Needs ‘Some Work’ - Yahoo Finance",
-    "src": "Yahoo Finance",
-    "age_h": 3.7
-   },
-   {
-    "t": "Gold Little Changed as Investors Weigh Fed Outlook - TradingView",
-    "src": "TradingView",
-    "age_h": 3.7
    }
   ],
   "crypto": [
    {
-    "t": "U.S. CFTC rebuffs CME legal stance in consequential fight over perpetual futures",
+    "t": "U.S. CFTC sets agenda for AI forum, exploring trading and agentic finance",
     "src": "coindesk",
-    "age_h": 1.0
+    "age_h": 4.8
    },
    {
-    "t": "Zerohash rolls out a new tool to move crypto without copying wallet addresses",
+    "t": "OKX-ICE co-chair Andrew Cuomo calls corporate objections a ‘natural response’ to tokenized stock plans",
     "src": "coindesk",
-    "age_h": 2.8
+    "age_h": 7.5
    },
    {
-    "t": "Cardano founder Charles Hoskinson is building a new programming language for the network",
+    "t": "The Coinbase allegations expose Bitcoin's corporate governance gap",
     "src": "coindesk",
-    "age_h": 5.5
+    "age_h": 8.9
    },
    {
-    "t": "Strategy's price chart is about to flash a major bullish signal weeks after bitcoin did",
+    "t": "BlackRock seeks to shield bitcoin investors from losses after rival fund weathers 50% crash",
     "src": "coindesk",
-    "age_h": 6.6
+    "age_h": 11.5
    },
    {
-    "t": "Live updates: Bitcoin holds near $82,000 as Nasdaq rebounds more than 1%",
-    "src": "coindesk",
-    "age_h": 6.7
-   },
-   {
-    "t": "Bitcoin extends bounce above $82,000 as stocks rebound, DeFi tokens lead altcoin gains",
-    "src": "coindesk",
-    "age_h": 7.4
-   },
-   {
-    "t": "JPMorgan brings JPM Coin, representing dollar deposits, to Ethereum",
-    "src": "coindesk",
-    "age_h": 7.7
-   },
-   {
-    "t": "Crypto vault deposits top $10 billion as lending risks draw regulatory scrutiny",
-    "src": "coindesk",
-    "age_h": 8.3
-   },
-   {
-    "t": "Bitcoin mining offshoot Nscale loses Microsoft AI deal as power delay stretches into 2030s",
-    "src": "coindesk",
-    "age_h": 8.6
-   },
-   {
-    "t": "CME’s bitcoin cash, uniswap futures, global PMIs: Crypto Week Ahead",
-    "src": "coindesk",
-    "age_h": 8.6
-   },
-   {
-    "t": "Bitcoin whale moves $34 million in BTC it got in 2013 when coins traded at $131",
-    "src": "coindesk",
-    "age_h": 11.4
-   },
-   {
-    "t": "Zcash developers plan a fix to keep ZEC swaps private from future quantum computers",
+    "t": "Kazakhstan court bars Coinbase, five others from unlicensed crypto services in Astana International Financial Centre",
     "src": "coindesk",
     "age_h": 12.4
    },
    {
-    "t": "XRP Ledger is set to fix its lending code before anyone can use it",
+    "t": "Microsoft, Alphabet and Goldman Sachs join objections to OKX-ICE tokenized stock trading",
     "src": "coindesk",
-    "age_h": 12.9
+    "age_h": 13.3
    },
    {
-    "t": "Bitcoin, Korea’s Kospi and Nasdaq futures rally as China GDP beats estimates",
+    "t": "France's parliament approves vote to hit stablecoin trades with 31% capital gains tax",
     "src": "coindesk",
-    "age_h": 14.2
+    "age_h": 14.6
    },
    {
-    "t": "Deutsche Bank targets Asia crypto custody expansion in 2027 as German launch nears",
+    "t": "Equity weakness could damp demand for bitcoin after biggest ETF inflows in a month",
     "src": "coindesk",
-    "age_h": 15.8
+    "age_h": 14.7
    },
    {
-    "t": "SEC tokenized stock framework faces issuer pushback as Broadcom, Verizon object to OKX-ICE listing",
+    "t": "JPMorgan sees 10% annual bitcoin returns, topping stocks, bonds and gold over next decade",
     "src": "coindesk",
-    "age_h": 18.3
+    "age_h": 14.8
    },
    {
-    "t": "The White House's crypto chief departs: State of Crypto",
+    "t": "Bitcoin drops to $81,400 as Asian chip stocks tumble, options traders seek downside protection",
     "src": "coindesk",
-    "age_h": 23.3
+    "age_h": 15.6
    },
    {
-    "t": "Wall Street freaked out Friday, but VIX and bitcoin trades say the fear may fade Monday.",
+    "t": "Live updates: Bitcoin cuts losses as stocks edge higher",
     "src": "coindesk",
-    "age_h": 25.3
+    "age_h": 15.7
    },
    {
-    "t": "Latvia eyes crypto tax payments in 2027 as parliament overhauls crypto taxation",
+    "t": "South Korean IPO slump adds to AI market jitters as Brent crude tops $111",
     "src": "coindesk",
-    "age_h": 25.8
+    "age_h": 16.4
    },
    {
-    "t": "Stablecoin supply stalls, but payments jump 45% as Visa, Mastercard and Stripe connect crypto to cash",
+    "t": "Bitcoin ETFs just saw their biggest day in a month thanks entirely to BlackRock",
     "src": "coindesk",
-    "age_h": 27.8
+    "age_h": 17.6
    },
    {
-    "t": "Bitcoin’s $100,000 year-end hope divides analysts as inflation clouds outlook",
+    "t": "Tether: Senator's investigation misses positive work that's led to lower Iran volumes",
     "src": "coindesk",
-    "age_h": 28.8
-   },
-   {
-    "t": "Crypto audits give investors false sense of security as Q3 hacks cost $1.18 billion, Hacken says",
-    "src": "coindesk",
-    "age_h": 28.8
-   },
-   {
-    "t": "Crypto exchanges Binance, Coinbase join West Africa scam sweep that flagged $11 million",
-    "src": "coindesk",
-    "age_h": 29.8
-   },
-   {
-    "t": "Chip-stock bets lost $52 million in 10 minutes with Wall Street shut",
-    "src": "coindesk",
-    "age_h": 34.6
-   },
-   {
-    "t": "Circle defends USDC economics as stablecoin rivals court its partners with bigger cut",
-    "src": "coindesk",
-    "age_h": 40.7
-   },
-   {
-    "t": "Revolut secures Gibraltar crypto license to support global expansion",
-    "src": "cointelegraph",
-    "age_h": 0.4
-   },
-   {
-    "t": "Metaplanet to take 93.7% stake in Super League through 2,100 BTC deal",
-    "src": "cointelegraph",
-    "age_h": 1.1
-   },
-   {
-    "t": "Strive buys $335M in Bitcoin, boosting holdings to 36,818 BTC",
-    "src": "cointelegraph",
-    "age_h": 1.3
-   },
-   {
-    "t": "Bitcoin is rejected at $83K as US bond yields reverse higher with equities",
-    "src": "cointelegraph",
-    "age_h": 1.7
-   },
-   {
-    "t": "Made an ‘honest’ mistake with crypto taxes? New bill offers way out",
-    "src": "cointelegraph",
-    "age_h": 4.3
-   },
-   {
-    "t": "Here’s what happened in crypto today",
-    "src": "cointelegraph",
-    "age_h": 4.5
-   },
-   {
-    "t": "Public companies object to OKX-ICE’s tokenized stock plan",
-    "src": "cointelegraph",
-    "age_h": 4.6
-   },
-   {
-    "t": "Strategy buys $22M in Bitcoin, repurchases $193M in STRC",
-    "src": "cointelegraph",
-    "age_h": 5.3
-   },
-   {
-    "t": "World Liberty’s USD1 stablecoin sheds $400M in market cap in two weeks",
-    "src": "cointelegraph",
-    "age_h": 5.8
-   },
-   {
-    "t": "BingX, YouHodler added to ESMA MiCA register in latest update",
-    "src": "cointelegraph",
-    "age_h": 6.3
-   },
-   {
-    "t": "France advances stablecoin tax, eyes self-custodial wallets and exit tax proposals",
-    "src": "cointelegraph",
-    "age_h": 7.4
-   },
-   {
-    "t": "Stocks rebound into key tech earnings: Three things to know in Bitcoin this week",
-    "src": "cointelegraph",
-    "age_h": 7.5
-   },
-   {
-    "t": "JPMorgan takes JPM Coin to Ethereum for institutional clients: Report",
-    "src": "cointelegraph",
-    "age_h": 8.8
-   },
-   {
-    "t": "Bitcoin, Ether ETFs shed $549M as October ETH outflows near $1B",
-    "src": "cointelegraph",
-    "age_h": 9.9
-   },
-   {
-    "t": "Zoom adds ‘proof of human’ badges to show you’re not a deepfake",
-    "src": "cointelegraph",
-    "age_h": 11.9
-   },
-   {
-    "t": "South Korea to meet crypto exchanges amid calls for tax delay",
-    "src": "cointelegraph",
-    "age_h": 12.6
-   },
-   {
-    "t": "Qubic freezes chain after attacker drains 1.4K wallets with weak seeds",
-    "src": "cointelegraph",
-    "age_h": 16.7
-   },
-   {
-    "t": "Richard Heart caught ‘off-guard,’ QDay gets even closer: Hodler’s Digest",
-    "src": "cointelegraph",
-    "age_h": 18.8
-   },
-   {
-    "t": "Most Americans polled oppose betting on elections: Reuters",
-    "src": "cointelegraph",
-    "age_h": 28.0
-   },
-   {
-    "t": "Cysic crypto bridge halted after unauthorized mint of 10M CYS",
-    "src": "cointelegraph",
-    "age_h": 31.0
-   },
-   {
-    "t": "Chinese suspect in $75M international crime network arrested in Bangkok",
-    "src": "cointelegraph",
-    "age_h": 32.6
-   },
-   {
-    "t": "Tether backs AIsa as strategic investor, completing seed extension round",
-    "src": "cointelegraph",
-    "age_h": 35.3
-   },
-   {
-    "t": "JPMorgan's JPM Coin Arrives on Ethereum, Putting Bank Dollars on a Public Blockchain",
-    "src": "decrypt",
-    "age_h": 0.3
-   },
-   {
-    "t": "Abandoned Bitcoin? Wallet Targeted by Noah Doe Lawsuit Moves $33 Million",
-    "src": "decrypt",
-    "age_h": 1.0
-   },
-   {
-    "t": "Bitcoin Tests Key Support as Oil and AI Fears Squeeze Markets",
-    "src": "decrypt",
-    "age_h": 1.7
-   },
-   {
-    "t": "Tom Lee’s Bitmine Adds $30 Million in Ethereum as Buying Nears Its Finish Line",
-    "src": "decrypt",
-    "age_h": 2.6
-   },
-   {
-    "t": "Strategy Buys $22M in Bitcoin, Buys Back $193M of STRC",
-    "src": "decrypt",
-    "age_h": 4.7
-   },
-   {
-    "t": "Morning Minute: Crypto Rebounds as 'Black Monday' Looms",
-    "src": "decrypt",
-    "age_h": 5.5
-   },
-   {
-    "t": "‘Terrifying Precedent’: Dutch Hand US Data From Seized Anti-Fascist Server",
-    "src": "decrypt",
-    "age_h": 5.7
-   },
-   {
-    "t": "Sam Altman's World Takes Proof-of-Human IDs to Banks, Citing $40B AI Fraud Risk",
-    "src": "decrypt",
-    "age_h": 6.1
-   },
-   {
-    "t": "UK Trio Jailed Over Home Invasion in Failed Crypto Theft Attempt",
-    "src": "decrypt",
-    "age_h": 7.3
-   },
-   {
-    "t": "Zcash Developer Zakura Proposes Fix to Stop Quantum Computers Linking Shielded Swaps",
-    "src": "decrypt",
-    "age_h": 7.6
-   },
-   {
-    "t": "MapQuest Now Shows Drivers Where Flock Cameras Are Watching",
-    "src": "decrypt",
-    "age_h": 25.3
-   },
-   {
-    "t": "Bitcoin ETFs Shed Nearly $1 Billion in Two Weeks as Uptober Stays Red",
-    "src": "decrypt",
-    "age_h": 26.8
-   },
-   {
-    "t": "Banks Hold a Lever Over Stablecoin Adoption, BIS Economists Say",
-    "src": "decrypt",
-    "age_h": 28.8
-   }
-  ],
-  "market": [
-   {
-    "t": "Wells Fargo's comeback is just getting started. Here's why I'm buying",
-    "src": "cnbc",
-    "age_h": 0.1
-   },
-   {
-    "t": "JPMorgan's JPM Coin Arrives on Ethereum, Putting Bank Dollars on a Public Blockchain",
-    "src": "decrypt",
-    "age_h": 0.3
-   },
-   {
-    "t": "Nasdaq gains as investors buy the dip in the AI trade: Live updates",
-    "src": "cnbc",
-    "age_h": 0.3
-   },
-   {
-    "t": "Goldman says play defense with these stocks if you're worried about the AI bull failing",
-    "src": "cnbc",
-    "age_h": 0.3
-   },
-   {
-    "t": "Revolut secures Gibraltar crypto license to support global expansion",
-    "src": "cointelegraph",
-    "age_h": 0.4
-   },
-   {
-    "t": "Apple announces product launch event for Oct. 28. Analysts expect touchscreen laptop",
-    "src": "cnbc",
-    "age_h": 0.4
-   },
-   {
-    "t": "Apple's iPhone Duo is proving itself the catalyst that Jim Cramer said it would be",
-    "src": "cnbc",
-    "age_h": 0.4
-   },
-   {
-    "t": "CNBC Points Pro: Which card should I use for an appliance purchase?",
-    "src": "cnbc",
-    "age_h": 0.7
-   },
-   {
-    "t": "Saudi Arabia postpones big investor conference to 2027 as Iran-backed Houthis escalate attacks on kingdom",
-    "src": "cnbc",
-    "age_h": 0.8
-   },
-   {
-    "t": "Elon Musk says he'll give a SpaceX share to every child in America next year",
-    "src": "cnbc",
-    "age_h": 0.8
-   },
-   {
-    "t": "Stocks making the biggest moves midday: Sandisk, Marvell, Datadog, Cleveland-Cliffs, Amazon & more",
-    "src": "cnbc",
-    "age_h": 0.9
+    "age_h": 29.6
    },
    {
     "t": "U.S. CFTC rebuffs CME legal stance in consequential fight over perpetual futures",
     "src": "coindesk",
-    "age_h": 1.0
-   },
-   {
-    "t": "Abandoned Bitcoin? Wallet Targeted by Noah Doe Lawsuit Moves $33 Million",
-    "src": "decrypt",
-    "age_h": 1.0
-   },
-   {
-    "t": "Metaplanet to take 93.7% stake in Super League through 2,100 BTC deal",
-    "src": "cointelegraph",
-    "age_h": 1.1
-   },
-   {
-    "t": "Anthropic is AI trade's last big hope for a major IPO this year",
-    "src": "cnbc",
-    "age_h": 1.1
-   },
-   {
-    "t": "Strive buys $335M in Bitcoin, boosting holdings to 36,818 BTC",
-    "src": "cointelegraph",
-    "age_h": 1.3
-   },
-   {
-    "t": "Cornell sexual assault case has some prospective students rethinking plans, consultants say",
-    "src": "cnbc",
-    "age_h": 1.5
-   },
-   {
-    "t": "Bitcoin is rejected at $83K as US bond yields reverse higher with equities",
-    "src": "cointelegraph",
-    "age_h": 1.7
-   },
-   {
-    "t": "Bitcoin Tests Key Support as Oil and AI Fears Squeeze Markets",
-    "src": "decrypt",
-    "age_h": 1.7
-   },
-   {
-    "t": "Eagles QB Jalen Hurts expected to miss the rest of the season with blood clots: AP",
-    "src": "cnbc",
-    "age_h": 1.9
-   },
-   {
-    "t": "Tom Lee’s Bitmine Adds $30 Million in Ethereum as Buying Nears Its Finish Line",
-    "src": "decrypt",
-    "age_h": 2.6
-   },
-   {
-    "t": "OpenAI bugging suspect's conduct could pose danger to U.S. national security, feds warn",
-    "src": "cnbc",
-    "age_h": 2.6
+    "age_h": 33.2
    },
    {
     "t": "Zerohash rolls out a new tool to move crypto without copying wallet addresses",
     "src": "coindesk",
-    "age_h": 2.8
-   },
-   {
-    "t": "Supreme Court won't review Trump's firing of labor board member",
-    "src": "cnbc",
-    "age_h": 2.8
-   },
-   {
-    "t": "Women may be at greater risk of AI job losses. Telephone switch operators and PCs show why",
-    "src": "cnbc",
-    "age_h": 3.5
-   },
-   {
-    "t": "NYSE becomes latest exchange to extend options hours as appetite for around-the-clock trading grows",
-    "src": "cnbc",
-    "age_h": 4.0
-   },
-   {
-    "t": "Google says it can build data centers the right way. Some experts and residents are skeptical",
-    "src": "cnbc",
-    "age_h": 4.2
-   },
-   {
-    "t": "Made an ‘honest’ mistake with crypto taxes? New bill offers way out",
-    "src": "cointelegraph",
-    "age_h": 4.3
-   },
-   {
-    "t": "Here’s what happened in crypto today",
-    "src": "cointelegraph",
-    "age_h": 4.5
-   },
-   {
-    "t": "Public companies object to OKX-ICE’s tokenized stock plan",
-    "src": "cointelegraph",
-    "age_h": 4.6
-   },
-   {
-    "t": "Strategy Buys $22M in Bitcoin, Buys Back $193M of STRC",
-    "src": "decrypt",
-    "age_h": 4.7
-   },
-   {
-    "t": "French unrest compounds debt crisis fears. Paris-listed stocks, bonds and the euro fall",
-    "src": "cnbc",
-    "age_h": 4.8
-   },
-   {
-    "t": "Boomers are buying into the promise of monthly income from options ETFs, but there's a tax catch",
-    "src": "cnbc",
-    "age_h": 4.8
-   },
-   {
-    "t": "Robot factories and hypersonic missiles: JPMorgan Chase's first $5 billion of defense investments",
-    "src": "cnbc",
-    "age_h": 5.2
-   },
-   {
-    "t": "Strategy buys $22M in Bitcoin, repurchases $193M in STRC",
-    "src": "cointelegraph",
-    "age_h": 5.3
-   },
-   {
-    "t": "Anthropic commits 5% of shares to new public benefit fund that could address AI job disruption",
-    "src": "cnbc",
-    "age_h": 5.3
+    "age_h": 35.0
    },
    {
     "t": "Cardano founder Charles Hoskinson is building a new programming language for the network",
     "src": "coindesk",
-    "age_h": 5.5
+    "age_h": 37.7
    },
    {
-    "t": "Morning Minute: Crypto Rebounds as 'Black Monday' Looms",
+    "t": "Strategy's price chart is about to flash a major bullish signal weeks after bitcoin did",
+    "src": "coindesk",
+    "age_h": 38.7
+   },
+   {
+    "t": "Live updates: Bitcoin holds near $82,000 as Nasdaq rebounds more than 1%",
+    "src": "coindesk",
+    "age_h": 38.9
+   },
+   {
+    "t": "Bitcoin extends bounce above $82,000 as stocks rebound, DeFi tokens lead altcoin gains",
+    "src": "coindesk",
+    "age_h": 39.5
+   },
+   {
+    "t": "JPMorgan brings JPM Coin, representing dollar deposits, to Ethereum",
+    "src": "coindesk",
+    "age_h": 39.9
+   },
+   {
+    "t": "Crypto vault deposits top $10 billion as lending risks draw regulatory scrutiny",
+    "src": "coindesk",
+    "age_h": 40.4
+   },
+   {
+    "t": "Bitcoin mining offshoot Nscale loses Microsoft AI deal as power delay stretches into 2030s",
+    "src": "coindesk",
+    "age_h": 40.7
+   },
+   {
+    "t": "CME’s bitcoin cash, uniswap futures, global PMIs: Crypto Week Ahead",
+    "src": "coindesk",
+    "age_h": 40.8
+   },
+   {
+    "t": "Bitcoin whale moves $34 million in BTC it got in 2013 when coins traded at $131",
+    "src": "coindesk",
+    "age_h": 43.6
+   },
+   {
+    "t": "Musk says SpaceX-Tesla merger a ‘good idea’ as AI revenue jumps ninefold",
+    "src": "cointelegraph",
+    "age_h": 0.7
+   },
+   {
+    "t": "Qubic restarts blockchain, opens recovery claims after $1.4M hack",
+    "src": "cointelegraph",
+    "age_h": 2.5
+   },
+   {
+    "t": "Utah AG sues Kalshi, pursues profits from prediction market company",
+    "src": "cointelegraph",
+    "age_h": 4.7
+   },
+   {
+    "t": "Bitwise, Hyperliquid seek SEC rule changes for token trading, airdrops",
+    "src": "cointelegraph",
+    "age_h": 5.3
+   },
+   {
+    "t": "Crypto’s 2026 shutdown wave claims 82 projects. What went wrong?",
+    "src": "cointelegraph",
+    "age_h": 6.0
+   },
+   {
+    "t": "Here’s what happened in crypto today",
+    "src": "cointelegraph",
+    "age_h": 6.7
+   },
+   {
+    "t": "Strive closes $630M SATS IPO, leaves Bitcoin allocation unspecified",
+    "src": "cointelegraph",
+    "age_h": 8.3
+   },
+   {
+    "t": "Injective, BDACS plan Korean won stablecoin settlement for tokenized assets",
+    "src": "cointelegraph",
+    "age_h": 9.2
+   },
+   {
+    "t": "Stablecoin transfers quadruple to $891B as US banks expand adoption: Report",
+    "src": "cointelegraph",
+    "age_h": 9.3
+   },
+   {
+    "t": "Alphabet, Microsoft add objections to OKX-ICE proposed tokenized stock platform",
+    "src": "cointelegraph",
+    "age_h": 9.6
+   },
+   {
+    "t": "Bitcoin price spikes to $83.3K as US stocks rise on Q3 earnings, oil falls",
+    "src": "cointelegraph",
+    "age_h": 9.7
+   },
+   {
+    "t": "Agents can trade 24/7 — but Yat Siu warns you could lose access at any time",
+    "src": "cointelegraph",
+    "age_h": 12.5
+   },
+   {
+    "t": "FINMA approves Switzerland’s first Bitcoin ETF for retail investors",
+    "src": "cointelegraph",
+    "age_h": 12.8
+   },
+   {
+    "t": "Drift exploiter sends $61M ETH to Tornado Cash, holds $194M",
+    "src": "cointelegraph",
+    "age_h": 13.3
+   },
+   {
+    "t": "Tx launches USTX stablecoin to pull RWA liquidity onto its chain",
+    "src": "cointelegraph",
+    "age_h": 13.5
+   },
+   {
+    "t": "Lloyds and Barclays among UK banks named in crypto transfer complaints, advocacy group says",
+    "src": "cointelegraph",
+    "age_h": 13.7
+   },
+   {
+    "t": "Netflix FTX trailer was ‘enough to upset me’ in first 30 seconds: former FTX COO",
+    "src": "cointelegraph",
+    "age_h": 14.6
+   },
+   {
+    "t": "Kazakhstan court orders curbs on Coinbase, BingX and four others",
+    "src": "cointelegraph",
+    "age_h": 14.8
+   },
+   {
+    "t": "XRP 30-day exchange inflows pass 6B tokens as whales move to the sidelines",
+    "src": "cointelegraph",
+    "age_h": 15.6
+   },
+   {
+    "t": "Mt. Gox pushes creditor repayment deadline to 2027 in sixth extension",
+    "src": "cointelegraph",
+    "age_h": 15.6
+   },
+   {
+    "t": "Bitget plans Thai crypto exchange acquisition weeks after $388M hack",
+    "src": "cointelegraph",
+    "age_h": 16.0
+   },
+   {
+    "t": "JPMorgan projects Bitcoin to outperform US stocks and gold over next decade",
+    "src": "cointelegraph",
+    "age_h": 17.1
+   },
+   {
+    "t": "BlackRock files for third Bitcoin ETF, still no Solana or XRP",
+    "src": "cointelegraph",
+    "age_h": 17.8
+   },
+   {
+    "t": "US Bitcoin ETFs draw $527M in biggest showing since September",
+    "src": "cointelegraph",
+    "age_h": 20.3
+   },
+   {
+    "t": "Sophon sets Nov. 25 withdrawal deadline ahead of mainnet shutdown",
+    "src": "cointelegraph",
+    "age_h": 20.7
+   },
+   {
+    "t": "US bans DeepSeek from civilian agency IT systems",
+    "src": "cointelegraph",
+    "age_h": 21.8
+   },
+   {
+    "t": "Bitcoin rally could revive treasury buying, but easy-money days over",
+    "src": "cointelegraph",
+    "age_h": 24.4
+   },
+   {
+    "t": "Solana treasury firm SkyAI sells all SOL holdings, launches $201M buyback",
+    "src": "cointelegraph",
+    "age_h": 28.9
+   },
+   {
+    "t": "Crypto PAC pours $362K into California race voters essentially decided in August",
+    "src": "cointelegraph",
+    "age_h": 29.6
+   },
+   {
+    "t": "Market participants weigh in on SEC’s proposed crypto regulations",
+    "src": "cointelegraph",
+    "age_h": 30.1
+   },
+   {
+    "t": "People Are Vibe Coding the Ads Out of Their Smart TVs: Here's How",
     "src": "decrypt",
-    "age_h": 5.5
+    "age_h": 3.7
    },
    {
-    "t": "‘Terrifying Precedent’: Dutch Hand US Data From Seized Anti-Fascist Server",
+    "t": "OpenAI Buys Orchestra Bio to Put AI Agents in Charge of Drug Development Grunt Work",
+    "src": "decrypt",
+    "age_h": 4.2
+   },
+   {
+    "t": "JPMorgan Puts a Number on Bitcoin for the First Time: 10% a Year, With a Big Caveat",
+    "src": "decrypt",
+    "age_h": 4.7
+   },
+   {
+    "t": "Wallet Linked to Drift Exploit Sends $61 Million in Ethereum to Tornado Cash",
+    "src": "decrypt",
+    "age_h": 5.2
+   },
+   {
+    "t": "Microsoft, Alphabet, Goldman Sachs Join Growing List of Companies Objecting to Tokenized Stocks",
     "src": "decrypt",
     "age_h": 5.7
    },
    {
-    "t": "World Liberty’s USD1 stablecoin sheds $400M in market cap in two weeks",
+    "t": "Swiss Regulator Approves First Retail Fund That Holds Bitcoin Directly",
+    "src": "decrypt",
+    "age_h": 6.5
+   },
+   {
+    "t": "Bitcoin ETFs Post Their Best Day in Nearly a Month as BlackRock Does All the Buying",
+    "src": "decrypt",
+    "age_h": 7.5
+   },
+   {
+    "t": "Bitcoin's Next Move: Here's What to Watch",
+    "src": "decrypt",
+    "age_h": 8.2
+   },
+   {
+    "t": "Zcash Leads Crypto Bounce, Surging 8.5% as Bitcoin Reclaims $83,000",
+    "src": "decrypt",
+    "age_h": 8.9
+   },
+   {
+    "t": "The Midterms Are the First Real Test of Whether Markets Beat Pollsters",
+    "src": "decrypt",
+    "age_h": 9.5
+   },
+   {
+    "t": "What Is Strategy (MSTR)? The Bitcoin Treasury Company",
+    "src": "decrypt",
+    "age_h": 9.7
+   },
+   {
+    "t": "Mastercard Opens Up AI Agent Payments With Early Access and Live Demo",
+    "src": "decrypt",
+    "age_h": 10.0
+   },
+   {
+    "t": "French Lawmakers Back Stablecoin Swap Tax by Just One Vote",
+    "src": "decrypt",
+    "age_h": 11.9
+   },
+   {
+    "t": "Morning Minute: Nine Blue Chip Companies Say No to Tokenized Stocks",
+    "src": "decrypt",
+    "age_h": 13.9
+   },
+   {
+    "t": "Mt. Gox Pushes Repayment Deadline to 2027 With $2.8B in Bitcoin Still to Distribute",
+    "src": "decrypt",
+    "age_h": 15.0
+   },
+   {
+    "t": "BlackRock Files for 'Buffer' Bitcoin ETF as IBIT Draws $665M in a Day",
+    "src": "decrypt",
+    "age_h": 16.7
+   },
+   {
+    "t": "Strive Buys $335 Million in Bitcoin After Investors Pour In $369 Million",
+    "src": "decrypt",
+    "age_h": 28.2
+   },
+   {
+    "t": "Anthropic Gives 5% of Itself to the Public. Musk Answers by Giving Away SpaceX Shares",
+    "src": "decrypt",
+    "age_h": 28.7
+   },
+   {
+    "t": "XRP Ledger Repairs Its Lending Protocol Before It Goes Live",
+    "src": "decrypt",
+    "age_h": 29.2
+   },
+   {
+    "t": "Hackers Are Running Apple's iOS on Android Phones for the First Time",
+    "src": "decrypt",
+    "age_h": 30.2
+   },
+   {
+    "t": "Mastercard Brings Its Fraud-Fighting Tools to Stablecoin Payments",
+    "src": "decrypt",
+    "age_h": 30.7
+   },
+   {
+    "t": "Why Some of America’s Biggest Companies Are Objecting to Tokenized Shares",
+    "src": "decrypt",
+    "age_h": 31.2
+   },
+   {
+    "t": "US Orders Civilian Agencies to Rip DeepSeek Out of Government Systems",
+    "src": "decrypt",
+    "age_h": 31.7
+   },
+   {
+    "t": "JPMorgan's JPM Coin Arrives on Ethereum, Putting Bank Dollars on a Public Blockchain",
+    "src": "decrypt",
+    "age_h": 32.5
+   },
+   {
+    "t": "Abandoned Bitcoin? Wallet Targeted by Noah Doe Lawsuit Moves $33 Million",
+    "src": "decrypt",
+    "age_h": 33.2
+   },
+   {
+    "t": "Bitcoin Tests Key Support as Oil and AI Fears Squeeze Markets",
+    "src": "decrypt",
+    "age_h": 33.9
+   },
+   {
+    "t": "Tom Lee’s Bitmine Adds $30 Million in Ethereum as Buying Nears Its Finish Line",
+    "src": "decrypt",
+    "age_h": 34.7
+   },
+   {
+    "t": "Strategy Buys $22M in Bitcoin, Buys Back $193M of STRC",
+    "src": "decrypt",
+    "age_h": 36.9
+   },
+   {
+    "t": "Morning Minute: Crypto Rebounds as 'Black Monday' Looms",
+    "src": "decrypt",
+    "age_h": 37.6
+   },
+   {
+    "t": "‘Terrifying Precedent’: Dutch Hand US Data From Seized Anti-Fascist Server",
+    "src": "decrypt",
+    "age_h": 37.8
+   },
+   {
+    "t": "Sam Altman's World Takes Proof-of-Human IDs to Banks, Citing $40B AI Fraud Risk",
+    "src": "decrypt",
+    "age_h": 38.3
+   },
+   {
+    "t": "UK Trio Jailed Over Home Invasion in Failed Crypto Theft Attempt",
+    "src": "decrypt",
+    "age_h": 39.5
+   },
+   {
+    "t": "Zcash Developer Zakura Proposes Fix to Stop Quantum Computers Linking Shielded Swaps",
+    "src": "decrypt",
+    "age_h": 39.8
+   }
+  ],
+  "market": [
+   {
+    "t": "Stock futures rise as traders evaluate latest raft of earnings; SpaceX shares surge: Live updates",
+    "src": "cnbc",
+    "age_h": 0.1
+   },
+   {
+    "t": "Australian data center operator NextDC's shares plunge 40% after it slashes earnings forecast",
+    "src": "cnbc",
+    "age_h": 0.2
+   },
+   {
+    "t": "Musk says SpaceX-Tesla merger a ‘good idea’ as AI revenue jumps ninefold",
     "src": "cointelegraph",
+    "age_h": 0.7
+   },
+   {
+    "t": "Elice's huge stock swings show AI's spending boom is getting more investor scrutiny",
+    "src": "cnbc",
+    "age_h": 0.9
+   },
+   {
+    "t": "Japan exports post huge miss in September as growth slows to 16.7%",
+    "src": "cnbc",
+    "age_h": 1.2
+   },
+   {
+    "t": "Musk says Tesla and SpaceX formed special committees to discuss merger: Live updates",
+    "src": "cnbc",
+    "age_h": 1.3
+   },
+   {
+    "t": "Capital One's strong quarter and progressing Discover integration are rewarded on Wall Street",
+    "src": "cnbc",
+    "age_h": 2.4
+   },
+   {
+    "t": "Qubic restarts blockchain, opens recovery claims after $1.4M hack",
+    "src": "cointelegraph",
+    "age_h": 2.5
+   },
+   {
+    "t": "Netflix posts third-quarter earnings beat, but shares fall on advertising and revenue guidance",
+    "src": "cnbc",
+    "age_h": 3.5
+   },
+   {
+    "t": "People Are Vibe Coding the Ads Out of Their Smart TVs: Here's How",
+    "src": "decrypt",
+    "age_h": 3.7
+   },
+   {
+    "t": "Boeing wins FAA approval for 737 Max 10 after years of delays as Duffy says certification process should be faster",
+    "src": "cnbc",
+    "age_h": 4.0
+   },
+   {
+    "t": "OpenAI Buys Orchestra Bio to Put AI Agents in Charge of Drug Development Grunt Work",
+    "src": "decrypt",
+    "age_h": 4.2
+   },
+   {
+    "t": "Utah AG sues Kalshi, pursues profits from prediction market company",
+    "src": "cointelegraph",
+    "age_h": 4.7
+   },
+   {
+    "t": "JPMorgan Puts a Number on Bitcoin for the First Time: 10% a Year, With a Big Caveat",
+    "src": "decrypt",
+    "age_h": 4.7
+   },
+   {
+    "t": "Obsessed with CoreWeave and the AI trade? You're missing out on some great stocks",
+    "src": "cnbc",
+    "age_h": 4.7
+   },
+   {
+    "t": "U.S. CFTC sets agenda for AI forum, exploring trading and agentic finance",
+    "src": "coindesk",
+    "age_h": 4.8
+   },
+   {
+    "t": "Wallet Linked to Drift Exploit Sends $61 Million in Ethereum to Tornado Cash",
+    "src": "decrypt",
+    "age_h": 5.2
+   },
+   {
+    "t": "Bitwise, Hyperliquid seek SEC rule changes for token trading, airdrops",
+    "src": "cointelegraph",
+    "age_h": 5.3
+   },
+   {
+    "t": "Prediction-market odds rise for Marine Le Pen in France 2027 presidential race as protests roil nation",
+    "src": "cnbc",
+    "age_h": 5.4
+   },
+   {
+    "t": "United Airlines slashes 2026 profit outlook on fuel prices, but travelers keep booking despite higher fares",
+    "src": "cnbc",
+    "age_h": 5.6
+   },
+   {
+    "t": "Microsoft, Alphabet, Goldman Sachs Join Growing List of Companies Objecting to Tokenized Stocks",
+    "src": "decrypt",
+    "age_h": 5.7
+   },
+   {
+    "t": "Salesforce announces $5.66 billion deal for Braze, sending BRZE stock soaring 51%",
+    "src": "cnbc",
     "age_h": 5.8
+   },
+   {
+    "t": "Crypto’s 2026 shutdown wave claims 82 projects. What went wrong?",
+    "src": "cointelegraph",
+    "age_h": 6.0
+   },
+   {
+    "t": "Swiss Regulator Approves First Retail Fund That Holds Bitcoin Directly",
+    "src": "decrypt",
+    "age_h": 6.5
+   },
+   {
+    "t": "Housing is flashing warning signs just as the Fed weighs more interest rate hikes",
+    "src": "cnbc",
+    "age_h": 6.5
+   },
+   {
+    "t": "Here’s what happened in crypto today",
+    "src": "cointelegraph",
+    "age_h": 6.7
+   },
+   {
+    "t": "Earn up to $4,300 in travel with the latest Capital One Venture X Business card offer",
+    "src": "cnbc",
+    "age_h": 6.7
+   },
+   {
+    "t": "OKX-ICE co-chair Andrew Cuomo calls corporate objections a ‘natural response’ to tokenized stock plans",
+    "src": "coindesk",
+    "age_h": 7.5
+   },
+   {
+    "t": "Bitcoin ETFs Post Their Best Day in Nearly a Month as BlackRock Does All the Buying",
+    "src": "decrypt",
+    "age_h": 7.5
+   },
+   {
+    "t": "The healthcare sector is getting a safe haven boost. This one stock is headed for a long-term breakout",
+    "src": "cnbc",
+    "age_h": 7.5
+   },
+   {
+    "t": "Mike Bloomberg spent $80M to boost Democrats in midterms: NYT",
+    "src": "cnbc",
+    "age_h": 7.5
+   },
+   {
+    "t": "Traders are betting Netflix's stock drama may be coming to an end",
+    "src": "cnbc",
+    "age_h": 7.8
+   },
+   {
+    "t": "Trump sued over 50% tariffs on Canada in latest trade challenge",
+    "src": "cnbc",
+    "age_h": 7.9
+   },
+   {
+    "t": "Bitcoin's Next Move: Here's What to Watch",
+    "src": "decrypt",
+    "age_h": 8.2
+   },
+   {
+    "t": "Strive closes $630M SATS IPO, leaves Bitcoin allocation unspecified",
+    "src": "cointelegraph",
+    "age_h": 8.3
+   },
+   {
+    "t": "The Coinbase allegations expose Bitcoin's corporate governance gap",
+    "src": "coindesk",
+    "age_h": 8.9
+   },
+   {
+    "t": "Zcash Leads Crypto Bounce, Surging 8.5% as Bitcoin Reclaims $83,000",
+    "src": "decrypt",
+    "age_h": 8.9
+   },
+   {
+    "t": "Injective, BDACS plan Korean won stablecoin settlement for tokenized assets",
+    "src": "cointelegraph",
+    "age_h": 9.2
+   },
+   {
+    "t": "Stablecoin transfers quadruple to $891B as US banks expand adoption: Report",
+    "src": "cointelegraph",
+    "age_h": 9.3
+   },
+   {
+    "t": "The Midterms Are the First Real Test of Whether Markets Beat Pollsters",
+    "src": "decrypt",
+    "age_h": 9.5
    }
   ]
  }

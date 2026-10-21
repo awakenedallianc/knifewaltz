@@ -902,14 +902,20 @@
   "events": []
  },
  "DIDIY": {
-  "state": "KNIFE_FALLING",
-  "since": "2026-10-20",
+  "state": "STABILIZING",
+  "since": "2026-10-21",
   "events": [
    {
     "d": "2026-10-20",
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -52.73% / 10日 -16.58%"
+   },
+   {
+    "d": "2026-10-21",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 1/5"
    }
   ]
  },
