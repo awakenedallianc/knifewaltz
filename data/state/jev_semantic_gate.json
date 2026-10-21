@@ -127,7 +127,7 @@
  },
  "SLV": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-21",
   "clear_streak": 0,
   "top_headline": "SLV Oct 2026 58.500 call (SLV261026C00058500) Stock Price, News, Quote & History - Yahoo! Finance Canada"
@@ -183,7 +183,7 @@
  },
  "QFIN": {
   "veto": false,
-  "p": 0.43,
+  "p": 0.48,
   "date": "2026-10-21",
   "clear_streak": 0,
   "top_headline": "QFIN Investors Have Opportunity to Lead Qfin Holdings, Inc. Securities Fraud Lawsuit - Morningstar"
@@ -218,7 +218,7 @@
  },
  "BILI": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-21",
   "clear_streak": 0,
   "top_headline": "CICC sets HKD 159.20 target for Bilibili stock - ad-hoc-news.de"
@@ -432,5 +432,12 @@
   "date": "2026-10-17",
   "clear_streak": 0,
   "top_headline": "Berkshire’s Mind-Bender"
+ },
+ "GDXJ": {
+  "veto": false,
+  "p": 0.0,
+  "date": "2026-10-21",
+  "clear_streak": 0,
+  "top_headline": "GDXJ Feb 2027 104.000 put (GDXJ270219P00104000) stock price, news, quote and history - Yahoo Finance UK"
  }
 }

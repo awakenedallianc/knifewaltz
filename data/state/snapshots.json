@@ -268,7 +268,14 @@
   "engine_sha": "69e75ef468979668",
   "features_sha": "8a3519344ef97540",
   "realized": {
-   "fwd5_pct": -4.32
+   "fwd5_pct": -4.32,
+   "fwd20_pct": -15.23,
+   "mae20_pct": -18.29,
+   "atier": {
+    "pnl_pct": -2.69,
+    "exit": "X-STOP@1日",
+    "exit_bar": 1
+   }
   },
   "settled": false
  },
@@ -2221,7 +2228,8 @@
   "engine_sha": "69e75ef468979668",
   "features_sha": "73a1ce7f1ce8e70d",
   "realized": {
-   "ledger_ref": "QFIN@2026-10-14"
+   "ledger_ref": "QFIN@2026-10-14",
+   "fwd5_pct": -5.54
   },
   "settled": false,
   "stier": {
@@ -2327,7 +2335,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "65889af91ce67d7e",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": 0.15
+  },
   "settled": false
  },
  {
@@ -2393,7 +2403,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "e7eec579627815a7",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": 3.49
+  },
   "settled": false
  },
  {
