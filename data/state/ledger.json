@@ -656,5 +656,17 @@
   "tier_time": "DEAD_ZONE",
   "status": "open",
   "snapshot_ref": "S-CATCH:INSM:2026-10-20"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "WDC",
+  "date": "2026-10-22",
+  "entry": 352.80999755859375,
+  "stop": 349.16,
+  "score": 51,
+  "tier_time": "DEAD_ZONE",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:WDC:2026-10-22"
  }
 ]

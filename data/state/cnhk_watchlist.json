@@ -8,21 +8,30 @@
  "note": "接近资格线观察名单：dd250 在 -50%~-60% 之间（B4 单级筛展示层，不入板不进状态机；ORNAMENT 不列）",
  "rows": [
   {
-   "symbol": "9992.HK",
-   "key": "9992_HK",
-   "name": "Pop Mart International Group Ltd",
-   "pool": "CN_HK",
-   "dd250": -55.0,
-   "px": 129.8000030517578,
-   "asof": "2026-10-21"
+   "symbol": "KC",
+   "key": "KC",
+   "name": "金山云",
+   "pool": "CN_ADR",
+   "dd250": -55.3,
+   "px": 8.148200035095215,
+   "asof": "2026-10-22"
   },
   {
    "symbol": "NIO",
    "key": "NIO",
    "name": "蔚来",
    "pool": "CN_ADR",
-   "dd250": -54.7,
-   "px": 3.359999895095825,
+   "dd250": -55.0,
+   "px": 3.3399999141693115,
+   "asof": "2026-10-22"
+  },
+  {
+   "symbol": "9992.HK",
+   "key": "9992_HK",
+   "name": "Pop Mart International Group Ltd",
+   "pool": "CN_HK",
+   "dd250": -55.0,
+   "px": 129.8000030517578,
    "asof": "2026-10-21"
   },
   {
@@ -35,21 +44,21 @@
    "asof": "2026-10-21"
   },
   {
+   "symbol": "GDS",
+   "key": "GDS",
+   "name": "万国数据",
+   "pool": "CN_ADR",
+   "dd250": -53.2,
+   "px": 22.219999313354492,
+   "asof": "2026-10-22"
+  },
+  {
    "symbol": "1378.HK",
    "key": "1378_HK",
    "name": "China Hongqiao Group Ltd",
    "pool": "CN_HK",
    "dd250": -53.0,
    "px": 18.920000076293945,
-   "asof": "2026-10-21"
-  },
-  {
-   "symbol": "KC",
-   "key": "KC",
-   "name": "金山云",
-   "pool": "CN_ADR",
-   "dd250": -52.9,
-   "px": 8.569999694824219,
    "asof": "2026-10-21"
   },
   {
@@ -62,39 +71,21 @@
    "asof": "2026-10-21"
   },
   {
+   "symbol": "BIDU",
+   "key": "BIDU",
+   "name": "百度",
+   "pool": "CN_ADR",
+   "dd250": -51.6,
+   "px": 78.58000183105469,
+   "asof": "2026-10-22"
+  },
+  {
    "symbol": "9888.HK",
    "key": "9888_HK",
    "name": "Baidu Inc",
    "pool": "CN_HK",
    "dd250": -51.6,
    "px": 77.69999694824219,
-   "asof": "2026-10-21"
-  },
-  {
-   "symbol": "BIDU",
-   "key": "BIDU",
-   "name": "百度",
-   "pool": "CN_ADR",
-   "dd250": -51.5,
-   "px": 78.81999969482422,
-   "asof": "2026-10-21"
-  },
-  {
-   "symbol": "GDS",
-   "key": "GDS",
-   "name": "万国数据",
-   "pool": "CN_ADR",
-   "dd250": -50.4,
-   "px": 23.56999969482422,
-   "asof": "2026-10-21"
-  },
-  {
-   "symbol": "TCOM",
-   "key": "TCOM",
-   "name": "携程集团",
-   "pool": "CN_ADR",
-   "dd250": -50.2,
-   "px": 39.310001373291016,
    "asof": "2026-10-21"
   }
  ]

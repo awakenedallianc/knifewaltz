@@ -2,7 +2,7 @@
  "settlement": "2026-09-30",
  "staleness_note": "双月·滞后约9工作日",
  "source": "finra",
- "fetched_at": "2026-10-22T08:46:24+07:00",
+ "fetched_at": "2026-10-22T23:03:38+07:00",
  "rows": {
   "ALB": {
    "short": 11764871,
@@ -18,6 +18,11 @@
    "short": 11607414,
    "days_to_cover": 2.28,
    "chg_pct": 6.06
+  },
+  "ARM": {
+   "short": 16189965,
+   "days_to_cover": 2.3,
+   "chg_pct": 4.31
   },
   "ASML": {
    "short": 1450298,
@@ -39,10 +44,20 @@
    "days_to_cover": 5.01,
    "chg_pct": 7.15
   },
+  "COHR": {
+   "short": 11041145,
+   "days_to_cover": 1.67,
+   "chg_pct": 8.48
+  },
   "COIN": {
    "short": 24374578,
    "days_to_cover": 2.5,
    "chg_pct": -3.41
+  },
+  "CRS": {
+   "short": 1441087,
+   "days_to_cover": 1.77,
+   "chg_pct": -18.64
   },
   "CSGP": {
    "short": 13284736,
@@ -64,50 +79,75 @@
    "days_to_cover": 4.21,
    "chg_pct": 2.68
   },
+  "FLEX": {
+   "short": 8832762,
+   "days_to_cover": 2.52,
+   "chg_pct": -1.67
+  },
+  "FPS": {
+   "short": 14203832,
+   "days_to_cover": 1.18,
+   "chg_pct": 42.87
+  },
+  "GLW": {
+   "short": 16842925,
+   "days_to_cover": 2.17,
+   "chg_pct": -4.39
+  },
   "INSM": {
    "short": 13800693,
    "days_to_cover": 6.5,
    "chg_pct": 27.76
   },
-  "INTU": {
-   "short": 7277607,
-   "days_to_cover": 1.82,
-   "chg_pct": 3.73
+  "KLAC": {
+   "short": 24261297,
+   "days_to_cover": 2.64,
+   "chg_pct": 3
   },
   "LULU": {
    "short": 15378052,
    "days_to_cover": 3.15,
    "chg_pct": 11.6
   },
+  "MSTR": {
+   "short": 29376814,
+   "days_to_cover": 1.23,
+   "chg_pct": -4.44
+  },
   "NVDA": {
    "short": 311389688,
    "days_to_cover": 2.82,
    "chg_pct": 5.83
+  },
+  "OII": {
+   "short": 6925352,
+   "days_to_cover": 6.92,
+   "chg_pct": -8.11
   },
   "ORCL": {
    "short": 48486262,
    "days_to_cover": 1.47,
    "chg_pct": -4.63
   },
-  "PNR": {
-   "short": 7462937,
-   "days_to_cover": 2.87,
-   "chg_pct": 18.77
-  },
   "PODD": {
    "short": 5357802,
    "days_to_cover": 3.9,
    "chg_pct": 5.42
   },
-  "RCUS": {
-   "short": 13110576,
-   "days_to_cover": 7.64,
-   "chg_pct": -5.08
-  },
   "TSM": {
    "short": 30492512,
    "days_to_cover": 3.06,
    "chg_pct": 9.73
+  },
+  "TTMI": {
+   "short": 4128561,
+   "days_to_cover": 2.13,
+   "chg_pct": 20.09
+  },
+  "WDC": {
+   "short": 18293625,
+   "days_to_cover": 2.45,
+   "chg_pct": 5.86
   }
  }
 }

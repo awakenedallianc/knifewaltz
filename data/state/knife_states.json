@@ -85,9 +85,16 @@
   "events": []
  },
  "COPX": {
-  "state": "NORMAL",
-  "since": "2026-09-21",
-  "events": []
+  "state": "KNIFE_FALLING",
+  "since": "2026-10-22",
+  "events": [
+   {
+    "d": "2026-10-22",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -23.71% / 10日 -10.5%"
+   }
+  ]
  },
  "URA": {
   "state": "STABILIZING",
@@ -320,7 +327,7 @@
   "events": []
  },
  "NG_F": {
-  "state": "KNIFE_FALLING",
+  "state": "STABILIZING",
   "since": "2026-10-22",
   "events": [
    {
@@ -328,6 +335,12 @@
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -62.79% / 10日 -13.33%"
+   },
+   {
+    "d": "2026-10-22",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 1/5"
    }
   ]
  },
@@ -1079,8 +1092,8 @@
   "cooldown_until": "2026-11-07"
  },
  "WDC": {
-  "state": "STABILIZING",
-  "since": "2026-10-15",
+  "state": "CATCH",
+  "since": "2026-10-22",
   "events": [
    {
     "d": "2026-10-14",
@@ -1093,6 +1106,75 @@
     "from": "KNIFE_FALLING",
     "to": "STABILIZING",
     "note": "checklist 2/5"
+   },
+   {
+    "d": "2026-10-22",
+    "from": "STABILIZING",
+    "to": "CATCH",
+    "note": "checklist 3/5"
+   }
+  ],
+  "catch_ref_price": 352.80999755859375,
+  "catch_day_low": 349.16,
+  "expires": "2026-11-07"
+ },
+ "FLEX": {
+  "state": "KNIFE_FALLING",
+  "since": "2026-10-22",
+  "events": [
+   {
+    "d": "2026-10-22",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -52.08% / 10日 -32.32%"
+   }
+  ]
+ },
+ "ARM": {
+  "state": "KNIFE_FALLING",
+  "since": "2026-10-22",
+  "events": [
+   {
+    "d": "2026-10-22",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -51.55% / 10日 -22.65%"
+   }
+  ]
+ },
+ "GLW": {
+  "state": "KNIFE_FALLING",
+  "since": "2026-10-22",
+  "events": [
+   {
+    "d": "2026-10-22",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -51.22% / 10日 -18.39%"
+   }
+  ]
+ },
+ "COHR": {
+  "state": "KNIFE_FALLING",
+  "since": "2026-10-22",
+  "events": [
+   {
+    "d": "2026-10-22",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -50.97% / 10日 -30.78%"
+   }
+  ]
+ },
+ "KLAC": {
+  "state": "KNIFE_FALLING",
+  "since": "2026-10-22",
+  "events": [
+   {
+    "d": "2026-10-22",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -50.45% / 10日 -24.01%"
    }
   ]
  }

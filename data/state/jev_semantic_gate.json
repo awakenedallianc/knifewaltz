@@ -8,21 +8,21 @@
  },
  "CSGP": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-22",
   "clear_streak": 0,
   "top_headline": "CSGP261120C00045000 Interactive Stock Chart | CSGP Nov 2026 45.000 call Stock - Yahoo Finance"
  },
  "FISV": {
   "veto": false,
-  "p": 0.05,
+  "p": 0.01,
   "date": "2026-10-22",
   "clear_streak": 0,
   "top_headline": "Fireblocks Executive Says Its Dynamic Wallets Likely Help Power Bank Transfers on Fiserv"
  },
  "NG_F": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.0,
   "date": "2026-10-22",
   "clear_streak": 0,
   "top_headline": "Natural Gas Price Forecast: Channel Breakdown Signals Deeper Decline - FXEmpire"
@@ -65,9 +65,9 @@
  "MSTR": {
   "veto": false,
   "p": 0.0,
-  "date": "2026-10-21",
+  "date": "2026-10-22",
   "clear_streak": 0,
-  "top_headline": "What Is Strategy (MSTR)? The Bitcoin Treasury Company"
+  "top_headline": "AI Disruption Raises New Questions for Rentokil’s (RTO) Growth Strategy"
  },
  "LULU": {
   "veto": false,
@@ -169,7 +169,7 @@
  },
  "LX": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-22",
   "clear_streak": 0,
   "top_headline": "LX Hausys Ltd (108670.KQ) Stock Price, News, Quote & History - Yahoo! Finance Canada"
@@ -190,7 +190,7 @@
  },
  "TME": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.02,
   "date": "2026-10-22",
   "clear_streak": 0,
   "top_headline": "10 years of TME Education project – a decade of technical education - elektroniknet"
@@ -218,14 +218,14 @@
  },
  "BILI": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.02,
   "date": "2026-10-22",
   "clear_streak": 0,
   "top_headline": "Asian Equities Traded in the US as American Depositary Receipts Decline in Wednesday Trading"
  },
  "TIGR": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.03,
   "date": "2026-10-22",
   "clear_streak": 0,
   "top_headline": "UP Fintech (NASDAQ:TIGR) Sets New 52-Week Low - Here's What Happened - MarketBeat"
@@ -246,7 +246,7 @@
  },
  "TCOM": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-22",
   "clear_streak": 0,
   "top_headline": "Trip.com Group Limited Sponsored ADR $TCOM Stock Sold by Capstone Capital Management Ltd - MarketBeat"
@@ -386,7 +386,7 @@
  },
  "ALB": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-22",
   "clear_streak": 0,
   "top_headline": "Albion Resources (ASX:ALB) Adds Four Licences Around Its Gidgee Gold Project - Kalkine"
@@ -421,10 +421,10 @@
  },
  "WDC": {
   "veto": false,
-  "p": 0.0,
-  "date": "2026-10-21",
+  "p": 0.02,
+  "date": "2026-10-22",
   "clear_streak": 0,
-  "top_headline": "Could SanDisk Be The Value Stock For Your Portfolio?"
+  "top_headline": "Update: Middle East Tensions, Rising Oil Prices Drag US Equity Futures Lower Pre-Bell"
  },
  "BSP": {
   "veto": false,
@@ -446,5 +446,40 @@
   "date": "2026-10-22",
   "clear_streak": 0,
   "top_headline": "Arcus Biosciences stock falls on public offering announcement"
+ },
+ "FLEX": {
+  "veto": false,
+  "p": 0.0,
+  "date": "2026-10-22",
+  "clear_streak": 0,
+  "top_headline": "CB Equities Offloads 64K-SF Charlotte Flex Office Building - Connect CRE"
+ },
+ "ARM": {
+  "veto": false,
+  "p": 0.0,
+  "date": "2026-10-22",
+  "clear_streak": 0,
+  "top_headline": "New Multi-Arm, Multi-Stage UK Trial to Test Alzheimer Treatments - Psychiatric Times"
+ },
+ "GLW": {
+  "veto": false,
+  "p": 0.0,
+  "date": "2026-10-22",
+  "clear_streak": 0,
+  "top_headline": "Ultra Clean to Report Q3 Earnings: Can Strong Revenues Drive Growth?"
+ },
+ "COHR": {
+  "veto": false,
+  "p": 0.0,
+  "date": "2026-10-22",
+  "clear_streak": 0,
+  "top_headline": "Coherent Slides 25% in Three Months as Nvidia-Backed Optics Ramp Meets a Cash Burn Test"
+ },
+ "KLAC": {
+  "veto": false,
+  "p": 0.0,
+  "date": "2026-10-22",
+  "clear_streak": 0,
+  "top_headline": "Can Semiconductor Systems Drive AMAT's Next Growth Phase?"
  }
 }

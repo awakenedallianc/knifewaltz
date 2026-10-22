@@ -1,5 +1,5 @@
 {
- "asof": "2026-10-22T08:46:22+07:00",
+ "asof": "2026-10-22T23:03:36+07:00",
  "source": "yahoo-calendar",
  "caliber": "未来 5 个交易日窗（远期日历大票缺席是实测事实，不做远期）",
  "days": [
@@ -11,13 +11,33 @@
  ],
  "days_failed": [],
  "truncated_days": [
-  "2026-10-22",
   "2026-10-23",
   "2026-10-27",
   "2026-10-28"
  ],
- "watchlist_n": 21,
+ "watchlist_n": 29,
  "marks": [
+  {
+   "ticker": "CRS",
+   "date": "2026-10-22",
+   "when": "TAS",
+   "eps_est": 3.03,
+   "date_confirmed": true
+  },
+  {
+   "ticker": "TTMI",
+   "date": "2026-10-22",
+   "when": "TAS",
+   "eps_est": 1.26,
+   "date_confirmed": true
+  },
+  {
+   "ticker": "WDC",
+   "date": "2026-10-22",
+   "when": "AMC",
+   "eps_est": 4.1,
+   "date_confirmed": true
+  },
   {
    "ticker": "CSGP",
    "date": "2026-10-27",
@@ -26,10 +46,10 @@
    "date_confirmed": true
   },
   {
-   "ticker": "PNR",
+   "ticker": "GLW",
    "date": "2026-10-27",
    "when": "BMO",
-   "eps_est": 1.07,
+   "eps_est": 0.88,
    "date_confirmed": true
   },
   {
@@ -37,6 +57,20 @@
    "date": "2026-10-28",
    "when": "BMO",
    "eps_est": 0.74,
+   "date_confirmed": true
+  },
+  {
+   "ticker": "FLEX",
+   "date": "2026-10-28",
+   "when": "BMO",
+   "eps_est": 1.06,
+   "date_confirmed": true
+  },
+  {
+   "ticker": "KLAC",
+   "date": "2026-10-28",
+   "when": "AMC",
+   "eps_est": 1.18,
    "date_confirmed": true
   }
  ]
