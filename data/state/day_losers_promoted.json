@@ -1,6 +1,22 @@
 {
- "date": "2026-10-21",
+ "date": "2026-10-22",
  "source": "yahoo-screener",
- "promoted": [],
+ "promoted": [
+  {
+   "symbol": "RCUS",
+   "key": "RCUS",
+   "name": "Arcus Biosciences, Inc.",
+   "cls": "equity",
+   "pct_day": -19.58,
+   "mcap": 7876189696,
+   "dd52w": -39.5,
+   "ret10": -22.1,
+   "vol_ratio": 2.66,
+   "days_from_peak": 40,
+   "px": 19.100000381469727,
+   "asof": "2026-10-21",
+   "bars": 251
+  }
+ ],
  "degraded_reason": null
 }

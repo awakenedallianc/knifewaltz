@@ -2633,5 +2633,71 @@
   "features_sha": "2a98db117751f713",
   "realized": {},
   "settled": false
+ },
+ {
+  "id": "S-FALL:NG_F:2026-10-22",
+  "kind": "S-FALL",
+  "symbol": "NG_F",
+  "date": "2026-10-22",
+  "trigger_px": 2.7760000228881836,
+  "stop_price": 2.758,
+  "features": {
+   "dd52w": -62.79,
+   "dd250": -62.79,
+   "ret10": -13.33,
+   "rsi14": 41.1,
+   "vol_ratio": 0.01,
+   "close_pos": 0.58,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": false,
+    "gate_ok": true,
+    "rsi_divergence": false
+   },
+   "checklist_n": 1,
+   "tier_time": "-",
+   "days_from_peak": 1048,
+   "stop_price": 2.758,
+   "last_date": "2026-10-21",
+   "cls": "futures",
+   "tier": "T1F",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 25.9,
+    "capitulation_20": 0.0,
+    "checklist_20": 4.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 50,
+  "market": {
+   "blade_index": 4,
+   "gate_state": "GREEN",
+   "vix": 16.68000030517578,
+   "vix_ratio": 0.8910256900103937
+  },
+  "jev": {
+   "family": "unclear",
+   "p_terminal": 0.02,
+   "conf": 0.47,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.433,
+   "catch_prior": null,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "62175141ffd38dc8",
+  "realized": {},
+  "settled": false
  }
 ]
