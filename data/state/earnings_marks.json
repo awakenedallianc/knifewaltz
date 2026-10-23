@@ -1,43 +1,23 @@
 {
- "asof": "2026-10-22T23:03:36+07:00",
+ "asof": "2026-10-23T08:51:29+07:00",
  "source": "yahoo-calendar",
  "caliber": "未来 5 个交易日窗（远期日历大票缺席是实测事实，不做远期）",
  "days": [
-  "2026-10-22",
   "2026-10-23",
   "2026-10-26",
   "2026-10-27",
-  "2026-10-28"
+  "2026-10-28",
+  "2026-10-29"
  ],
  "days_failed": [],
  "truncated_days": [
   "2026-10-23",
   "2026-10-27",
-  "2026-10-28"
+  "2026-10-28",
+  "2026-10-29"
  ],
- "watchlist_n": 29,
+ "watchlist_n": 31,
  "marks": [
-  {
-   "ticker": "CRS",
-   "date": "2026-10-22",
-   "when": "TAS",
-   "eps_est": 3.03,
-   "date_confirmed": true
-  },
-  {
-   "ticker": "TTMI",
-   "date": "2026-10-22",
-   "when": "TAS",
-   "eps_est": 1.26,
-   "date_confirmed": true
-  },
-  {
-   "ticker": "WDC",
-   "date": "2026-10-22",
-   "when": "AMC",
-   "eps_est": 4.1,
-   "date_confirmed": true
-  },
   {
    "ticker": "CSGP",
    "date": "2026-10-27",
@@ -71,6 +51,34 @@
    "date": "2026-10-28",
    "when": "AMC",
    "eps_est": 1.18,
+   "date_confirmed": true
+  },
+  {
+   "ticker": "ALNY",
+   "date": "2026-10-29",
+   "when": "BMO",
+   "eps_est": 2.26,
+   "date_confirmed": true
+  },
+  {
+   "ticker": "COIN",
+   "date": "2026-10-29",
+   "when": "AMC",
+   "eps_est": -0.09,
+   "date_confirmed": true
+  },
+  {
+   "ticker": "INSM",
+   "date": "2026-10-29",
+   "when": "BMO",
+   "eps_est": -0.38,
+   "date_confirmed": true
+  },
+  {
+   "ticker": "MSTR",
+   "date": "2026-10-29",
+   "when": "AMC",
+   "eps_est": 17.98,
    "date_confirmed": true
   }
  ]

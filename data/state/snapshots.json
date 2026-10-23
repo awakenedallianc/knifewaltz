@@ -200,7 +200,14 @@
   "engine_sha": "69e75ef468979668",
   "features_sha": "9ffc8804cd7f930c",
   "realized": {
-   "fwd5_pct": -6.81
+   "fwd5_pct": -6.81,
+   "fwd20_pct": -23.0,
+   "mae20_pct": -24.87,
+   "atier": {
+    "pnl_pct": -1.19,
+    "exit": "X-STOP@3日",
+    "exit_bar": 3
+   }
   },
   "settled": false
  },

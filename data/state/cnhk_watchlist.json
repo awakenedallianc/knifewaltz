@@ -1,5 +1,5 @@
 {
- "date": "2026-10-22",
+ "date": "2026-10-23",
  "source": "yahoo",
  "line": {
   "eligible_dd250": -60.0,
@@ -12,44 +12,8 @@
    "key": "KC",
    "name": "金山云",
    "pool": "CN_ADR",
-   "dd250": -55.3,
-   "px": 8.148200035095215,
-   "asof": "2026-10-22"
-  },
-  {
-   "symbol": "NIO",
-   "key": "NIO",
-   "name": "蔚来",
-   "pool": "CN_ADR",
-   "dd250": -55.0,
-   "px": 3.3399999141693115,
-   "asof": "2026-10-22"
-  },
-  {
-   "symbol": "9992.HK",
-   "key": "9992_HK",
-   "name": "Pop Mart International Group Ltd",
-   "pool": "CN_HK",
-   "dd250": -55.0,
-   "px": 129.8000030517578,
-   "asof": "2026-10-21"
-  },
-  {
-   "symbol": "0968.HK",
-   "key": "0968_HK",
-   "name": "Xinyi Solar Holdings Ltd",
-   "pool": "CN_HK",
-   "dd250": -54.1,
-   "px": 1.8350000381469727,
-   "asof": "2026-10-21"
-  },
-  {
-   "symbol": "GDS",
-   "key": "GDS",
-   "name": "万国数据",
-   "pool": "CN_ADR",
-   "dd250": -53.2,
-   "px": 22.219999313354492,
+   "dd250": -55.5,
+   "px": 8.109999656677246,
    "asof": "2026-10-22"
   },
   {
@@ -57,26 +21,53 @@
    "key": "1378_HK",
    "name": "China Hongqiao Group Ltd",
    "pool": "CN_HK",
-   "dd250": -53.0,
-   "px": 18.920000076293945,
-   "asof": "2026-10-21"
+   "dd250": -55.5,
+   "px": 17.8799991607666,
+   "asof": "2026-10-23"
+  },
+  {
+   "symbol": "NIO",
+   "key": "NIO",
+   "name": "蔚来",
+   "pool": "CN_ADR",
+   "dd250": -55.4,
+   "px": 3.309999942779541,
+   "asof": "2026-10-22"
+  },
+  {
+   "symbol": "0968.HK",
+   "key": "0968_HK",
+   "name": "Xinyi Solar Holdings Ltd",
+   "pool": "CN_HK",
+   "dd250": -54.6,
+   "px": 1.815000057220459,
+   "asof": "2026-10-23"
   },
   {
    "symbol": "0960.HK",
    "key": "0960_HK",
    "name": "Longfor Group Holdings Ltd",
    "pool": "CN_HK",
-   "dd250": -52.9,
-   "px": 5.025000095367432,
-   "asof": "2026-10-21"
+   "dd250": -54.1,
+   "px": 4.835000038146973,
+   "asof": "2026-10-23"
   },
   {
-   "symbol": "BIDU",
-   "key": "BIDU",
-   "name": "百度",
+   "symbol": "9992.HK",
+   "key": "9992_HK",
+   "name": "Pop Mart International Group Ltd",
+   "pool": "CN_HK",
+   "dd250": -53.6,
+   "px": 127.9000015258789,
+   "asof": "2026-10-23"
+  },
+  {
+   "symbol": "GDS",
+   "key": "GDS",
+   "name": "万国数据",
    "pool": "CN_ADR",
-   "dd250": -51.6,
-   "px": 78.58000183105469,
+   "dd250": -53.4,
+   "px": 22.139999389648438,
    "asof": "2026-10-22"
   },
   {
@@ -84,9 +75,36 @@
    "key": "9888_HK",
    "name": "Baidu Inc",
    "pool": "CN_HK",
-   "dd250": -51.6,
-   "px": 77.69999694824219,
-   "asof": "2026-10-21"
+   "dd250": -53.1,
+   "px": 75.25,
+   "asof": "2026-10-23"
+  },
+  {
+   "symbol": "BIDU",
+   "key": "BIDU",
+   "name": "百度",
+   "pool": "CN_ADR",
+   "dd250": -52.0,
+   "px": 77.9800033569336,
+   "asof": "2026-10-22"
+  },
+  {
+   "symbol": "FUTU",
+   "key": "FUTU",
+   "name": "富途控股",
+   "pool": "CN_ADR",
+   "dd250": -50.3,
+   "px": 98.91999816894531,
+   "asof": "2026-10-22"
+  },
+  {
+   "symbol": "1928.HK",
+   "key": "1928_HK",
+   "name": "Sands China Ltd",
+   "pool": "CN_HK",
+   "dd250": -50.1,
+   "px": 10.90999984741211,
+   "asof": "2026-10-23"
   }
  ]
 }
