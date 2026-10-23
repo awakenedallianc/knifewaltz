@@ -2,7 +2,7 @@
  "settlement": "2026-09-30",
  "staleness_note": "双月·滞后约9工作日",
  "source": "finra",
- "fetched_at": "2026-10-23T08:51:31+07:00",
+ "fetched_at": "2026-10-23T22:56:32+07:00",
  "rows": {
   "ALB": {
    "short": 11764871,
@@ -59,11 +59,6 @@
    "days_to_cover": 2.5,
    "chg_pct": -3.41
   },
-  "CRS": {
-   "short": 1441087,
-   "days_to_cover": 1.77,
-   "chg_pct": -18.64
-  },
   "CSGP": {
    "short": 13284736,
    "days_to_cover": 1.97,
@@ -89,11 +84,6 @@
    "days_to_cover": 2.52,
    "chg_pct": -1.67
   },
-  "FPS": {
-   "short": 14203832,
-   "days_to_cover": 1.18,
-   "chg_pct": 42.87
-  },
   "GLW": {
    "short": 16842925,
    "days_to_cover": 2.17,
@@ -109,30 +99,20 @@
    "days_to_cover": 2.64,
    "chg_pct": 3
   },
+  "LKQ": {
+   "short": 16296727,
+   "days_to_cover": 4.9,
+   "chg_pct": 10.53
+  },
   "LULU": {
    "short": 15378052,
    "days_to_cover": 3.15,
    "chg_pct": 11.6
   },
-  "MRNA": {
-   "short": 30863202,
-   "days_to_cover": 1.83,
-   "chg_pct": -6.11
-  },
-  "MSTR": {
-   "short": 29376814,
-   "days_to_cover": 1.23,
-   "chg_pct": -4.44
-  },
   "NVDA": {
    "short": 311389688,
    "days_to_cover": 2.82,
    "chg_pct": 5.83
-  },
-  "OII": {
-   "short": 6925352,
-   "days_to_cover": 6.92,
-   "chg_pct": -8.11
   },
   "ORCL": {
    "short": 48486262,
@@ -148,11 +128,6 @@
    "short": 30492512,
    "days_to_cover": 3.06,
    "chg_pct": 9.73
-  },
-  "TTMI": {
-   "short": 4128561,
-   "days_to_cover": 2.13,
-   "chg_pct": 20.09
   },
   "WDC": {
    "short": 18293625,

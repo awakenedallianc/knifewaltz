@@ -65,9 +65,16 @@
   "events": []
  },
  "SLV": {
-  "state": "NORMAL",
-  "since": "2026-09-21",
-  "events": []
+  "state": "KNIFE_FALLING",
+  "since": "2026-10-23",
+  "events": [
+   {
+    "d": "2026-10-23",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -53.67% / 10日 -10.7%"
+   }
+  ]
  },
  "USO": {
   "state": "NORMAL",
@@ -75,9 +82,16 @@
   "events": []
  },
  "UNG": {
-  "state": "NORMAL",
-  "since": "2026-09-21",
-  "events": []
+  "state": "KNIFE_FALLING",
+  "since": "2026-10-23",
+  "events": [
+   {
+    "d": "2026-10-23",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -43.61% / 10日 -13.44%"
+   }
+  ]
  },
  "DBA": {
   "state": "NORMAL",
@@ -661,9 +675,16 @@
   "events": []
  },
  "GDXJ": {
-  "state": "NORMAL",
-  "since": "2026-09-22",
-  "events": []
+  "state": "KNIFE_FALLING",
+  "since": "2026-10-23",
+  "events": [
+   {
+    "d": "2026-10-23",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -35.8% / 10日 -12.37%"
+   }
+  ]
  },
  "LQD": {
   "state": "NORMAL",

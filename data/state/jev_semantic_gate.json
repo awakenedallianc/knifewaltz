@@ -120,7 +120,7 @@
  },
  "ALNY": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-23",
   "clear_streak": 0,
   "top_headline": "ALNY270115C00360000 interactive stock chart | ALNY Jan 2027 360.000 call stock - Yahoo Finance UK"
@@ -142,9 +142,9 @@
  "UNG": {
   "veto": false,
   "p": 0.0,
-  "date": "2026-10-22",
+  "date": "2026-10-23",
   "clear_streak": 0,
-  "top_headline": "UNG Could Be Starting Its First Divine Nine Sorority - Vanguard"
+  "top_headline": "Kim Yeong-ung heats up with four hits, homer ahead of Korea playoffs - CHOSUNBIZ - Chosunbiz"
  },
  "PL_F": {
   "veto": false,
@@ -169,7 +169,7 @@
  },
  "LX": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.03,
   "date": "2026-10-23",
   "clear_streak": 0,
   "top_headline": "Hall of Famer Marshall Faulk reveals Parkinson's diagnosis - Reuters"
@@ -225,14 +225,14 @@
  },
  "TIGR": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-23",
   "clear_streak": 0,
   "top_headline": "TIGR Oct 2026 5.000 call (TIGR261030C00005000) Interactive Stock Chart - Yahoo! Finance Canada"
  },
  "LI": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-23",
   "clear_streak": 0,
   "top_headline": "Zane Li of LII Wins the 2026 CFDA/Vogue Fashion Fund - Oui Speak Fashion (OSF)"
@@ -246,14 +246,14 @@
  },
  "TCOM": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-23",
   "clear_streak": 0,
   "top_headline": "Asia-Pacific's Autumn Travel Boom Sees Rising Demand for Emerging Destinations"
  },
  "VNET": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-23",
   "clear_streak": 0,
   "top_headline": "$VNET stock is down 13% today. Here's what we see in our data. - Quiver Quantitative"
@@ -372,7 +372,7 @@
  },
  "GDS": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.02,
   "date": "2026-10-23",
   "clear_streak": 0,
   "top_headline": "How to Read Data into GPU Memory in Python with NVIDIA GPUDirect Storage | NVIDIA Technical Blog - NVIDIA Developer"
@@ -484,7 +484,7 @@
  },
  "COPX": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.02,
   "date": "2026-10-23",
   "clear_streak": 0,
   "top_headline": "COPX Nov 2026 70.000 put (COPX261106P00070000) Stock Price, News, Quote & History - Yahoo! Finance Canada"
