@@ -1,5 +1,5 @@
 {
- "date": "2026-10-23",
+ "date": "2026-10-24",
  "source": "yahoo-screener",
  "promoted": [
   {
@@ -7,15 +7,60 @@
    "key": "LKQ",
    "name": "LKQ Corporation",
    "cls": "equity",
-   "pct_day": -19.89,
-   "mcap": 3445960704,
-   "dd52w": -48.28,
-   "ret10": -17.58,
-   "vol_ratio": 2.44,
+   "pct_day": -22.47,
+   "mcap": 29273640960,
+   "dd52w": -49.94,
+   "ret10": -20.24,
+   "vol_ratio": 7.18,
    "days_from_peak": 176,
-   "px": 18.0,
+   "px": 17.420000076293945,
    "asof": "2026-10-23",
-   "bars": 252
+   "bars": 251
+  },
+  {
+   "symbol": "RGC",
+   "key": "RGC",
+   "name": "Regencell Bioscience Holdings L",
+   "cls": "equity",
+   "pct_day": -21.81,
+   "mcap": 29273640960,
+   "dd52w": -85.5,
+   "ret10": 4.35,
+   "vol_ratio": 1.26,
+   "days_from_peak": 200,
+   "px": 7.670000076293945,
+   "asof": "2026-10-23",
+   "bars": 251
+  },
+  {
+   "symbol": "CORT",
+   "key": "CORT",
+   "name": "Corcept Therapeutics Incorporat",
+   "cls": "equity",
+   "pct_day": -20.13,
+   "mcap": 29273640960,
+   "dd52w": -30.52,
+   "ret10": -29.15,
+   "vol_ratio": 4.2,
+   "days_from_peak": 42,
+   "px": 85.86000061035156,
+   "asof": "2026-10-23",
+   "bars": 251
+  },
+  {
+   "symbol": "TNGX",
+   "key": "TNGX",
+   "name": "Tango Therapeutics, Inc.",
+   "cls": "equity",
+   "pct_day": -16.43,
+   "mcap": 29273640960,
+   "dd52w": -29.06,
+   "ret10": -1.97,
+   "vol_ratio": 4.12,
+   "days_from_peak": 91,
+   "px": 23.34000015258789,
+   "asof": "2026-10-23",
+   "bars": 251
   }
  ],
  "degraded_reason": null
