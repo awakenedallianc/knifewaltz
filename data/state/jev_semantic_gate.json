@@ -127,7 +127,7 @@
  },
  "SLV": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.0,
   "date": "2026-10-24",
   "clear_streak": 0,
   "top_headline": "Alianza FC (SLV) vs. CD Marathon Live Stream of CONCACAF Champions Cup - CBS Sports"
@@ -141,7 +141,7 @@
  },
  "UNG": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.0,
   "date": "2026-10-24",
   "clear_streak": 0,
   "top_headline": "Alum equipped to lead with 'no playbook' - University of North Georgia"
@@ -169,7 +169,7 @@
  },
  "LX": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.1,
   "date": "2026-10-24",
   "clear_streak": 0,
   "top_headline": "PHOTOS: Accenture Trophy Tour: Stop in Vancouver - Seattle Seahawks"
@@ -183,7 +183,7 @@
  },
  "QFIN": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-24",
   "clear_streak": 0,
   "top_headline": "QFIN Feb 2027 5.000 put (QFIN270219P00005000) Stock Price, News, Quote & History - Yahoo! Finance Canada"
@@ -197,7 +197,7 @@
  },
  "IQ": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-24",
   "clear_streak": 0,
   "top_headline": "100,000 Thanksgiving turkeys were cooked with this smart thermometer - The Tuscaloosa News"
@@ -253,7 +253,7 @@
  },
  "VNET": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-24",
   "clear_streak": 0,
   "top_headline": "Asian Equities Traded in the US as American Depositary Receipts Decline in Friday Trading - marketscreener.com"
@@ -281,7 +281,7 @@
  },
  "BIDU": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-24",
   "clear_streak": 0,
   "top_headline": "Here's Why Baidu Inc. (BIDU) Fell More Than Broader Market"
@@ -337,7 +337,7 @@
  },
  "FINV": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-24",
   "clear_streak": 0,
   "top_headline": "Volution Group (LSE:FAN) FY Earnings Ride Margin Gains Despite Debt Focus - Yahoo Finance"
@@ -435,7 +435,7 @@
  },
  "GDXJ": {
   "veto": false,
-  "p": 0.06,
+  "p": 0.04,
   "date": "2026-10-24",
   "clear_streak": 0,
   "top_headline": "GDXJ261113P00122000 interactive stock chart | GDXJ Nov 2026 122.000 put stock - Yahoo Finance UK"
@@ -484,7 +484,7 @@
  },
  "COPX": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-24",
   "clear_streak": 0,
   "top_headline": "COPX Nov 2026 82.500 put (COPX261113P00082500) stock price, news, quote and history - Yahoo Finance Australia"
