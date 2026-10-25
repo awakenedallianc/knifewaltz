@@ -50,7 +50,7 @@
  },
  "APP": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-25",
   "clear_streak": 0,
   "top_headline": "I replaced YouTube Music with Metrolist to get a cleaner open source listening interface - Android Police"
@@ -169,7 +169,7 @@
  },
  "LX": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.01,
   "date": "2026-10-25",
   "clear_streak": 0,
   "top_headline": "Which Lexus SUV Should You Buy? Every Model Explained - Road Ethos"
@@ -253,7 +253,7 @@
  },
  "VNET": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-25",
   "clear_streak": 0,
   "top_headline": "From \"potato capital\" to China's AI hub. - Vietnam.vn"
@@ -344,7 +344,7 @@
  },
  "KWEB": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-25",
   "clear_streak": 0,
   "top_headline": "China’s Stock Market Is Trailing the U.S. by the Widest Margin in History"
@@ -435,7 +435,7 @@
  },
  "GDXJ": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-25",
   "clear_streak": 0,
   "top_headline": "GDXJ 261023 118.00P (GDXJ261023P118000) Stock Options Chain | Quotes & News - Moomoo"
