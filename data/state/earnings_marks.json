@@ -1,35 +1,29 @@
 {
- "asof": "2026-10-26T08:35:28+07:00",
+ "asof": "2026-10-27T00:40:19+07:00",
  "source": "yahoo-calendar",
  "caliber": "未来 5 个交易日窗（远期日历大票缺席是实测事实，不做远期）",
  "days": [
-  "2026-10-26",
   "2026-10-27",
   "2026-10-28",
   "2026-10-29",
-  "2026-10-30"
+  "2026-10-30",
+  "2026-11-02"
  ],
  "days_failed": [],
  "truncated_days": [
   "2026-10-27",
   "2026-10-28",
   "2026-10-29",
-  "2026-10-30"
+  "2026-10-30",
+  "2026-11-02"
  ],
- "watchlist_n": 30,
+ "watchlist_n": 29,
  "marks": [
   {
    "ticker": "CSGP",
    "date": "2026-10-27",
    "when": "AMC",
    "eps_est": 0.34,
-   "date_confirmed": true
-  },
-  {
-   "ticker": "GLW",
-   "date": "2026-10-27",
-   "when": "BMO",
-   "eps_est": 0.88,
    "date_confirmed": true
   },
   {
@@ -72,13 +66,6 @@
    "date": "2026-10-29",
    "when": "BMO",
    "eps_est": -0.38,
-   "date_confirmed": true
-  },
-  {
-   "ticker": "LKQ",
-   "date": "2026-10-29",
-   "when": "BMO",
-   "eps_est": 0.6,
    "date_confirmed": true
   },
   {

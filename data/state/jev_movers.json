@@ -1,74 +1,86 @@
 {
- "IRYSUSDT": {
+ "HYPEUSDT": {
   "family": "noise",
   "flavor": 0.14,
   "probs": {
    "noise": 0.86,
    "liquidation_cascade": 0.0,
    "event_driven": 0.0,
-   "systemic": 0.01,
-   "unclear": 0.13
+   "systemic": 0.02,
+   "unclear": 0.12
   },
-  "date": "2026-10-26"
+  "date": "2026-10-27"
  },
  "ZECUSDT": {
-  "family": "systemic",
-  "flavor": 0.91,
+  "family": "unclear",
+  "flavor": 0.81,
   "probs": {
-   "noise": 0.09,
+   "noise": 0.19,
    "liquidation_cascade": 0.0,
    "event_driven": 0.0,
-   "systemic": 0.51,
-   "unclear": 0.4
+   "systemic": 0.18,
+   "unclear": 0.63
   },
-  "date": "2026-10-26"
+  "date": "2026-10-27"
+ },
+ "XRPUSDT": {
+  "family": "event_driven",
+  "flavor": 0.98,
+  "probs": {
+   "noise": 0.02,
+   "liquidation_cascade": 0.0,
+   "event_driven": 0.5,
+   "systemic": 0.47,
+   "unclear": 0.01
+  },
+  "date": "2026-10-27"
+ },
+ "SOLUSDT": {
+  "family": "event_driven",
+  "flavor": 0.98,
+  "probs": {
+   "noise": 0.02,
+   "liquidation_cascade": 0.0,
+   "event_driven": 0.51,
+   "systemic": 0.46,
+   "unclear": 0.01
+  },
+  "date": "2026-10-27"
  },
  "BTCUSDT": {
   "family": "systemic",
-  "flavor": 0.99,
+  "flavor": 1.0,
   "probs": {
-   "noise": 0.01,
+   "noise": 0.0,
    "liquidation_cascade": 0.0,
-   "event_driven": 0.1,
-   "systemic": 0.84,
-   "unclear": 0.05
+   "event_driven": 0.29,
+   "systemic": 0.7,
+   "unclear": 0.01
   },
-  "date": "2026-10-26"
- },
- "SOLUSDT": {
-  "family": "systemic",
-  "flavor": 0.97,
-  "probs": {
-   "noise": 0.03,
-   "liquidation_cascade": 0.0,
-   "event_driven": 0.0,
-   "systemic": 0.88,
-   "unclear": 0.09
-  },
-  "date": "2026-10-26"
+  "date": "2026-10-27"
  },
  "ETHUSDT": {
   "family": "systemic",
-  "flavor": 0.94,
+  "flavor": 0.98,
   "probs": {
-   "noise": 0.06,
+   "noise": 0.02,
    "liquidation_cascade": 0.0,
-   "event_driven": 0.13,
-   "systemic": 0.79,
-   "unclear": 0.02
+   "event_driven": 0.16,
+   "systemic": 0.8,
+   "unclear": 0.01
   },
-  "date": "2026-10-26"
+  "date": "2026-10-27"
  },
- "ORDERUSDT": {
+ "IRYSUSDT": {
   "family": "liquidation_cascade",
-  "flavor": 0.8,
+  "flavor": 0.82,
   "probs": {
-   "noise": 0.2,
-   "liquidation_cascade": 0.67,
+   "noise": 0.18,
+   "liquidation_cascade": 0.74,
    "event_driven": 0.0,
-   "systemic": 0.02,
-   "unclear": 0.11
+   "systemic": 0.01,
+   "unclear": 0.07
   },
-  "date": "2026-10-26"
+  "date": "2026-10-27"
  }
 }
