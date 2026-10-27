@@ -12,71 +12,53 @@
    "key": "NIO",
    "name": "蔚来",
    "pool": "CN_ADR",
-   "dd250": -56.0,
-   "px": 3.265000104904175,
+   "dd250": -56.1,
+   "px": 3.259999990463257,
    "asof": "2026-10-26"
-  },
-  {
-   "symbol": "0968.HK",
-   "key": "0968_HK",
-   "name": "Xinyi Solar Holdings Ltd",
-   "pool": "CN_HK",
-   "dd250": -54.6,
-   "px": 1.815000057220459,
-   "asof": "2026-10-23"
   },
   {
    "symbol": "0960.HK",
    "key": "0960_HK",
    "name": "Longfor Group Holdings Ltd",
    "pool": "CN_HK",
-   "dd250": -53.1,
-   "px": 4.934999942779541,
-   "asof": "2026-10-23"
+   "dd250": -54.1,
+   "px": 4.829999923706055,
+   "asof": "2026-10-27"
   },
   {
-   "symbol": "1378.HK",
-   "key": "1378_HK",
-   "name": "China Hongqiao Group Ltd",
+   "symbol": "0968.HK",
+   "key": "0968_HK",
+   "name": "Xinyi Solar Holdings Ltd",
    "pool": "CN_HK",
-   "dd250": -52.7,
-   "px": 19.020000457763672,
-   "asof": "2026-10-23"
+   "dd250": -53.6,
+   "px": 1.8550000190734863,
+   "asof": "2026-10-27"
   },
   {
    "symbol": "9888.HK",
    "key": "9888_HK",
    "name": "Baidu Inc",
    "pool": "CN_HK",
-   "dd250": -52.7,
-   "px": 75.94999694824219,
-   "asof": "2026-10-23"
+   "dd250": -52.5,
+   "px": 76.30000305175781,
+   "asof": "2026-10-27"
   },
   {
    "symbol": "KC",
    "key": "KC",
    "name": "金山云",
    "pool": "CN_ADR",
-   "dd250": -52.5,
-   "px": 8.649999618530273,
+   "dd250": -52.4,
+   "px": 8.675000190734863,
    "asof": "2026-10-26"
-  },
-  {
-   "symbol": "9992.HK",
-   "key": "9992_HK",
-   "name": "Pop Mart International Group Ltd",
-   "pool": "CN_HK",
-   "dd250": -52.2,
-   "px": 131.6999969482422,
-   "asof": "2026-10-23"
   },
   {
    "symbol": "BIDU",
    "key": "BIDU",
    "name": "百度",
    "pool": "CN_ADR",
-   "dd250": -51.9,
-   "px": 78.18000030517578,
+   "dd250": -52.1,
+   "px": 77.8499984741211,
    "asof": "2026-10-26"
   },
   {
@@ -84,9 +66,27 @@
    "key": "GDS",
    "name": "万国数据",
    "pool": "CN_ADR",
-   "dd250": -51.5,
-   "px": 23.024999618530273,
+   "dd250": -52.0,
+   "px": 22.809999465942383,
    "asof": "2026-10-26"
+  },
+  {
+   "symbol": "1378.HK",
+   "key": "1378_HK",
+   "name": "China Hongqiao Group Ltd",
+   "pool": "CN_HK",
+   "dd250": -51.0,
+   "px": 19.700000762939453,
+   "asof": "2026-10-27"
+  },
+  {
+   "symbol": "9992.HK",
+   "key": "9992_HK",
+   "name": "Pop Mart International Group Ltd",
+   "pool": "CN_HK",
+   "dd250": -51.0,
+   "px": 132.3000030517578,
+   "asof": "2026-10-27"
   }
  ]
 }

@@ -1,7 +1,7 @@
 {
  "CHTR": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-27",
   "clear_streak": 0,
   "top_headline": "What Just Happened To T-Mobile Stock?"
@@ -50,7 +50,7 @@
  },
  "APP": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-27",
   "clear_streak": 0,
   "top_headline": "Webull And 2 Other Top Insider Growth Stocks"
@@ -120,7 +120,7 @@
  },
  "ALNY": {
   "veto": false,
-  "p": 0.03,
+  "p": 0.0,
   "date": "2026-10-27",
   "clear_streak": 0,
   "top_headline": "Alnylam Reports Up to 83% Huntingtin Reduction, Eyes 2027 Pivotal Trial"
@@ -134,7 +134,7 @@
  },
  "SI_F": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-27",
   "clear_streak": 0,
   "top_headline": "Silver Below $55 as COMEX Shorts Outpace New Longs - FXEmpire"
@@ -148,7 +148,7 @@
  },
  "PL_F": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-27",
   "clear_streak": 0,
   "top_headline": "[SMM Analysis] Valterra Platinum Q3 2026: Refining Falls 41% as Maintenance Moves Into the Quarter - Shanghai Metals Market"
@@ -204,7 +204,7 @@
  },
  "XPEV": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-27",
   "clear_streak": 0,
   "top_headline": "XPeng lands approval for L4 robotaxi tests in Guangzhou (XPEV:NYSE) - Seeking Alpha"
@@ -232,7 +232,7 @@
  },
  "LI": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-27",
   "clear_streak": 0,
   "top_headline": "Ann Li vs Ekaterina Alexandrova · Round 1 · WTA Tokyo - Tennis.com"
@@ -253,28 +253,28 @@
  },
  "VNET": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-27",
   "clear_streak": 0,
   "top_headline": "Macquarie initiated coverage on VNET Group with a new price target - Quantisnow"
  },
  "WB": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-27",
   "clear_streak": 0,
   "top_headline": "UN commission accuses Israel of crimes against humanity in WB, continued genocide in Gaza - وكالة سبأ"
  },
  "DIDIY": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.01,
   "date": "2026-10-27",
   "clear_streak": 0,
   "top_headline": "DiDi Shareholders Overwhelmingly Back Hong Kong Relisting; Want Independent Director, Open Earnings Calls, and First Shareholder Meeting in Four Years, Survey F"
  },
  "KC": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.01,
   "date": "2026-10-27",
   "clear_streak": 0,
   "top_headline": "Kansas, Wyandotte leaders resolve Chiefs stadium dispute - Sports Business Journal"
@@ -295,7 +295,7 @@
  },
  "FUTU": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-27",
   "clear_streak": 0,
   "top_headline": "Dow Jones Top Company Headlines at 1 PM ET: Anthropic Unveils Paperwork for Blockbuster IPO | Microsoft ... - 富途牛牛"
@@ -309,7 +309,7 @@
  },
  "BABA": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-27",
   "clear_streak": 0,
   "top_headline": "Nvidia Could Exploit “Completely Legal” China Loophole Worth Billions. But It (Probably) Won’t."
@@ -330,7 +330,7 @@
  },
  "NOAH": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-27",
   "clear_streak": 0,
   "top_headline": "I Can’t Get Over Noah Wyle’s Clueless Reaction To His Donnie Darko Role - Cinemablend"
@@ -372,7 +372,7 @@
  },
  "GDS": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-27",
   "clear_streak": 0,
   "top_headline": "AndesTec GDS 144A (ANDA-USD.LU) stock price, news, quote and history - Yahoo Finance Australia"
@@ -435,7 +435,7 @@
  },
  "GDXJ": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.04,
   "date": "2026-10-27",
   "clear_streak": 0,
   "top_headline": "GDXJ270115P00052000 Gráfico interactivo de acciones | GDXJ Jan 2027 52.000 put Acciones - Yahoo"
@@ -464,9 +464,9 @@
  "GLW": {
   "veto": false,
   "p": 0.0,
-  "date": "2026-10-26",
+  "date": "2026-10-27",
   "clear_streak": 0,
-  "top_headline": "Corning Stock Has Lost Half Its Value Since June. Is It a Buy Before Its Next Report?"
+  "top_headline": "Should Amphenol Stock Be in Your Portfolio Pre-Q3 Earnings?"
  },
  "COHR": {
   "veto": false,
@@ -484,7 +484,7 @@
  },
  "COPX": {
   "veto": false,
-  "p": 0.07,
+  "p": 0.02,
   "date": "2026-10-27",
   "clear_streak": 0,
   "top_headline": "COPX Nov 2026 88.000 call (COPX261127C00088000) interactive stock chart - Yahoo Finance Australia"

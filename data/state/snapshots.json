@@ -461,7 +461,14 @@
   "features_sha": "ac470fc484e32eab",
   "realized": {
    "ledger_ref": "0881.HK@2026-09-25",
-   "fwd5_pct": -12.24
+   "fwd5_pct": -12.24,
+   "fwd20_pct": -20.52,
+   "mae20_pct": -23.97,
+   "atier": {
+    "pnl_pct": -8.1,
+    "exit": "X-STOP@2日",
+    "exit_bar": 2
+   }
   },
   "settled": false,
   "stier": {
@@ -3397,5 +3404,112 @@
   "features_sha": "494c43fbb04397bd",
   "realized": {},
   "settled": false
+ },
+ {
+  "id": "S-CATCH:GLW:2026-10-27",
+  "kind": "S-CATCH",
+  "symbol": "GLW",
+  "date": "2026-10-27",
+  "trigger_px": 127.73999786376953,
+  "stop_price": 122.75,
+  "features": {
+   "dd52w": -50.04,
+   "dd250": -50.04,
+   "ret10": -13.27,
+   "rsi14": 18.9,
+   "vol_ratio": 1.73,
+   "close_pos": 0.86,
+   "falling": false,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": true,
+    "no_new_low_3d": false,
+    "vol_compress": true,
+    "gate_ok": true,
+    "rsi_divergence": false
+   },
+   "checklist_n": 3,
+   "tier_time": "DEAD_ZONE",
+   "days_from_peak": 83,
+   "stop_price": 122.75,
+   "last_date": "2026-10-26",
+   "cls": "equity_single",
+   "tier": "T2",
+   "state": "CATCH",
+   "score_parts": {
+    "fall_40": 19.7,
+    "capitulation_20": 0.0,
+    "checklist_20": 12.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 52,
+  "market": {
+   "blade_index": 7,
+   "gate_state": "GREEN",
+   "vix": 18.389999389648438,
+   "vix_ratio": 0.9222667450905144
+  },
+  "jev": {
+   "family": "unclear",
+   "p_terminal": 0.0,
+   "conf": 0.83,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.033,
+   "catch_prior": 0.278,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "4ed699d6359c62f0",
+  "realized": {
+   "ledger_ref": "GLW@2026-10-27"
+  },
+  "settled": false,
+  "stier": {
+   "rules_version": "s1",
+   "admitted": false,
+   "status": null,
+   "soft_score": 0.4525,
+   "hard_pass": {
+    "H1": true,
+    "H2": false,
+    "H3": false,
+    "H4": false,
+    "H5": true,
+    "H6": true,
+    "H7": true,
+    "H8": false
+   },
+   "shadow": {
+    "H9": {
+     "would_block": true,
+     "lr": 1.0,
+     "grade": "线索"
+    },
+    "H10": {
+     "would_block": false,
+     "flip_back_age_days": null
+    },
+    "H11": {
+     "would_block": false,
+     "close_pos": 0.86
+    }
+   },
+   "slice": {
+    "key": "unclear|GREEN|DEAD_ZONE|none|equity_single",
+    "lr": 1.0,
+    "n": 0,
+    "wins": 0,
+    "wilson95": null,
+    "grade": "线索"
+   }
+  }
  }
 ]

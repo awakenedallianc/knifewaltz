@@ -1207,8 +1207,8 @@
   ]
  },
  "GLW": {
-  "state": "STABILIZING",
-  "since": "2026-10-23",
+  "state": "CATCH",
+  "since": "2026-10-27",
   "events": [
    {
     "d": "2026-10-22",
@@ -1221,8 +1221,17 @@
     "from": "KNIFE_FALLING",
     "to": "STABILIZING",
     "note": "checklist 1/5"
+   },
+   {
+    "d": "2026-10-27",
+    "from": "STABILIZING",
+    "to": "CATCH",
+    "note": "checklist 3/5"
    }
-  ]
+  ],
+  "catch_ref_price": 127.73999786376953,
+  "catch_day_low": 122.75,
+  "expires": "2026-11-12"
  },
  "COHR": {
   "state": "STABILIZING",

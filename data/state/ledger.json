@@ -668,5 +668,17 @@
   "tier_time": "DEAD_ZONE",
   "status": "open",
   "snapshot_ref": "S-CATCH:WDC:2026-10-22"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "GLW",
+  "date": "2026-10-27",
+  "entry": 127.73999786376953,
+  "stop": 122.75,
+  "score": 52,
+  "tier_time": "DEAD_ZONE",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:GLW:2026-10-27"
  }
 ]
