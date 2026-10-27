@@ -99,7 +99,7 @@
  },
  "APTV": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-27",
   "clear_streak": 0,
   "top_headline": "Audi Reshoring Could Lift Aptiv Stock And Other US Auto Supply Chain Names - Simply Wall Street"
@@ -148,7 +148,7 @@
  },
  "PL_F": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-27",
   "clear_streak": 0,
   "top_headline": "[SMM Analysis] Valterra Platinum Q3 2026: Refining Falls 41% as Maintenance Moves Into the Quarter - Shanghai Metals Market"
@@ -169,7 +169,7 @@
  },
  "LX": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.04,
   "date": "2026-10-27",
   "clear_streak": 0,
   "top_headline": "Super Bowl LX - NBC Sports"
@@ -183,7 +183,7 @@
  },
  "QFIN": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-27",
   "clear_streak": 0,
   "top_headline": "QFIN Shareholder Alert: Qfin Holdings, Inc. Securities - GlobeNewswire"
@@ -260,21 +260,21 @@
  },
  "WB": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-27",
   "clear_streak": 0,
   "top_headline": "UN commission accuses Israel of crimes against humanity in WB, continued genocide in Gaza - وكالة سبأ"
  },
  "DIDIY": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.02,
   "date": "2026-10-27",
   "clear_streak": 0,
   "top_headline": "DiDi Shareholders Overwhelmingly Back Hong Kong Relisting; Want Independent Director, Open Earnings Calls, and First Shareholder Meeting in Four Years, Survey F"
  },
  "KC": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-27",
   "clear_streak": 0,
   "top_headline": "Kansas, Wyandotte leaders resolve Chiefs stadium dispute - Sports Business Journal"
@@ -289,9 +289,9 @@
  "PDD": {
   "veto": false,
   "p": 0.0,
-  "date": "2026-10-23",
+  "date": "2026-10-27",
   "clear_streak": 0,
-  "top_headline": "PDD Holdings (PDD) Stock Looks Cheap After A 39% Slide"
+  "top_headline": "PDD Holdings stock trades at 8.05 times earnings as Q2 margin falls - ad-hoc-news.de"
  },
  "FUTU": {
   "veto": false,
@@ -309,7 +309,7 @@
  },
  "BABA": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-27",
   "clear_streak": 0,
   "top_headline": "Nvidia Could Exploit “Completely Legal” China Loophole Worth Billions. But It (Probably) Won’t."
@@ -330,7 +330,7 @@
  },
  "NOAH": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-27",
   "clear_streak": 0,
   "top_headline": "I Can’t Get Over Noah Wyle’s Clueless Reaction To His Donnie Darko Role - Cinemablend"
@@ -344,14 +344,14 @@
  },
  "KWEB": {
   "veto": false,
-  "p": 0.01,
-  "date": "2026-10-26",
+  "p": 0.0,
+  "date": "2026-10-27",
   "clear_streak": 0,
-  "top_headline": "China’s Stock Market Is Trailing the U.S. by the Widest Margin in History"
+  "top_headline": "BABA, BIDU, SKHY in focus as bank outlooks turn cautious - JournalArta"
  },
  "1024_HK": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-27",
   "clear_streak": 0,
   "top_headline": "Pop Mart International Group Limited (9992.HK) Stock Price, News, Quote & History - Yahoo! Finance Canada"
@@ -372,7 +372,7 @@
  },
  "GDS": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.02,
   "date": "2026-10-27",
   "clear_streak": 0,
   "top_headline": "AndesTec GDS 144A (ANDA-USD.LU) stock price, news, quote and history - Yahoo Finance Australia"
@@ -435,7 +435,7 @@
  },
  "GDXJ": {
   "veto": false,
-  "p": 0.04,
+  "p": 0.0,
   "date": "2026-10-27",
   "clear_streak": 0,
   "top_headline": "GDXJ270115P00052000 Gráfico interactivo de acciones | GDXJ Jan 2027 52.000 put Acciones - Yahoo"
@@ -484,7 +484,7 @@
  },
  "COPX": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.01,
   "date": "2026-10-27",
   "clear_streak": 0,
   "top_headline": "COPX Nov 2026 88.000 call (COPX261127C00088000) interactive stock chart - Yahoo Finance Australia"

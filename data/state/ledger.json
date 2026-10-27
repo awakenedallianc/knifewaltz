@@ -680,5 +680,29 @@
   "tier_time": "DEAD_ZONE",
   "status": "open",
   "snapshot_ref": "S-CATCH:GLW:2026-10-27"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "DIDIY",
+  "date": "2026-10-27",
+  "entry": 3.1600000858306885,
+  "stop": 3.11,
+  "score": 50,
+  "tier_time": "-",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:DIDIY:2026-10-27"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "URA",
+  "date": "2026-10-27",
+  "entry": 35.82500076293945,
+  "stop": 34.85,
+  "score": 43,
+  "tier_time": "DEAD_ZONE",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:URA:2026-10-27"
  }
 ]

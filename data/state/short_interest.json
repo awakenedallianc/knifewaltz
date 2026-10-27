@@ -2,7 +2,7 @@
  "settlement": "2026-10-15",
  "staleness_note": "双月·滞后约9工作日",
  "source": "finra",
- "fetched_at": "2026-10-27T09:24:20+07:00",
+ "fetched_at": "2026-10-27T23:53:12+07:00",
  "rows": {
   "ALB": {
    "short": 12251426,
@@ -59,16 +59,6 @@
    "days_to_cover": 1,
    "chg_pct": 78.33
   },
-  "EGIEY": {
-   "short": 99916,
-   "days_to_cover": 1.48,
-   "chg_pct": 23.71
-  },
-  "ELPC": {
-   "short": 1579064,
-   "days_to_cover": 1.8,
-   "chg_pct": 58.03
-  },
   "FICO": {
    "short": 2427000,
    "days_to_cover": 1.69,
@@ -94,25 +84,15 @@
    "days_to_cover": 4.13,
    "chg_pct": -2.34
   },
-  "ITUB": {
-   "short": 30224035,
-   "days_to_cover": 1,
-   "chg_pct": 26.99
-  },
-  "KLAC": {
-   "short": 24883449,
-   "days_to_cover": 2.72,
-   "chg_pct": 2.56
+  "INTU": {
+   "short": 8012198,
+   "days_to_cover": 2.2,
+   "chg_pct": 10.09
   },
   "LULU": {
    "short": 16259943,
    "days_to_cover": 3.72,
    "chg_pct": 5.73
-  },
-  "MSTR": {
-   "short": 29100241,
-   "days_to_cover": 1.53,
-   "chg_pct": -0.94
   },
   "NVDA": {
    "short": 301622687,
@@ -124,11 +104,6 @@
    "days_to_cover": 1.66,
    "chg_pct": -1.99
   },
-  "PAGS": {
-   "short": 19127490,
-   "days_to_cover": 3.37,
-   "chg_pct": 10.33
-  },
   "PODD": {
    "short": 5629649,
    "days_to_cover": 3.12,
@@ -138,16 +113,6 @@
    "short": 29310548,
    "days_to_cover": 2.63,
    "chg_pct": -3.88
-  },
-  "WDC": {
-   "short": 19446763,
-   "days_to_cover": 1.88,
-   "chg_pct": 6.3
-  },
-  "XP": {
-   "short": 21681455,
-   "days_to_cover": 1.44,
-   "chg_pct": 18.51
   }
  }
 }

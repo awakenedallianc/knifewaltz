@@ -796,7 +796,14 @@
   "features_sha": "e797f427627c6bc2",
   "realized": {
    "ledger_ref": "FICO@2026-09-29",
-   "fwd5_pct": 10.7
+   "fwd5_pct": 10.7,
+   "fwd20_pct": 12.3,
+   "mae20_pct": -5.15,
+   "atier": {
+    "pnl_pct": -4.11,
+    "exit": "X-STOP@1日",
+    "exit_bar": 1
+   }
   },
   "settled": false,
   "stier": {
@@ -904,7 +911,9 @@
   "features_sha": "7f81fa95d2fcfa98",
   "realized": {
    "ledger_ref": "INTU@2026-09-29",
-   "fwd5_pct": 7.51
+   "fwd5_pct": 7.51,
+   "fwd20_pct": 21.76,
+   "mae20_pct": -0.03
   },
   "settled": false,
   "stier": {
@@ -1011,7 +1020,14 @@
   "engine_sha": "69e75ef468979668",
   "features_sha": "fc18199ab9a3674c",
   "realized": {
-   "fwd5_pct": 10.7
+   "fwd5_pct": 10.7,
+   "fwd20_pct": 12.3,
+   "mae20_pct": -5.15,
+   "atier": {
+    "pnl_pct": -4.11,
+    "exit": "X-STOP@1日",
+    "exit_bar": 1
+   }
   },
   "settled": false
  },
@@ -1079,7 +1095,9 @@
   "engine_sha": "69e75ef468979668",
   "features_sha": "48371d48615a6bc7",
   "realized": {
-   "fwd5_pct": 7.51
+   "fwd5_pct": 7.51,
+   "fwd20_pct": 21.76,
+   "mae20_pct": -0.03
   },
   "settled": false
  },
@@ -1147,7 +1165,14 @@
   "engine_sha": "69e75ef468979668",
   "features_sha": "d38e3bfca81092ff",
   "realized": {
-   "fwd5_pct": -4.73
+   "fwd5_pct": -4.73,
+   "fwd20_pct": -17.83,
+   "mae20_pct": -22.63,
+   "atier": {
+    "pnl_pct": -0.89,
+    "exit": "X-STOP@1日",
+    "exit_bar": 1
+   }
   },
   "settled": false
  },
@@ -2502,7 +2527,8 @@
   "engine_sha": "69e75ef468979668",
   "features_sha": "ef52e63e1904ebc1",
   "realized": {
-   "ledger_ref": "INSM@2026-10-20"
+   "ledger_ref": "INSM@2026-10-20",
+   "fwd5_pct": -1.72
   },
   "settled": false,
   "stier": {
@@ -2595,7 +2621,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "0c3b7c5872806f92",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": -1.25
+  },
   "settled": false
  },
  {
@@ -3406,6 +3434,113 @@
   "settled": false
  },
  {
+  "id": "S-CATCH:DIDIY:2026-10-27",
+  "kind": "S-CATCH",
+  "symbol": "DIDIY",
+  "date": "2026-10-27",
+  "trigger_px": 3.1600000858306885,
+  "stop_price": 3.11,
+  "features": {
+   "dd52w": -52.12,
+   "dd250": -52.12,
+   "ret10": -9.71,
+   "rsi14": 17.4,
+   "vol_ratio": 0.07,
+   "close_pos": 0.71,
+   "falling": false,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": true,
+    "vol_compress": true,
+    "gate_ok": true,
+    "rsi_divergence": false
+   },
+   "checklist_n": 3,
+   "tier_time": "-",
+   "days_from_peak": 283,
+   "stop_price": 3.11,
+   "last_date": "2026-10-27",
+   "cls": "equity_single",
+   "tier": "ORNAMENT",
+   "state": "CATCH",
+   "score_parts": {
+    "fall_40": 18.4,
+    "capitulation_20": 0.0,
+    "checklist_20": 12.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 50,
+  "market": {
+   "blade_index": 6,
+   "gate_state": "GREEN",
+   "vix": 17.559999465942383,
+   "vix_ratio": 0.9014373654305781
+  },
+  "jev": {
+   "family": "unclear",
+   "p_terminal": 0.02,
+   "conf": 0.59,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.527,
+   "catch_prior": 0.27,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "f9b65cf6f3fc50aa",
+  "realized": {
+   "ledger_ref": "DIDIY@2026-10-27"
+  },
+  "settled": false,
+  "stier": {
+   "rules_version": "s1",
+   "admitted": false,
+   "status": null,
+   "soft_score": 0.4425,
+   "hard_pass": {
+    "H1": true,
+    "H2": false,
+    "H3": false,
+    "H4": true,
+    "H5": true,
+    "H6": true,
+    "H7": false,
+    "H8": false
+   },
+   "shadow": {
+    "H9": {
+     "would_block": true,
+     "lr": 1.0,
+     "grade": "线索"
+    },
+    "H10": {
+     "would_block": false,
+     "flip_back_age_days": null
+    },
+    "H11": {
+     "would_block": false,
+     "close_pos": 0.71
+    }
+   },
+   "slice": {
+    "key": "unclear|GREEN|-|none|equity_single",
+    "lr": 1.0,
+    "n": 0,
+    "wins": 0,
+    "wilson95": null,
+    "grade": "线索"
+   }
+  }
+ },
+ {
   "id": "S-CATCH:GLW:2026-10-27",
   "kind": "S-CATCH",
   "symbol": "GLW",
@@ -3511,5 +3646,178 @@
     "grade": "线索"
    }
   }
+ },
+ {
+  "id": "S-CATCH:URA:2026-10-27",
+  "kind": "S-CATCH",
+  "symbol": "URA",
+  "date": "2026-10-27",
+  "trigger_px": 35.82500076293945,
+  "stop_price": 34.85,
+  "features": {
+   "dd52w": -42.04,
+   "dd250": -42.04,
+   "ret10": -4.16,
+   "rsi14": 29.8,
+   "vol_ratio": 0.91,
+   "close_pos": 0.78,
+   "falling": false,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": true,
+    "vol_compress": true,
+    "gate_ok": true,
+    "rsi_divergence": false
+   },
+   "checklist_n": 3,
+   "tier_time": "DEAD_ZONE",
+   "days_from_peak": 188,
+   "stop_price": 34.85,
+   "last_date": "2026-10-27",
+   "cls": "commodity",
+   "tier": "T1",
+   "state": "CATCH",
+   "score_parts": {
+    "fall_40": 10.6,
+    "capitulation_20": 0.0,
+    "checklist_20": 12.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 43,
+  "market": {
+   "blade_index": 6,
+   "gate_state": "GREEN",
+   "vix": 17.559999465942383,
+   "vix_ratio": 0.9014373654305781
+  },
+  "jev": {
+   "family": "unclear",
+   "p_terminal": 0.0,
+   "conf": 0.83,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.053,
+   "catch_prior": 0.263,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "1d9ddb77482b2fdc",
+  "realized": {
+   "ledger_ref": "URA@2026-10-27"
+  },
+  "settled": false,
+  "stier": {
+   "rules_version": "s1",
+   "admitted": false,
+   "status": null,
+   "soft_score": 0.4127,
+   "hard_pass": {
+    "H1": true,
+    "H2": false,
+    "H3": false,
+    "H4": false,
+    "H5": true,
+    "H6": true,
+    "H7": true,
+    "H8": false
+   },
+   "shadow": {
+    "H9": {
+     "would_block": true,
+     "lr": 1.0,
+     "grade": "线索"
+    },
+    "H10": {
+     "would_block": false,
+     "flip_back_age_days": null
+    },
+    "H11": {
+     "would_block": false,
+     "close_pos": 0.78
+    }
+   },
+   "slice": {
+    "key": "unclear|GREEN|DEAD_ZONE|none|commodity",
+    "lr": 1.0,
+    "n": 0,
+    "wins": 0,
+    "wilson95": null,
+    "grade": "线索"
+   }
+  }
+ },
+ {
+  "id": "S-FALL:IQ:2026-10-27",
+  "kind": "S-FALL",
+  "symbol": "IQ",
+  "date": "2026-10-27",
+  "trigger_px": 0.8364999890327454,
+  "stop_price": 0.815,
+  "features": {
+   "dd52w": -64.4,
+   "dd250": -64.4,
+   "ret10": -15.68,
+   "rsi14": 19.7,
+   "vol_ratio": 1.0,
+   "close_pos": 0.34,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": false,
+    "gate_ok": true,
+    "rsi_divergence": false
+   },
+   "checklist_n": 1,
+   "tier_time": "B",
+   "days_from_peak": 613,
+   "stop_price": 0.815,
+   "last_date": "2026-10-27",
+   "cls": "equity_single",
+   "tier": "ORNAMENT",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 28.1,
+    "capitulation_20": 0.0,
+    "checklist_20": 4.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 52,
+  "market": {
+   "blade_index": 6,
+   "gate_state": "GREEN",
+   "vix": 17.559999465942383,
+   "vix_ratio": 0.9014373654305781
+  },
+  "jev": {
+   "family": "B_fundamental_repricing",
+   "p_terminal": 0.0,
+   "conf": 0.84,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.333,
+   "catch_prior": null,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "e011997e47a95041",
+  "realized": {},
+  "settled": false
  }
 ]

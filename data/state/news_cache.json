@@ -1882,7 +1882,51 @@
     "src": "yahoo",
     "age_h": 28.4
    }
-  ]
+  ],
+  "KC_F": [
+   {
+    "t": "Arabica Coffee Futures at Over 2-Week Low - TradingView",
+    "src": "TradingView",
+    "age_h": 1.4
+   },
+   {
+    "t": "Coffee Markets adjust to a new normal of geopolitical shocks and supply chain disruptions - Comunicaffe International",
+    "src": "Comunicaffe International",
+    "age_h": 6.9
+   },
+   {
+    "t": "Sugar, coffee slip as Brazil’s real slumps on Lula win - Business Recorder",
+    "src": "Business Recorder",
+    "age_h": 17.4
+   },
+   {
+    "t": "Coffee prices today, October 27th: Continue to fall as the Brazilian real plummets. - Vietnam.vn",
+    "src": "Vietnam.vn",
+    "age_h": 17.6
+   },
+   {
+    "t": "Coffee Prices Are Heating Up. How to Trade Futures Here. - Barchart.com",
+    "src": "Barchart.com",
+    "age_h": 23.8
+   },
+   {
+    "t": "Arabica Futures Slip - TradingView",
+    "src": "TradingView",
+    "age_h": 25.7
+   },
+   {
+    "t": "Brazil election results put ag commodities under pressure - Farm Progress",
+    "src": "Farm Progress",
+    "age_h": 28.0
+   },
+   {
+    "t": "Coffee futures price trades below key moving averages as sellers maintain control - Traders Union",
+    "src": "Traders Union",
+    "age_h": 28.3
+   }
+  ],
+  "0241_HK": [],
+  "0881_HK": []
  },
  "feeds": {
   "macro": [

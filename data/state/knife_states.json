@@ -129,8 +129,8 @@
   ]
  },
  "URA": {
-  "state": "STABILIZING",
-  "since": "2026-10-15",
+  "state": "CATCH",
+  "since": "2026-10-27",
   "events": [
    {
     "d": "2026-09-23",
@@ -161,11 +161,17 @@
     "from": "KNIFE_FALLING",
     "to": "STABILIZING",
     "note": "checklist 2/5"
+   },
+   {
+    "d": "2026-10-27",
+    "from": "STABILIZING",
+    "to": "CATCH",
+    "note": "checklist 3/5"
    }
   ],
-  "catch_ref_price": 41.9900016784668,
-  "catch_day_low": 41.96,
-  "expires": "2026-10-10",
+  "catch_ref_price": 35.82500076293945,
+  "catch_day_low": 34.85,
+  "expires": "2026-11-12",
   "cooldown_until": "2026-10-10"
  },
  "BTC-USD": {
@@ -770,9 +776,16 @@
   "events": []
  },
  "IQ": {
-  "state": "NORMAL",
-  "since": "2026-09-22",
-  "events": []
+  "state": "KNIFE_FALLING",
+  "since": "2026-10-27",
+  "events": [
+   {
+    "d": "2026-10-27",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -64.4% / 10日 -15.68%"
+   }
+  ]
  },
  "NIO": {
   "state": "NORMAL",
@@ -967,8 +980,8 @@
   "events": []
  },
  "DIDIY": {
-  "state": "STABILIZING",
-  "since": "2026-10-21",
+  "state": "CATCH",
+  "since": "2026-10-27",
   "events": [
    {
     "d": "2026-10-20",
@@ -981,8 +994,17 @@
     "from": "KNIFE_FALLING",
     "to": "STABILIZING",
     "note": "checklist 1/5"
+   },
+   {
+    "d": "2026-10-27",
+    "from": "STABILIZING",
+    "to": "CATCH",
+    "note": "checklist 3/5"
    }
-  ]
+  ],
+  "catch_ref_price": 3.1600000858306885,
+  "catch_day_low": 3.11,
+  "expires": "2026-11-12"
  },
  "BZ": {
   "state": "NORMAL",
