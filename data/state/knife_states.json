@@ -776,14 +776,20 @@
   "events": []
  },
  "IQ": {
-  "state": "KNIFE_FALLING",
-  "since": "2026-10-27",
+  "state": "STABILIZING",
+  "since": "2026-10-28",
   "events": [
    {
     "d": "2026-10-27",
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -64.4% / 10日 -15.68%"
+   },
+   {
+    "d": "2026-10-28",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 1/5"
    }
   ]
  },
