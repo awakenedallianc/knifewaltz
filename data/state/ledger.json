@@ -704,5 +704,29 @@
   "tier_time": "DEAD_ZONE",
   "status": "open",
   "snapshot_ref": "S-CATCH:URA:2026-10-27"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "GDXJ",
+  "date": "2026-10-29",
+  "entry": 102.36000061035156,
+  "stop": 101.92,
+  "score": 39,
+  "tier_time": "DEAD_ZONE",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:GDXJ:2026-10-29"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "COPX",
+  "date": "2026-10-29",
+  "entry": 76.06999969482422,
+  "stop": 75.41,
+  "score": 33,
+  "tier_time": "-",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:COPX:2026-10-29"
  }
 ]

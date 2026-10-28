@@ -111,8 +111,8 @@
   "events": []
  },
  "COPX": {
-  "state": "STABILIZING",
-  "since": "2026-10-23",
+  "state": "CATCH",
+  "since": "2026-10-29",
   "events": [
    {
     "d": "2026-10-22",
@@ -125,8 +125,17 @@
     "from": "KNIFE_FALLING",
     "to": "STABILIZING",
     "note": "checklist 1/5"
+   },
+   {
+    "d": "2026-10-29",
+    "from": "STABILIZING",
+    "to": "CATCH",
+    "note": "checklist 3/5"
    }
-  ]
+  ],
+  "catch_ref_price": 76.06999969482422,
+  "catch_day_low": 75.41,
+  "expires": "2026-11-14"
  },
  "URA": {
   "state": "CATCH",
@@ -693,8 +702,8 @@
   "events": []
  },
  "GDXJ": {
-  "state": "STABILIZING",
-  "since": "2026-10-24",
+  "state": "CATCH",
+  "since": "2026-10-29",
   "events": [
    {
     "d": "2026-10-23",
@@ -707,8 +716,17 @@
     "from": "KNIFE_FALLING",
     "to": "STABILIZING",
     "note": "checklist 1/5"
+   },
+   {
+    "d": "2026-10-29",
+    "from": "STABILIZING",
+    "to": "CATCH",
+    "note": "checklist 3/5"
    }
-  ]
+  ],
+  "catch_ref_price": 102.36000061035156,
+  "catch_day_low": 101.92,
+  "expires": "2026-11-14"
  },
  "LQD": {
   "state": "NORMAL",

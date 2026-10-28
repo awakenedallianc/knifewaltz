@@ -1241,7 +1241,9 @@
   "features_sha": "e164ac150b662d7a",
   "realized": {
    "ledger_ref": "CSGP@2026-09-30",
-   "fwd5_pct": 0.97
+   "fwd5_pct": 0.97,
+   "fwd20_pct": -0.4,
+   "mae20_pct": -1.09
   },
   "settled": false,
   "stier": {
@@ -3819,5 +3821,219 @@
   "features_sha": "e011997e47a95041",
   "realized": {},
   "settled": false
+ },
+ {
+  "id": "S-CATCH:COPX:2026-10-29",
+  "kind": "S-CATCH",
+  "symbol": "COPX",
+  "date": "2026-10-29",
+  "trigger_px": 76.06999969482422,
+  "stop_price": 75.41,
+  "features": {
+   "dd52w": -21.13,
+   "dd250": -21.13,
+   "ret10": -5.88,
+   "rsi14": 34.9,
+   "vol_ratio": 0.41,
+   "close_pos": 0.5,
+   "falling": false,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": true,
+    "vol_compress": true,
+    "gate_ok": true,
+    "rsi_divergence": false
+   },
+   "checklist_n": 3,
+   "tier_time": "-",
+   "days_from_peak": 43,
+   "stop_price": 75.41,
+   "last_date": "2026-10-28",
+   "cls": "commodity",
+   "tier": "T1",
+   "state": "CATCH",
+   "score_parts": {
+    "fall_40": 1.1,
+    "capitulation_20": 0.0,
+    "checklist_20": 12.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 33,
+  "market": {
+   "blade_index": 4,
+   "gate_state": "GREEN",
+   "vix": 17.3799991607666,
+   "vix_ratio": 0.8991204981564435
+  },
+  "jev": {
+   "family": "unclear",
+   "p_terminal": 0.0,
+   "conf": 0.83,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.04,
+   "catch_prior": 0.287,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "9ce11becedc6f0ca",
+  "realized": {
+   "ledger_ref": "COPX@2026-10-29"
+  },
+  "settled": false,
+  "stier": {
+   "rules_version": "s1",
+   "admitted": false,
+   "status": null,
+   "soft_score": 0.3787,
+   "hard_pass": {
+    "H1": true,
+    "H2": false,
+    "H3": false,
+    "H4": true,
+    "H5": true,
+    "H6": true,
+    "H7": true,
+    "H8": false
+   },
+   "shadow": {
+    "H9": {
+     "would_block": true,
+     "lr": 1.0,
+     "grade": "线索"
+    },
+    "H10": {
+     "would_block": false,
+     "flip_back_age_days": null
+    },
+    "H11": {
+     "would_block": false,
+     "close_pos": 0.5
+    }
+   },
+   "slice": {
+    "key": "unclear|GREEN|-|none|commodity",
+    "lr": 1.0,
+    "n": 0,
+    "wins": 0,
+    "wilson95": null,
+    "grade": "线索"
+   }
+  }
+ },
+ {
+  "id": "S-CATCH:GDXJ:2026-10-29",
+  "kind": "S-CATCH",
+  "symbol": "GDXJ",
+  "date": "2026-10-29",
+  "trigger_px": 102.36000061035156,
+  "stop_price": 101.92,
+  "features": {
+   "dd52w": -34.46,
+   "dd250": -34.46,
+   "ret10": -2.28,
+   "rsi14": 38.0,
+   "vol_ratio": 0.38,
+   "close_pos": 0.31,
+   "falling": false,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": true,
+    "vol_compress": true,
+    "gate_ok": true,
+    "rsi_divergence": false
+   },
+   "checklist_n": 3,
+   "tier_time": "DEAD_ZONE",
+   "days_from_peak": 168,
+   "stop_price": 101.92,
+   "last_date": "2026-10-28",
+   "cls": "sector_etf",
+   "tier": "T1S",
+   "state": "CATCH",
+   "score_parts": {
+    "fall_40": 6.9,
+    "capitulation_20": 0.0,
+    "checklist_20": 12.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 39,
+  "market": {
+   "blade_index": 4,
+   "gate_state": "GREEN",
+   "vix": 17.3799991607666,
+   "vix_ratio": 0.8991204981564435
+  },
+  "jev": {
+   "family": "unclear",
+   "p_terminal": 0.0,
+   "conf": 0.37,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.293,
+   "catch_prior": 0.253,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "20e1f847bb517834",
+  "realized": {
+   "ledger_ref": "GDXJ@2026-10-29"
+  },
+  "settled": false,
+  "stier": {
+   "rules_version": "s1",
+   "admitted": false,
+   "status": null,
+   "soft_score": 0.3942,
+   "hard_pass": {
+    "H1": true,
+    "H2": false,
+    "H3": false,
+    "H4": false,
+    "H5": true,
+    "H6": true,
+    "H7": true,
+    "H8": false
+   },
+   "shadow": {
+    "H9": {
+     "would_block": true,
+     "lr": 1.0,
+     "grade": "线索"
+    },
+    "H10": {
+     "would_block": false,
+     "flip_back_age_days": null
+    },
+    "H11": {
+     "would_block": false,
+     "close_pos": 0.31
+    }
+   },
+   "slice": {
+    "key": "unclear|GREEN|DEAD_ZONE|none|sector_etf",
+    "lr": 1.0,
+    "n": 0,
+    "wins": 0,
+    "wilson95": null,
+    "grade": "线索"
+   }
+  }
  }
 ]

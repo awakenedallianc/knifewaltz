@@ -1,6 +1,67 @@
 {
- "date": "2026-10-28",
+ "date": "2026-10-29",
  "source": "yahoo-screener",
- "promoted": [],
+ "promoted": [
+  {
+   "symbol": "FFIV",
+   "key": "FFIV",
+   "name": "F5, Inc.",
+   "cls": "equity",
+   "pct_day": -20.6,
+   "mcap": 48535207936,
+   "dd52w": -23.98,
+   "ret10": -20.23,
+   "vol_ratio": 3.6,
+   "days_from_peak": 13,
+   "px": 364.75,
+   "asof": "2026-10-28",
+   "bars": 252
+  },
+  {
+   "symbol": "SLS",
+   "key": "SLS",
+   "name": "SELLAS Life Sciences Group, Inc",
+   "cls": "equity",
+   "pct_day": -17.79,
+   "mcap": 48535207936,
+   "dd52w": -35.28,
+   "ret10": -15.78,
+   "vol_ratio": 3.13,
+   "days_from_peak": 47,
+   "px": 10.005000114440918,
+   "asof": "2026-10-28",
+   "bars": 252
+  },
+  {
+   "symbol": "ENPH",
+   "key": "ENPH",
+   "name": "Enphase Energy, Inc.",
+   "cls": "equity",
+   "pct_day": -16.2,
+   "mcap": 48535207936,
+   "dd52w": -65.52,
+   "ret10": -15.03,
+   "vol_ratio": 3.49,
+   "days_from_peak": 103,
+   "px": 24.940000534057617,
+   "asof": "2026-10-28",
+   "bars": 252
+  },
+  {
+   "symbol": "LSTR",
+   "key": "LSTR",
+   "name": "Landstar System, Inc.",
+   "cls": "equity",
+   "pct_day": -16.17,
+   "mcap": 48535207936,
+   "dd52w": -37.22,
+   "ret10": -16.39,
+   "vol_ratio": 1.75,
+   "days_from_peak": 99,
+   "px": 141.49000549316406,
+   "asof": "2026-10-28",
+   "bars": 252
+  }
+ ],
  "degraded_reason": null
 }
