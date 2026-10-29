@@ -297,8 +297,8 @@
   "cooldown_until": "2026-10-30"
  },
  "CHTR": {
-  "state": "CATCH",
-  "since": "2026-10-13",
+  "state": "NORMAL",
+  "since": "2026-10-30",
   "events": [
    {
     "d": "2026-09-21",
@@ -317,6 +317,12 @@
     "from": "STABILIZING",
     "to": "CATCH",
     "note": "checklist 3/5"
+   },
+   {
+    "d": "2026-10-30",
+    "from": "CATCH",
+    "to": "NORMAL",
+    "note": "接刀窗过期未确认"
    }
   ],
   "catch_ref_price": 102.4800033569336,
@@ -587,9 +593,16 @@
   "cooldown_until": "2026-10-16"
  },
  "ALNY": {
-  "state": "NORMAL",
-  "since": "2026-09-21",
-  "events": []
+  "state": "KNIFE_FALLING",
+  "since": "2026-10-30",
+  "events": [
+   {
+    "d": "2026-10-30",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -63.92% / 10日 -25.75%"
+   }
+  ]
  },
  "RB_F": {
   "state": "NORMAL",
@@ -702,8 +715,8 @@
   "events": []
  },
  "GDXJ": {
-  "state": "CATCH",
-  "since": "2026-10-29",
+  "state": "NORMAL",
+  "since": "2026-10-30",
   "events": [
    {
     "d": "2026-10-23",
@@ -722,11 +735,18 @@
     "from": "STABILIZING",
     "to": "CATCH",
     "note": "checklist 3/5"
+   },
+   {
+    "d": "2026-10-30",
+    "from": "CATCH",
+    "to": "NORMAL",
+    "note": "跌破接刀日低点（X-STOP）"
    }
   ],
   "catch_ref_price": 102.36000061035156,
   "catch_day_low": 101.92,
-  "expires": "2026-11-14"
+  "expires": "2026-11-14",
+  "cooldown_until": "2026-11-15"
  },
  "LQD": {
   "state": "NORMAL",
@@ -896,8 +916,8 @@
   "cooldown_until": "2026-10-29"
  },
  "VNET": {
-  "state": "NORMAL",
-  "since": "2026-10-14",
+  "state": "KNIFE_FALLING",
+  "since": "2026-10-30",
   "events": [
    {
     "d": "2026-10-02",
@@ -922,6 +942,12 @@
     "from": "CATCH",
     "to": "NORMAL",
     "note": "跌破接刀日低点（X-STOP）"
+   },
+   {
+    "d": "2026-10-30",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -75.87% / 10日 -23.07%"
    }
   ],
   "catch_ref_price": 5.170000076293945,
@@ -1319,6 +1345,18 @@
     "from": "KNIFE_FALLING",
     "to": "STABILIZING",
     "note": "checklist 1/5"
+   }
+  ]
+ },
+ "RDDT": {
+  "state": "KNIFE_FALLING",
+  "since": "2026-10-30",
+  "events": [
+   {
+    "d": "2026-10-30",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -50.24% / 10日 -19.14%"
    }
   ]
  }

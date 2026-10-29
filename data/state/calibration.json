@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-10-29T09:46:15+07:00",
- "date": "2026-10-29",
+ "generated_at": "2026-10-30T00:35:37+07:00",
+ "date": "2026-10-30",
  "min_n": 30,
  "outcome_defs": {
   "J1": "1 若 180 日内触发 X-EVENT 类事件或较 veto 日再跌 90%",
@@ -22,7 +22,7 @@
    "question_id": "J1",
    "outcome_def": "1 若 180 日内触发 X-EVENT 类事件或较 veto 日再跌 90%",
    "n_total": 0,
-   "n_pending": 3844,
+   "n_pending": 3892,
    "n_unresolvable": 0,
    "conclusive": false,
    "base_rate": null,
@@ -34,34 +34,34 @@
   "J2": {
    "question_id": "J2",
    "outcome_def": "1 若 |5 日前向收益| >= 2×ATR14%",
-   "n_total": 3129,
-   "n_pending": 715,
+   "n_total": 3210,
+   "n_pending": 682,
    "n_unresolvable": 0,
    "conclusive": true,
    "base_rate": 0.201,
-   "brier": 0.2024,
-   "brier_baseline_climatology": 0.1608,
+   "brier": 0.2019,
+   "brier_baseline_climatology": 0.1604,
    "reliability": [
     {
      "lo": 0.0,
      "hi": 0.2,
-     "n": 1357,
-     "p_mean": 0.104,
-     "hit_rate": 0.228,
+     "n": 1384,
+     "p_mean": 0.103,
+     "hit_rate": 0.225,
      "wilson95": [
-      0.206,
-      0.251
+      0.204,
+      0.248
      ],
      "small_sample": false
     },
     {
      "lo": 0.2,
      "hi": 0.4,
-     "n": 1154,
+     "n": 1193,
      "p_mean": 0.292,
      "hit_rate": 0.192,
      "wilson95": [
-      0.17,
+      0.171,
       0.215
      ],
      "small_sample": false
@@ -69,36 +69,36 @@
     {
      "lo": 0.4,
      "hi": 0.6,
-     "n": 469,
+     "n": 479,
      "p_mean": 0.477,
-     "hit_rate": 0.147,
+     "hit_rate": 0.15,
      "wilson95": [
-      0.118,
-      0.182
+      0.121,
+      0.185
      ],
      "small_sample": false
     },
     {
      "lo": 0.6,
      "hi": 0.8,
-     "n": 105,
+     "n": 108,
      "p_mean": 0.675,
-     "hit_rate": 0.257,
+     "hit_rate": 0.25,
      "wilson95": [
-      0.183,
-      0.348
+      0.178,
+      0.339
      ],
      "small_sample": false
     },
     {
      "lo": 0.8,
      "hi": 1.0,
-     "n": 44,
-     "p_mean": 0.898,
-     "hit_rate": 0.091,
+     "n": 46,
+     "p_mean": 0.899,
+     "hit_rate": 0.087,
      "wilson95": [
-      0.036,
-      0.212
+      0.034,
+      0.203
      ],
      "small_sample": false
     }
@@ -107,71 +107,71 @@
   "J3": {
    "question_id": "J3",
    "outcome_def": "1 若事件后 3 日 VIX 或已实现波动跳升 >15%",
-   "n_total": 1199,
-   "n_pending": 38,
+   "n_total": 1231,
+   "n_pending": 34,
    "n_unresolvable": 0,
    "conclusive": true,
    "base_rate": 0.018,
-   "brier": 0.1644,
-   "brier_baseline_climatology": 0.018,
+   "brier": 0.1657,
+   "brier_baseline_climatology": 0.0176,
    "reliability": [
     {
      "lo": 0.0,
      "hi": 0.2,
-     "n": 256,
+     "n": 260,
      "p_mean": 0.109,
      "hit_rate": 0.023,
      "wilson95": [
       0.011,
-      0.05
+      0.049
      ],
      "small_sample": false
     },
     {
      "lo": 0.2,
      "hi": 0.4,
-     "n": 502,
+     "n": 512,
      "p_mean": 0.303,
-     "hit_rate": 0.026,
+     "hit_rate": 0.025,
      "wilson95": [
       0.015,
-      0.044
+      0.043
      ],
      "small_sample": false
     },
     {
      "lo": 0.4,
      "hi": 0.6,
-     "n": 314,
-     "p_mean": 0.463,
+     "n": 325,
+     "p_mean": 0.464,
      "hit_rate": 0.006,
      "wilson95": [
       0.002,
-      0.023
+      0.022
      ],
      "small_sample": false
     },
     {
      "lo": 0.6,
      "hi": 0.8,
-     "n": 92,
-     "p_mean": 0.681,
-     "hit_rate": 0.011,
+     "n": 98,
+     "p_mean": 0.678,
+     "hit_rate": 0.01,
      "wilson95": [
       0.002,
-      0.059
+      0.056
      ],
      "small_sample": false
     },
     {
      "lo": 0.8,
      "hi": 1.0,
-     "n": 35,
-     "p_mean": 0.848,
+     "n": 36,
+     "p_mean": 0.847,
      "hit_rate": 0.0,
      "wilson95": [
       0.0,
-      0.099
+      0.096
      ],
      "small_sample": false
     }
@@ -181,7 +181,7 @@
    "question_id": "J4",
    "outcome_def": "该笔 CATCH 按 A 档退出规则的胜负（从 ledger 读）",
    "n_total": 0,
-   "n_pending": 225,
+   "n_pending": 227,
    "n_unresolvable": 0,
    "conclusive": false,
    "base_rate": null,
@@ -193,69 +193,69 @@
   "J5": {
    "question_id": "J5",
    "outcome_def": "1 若 3 日内 |累计收益| >= 10%（movers_history 快照价口径）",
-   "n_total": 807,
-   "n_pending": 28,
-   "n_unresolvable": 227,
+   "n_total": 822,
+   "n_pending": 16,
+   "n_unresolvable": 235,
    "conclusive": true,
-   "base_rate": 0.055,
-   "brier": 0.6685,
-   "brier_baseline_climatology": 0.0516,
+   "base_rate": 0.056,
+   "brier": 0.6692,
+   "brier_baseline_climatology": 0.0528,
    "reliability": [
     {
      "lo": 0.0,
      "hi": 0.2,
-     "n": 18,
+     "n": 19,
      "p_mean": null,
      "hit_rate": null,
      "wilson95": null,
      "small_sample": true,
-     "note": "收集中 18/30"
+     "note": "收集中 19/30"
     },
     {
      "lo": 0.2,
      "hi": 0.4,
-     "n": 40,
-     "p_mean": 0.309,
-     "hit_rate": 0.175,
+     "n": 41,
+     "p_mean": 0.308,
+     "hit_rate": 0.195,
      "wilson95": [
-      0.087,
-      0.32
+      0.102,
+      0.34
      ],
      "small_sample": false
     },
     {
      "lo": 0.4,
      "hi": 0.6,
-     "n": 121,
-     "p_mean": 0.51,
-     "hit_rate": 0.025,
+     "n": 123,
+     "p_mean": 0.511,
+     "hit_rate": 0.024,
      "wilson95": [
       0.008,
-      0.07
+      0.069
      ],
      "small_sample": false
     },
     {
      "lo": 0.6,
      "hi": 0.8,
-     "n": 149,
+     "n": 152,
      "p_mean": 0.702,
-     "hit_rate": 0.114,
+     "hit_rate": 0.112,
      "wilson95": [
-      0.072,
-      0.175
+      0.071,
+      0.172
      ],
      "small_sample": false
     },
     {
      "lo": 0.8,
      "hi": 1.0,
-     "n": 479,
+     "n": 487,
      "p_mean": 0.946,
-     "hit_rate": 0.015,
+     "hit_rate": 0.014,
      "wilson95": [
       0.007,
-      0.03
+      0.029
      ],
      "small_sample": false
     }
@@ -273,9 +273,9 @@
    "question_id": "J6",
    "outcome_def": "episode 完成日 = 判断日后价格自『判断日后最低点』反弹 >=20% 或满 252 交易日（先到者）。完成日用库内 kline 机械计算本轮实际签名 {realized_dd = 触发时 52 周峰到 episode 最低点跌幅%, realized_days = 峰到最低点交易日数}；将刀谱 18 例按签名距离 d = |dd_case - realized_dd|/25 + |ln(days_case) - ln(realized_days)|/1.2 升序排名（尺度常数 25 与 1.2 为刀谱 18 例自身 dd 标准差与 ln(days) 标准差，一次计算后冻结入 outcome_def）；hit=1 若所选案例排名 <=6（前三分之一）。choice=none_of_book、标的退市或 kline 断档 → unresolvable（计数公示，不进分母）。随机基线 = 6/18 = 1/3，与实测命中率并列公示",
    "n_total": 47,
-   "n_pending": 388,
+   "n_pending": 393,
    "n_unresolvable": {
-    "none_of_book": 77,
+    "none_of_book": 80,
     "broken": 0
    },
    "conclusive": true,
@@ -347,7 +347,7 @@
    "question_id": "J7",
    "outcome_def": "仅结算『该标的在判断后 63 交易日内实际进入 CATCH 且触发 X-STOP』的记录。settle.py 按预注册谓词对该次失败机械归因弱环集合 W：gate ∈ W 若入场日 gate_state ∉ {GREEN, FLIP_BACK} 或持仓期内闸门转 RED；volume ∈ W 若入场日 capitulation=false 或无量能数据；stabilization ∈ W 若入场日 checklist_n <= 3；time_tier ∈ W 若入场日 tier_time ∈ {DEAD_ZONE, -}；semantic ∈ W 若持仓期内任一跑批该标的 p_terminal >= 0.35 或其 J1 记录结算为 1。hit = 1 若预测环 ∈ W；W 为空 → unresolvable。预测 none_weak 的记录改按『链条守住』结算：hit = 1 若该标的接刀后 63 交易日内未触发 X-STOP（未接刀 → unresolvable）。其余未接刀或接刀后未触发 X-STOP 的记录 → unresolvable（计数公示）。随机基线 = 逐样本 mean(|W|/5)，与命中率并列公示（W 是集合命中，必须公示基线防虚高）",
    "n_total": 22,
-   "n_pending": 558,
+   "n_pending": 565,
    "n_unresolvable": 0,
    "conclusive": false,
    "hit_rate": null,
@@ -410,22 +410,22 @@
   "J8": {
    "question_id": "J8",
    "outcome_def": "hit = 1 若判断日后 5 交易日已实现波动 sigma5（未来 5 根日 log 收益标准差）>= 1.25 × sigma20（判断日前 20 根日 log 收益标准差，判断时随 aux 落盘冻结）；前向不足 5 根 → pending，退市/断档 → unresolvable。与 J2 口径刻意不同：J2 结算方向性净移动（|5日收益|>=2×ATR14%），J8 结算波动放大（sigma 比值）——一概率一口径（RL-6）。另设组对比公示：p>=0.6 分歧组 vs p<0.4 无分歧组的 median(sigma5/sigma20)，0.4<=p<0.6 中间带不入组对比但正常进 Brier；任一组 n<30 该组只显示『收集中 x/30』（RL-4）",
-   "n_total": 2905,
-   "n_pending": 694,
-   "n_unresolvable": 5,
+   "n_total": 2986,
+   "n_pending": 658,
+   "n_unresolvable": 7,
    "conclusive": true,
    "hit_rate": 1.0,
    "wilson95": [
     0.999,
     1.0
    ],
-   "brier": 0.7214,
+   "brier": 0.7199,
    "brier_baseline_climatology": 0.0,
    "reliability": [
     {
      "lo": 0.0,
      "hi": 0.2,
-     "n": 2287,
+     "n": 2343,
      "p_mean": 0.118,
      "hit_rate": 1.0,
      "wilson95": [
@@ -437,8 +437,8 @@
     {
      "lo": 0.2,
      "hi": 0.4,
-     "n": 519,
-     "p_mean": 0.256,
+     "n": 537,
+     "p_mean": 0.257,
      "hit_rate": 1.0,
      "wilson95": [
       0.993,
@@ -449,11 +449,11 @@
     {
      "lo": 0.4,
      "hi": 0.6,
-     "n": 78,
-     "p_mean": 0.472,
+     "n": 84,
+     "p_mean": 0.47,
      "hit_rate": 1.0,
      "wilson95": [
-      0.953,
+      0.956,
       1.0
      ],
      "small_sample": false
@@ -461,12 +461,12 @@
     {
      "lo": 0.6,
      "hi": 0.8,
-     "n": 19,
+     "n": 20,
      "p_mean": null,
      "hit_rate": null,
      "wilson95": null,
      "small_sample": true,
-     "note": "收集中 19/30"
+     "note": "收集中 20/30"
     },
     {
      "lo": 0.8,
@@ -482,13 +482,13 @@
    "base_rate": 1.0,
    "group_contrast": {
     "divergent": {
-     "n": 21,
+     "n": 22,
      "median_ratio": null,
-     "note": "收集中 21/30"
+     "note": "收集中 22/30"
     },
     "non_divergent": {
-     "n": 2806,
-     "median_ratio": 1299.649
+     "n": 2880,
+     "median_ratio": 1295.164
     },
     "note": "0.4<=p<0.6 中间带不入组对比但正常进 Brier（预注册口径）"
    }
@@ -551,7 +551,7 @@
     {
      "score_lo": 40,
      "score_hi": 60,
-     "n_signals": 33,
+     "n_signals": 34,
      "hold20": {
       "n": 8,
       "win_rate": null,
@@ -572,7 +572,7 @@
     {
      "score_lo": 60,
      "score_hi": 80,
-     "n_signals": 8,
+     "n_signals": 10,
      "hold20": {
       "n": 4,
       "win_rate": null,
@@ -612,7 +612,7 @@
      }
     }
    ],
-   "n_total": 48
+   "n_total": 51
   },
   "backtest": {
    "available": false,
@@ -621,7 +621,7 @@
  },
  "rule_counts": {
   "live": {
-   "S-FALL": 28,
+   "S-FALL": 31,
    "S-CATCH": 20
   },
   "backtest": {
