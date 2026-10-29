@@ -22,21 +22,21 @@
  },
  "NG_F": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-29",
   "clear_streak": 0,
   "top_headline": "LNG Demand, November Expiry Bolster Natural Gas Prices - Natural Gas Intelligence"
  },
  "PODD": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-29",
   "clear_streak": 0,
   "top_headline": "Insulet (PODD) Reports Next Week: Wall Street Expects Earnings Growth"
  },
  "BSX": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-29",
   "clear_streak": 0,
   "top_headline": "Boston Scientific Crashes As Cybersecurity Attack Weighs On Guide"
@@ -50,7 +50,7 @@
  },
  "APP": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.0,
   "date": "2026-10-29",
   "clear_streak": 0,
   "top_headline": "Wurl's Latest CTV Trends Report Reveals Significant Gaps in Streaming TV Content Transparency"
@@ -141,14 +141,14 @@
  },
  "UNG": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.03,
   "date": "2026-10-29",
   "clear_streak": 0,
   "top_headline": "Sands China Holds Extended Seminar on Exhibition ‘A Century of Iec Long Firecracker Factory in Radiance’ - Plataforma Media"
  },
  "PL_F": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.02,
   "date": "2026-10-29",
   "clear_streak": 0,
   "top_headline": "US Market Update on October 28: Support and Resistance Levels for 18 Instruments (Gold, Silver, Platinum, Palladium, Crude Oil, Natural Gas, Copper, and Ten Maj"
@@ -169,7 +169,7 @@
  },
  "LX": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.08,
   "date": "2026-10-29",
   "clear_streak": 0,
   "top_headline": "Jay-Z Has a Defiant Response to Super Bowl Halftime Show Pressure - Sports Illustrated"
@@ -183,7 +183,7 @@
  },
  "QFIN": {
   "veto": false,
-  "p": 0.03,
+  "p": 0.05,
   "date": "2026-10-29",
   "clear_streak": 0,
   "top_headline": "Qfin’s Regulatory Reality Check: Lawsuit Alleges Investors Were Misled About Business Resiliency - TipRanks"
@@ -197,14 +197,14 @@
  },
  "IQ": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-29",
   "clear_streak": 0,
   "top_headline": "PEEX returns for ‘new activity phase’ with Solotech partnership - IQ Magazine"
  },
  "XPEV": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-29",
   "clear_streak": 0,
   "top_headline": "3 Chinese EV Stocks Investors May Be Watching As Volkswagen Cuts Back"
@@ -232,7 +232,7 @@
  },
  "LI": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-29",
   "clear_streak": 0,
   "top_headline": "IMF Announces Departure of Deputy Managing Director Bo LI and Proposes Appointment of Mr. Min LIAO as Deputy Managing Director - Disruption Banking"
@@ -246,7 +246,7 @@
  },
  "TCOM": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-29",
   "clear_streak": 0,
   "top_headline": "Trip.com Group (TCOM) Stock May Be Below Fair Value On Earnings"
@@ -281,21 +281,21 @@
  },
  "BIDU": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.02,
   "date": "2026-10-29",
   "clear_streak": 0,
   "top_headline": "DEADLINE ALERT for Baidu, Inc. (BIDU), Doximity, Inc. - GlobeNewswire"
  },
  "PDD": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-29",
   "clear_streak": 0,
   "top_headline": "CM Omar Abdullah likely to keep Finance , PDD, Tourism Depts with himself - Cross Town News"
  },
  "FUTU": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-29",
   "clear_streak": 0,
   "top_headline": "Saudi Arabia’s dual-channel exports dismantle the Red Sea shortage narrative, as the Middle East crude premium dropped from $34 to $6 per barrel in one month. -"
@@ -316,21 +316,21 @@
  },
  "RLX": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-29",
   "clear_streak": 0,
   "top_headline": "COS Womens Maxi Skirt Navy Blue‎ With Pockets Size 6 Preppy alphavilleearredores.com.br - alphavilleearredores.com.br"
  },
  "MOMO": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-29",
   "clear_streak": 0,
   "top_headline": "Momo Kombucha launches Organic Hops Kombucha with Orbit Beers - FoodBev Media"
  },
  "NOAH": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-29",
   "clear_streak": 0,
   "top_headline": "Everything Kalen DeBoer said on receiver Noah Rogers, Lane Kiffin & more during SEC Coaches Teleconference - 247Sports"
@@ -502,5 +502,12 @@
   "date": "2026-10-29",
   "clear_streak": 0,
   "top_headline": "Enphase Shares Tumble as Quarterly Earnings Fall Short of Expectations"
+ },
+ "LSTR": {
+  "veto": false,
+  "p": 0.0,
+  "date": "2026-10-29",
+  "clear_streak": 0,
+  "top_headline": "Landstar stock plunges 17.8% on insurance costs and EPS miss"
  }
 }

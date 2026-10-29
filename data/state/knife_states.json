@@ -1004,8 +1004,8 @@
   "events": []
  },
  "DIDIY": {
-  "state": "CATCH",
-  "since": "2026-10-27",
+  "state": "NORMAL",
+  "since": "2026-10-29",
   "events": [
    {
     "d": "2026-10-20",
@@ -1024,11 +1024,18 @@
     "from": "STABILIZING",
     "to": "CATCH",
     "note": "checklist 3/5"
+   },
+   {
+    "d": "2026-10-29",
+    "from": "CATCH",
+    "to": "NORMAL",
+    "note": "跌破接刀日低点（X-STOP）"
    }
   ],
   "catch_ref_price": 3.1600000858306885,
   "catch_day_low": 3.11,
-  "expires": "2026-11-12"
+  "expires": "2026-11-12",
+  "cooldown_until": "2026-11-14"
  },
  "BZ": {
   "state": "NORMAL",
