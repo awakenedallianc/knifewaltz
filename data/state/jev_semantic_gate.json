@@ -50,7 +50,7 @@
  },
  "APP": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-30",
   "clear_streak": 0,
   "top_headline": "Pixalate Releases Q3 2026 Mobile Seller Trust Index 2.0: 16.4% of Global Authorized Mobile App Inventory Is Resold Through Arbitrage, Up From 15.2% in Q2; Googl"
@@ -156,9 +156,9 @@
  "KC_F": {
   "veto": false,
   "p": 0.0,
-  "date": "2026-10-13",
+  "date": "2026-10-30",
   "clear_streak": 0,
-  "top_headline": "Coffee Prices Settle Higher on Lower Output in Colombia - Barchart.com"
+  "top_headline": "Futures Rebound as Traders Balance Record Brazilian Supply Against Tight Market Structure - StoneX"
  },
  "URA": {
   "veto": false,
@@ -169,7 +169,7 @@
  },
  "LX": {
   "veto": false,
-  "p": 0.11,
+  "p": 0.1,
   "date": "2026-10-30",
   "clear_streak": 0,
   "top_headline": "Nike Women's Jordan Trunner LX \"Cream II/Bright Citron\" HQ2164-201 - SNKRDUNK"
@@ -183,14 +183,14 @@
  },
  "QFIN": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.02,
   "date": "2026-10-30",
   "clear_streak": 0,
   "top_headline": "Deadline alert for investors to join class acti... - Pluang"
  },
  "TME": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.01,
   "date": "2026-10-30",
   "clear_streak": 0,
   "top_headline": "TME Pharma grants TMS exclusive negotiation rights to NOX-A12, with milestone payments up to €100M - Dealroom"
@@ -204,14 +204,14 @@
  },
  "XPEV": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-30",
   "clear_streak": 0,
   "top_headline": "XPEV 261030 5.50P (XPEV261030P5500) Stock Options Chain | Quotes & News - Moomoo"
  },
  "0241_HK": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.01,
   "date": "2026-10-30",
   "clear_streak": 0,
   "top_headline": "Fangzhou Inc. (6086.HK) Stock Price, News, Quote & History - Yahoo! Finance Canada"
@@ -253,14 +253,14 @@
  },
  "VNET": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-30",
   "clear_streak": 0,
   "top_headline": "Asian ADRs Slipped, Even As Jiayin Jumped 30% - Finimize"
  },
  "WB": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-30",
   "clear_streak": 0,
   "top_headline": "WB, Centre Plan To Shift Ganga’s Course To Tackle Riverbank Erosion In Malda, Murshidabad - ETV Bharat"
@@ -281,14 +281,14 @@
  },
  "BIDU": {
   "veto": false,
-  "p": 0.25,
+  "p": 0.21,
   "date": "2026-10-30",
   "clear_streak": 0,
   "top_headline": "Bronstein, Gewirtz & Grossman LLC Urges Baidu, Inc. Investors to Act: Class Action Filed Alleging Investor Harm - GlobeNewswire"
  },
  "PDD": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-30",
   "clear_streak": 0,
   "top_headline": "Deutsche Bank Upgrades PDD Holdings(PDD.US) to Buy Rating, Maintains Target Price $105 - Moomoo"
@@ -309,21 +309,21 @@
  },
  "BABA": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-30",
   "clear_streak": 0,
   "top_headline": "Baba's Hot Chicken Announces Nationwide Expansion With 38 Locations Under Contract and First Drive-Thru Under Construction in Las Vegas - StreetInsider"
  },
  "RLX": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-30",
   "clear_streak": 0,
   "top_headline": "Five of the best titanium watches worth owning - Prestige Online - Singapore"
  },
  "MOMO": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-30",
   "clear_streak": 0,
   "top_headline": "Song of the Day: ‘Cold Hands’ by Momo Boyd - GRUNGECAKE"
@@ -344,7 +344,7 @@
  },
  "KWEB": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-30",
   "clear_streak": 0,
   "top_headline": "KWEB261113P00020000 interactive stock chart | KWEB Nov 2026 20.000 put stock - Yahoo Finance - Yahoo Finance Singapore"
@@ -358,7 +358,7 @@
  },
  "YMM": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-30",
   "clear_streak": 0,
   "top_headline": "Full Truck Alliance to report Q3 2026 earnings on Nov 19 with a live conference call. - Pluang"
@@ -512,7 +512,7 @@
  },
  "SFM": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-30",
   "clear_streak": 0,
   "top_headline": "Sprouts Farmers Market Sinks 23% on Q3 Miss and Guidance Cut: “Need to Improve Our Performance”"

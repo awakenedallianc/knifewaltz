@@ -12,18 +12,9 @@
    "key": "0960_HK",
    "name": "Longfor Group Holdings Ltd",
    "pool": "CN_HK",
-   "dd250": -56.6,
-   "px": 4.574999809265137,
-   "asof": "2026-10-29"
-  },
-  {
-   "symbol": "KC",
-   "key": "KC",
-   "name": "金山云",
-   "pool": "CN_ADR",
-   "dd250": -55.4,
-   "px": 8.114999771118164,
-   "asof": "2026-10-29"
+   "dd250": -57.0,
+   "px": 4.525000095367432,
+   "asof": "2026-10-30"
   },
   {
    "symbol": "NIO",
@@ -31,16 +22,16 @@
    "name": "蔚来",
    "pool": "CN_ADR",
    "dd250": -55.3,
-   "px": 3.316699981689453,
+   "px": 3.319999933242798,
    "asof": "2026-10-29"
   },
   {
-   "symbol": "9992.HK",
-   "key": "9992_HK",
-   "name": "Pop Mart International Group Ltd",
-   "pool": "CN_HK",
-   "dd250": -53.3,
-   "px": 126.0999984741211,
+   "symbol": "KC",
+   "key": "KC",
+   "name": "金山云",
+   "pool": "CN_ADR",
+   "dd250": -55.2,
+   "px": 8.149999618530273,
    "asof": "2026-10-29"
   },
   {
@@ -48,35 +39,35 @@
    "key": "0968_HK",
    "name": "Xinyi Solar Holdings Ltd",
    "pool": "CN_HK",
-   "dd250": -53.1,
-   "px": 1.875,
-   "asof": "2026-10-29"
+   "dd250": -54.2,
+   "px": 1.8300000429153442,
+   "asof": "2026-10-30"
   },
   {
    "symbol": "9888.HK",
    "key": "9888_HK",
    "name": "Baidu Inc",
    "pool": "CN_HK",
+   "dd250": -52.8,
+   "px": 75.80000305175781,
+   "asof": "2026-10-30"
+  },
+  {
+   "symbol": "0981.HK",
+   "key": "0981_HK",
+   "name": "Semiconductor Manufacturing International Corp",
+   "pool": "CN_HK",
    "dd250": -52.3,
-   "px": 76.55000305175781,
-   "asof": "2026-10-29"
+   "px": 42.68000030517578,
+   "asof": "2026-10-30"
   },
   {
    "symbol": "BIDU",
    "key": "BIDU",
    "name": "百度",
    "pool": "CN_ADR",
-   "dd250": -51.8,
-   "px": 78.38500213623047,
-   "asof": "2026-10-29"
-  },
-  {
-   "symbol": "1928.HK",
-   "key": "1928_HK",
-   "name": "Sands China Ltd",
-   "pool": "CN_HK",
    "dd250": -51.6,
-   "px": 10.579999923706055,
+   "px": 78.6500015258789,
    "asof": "2026-10-29"
   },
   {
@@ -84,36 +75,36 @@
    "key": "GDS",
    "name": "万国数据",
    "pool": "CN_ADR",
-   "dd250": -51.5,
-   "px": 23.049999237060547,
+   "dd250": -51.3,
+   "px": 23.15999984741211,
    "asof": "2026-10-29"
+  },
+  {
+   "symbol": "1928.HK",
+   "key": "1928_HK",
+   "name": "Sands China Ltd",
+   "pool": "CN_HK",
+   "dd250": -51.3,
+   "px": 10.649999618530273,
+   "asof": "2026-10-30"
   },
   {
    "symbol": "TCOM",
    "key": "TCOM",
    "name": "携程集团",
    "pool": "CN_ADR",
-   "dd250": -51.3,
-   "px": 38.46500015258789,
+   "dd250": -51.2,
+   "px": 38.560001373291016,
    "asof": "2026-10-29"
   },
   {
-   "symbol": "1378.HK",
-   "key": "1378_HK",
-   "name": "China Hongqiao Group Ltd",
+   "symbol": "9992.HK",
+   "key": "9992_HK",
+   "name": "Pop Mart International Group Ltd",
    "pool": "CN_HK",
-   "dd250": -50.6,
-   "px": 19.850000381469727,
-   "asof": "2026-10-29"
-  },
-  {
-   "symbol": "9961.HK",
-   "key": "9961_HK",
-   "name": "Trip.com Group Ltd",
-   "pool": "CN_HK",
-   "dd250": -50.3,
-   "px": 302.79998779296875,
-   "asof": "2026-10-29"
+   "dd250": -50.4,
+   "px": 133.6999969482422,
+   "asof": "2026-10-30"
   }
  ]
 }

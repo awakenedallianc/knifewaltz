@@ -593,7 +593,7 @@
   "cooldown_until": "2026-10-16"
  },
  "ALNY": {
-  "state": "KNIFE_FALLING",
+  "state": "STABILIZING",
   "since": "2026-10-30",
   "events": [
    {
@@ -601,6 +601,12 @@
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -63.92% / 10日 -25.75%"
+   },
+   {
+    "d": "2026-10-30",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 1/5"
    }
   ]
  },
@@ -916,7 +922,7 @@
   "cooldown_until": "2026-10-29"
  },
  "VNET": {
-  "state": "KNIFE_FALLING",
+  "state": "STABILIZING",
   "since": "2026-10-30",
   "events": [
    {
@@ -948,6 +954,12 @@
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -75.87% / 10日 -23.07%"
+   },
+   {
+    "d": "2026-10-30",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 1/5"
    }
   ],
   "catch_ref_price": 5.170000076293945,
