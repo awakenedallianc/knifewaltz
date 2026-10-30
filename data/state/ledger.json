@@ -728,5 +728,29 @@
   "tier_time": "-",
   "status": "open",
   "snapshot_ref": "S-CATCH:COPX:2026-10-29"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "ARM",
+  "date": "2026-10-31",
+  "entry": 202.52000427246094,
+  "stop": 202.22,
+  "score": 52,
+  "tier_time": "DEAD_ZONE",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:ARM:2026-10-31"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "COHR",
+  "date": "2026-10-31",
+  "entry": 206.47999572753906,
+  "stop": 204.36,
+  "score": 51,
+  "tier_time": "DEAD_ZONE",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:COHR:2026-10-31"
  }
 ]

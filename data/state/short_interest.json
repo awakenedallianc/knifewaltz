@@ -2,7 +2,7 @@
  "settlement": "2026-10-15",
  "staleness_note": "双月·滞后约9工作日",
  "source": "finra",
- "fetched_at": "2026-10-30T09:53:35+07:00",
+ "fetched_at": "2026-10-31T00:11:11+07:00",
  "rows": {
   "ALB": {
    "short": 12251426,
@@ -19,6 +19,16 @@
    "days_to_cover": 2.18,
    "chg_pct": -3.87
   },
+  "APTV": {
+   "short": 9313545,
+   "days_to_cover": 3.69,
+   "chg_pct": 0.77
+  },
+  "ARM": {
+   "short": 17701475,
+   "days_to_cover": 3.75,
+   "chg_pct": 9.34
+  },
   "ASML": {
    "short": 1327923,
    "days_to_cover": 1,
@@ -29,15 +39,30 @@
    "days_to_cover": 2.4,
    "chg_pct": -1.08
   },
+  "BFAM": {
+   "short": 2445646,
+   "days_to_cover": 3.82,
+   "chg_pct": -1.73
+  },
   "BSX": {
    "short": 40708019,
    "days_to_cover": 2.59,
    "chg_pct": -1.7
   },
+  "CACC": {
+   "short": 1010300,
+   "days_to_cover": 10.74,
+   "chg_pct": 5.05
+  },
   "CHTR": {
    "short": 17430799,
    "days_to_cover": 5.86,
    "chg_pct": 5.61
+  },
+  "COHR": {
+   "short": 9048189,
+   "days_to_cover": 1.17,
+   "chg_pct": -18.05
   },
   "COIN": {
    "short": 23767692,
@@ -59,25 +84,30 @@
    "days_to_cover": 1.69,
    "chg_pct": 8.03
   },
-  "FTNT": {
-   "short": 12077511,
-   "days_to_cover": 3.64,
-   "chg_pct": -3.41
+  "GLW": {
+   "short": 15992050,
+   "days_to_cover": 2.01,
+   "chg_pct": -5.05
   },
-  "INTU": {
-   "short": 8012198,
-   "days_to_cover": 2.2,
-   "chg_pct": 10.09
+  "ILMN": {
+   "short": 7885327,
+   "days_to_cover": 2.94,
+   "chg_pct": -16.75
   },
-  "IOVA": {
-   "short": 58925298,
-   "days_to_cover": 4.43,
-   "chg_pct": -9.1
+  "INTC": {
+   "short": 148504504,
+   "days_to_cover": 1.54,
+   "chg_pct": -11.18
   },
-  "NOW": {
-   "short": 27838652,
-   "days_to_cover": 2.63,
-   "chg_pct": -6.17
+  "LULU": {
+   "short": 16259943,
+   "days_to_cover": 3.72,
+   "chg_pct": 5.73
+  },
+  "MSTR": {
+   "short": 29100241,
+   "days_to_cover": 1.53,
+   "chg_pct": -0.94
   },
   "NVDA": {
    "short": 301622687,
@@ -89,15 +119,35 @@
    "days_to_cover": 3.12,
    "chg_pct": 5.07
   },
-  "SFM": {
-   "short": 12332481,
-   "days_to_cover": 5.79,
-   "chg_pct": -8.09
+  "RBLX": {
+   "short": 25758781,
+   "days_to_cover": 2.26,
+   "chg_pct": -6.8
+  },
+  "RDDT": {
+   "short": 21602533,
+   "days_to_cover": 5.14,
+   "chg_pct": -2.3
+  },
+  "SNDK": {
+   "short": 4704783,
+   "days_to_cover": 1,
+   "chg_pct": -2.38
   },
   "TSM": {
    "short": 29310548,
    "days_to_cover": 2.63,
    "chg_pct": -3.88
+  },
+  "TWLO": {
+   "short": 6051947,
+   "days_to_cover": 1.09,
+   "chg_pct": -4.65
+  },
+  "WDC": {
+   "short": 19446763,
+   "days_to_cover": 1.88,
+   "chg_pct": 6.3
   }
  }
 }

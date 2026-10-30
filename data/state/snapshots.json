@@ -1350,7 +1350,14 @@
   "engine_sha": "69e75ef468979668",
   "features_sha": "08f74123ede1dcf3",
   "realized": {
-   "fwd5_pct": 12.08
+   "fwd5_pct": 12.08,
+   "fwd20_pct": -3.44,
+   "mae20_pct": -5.66,
+   "atier": {
+    "pnl_pct": -2.43,
+    "exit": "X-STOP@17日",
+    "exit_bar": 17
+   }
   },
   "settled": false
  },
@@ -1418,7 +1425,14 @@
   "engine_sha": "69e75ef468979668",
   "features_sha": "b5a9717607c7c732",
   "realized": {
-   "fwd5_pct": 11.61
+   "fwd5_pct": 11.61,
+   "fwd20_pct": -20.71,
+   "mae20_pct": -21.44,
+   "atier": {
+    "pnl_pct": -6.2,
+    "exit": "X-STOP@8日",
+    "exit_bar": 8
+   }
   },
   "settled": false
  },
@@ -1486,7 +1500,14 @@
   "engine_sha": "69e75ef468979668",
   "features_sha": "c2df295ed8cd37a2",
   "realized": {
-   "fwd5_pct": 5.75
+   "fwd5_pct": 5.75,
+   "fwd20_pct": -37.91,
+   "mae20_pct": -40.16,
+   "atier": {
+    "pnl_pct": -12.48,
+    "exit": "X-STOP@8日",
+    "exit_bar": 8
+   }
   },
   "settled": false
  },
@@ -2691,7 +2712,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "2a98db117751f713",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": -0.92
+  },
   "settled": false
  },
  {
@@ -2865,7 +2888,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "a0eef0ccb7eebf3a",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": 8.89
+  },
   "settled": false
  },
  {
@@ -3313,7 +3338,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "7d6156f2ebf167ad",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": -4.21
+  },
   "settled": false
  },
  {
@@ -3379,7 +3406,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "f885ddc247e83832",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": -8.83
+  },
   "settled": false
  },
  {
@@ -3445,7 +3474,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "494c43fbb04397bd",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": -4.91
+  },
   "settled": false
  },
  {
@@ -4244,6 +4275,471 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "a960f33d67706539",
+  "realized": {},
+  "settled": false
+ },
+ {
+  "id": "S-CATCH:ARM:2026-10-31",
+  "kind": "S-CATCH",
+  "symbol": "ARM",
+  "date": "2026-10-31",
+  "trigger_px": 202.52000427246094,
+  "stop_price": 202.22,
+  "features": {
+   "dd52w": -53.92,
+   "dd250": -53.92,
+   "ret10": -11.1,
+   "rsi14": 29.7,
+   "vol_ratio": 1.16,
+   "close_pos": 0.04,
+   "falling": false,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": true,
+    "gate_ok": true,
+    "rsi_divergence": true
+   },
+   "checklist_n": 3,
+   "tier_time": "DEAD_ZONE",
+   "days_from_peak": 93,
+   "stop_price": 202.22,
+   "last_date": "2026-10-30",
+   "cls": "equity_single",
+   "tier": "T2",
+   "state": "CATCH",
+   "score_parts": {
+    "fall_40": 20.2,
+    "capitulation_20": 0.0,
+    "checklist_20": 12.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 52,
+  "market": {
+   "blade_index": 7,
+   "gate_state": "GREEN",
+   "vix": 19.940000534057617,
+   "vix_ratio": 0.9504290261739513
+  },
+  "jev": {
+   "family": "A_liquidity_panic",
+   "p_terminal": 0.0,
+   "conf": 0.44,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.497,
+   "catch_prior": 0.245,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "645d68f4f669cb55",
+  "realized": {
+   "ledger_ref": "ARM@2026-10-31"
+  },
+  "settled": false,
+  "stier": {
+   "rules_version": "s1",
+   "admitted": false,
+   "status": null,
+   "soft_score": 0.4442,
+   "hard_pass": {
+    "H1": true,
+    "H2": false,
+    "H3": false,
+    "H4": false,
+    "H5": true,
+    "H6": true,
+    "H7": true,
+    "H8": false
+   },
+   "shadow": {
+    "H9": {
+     "would_block": true,
+     "lr": 1.0,
+     "grade": "线索"
+    },
+    "H10": {
+     "would_block": false,
+     "flip_back_age_days": null
+    },
+    "H11": {
+     "would_block": true,
+     "close_pos": 0.04
+    }
+   },
+   "slice": {
+    "key": "A_liquidity_panic|GREEN|DEAD_ZONE|none|equity_single",
+    "lr": 1.0,
+    "n": 0,
+    "wins": 0,
+    "wilson95": null,
+    "grade": "线索"
+   }
+  }
+ },
+ {
+  "id": "S-CATCH:COHR:2026-10-31",
+  "kind": "S-CATCH",
+  "symbol": "COHR",
+  "date": "2026-10-31",
+  "trigger_px": 206.47999572753906,
+  "stop_price": 204.36,
+  "features": {
+   "dd52w": -51.63,
+   "dd250": -51.63,
+   "ret10": -11.34,
+   "rsi14": 24.6,
+   "vol_ratio": 1.01,
+   "close_pos": 0.12,
+   "falling": false,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": true,
+    "gate_ok": true,
+    "rsi_divergence": true
+   },
+   "checklist_n": 3,
+   "tier_time": "DEAD_ZONE",
+   "days_from_peak": 105,
+   "stop_price": 204.36,
+   "last_date": "2026-10-30",
+   "cls": "equity_single",
+   "tier": "T2",
+   "state": "CATCH",
+   "score_parts": {
+    "fall_40": 19.2,
+    "capitulation_20": 0.0,
+    "checklist_20": 12.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 51,
+  "market": {
+   "blade_index": 7,
+   "gate_state": "GREEN",
+   "vix": 19.940000534057617,
+   "vix_ratio": 0.9504290261739513
+  },
+  "jev": {
+   "family": "unclear",
+   "p_terminal": 0.01,
+   "conf": 0.69,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.157,
+   "catch_prior": 0.237,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "72d3bc4b6282ace6",
+  "realized": {
+   "ledger_ref": "COHR@2026-10-31"
+  },
+  "settled": false,
+  "stier": {
+   "rules_version": "s1",
+   "admitted": false,
+   "status": null,
+   "soft_score": 0.4382,
+   "hard_pass": {
+    "H1": true,
+    "H2": false,
+    "H3": false,
+    "H4": false,
+    "H5": true,
+    "H6": true,
+    "H7": true,
+    "H8": false
+   },
+   "shadow": {
+    "H9": {
+     "would_block": true,
+     "lr": 1.0,
+     "grade": "线索"
+    },
+    "H10": {
+     "would_block": false,
+     "flip_back_age_days": null
+    },
+    "H11": {
+     "would_block": true,
+     "close_pos": 0.12
+    }
+   },
+   "slice": {
+    "key": "unclear|GREEN|DEAD_ZONE|none|equity_single",
+    "lr": 1.0,
+    "n": 0,
+    "wins": 0,
+    "wilson95": null,
+    "grade": "线索"
+   }
+  }
+ },
+ {
+  "id": "S-FALL:COIN:2026-10-31",
+  "kind": "S-FALL",
+  "symbol": "COIN",
+  "date": "2026-10-31",
+  "trigger_px": 140.0500030517578,
+  "stop_price": 136.9,
+  "features": {
+   "dd52w": -59.26,
+   "dd250": -57.61,
+   "ret10": -19.12,
+   "rsi14": 27.0,
+   "vol_ratio": 1.43,
+   "close_pos": 0.27,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": false,
+    "gate_ok": true,
+    "rsi_divergence": false
+   },
+   "checklist_n": 1,
+   "tier_time": "-",
+   "days_from_peak": 324,
+   "stop_price": 136.9,
+   "last_date": "2026-10-30",
+   "cls": "equity_single",
+   "tier": "T2",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 27.9,
+    "capitulation_20": 0.0,
+    "checklist_20": 4.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 52,
+  "market": {
+   "blade_index": 7,
+   "gate_state": "GREEN",
+   "vix": 19.940000534057617,
+   "vix_ratio": 0.9504290261739513
+  },
+  "jev": {
+   "family": "unclear",
+   "p_terminal": 0.0,
+   "conf": 0.52,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.247,
+   "catch_prior": null,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "0042588c0f754d9b",
+  "realized": {},
+  "settled": false
+ },
+ {
+  "id": "S-FALL:GDX:2026-10-31",
+  "kind": "S-FALL",
+  "symbol": "GDX",
+  "date": "2026-10-31",
+  "trigger_px": 76.87000274658203,
+  "stop_price": 76.83,
+  "features": {
+   "dd52w": -33.64,
+   "dd250": -33.64,
+   "ret10": -12.36,
+   "rsi14": 29.9,
+   "vol_ratio": 0.89,
+   "close_pos": 0.03,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": false,
+    "gate_ok": true,
+    "rsi_divergence": false
+   },
+   "checklist_n": 1,
+   "tier_time": "DEAD_ZONE",
+   "days_from_peak": 170,
+   "stop_price": 76.83,
+   "last_date": "2026-10-30",
+   "cls": "sector_etf",
+   "tier": "T1S",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 11.3,
+    "capitulation_20": 0.0,
+    "checklist_20": 4.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 35,
+  "market": {
+   "blade_index": 7,
+   "gate_state": "GREEN",
+   "vix": 19.940000534057617,
+   "vix_ratio": 0.9504290261739513
+  },
+  "jev": null,
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "29e2e1846f830309",
+  "realized": {},
+  "settled": false
+ },
+ {
+  "id": "S-FALL:INTC:2026-10-31",
+  "kind": "S-FALL",
+  "symbol": "INTC",
+  "date": "2026-10-31",
+  "trigger_px": 64.31999969482422,
+  "stop_price": 64.12,
+  "features": {
+   "dd52w": -54.36,
+   "dd250": -54.36,
+   "ret10": -28.41,
+   "rsi14": 22.3,
+   "vol_ratio": 2.89,
+   "close_pos": 0.04,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": false,
+    "gate_ok": true,
+    "rsi_divergence": true
+   },
+   "checklist_n": 2,
+   "tier_time": "DEAD_ZONE",
+   "days_from_peak": 92,
+   "stop_price": 64.12,
+   "last_date": "2026-10-30",
+   "cls": "equity_single",
+   "tier": "T2",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 31.5,
+    "capitulation_20": 0.0,
+    "checklist_20": 8.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 59,
+  "market": {
+   "blade_index": 7,
+   "gate_state": "GREEN",
+   "vix": 19.940000534057617,
+   "vix_ratio": 0.9504290261739513
+  },
+  "jev": {
+   "family": "B_fundamental_repricing",
+   "p_terminal": 0.0,
+   "conf": 0.95,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.66,
+   "catch_prior": null,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "ea4dfdccae9eee0e",
+  "realized": {},
+  "settled": false
+ },
+ {
+  "id": "S-FALL:SI_F:2026-10-31",
+  "kind": "S-FALL",
+  "symbol": "SI_F",
+  "date": "2026-10-31",
+  "trigger_px": 49.275001525878906,
+  "stop_price": 49.08,
+  "features": {
+   "dd52w": -57.18,
+   "dd250": -57.18,
+   "ret10": -13.55,
+   "rsi14": 16.8,
+   "vol_ratio": 436.87,
+   "close_pos": 0.06,
+   "falling": true,
+   "capitulation": true,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": false,
+    "gate_ok": true,
+    "rsi_divergence": false
+   },
+   "checklist_n": 1,
+   "tier_time": "DEAD_ZONE",
+   "days_from_peak": 193,
+   "stop_price": 49.08,
+   "last_date": "2026-10-30",
+   "cls": "futures",
+   "tier": "T1F",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 23.3,
+    "capitulation_20": 12.0,
+    "checklist_20": 4.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 59,
+  "market": {
+   "blade_index": 7,
+   "gate_state": "GREEN",
+   "vix": 19.940000534057617,
+   "vix_ratio": 0.9504290261739513
+  },
+  "jev": {
+   "family": "A_liquidity_panic",
+   "p_terminal": 0.0,
+   "conf": 0.27,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.35,
+   "catch_prior": null,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "274b4838657e5251",
   "realized": {},
   "settled": false
  }

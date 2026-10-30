@@ -1,24 +1,31 @@
 {
- "asof": "2026-10-30T09:53:34+07:00",
+ "asof": "2026-10-31T00:11:10+07:00",
  "source": "yahoo-calendar",
  "caliber": "未来 5 个交易日窗（远期日历大票缺席是实测事实，不做远期）",
  "days": [
-  "2026-10-30",
   "2026-11-02",
   "2026-11-03",
   "2026-11-04",
-  "2026-11-05"
+  "2026-11-05",
+  "2026-11-06"
  ],
  "days_failed": [],
  "truncated_days": [
-  "2026-10-30",
   "2026-11-02",
   "2026-11-03",
   "2026-11-04",
-  "2026-11-05"
+  "2026-11-05",
+  "2026-11-06"
  ],
- "watchlist_n": 19,
+ "watchlist_n": 29,
  "marks": [
+  {
+   "ticker": "APTV",
+   "date": "2026-11-03",
+   "when": "BMO",
+   "eps_est": 1.32,
+   "date_confirmed": true
+  },
   {
    "ticker": "ALB",
    "date": "2026-11-04",
@@ -31,6 +38,20 @@
    "date": "2026-11-04",
    "when": "AMC",
    "eps_est": 4.03,
+   "date_confirmed": true
+  },
+  {
+   "ticker": "ARM",
+   "date": "2026-11-04",
+   "when": "AMC",
+   "eps_est": 0.48,
+   "date_confirmed": true
+  },
+  {
+   "ticker": "COHR",
+   "date": "2026-11-04",
+   "when": "AMC",
+   "eps_est": 1.97,
    "date_confirmed": true
   },
   {
@@ -48,10 +69,10 @@
    "date_confirmed": true
   },
   {
-   "ticker": "IOVA",
-   "date": "2026-11-05",
+   "ticker": "CHTR",
+   "date": "2026-11-06",
    "when": "BMO",
-   "eps_est": -0.09,
+   "eps_est": 8.94,
    "date_confirmed": true
   }
  ]
