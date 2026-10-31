@@ -647,9 +647,16 @@
   "events": []
  },
  "OJ_F": {
-  "state": "NORMAL",
-  "since": "2026-09-22",
-  "events": []
+  "state": "KNIFE_FALLING",
+  "since": "2026-10-31",
+  "events": [
+   {
+    "d": "2026-10-31",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -51.86% / 10日 -18.42%"
+   }
+  ]
  },
  "XLF": {
   "state": "NORMAL",

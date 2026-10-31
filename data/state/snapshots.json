@@ -4678,6 +4678,59 @@
   "settled": false
  },
  {
+  "id": "S-FALL:OJ_F:2026-10-31",
+  "kind": "S-FALL",
+  "symbol": "OJ_F",
+  "date": "2026-10-31",
+  "trigger_px": 1.153499984741211,
+  "stop_price": 1.1525,
+  "features": {
+   "dd52w": -51.86,
+   "dd250": -51.86,
+   "ret10": -18.42,
+   "rsi14": 17.0,
+   "vol_ratio": 0.28,
+   "close_pos": 0.01,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": false,
+    "gate_ok": true,
+    "rsi_divergence": false
+   },
+   "checklist_n": 1,
+   "tier_time": "-",
+   "days_from_peak": 541,
+   "stop_price": 1.1525,
+   "last_date": "2026-10-30",
+   "cls": "futures",
+   "tier": "T1F",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 23.9,
+    "capitulation_20": 0.0,
+    "checklist_20": 4.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 48,
+  "market": {
+   "blade_index": 8,
+   "gate_state": "GREEN",
+   "vix": 19.420000076293945,
+   "vix_ratio": 0.9345524270735187
+  },
+  "jev": null,
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "c7129b4ef6fb8c75",
+  "realized": {},
+  "settled": false
+ },
+ {
   "id": "S-FALL:SI_F:2026-10-31",
   "kind": "S-FALL",
   "symbol": "SI_F",
