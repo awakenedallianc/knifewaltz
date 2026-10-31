@@ -50,7 +50,7 @@
  },
  "APP": {
   "veto": false,
-  "p": 0.04,
+  "p": 0.03,
   "date": "2026-10-31",
   "clear_streak": 0,
   "top_headline": "Is Trending Stock AppLovin Corporation (APP) a Buy Now?"
@@ -134,14 +134,14 @@
  },
  "SI_F": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.02,
   "date": "2026-10-31",
   "clear_streak": 0,
   "top_headline": "Silver slips below $50, hits 11-month low; should investors buy the dip? - Moneycontrol.com"
  },
  "UNG": {
   "veto": false,
-  "p": 0.11,
+  "p": 0.01,
   "date": "2026-10-31",
   "clear_streak": 0,
   "top_headline": "[Photo] Kim Yeong-ung bows head - Chosunbiz"
@@ -169,7 +169,7 @@
  },
  "LX": {
   "veto": false,
-  "p": 0.03,
+  "p": 0.05,
   "date": "2026-10-31",
   "clear_streak": 0,
   "top_headline": "Super Bowl LX - NBC Sports"
@@ -183,7 +183,7 @@
  },
  "QFIN": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.05,
   "date": "2026-10-31",
   "clear_streak": 0,
   "top_headline": "QFIN Investors Have Opportunity to Lead Qfin Holdings, Inc. Securities Fraud Lawsuit with SBS Law - The Daily Tribune News"
@@ -204,7 +204,7 @@
  },
  "XPEV": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-31",
   "clear_streak": 0,
   "top_headline": "XPENG (NYSE:XPEV) Hits New 1-Year Low - Here's Why - MarketBeat"
@@ -274,7 +274,7 @@
  },
  "KC": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-31",
   "clear_streak": 0,
   "top_headline": "Tyreek Hill Next Team Market Still Points to KC Return - Sports Illustrated"
@@ -351,10 +351,10 @@
  },
  "1024_HK": {
   "veto": false,
-  "p": 0.0,
-  "date": "2026-10-30",
+  "p": 0.02,
+  "date": "2026-10-31",
   "clear_streak": 0,
-  "top_headline": "Paying Subscribers Hit a Record High of 19.83 Million! - Yahoo Finance UK"
+  "top_headline": "Tencent Holdings Limited (HTCD.SI) Seasonal returns chart - Yahoo Finance - Yahoo Finance Singapore"
  },
  "YMM": {
   "veto": false,
@@ -470,7 +470,7 @@
  },
  "COHR": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-10-31",
   "clear_streak": 0,
   "top_headline": "Applied Optoelectronics Plunges 15%, Coherent Tumbles 13% as Hyperscaler Spending Fears Hit AI Optics Stocks; Lumentum and Marvell Sink 10%"
@@ -519,7 +519,7 @@
  },
  "RDDT": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.0,
   "date": "2026-10-31",
   "clear_streak": 0,
   "top_headline": "Spouse Pays Off Wife’s Hidden Debt, But She Builds It Back To Nearly $20K And Says They ‘Overreacted.’ Then She Asks For Divorce"
@@ -540,7 +540,7 @@
  },
  "INTC": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-10-31",
   "clear_streak": 0,
   "top_headline": "Dell Sinks 11% as Intel’s Warning on PC Slump and Memory Shortage Hits Hardware Stocks; HP Tumbles 9%, Hewlett Packard Enterprise and Super Micro Fall 7%"
@@ -551,5 +551,12 @@
   "date": "2026-10-31",
   "clear_streak": 0,
   "top_headline": "Sandisk Sinks 12% Despite Earnings Beat and 8-for-1 Split as Memory Stocks Slide: “It’s Absurd”"
+ },
+ "GDX": {
+  "veto": false,
+  "p": 0.07,
+  "date": "2026-10-31",
+  "clear_streak": 0,
+  "top_headline": "Silver Has Lost More Than Half Its Value Since January"
  }
 }
