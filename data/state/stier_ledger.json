@@ -1,275 +1,13 @@
 {
  "version": "s1",
- "month": "2026-10",
+ "month": "2026-11",
  "max": 5,
  "used": 0,
  "entries": [],
  "eval_log": {
-  "2026-10-01": {
+  "2026-11-01": {
    "windows": 0,
    "blocked": {},
-   "qualified": 0,
-   "granted": 0,
-   "candidate": 0,
-   "jev_unavailable": false
-  },
-  "2026-10-02": {
-   "windows": 0,
-   "blocked": {},
-   "qualified": 0,
-   "granted": 0,
-   "candidate": 0,
-   "jev_unavailable": false
-  },
-  "2026-10-03": {
-   "windows": 0,
-   "blocked": {},
-   "qualified": 0,
-   "granted": 0,
-   "candidate": 0,
-   "jev_unavailable": false
-  },
-  "2026-10-04": {
-   "windows": 0,
-   "blocked": {},
-   "qualified": 0,
-   "granted": 0,
-   "candidate": 0,
-   "jev_unavailable": false
-  },
-  "2026-10-05": {
-   "windows": 0,
-   "blocked": {},
-   "qualified": 0,
-   "granted": 0,
-   "candidate": 0,
-   "jev_unavailable": false
-  },
-  "2026-10-06": {
-   "windows": 0,
-   "blocked": {},
-   "qualified": 0,
-   "granted": 0,
-   "candidate": 0,
-   "jev_unavailable": false
-  },
-  "2026-10-07": {
-   "windows": 1,
-   "blocked": {
-    "H2": 1
-   },
-   "qualified": 0,
-   "granted": 0,
-   "candidate": 0,
-   "jev_unavailable": false
-  },
-  "2026-10-08": {
-   "windows": 1,
-   "blocked": {
-    "H2": 1
-   },
-   "qualified": 0,
-   "granted": 0,
-   "candidate": 0,
-   "jev_unavailable": false
-  },
-  "2026-10-09": {
-   "windows": 1,
-   "blocked": {
-    "H2": 1
-   },
-   "qualified": 0,
-   "granted": 0,
-   "candidate": 0,
-   "jev_unavailable": false
-  },
-  "2026-10-10": {
-   "windows": 1,
-   "blocked": {
-    "H2": 1
-   },
-   "qualified": 0,
-   "granted": 0,
-   "candidate": 0,
-   "jev_unavailable": false
-  },
-  "2026-10-11": {
-   "windows": 0,
-   "blocked": {},
-   "qualified": 0,
-   "granted": 0,
-   "candidate": 0,
-   "jev_unavailable": false
-  },
-  "2026-10-12": {
-   "windows": 0,
-   "blocked": {},
-   "qualified": 0,
-   "granted": 0,
-   "candidate": 0,
-   "jev_unavailable": false
-  },
-  "2026-10-13": {
-   "windows": 1,
-   "blocked": {
-    "H2": 1
-   },
-   "qualified": 0,
-   "granted": 0,
-   "candidate": 0,
-   "jev_unavailable": false
-  },
-  "2026-10-14": {
-   "windows": 1,
-   "blocked": {
-    "H2": 1
-   },
-   "qualified": 0,
-   "granted": 0,
-   "candidate": 0,
-   "jev_unavailable": false
-  },
-  "2026-10-15": {
-   "windows": 0,
-   "blocked": {},
-   "qualified": 0,
-   "granted": 0,
-   "candidate": 0,
-   "jev_unavailable": false
-  },
-  "2026-10-16": {
-   "windows": 0,
-   "blocked": {},
-   "qualified": 0,
-   "granted": 0,
-   "candidate": 0,
-   "jev_unavailable": false
-  },
-  "2026-10-17": {
-   "windows": 0,
-   "blocked": {},
-   "qualified": 0,
-   "granted": 0,
-   "candidate": 0,
-   "jev_unavailable": false
-  },
-  "2026-10-18": {
-   "windows": 0,
-   "blocked": {},
-   "qualified": 0,
-   "granted": 0,
-   "candidate": 0,
-   "jev_unavailable": false
-  },
-  "2026-10-19": {
-   "windows": 0,
-   "blocked": {},
-   "qualified": 0,
-   "granted": 0,
-   "candidate": 0,
-   "jev_unavailable": false
-  },
-  "2026-10-20": {
-   "windows": 1,
-   "blocked": {
-    "H2": 1
-   },
-   "qualified": 0,
-   "granted": 0,
-   "candidate": 0,
-   "jev_unavailable": false
-  },
-  "2026-10-21": {
-   "windows": 0,
-   "blocked": {},
-   "qualified": 0,
-   "granted": 0,
-   "candidate": 0,
-   "jev_unavailable": false
-  },
-  "2026-10-22": {
-   "windows": 1,
-   "blocked": {
-    "H2": 1
-   },
-   "qualified": 0,
-   "granted": 0,
-   "candidate": 0,
-   "jev_unavailable": false
-  },
-  "2026-10-23": {
-   "windows": 0,
-   "blocked": {},
-   "qualified": 0,
-   "granted": 0,
-   "candidate": 0,
-   "jev_unavailable": false
-  },
-  "2026-10-24": {
-   "windows": 0,
-   "blocked": {},
-   "qualified": 0,
-   "granted": 0,
-   "candidate": 0,
-   "jev_unavailable": false
-  },
-  "2026-10-25": {
-   "windows": 0,
-   "blocked": {},
-   "qualified": 0,
-   "granted": 0,
-   "candidate": 0,
-   "jev_unavailable": false
-  },
-  "2026-10-26": {
-   "windows": 0,
-   "blocked": {},
-   "qualified": 0,
-   "granted": 0,
-   "candidate": 0,
-   "jev_unavailable": false
-  },
-  "2026-10-27": {
-   "windows": 3,
-   "blocked": {
-    "H2": 3
-   },
-   "qualified": 0,
-   "granted": 0,
-   "candidate": 0,
-   "jev_unavailable": false
-  },
-  "2026-10-28": {
-   "windows": 0,
-   "blocked": {},
-   "qualified": 0,
-   "granted": 0,
-   "candidate": 0,
-   "jev_unavailable": false
-  },
-  "2026-10-29": {
-   "windows": 2,
-   "blocked": {
-    "H2": 2
-   },
-   "qualified": 0,
-   "granted": 0,
-   "candidate": 0,
-   "jev_unavailable": false
-  },
-  "2026-10-30": {
-   "windows": 0,
-   "blocked": {},
-   "qualified": 0,
-   "granted": 0,
-   "candidate": 0,
-   "jev_unavailable": false
-  },
-  "2026-10-31": {
-   "windows": 2,
-   "blocked": {
-    "H2": 2
-   },
    "qualified": 0,
    "granted": 0,
    "candidate": 0,
@@ -357,6 +95,284 @@
      "windows": 1,
      "blocked": {
       "H2": 1
+     },
+     "qualified": 0,
+     "granted": 0,
+     "candidate": 0,
+     "jev_unavailable": false
+    }
+   }
+  },
+  {
+   "month": "2026-10",
+   "max": 5,
+   "used": 0,
+   "entries": [],
+   "eval_log": {
+    "2026-10-01": {
+     "windows": 0,
+     "blocked": {},
+     "qualified": 0,
+     "granted": 0,
+     "candidate": 0,
+     "jev_unavailable": false
+    },
+    "2026-10-02": {
+     "windows": 0,
+     "blocked": {},
+     "qualified": 0,
+     "granted": 0,
+     "candidate": 0,
+     "jev_unavailable": false
+    },
+    "2026-10-03": {
+     "windows": 0,
+     "blocked": {},
+     "qualified": 0,
+     "granted": 0,
+     "candidate": 0,
+     "jev_unavailable": false
+    },
+    "2026-10-04": {
+     "windows": 0,
+     "blocked": {},
+     "qualified": 0,
+     "granted": 0,
+     "candidate": 0,
+     "jev_unavailable": false
+    },
+    "2026-10-05": {
+     "windows": 0,
+     "blocked": {},
+     "qualified": 0,
+     "granted": 0,
+     "candidate": 0,
+     "jev_unavailable": false
+    },
+    "2026-10-06": {
+     "windows": 0,
+     "blocked": {},
+     "qualified": 0,
+     "granted": 0,
+     "candidate": 0,
+     "jev_unavailable": false
+    },
+    "2026-10-07": {
+     "windows": 1,
+     "blocked": {
+      "H2": 1
+     },
+     "qualified": 0,
+     "granted": 0,
+     "candidate": 0,
+     "jev_unavailable": false
+    },
+    "2026-10-08": {
+     "windows": 1,
+     "blocked": {
+      "H2": 1
+     },
+     "qualified": 0,
+     "granted": 0,
+     "candidate": 0,
+     "jev_unavailable": false
+    },
+    "2026-10-09": {
+     "windows": 1,
+     "blocked": {
+      "H2": 1
+     },
+     "qualified": 0,
+     "granted": 0,
+     "candidate": 0,
+     "jev_unavailable": false
+    },
+    "2026-10-10": {
+     "windows": 1,
+     "blocked": {
+      "H2": 1
+     },
+     "qualified": 0,
+     "granted": 0,
+     "candidate": 0,
+     "jev_unavailable": false
+    },
+    "2026-10-11": {
+     "windows": 0,
+     "blocked": {},
+     "qualified": 0,
+     "granted": 0,
+     "candidate": 0,
+     "jev_unavailable": false
+    },
+    "2026-10-12": {
+     "windows": 0,
+     "blocked": {},
+     "qualified": 0,
+     "granted": 0,
+     "candidate": 0,
+     "jev_unavailable": false
+    },
+    "2026-10-13": {
+     "windows": 1,
+     "blocked": {
+      "H2": 1
+     },
+     "qualified": 0,
+     "granted": 0,
+     "candidate": 0,
+     "jev_unavailable": false
+    },
+    "2026-10-14": {
+     "windows": 1,
+     "blocked": {
+      "H2": 1
+     },
+     "qualified": 0,
+     "granted": 0,
+     "candidate": 0,
+     "jev_unavailable": false
+    },
+    "2026-10-15": {
+     "windows": 0,
+     "blocked": {},
+     "qualified": 0,
+     "granted": 0,
+     "candidate": 0,
+     "jev_unavailable": false
+    },
+    "2026-10-16": {
+     "windows": 0,
+     "blocked": {},
+     "qualified": 0,
+     "granted": 0,
+     "candidate": 0,
+     "jev_unavailable": false
+    },
+    "2026-10-17": {
+     "windows": 0,
+     "blocked": {},
+     "qualified": 0,
+     "granted": 0,
+     "candidate": 0,
+     "jev_unavailable": false
+    },
+    "2026-10-18": {
+     "windows": 0,
+     "blocked": {},
+     "qualified": 0,
+     "granted": 0,
+     "candidate": 0,
+     "jev_unavailable": false
+    },
+    "2026-10-19": {
+     "windows": 0,
+     "blocked": {},
+     "qualified": 0,
+     "granted": 0,
+     "candidate": 0,
+     "jev_unavailable": false
+    },
+    "2026-10-20": {
+     "windows": 1,
+     "blocked": {
+      "H2": 1
+     },
+     "qualified": 0,
+     "granted": 0,
+     "candidate": 0,
+     "jev_unavailable": false
+    },
+    "2026-10-21": {
+     "windows": 0,
+     "blocked": {},
+     "qualified": 0,
+     "granted": 0,
+     "candidate": 0,
+     "jev_unavailable": false
+    },
+    "2026-10-22": {
+     "windows": 1,
+     "blocked": {
+      "H2": 1
+     },
+     "qualified": 0,
+     "granted": 0,
+     "candidate": 0,
+     "jev_unavailable": false
+    },
+    "2026-10-23": {
+     "windows": 0,
+     "blocked": {},
+     "qualified": 0,
+     "granted": 0,
+     "candidate": 0,
+     "jev_unavailable": false
+    },
+    "2026-10-24": {
+     "windows": 0,
+     "blocked": {},
+     "qualified": 0,
+     "granted": 0,
+     "candidate": 0,
+     "jev_unavailable": false
+    },
+    "2026-10-25": {
+     "windows": 0,
+     "blocked": {},
+     "qualified": 0,
+     "granted": 0,
+     "candidate": 0,
+     "jev_unavailable": false
+    },
+    "2026-10-26": {
+     "windows": 0,
+     "blocked": {},
+     "qualified": 0,
+     "granted": 0,
+     "candidate": 0,
+     "jev_unavailable": false
+    },
+    "2026-10-27": {
+     "windows": 3,
+     "blocked": {
+      "H2": 3
+     },
+     "qualified": 0,
+     "granted": 0,
+     "candidate": 0,
+     "jev_unavailable": false
+    },
+    "2026-10-28": {
+     "windows": 0,
+     "blocked": {},
+     "qualified": 0,
+     "granted": 0,
+     "candidate": 0,
+     "jev_unavailable": false
+    },
+    "2026-10-29": {
+     "windows": 2,
+     "blocked": {
+      "H2": 2
+     },
+     "qualified": 0,
+     "granted": 0,
+     "candidate": 0,
+     "jev_unavailable": false
+    },
+    "2026-10-30": {
+     "windows": 0,
+     "blocked": {},
+     "qualified": 0,
+     "granted": 0,
+     "candidate": 0,
+     "jev_unavailable": false
+    },
+    "2026-10-31": {
+     "windows": 2,
+     "blocked": {
+      "H2": 2
      },
      "qualified": 0,
      "granted": 0,

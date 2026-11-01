@@ -647,14 +647,20 @@
   "events": []
  },
  "OJ_F": {
-  "state": "KNIFE_FALLING",
-  "since": "2026-10-31",
+  "state": "STABILIZING",
+  "since": "2026-11-01",
   "events": [
    {
     "d": "2026-10-31",
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -51.86% / 10日 -18.42%"
+   },
+   {
+    "d": "2026-11-01",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 1/5"
    }
   ]
  },
