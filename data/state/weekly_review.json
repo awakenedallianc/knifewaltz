@@ -1,12 +1,38 @@
 {
- "week_of": "2026-10-25",
- "generated_at": "2026-10-25T13:51:46+07:00",
+ "week_of": "2026-11-01",
+ "generated_at": "2026-11-01T15:09:55+07:00",
  "new_signals": [
   {
    "kind": "S-CATCH",
-   "symbol": "INSM",
-   "date": "2026-10-20",
+   "symbol": "DIDIY",
+   "date": "2026-10-27",
    "score": 50,
+   "tier_time": "-",
+   "fwd5_pct": null,
+   "fwd20_pct": null,
+   "fwd60_pct": null,
+   "atier_pct": null,
+   "atier_exit": null,
+   "settled": false
+  },
+  {
+   "kind": "S-CATCH",
+   "symbol": "GLW",
+   "date": "2026-10-27",
+   "score": 52,
+   "tier_time": "DEAD_ZONE",
+   "fwd5_pct": null,
+   "fwd20_pct": null,
+   "fwd60_pct": null,
+   "atier_pct": null,
+   "atier_exit": null,
+   "settled": false
+  },
+  {
+   "kind": "S-CATCH",
+   "symbol": "URA",
+   "date": "2026-10-27",
+   "score": 43,
    "tier_time": "DEAD_ZONE",
    "fwd5_pct": null,
    "fwd20_pct": null,
@@ -17,10 +43,10 @@
   },
   {
    "kind": "S-FALL",
-   "symbol": "DIDIY",
-   "date": "2026-10-20",
-   "score": 47,
-   "tier_time": "-",
+   "symbol": "IQ",
+   "date": "2026-10-27",
+   "score": 52,
+   "tier_time": "B",
    "fwd5_pct": null,
    "fwd20_pct": null,
    "fwd60_pct": null,
@@ -29,10 +55,10 @@
    "settled": false
   },
   {
-   "kind": "S-FALL",
-   "symbol": "MSTR",
-   "date": "2026-10-20",
-   "score": 52,
+   "kind": "S-CATCH",
+   "symbol": "COPX",
+   "date": "2026-10-29",
+   "score": 33,
    "tier_time": "-",
    "fwd5_pct": null,
    "fwd20_pct": null,
@@ -43,8 +69,73 @@
   },
   {
    "kind": "S-CATCH",
-   "symbol": "WDC",
-   "date": "2026-10-22",
+   "symbol": "GDXJ",
+   "date": "2026-10-29",
+   "score": 39,
+   "tier_time": "DEAD_ZONE",
+   "fwd5_pct": null,
+   "fwd20_pct": null,
+   "fwd60_pct": null,
+   "atier_pct": null,
+   "atier_exit": null,
+   "settled": false
+  },
+  {
+   "kind": "S-FALL",
+   "symbol": "ALNY",
+   "date": "2026-10-30",
+   "score": 70,
+   "tier_time": "B",
+   "fwd5_pct": null,
+   "fwd20_pct": null,
+   "fwd60_pct": null,
+   "atier_pct": null,
+   "atier_exit": null,
+   "settled": false
+  },
+  {
+   "kind": "S-FALL",
+   "symbol": "RDDT",
+   "date": "2026-10-30",
+   "score": 52,
+   "tier_time": "-",
+   "fwd5_pct": null,
+   "fwd20_pct": null,
+   "fwd60_pct": null,
+   "atier_pct": null,
+   "atier_exit": null,
+   "settled": false
+  },
+  {
+   "kind": "S-FALL",
+   "symbol": "VNET",
+   "date": "2026-10-30",
+   "score": 60,
+   "tier_time": "B",
+   "fwd5_pct": null,
+   "fwd20_pct": null,
+   "fwd60_pct": null,
+   "atier_pct": null,
+   "atier_exit": null,
+   "settled": false
+  },
+  {
+   "kind": "S-CATCH",
+   "symbol": "ARM",
+   "date": "2026-10-31",
+   "score": 52,
+   "tier_time": "DEAD_ZONE",
+   "fwd5_pct": null,
+   "fwd20_pct": null,
+   "fwd60_pct": null,
+   "atier_pct": null,
+   "atier_exit": null,
+   "settled": false
+  },
+  {
+   "kind": "S-CATCH",
+   "symbol": "COHR",
+   "date": "2026-10-31",
    "score": 51,
    "tier_time": "DEAD_ZONE",
    "fwd5_pct": null,
@@ -56,9 +147,22 @@
   },
   {
    "kind": "S-FALL",
-   "symbol": "ARM",
-   "date": "2026-10-22",
-   "score": 54,
+   "symbol": "COIN",
+   "date": "2026-10-31",
+   "score": 52,
+   "tier_time": "-",
+   "fwd5_pct": null,
+   "fwd20_pct": null,
+   "fwd60_pct": null,
+   "atier_pct": null,
+   "atier_exit": null,
+   "settled": false
+  },
+  {
+   "kind": "S-FALL",
+   "symbol": "GDX",
+   "date": "2026-10-31",
+   "score": 35,
    "tier_time": "DEAD_ZONE",
    "fwd5_pct": null,
    "fwd20_pct": null,
@@ -69,8 +173,8 @@
   },
   {
    "kind": "S-FALL",
-   "symbol": "COHR",
-   "date": "2026-10-22",
+   "symbol": "INTC",
+   "date": "2026-10-31",
    "score": 59,
    "tier_time": "DEAD_ZONE",
    "fwd5_pct": null,
@@ -82,9 +186,9 @@
   },
   {
    "kind": "S-FALL",
-   "symbol": "COPX",
-   "date": "2026-10-22",
-   "score": 29,
+   "symbol": "OJ_F",
+   "date": "2026-10-31",
+   "score": 48,
    "tier_time": "-",
    "fwd5_pct": null,
    "fwd20_pct": null,
@@ -95,88 +199,10 @@
   },
   {
    "kind": "S-FALL",
-   "symbol": "FLEX",
-   "date": "2026-10-22",
-   "score": 55,
+   "symbol": "SI_F",
+   "date": "2026-10-31",
+   "score": 59,
    "tier_time": "DEAD_ZONE",
-   "fwd5_pct": null,
-   "fwd20_pct": null,
-   "fwd60_pct": null,
-   "atier_pct": null,
-   "atier_exit": null,
-   "settled": false
-  },
-  {
-   "kind": "S-FALL",
-   "symbol": "GLW",
-   "date": "2026-10-22",
-   "score": 52,
-   "tier_time": "DEAD_ZONE",
-   "fwd5_pct": null,
-   "fwd20_pct": null,
-   "fwd60_pct": null,
-   "atier_pct": null,
-   "atier_exit": null,
-   "settled": false
-  },
-  {
-   "kind": "S-FALL",
-   "symbol": "KLAC",
-   "date": "2026-10-22",
-   "score": 51,
-   "tier_time": "DEAD_ZONE",
-   "fwd5_pct": null,
-   "fwd20_pct": null,
-   "fwd60_pct": null,
-   "atier_pct": null,
-   "atier_exit": null,
-   "settled": false
-  },
-  {
-   "kind": "S-FALL",
-   "symbol": "NG_F",
-   "date": "2026-10-22",
-   "score": 50,
-   "tier_time": "-",
-   "fwd5_pct": null,
-   "fwd20_pct": null,
-   "fwd60_pct": null,
-   "atier_pct": null,
-   "atier_exit": null,
-   "settled": false
-  },
-  {
-   "kind": "S-FALL",
-   "symbol": "GDXJ",
-   "date": "2026-10-23",
-   "score": 36,
-   "tier_time": "DEAD_ZONE",
-   "fwd5_pct": null,
-   "fwd20_pct": null,
-   "fwd60_pct": null,
-   "atier_pct": null,
-   "atier_exit": null,
-   "settled": false
-  },
-  {
-   "kind": "S-FALL",
-   "symbol": "SLV",
-   "date": "2026-10-23",
-   "score": 44,
-   "tier_time": "DEAD_ZONE",
-   "fwd5_pct": null,
-   "fwd20_pct": null,
-   "fwd60_pct": null,
-   "atier_pct": null,
-   "atier_exit": null,
-   "settled": false
-  },
-  {
-   "kind": "S-FALL",
-   "symbol": "UNG",
-   "date": "2026-10-23",
-   "score": 41,
-   "tier_time": "-",
    "fwd5_pct": null,
    "fwd20_pct": null,
    "fwd60_pct": null,
@@ -195,15 +221,15 @@
    "note": "收集中 0/30"
   },
   "J2": {
-   "n": 2815,
-   "brier": 0.1998,
-   "baseline": 0.1591,
+   "n": 3498,
+   "brier": 0.1986,
+   "baseline": 0.1608,
    "note": null
   },
   "J3": {
-   "n": 973,
-   "brier": 0.1305,
-   "baseline": 0.0221,
+   "n": 1300,
+   "brier": 0.1711,
+   "baseline": 0.0334,
    "note": null
   },
   "J4": {
@@ -213,19 +239,19 @@
    "note": "收集中 0/30"
   },
   "J5": {
-   "n": 761,
-   "brier": 0.6665,
-   "baseline": 0.0498,
+   "n": 877,
+   "brier": 0.6747,
+   "baseline": 0.0497,
    "note": null
   }
  },
  "calibration_delta": {
   "brier": {
    "J1": null,
-   "J2": 0.001,
-   "J3": -0.0123,
+   "J2": -0.0012,
+   "J3": 0.0406,
    "J4": null,
-   "J5": 0.0143
+   "J5": 0.0082
   },
   "note": "对上一期复盘的 Brier 变化；任一侧未成样（n<30）则 null"
  },
@@ -246,7 +272,7 @@
    "id": "RL-3",
    "rule": "快照不可篡改：snapshots append-only，settle 只填 realized/settled；feat",
    "pass": true,
-   "detail": "features_sha 复核 42 条"
+   "detail": "features_sha 复核 58 条"
   },
   {
    "id": "RL-4",
@@ -276,7 +302,7 @@
    "id": "RL-8",
    "rule": "台账与快照永不删除：标的移出监控池后其历史快照仍参与统计（防幸存者偏差）；退市标的结算用最后可得价并标注",
    "pass": true,
-   "detail": "快照全量 42 条（上期 28）"
+   "detail": "快照全量 58 条（上期 42）"
   },
   {
    "id": "RL-9",
@@ -312,7 +338,7 @@
  "red_lines_pass": false,
  "params": {
   "registry_version": "v1.2-preregistered",
-  "asof": "2026-10-25",
+  "asof": "2026-11-01",
   "rows": [
    {
     "param": "vix_gate.primary",
@@ -986,7 +1012,7 @@
  },
  "stier": {
   "month": {
-   "month": "2026-10",
+   "month": "2026-11",
    "max": 5,
    "used": 0
   },
@@ -1000,7 +1026,7 @@
   "attribution_counts": {},
   "note": "GRANTED 与 CANDIDATE 分列；假想回放（hypothetical）永不入内（SR-3）"
  },
- "snapshots_total": 42,
+ "snapshots_total": 58,
  "footnotes": [
   "反事实归因不作换参依据（RL-9）；换参唯一通道 = 季度 walk-forward + params_history 留痕",
   "n<30 一律只显示『收集中』，不显示命中率与 Brier（RL-4）",
