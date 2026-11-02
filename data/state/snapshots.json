@@ -4795,5 +4795,137 @@
   "features_sha": "274b4838657e5251",
   "realized": {},
   "settled": false
+ },
+ {
+  "id": "S-FALL:CIEN:2026-11-03",
+  "kind": "S-FALL",
+  "symbol": "CIEN",
+  "date": "2026-11-03",
+  "trigger_px": 284.2749938964844,
+  "stop_price": 282.925,
+  "features": {
+   "dd52w": -54.66,
+   "dd250": -54.66,
+   "ret10": -17.41,
+   "rsi14": 28.0,
+   "vol_ratio": 1.14,
+   "close_pos": 0.04,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": true,
+    "gate_ok": true,
+    "rsi_divergence": false
+   },
+   "checklist_n": 2,
+   "tier_time": "DEAD_ZONE",
+   "days_from_peak": 106,
+   "stop_price": 282.925,
+   "last_date": "2026-11-02",
+   "cls": "equity_single",
+   "tier": "T2",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 24.6,
+    "capitulation_20": 0.0,
+    "checklist_20": 8.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 53,
+  "market": {
+   "blade_index": 8,
+   "gate_state": "GREEN",
+   "vix": 21.459999084472656,
+   "vix_ratio": 0.9898523423613328
+  },
+  "jev": {
+   "family": "unclear",
+   "p_terminal": 0.0,
+   "conf": 0.56,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.5,
+   "catch_prior": null,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "f7c340547e5adcaf",
+  "realized": {},
+  "settled": false
+ },
+ {
+  "id": "S-FALL:SNDK:2026-11-03",
+  "kind": "S-FALL",
+  "symbol": "SNDK",
+  "date": "2026-11-03",
+  "trigger_px": 1072.7099609375,
+  "stop_price": 1068.6949,
+  "features": {
+   "dd52w": -54.06,
+   "dd250": -54.06,
+   "ret10": -21.76,
+   "rsi14": 27.6,
+   "vol_ratio": 1.06,
+   "close_pos": 0.04,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": false,
+    "gate_ok": true,
+    "rsi_divergence": true
+   },
+   "checklist_n": 2,
+   "tier_time": "DEAD_ZONE",
+   "days_from_peak": 90,
+   "stop_price": 1068.6949,
+   "last_date": "2026-11-02",
+   "cls": "equity_single",
+   "tier": "T2",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 27.1,
+    "capitulation_20": 0.0,
+    "checklist_20": 8.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 55,
+  "market": {
+   "blade_index": 8,
+   "gate_state": "GREEN",
+   "vix": 21.459999084472656,
+   "vix_ratio": 0.9898523423613328
+  },
+  "jev": {
+   "family": "B_fundamental_repricing",
+   "p_terminal": 0.0,
+   "conf": 0.43,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.403,
+   "catch_prior": null,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "cc3129e9a3fee031",
+  "realized": {},
+  "settled": false
  }
 ]
