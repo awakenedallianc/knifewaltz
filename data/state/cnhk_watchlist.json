@@ -17,15 +17,6 @@
    "asof": "2026-10-30"
   },
   {
-   "symbol": "0960.HK",
-   "key": "0960_HK",
-   "name": "Longfor Group Holdings Ltd",
-   "pool": "CN_HK",
-   "dd250": -56.9,
-   "px": 4.534999847412109,
-   "asof": "2026-10-30"
-  },
-  {
    "symbol": "NIO",
    "key": "NIO",
    "name": "蔚来",
@@ -33,6 +24,24 @@
    "dd250": -56.7,
    "px": 3.2100000381469727,
    "asof": "2026-10-30"
+  },
+  {
+   "symbol": "0960.HK",
+   "key": "0960_HK",
+   "name": "Longfor Group Holdings Ltd",
+   "pool": "CN_HK",
+   "dd250": -56.4,
+   "px": 4.59499979019165,
+   "asof": "2026-11-02"
+  },
+  {
+   "symbol": "0968.HK",
+   "key": "0968_HK",
+   "name": "Xinyi Solar Holdings Ltd",
+   "pool": "CN_HK",
+   "dd250": -54.0,
+   "px": 1.840000033378601,
+   "asof": "2026-11-02"
   },
   {
    "symbol": "GDS",
@@ -44,13 +53,13 @@
    "asof": "2026-10-30"
   },
   {
-   "symbol": "0968.HK",
-   "key": "0968_HK",
-   "name": "Xinyi Solar Holdings Ltd",
+   "symbol": "9888.HK",
+   "key": "9888_HK",
+   "name": "Baidu Inc",
    "pool": "CN_HK",
-   "dd250": -53.5,
-   "px": 1.8600000143051147,
-   "asof": "2026-10-30"
+   "dd250": -53.7,
+   "px": 74.3499984741211,
+   "asof": "2026-11-02"
   },
   {
    "symbol": "BIDU",
@@ -62,40 +71,22 @@
    "asof": "2026-10-30"
   },
   {
-   "symbol": "9888.HK",
-   "key": "9888_HK",
-   "name": "Baidu Inc",
+   "symbol": "1378.HK",
+   "key": "1378_HK",
+   "name": "China Hongqiao Group Ltd",
    "pool": "CN_HK",
-   "dd250": -52.8,
-   "px": 75.69999694824219,
-   "asof": "2026-10-30"
+   "dd250": -51.1,
+   "px": 19.670000076293945,
+   "asof": "2026-11-02"
   },
   {
    "symbol": "0981.HK",
    "key": "0981_HK",
    "name": "Semiconductor Manufacturing International Corp",
    "pool": "CN_HK",
-   "dd250": -51.9,
-   "px": 42.97999954223633,
-   "asof": "2026-10-30"
-  },
-  {
-   "symbol": "1928.HK",
-   "key": "1928_HK",
-   "name": "Sands China Ltd",
-   "pool": "CN_HK",
-   "dd250": -51.2,
-   "px": 10.680000305175781,
-   "asof": "2026-10-30"
-  },
-  {
-   "symbol": "9992.HK",
-   "key": "9992_HK",
-   "name": "Pop Mart International Group Ltd",
-   "pool": "CN_HK",
-   "dd250": -50.0,
-   "px": 134.89999389648438,
-   "asof": "2026-10-30"
+   "dd250": -51.1,
+   "px": 43.7400016784668,
+   "asof": "2026-11-02"
   }
  ]
 }
