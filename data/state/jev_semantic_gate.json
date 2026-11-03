@@ -50,7 +50,7 @@
  },
  "APP": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-03",
   "clear_streak": 0,
   "top_headline": "Boston Pads Expands CRM with AI Automation and New Mobile App for Real Estate Agents - The Courier-Journal"
@@ -141,7 +141,7 @@
  },
  "UNG": {
   "veto": false,
-  "p": 0.04,
+  "p": 0.0,
   "date": "2026-11-03",
   "clear_streak": 0,
   "top_headline": "Soccer teams take aim at PBC titles - University of North Georgia"
@@ -169,7 +169,7 @@
  },
  "LX": {
   "veto": false,
-  "p": 0.13,
+  "p": 0.04,
   "date": "2026-11-03",
   "clear_streak": 0,
   "top_headline": "2027 Kia Telluride Trim Levels and Prices, Gas and Hybrid - The Weekly Driver"
@@ -183,7 +183,7 @@
  },
  "QFIN": {
   "veto": false,
-  "p": 0.03,
+  "p": 0.01,
   "date": "2026-11-03",
   "clear_streak": 0,
   "top_headline": "QFIN INVESTOR ALERT: Bronstein, Gewirtz and Grossman, LLC Announc - The National Law Review"
@@ -204,7 +204,7 @@
  },
  "XPEV": {
   "veto": false,
-  "p": 0.03,
+  "p": 0.0,
   "date": "2026-11-03",
   "clear_streak": 0,
   "top_headline": "XPeng’s 2027 Outlook: Record October Deliveries and a Robotaxi License Change the Story"
@@ -225,7 +225,7 @@
  },
  "TIGR": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-03",
   "clear_streak": 0,
   "top_headline": "SHAREHOLDER ALERT: Bronstein Gewirtz & Grossman, LLC - GlobeNewswire"
@@ -253,7 +253,7 @@
  },
  "VNET": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-03",
   "clear_streak": 0,
   "top_headline": "VNET Group, Inc. Stock 12‑Month Price Target Cut to $11.83, Implies 267% Upside - TradingView"
@@ -274,14 +274,14 @@
  },
  "KC": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-03",
   "clear_streak": 0,
   "top_headline": "Greece Acquires Three KC-390 Aircraft to Enable Midair Refueling of Fighter Jets - GreekReporter.com"
  },
  "BIDU": {
   "veto": false,
-  "p": 0.13,
+  "p": 0.11,
   "date": "2026-11-03",
   "clear_streak": 0,
   "top_headline": "BIDU INVESTOR ALERT: Bronstein, Gewirtz and Grossman, LLC Reminds - The National Law Review"
@@ -547,21 +547,21 @@
  },
  "SNDK": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.02,
   "date": "2026-11-03",
   "clear_streak": 0,
   "top_headline": "The Intel stock collapse is getting worse — and the $3.5 trillion chip rout is spreading"
  },
  "GDX": {
   "veto": false,
-  "p": 0.04,
+  "p": 0.0,
   "date": "2026-11-03",
   "clear_streak": 0,
   "top_headline": "Gold, Silver & GDX: It's Time To Buy - GoldSeek"
  },
  "CIEN": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.02,
   "date": "2026-11-03",
   "clear_streak": 0,
   "top_headline": "Ciena (NYSE:CIEN) Stock Price Down 8.3% - Here's What Happened - MarketBeat"

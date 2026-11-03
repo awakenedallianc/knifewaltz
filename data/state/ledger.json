@@ -752,5 +752,17 @@
   "tier_time": "DEAD_ZONE",
   "status": "open",
   "snapshot_ref": "S-CATCH:COHR:2026-10-31"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "NG=F",
+  "date": "2026-11-03",
+  "entry": 2.880000114440918,
+  "stop": 2.853,
+  "score": 54,
+  "tier_time": "-",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:NG_F:2026-11-03"
  }
 ]

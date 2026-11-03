@@ -4797,6 +4797,113 @@
   "settled": false
  },
  {
+  "id": "S-CATCH:NG_F:2026-11-03",
+  "kind": "S-CATCH",
+  "symbol": "NG_F",
+  "date": "2026-11-03",
+  "trigger_px": 2.880000114440918,
+  "stop_price": 2.853,
+  "features": {
+   "dd52w": -61.39,
+   "dd250": -61.39,
+   "ret10": -7.57,
+   "rsi14": 36.1,
+   "vol_ratio": 0.01,
+   "close_pos": 0.73,
+   "falling": false,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": true,
+    "vol_compress": true,
+    "gate_ok": true,
+    "rsi_divergence": false
+   },
+   "checklist_n": 3,
+   "tier_time": "-",
+   "days_from_peak": 919,
+   "stop_price": 2.853,
+   "last_date": "2026-11-02",
+   "cls": "futures",
+   "tier": "T1F",
+   "state": "CATCH",
+   "score_parts": {
+    "fall_40": 21.5,
+    "capitulation_20": 0.0,
+    "checklist_20": 12.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 54,
+  "market": {
+   "blade_index": 8,
+   "gate_state": "GREEN",
+   "vix": 21.149999618530273,
+   "vix_ratio": 0.9791666317133262
+  },
+  "jev": {
+   "family": "B_fundamental_repricing",
+   "p_terminal": 0.0,
+   "conf": 0.49,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.423,
+   "catch_prior": 0.26,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "919915fef5ec9ef6",
+  "realized": {
+   "ledger_ref": "NG=F@2026-11-03"
+  },
+  "settled": false,
+  "stier": {
+   "rules_version": "s1",
+   "admitted": false,
+   "status": null,
+   "soft_score": 0.456,
+   "hard_pass": {
+    "H1": true,
+    "H2": false,
+    "H3": false,
+    "H4": true,
+    "H5": false,
+    "H6": true,
+    "H7": true,
+    "H8": false
+   },
+   "shadow": {
+    "H9": {
+     "would_block": true,
+     "lr": 1.0,
+     "grade": "线索"
+    },
+    "H10": {
+     "would_block": false,
+     "flip_back_age_days": null
+    },
+    "H11": {
+     "would_block": false,
+     "close_pos": 0.73
+    }
+   },
+   "slice": {
+    "key": "B_fundamental_repricing|GREEN|-|none|futures",
+    "lr": 1.0,
+    "n": 0,
+    "wins": 0,
+    "wilson95": null,
+    "grade": "线索"
+   }
+  }
+ },
+ {
   "id": "S-FALL:CIEN:2026-11-03",
   "kind": "S-FALL",
   "symbol": "CIEN",

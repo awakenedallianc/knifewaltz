@@ -2,7 +2,7 @@
  "settlement": "2026-10-15",
  "staleness_note": "双月·滞后约9工作日",
  "source": "finra",
- "fetched_at": "2026-11-03T03:55:14+07:00",
+ "fetched_at": "2026-11-03T11:03:34+07:00",
  "rows": {
   "ALB": {
    "short": 12251426,
@@ -128,6 +128,11 @@
    "short": 29310548,
    "days_to_cover": 2.63,
    "chg_pct": -3.88
+  },
+  "TWST": {
+   "short": 10207499,
+   "days_to_cover": 2.82,
+   "chg_pct": -3.4
   },
   "WDC": {
    "short": 19446763,
