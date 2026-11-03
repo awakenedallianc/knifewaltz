@@ -2,7 +2,7 @@
  "settlement": "2026-10-15",
  "staleness_note": "双月·滞后约9工作日",
  "source": "finra",
- "fetched_at": "2026-11-03T11:03:34+07:00",
+ "fetched_at": "2026-11-04T01:41:36+07:00",
  "rows": {
   "ALB": {
    "short": 12251426,
@@ -84,15 +84,15 @@
    "days_to_cover": 2.01,
    "chg_pct": -5.05
   },
+  "INSM": {
+   "short": 13477593,
+   "days_to_cover": 4.13,
+   "chg_pct": -2.34
+  },
   "INTC": {
    "short": 148504504,
    "days_to_cover": 1.54,
    "chg_pct": -11.18
-  },
-  "LITE": {
-   "short": 7740045,
-   "days_to_cover": 1.52,
-   "chg_pct": 3.94
   },
   "LULU": {
    "short": 16259943,
@@ -103,11 +103,6 @@
    "short": 301622687,
    "days_to_cover": 2.91,
    "chg_pct": -3.14
-  },
-  "ORCL": {
-   "short": 47521444,
-   "days_to_cover": 1.66,
-   "chg_pct": -1.99
   },
   "PODD": {
    "short": 5629649,
@@ -124,15 +119,15 @@
    "days_to_cover": 1,
    "chg_pct": -2.38
   },
+  "STVN": {
+   "short": 965956,
+   "days_to_cover": 2.99,
+   "chg_pct": -11.48
+  },
   "TSM": {
    "short": 29310548,
    "days_to_cover": 2.63,
    "chg_pct": -3.88
-  },
-  "TWST": {
-   "short": 10207499,
-   "days_to_cover": 2.82,
-   "chg_pct": -3.4
   },
   "WDC": {
    "short": 19446763,

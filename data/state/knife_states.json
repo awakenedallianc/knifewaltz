@@ -438,9 +438,16 @@
   "events": []
  },
  "PL_F": {
-  "state": "NORMAL",
-  "since": "2026-09-21",
-  "events": []
+  "state": "KNIFE_FALLING",
+  "since": "2026-11-04",
+  "events": [
+   {
+    "d": "2026-11-04",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -49.93% / 10日 -12.02%"
+   }
+  ]
  },
  "ZC_F": {
   "state": "NORMAL",

@@ -1,36 +1,21 @@
 {
- "date": "2026-11-03",
+ "date": "2026-11-04",
  "source": "yahoo-screener",
  "promoted": [
   {
-   "symbol": "LITE",
-   "key": "LITE",
-   "name": "Lumentum Holdings Inc.",
+   "symbol": "STVN",
+   "key": "STVN",
+   "name": "Stevanato Group S.p.A.",
    "cls": "equity",
-   "pct_day": -18.59,
-   "mcap": 10134806528,
-   "dd52w": -39.62,
-   "ret10": -17.99,
-   "vol_ratio": 2.93,
-   "days_from_peak": 19,
-   "px": 684.4000244140625,
-   "asof": "2026-11-02",
-   "bars": 251
-  },
-  {
-   "symbol": "TWST",
-   "key": "TWST",
-   "name": "Twist Bioscience Corporation",
-   "cls": "equity",
-   "pct_day": -15.54,
-   "mcap": 10134806528,
-   "dd52w": -37.05,
-   "ret10": -7.68,
-   "vol_ratio": 0.88,
-   "days_from_peak": 20,
-   "px": 129.0399932861328,
-   "asof": "2026-11-02",
-   "bars": 251
+   "pct_day": -25.48,
+   "mcap": 10850353152,
+   "dd52w": -41.16,
+   "ret10": -22.61,
+   "vol_ratio": 8.13,
+   "days_from_peak": 249,
+   "px": 14.711000442504883,
+   "asof": "2026-11-03",
+   "bars": 252
   }
  ],
  "degraded_reason": null
