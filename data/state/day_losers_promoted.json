@@ -7,15 +7,15 @@
    "key": "STVN",
    "name": "Stevanato Group S.p.A.",
    "cls": "equity",
-   "pct_day": -25.48,
-   "mcap": 10850353152,
-   "dd52w": -41.16,
-   "ret10": -22.61,
-   "vol_ratio": 8.13,
+   "pct_day": -28.57,
+   "mcap": 3794529792,
+   "dd52w": -43.6,
+   "ret10": -25.83,
+   "vol_ratio": 12.22,
    "days_from_peak": 249,
-   "px": 14.711000442504883,
+   "px": 14.100000381469727,
    "asof": "2026-11-03",
-   "bars": 252
+   "bars": 251
   }
  ],
  "degraded_reason": null

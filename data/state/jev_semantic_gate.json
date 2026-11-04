@@ -50,7 +50,7 @@
  },
  "APP": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.0,
   "date": "2026-11-04",
   "clear_streak": 0,
   "top_headline": "Down 69% from its high: Is this 84% margin ad-tech stock a bargain?"
@@ -141,14 +141,14 @@
  },
  "UNG": {
   "veto": false,
-  "p": 0.07,
+  "p": 0.02,
   "date": "2026-11-04",
   "clear_streak": 0,
   "top_headline": "UNG Women’s Soccer Team Ties with Clayton State - Vanguard"
  },
  "PL_F": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.4,
   "date": "2026-11-04",
   "clear_streak": 0,
   "top_headline": "What I Am Watching Today – NASDAQ 100, Platinum, EUR/CHF, and AUD/JPY - FXEmpire"
@@ -169,7 +169,7 @@
  },
  "LX": {
   "veto": false,
-  "p": 0.29,
+  "p": 0.01,
   "date": "2026-11-04",
   "clear_streak": 0,
   "top_headline": "Super Bowl LX - NBC Sports"
@@ -267,7 +267,7 @@
  },
  "DIDIY": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-04",
   "clear_streak": 0,
   "top_headline": "US Stock Market - Moomoo"
@@ -337,7 +337,7 @@
  },
  "FINV": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-04",
   "clear_streak": 0,
   "top_headline": "FinVolution Group (FINV) Stock Price Prediction for 2026, 2030-2040 - Traders Union"
@@ -470,7 +470,7 @@
  },
  "COHR": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-04",
   "clear_streak": 0,
   "top_headline": "Should You Buy, Sell, or Hold AAOI Stock Ahead of Q3 Earnings?"
@@ -554,7 +554,7 @@
  },
  "GDX": {
   "veto": false,
-  "p": 0.11,
+  "p": 0.03,
   "date": "2026-11-04",
   "clear_streak": 0,
   "top_headline": "GDX Nov 2026 94.000 put (GDX261104P00094000) stock price, news, quote and history - Yahoo Finance Singapore"

@@ -8,12 +8,12 @@
  "note": "接近资格线观察名单：dd250 在 -50%~-60% 之间（B4 单级筛展示层，不入板不进状态机；ORNAMENT 不列）",
  "rows": [
   {
-   "symbol": "KC",
-   "key": "KC",
-   "name": "金山云",
+   "symbol": "TME",
+   "key": "TME",
+   "name": "腾讯音乐",
    "pool": "CN_ADR",
-   "dd250": -58.1,
-   "px": 7.622099876403809,
+   "dd250": -59.7,
+   "px": 9.039999961853027,
    "asof": "2026-11-03"
   },
   {
@@ -21,8 +21,17 @@
    "key": "0960_HK",
    "name": "Longfor Group Holdings Ltd",
    "pool": "CN_HK",
-   "dd250": -57.6,
-   "px": 4.465000152587891,
+   "dd250": -59.2,
+   "px": 4.295000076293945,
+   "asof": "2026-11-04"
+  },
+  {
+   "symbol": "KC",
+   "key": "KC",
+   "name": "金山云",
+   "pool": "CN_ADR",
+   "dd250": -58.2,
+   "px": 7.610000133514404,
    "asof": "2026-11-03"
   },
   {
@@ -30,17 +39,8 @@
    "key": "NIO",
    "name": "蔚来",
    "pool": "CN_ADR",
-   "dd250": -56.3,
-   "px": 3.188999891281128,
-   "asof": "2026-11-03"
-  },
-  {
-   "symbol": "0968.HK",
-   "key": "0968_HK",
-   "name": "Xinyi Solar Holdings Ltd",
-   "pool": "CN_HK",
-   "dd250": -53.9,
-   "px": 1.8450000286102295,
+   "dd250": -56.2,
+   "px": 3.190000057220459,
    "asof": "2026-11-03"
   },
   {
@@ -48,8 +48,8 @@
    "key": "GDS",
    "name": "万国数据",
    "pool": "CN_ADR",
-   "dd250": -53.4,
-   "px": 22.15999984741211,
+   "dd250": -54.0,
+   "px": 21.860000610351562,
    "asof": "2026-11-03"
   },
   {
@@ -57,18 +57,18 @@
    "key": "9888_HK",
    "name": "Baidu Inc",
    "pool": "CN_HK",
-   "dd250": -52.9,
-   "px": 75.55000305175781,
-   "asof": "2026-11-03"
+   "dd250": -53.8,
+   "px": 74.0999984741211,
+   "asof": "2026-11-04"
   },
   {
-   "symbol": "0981.HK",
-   "key": "0981_HK",
-   "name": "Semiconductor Manufacturing International Corp",
+   "symbol": "0968.HK",
+   "key": "0968_HK",
+   "name": "Xinyi Solar Holdings Ltd",
    "pool": "CN_HK",
-   "dd250": -52.8,
-   "px": 42.2400016784668,
-   "asof": "2026-11-03"
+   "dd250": -53.2,
+   "px": 1.8700000047683716,
+   "asof": "2026-11-04"
   },
   {
    "symbol": "BIDU",
@@ -80,13 +80,22 @@
    "asof": "2026-11-03"
   },
   {
+   "symbol": "0981.HK",
+   "key": "0981_HK",
+   "name": "Semiconductor Manufacturing International Corp",
+   "pool": "CN_HK",
+   "dd250": -51.9,
+   "px": 43.0,
+   "asof": "2026-11-04"
+  },
+  {
    "symbol": "1378.HK",
    "key": "1378_HK",
    "name": "China Hongqiao Group Ltd",
    "pool": "CN_HK",
-   "dd250": -50.5,
-   "px": 19.889999389648438,
-   "asof": "2026-11-03"
+   "dd250": -50.6,
+   "px": 19.850000381469727,
+   "asof": "2026-11-04"
   }
  ]
 }
