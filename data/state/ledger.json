@@ -764,5 +764,41 @@
   "tier_time": "-",
   "status": "open",
   "snapshot_ref": "S-CATCH:NG_F:2026-11-03"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "SI=F",
+  "date": "2026-11-05",
+  "entry": 52.220001220703125,
+  "stop": 48.98,
+  "score": 72,
+  "tier_time": "DEAD_ZONE",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:SI_F:2026-11-05"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "SLV",
+  "date": "2026-11-05",
+  "entry": 47.13990020751953,
+  "stop": 46.73,
+  "score": 52,
+  "tier_time": "DEAD_ZONE",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:SLV:2026-11-05"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "KLAC",
+  "date": "2026-11-05",
+  "entry": 149.6199951171875,
+  "stop": 148.325,
+  "score": 49,
+  "tier_time": "DEAD_ZONE",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:KLAC:2026-11-05"
  }
 ]

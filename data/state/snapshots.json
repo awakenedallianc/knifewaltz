@@ -1576,7 +1576,14 @@
   "features_sha": "cb46c685d351f68c",
   "realized": {
    "ledger_ref": "CTVA@2026-10-07",
-   "fwd5_pct": -8.03
+   "fwd5_pct": -8.03,
+   "fwd20_pct": -15.99,
+   "mae20_pct": -22.18,
+   "atier": {
+    "pnl_pct": -8.37,
+    "exit": "X-STOP@2日",
+    "exit_bar": 2
+   }
   },
   "settled": false,
   "stier": {
@@ -1683,7 +1690,14 @@
   "engine_sha": "69e75ef468979668",
   "features_sha": "bcbc7d08cc26ac33",
   "realized": {
-   "fwd5_pct": -5.32
+   "fwd5_pct": -5.32,
+   "fwd20_pct": -2.97,
+   "mae20_pct": -19.94,
+   "atier": {
+    "pnl_pct": -6.79,
+    "exit": "X-STOP@5日",
+    "exit_bar": 5
+   }
   },
   "settled": false
  },
@@ -5103,6 +5117,454 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "2bd1ac0cad41f325",
+  "realized": {},
+  "settled": false
+ },
+ {
+  "id": "S-CATCH:KLAC:2026-11-05",
+  "kind": "S-CATCH",
+  "symbol": "KLAC",
+  "date": "2026-11-05",
+  "trigger_px": 149.6199951171875,
+  "stop_price": 148.325,
+  "features": {
+   "dd52w": -50.41,
+   "dd250": -50.41,
+   "ret10": -8.45,
+   "rsi14": 34.3,
+   "vol_ratio": 0.5,
+   "close_pos": 0.15,
+   "falling": false,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": true,
+    "vol_compress": true,
+    "gate_ok": true,
+    "rsi_divergence": false
+   },
+   "checklist_n": 3,
+   "tier_time": "DEAD_ZONE",
+   "days_from_peak": 89,
+   "stop_price": 148.325,
+   "last_date": "2026-11-04",
+   "cls": "equity_single",
+   "tier": "T2",
+   "state": "CATCH",
+   "score_parts": {
+    "fall_40": 16.8,
+    "capitulation_20": 0.0,
+    "checklist_20": 12.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 49,
+  "market": {
+   "blade_index": 1,
+   "gate_state": "GREEN",
+   "vix": 16.940000534057617,
+   "vix_ratio": 0.8901734063491354
+  },
+  "jev": {
+   "family": "unclear",
+   "p_terminal": 0.0,
+   "conf": 0.68,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.17,
+   "catch_prior": 0.268,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "e643309bf8c6f507",
+  "realized": {
+   "ledger_ref": "KLAC@2026-11-05"
+  },
+  "settled": false,
+  "stier": {
+   "rules_version": "s1",
+   "admitted": false,
+   "status": null,
+   "soft_score": 0.438,
+   "hard_pass": {
+    "H1": true,
+    "H2": false,
+    "H3": false,
+    "H4": false,
+    "H5": true,
+    "H6": true,
+    "H7": true,
+    "H8": false
+   },
+   "shadow": {
+    "H9": {
+     "would_block": true,
+     "lr": 1.0,
+     "grade": "线索"
+    },
+    "H10": {
+     "would_block": false,
+     "flip_back_age_days": null
+    },
+    "H11": {
+     "would_block": true,
+     "close_pos": 0.15
+    }
+   },
+   "slice": {
+    "key": "unclear|GREEN|DEAD_ZONE|none|equity_single",
+    "lr": 1.0,
+    "n": 0,
+    "wins": 0,
+    "wilson95": null,
+    "grade": "线索"
+   }
+  }
+ },
+ {
+  "id": "S-CATCH:SI_F:2026-11-05",
+  "kind": "S-CATCH",
+  "symbol": "SI_F",
+  "date": "2026-11-05",
+  "trigger_px": 52.220001220703125,
+  "stop_price": 48.98,
+  "features": {
+   "dd52w": -54.62,
+   "dd250": -54.62,
+   "ret10": -9.51,
+   "rsi14": 33.4,
+   "vol_ratio": 477.3,
+   "close_pos": 0.92,
+   "falling": false,
+   "capitulation": true,
+   "hammer": true,
+   "checklist": {
+    "reversal_day": true,
+    "no_new_low_3d": true,
+    "vol_compress": false,
+    "gate_ok": true,
+    "rsi_divergence": false
+   },
+   "checklist_n": 3,
+   "tier_time": "DEAD_ZONE",
+   "days_from_peak": 164,
+   "stop_price": 48.98,
+   "last_date": "2026-11-04",
+   "cls": "futures",
+   "tier": "T1F",
+   "state": "CATCH",
+   "score_parts": {
+    "fall_40": 19.5,
+    "capitulation_20": 20.0,
+    "checklist_20": 12.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 72,
+  "market": {
+   "blade_index": 1,
+   "gate_state": "GREEN",
+   "vix": 16.940000534057617,
+   "vix_ratio": 0.8901734063491354
+  },
+  "jev": {
+   "news_heat": null,
+   "catch_prior": 0.705,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "8c424ea3c24f8d7a",
+  "realized": {
+   "ledger_ref": "SI=F@2026-11-05"
+  },
+  "settled": false,
+  "stier": {
+   "rules_version": "s1",
+   "admitted": false,
+   "status": null,
+   "soft_score": 0.6393,
+   "hard_pass": {
+    "H1": true,
+    "H2": false,
+    "H3": false,
+    "H4": false,
+    "H5": false,
+    "H6": true,
+    "H7": true,
+    "H8": true
+   },
+   "shadow": {
+    "H9": {
+     "would_block": true,
+     "lr": 1.0,
+     "grade": "线索"
+    },
+    "H10": {
+     "would_block": false,
+     "flip_back_age_days": null
+    },
+    "H11": {
+     "would_block": false,
+     "close_pos": 0.92
+    }
+   },
+   "slice": {
+    "key": "None|GREEN|DEAD_ZONE|hammer|futures",
+    "lr": 1.0,
+    "n": 0,
+    "wins": 0,
+    "wilson95": null,
+    "grade": "线索"
+   }
+  }
+ },
+ {
+  "id": "S-CATCH:SLV:2026-11-05",
+  "kind": "S-CATCH",
+  "symbol": "SLV",
+  "date": "2026-11-05",
+  "trigger_px": 47.13990020751953,
+  "stop_price": 46.73,
+  "features": {
+   "dd52w": -55.36,
+   "dd250": -55.36,
+   "ret10": -9.8,
+   "rsi14": 32.7,
+   "vol_ratio": 0.86,
+   "close_pos": 0.66,
+   "falling": false,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": true,
+    "vol_compress": true,
+    "gate_ok": true,
+    "rsi_divergence": false
+   },
+   "checklist_n": 3,
+   "tier_time": "DEAD_ZONE",
+   "days_from_peak": 194,
+   "stop_price": 46.73,
+   "last_date": "2026-11-04",
+   "cls": "commodity",
+   "tier": "T1",
+   "state": "CATCH",
+   "score_parts": {
+    "fall_40": 20.0,
+    "capitulation_20": 0.0,
+    "checklist_20": 12.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 52,
+  "market": {
+   "blade_index": 1,
+   "gate_state": "GREEN",
+   "vix": 16.940000534057617,
+   "vix_ratio": 0.8901734063491354
+  },
+  "jev": {
+   "family": "B_fundamental_repricing",
+   "p_terminal": 0.0,
+   "conf": 0.64,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.48,
+   "catch_prior": 0.258,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "90c0c9cd8c51b74b",
+  "realized": {
+   "ledger_ref": "SLV@2026-11-05"
+  },
+  "settled": false,
+  "stier": {
+   "rules_version": "s1",
+   "admitted": false,
+   "status": null,
+   "soft_score": 0.4475,
+   "hard_pass": {
+    "H1": true,
+    "H2": false,
+    "H3": false,
+    "H4": false,
+    "H5": false,
+    "H6": true,
+    "H7": true,
+    "H8": false
+   },
+   "shadow": {
+    "H9": {
+     "would_block": true,
+     "lr": 1.0,
+     "grade": "线索"
+    },
+    "H10": {
+     "would_block": false,
+     "flip_back_age_days": null
+    },
+    "H11": {
+     "would_block": false,
+     "close_pos": 0.66
+    }
+   },
+   "slice": {
+    "key": "B_fundamental_repricing|GREEN|DEAD_ZONE|none|commodity",
+    "lr": 1.0,
+    "n": 0,
+    "wins": 0,
+    "wilson95": null,
+    "grade": "线索"
+   }
+  }
+ },
+ {
+  "id": "S-FALL:FIS:2026-11-05",
+  "kind": "S-FALL",
+  "symbol": "FIS",
+  "date": "2026-11-05",
+  "trigger_px": 29.729999542236328,
+  "stop_price": 29.22,
+  "features": {
+   "dd52w": -55.98,
+   "dd250": -55.98,
+   "ret10": -18.37,
+   "rsi14": 34.1,
+   "vol_ratio": 3.78,
+   "close_pos": 0.16,
+   "falling": true,
+   "capitulation": true,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": false,
+    "gate_ok": true,
+    "rsi_divergence": false
+   },
+   "checklist_n": 1,
+   "tier_time": "-",
+   "days_from_peak": 512,
+   "stop_price": 29.22,
+   "last_date": "2026-11-04",
+   "cls": "equity_single",
+   "tier": "T2",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 25.8,
+    "capitulation_20": 12.0,
+    "checklist_20": 4.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 62,
+  "market": {
+   "blade_index": 1,
+   "gate_state": "GREEN",
+   "vix": 16.940000534057617,
+   "vix_ratio": 0.8901734063491354
+  },
+  "jev": {
+   "family": "unclear",
+   "p_terminal": 0.0,
+   "conf": 0.37,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.297,
+   "catch_prior": null,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "d71993cfae605f34",
+  "realized": {},
+  "settled": false
+ },
+ {
+  "id": "S-FALL:MRVL:2026-11-05",
+  "kind": "S-FALL",
+  "symbol": "MRVL",
+  "date": "2026-11-05",
+  "trigger_px": 156.94000244140625,
+  "stop_price": 154.78,
+  "features": {
+   "dd52w": -50.4,
+   "dd250": -50.4,
+   "ret10": -35.88,
+   "rsi14": 26.0,
+   "vol_ratio": 1.21,
+   "close_pos": 0.19,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": true,
+    "gate_ok": true,
+    "rsi_divergence": false
+   },
+   "checklist_n": 2,
+   "tier_time": "DEAD_ZONE",
+   "days_from_peak": 106,
+   "stop_price": 154.78,
+   "last_date": "2026-11-04",
+   "cls": "equity_single",
+   "tier": "T2",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 30.6,
+    "capitulation_20": 0.0,
+    "checklist_20": 8.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 59,
+  "market": {
+   "blade_index": 1,
+   "gate_state": "GREEN",
+   "vix": 16.940000534057617,
+   "vix_ratio": 0.8901734063491354
+  },
+  "jev": {
+   "family": "B_fundamental_repricing",
+   "p_terminal": 0.0,
+   "conf": 0.35,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.647,
+   "catch_prior": null,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "58368f6065e0ddc3",
   "realized": {},
   "settled": false
  }

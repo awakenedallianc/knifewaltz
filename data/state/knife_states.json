@@ -65,8 +65,8 @@
   "events": []
  },
  "SLV": {
-  "state": "STABILIZING",
-  "since": "2026-10-24",
+  "state": "CATCH",
+  "since": "2026-11-05",
   "events": [
    {
     "d": "2026-10-23",
@@ -79,8 +79,17 @@
     "from": "KNIFE_FALLING",
     "to": "STABILIZING",
     "note": "checklist 1/5"
+   },
+   {
+    "d": "2026-11-05",
+    "from": "STABILIZING",
+    "to": "CATCH",
+    "note": "checklist 3/5"
    }
-  ]
+  ],
+  "catch_ref_price": 47.13990020751953,
+  "catch_day_low": 46.73,
+  "expires": "2026-11-21"
  },
  "USO": {
   "state": "NORMAL",
@@ -388,8 +397,8 @@
   "events": []
  },
  "SI_F": {
-  "state": "STABILIZING",
-  "since": "2026-10-31",
+  "state": "CATCH",
+  "since": "2026-11-05",
   "events": [
    {
     "d": "2026-10-31",
@@ -402,8 +411,17 @@
     "from": "KNIFE_FALLING",
     "to": "STABILIZING",
     "note": "checklist 1/5"
+   },
+   {
+    "d": "2026-11-05",
+    "from": "STABILIZING",
+    "to": "CATCH",
+    "note": "checklist 3/5"
    }
-  ]
+  ],
+  "catch_ref_price": 52.220001220703125,
+  "catch_day_low": 48.98,
+  "expires": "2026-11-21"
  },
  "NG_F": {
   "state": "NORMAL",
@@ -1244,9 +1262,16 @@
   "events": []
  },
  "FIS": {
-  "state": "NORMAL",
-  "since": "2026-09-30",
-  "events": []
+  "state": "KNIFE_FALLING",
+  "since": "2026-11-05",
+  "events": [
+   {
+    "d": "2026-11-05",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -55.98% / 10日 -18.37%"
+   }
+  ]
  },
  "CTVA": {
   "state": "NORMAL",
@@ -1476,8 +1501,8 @@
   "cooldown_until": "2026-11-19"
  },
  "KLAC": {
-  "state": "STABILIZING",
-  "since": "2026-10-23",
+  "state": "CATCH",
+  "since": "2026-11-05",
   "events": [
    {
     "d": "2026-10-22",
@@ -1490,8 +1515,17 @@
     "from": "KNIFE_FALLING",
     "to": "STABILIZING",
     "note": "checklist 1/5"
+   },
+   {
+    "d": "2026-11-05",
+    "from": "STABILIZING",
+    "to": "CATCH",
+    "note": "checklist 3/5"
    }
-  ]
+  ],
+  "catch_ref_price": 149.6199951171875,
+  "catch_day_low": 148.325,
+  "expires": "2026-11-21"
  },
  "RDDT": {
   "state": "STABILIZING",
@@ -1562,6 +1596,23 @@
     "from": "KNIFE_FALLING",
     "to": "STABILIZING",
     "note": "checklist 2/5"
+   }
+  ]
+ },
+ "NRG": {
+  "state": "NORMAL",
+  "since": "2026-11-05",
+  "events": []
+ },
+ "MRVL": {
+  "state": "KNIFE_FALLING",
+  "since": "2026-11-05",
+  "events": [
+   {
+    "d": "2026-11-05",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -50.4% / 10日 -35.88%"
    }
   ]
  }
