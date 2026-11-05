@@ -1017,7 +1017,49 @@
   ],
   "RLX": [],
   "DIDIY": [],
-  "KC": []
+  "KC": [],
+  "ORCL": [
+   {
+    "t": "Oracle Just Dropped 14% in a Week. Is It Time to Sell, or Load Up?",
+    "src": "yahoo",
+    "age_h": 1.1
+   },
+   {
+    "t": "Stock Market Today, Nov. 4: Oracle Falls on Canceled $7 Billion Tencent Chip-Leasing Deal",
+    "src": "yahoo",
+    "age_h": 5.4
+   },
+   {
+    "t": "Oracle (ORCL) Stock Slides as Market Rises: Facts to Know Before You Trade",
+    "src": "yahoo",
+    "age_h": 6.0
+   },
+   {
+    "t": "After the midterms, Big Tech’s AI data center problem is only getting bigger",
+    "src": "yahoo",
+    "age_h": 6.4
+   },
+   {
+    "t": "Credo Technology Group Holding (CRDO) Secures OCP Approval For Two Optical Telemetry Standards",
+    "src": "yahoo",
+    "age_h": 6.5
+   },
+   {
+    "t": "Sector Update: Tech Stocks Mixed Late Afternoon",
+    "src": "yahoo",
+    "age_h": 7.0
+   },
+   {
+    "t": "Oracle gets UBS backing as broker pushes back on AI demand concerns",
+    "src": "yahoo",
+    "age_h": 7.5
+   },
+   {
+    "t": "Oracle Sees Massive Trading Surge After Selloff",
+    "src": "yahoo",
+    "age_h": 7.9
+   }
+  ]
  },
  "feeds": {
   "crypto": [
@@ -1667,6 +1709,108 @@
     "t": "Morning Minute: CFTC Clears Stock Perps, Gets Sued the Same Day",
     "src": "decrypt",
     "age_h": 5.6
+   }
+  ],
+  "macro": [
+   {
+    "t": "LIV Golf faces liquidation after BC Partners scraps rescue plan - CNBC",
+    "src": "CNBC",
+    "age_h": 0.5
+   },
+   {
+    "t": "Chrishell Stause breaks cover for first time since ‘fed up’ partner G Flip called things off - Page Six",
+    "src": "Page Six",
+    "age_h": 0.6
+   },
+   {
+    "t": "'I WAS FED THE WRONG INFORMTION AND ACCEPTED IT AS GOSPEL TRUTH' Columnist Ramon Tulfo admitted and apologized for spreading misinformation about former House s",
+    "src": "Facebook",
+    "age_h": 0.8
+   },
+   {
+    "t": "British Pound edges higher above 1.3450 ahead of BoE rate decision - FXStreet",
+    "src": "FXStreet",
+    "age_h": 1.2
+   },
+   {
+    "t": "Innu Nation leaders meet with Wakeham, say they’re still fed up with timeline dispute - CBC",
+    "src": "CBC",
+    "age_h": 1.5
+   },
+   {
+    "t": "How Abdul El-Sayed would build Medicare for All, from a wealth tax to a Fed-style governing board - Fortune",
+    "src": "Fortune",
+    "age_h": 1.6
+   },
+   {
+    "t": "White House sets hearing on Fed’s Cook for December 14, NYT says - 104.1 WIKY",
+    "src": "104.1 WIKY",
+    "age_h": 1.8
+   },
+   {
+    "t": "LIV Golf turnaround derailed with league nearing liquidation | Hindustan Times - Hindustan Times",
+    "src": "Hindustan Times",
+    "age_h": 1.8
+   },
+   {
+    "t": "Democrats seize Congress, block Trump Fed takeover as hawks press tightening - Chosunbiz",
+    "src": "Chosunbiz",
+    "age_h": 2.0
+   },
+   {
+    "t": "Arthur Hayes Expects Bitcoin Weakness Until Fed And Banks Start Growing Balance Sheets - Stocktwits",
+    "src": "Stocktwits",
+    "age_h": 2.3
+   },
+   {
+    "t": "LIV Golf facing liquidation after financial backer drops plan for new league - South China Morning Post",
+    "src": "South China Morning Post",
+    "age_h": 2.5
+   },
+   {
+    "t": "BC Partnership pulls $300 million investment deal, LIV Golf heading toward liquidation - Yahoo Sports",
+    "src": "Yahoo Sports",
+    "age_h": 3.1
+   },
+   {
+    "t": "\"Earth Shattering\" Results Show Latino Voters Were Fed Up and Demanded Change - Latino USA",
+    "src": "Latino USA",
+    "age_h": 3.5
+   },
+   {
+    "t": "Report: LIV Golf relaunch collapses as BC Partners drops bid, league faces liquidation - Golfweek",
+    "src": "Golfweek",
+    "age_h": 3.6
+   },
+   {
+    "t": "White House panel delays hearing on Fed's Lisa Cook to Dec. 14 - CNBC",
+    "src": "CNBC",
+    "age_h": 3.7
+   },
+   {
+    "t": "How Pittsburgh's 3 sports teams help keep neighbors fed during holiday season - CBS News",
+    "src": "CBS News",
+    "age_h": 3.8
+   },
+   {
+    "t": "How Pittsburgh's sports teams help keep neighbors fed during holiday season - CBS News",
+    "src": "CBS News",
+    "age_h": 3.9
+   },
+   {
+    "t": "White House sets hearing on Fed's Cook for December 14, NYT says - TradingView",
+    "src": "TradingView",
+    "age_h": 4.0
+   },
+   {
+    "t": "FRED Adds Inflation Indicators from the St. Louis Fed - Federal Reserve Economic Data | FRED | St. Louis Fed",
+    "src": "Federal Reserve Economic Data | FRED | S",
+    "age_h": 4.1
+   },
+   {
+    "t": "Reports: LIV Golf facing liquidation after losing financial backing - Field Level Media",
+    "src": "Field Level Media",
+    "age_h": 4.3
    }
   ]
  }

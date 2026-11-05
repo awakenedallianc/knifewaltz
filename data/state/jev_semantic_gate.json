@@ -58,9 +58,9 @@
  "ORCL": {
   "veto": false,
   "p": 0.0,
-  "date": "2026-11-03",
+  "date": "2026-11-05",
   "clear_streak": 0,
-  "top_headline": "Can Workday Stock Get Back To Where It Was?"
+  "top_headline": "Oracle Just Dropped 14% in a Week. Is It Time to Sell, or Load Up?"
  },
  "MSTR": {
   "veto": false,
@@ -253,7 +253,7 @@
  },
  "VNET": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-05",
   "clear_streak": 0,
   "top_headline": "What Investors Got Wrong About VNET Group Before A 68% Slide"
@@ -393,7 +393,7 @@
  },
  "FIS": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-05",
   "clear_streak": 0,
   "top_headline": "Fidelity National (FIS) Q3 2026 Earnings Call Transcript"

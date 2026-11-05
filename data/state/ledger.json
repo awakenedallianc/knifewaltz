@@ -800,5 +800,53 @@
   "tier_time": "DEAD_ZONE",
   "status": "open",
   "snapshot_ref": "S-CATCH:KLAC:2026-11-05"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "VNET",
+  "date": "2026-11-05",
+  "entry": 3.5199999809265137,
+  "stop": 3.1,
+  "score": 62,
+  "tier_time": "B",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:VNET:2026-11-05"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "IQ",
+  "date": "2026-11-05",
+  "entry": 0.9190000295639038,
+  "stop": 0.883,
+  "score": 51,
+  "tier_time": "-",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:IQ:2026-11-05"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "FLEX",
+  "date": "2026-11-05",
+  "entry": 77.23999786376953,
+  "stop": 75.3,
+  "score": 51,
+  "tier_time": "DEAD_ZONE",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:FLEX:2026-11-05"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "GDX",
+  "date": "2026-11-05",
+  "entry": 84.58999633789062,
+  "stop": 81.56,
+  "score": 35,
+  "tier_time": "DEAD_ZONE",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:GDX:2026-11-05"
  }
 ]
