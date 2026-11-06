@@ -2,13 +2,8 @@
  "settlement": "2026-10-15",
  "staleness_note": "双月·滞后约9工作日",
  "source": "finra",
- "fetched_at": "2026-11-06T01:59:50+07:00",
+ "fetched_at": "2026-11-06T10:38:23+07:00",
  "rows": {
-  "ALB": {
-   "short": 12251426,
-   "days_to_cover": 4.95,
-   "chg_pct": 4.14
-  },
   "ALNY": {
    "short": 6568786,
    "days_to_cover": 5.1,
@@ -24,11 +19,6 @@
    "days_to_cover": 3.75,
    "chg_pct": 9.34
   },
-  "ARQT": {
-   "short": 20485453,
-   "days_to_cover": 9.78,
-   "chg_pct": -5.55
-  },
   "ASML": {
    "short": 1327923,
    "days_to_cover": 1,
@@ -38,6 +28,11 @@
    "short": 53611331,
    "days_to_cover": 2.4,
    "chg_pct": -1.08
+  },
+  "AXTI": {
+   "short": 11979398,
+   "days_to_cover": 1.41,
+   "chg_pct": 10.97
   },
   "BSX": {
    "short": 40708019,
@@ -63,11 +58,6 @@
    "short": 23767692,
    "days_to_cover": 2.87,
    "chg_pct": -2.49
-  },
-  "CSGP": {
-   "short": 14988751,
-   "days_to_cover": 2.88,
-   "chg_pct": 12.83
   },
   "CTVA": {
    "short": 38568625,
@@ -109,6 +99,11 @@
    "days_to_cover": 2.72,
    "chg_pct": 2.56
   },
+  "LITE": {
+   "short": 7740045,
+   "days_to_cover": 1.52,
+   "chg_pct": 3.94
+  },
   "LRCX": {
    "short": 28325154,
    "days_to_cover": 3.59,
@@ -118,6 +113,11 @@
    "short": 24588610,
    "days_to_cover": 1.08,
    "chg_pct": 2.23
+  },
+  "MXL": {
+   "short": 4460007,
+   "days_to_cover": 1.38,
+   "chg_pct": -8.75
   },
   "NRG": {
    "short": 5978131,
@@ -139,11 +139,6 @@
    "days_to_cover": 5.14,
    "chg_pct": -2.3
   },
-  "RELY": {
-   "short": 20327121,
-   "days_to_cover": 7.26,
-   "chg_pct": 1.6
-  },
   "ROAD": {
    "short": 3643975,
    "days_to_cover": 5.44,
@@ -158,6 +153,11 @@
    "short": 7859241,
    "days_to_cover": 1.39,
    "chg_pct": 12.71
+  },
+  "TER": {
+   "short": 7855474,
+   "days_to_cover": 2.91,
+   "chg_pct": -8.97
   },
   "TSM": {
    "short": 29310548,
