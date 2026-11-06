@@ -1881,7 +1881,14 @@
   "features_sha": "252c740baf8b97a8",
   "realized": {
    "ledger_ref": "VNET@2026-10-09",
-   "fwd5_pct": -27.58
+   "fwd5_pct": -27.58,
+   "fwd20_pct": -42.41,
+   "mae20_pct": -47.38,
+   "atier": {
+    "pnl_pct": -4.88,
+    "exit": "X-STOP@2日",
+    "exit_bar": 2
+   }
   },
   "settled": false,
   "stier": {
@@ -2057,7 +2064,14 @@
   "features_sha": "984ba14f2c92867a",
   "realized": {
    "ledger_ref": "GDS@2026-10-10",
-   "fwd5_pct": -24.6
+   "fwd5_pct": -24.6,
+   "fwd20_pct": -28.03,
+   "mae20_pct": -33.58,
+   "atier": {
+    "pnl_pct": -1.87,
+    "exit": "X-STOP@1日",
+    "exit_bar": 1
+   }
   },
   "settled": false,
   "stier": {
@@ -4171,7 +4185,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "e033bb3622e46134",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": -4.92
+  },
   "settled": false
  },
  {
@@ -4237,7 +4253,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "001aab2cb2008f2b",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": 3.22
+  },
   "settled": false
  },
  {
@@ -4303,7 +4321,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "a960f33d67706539",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": -1.09
+  },
   "settled": false
  },
  {
@@ -4370,7 +4390,8 @@
   "engine_sha": "69e75ef468979668",
   "features_sha": "645d68f4f669cb55",
   "realized": {
-   "ledger_ref": "ARM@2026-10-31"
+   "ledger_ref": "ARM@2026-10-31",
+   "fwd5_pct": -16.7
   },
   "settled": false,
   "stier": {
@@ -4477,7 +4498,8 @@
   "engine_sha": "69e75ef468979668",
   "features_sha": "72d3bc4b6282ace6",
   "realized": {
-   "ledger_ref": "COHR@2026-10-31"
+   "ledger_ref": "COHR@2026-10-31",
+   "fwd5_pct": -9.26
   },
   "settled": false,
   "stier": {
@@ -4583,7 +4605,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "0042588c0f754d9b",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": -7.52
+  },
   "settled": false
  },
  {
@@ -4636,7 +4660,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "29e2e1846f830309",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": 12.74
+  },
   "settled": false
  },
  {
@@ -4702,7 +4728,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "ea4dfdccae9eee0e",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": -14.84
+  },
   "settled": false
  },
  {
@@ -4755,7 +4783,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "c7129b4ef6fb8c75",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": 19.81
+  },
   "settled": false
  },
  {
@@ -6739,6 +6769,204 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "376a21dc0d6befa0",
+  "realized": {},
+  "settled": false
+ },
+ {
+  "id": "S-FALL:CIEN:2026-11-07",
+  "kind": "S-FALL",
+  "symbol": "CIEN",
+  "date": "2026-11-07",
+  "trigger_px": 239.40499877929688,
+  "stop_price": 236.59,
+  "features": {
+   "dd52w": -61.82,
+   "dd250": -61.82,
+   "ret10": -25.25,
+   "rsi14": 31.2,
+   "vol_ratio": 0.82,
+   "close_pos": 0.14,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": false,
+    "gate_ok": false,
+    "rsi_divergence": false
+   },
+   "checklist_n": 0,
+   "tier_time": "B",
+   "days_from_peak": 110,
+   "stop_price": 236.59,
+   "last_date": "2026-11-06",
+   "cls": "equity_single",
+   "tier": "T2",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 33.0,
+    "capitulation_20": 0.0,
+    "checklist_20": 0.0,
+    "gate_20": 0.0
+   }
+  },
+  "score": 33,
+  "market": {
+   "blade_index": 11,
+   "gate_state": "RED",
+   "vix": 25.559999465942383,
+   "vix_ratio": 1.0522848292526492
+  },
+  "jev": {
+   "family": "A_liquidity_panic",
+   "p_terminal": 0.0,
+   "conf": 0.6,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.49,
+   "catch_prior": null,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "e43f290500169c19",
+  "realized": {},
+  "settled": false
+ },
+ {
+  "id": "S-FALL:FICO:2026-11-07",
+  "kind": "S-FALL",
+  "symbol": "FICO",
+  "date": "2026-11-07",
+  "trigger_px": 682.7750244140625,
+  "stop_price": 667.18,
+  "features": {
+   "dd52w": -62.99,
+   "dd250": -62.99,
+   "ret10": -16.26,
+   "rsi14": 31.8,
+   "vol_ratio": 0.26,
+   "close_pos": 0.46,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": false,
+    "gate_ok": false,
+    "rsi_divergence": false
+   },
+   "checklist_n": 0,
+   "tier_time": "B",
+   "days_from_peak": 487,
+   "stop_price": 667.18,
+   "last_date": "2026-11-06",
+   "cls": "equity_single",
+   "tier": "T2",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 27.8,
+    "capitulation_20": 0.0,
+    "checklist_20": 0.0,
+    "gate_20": 0.0
+   }
+  },
+  "score": 28,
+  "market": {
+   "blade_index": 11,
+   "gate_state": "RED",
+   "vix": 25.559999465942383,
+   "vix_ratio": 1.0522848292526492
+  },
+  "jev": {
+   "family": "B_fundamental_repricing",
+   "p_terminal": 0.0,
+   "conf": 0.8,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.46,
+   "catch_prior": null,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "2d3bc9ab154d2e77",
+  "realized": {},
+  "settled": false
+ },
+ {
+  "id": "S-FALL:MRVL:2026-11-07",
+  "kind": "S-FALL",
+  "symbol": "MRVL",
+  "date": "2026-11-07",
+  "trigger_px": 137.63999938964844,
+  "stop_price": 135.3401,
+  "features": {
+   "dd52w": -56.5,
+   "dd250": -56.5,
+   "ret10": -39.77,
+   "rsi14": 22.4,
+   "vol_ratio": 0.76,
+   "close_pos": 0.21,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": false,
+    "gate_ok": false,
+    "rsi_divergence": false
+   },
+   "checklist_n": 0,
+   "tier_time": "DEAD_ZONE",
+   "days_from_peak": 108,
+   "stop_price": 135.3401,
+   "last_date": "2026-11-06",
+   "cls": "equity_single",
+   "tier": "T2",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 33.5,
+    "capitulation_20": 0.0,
+    "checklist_20": 0.0,
+    "gate_20": 0.0
+   }
+  },
+  "score": 34,
+  "market": {
+   "blade_index": 11,
+   "gate_state": "RED",
+   "vix": 25.559999465942383,
+   "vix_ratio": 1.0522848292526492
+  },
+  "jev": {
+   "family": "unclear",
+   "p_terminal": 0.0,
+   "conf": 0.57,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.193,
+   "catch_prior": null,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "2b43b936ee00c185",
   "realized": {},
   "settled": false
  }

@@ -508,8 +508,8 @@
   "events": []
  },
  "KC_F": {
-  "state": "KNIFE_FALLING",
-  "since": "2026-11-06",
+  "state": "STABILIZING",
+  "since": "2026-11-07",
   "events": [
    {
     "d": "2026-09-21",
@@ -540,6 +540,12 @@
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -34.37% / 10日 -12.26%"
+   },
+   {
+    "d": "2026-11-07",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 1/5"
    }
   ],
   "catch_ref_price": 2.8095001220703124,
@@ -562,8 +568,8 @@
   "events": []
  },
  "HE_F": {
-  "state": "KNIFE_FALLING",
-  "since": "2026-11-06",
+  "state": "STABILIZING",
+  "since": "2026-11-07",
   "events": [
    {
     "d": "2026-09-21",
@@ -606,6 +612,12 @@
     "from": "STABILIZING",
     "to": "KNIFE_FALLING",
     "note": "企稳失败"
+   },
+   {
+    "d": "2026-11-07",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 2/5"
    }
   ],
   "catch_ref_price": 0.782249984741211,
@@ -657,8 +669,8 @@
   ]
  },
  "FICO": {
-  "state": "NORMAL",
-  "since": "2026-09-30",
+  "state": "KNIFE_FALLING",
+  "since": "2026-11-07",
   "events": [
    {
     "d": "2026-09-29",
@@ -677,6 +689,12 @@
     "from": "CATCH",
     "to": "NORMAL",
     "note": "跌破接刀日低点（X-STOP）"
+   },
+   {
+    "d": "2026-11-07",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -62.99% / 10日 -16.26%"
    }
   ],
   "catch_ref_price": 840.8900146484375,
@@ -1679,8 +1697,8 @@
   ]
  },
  "CIEN": {
-  "state": "STABILIZING",
-  "since": "2026-11-03",
+  "state": "KNIFE_FALLING",
+  "since": "2026-11-07",
   "events": [
    {
     "d": "2026-11-03",
@@ -1693,6 +1711,12 @@
     "from": "KNIFE_FALLING",
     "to": "STABILIZING",
     "note": "checklist 2/5"
+   },
+   {
+    "d": "2026-11-07",
+    "from": "STABILIZING",
+    "to": "KNIFE_FALLING",
+    "note": "企稳失败"
    }
   ]
  },
@@ -1709,8 +1733,8 @@
   ]
  },
  "MRVL": {
-  "state": "STABILIZING",
-  "since": "2026-11-06",
+  "state": "KNIFE_FALLING",
+  "since": "2026-11-07",
   "events": [
    {
     "d": "2026-11-05",
@@ -1723,6 +1747,12 @@
     "from": "KNIFE_FALLING",
     "to": "STABILIZING",
     "note": "checklist 1/5"
+   },
+   {
+    "d": "2026-11-07",
+    "from": "STABILIZING",
+    "to": "KNIFE_FALLING",
+    "note": "企稳失败"
    }
   ]
  },
