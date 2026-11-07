@@ -669,7 +669,7 @@
   ]
  },
  "FICO": {
-  "state": "KNIFE_FALLING",
+  "state": "STABILIZING",
   "since": "2026-11-07",
   "events": [
    {
@@ -695,6 +695,12 @@
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -62.99% / 10日 -16.26%"
+   },
+   {
+    "d": "2026-11-07",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 1/5"
    }
   ],
   "catch_ref_price": 840.8900146484375,
