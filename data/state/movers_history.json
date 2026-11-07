@@ -1,151 +1,5 @@
 {
  "days": {
-  "2026-10-09": [
-   {
-    "date": "2026-10-09",
-    "sym": "STRKUSDT",
-    "last": 0.06349,
-    "pct24": 28.757,
-    "quote_vol": 35251979.0,
-    "funding": null,
-    "source": "okx"
-   },
-   {
-    "date": "2026-10-09",
-    "sym": "LITUSDT",
-    "last": 3.6956,
-    "pct24": 4.019,
-    "quote_vol": 22717388.0,
-    "funding": null,
-    "source": "okx"
-   },
-   {
-    "date": "2026-10-09",
-    "sym": "FILUSDT",
-    "last": 1.0844,
-    "pct24": 1.726,
-    "quote_vol": 20275948.0,
-    "funding": null,
-    "source": "okx"
-   },
-   {
-    "date": "2026-10-09",
-    "sym": "ONDOUSDT",
-    "last": 0.4729,
-    "pct24": 0.961,
-    "quote_vol": 30427412.0,
-    "funding": null,
-    "source": "okx"
-   },
-   {
-    "date": "2026-10-09",
-    "sym": "BTCUSDT",
-    "last": 82092.5,
-    "pct24": -1.124,
-    "quote_vol": 841775597.0,
-    "funding": 4.98305575984e-05,
-    "source": "okx"
-   },
-   {
-    "date": "2026-10-09",
-    "sym": "XRPUSDT",
-    "last": 1.3933,
-    "pct24": -2.128,
-    "quote_vol": 87228082.0,
-    "funding": null,
-    "source": "okx"
-   },
-   {
-    "date": "2026-10-09",
-    "sym": "HYPEUSDT",
-    "last": 84.9,
-    "pct24": -3.347,
-    "quote_vol": 37962669.0,
-    "funding": null,
-    "source": "okx"
-   },
-   {
-    "date": "2026-10-09",
-    "sym": "ETHUSDT",
-    "last": 2486.78,
-    "pct24": -3.416,
-    "quote_vol": 502370999.0,
-    "funding": -4.22136456e-05,
-    "source": "okx"
-   },
-   {
-    "date": "2026-10-09",
-    "sym": "DOGEUSDT",
-    "last": 0.08476,
-    "pct24": -4.689,
-    "quote_vol": 61998969.0,
-    "funding": null,
-    "source": "okx"
-   },
-   {
-    "date": "2026-10-09",
-    "sym": "OKBUSDT",
-    "last": 125.06,
-    "pct24": -4.941,
-    "quote_vol": 33089149.0,
-    "funding": null,
-    "source": "okx"
-   },
-   {
-    "date": "2026-10-09",
-    "sym": "SOLUSDT",
-    "last": 109.97,
-    "pct24": -5.378,
-    "quote_vol": 152084867.0,
-    "funding": 1.7750939582e-05,
-    "source": "okx"
-   },
-   {
-    "date": "2026-10-09",
-    "sym": "UNIUSDT",
-    "last": 7.322,
-    "pct24": -7.34,
-    "quote_vol": 35988524.0,
-    "funding": 6.14286281163e-05,
-    "source": "okx"
-   },
-   {
-    "date": "2026-10-09",
-    "sym": "ZECUSDT",
-    "last": 1214.34,
-    "pct24": -7.515,
-    "quote_vol": 96405006.0,
-    "funding": 1.701338427e-07,
-    "source": "okx"
-   },
-   {
-    "date": "2026-10-09",
-    "sym": "SUIUSDT",
-    "last": 1.0506,
-    "pct24": -7.842,
-    "quote_vol": 34690424.0,
-    "funding": -1.43959629243e-05,
-    "source": "okx"
-   },
-   {
-    "date": "2026-10-09",
-    "sym": "NEARUSDT",
-    "last": 4.677,
-    "pct24": -12.612,
-    "quote_vol": 65781139.0,
-    "funding": -0.0001695757364318,
-    "source": "okx"
-   },
-   {
-    "date": "2026-10-09",
-    "sym": "MINAUSDT",
-    "last": 0.07862,
-    "pct24": -19.661,
-    "quote_vol": 31206720.0,
-    "funding": -0.0020464431785305,
-    "source": "okx"
-   }
-  ],
   "2026-10-10": [
    {
     "date": "2026-10-10",
@@ -2498,7 +2352,54 @@
     "funding": 4.69137789016e-05,
     "source": "okx"
    }
+  ],
+  "2026-11-08": [
+   {
+    "date": "2026-11-08",
+    "sym": "ETHUSDT",
+    "last": 2235.75,
+    "pct24": 0.14,
+    "quote_vol": 87818074.0,
+    "funding": 6.53984348088e-05,
+    "source": "okx"
+   },
+   {
+    "date": "2026-11-08",
+    "sym": "BTCUSDT",
+    "last": 75805.1,
+    "pct24": -0.176,
+    "quote_vol": 200233683.0,
+    "funding": 6.87118029414e-05,
+    "source": "okx"
+   },
+   {
+    "date": "2026-11-08",
+    "sym": "SOLUSDT",
+    "last": 89.69,
+    "pct24": -0.917,
+    "quote_vol": 23087926.0,
+    "funding": 3.88813194384e-05,
+    "source": "okx"
+   },
+   {
+    "date": "2026-11-08",
+    "sym": "XRPUSDT",
+    "last": 1.1614,
+    "pct24": -2.836,
+    "quote_vol": 44266375.0,
+    "funding": 6.00081103853e-05,
+    "source": "okx"
+   },
+   {
+    "date": "2026-11-08",
+    "sym": "ZECUSDT",
+    "last": 1264.26,
+    "pct24": -7.32,
+    "quote_vol": 51859993.0,
+    "funding": 0.0005465282449581,
+    "source": "okx"
+   }
   ]
  },
- "updated": "2026-11-07T10:07:52+07:00"
+ "updated": "2026-11-08T00:03:05+07:00"
 }
