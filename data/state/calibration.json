@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-08T00:03:17+07:00",
- "date": "2026-11-07",
+ "generated_at": "2026-11-08T09:42:55+07:00",
+ "date": "2026-11-08",
  "min_n": 30,
  "outcome_defs": {
   "J1": "1 若 180 日内触发 X-EVENT 类事件或较 veto 日再跌 90%",
@@ -107,47 +107,47 @@
   "J3": {
    "question_id": "J3",
    "outcome_def": "1 若事件后 3 日 VIX 或已实现波动跳升 >15%",
-   "n_total": 1496,
-   "n_pending": 82,
+   "n_total": 1542,
+   "n_pending": 36,
    "n_unresolvable": 0,
    "conclusive": true,
-   "base_rate": 0.048,
-   "brier": 0.1704,
-   "brier_baseline_climatology": 0.0458,
+   "base_rate": 0.047,
+   "brier": 0.1683,
+   "brier_baseline_climatology": 0.0445,
    "reliability": [
     {
      "lo": 0.0,
      "hi": 0.2,
-     "n": 344,
-     "p_mean": 0.114,
-     "hit_rate": 0.078,
+     "n": 352,
+     "p_mean": 0.113,
+     "hit_rate": 0.077,
      "wilson95": [
-      0.054,
-      0.112
+      0.053,
+      0.109
      ],
      "small_sample": false
     },
     {
      "lo": 0.2,
      "hi": 0.4,
-     "n": 639,
+     "n": 668,
      "p_mean": 0.3,
-     "hit_rate": 0.05,
+     "hit_rate": 0.048,
      "wilson95": [
-      0.036,
-      0.07
+      0.034,
+      0.067
      ],
      "small_sample": false
     },
     {
      "lo": 0.4,
      "hi": 0.6,
-     "n": 376,
-     "p_mean": 0.465,
-     "hit_rate": 0.032,
+     "n": 385,
+     "p_mean": 0.464,
+     "hit_rate": 0.031,
      "wilson95": [
       0.018,
-      0.055
+      0.054
      ],
      "small_sample": false
     },
@@ -194,8 +194,8 @@
    "question_id": "J5",
    "outcome_def": "1 若 3 日内 |累计收益| >= 10%（movers_history 快照价口径）",
    "n_total": 1006,
-   "n_pending": 30,
-   "n_unresolvable": 259,
+   "n_pending": 32,
+   "n_unresolvable": 261,
    "conclusive": true,
    "base_rate": 0.051,
    "brier": 0.6831,
