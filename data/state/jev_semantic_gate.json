@@ -155,7 +155,7 @@
  },
  "KC_F": {
   "veto": false,
-  "p": 0.06,
+  "p": 0.02,
   "date": "2026-11-08",
   "clear_streak": 0,
   "top_headline": "Vietnamese and Thai rice prices reach highest levels in nearly two years. - Vietnam.vn"
@@ -183,7 +183,7 @@
  },
  "QFIN": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.02,
   "date": "2026-11-08",
   "clear_streak": 0,
   "top_headline": "Options Whale Alert: $101K Bearish Long Put Opened on $QFIN - Moomoo"
@@ -365,7 +365,7 @@
  },
  "COIN": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-08",
   "clear_streak": 0,
   "top_headline": "Treasury Says Crypto Exchange MEXC Moved at Least $16 Billion Tied to Illicit Activity"
@@ -393,7 +393,7 @@
  },
  "FIS": {
   "veto": false,
-  "p": 0.03,
+  "p": 0.02,
   "date": "2026-11-08",
   "clear_streak": 0,
   "top_headline": "Analysts Just Sounded the Alarm on These 5 Overhyped Stocks"
@@ -582,7 +582,7 @@
  },
  "STX": {
   "veto": false,
-  "p": 0.03,
+  "p": 0.02,
   "date": "2026-11-08",
   "clear_streak": 0,
   "top_headline": "Marvell and Western Digital Just Had Their Worst Week Since 2001"
@@ -610,14 +610,14 @@
  },
  "ARKK": {
   "veto": false,
-  "p": 0.09,
+  "p": 0.05,
   "date": "2026-11-08",
   "clear_streak": 0,
   "top_headline": "Cathie Wood-Led Ark Loads Up On GOOG, AMD, NVDA And Biotech Stocks — But Sells CRWV, AVGO, LLY"
  },
  "TER": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.01,
   "date": "2026-11-08",
   "clear_streak": 0,
   "top_headline": "What Just Lifted Lam Research Stock?"

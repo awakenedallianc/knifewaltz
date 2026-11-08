@@ -1,13 +1,13 @@
 {
  "BTCUSDT": {
   "family": "systemic",
-  "flavor": 0.98,
+  "flavor": 0.94,
   "probs": {
-   "noise": 0.02,
+   "noise": 0.06,
    "liquidation_cascade": 0.0,
-   "event_driven": 0.13,
-   "systemic": 0.82,
-   "unclear": 0.03
+   "event_driven": 0.16,
+   "systemic": 0.7,
+   "unclear": 0.08
   },
   "date": "2026-11-08"
  },
@@ -17,31 +17,31 @@
   "probs": {
    "noise": 0.02,
    "liquidation_cascade": 0.0,
-   "event_driven": 0.21,
-   "systemic": 0.74,
-   "unclear": 0.03
+   "event_driven": 0.27,
+   "systemic": 0.67,
+   "unclear": 0.04
   },
   "date": "2026-11-08"
  },
  "XRPUSDT": {
-  "family": "systemic",
-  "flavor": 0.89,
+  "family": "unclear",
+  "flavor": 0.76,
   "probs": {
-   "noise": 0.11,
+   "noise": 0.24,
    "liquidation_cascade": 0.01,
    "event_driven": 0.0,
-   "systemic": 0.6,
-   "unclear": 0.28
+   "systemic": 0.28,
+   "unclear": 0.47
   },
   "date": "2026-11-08"
  },
  "ZECUSDT": {
   "family": "event_driven",
-  "flavor": 0.98,
+  "flavor": 0.97,
   "probs": {
-   "noise": 0.02,
+   "noise": 0.03,
    "liquidation_cascade": 0.01,
-   "event_driven": 0.92,
+   "event_driven": 0.91,
    "systemic": 0.04,
    "unclear": 0.01
   },
