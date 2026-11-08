@@ -1439,8 +1439,8 @@
   "cooldown_until": "2026-11-07"
  },
  "WDC": {
-  "state": "NORMAL",
-  "since": "2026-10-24",
+  "state": "KNIFE_FALLING",
+  "since": "2026-11-09",
   "events": [
    {
     "d": "2026-10-14",
@@ -1465,6 +1465,12 @@
     "from": "CATCH",
     "to": "NORMAL",
     "note": "跌破接刀日低点（X-STOP）"
+   },
+   {
+    "d": "2026-11-09",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -64.65% / 10日 -23.25%"
    }
   ],
   "catch_ref_price": 352.80999755859375,

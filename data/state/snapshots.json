@@ -6969,5 +6969,71 @@
   "features_sha": "2b43b936ee00c185",
   "realized": {},
   "settled": false
+ },
+ {
+  "id": "S-FALL:WDC:2026-11-09",
+  "kind": "S-FALL",
+  "symbol": "WDC",
+  "date": "2026-11-09",
+  "trigger_px": 263.7799987792969,
+  "stop_price": 258.61,
+  "features": {
+   "dd52w": -64.65,
+   "dd250": -64.65,
+   "ret10": -23.25,
+   "rsi14": 33.3,
+   "vol_ratio": 1.32,
+   "close_pos": 0.18,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": false,
+    "gate_ok": false,
+    "rsi_divergence": false
+   },
+   "checklist_n": 0,
+   "tier_time": "B",
+   "days_from_peak": 98,
+   "stop_price": 258.61,
+   "last_date": "2026-11-06",
+   "cls": "equity_single",
+   "tier": "T2",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 33.1,
+    "capitulation_20": 0.0,
+    "checklist_20": 0.0,
+    "gate_20": 0.0
+   }
+  },
+  "score": 33,
+  "market": {
+   "blade_index": 14,
+   "gate_state": "RED",
+   "vix": 25.639999389648438,
+   "vix_ratio": 1.0422763817907135
+  },
+  "jev": {
+   "family": "A_liquidity_panic",
+   "p_terminal": 0.0,
+   "conf": 0.37,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.297,
+   "catch_prior": null,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "ca0170f72b027bdb",
+  "realized": {},
+  "settled": false
  }
 ]
