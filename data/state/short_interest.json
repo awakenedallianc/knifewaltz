@@ -2,8 +2,18 @@
  "settlement": "2026-10-15",
  "staleness_note": "双月·滞后约9工作日",
  "source": "finra",
- "fetched_at": "2026-11-09T09:57:50+07:00",
+ "fetched_at": "2026-11-10T04:39:54+07:00",
  "rows": {
+  "ACAD": {
+   "short": 9094151,
+   "days_to_cover": 4.58,
+   "chg_pct": 9.89
+  },
+  "AKAM": {
+   "short": 18737068,
+   "days_to_cover": 3.72,
+   "chg_pct": -2.8
+  },
   "ALB": {
    "short": 12251426,
    "days_to_cover": 4.95,
@@ -14,11 +24,6 @@
    "days_to_cover": 5.1,
    "chg_pct": -14.82
   },
-  "AMAT": {
-   "short": 14179138,
-   "days_to_cover": 2.23,
-   "chg_pct": 4.79
-  },
   "APTV": {
    "short": 9313545,
    "days_to_cover": 3.69,
@@ -28,6 +33,11 @@
    "short": 17701475,
    "days_to_cover": 3.75,
    "chg_pct": 9.34
+  },
+  "ARWR": {
+   "short": 10959276,
+   "days_to_cover": 5.36,
+   "chg_pct": 1.85
   },
   "ASML": {
    "short": 1327923,
@@ -44,25 +54,20 @@
    "days_to_cover": 4.27,
    "chg_pct": 4.36
   },
-  "BKD": {
-   "short": 45639717,
-   "days_to_cover": 6.72,
-   "chg_pct": 1.08
-  },
   "BSX": {
    "short": 40708019,
    "days_to_cover": 2.59,
    "chg_pct": -1.7
   },
+  "CHTR": {
+   "short": 17430799,
+   "days_to_cover": 5.86,
+   "chg_pct": 5.61
+  },
   "CIEN": {
    "short": 3984850,
    "days_to_cover": 1.16,
    "chg_pct": 3
-  },
-  "COHR": {
-   "short": 9048189,
-   "days_to_cover": 1.17,
-   "chg_pct": -18.05
   },
   "COIN": {
    "short": 23767692,
@@ -79,11 +84,6 @@
    "days_to_cover": 1,
    "chg_pct": 78.33
   },
-  "DKNG": {
-   "short": 39452874,
-   "days_to_cover": 2.82,
-   "chg_pct": 3.68
-  },
   "FICO": {
    "short": 2427000,
    "days_to_cover": 1.69,
@@ -93,11 +93,6 @@
    "short": 19104546,
    "days_to_cover": 2.93,
    "chg_pct": -2.39
-  },
-  "FIVN": {
-   "short": 10836335,
-   "days_to_cover": 5.79,
-   "chg_pct": 6.2
   },
   "FLEX": {
    "short": 7909634,
@@ -109,20 +104,20 @@
    "days_to_cover": 2.01,
    "chg_pct": -5.05
   },
+  "IBRX": {
+   "short": 122945839,
+   "days_to_cover": 7.15,
+   "chg_pct": -0.92
+  },
   "INTC": {
    "short": 148504504,
    "days_to_cover": 1.54,
    "chg_pct": -11.18
   },
-  "IRTC": {
-   "short": 3096052,
-   "days_to_cover": 6.77,
-   "chg_pct": 2.07
-  },
-  "KLAC": {
-   "short": 24883449,
-   "days_to_cover": 2.72,
-   "chg_pct": 2.56
+  "IONS": {
+   "short": 20653026,
+   "days_to_cover": 7.65,
+   "chg_pct": -8.24
   },
   "MRVL": {
    "short": 24588610,
@@ -133,6 +128,11 @@
    "short": 301622687,
    "days_to_cover": 2.91,
    "chg_pct": -3.14
+  },
+  "ORCL": {
+   "short": 47521444,
+   "days_to_cover": 1.66,
+   "chg_pct": -1.99
   },
   "PODD": {
    "short": 5629649,
@@ -153,11 +153,6 @@
    "short": 7859241,
    "days_to_cover": 1.39,
    "chg_pct": 12.71
-  },
-  "TER": {
-   "short": 7855474,
-   "days_to_cover": 2.91,
-   "chg_pct": -8.97
   },
   "TSM": {
    "short": 29310548,

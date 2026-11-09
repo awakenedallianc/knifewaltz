@@ -1,9 +1,9 @@
 {
- "date": "2026-11-09",
+ "date": "2026-11-10",
  "on": {
   "G-VIX-36": false,
   "G-VIX-45": false,
   "G-VIX-50": false
  },
- "flip_back": false
+ "flip_back": true
 }
