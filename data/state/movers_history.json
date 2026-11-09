@@ -2338,41 +2338,77 @@
   "2026-11-09": [
    {
     "date": "2026-11-09",
-    "sym": "BTCUSDT",
-    "last": 75735.9,
-    "pct24": -0.084,
-    "quote_vol": 134770420.0,
-    "funding": 2.00411503772e-05,
+    "sym": "PEPEUSDT",
+    "last": 5.1129e-06,
+    "pct24": 6.379,
+    "quote_vol": 20290641.0,
+    "funding": null,
     "source": "okx"
    },
    {
     "date": "2026-11-09",
-    "sym": "ETHUSDT",
-    "last": 2227.84,
-    "pct24": -0.36,
-    "quote_vol": 45266618.0,
-    "funding": 1.46372657845e-05,
+    "sym": "BTCUSDT",
+    "last": 75305.8,
+    "pct24": -0.6,
+    "quote_vol": 463960656.0,
+    "funding": 3.56195441518e-05,
     "source": "okx"
    },
    {
     "date": "2026-11-09",
     "sym": "ZECUSDT",
-    "last": 1243.95,
-    "pct24": -1.421,
-    "quote_vol": 63374972.0,
-    "funding": -0.0001789369493341,
+    "last": 1236.68,
+    "pct24": -0.801,
+    "quote_vol": 64654974.0,
+    "funding": null,
     "source": "okx"
    },
    {
     "date": "2026-11-09",
-    "sym": "ONEUSDT",
-    "last": 0.0017629,
-    "pct24": -21.464,
-    "quote_vol": 97447940.0,
-    "funding": -0.0019578855864724,
+    "sym": "SOLUSDT",
+    "last": 88.09,
+    "pct24": -1.067,
+    "quote_vol": 65658427.0,
+    "funding": -1.77372499686e-05,
+    "source": "okx"
+   },
+   {
+    "date": "2026-11-09",
+    "sym": "DOGEUSDT",
+    "last": 0.07005,
+    "pct24": -1.56,
+    "quote_vol": 28857818.0,
+    "funding": -4.65464562008e-05,
+    "source": "okx"
+   },
+   {
+    "date": "2026-11-09",
+    "sym": "HYPEUSDT",
+    "last": 74.913,
+    "pct24": -3.364,
+    "quote_vol": 28648259.0,
+    "funding": 1.20130277956e-05,
+    "source": "okx"
+   },
+   {
+    "date": "2026-11-09",
+    "sym": "XRPUSDT",
+    "last": 1.1163,
+    "pct24": -3.601,
+    "quote_vol": 60148062.0,
+    "funding": 1.93165334626e-05,
+    "source": "okx"
+   },
+   {
+    "date": "2026-11-09",
+    "sym": "ETHUSDT",
+    "last": 2148.29,
+    "pct24": -3.855,
+    "quote_vol": 328849250.0,
+    "funding": -5.47881984412e-05,
     "source": "okx"
    }
   ]
  },
- "updated": "2026-11-09T00:17:25+07:00"
+ "updated": "2026-11-09T09:58:02+07:00"
 }

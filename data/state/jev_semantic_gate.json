@@ -155,7 +155,7 @@
  },
  "KC_F": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-09",
   "clear_streak": 0,
   "top_headline": "Agricultural market: Rice prices rise, coffee prices continue to fall. - Vietnam.vn"
@@ -169,7 +169,7 @@
  },
  "LX": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.02,
   "date": "2026-11-09",
   "clear_streak": 0,
   "top_headline": "Chiefs RB is among NFL's leaders in key stat ahead of tilt vs. Jets - Yahoo Sports"
@@ -183,7 +183,7 @@
  },
  "QFIN": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.04,
   "date": "2026-11-09",
   "clear_streak": 0,
   "top_headline": "Options Whale Alert: $101K Bearish Long Put Opened on $QFIN - Moomoo"
@@ -470,14 +470,14 @@
  },
  "COHR": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-09",
   "clear_streak": 0,
   "top_headline": "Coherent Is Up 21% in a Year as AI Goes “From Copper to Optical.” Is It a Buy?"
  },
  "KLAC": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-09",
   "clear_streak": 0,
   "top_headline": "Brad Gerstner Bought Applied Materials. A $16 Billion Hedge Fund Sold Nearly All of It. Who’s Right?"
@@ -603,21 +603,21 @@
  },
  "SMH": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.02,
   "date": "2026-11-09",
   "clear_streak": 0,
   "top_headline": "TSMC Jumped 6% on a Report It Could Make Memory Chips for Nvidia"
  },
  "ARKK": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.03,
   "date": "2026-11-09",
   "clear_streak": 0,
   "top_headline": "ARKK Nov 2026 79.500 put (ARKK261113P00079500) stock price, news, quote and history - Yahoo Finance Singapore"
  },
  "TER": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.03,
   "date": "2026-11-09",
   "clear_streak": 0,
   "top_headline": "16495 SW 47th Ter, Miami, FL 33185 - Realtor.com"
