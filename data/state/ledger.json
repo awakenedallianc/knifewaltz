@@ -896,5 +896,29 @@
   "tier_time": "-",
   "status": "open",
   "snapshot_ref": "S-CATCH:OJ_F:2026-11-10"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "INTC",
+  "date": "2026-11-11",
+  "entry": 57.4109992980957,
+  "stop": 56.8501,
+  "score": 67,
+  "tier_time": "DEAD_ZONE",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:INTC:2026-11-11"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "MRVL",
+  "date": "2026-11-11",
+  "entry": 151.71499633789062,
+  "stop": 147.79,
+  "score": 63,
+  "tier_time": "DEAD_ZONE",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:MRVL:2026-11-11"
  }
 ]

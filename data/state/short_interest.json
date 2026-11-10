@@ -2,18 +2,8 @@
  "settlement": "2026-10-15",
  "staleness_note": "双月·滞后约9工作日",
  "source": "finra",
- "fetched_at": "2026-11-10T11:48:19+07:00",
+ "fetched_at": "2026-11-11T01:50:52+07:00",
  "rows": {
-  "ACAD": {
-   "short": 9094151,
-   "days_to_cover": 4.58,
-   "chg_pct": 9.89
-  },
-  "AKAM": {
-   "short": 18737068,
-   "days_to_cover": 3.72,
-   "chg_pct": -2.8
-  },
   "ALB": {
    "short": 12251426,
    "days_to_cover": 4.95,
@@ -33,11 +23,6 @@
    "short": 17701475,
    "days_to_cover": 3.75,
    "chg_pct": 9.34
-  },
-  "ARWR": {
-   "short": 10959276,
-   "days_to_cover": 5.36,
-   "chg_pct": 1.85
   },
   "ASML": {
    "short": 1327923,
@@ -59,15 +44,15 @@
    "days_to_cover": 2.59,
    "chg_pct": -1.7
   },
-  "CHTR": {
-   "short": 17430799,
-   "days_to_cover": 5.86,
-   "chg_pct": 5.61
-  },
   "CIEN": {
    "short": 3984850,
    "days_to_cover": 1.16,
    "chg_pct": 3
+  },
+  "COHR": {
+   "short": 9048189,
+   "days_to_cover": 1.17,
+   "chg_pct": -18.05
   },
   "COIN": {
    "short": 23767692,
@@ -83,6 +68,11 @@
    "short": 38568625,
    "days_to_cover": 1,
    "chg_pct": 78.33
+  },
+  "EQPT": {
+   "short": 18766134,
+   "days_to_cover": 4.61,
+   "chg_pct": 24.72
   },
   "FICO": {
    "short": 2427000,
@@ -104,25 +94,35 @@
    "days_to_cover": 2.01,
    "chg_pct": -5.05
   },
-  "IBRX": {
-   "short": 122945839,
-   "days_to_cover": 7.15,
-   "chg_pct": -0.92
+  "HIMS": {
+   "short": 53473095,
+   "days_to_cover": 5.01,
+   "chg_pct": -2.37
   },
   "INTC": {
    "short": 148504504,
    "days_to_cover": 1.54,
    "chg_pct": -11.18
   },
-  "IONS": {
-   "short": 20653026,
-   "days_to_cover": 7.65,
-   "chg_pct": -8.24
+  "INTU": {
+   "short": 8012198,
+   "days_to_cover": 2.2,
+   "chg_pct": 10.09
+  },
+  "LEGN": {
+   "short": 13904472,
+   "days_to_cover": 6.7,
+   "chg_pct": -15.15
   },
   "MRVL": {
    "short": 24588610,
    "days_to_cover": 1.08,
    "chg_pct": 2.23
+  },
+  "NOVT": {
+   "short": 5240079,
+   "days_to_cover": 10.73,
+   "chg_pct": 1.85
   },
   "NVDA": {
    "short": 301622687,

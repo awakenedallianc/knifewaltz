@@ -2184,7 +2184,9 @@
   "features_sha": "e0257c073bc71779",
   "realized": {
    "ledger_ref": "CHTR@2026-10-13",
-   "fwd5_pct": 3.25
+   "fwd5_pct": 3.25,
+   "fwd20_pct": 22.86,
+   "mae20_pct": -5.46
   },
   "settled": false,
   "stier": {
@@ -5032,7 +5034,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "f7c340547e5adcaf",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": -10.2
+  },
   "settled": false
  },
  {
@@ -5098,7 +5102,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "cc3129e9a3fee031",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": -25.24
+  },
   "settled": false
  },
  {
@@ -7672,6 +7678,273 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "9b602dbd4695af2b",
+  "realized": {},
+  "settled": false
+ },
+ {
+  "id": "S-CATCH:INTC:2026-11-11",
+  "kind": "S-CATCH",
+  "symbol": "INTC",
+  "date": "2026-11-11",
+  "trigger_px": 57.4109992980957,
+  "stop_price": 56.8501,
+  "features": {
+   "dd52w": -59.27,
+   "dd250": -59.27,
+   "ret10": -38.76,
+   "rsi14": 25.0,
+   "vol_ratio": 0.45,
+   "close_pos": 0.15,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": true,
+    "vol_compress": true,
+    "gate_ok": true,
+    "rsi_divergence": false
+   },
+   "checklist_n": 3,
+   "tier_time": "DEAD_ZONE",
+   "days_from_peak": 99,
+   "stop_price": 56.8501,
+   "last_date": "2026-11-10",
+   "cls": "equity_single",
+   "tier": "T2",
+   "state": "CATCH",
+   "score_parts": {
+    "fall_40": 34.8,
+    "capitulation_20": 0.0,
+    "checklist_20": 12.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 67,
+  "market": {
+   "blade_index": 1,
+   "gate_state": "FLIP_BACK",
+   "vix": 20.469999313354492,
+   "vix_ratio": 0.960581878290031
+  },
+  "jev": {
+   "family": "unclear",
+   "p_terminal": 0.0,
+   "conf": 0.41,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.307,
+   "catch_prior": 0.235,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "7a78baa3a4365876",
+  "realized": {
+   "ledger_ref": "INTC@2026-11-11"
+  },
+  "settled": false,
+  "stier": {
+   "rules_version": "s1",
+   "admitted": false,
+   "status": null,
+   "soft_score": 0.5017,
+   "hard_pass": {
+    "H1": true,
+    "H2": false,
+    "H3": false,
+    "H4": false,
+    "H5": true,
+    "H6": true,
+    "H7": true,
+    "H8": true
+   },
+   "shadow": {
+    "H9": {
+     "would_block": true,
+     "lr": 1.0,
+     "grade": "线索"
+    },
+    "H10": {
+     "would_block": true,
+     "flip_back_age_days": 2
+    },
+    "H11": {
+     "would_block": true,
+     "close_pos": 0.15
+    }
+   },
+   "slice": {
+    "key": "unclear|FLIP_BACK|DEAD_ZONE|none|equity_single",
+    "lr": 1.0,
+    "n": 0,
+    "wins": 0,
+    "wilson95": null,
+    "grade": "线索"
+   }
+  }
+ },
+ {
+  "id": "S-CATCH:MRVL:2026-11-11",
+  "kind": "S-CATCH",
+  "symbol": "MRVL",
+  "date": "2026-11-11",
+  "trigger_px": 151.71499633789062,
+  "stop_price": 147.79,
+  "features": {
+   "dd52w": -52.05,
+   "dd250": -52.05,
+   "ret10": -37.71,
+   "rsi14": 25.8,
+   "vol_ratio": 0.55,
+   "close_pos": 0.36,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": true,
+    "vol_compress": true,
+    "gate_ok": true,
+    "rsi_divergence": false
+   },
+   "checklist_n": 3,
+   "tier_time": "DEAD_ZONE",
+   "days_from_peak": 110,
+   "stop_price": 147.79,
+   "last_date": "2026-11-10",
+   "cls": "equity_single",
+   "tier": "T2",
+   "state": "CATCH",
+   "score_parts": {
+    "fall_40": 31.4,
+    "capitulation_20": 0.0,
+    "checklist_20": 12.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 63,
+  "market": {
+   "blade_index": 1,
+   "gate_state": "FLIP_BACK",
+   "vix": 20.469999313354492,
+   "vix_ratio": 0.960581878290031
+  },
+  "jev": {
+   "family": "unclear",
+   "p_terminal": 0.01,
+   "conf": 0.64,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.11,
+   "catch_prior": 0.255,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "71bf6ec8b52c7396",
+  "realized": {
+   "ledger_ref": "MRVL@2026-11-11"
+  },
+  "settled": false,
+  "stier": {
+   "rules_version": "s1",
+   "admitted": false,
+   "status": null,
+   "soft_score": 0.4907,
+   "hard_pass": {
+    "H1": true,
+    "H2": false,
+    "H3": false,
+    "H4": false,
+    "H5": true,
+    "H6": true,
+    "H7": true,
+    "H8": false
+   },
+   "shadow": {
+    "H9": {
+     "would_block": true,
+     "lr": 1.0,
+     "grade": "线索"
+    },
+    "H10": {
+     "would_block": true,
+     "flip_back_age_days": 2
+    },
+    "H11": {
+     "would_block": false,
+     "close_pos": 0.36
+    }
+   },
+   "slice": {
+    "key": "unclear|FLIP_BACK|DEAD_ZONE|none|equity_single",
+    "lr": 1.0,
+    "n": 0,
+    "wins": 0,
+    "wilson95": null,
+    "grade": "线索"
+   }
+  }
+ },
+ {
+  "id": "S-FALL:CC_F:2026-11-11",
+  "kind": "S-FALL",
+  "symbol": "CC_F",
+  "date": "2026-11-11",
+  "trigger_px": 4847.0,
+  "stop_price": 4768.0,
+  "features": {
+   "dd52w": -34.37,
+   "dd250": -33.08,
+   "ret10": -13.09,
+   "rsi14": 8.2,
+   "vol_ratio": 2.01,
+   "close_pos": 0.28,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": true,
+    "gate_ok": true,
+    "rsi_divergence": false
+   },
+   "checklist_n": 2,
+   "tier_time": "-",
+   "days_from_peak": 412,
+   "stop_price": 4768.0,
+   "last_date": "2026-11-10",
+   "cls": "futures",
+   "tier": "T1F",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 12.1,
+    "capitulation_20": 0.0,
+    "checklist_20": 8.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 40,
+  "market": {
+   "blade_index": 1,
+   "gate_state": "FLIP_BACK",
+   "vix": 20.469999313354492,
+   "vix_ratio": 0.960581878290031
+  },
+  "jev": null,
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "a7e95dcaf701ddc7",
   "realized": {},
   "settled": false
  }
