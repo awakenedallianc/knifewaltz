@@ -2356,86 +2356,68 @@
   "2026-11-10": [
    {
     "date": "2026-11-10",
-    "sym": "UNIUSDT",
-    "last": 7.082,
-    "pct24": 2.134,
-    "quote_vol": 20686037.0,
-    "funding": null,
-    "source": "okx"
-   },
-   {
-    "date": "2026-11-10",
     "sym": "PEPEUSDT",
-    "last": 5.1005e-06,
-    "pct24": 1.476,
-    "quote_vol": 29572207.0,
+    "last": 5.2534e-06,
+    "pct24": 4.313,
+    "quote_vol": 24124859.0,
     "funding": null,
     "source": "okx"
    },
    {
     "date": "2026-11-10",
     "sym": "BTCUSDT",
-    "last": 74858.5,
-    "pct24": -1.118,
-    "quote_vol": 796860975.0,
-    "funding": 0.0001,
+    "last": 74684.7,
+    "pct24": -0.257,
+    "quote_vol": 496217202.0,
+    "funding": 6.37642461643e-05,
     "source": "okx"
    },
    {
     "date": "2026-11-10",
     "sym": "HYPEUSDT",
-    "last": 75.045,
-    "pct24": -1.133,
-    "quote_vol": 51388734.0,
-    "funding": -6.14305173579e-05,
-    "source": "okx"
-   },
-   {
-    "date": "2026-11-10",
-    "sym": "DOGEUSDT",
-    "last": 0.06993,
-    "pct24": -1.41,
-    "quote_vol": 38137625.0,
-    "funding": 0.0001,
-    "source": "okx"
-   },
-   {
-    "date": "2026-11-10",
-    "sym": "SOLUSDT",
-    "last": 86.27,
-    "pct24": -3.1,
-    "quote_vol": 91912448.0,
-    "funding": 6.6998681053e-05,
-    "source": "okx"
-   },
-   {
-    "date": "2026-11-10",
-    "sym": "ZECUSDT",
-    "last": 1169.62,
-    "pct24": -4.198,
-    "quote_vol": 121838676.0,
+    "last": 74.002,
+    "pct24": -0.68,
+    "quote_vol": 51397468.0,
     "funding": 0.0001,
     "source": "okx"
    },
    {
     "date": "2026-11-10",
     "sym": "ETHUSDT",
-    "last": 2127.28,
-    "pct24": -4.388,
-    "quote_vol": 608918821.0,
-    "funding": 1.66916659039e-05,
+    "last": 2119.35,
+    "pct24": -0.904,
+    "quote_vol": 339539335.0,
+    "funding": 2.95518518777e-05,
     "source": "okx"
    },
    {
     "date": "2026-11-10",
     "sym": "XRPUSDT",
-    "last": 1.0907,
-    "pct24": -4.801,
-    "quote_vol": 108703448.0,
-    "funding": 1.7318490413e-05,
+    "last": 1.0921,
+    "pct24": -1.248,
+    "quote_vol": 76143313.0,
+    "funding": 8.53434388731e-05,
+    "source": "okx"
+   },
+   {
+    "date": "2026-11-10",
+    "sym": "SOLUSDT",
+    "last": 85.86,
+    "pct24": -1.863,
+    "quote_vol": 48576417.0,
+    "funding": 7.75018938901e-05,
+    "source": "okx"
+   },
+   {
+    "date": "2026-11-10",
+    "sym": "ZECUSDT",
+    "last": 1150.75,
+    "pct24": -6.741,
+    "quote_vol": 117161682.0,
+    "funding": 0.0001,
     "source": "okx"
    }
   ]
  },
- "updated": "2026-11-10T04:40:55+07:00"
+ "updated": "2026-11-10T11:48:30+07:00"
 }

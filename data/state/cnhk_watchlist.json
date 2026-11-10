@@ -12,9 +12,9 @@
    "key": "0960_HK",
    "name": "Longfor Group Holdings Ltd",
    "pool": "CN_HK",
-   "dd250": -58.1,
-   "px": 4.409999847412109,
-   "asof": "2026-11-09"
+   "dd250": -58.2,
+   "px": 4.40500020980835,
+   "asof": "2026-11-10"
   },
   {
    "symbol": "TME",
@@ -44,15 +44,6 @@
    "asof": "2026-11-09"
   },
   {
-   "symbol": "9888.HK",
-   "key": "9888_HK",
-   "name": "Baidu Inc",
-   "pool": "CN_HK",
-   "dd250": -51.1,
-   "px": 78.5,
-   "asof": "2026-11-09"
-  },
-  {
    "symbol": "NIO",
    "key": "NIO",
    "name": "蔚来",
@@ -62,13 +53,13 @@
    "asof": "2026-11-09"
   },
   {
-   "symbol": "0992.HK",
-   "key": "0992_HK",
-   "name": "Lenovo Group Ltd",
+   "symbol": "9888.HK",
+   "key": "9888_HK",
+   "name": "Baidu Inc",
    "pool": "CN_HK",
    "dd250": -50.4,
-   "px": 18.649999618530273,
-   "asof": "2026-11-09"
+   "px": 79.5999984741211,
+   "asof": "2026-11-10"
   },
   {
    "symbol": "BIDU",

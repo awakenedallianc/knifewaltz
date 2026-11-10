@@ -4925,7 +4925,8 @@
   "engine_sha": "69e75ef468979668",
   "features_sha": "919915fef5ec9ef6",
   "realized": {
-   "ledger_ref": "NG=F@2026-11-03"
+   "ledger_ref": "NG=F@2026-11-03",
+   "fwd5_pct": 10.81
   },
   "settled": false,
   "stier": {
@@ -7618,6 +7619,59 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "d2e538b048d399f2",
+  "realized": {},
+  "settled": false
+ },
+ {
+  "id": "S-FALL:RB_F:2026-11-10",
+  "kind": "S-FALL",
+  "symbol": "RB_F",
+  "date": "2026-11-10",
+  "trigger_px": 2.631200075149536,
+  "stop_price": 2.6254,
+  "features": {
+   "dd52w": -30.23,
+   "dd250": -30.23,
+   "ret10": -16.14,
+   "rsi14": 29.6,
+   "vol_ratio": 0.03,
+   "close_pos": 0.17,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": true,
+    "gate_ok": true,
+    "rsi_divergence": false
+   },
+   "checklist_n": 2,
+   "tier_time": "-",
+   "days_from_peak": 968,
+   "stop_price": 2.6254,
+   "last_date": "2026-11-09",
+   "cls": "futures",
+   "tier": "T1F",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 12.0,
+    "capitulation_20": 0.0,
+    "checklist_20": 8.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 40,
+  "market": {
+   "blade_index": 3,
+   "gate_state": "FLIP_BACK",
+   "vix": 19.920000076293945,
+   "vix_ratio": 0.9553956696325862
+  },
+  "jev": null,
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "9b602dbd4695af2b",
   "realized": {},
   "settled": false
  }

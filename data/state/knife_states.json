@@ -760,9 +760,16 @@
   ]
  },
  "RB_F": {
-  "state": "NORMAL",
-  "since": "2026-09-22",
-  "events": []
+  "state": "KNIFE_FALLING",
+  "since": "2026-11-10",
+  "events": [
+   {
+    "d": "2026-11-10",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -30.23% / 10日 -16.14%"
+   }
+  ]
  },
  "HO_F": {
   "state": "NORMAL",
@@ -1909,7 +1916,7 @@
   ]
  },
  "AXON": {
-  "state": "KNIFE_FALLING",
+  "state": "STABILIZING",
   "since": "2026-11-10",
   "events": [
    {
@@ -1917,11 +1924,17 @@
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -53.05% / 10日 -28.62%"
+   },
+   {
+    "d": "2026-11-10",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 1/5"
    }
   ]
  },
  "AKAM": {
-  "state": "KNIFE_FALLING",
+  "state": "STABILIZING",
   "since": "2026-11-10",
   "events": [
    {
@@ -1929,6 +1942,12 @@
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -50.17% / 10日 -18.49%"
+   },
+   {
+    "d": "2026-11-10",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 1/5"
    }
   ]
  }
