@@ -920,5 +920,29 @@
   "tier_time": "DEAD_ZONE",
   "status": "open",
   "snapshot_ref": "S-CATCH:MRVL:2026-11-11"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "FICO",
+  "date": "2026-11-12",
+  "entry": 722.97998046875,
+  "stop": 716.12,
+  "score": 52,
+  "tier_time": "B",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:FICO:2026-11-12"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "ARKK",
+  "date": "2026-11-12",
+  "entry": 79.43000030517578,
+  "stop": 78.3795,
+  "score": 34,
+  "tier_time": "-",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:ARKK:2026-11-12"
  }
 ]

@@ -30,8 +30,8 @@
   "events": []
  },
  "ARKK": {
-  "state": "STABILIZING",
-  "since": "2026-11-10",
+  "state": "CATCH",
+  "since": "2026-11-12",
   "events": [
    {
     "d": "2026-11-06",
@@ -44,8 +44,17 @@
     "from": "KNIFE_FALLING",
     "to": "STABILIZING",
     "note": "checklist 1/5"
+   },
+   {
+    "d": "2026-11-12",
+    "from": "STABILIZING",
+    "to": "CATCH",
+    "note": "checklist 3/5"
    }
-  ]
+  ],
+  "catch_ref_price": 79.43000030517578,
+  "catch_day_low": 78.3795,
+  "expires": "2026-11-28"
  },
  "_GSPC": {
   "state": "NORMAL",
@@ -710,8 +719,8 @@
   ]
  },
  "FICO": {
-  "state": "STABILIZING",
-  "since": "2026-11-07",
+  "state": "CATCH",
+  "since": "2026-11-12",
   "events": [
    {
     "d": "2026-09-29",
@@ -742,11 +751,17 @@
     "from": "KNIFE_FALLING",
     "to": "STABILIZING",
     "note": "checklist 1/5"
+   },
+   {
+    "d": "2026-11-12",
+    "from": "STABILIZING",
+    "to": "CATCH",
+    "note": "checklist 3/5"
    }
   ],
-  "catch_ref_price": 840.8900146484375,
-  "catch_day_low": 832.0,
-  "expires": "2026-10-15",
+  "catch_ref_price": 722.97998046875,
+  "catch_day_low": 716.12,
+  "expires": "2026-11-28",
   "cooldown_until": "2026-10-16"
  },
  "ALNY": {
