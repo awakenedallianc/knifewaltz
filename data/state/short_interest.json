@@ -1,168 +1,158 @@
 {
- "settlement": "2026-10-15",
+ "settlement": "2026-10-30",
  "staleness_note": "双月·滞后约9工作日",
  "source": "finra",
- "fetched_at": "2026-11-11T01:50:52+07:00",
+ "fetched_at": "2026-11-11T09:59:35+07:00",
  "rows": {
   "ALB": {
-   "short": 12251426,
-   "days_to_cover": 4.95,
-   "chg_pct": 4.14
+   "short": 12402907,
+   "days_to_cover": 5.28,
+   "chg_pct": 1.24
   },
   "ALNY": {
-   "short": 6568786,
-   "days_to_cover": 5.1,
-   "chg_pct": -14.82
+   "short": 5465979,
+   "days_to_cover": 1.91,
+   "chg_pct": -16.79
   },
   "APTV": {
-   "short": 9313545,
-   "days_to_cover": 3.69,
-   "chg_pct": 0.77
+   "short": 11087532,
+   "days_to_cover": 4.34,
+   "chg_pct": 19.05
   },
   "ARM": {
-   "short": 17701475,
-   "days_to_cover": 3.75,
-   "chg_pct": 9.34
+   "short": 15769527,
+   "days_to_cover": 3.33,
+   "chg_pct": -10.91
   },
   "ASML": {
-   "short": 1327923,
+   "short": 1143226,
    "days_to_cover": 1,
-   "chg_pct": -8.44
+   "chg_pct": -13.91
   },
   "AVGO": {
-   "short": 53611331,
-   "days_to_cover": 2.4,
-   "chg_pct": -1.08
+   "short": 51943604,
+   "days_to_cover": 2.36,
+   "chg_pct": -3.11
   },
   "AXON": {
-   "short": 4061720,
-   "days_to_cover": 4.27,
-   "chg_pct": 4.36
+   "short": 4110412,
+   "days_to_cover": 4.3,
+   "chg_pct": 1.2
   },
   "BSX": {
-   "short": 40708019,
-   "days_to_cover": 2.59,
-   "chg_pct": -1.7
+   "short": 35113858,
+   "days_to_cover": 1.65,
+   "chg_pct": -13.74
   },
   "CIEN": {
-   "short": 3984850,
-   "days_to_cover": 1.16,
-   "chg_pct": 3
-  },
-  "COHR": {
-   "short": 9048189,
-   "days_to_cover": 1.17,
-   "chg_pct": -18.05
+   "short": 3905235,
+   "days_to_cover": 1.37,
+   "chg_pct": -2
   },
   "COIN": {
-   "short": 23767692,
-   "days_to_cover": 2.87,
-   "chg_pct": -2.49
+   "short": 22834387,
+   "days_to_cover": 2.85,
+   "chg_pct": -3.93
   },
   "CSGP": {
-   "short": 14988751,
-   "days_to_cover": 2.88,
-   "chg_pct": 12.83
+   "short": 12499298,
+   "days_to_cover": 1.73,
+   "chg_pct": -16.61
   },
   "CTVA": {
-   "short": 38568625,
-   "days_to_cover": 1,
-   "chg_pct": 78.33
+   "short": 50977459,
+   "days_to_cover": 2.67,
+   "chg_pct": 32.17
   },
   "EQPT": {
-   "short": 18766134,
-   "days_to_cover": 4.61,
-   "chg_pct": 24.72
+   "short": 16518675,
+   "days_to_cover": 5.64,
+   "chg_pct": -11.98
   },
   "FICO": {
-   "short": 2427000,
-   "days_to_cover": 1.69,
-   "chg_pct": 8.03
+   "short": 2531656,
+   "days_to_cover": 3.08,
+   "chg_pct": 4.31
   },
   "FIS": {
-   "short": 19104546,
-   "days_to_cover": 2.93,
-   "chg_pct": -2.39
-  },
-  "FLEX": {
-   "short": 7909634,
-   "days_to_cover": 2.23,
-   "chg_pct": -10.45
-  },
-  "GLW": {
-   "short": 15992050,
-   "days_to_cover": 2.01,
-   "chg_pct": -5.05
-  },
-  "HIMS": {
-   "short": 53473095,
-   "days_to_cover": 5.01,
-   "chg_pct": -2.37
-  },
-  "INTC": {
-   "short": 148504504,
-   "days_to_cover": 1.54,
-   "chg_pct": -11.18
-  },
-  "INTU": {
-   "short": 8012198,
-   "days_to_cover": 2.2,
+   "short": 21032189,
+   "days_to_cover": 3.98,
    "chg_pct": 10.09
   },
+  "FLEX": {
+   "short": 9561616,
+   "days_to_cover": 1.25,
+   "chg_pct": 20.89
+  },
+  "GLW": {
+   "short": 16554486,
+   "days_to_cover": 1.59,
+   "chg_pct": 3.52
+  },
+  "HIMS": {
+   "short": 51657110,
+   "days_to_cover": 5.84,
+   "chg_pct": -3.4
+  },
+  "INTC": {
+   "short": 152855264,
+   "days_to_cover": 1.18,
+   "chg_pct": 2.93
+  },
   "LEGN": {
-   "short": 13904472,
-   "days_to_cover": 6.7,
-   "chg_pct": -15.15
+   "short": 11899858,
+   "days_to_cover": 6.29,
+   "chg_pct": -14.42
   },
   "MRVL": {
-   "short": 24588610,
-   "days_to_cover": 1.08,
-   "chg_pct": 2.23
+   "short": 26088002,
+   "days_to_cover": 1.21,
+   "chg_pct": 6.1
   },
   "NOVT": {
-   "short": 5240079,
-   "days_to_cover": 10.73,
-   "chg_pct": 1.85
+   "short": 5248696,
+   "days_to_cover": 14.83,
+   "chg_pct": 0.16
   },
   "NVDA": {
-   "short": 301622687,
-   "days_to_cover": 2.91,
-   "chg_pct": -3.14
+   "short": 279579505,
+   "days_to_cover": 2.8,
+   "chg_pct": -7.31
   },
   "ORCL": {
-   "short": 47521444,
-   "days_to_cover": 1.66,
-   "chg_pct": -1.99
+   "short": 46405138,
+   "days_to_cover": 1.34,
+   "chg_pct": -2.35
   },
   "PODD": {
-   "short": 5629649,
-   "days_to_cover": 3.12,
-   "chg_pct": 5.07
+   "short": 5326266,
+   "days_to_cover": 4.25,
+   "chg_pct": -5.39
   },
   "RDDT": {
-   "short": 21602533,
-   "days_to_cover": 5.14,
-   "chg_pct": -2.3
+   "short": 22137442,
+   "days_to_cover": 2.71,
+   "chg_pct": 2.48
   },
   "SNDK": {
-   "short": 4704783,
+   "short": 4911149,
    "days_to_cover": 1,
-   "chg_pct": -2.38
+   "chg_pct": 4.39
   },
   "STX": {
-   "short": 7859241,
-   "days_to_cover": 1.39,
-   "chg_pct": 12.71
+   "short": 8440115,
+   "days_to_cover": 1.44,
+   "chg_pct": 7.39
   },
   "TSM": {
-   "short": 29310548,
-   "days_to_cover": 2.63,
-   "chg_pct": -3.88
+   "short": 32199918,
+   "days_to_cover": 2.62,
+   "chg_pct": 9.86
   },
   "WDC": {
-   "short": 19446763,
-   "days_to_cover": 1.88,
-   "chg_pct": 6.3
+   "short": 19373548,
+   "days_to_cover": 2.14,
+   "chg_pct": -0.38
   }
  }
 }

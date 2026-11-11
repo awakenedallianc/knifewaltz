@@ -8,7 +8,7 @@
  },
  "CSGP": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-11",
   "clear_streak": 0,
   "top_headline": "CSGP Jun 2027 31.000 call (CSGP270617C00031000) Stock Price, News, Quote & History - Yahoo! Finance Canada"
@@ -22,7 +22,7 @@
  },
  "NG_F": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-11",
   "clear_streak": 0,
   "top_headline": "Natural Gas Extending Gains as Forecasters Tease Cooldown - Natural Gas Intelligence"
@@ -57,7 +57,7 @@
  },
  "ORCL": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.03,
   "date": "2026-11-11",
   "clear_streak": 0,
   "top_headline": "Dan Ives Says Wall Street Is Underestimating 2 Major Tech Stocks"
@@ -99,7 +99,7 @@
  },
  "APTV": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-11",
   "clear_streak": 0,
   "top_headline": "RAPTV to SGD: Aptiv PLC Tokenized Stock (Reality) Price in Singapore Dollar - CoinGecko"
@@ -155,7 +155,7 @@
  },
  "KC_F": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-11",
   "clear_streak": 0,
   "top_headline": "Coffee prices today, November 10th: Reversing course and falling, Arabica hits a 7-week low. - Vietnam.vn"
@@ -169,7 +169,7 @@
  },
  "LX": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-11",
   "clear_streak": 0,
   "top_headline": "Spain and Portugal: Luxair warns of Wednesday travel disruptions - RTL Today"
@@ -183,7 +183,7 @@
  },
  "QFIN": {
   "veto": false,
-  "p": 0.61,
+  "p": 0.64,
   "date": "2026-11-11",
   "clear_streak": 0,
   "top_headline": "QFIN HOLDINGS, INC. (QFIN) SHAREHOLDER ALERT Bernstein - GlobeNewswire"
@@ -239,7 +239,7 @@
  },
  "NIO": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.02,
   "date": "2026-11-11",
   "clear_streak": 0,
   "top_headline": "NIO vs. Stellantis: Is a Cutting Edge EV or Automaker Titan Stock a Better Buy for 2027?"
@@ -253,7 +253,7 @@
  },
  "VNET": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-11",
   "clear_streak": 0,
   "top_headline": "VNET Group stock trades at 2.91 euros on Tuesday afternoon - ad-hoc-news.de"
@@ -331,9 +331,9 @@
  "NOAH": {
   "veto": false,
   "p": 0.0,
-  "date": "2026-11-10",
+  "date": "2026-11-11",
   "clear_streak": 0,
-  "top_headline": "Noah Hiles: Sorry to spoil the fun, but the Steelers still need their quarterback of the future - Pittsburgh Post-Gazette"
+  "top_headline": "Noah Hiles: An expanded College Football Playoff means more opportunity — and pressure — for Pitt - Pittsburgh Post-Gazette"
  },
  "FINV": {
   "veto": false,
@@ -386,7 +386,7 @@
  },
  "ALB": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-11",
   "clear_streak": 0,
   "top_headline": "Is Albemarle (ALB) A Bargain Following Its Return To Profit In Q3? - Simply Wall St"
@@ -575,7 +575,7 @@
  },
  "MRVL": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-11",
   "clear_streak": 0,
   "top_headline": "Lumentum Sinks 11% in a Week as Marvell’s All-Stock Offer Shrinks: “Our Demand Couldn’t Be Stronger”"
@@ -610,7 +610,7 @@
  },
  "ARKK": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-11",
   "clear_streak": 0,
   "top_headline": "Cathie Wood Is Buying Nvidia Again, Adding 90,443 Shares During the Huang Selloff"
@@ -631,7 +631,7 @@
  },
  "AXON": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-11",
   "clear_streak": 0,
   "top_headline": "Axon Is Down 52% From Its August High. Northland Still Sees $540"
@@ -645,9 +645,16 @@
  },
  "RB_F": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-11",
   "clear_streak": 0,
   "top_headline": "Gas prices slip below $4 a gallon for first time since July - Yahoo Finance"
+ },
+ "CC_F": {
+  "veto": false,
+  "p": 0.01,
+  "date": "2026-11-11",
+  "clear_streak": 0,
+  "top_headline": "Cocoa futures hit four-month lows, sugar also falls - TradingView"
  }
 }
