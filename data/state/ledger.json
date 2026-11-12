@@ -944,5 +944,17 @@
   "tier_time": "-",
   "status": "open",
   "snapshot_ref": "S-CATCH:ARKK:2026-11-12"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "FIS",
+  "date": "2026-11-12",
+  "entry": 30.209999084472656,
+  "stop": 27.93,
+  "score": 57,
+  "tier_time": "-",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:FIS:2026-11-12"
  }
 ]

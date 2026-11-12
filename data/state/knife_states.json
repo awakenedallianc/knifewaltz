@@ -1445,8 +1445,8 @@
   "events": []
  },
  "FIS": {
-  "state": "STABILIZING",
-  "since": "2026-11-10",
+  "state": "CATCH",
+  "since": "2026-11-12",
   "events": [
    {
     "d": "2026-11-05",
@@ -1471,8 +1471,17 @@
     "from": "KNIFE_FALLING",
     "to": "STABILIZING",
     "note": "checklist 1/5"
+   },
+   {
+    "d": "2026-11-12",
+    "from": "STABILIZING",
+    "to": "CATCH",
+    "note": "checklist 3/5"
    }
-  ]
+  ],
+  "catch_ref_price": 30.209999084472656,
+  "catch_day_low": 27.93,
+  "expires": "2026-11-28"
  },
  "CTVA": {
   "state": "NORMAL",

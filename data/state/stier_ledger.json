@@ -103,9 +103,9 @@
    "jev_unavailable": false
   },
   "2026-11-12": {
-   "windows": 2,
+   "windows": 3,
    "blocked": {
-    "H2": 2
+    "H2": 3
    },
    "qualified": 0,
    "granted": 0,

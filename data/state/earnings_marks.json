@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-12T01:54:40+07:00",
+ "asof": "2026-11-12T11:06:37+07:00",
  "source": "yahoo-calendar",
  "caliber": "未来 5 个交易日窗（远期日历大票缺席是实测事实，不做远期）",
  "days": [
@@ -13,7 +13,7 @@
  "truncated_days": [
   "2026-11-12"
  ],
- "watchlist_n": 23,
+ "watchlist_n": 24,
  "marks": [
   {
    "ticker": "NVDA",

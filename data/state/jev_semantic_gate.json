@@ -92,7 +92,7 @@
  },
  "FICO": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-12",
   "clear_streak": 0,
   "top_headline": "Merz Threatens Cut Funds Over Ukraine Aid, Fico Cries Blackmail - JournalArta"
@@ -141,7 +141,7 @@
  },
  "UNG": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.02,
   "date": "2026-11-12",
   "clear_streak": 0,
   "top_headline": "Athens resident named Distinguished Military Graduate at UNG - mainstreetnews.com"
@@ -155,7 +155,7 @@
  },
  "KC_F": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.04,
   "date": "2026-11-12",
   "clear_streak": 0,
   "top_headline": "Coffee Slipped As Brazil’s Supply Picture Kept Improving - Finimize"
@@ -169,7 +169,7 @@
  },
  "LX": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-12",
   "clear_streak": 0,
   "top_headline": "Cardi B Unleashes On Jamaican Concert Promoter For Threatening To Sue Her - HotNewHipHop"
@@ -204,7 +204,7 @@
  },
  "XPEV": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-12",
   "clear_streak": 0,
   "top_headline": "How Investors Are Reacting To XPeng (XPEV) Record October Deliveries - Simply Wall St"
@@ -239,7 +239,7 @@
  },
  "NIO": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-12",
   "clear_streak": 0,
   "top_headline": "$NIO Inc (NIO.US)$ - Moomoo"
@@ -253,7 +253,7 @@
  },
  "VNET": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-12",
   "clear_streak": 0,
   "top_headline": "VNET Group (NASDAQ:VNET) Stock Jumps 14.8% - Still a Buy? - MarketBeat"
@@ -281,7 +281,7 @@
  },
  "BIDU": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-12",
   "clear_streak": 0,
   "top_headline": "Kaplan Fox Class Action Reminder: Baidu, Inc. (NASDAQ: BIDU) Lead Plaintiff Deadline is November 13, 2026 - The National Law Review"
@@ -393,7 +393,7 @@
  },
  "FIS": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-12",
   "clear_streak": 0,
   "top_headline": "How Can Companies Measure Ethics and Good Judgment?"
@@ -421,7 +421,7 @@
  },
  "WDC": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-12",
   "clear_streak": 0,
   "top_headline": "History Says This Is What Will Happen to Sandisk Stock After Its 8-for-1 Split"
@@ -449,10 +449,10 @@
  },
  "FLEX": {
   "veto": false,
-  "p": 0.01,
-  "date": "2026-11-11",
+  "p": 0.0,
+  "date": "2026-11-12",
   "clear_streak": 0,
-  "top_headline": "DraftKings Casino Promo Code For November: Get 1,000 Flex Spins - Elite Sports NY"
+  "top_headline": "What Does Flex's Record Sales Growth Really Show?"
  },
  "ARM": {
   "veto": false,
@@ -463,7 +463,7 @@
  },
  "GLW": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-12",
   "clear_streak": 0,
   "top_headline": "How Investors May Respond To Corning (GLW) ETF Buying And AI Demand"
@@ -561,7 +561,7 @@
  },
  "CIEN": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-12",
   "clear_streak": 0,
   "top_headline": "Ciena's $116M Free Cash Flow: Can Cash Generation Improve in FY27?"
@@ -603,7 +603,7 @@
  },
  "SMH": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-12",
   "clear_streak": 0,
   "top_headline": "CoreWeave Earnings Trigger AI Revival on Wall Street; Asia, Europe Up"
@@ -652,7 +652,7 @@
  },
  "CC_F": {
   "veto": false,
-  "p": 0.05,
+  "p": 0.01,
   "date": "2026-11-12",
   "clear_streak": 0,
   "top_headline": "Heavy Ivory Coast Rains Spark Short Covering in Cocoa Futures - Barchart.com"

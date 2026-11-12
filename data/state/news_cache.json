@@ -1994,6 +1994,28 @@
     "src": "Kansas City Magazine",
     "age_h": 2.5
    }
+  ],
+  "FLEX": [
+   {
+    "t": "What Does Flex's Record Sales Growth Really Show?",
+    "src": "yahoo",
+    "age_h": 6.5
+   },
+   {
+    "t": "Is TE Connectivity’s Buyback Still Lifting Earnings Per Share?",
+    "src": "yahoo",
+    "age_h": 9.2
+   },
+   {
+    "t": "Anthropic IPO Puts Wiwynn Stock And AI Data Center Shares In Focus",
+    "src": "yahoo",
+    "age_h": 16.9
+   },
+   {
+    "t": "S&P 500: Just Three Of Nov. 5's 20 Biggest Losers Have Recovered Their Losses",
+    "src": "yahoo",
+    "age_h": 39.5
+   }
   ]
  },
  "feeds": {
