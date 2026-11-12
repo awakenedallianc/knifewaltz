@@ -30,8 +30,8 @@
   "events": []
  },
  "ARKK": {
-  "state": "CATCH",
-  "since": "2026-11-12",
+  "state": "NORMAL",
+  "since": "2026-11-13",
   "events": [
    {
     "d": "2026-11-06",
@@ -50,11 +50,18 @@
     "from": "STABILIZING",
     "to": "CATCH",
     "note": "checklist 3/5"
+   },
+   {
+    "d": "2026-11-13",
+    "from": "CATCH",
+    "to": "NORMAL",
+    "note": "跌破接刀日低点（X-STOP）"
    }
   ],
   "catch_ref_price": 79.43000030517578,
   "catch_day_low": 78.3795,
-  "expires": "2026-11-28"
+  "expires": "2026-11-28",
+  "cooldown_until": "2026-11-29"
  },
  "_GSPC": {
   "state": "NORMAL",
@@ -492,8 +499,8 @@
   "events": []
  },
  "PL_F": {
-  "state": "CATCH",
-  "since": "2026-11-10",
+  "state": "NORMAL",
+  "since": "2026-11-13",
   "events": [
    {
     "d": "2026-11-04",
@@ -512,11 +519,18 @@
     "from": "STABILIZING",
     "to": "CATCH",
     "note": "checklist 4/5"
+   },
+   {
+    "d": "2026-11-13",
+    "from": "CATCH",
+    "to": "NORMAL",
+    "note": "跌破接刀日低点（X-STOP）"
    }
   ],
   "catch_ref_price": 1576.800048828125,
   "catch_day_low": 1531.4,
-  "expires": "2026-11-26"
+  "expires": "2026-11-26",
+  "cooldown_until": "2026-11-29"
  },
  "ZC_F": {
   "state": "NORMAL",
@@ -539,8 +553,8 @@
   "events": []
  },
  "KC_F": {
-  "state": "STABILIZING",
-  "since": "2026-11-07",
+  "state": "CATCH",
+  "since": "2026-11-13",
   "events": [
    {
     "d": "2026-09-21",
@@ -577,11 +591,17 @@
     "from": "KNIFE_FALLING",
     "to": "STABILIZING",
     "note": "checklist 1/5"
+   },
+   {
+    "d": "2026-11-13",
+    "from": "STABILIZING",
+    "to": "CATCH",
+    "note": "checklist 3/5"
    }
   ],
-  "catch_ref_price": 2.8095001220703124,
-  "catch_day_low": 2.7425,
-  "expires": "2026-10-11"
+  "catch_ref_price": 2.7510000610351564,
+  "catch_day_low": 2.667,
+  "expires": "2026-11-29"
  },
  "SB_F": {
   "state": "NORMAL",
@@ -1358,9 +1378,16 @@
   "cooldown_until": "2026-11-14"
  },
  "BZ": {
-  "state": "NORMAL",
-  "since": "2026-09-22",
-  "events": []
+  "state": "KNIFE_FALLING",
+  "since": "2026-11-13",
+  "events": [
+   {
+    "d": "2026-11-13",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -42.49% / 10日 -21.22%"
+   }
+  ]
  },
  "KC": {
   "state": "NORMAL",
@@ -1857,8 +1884,8 @@
   ]
  },
  "CIEN": {
-  "state": "STABILIZING",
-  "since": "2026-11-10",
+  "state": "CATCH",
+  "since": "2026-11-13",
   "events": [
    {
     "d": "2026-11-03",
@@ -1883,8 +1910,17 @@
     "from": "KNIFE_FALLING",
     "to": "STABILIZING",
     "note": "checklist 1/5"
+   },
+   {
+    "d": "2026-11-13",
+    "from": "STABILIZING",
+    "to": "CATCH",
+    "note": "checklist 3/5"
    }
-  ]
+  ],
+  "catch_ref_price": 294.489990234375,
+  "catch_day_low": 278.63,
+  "expires": "2026-11-29"
  },
  "NRG": {
   "state": "KNIFE_FALLING",
@@ -1938,8 +1974,8 @@
   "expires": "2026-11-27"
  },
  "STX": {
-  "state": "STABILIZING",
-  "since": "2026-11-10",
+  "state": "CATCH",
+  "since": "2026-11-13",
   "events": [
    {
     "d": "2026-11-06",
@@ -1952,8 +1988,17 @@
     "from": "KNIFE_FALLING",
     "to": "STABILIZING",
     "note": "checklist 1/5"
+   },
+   {
+    "d": "2026-11-13",
+    "from": "STABILIZING",
+    "to": "CATCH",
+    "note": "checklist 3/5"
    }
-  ]
+  ],
+  "catch_ref_price": 540.885009765625,
+  "catch_day_low": 516.7774,
+  "expires": "2026-11-29"
  },
  "LRCX": {
   "state": "KNIFE_FALLING",

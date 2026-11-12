@@ -956,5 +956,41 @@
   "tier_time": "-",
   "status": "open",
   "snapshot_ref": "S-CATCH:FIS:2026-11-12"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "STX",
+  "date": "2026-11-13",
+  "entry": 540.885009765625,
+  "stop": 516.7774,
+  "score": 58,
+  "tier_time": "DEAD_ZONE",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:STX:2026-11-13"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "CIEN",
+  "date": "2026-11-13",
+  "entry": 294.489990234375,
+  "stop": 278.63,
+  "score": 55,
+  "tier_time": "DEAD_ZONE",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:CIEN:2026-11-13"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "KC=F",
+  "date": "2026-11-13",
+  "entry": 2.7510000610351564,
+  "stop": 2.667,
+  "score": 39,
+  "tier_time": "-",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:KC_F:2026-11-13"
  }
 ]

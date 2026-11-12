@@ -111,6 +111,16 @@
    "granted": 0,
    "candidate": 0,
    "jev_unavailable": false
+  },
+  "2026-11-13": {
+   "windows": 3,
+   "blocked": {
+    "H2": 3
+   },
+   "qualified": 0,
+   "granted": 0,
+   "candidate": 0,
+   "jev_unavailable": false
   }
  },
  "history": [

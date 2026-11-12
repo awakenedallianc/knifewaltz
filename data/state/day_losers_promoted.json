@@ -1,6 +1,22 @@
 {
- "date": "2026-11-12",
+ "date": "2026-11-13",
  "source": "yahoo-screener",
- "promoted": [],
+ "promoted": [
+  {
+   "symbol": "NBIS",
+   "key": "NBIS",
+   "name": "Nebius Group N.V.",
+   "cls": "equity",
+   "pct_day": -18.05,
+   "mcap": 2002297472,
+   "dd52w": -55.78,
+   "ret10": -26.3,
+   "vol_ratio": 2.16,
+   "days_from_peak": 102,
+   "px": 126.76499938964844,
+   "asof": "2026-11-12",
+   "bars": 252
+  }
+ ],
  "degraded_reason": null
 }
