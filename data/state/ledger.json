@@ -992,5 +992,29 @@
   "tier_time": "-",
   "status": "open",
   "snapshot_ref": "S-CATCH:KC_F:2026-11-13"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "AXON",
+  "date": "2026-11-14",
+  "entry": 311.80999755859375,
+  "stop": 301.11,
+  "score": 61,
+  "tier_time": "-",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:AXON:2026-11-14"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "CC=F",
+  "date": "2026-11-14",
+  "entry": 5259.0,
+  "stop": 5169.0,
+  "score": 35,
+  "tier_time": "-",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:CC_F:2026-11-14"
  }
 ]

@@ -1,21 +1,21 @@
 {
- "date": "2026-11-13",
+ "date": "2026-11-14",
  "source": "yahoo-screener",
  "promoted": [
   {
-   "symbol": "NBIS",
-   "key": "NBIS",
-   "name": "Nebius Group N.V.",
+   "symbol": "HTFL",
+   "key": "HTFL",
+   "name": "Heartflow, Inc.",
    "cls": "equity",
-   "pct_day": -16.84,
-   "mcap": 2239255040,
-   "dd52w": -55.13,
-   "ret10": -25.2,
-   "vol_ratio": 2.65,
-   "days_from_peak": 102,
-   "px": 128.63999938964844,
-   "asof": "2026-11-12",
-   "bars": 251
+   "pct_day": -17.68,
+   "mcap": 4037846528,
+   "dd52w": -18.51,
+   "ret10": -16.47,
+   "vol_ratio": 1.28,
+   "days_from_peak": 11,
+   "px": 49.32500076293945,
+   "asof": "2026-11-13",
+   "bars": 252
   }
  ],
  "degraded_reason": null

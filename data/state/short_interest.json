@@ -2,7 +2,7 @@
  "settlement": "2026-10-30",
  "staleness_note": "双月·滞后约9工作日",
  "source": "finra",
- "fetched_at": "2026-11-13T10:35:14+07:00",
+ "fetched_at": "2026-11-14T01:45:54+07:00",
  "rows": {
   "ALB": {
    "short": 12402907,
@@ -84,6 +84,11 @@
    "days_to_cover": 1.59,
    "chg_pct": 3.52
   },
+  "HTFL": {
+   "short": 5688103,
+   "days_to_cover": 3.51,
+   "chg_pct": -22.37
+  },
   "INTC": {
    "short": 152855264,
    "days_to_cover": 1.18,
@@ -94,10 +99,10 @@
    "days_to_cover": 3.82,
    "chg_pct": -14.31
   },
-  "NBIS": {
-   "short": 50936747,
-   "days_to_cover": 2.22,
-   "chg_pct": 6.92
+  "MRVL": {
+   "short": 26088002,
+   "days_to_cover": 1.21,
+   "chg_pct": 6.1
   },
   "NVDA": {
    "short": 279579505,

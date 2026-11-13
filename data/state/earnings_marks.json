@@ -1,23 +1,23 @@
 {
- "asof": "2026-11-13T10:35:12+07:00",
+ "asof": "2026-11-14T01:45:52+07:00",
  "source": "yahoo-calendar",
  "caliber": "未来 5 个交易日窗（远期日历大票缺席是实测事实，不做远期）",
  "days": [
-  "2026-11-13",
   "2026-11-16",
   "2026-11-17",
   "2026-11-18",
-  "2026-11-19"
+  "2026-11-19",
+  "2026-11-20"
  ],
  "days_failed": [],
  "truncated_days": [],
- "watchlist_n": 26,
+ "watchlist_n": 27,
  "marks": [
   {
    "ticker": "NVDA",
    "date": "2026-11-17",
    "when": "AMC",
-   "eps_est": 2.48,
+   "eps_est": 2.47,
    "date_confirmed": true
   }
  ]

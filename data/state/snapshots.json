@@ -2280,7 +2280,14 @@
   "engine_sha": "69e75ef468979668",
   "features_sha": "857c8f7e16855529",
   "realized": {
-   "fwd5_pct": -11.77
+   "fwd5_pct": -11.77,
+   "fwd20_pct": -17.94,
+   "mae20_pct": -29.62,
+   "atier": {
+    "pnl_pct": -11.88,
+    "exit": "X-STOP@1日",
+    "exit_bar": 1
+   }
   },
   "settled": false
  },
@@ -6209,7 +6216,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "d4737511d8ccbbf4",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": 6.53
+  },
   "settled": false
  },
  {
@@ -6262,7 +6271,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "ab85a609d527bbcd",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": -0.54
+  },
   "settled": false
  },
  {
@@ -6328,7 +6339,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "c2bded5459aea8e0",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": 1.72
+  },
   "settled": false
  },
  {
@@ -6381,7 +6394,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "8d6381ab1070254d",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": 15.83
+  },
   "settled": false
  },
  {
@@ -6434,7 +6449,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "b45518de8f0b6765",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": -2.05
+  },
   "settled": false
  },
  {
@@ -6500,7 +6517,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "16ae58964de377ba",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": 10.32
+  },
   "settled": false
  },
  {
@@ -6566,7 +6585,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "0b014caa4e42e651",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": 12.26
+  },
   "settled": false
  },
  {
@@ -6619,7 +6640,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "59e250a252dfb8a8",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": 4.32
+  },
   "settled": false
  },
  {
@@ -6685,7 +6708,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "e03d863c634fa85e",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": 3.66
+  },
   "settled": false
  },
  {
@@ -6751,7 +6776,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "43991e330f7ce7e8",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": 13.53
+  },
   "settled": false
  },
  {
@@ -6817,7 +6844,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "376a21dc0d6befa0",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": 14.63
+  },
   "settled": false
  },
  {
@@ -6883,7 +6912,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "e43f290500169c19",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": 14.88
+  },
   "settled": false
  },
  {
@@ -6949,7 +6980,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "2d3bc9ab154d2e77",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": 1.9
+  },
   "settled": false
  },
  {
@@ -7015,7 +7048,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "2b43b936ee00c185",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": 9.74
+  },
   "settled": false
  },
  {
@@ -8678,5 +8713,219 @@
   "features_sha": "eab0d23a5522f73e",
   "realized": {},
   "settled": false
+ },
+ {
+  "id": "S-CATCH:AXON:2026-11-14",
+  "kind": "S-CATCH",
+  "symbol": "AXON",
+  "date": "2026-11-14",
+  "trigger_px": 311.80999755859375,
+  "stop_price": 301.11,
+  "features": {
+   "dd52w": -51.71,
+   "dd250": -51.71,
+   "ret10": -27.11,
+   "rsi14": 21.1,
+   "vol_ratio": 0.33,
+   "close_pos": 0.98,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": true,
+    "vol_compress": true,
+    "gate_ok": true,
+    "rsi_divergence": false
+   },
+   "checklist_n": 3,
+   "tier_time": "-",
+   "days_from_peak": 320,
+   "stop_price": 301.11,
+   "last_date": "2026-11-13",
+   "cls": "equity_single",
+   "tier": "T2",
+   "state": "CATCH",
+   "score_parts": {
+    "fall_40": 29.4,
+    "capitulation_20": 0.0,
+    "checklist_20": 12.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 61,
+  "market": {
+   "blade_index": 0,
+   "gate_state": "GREEN",
+   "vix": 19.579999923706055,
+   "vix_ratio": 0.9431599088551967
+  },
+  "jev": {
+   "family": "unclear",
+   "p_terminal": 0.01,
+   "conf": 0.81,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.13,
+   "catch_prior": 0.273,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "b5eda961ac89fff1",
+  "realized": {
+   "ledger_ref": "AXON@2026-11-14"
+  },
+  "settled": false,
+  "stier": {
+   "rules_version": "s1",
+   "admitted": false,
+   "status": null,
+   "soft_score": 0.4873,
+   "hard_pass": {
+    "H1": true,
+    "H2": false,
+    "H3": false,
+    "H4": true,
+    "H5": true,
+    "H6": true,
+    "H7": true,
+    "H8": false
+   },
+   "shadow": {
+    "H9": {
+     "would_block": true,
+     "lr": 1.0,
+     "grade": "线索"
+    },
+    "H10": {
+     "would_block": false,
+     "flip_back_age_days": null
+    },
+    "H11": {
+     "would_block": false,
+     "close_pos": 0.98
+    }
+   },
+   "slice": {
+    "key": "unclear|GREEN|-|none|equity_single",
+    "lr": 1.0,
+    "n": 0,
+    "wins": 0,
+    "wilson95": null,
+    "grade": "线索"
+   }
+  }
+ },
+ {
+  "id": "S-CATCH:CC_F:2026-11-14",
+  "kind": "S-CATCH",
+  "symbol": "CC_F",
+  "date": "2026-11-14",
+  "trigger_px": 5259.0,
+  "stop_price": 5169.0,
+  "features": {
+   "dd52w": -25.38,
+   "dd250": -24.06,
+   "ret10": -3.56,
+   "rsi14": 38.5,
+   "vol_ratio": 1.62,
+   "close_pos": 0.56,
+   "falling": false,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": true,
+    "no_new_low_3d": true,
+    "vol_compress": false,
+    "gate_ok": true,
+    "rsi_divergence": false
+   },
+   "checklist_n": 3,
+   "tier_time": "-",
+   "days_from_peak": 415,
+   "stop_price": 5169.0,
+   "last_date": "2026-11-13",
+   "cls": "futures",
+   "tier": "T1F",
+   "state": "CATCH",
+   "score_parts": {
+    "fall_40": 2.6,
+    "capitulation_20": 0.0,
+    "checklist_20": 12.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 35,
+  "market": {
+   "blade_index": 0,
+   "gate_state": "GREEN",
+   "vix": 19.579999923706055,
+   "vix_ratio": 0.9431599088551967
+  },
+  "jev": {
+   "family": "unclear",
+   "p_terminal": 0.06,
+   "conf": 0.28,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.633,
+   "catch_prior": null,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "491f9b26cd222f30",
+  "realized": {
+   "ledger_ref": "CC=F@2026-11-14"
+  },
+  "settled": false,
+  "stier": {
+   "rules_version": "s1",
+   "admitted": false,
+   "status": null,
+   "soft_score": 0.44,
+   "hard_pass": {
+    "H1": true,
+    "H2": false,
+    "H3": false,
+    "H4": true,
+    "H5": true,
+    "H6": true,
+    "H7": true,
+    "H8": false
+   },
+   "shadow": {
+    "H9": {
+     "would_block": true,
+     "lr": 1.0,
+     "grade": "线索"
+    },
+    "H10": {
+     "would_block": false,
+     "flip_back_age_days": null
+    },
+    "H11": {
+     "would_block": false,
+     "close_pos": 0.56
+    }
+   },
+   "slice": {
+    "key": "unclear|GREEN|-|none|futures",
+    "lr": 1.0,
+    "n": 0,
+    "wins": 0,
+    "wilson95": null,
+    "grade": "线索"
+   }
+  }
  }
 ]
