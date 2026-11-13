@@ -71,7 +71,7 @@
  },
  "LULU": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-13",
   "clear_streak": 0,
   "top_headline": "The Big Short Investor Is Buying This Stock At a 50% Discount"
@@ -141,7 +141,7 @@
  },
  "UNG": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.02,
   "date": "2026-11-13",
   "clear_streak": 0,
   "top_headline": "The College Textbook: Extinct? - Vanguard"
@@ -155,7 +155,7 @@
  },
  "KC_F": {
   "veto": false,
-  "p": 0.03,
+  "p": 0.0,
   "date": "2026-11-13",
   "clear_streak": 0,
   "top_headline": "Daily Coffee Report 11/11/26 - StoneX"
@@ -169,7 +169,7 @@
  },
  "LX": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.0,
   "date": "2026-11-13",
   "clear_streak": 0,
   "top_headline": "Honda’s next-gen, hybrid-only CR-V to begin rolling off Canadian production line in 2027 - Automotive News"
@@ -183,7 +183,7 @@
  },
  "QFIN": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-13",
   "clear_streak": 0,
   "top_headline": "SHAREHOLDER ALERT: Bronstein Gewirtz & Grossman, LLC Announces Class Action Against Qfin Holdings, Inc. (NASDAQ: QFIN) — Investors Who Suffered Losses Are Encou"
@@ -204,7 +204,7 @@
  },
  "XPEV": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-13",
   "clear_streak": 0,
   "top_headline": "XPEV261113C00012500 Interactive Stock Chart | XPEV Nov 2026 12.500 call Stock - Yahoo Finance - Yahoo! Finance Canada"
@@ -289,9 +289,9 @@
  "PDD": {
   "veto": false,
   "p": 0.0,
-  "date": "2026-11-12",
+  "date": "2026-11-13",
   "clear_streak": 0,
-  "top_headline": "Why Morgan Stanley Downgraded PDD Holdings (PDD)"
+  "top_headline": "PDD or EBAY: Which Is the Better Value Stock Right Now?"
  },
  "FUTU": {
   "veto": false,
@@ -561,7 +561,7 @@
  },
  "CIEN": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-13",
   "clear_streak": 0,
   "top_headline": "The Open Question Under Arista Networks Stock's Price"
@@ -582,7 +582,7 @@
  },
  "STX": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-13",
   "clear_streak": 0,
   "top_headline": "Seagate’s Legitimacy as a Play on AI Hardware Demand is About To Be Tested"
@@ -603,7 +603,7 @@
  },
  "SMH": {
   "veto": false,
-  "p": 0.03,
+  "p": 0.02,
   "date": "2026-11-13",
   "clear_streak": 0,
   "top_headline": "Nvidia's CEO Exit Sends Shockwaves Across ETF Markets"
@@ -652,7 +652,7 @@
  },
  "CC_F": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.03,
   "date": "2026-11-13",
   "clear_streak": 0,
   "top_headline": "Cocoa Futures are Caught Between Falling Prices and Growing Supply Risks - Which Will Take the Lead - Barchart.com"

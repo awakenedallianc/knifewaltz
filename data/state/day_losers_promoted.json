@@ -7,15 +7,15 @@
    "key": "NBIS",
    "name": "Nebius Group N.V.",
    "cls": "equity",
-   "pct_day": -18.05,
-   "mcap": 2002297472,
-   "dd52w": -55.78,
-   "ret10": -26.3,
-   "vol_ratio": 2.16,
+   "pct_day": -16.84,
+   "mcap": 2239255040,
+   "dd52w": -55.13,
+   "ret10": -25.2,
+   "vol_ratio": 2.65,
    "days_from_peak": 102,
-   "px": 126.76499938964844,
+   "px": 128.63999938964844,
    "asof": "2026-11-12",
-   "bars": 252
+   "bars": 251
   }
  ],
  "degraded_reason": null
