@@ -433,8 +433,8 @@
   "events": []
  },
  "SI_F": {
-  "state": "CATCH",
-  "since": "2026-11-05",
+  "state": "NORMAL",
+  "since": "2026-11-14",
   "events": [
    {
     "d": "2026-10-31",
@@ -453,11 +453,18 @@
     "from": "STABILIZING",
     "to": "CATCH",
     "note": "checklist 3/5"
+   },
+   {
+    "d": "2026-11-14",
+    "from": "CATCH",
+    "to": "NORMAL",
+    "note": "跌破接刀日低点（X-STOP）"
    }
   ],
   "catch_ref_price": 52.220001220703125,
   "catch_day_low": 48.98,
-  "expires": "2026-11-21"
+  "expires": "2026-11-21",
+  "cooldown_until": "2026-11-30"
  },
  "NG_F": {
   "state": "NORMAL",

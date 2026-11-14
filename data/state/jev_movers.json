@@ -1,109 +1,61 @@
 {
  "NEARUSDT": {
-  "family": "noise",
-  "flavor": 0.32,
-  "probs": {
-   "noise": 0.68,
-   "liquidation_cascade": 0.01,
-   "event_driven": 0.0,
-   "systemic": 0.07,
-   "unclear": 0.24
-  },
-  "date": "2026-11-14"
- },
- "HYPEUSDT": {
-  "family": "noise",
-  "flavor": 0.36,
-  "probs": {
-   "noise": 0.64,
-   "liquidation_cascade": 0.0,
-   "event_driven": 0.0,
-   "systemic": 0.06,
-   "unclear": 0.3
-  },
-  "date": "2026-11-14"
- },
- "PEPEUSDT": {
-  "family": "noise",
-  "flavor": 0.47,
-  "probs": {
-   "noise": 0.53,
-   "liquidation_cascade": 0.01,
-   "event_driven": 0.0,
-   "systemic": 0.11,
-   "unclear": 0.35
-  },
-  "date": "2026-11-14"
- },
- "ZECUSDT": {
-  "family": "unclear",
-  "flavor": 0.73,
-  "probs": {
-   "noise": 0.27,
-   "liquidation_cascade": 0.0,
-   "event_driven": 0.0,
-   "systemic": 0.18,
-   "unclear": 0.55
-  },
-  "date": "2026-11-14"
- },
- "XRPUSDT": {
   "family": "systemic",
-  "flavor": 0.89,
+  "flavor": 0.92,
   "probs": {
-   "noise": 0.11,
+   "noise": 0.08,
    "liquidation_cascade": 0.0,
    "event_driven": 0.0,
-   "systemic": 0.53,
-   "unclear": 0.36
-  },
-  "date": "2026-11-14"
- },
- "DOGEUSDT": {
-  "family": "systemic",
-  "flavor": 0.96,
-  "probs": {
-   "noise": 0.04,
-   "liquidation_cascade": 0.0,
-   "event_driven": 0.0,
-   "systemic": 0.87,
-   "unclear": 0.09
-  },
-  "date": "2026-11-14"
- },
- "SOLUSDT": {
-  "family": "systemic",
-  "flavor": 1.0,
-  "probs": {
-   "noise": 0.0,
-   "liquidation_cascade": 0.0,
-   "event_driven": 0.42,
-   "systemic": 0.57,
-   "unclear": 0.01
+   "systemic": 0.73,
+   "unclear": 0.19
   },
   "date": "2026-11-14"
  },
  "XNVDAUSDT": {
   "family": "systemic",
-  "flavor": 0.93,
+  "flavor": 0.95,
   "probs": {
-   "noise": 0.07,
+   "noise": 0.05,
    "liquidation_cascade": 0.0,
-   "event_driven": 0.01,
-   "systemic": 0.82,
+   "event_driven": 0.0,
+   "systemic": 0.85,
    "unclear": 0.1
   },
   "date": "2026-11-14"
  },
- "ETHUSDT": {
+ "XRPUSDT": {
   "family": "systemic",
-  "flavor": 1.0,
+  "flavor": 0.99,
   "probs": {
-   "noise": 0.0,
+   "noise": 0.01,
    "liquidation_cascade": 0.0,
-   "event_driven": 0.2,
-   "systemic": 0.8,
-   "unclear": 0.0
+   "event_driven": 0.0,
+   "systemic": 0.94,
+   "unclear": 0.05
+  },
+  "date": "2026-11-14"
+ },
+ "ZECUSDT": {
+  "family": "systemic",
+  "flavor": 0.98,
+  "probs": {
+   "noise": 0.02,
+   "liquidation_cascade": 0.0,
+   "event_driven": 0.0,
+   "systemic": 0.91,
+   "unclear": 0.07
+  },
+  "date": "2026-11-14"
+ },
+ "DOGEUSDT": {
+  "family": "systemic",
+  "flavor": 0.98,
+  "probs": {
+   "noise": 0.02,
+   "liquidation_cascade": 0.0,
+   "event_driven": 0.0,
+   "systemic": 0.93,
+   "unclear": 0.05
   },
   "date": "2026-11-14"
  },
@@ -113,9 +65,69 @@
   "probs": {
    "noise": 0.0,
    "liquidation_cascade": 0.0,
-   "event_driven": 0.2,
-   "systemic": 0.8,
+   "event_driven": 0.22,
+   "systemic": 0.78,
    "unclear": 0.0
+  },
+  "date": "2026-11-14"
+ },
+ "ETHUSDT": {
+  "family": "systemic",
+  "flavor": 1.0,
+  "probs": {
+   "noise": 0.0,
+   "liquidation_cascade": 0.01,
+   "event_driven": 0.12,
+   "systemic": 0.87,
+   "unclear": 0.0
+  },
+  "date": "2026-11-14"
+ },
+ "HYPEUSDT": {
+  "family": "systemic",
+  "flavor": 0.9,
+  "probs": {
+   "noise": 0.1,
+   "liquidation_cascade": 0.01,
+   "event_driven": 0.0,
+   "systemic": 0.81,
+   "unclear": 0.08
+  },
+  "date": "2026-11-14"
+ },
+ "SOLUSDT": {
+  "family": "systemic",
+  "flavor": 0.99,
+  "probs": {
+   "noise": 0.01,
+   "liquidation_cascade": 0.0,
+   "event_driven": 0.41,
+   "systemic": 0.57,
+   "unclear": 0.01
+  },
+  "date": "2026-11-14"
+ },
+ "PEPEUSDT": {
+  "family": "liquidation_cascade",
+  "flavor": 0.86,
+  "probs": {
+   "noise": 0.14,
+   "liquidation_cascade": 0.41,
+   "event_driven": 0.0,
+   "systemic": 0.39,
+   "unclear": 0.06
+  },
+  "date": "2026-11-14"
+ },
+ "INITUSDT": {
+  "family": "liquidation_cascade",
+  "flavor": 0.89,
+  "probs": {
+   "noise": 0.11,
+   "liquidation_cascade": 0.62,
+   "event_driven": 0.0,
+   "systemic": 0.23,
+   "unclear": 0.04
   },
   "date": "2026-11-14"
  }

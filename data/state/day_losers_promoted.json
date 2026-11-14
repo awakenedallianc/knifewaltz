@@ -7,15 +7,15 @@
    "key": "HTFL",
    "name": "Heartflow, Inc.",
    "cls": "equity",
-   "pct_day": -17.68,
-   "mcap": 4037846528,
-   "dd52w": -18.51,
-   "ret10": -16.47,
-   "vol_ratio": 1.28,
+   "pct_day": -19.13,
+   "mcap": 17778032640,
+   "dd52w": -19.94,
+   "ret10": -17.93,
+   "vol_ratio": 2.1,
    "days_from_peak": 11,
-   "px": 49.32500076293945,
+   "px": 48.459999084472656,
    "asof": "2026-11-13",
-   "bars": 252
+   "bars": 251
   }
  ],
  "degraded_reason": null
