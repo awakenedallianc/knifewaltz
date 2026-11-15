@@ -120,7 +120,7 @@
  },
  "ALNY": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-15",
   "clear_streak": 0,
   "top_headline": "IONS, AZN Stocks Fall On Full Data From Failed Cardiomyopathy Trial — Jefferies Sees Neutral To Negative Readthrough To ALNY - Stocktwits"
@@ -183,7 +183,7 @@
  },
  "QFIN": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-15",
   "clear_streak": 0,
   "top_headline": "Qfin Holdings, Inc. (QFIN) stock price, news, quote and history - Yahoo Finance UK"
@@ -218,7 +218,7 @@
  },
  "BILI": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-15",
   "clear_streak": 0,
   "top_headline": "Bilibili Inc. (BILI) stock price, news, quote and history - Yahoo Finance UK"
@@ -281,7 +281,7 @@
  },
  "BIDU": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-15",
   "clear_streak": 0,
   "top_headline": "How Investors May Respond To Baidu Stock Earnings Estimate Cuts"
@@ -289,9 +289,9 @@
  "PDD": {
   "veto": false,
   "p": 0.0,
-  "date": "2026-11-13",
+  "date": "2026-11-15",
   "clear_streak": 0,
-  "top_headline": "PDD or EBAY: Which Is the Better Value Stock Right Now?"
+  "top_headline": "Sagar Tours Major Grid Stations In Jammu, Reviews Power Infrastructure - Daily Excelsior"
  },
  "FUTU": {
   "veto": false,
@@ -547,7 +547,7 @@
  },
  "SNDK": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-15",
   "clear_streak": 0,
   "top_headline": "A $2.8 Billion Fund Dumps These 3 Stocks"
@@ -645,7 +645,7 @@
  },
  "RB_F": {
   "veto": false,
-  "p": 0.03,
+  "p": 0.01,
   "date": "2026-11-15",
   "clear_streak": 0,
   "top_headline": "The Oil Market Is Brimming With Crude Despite Tanker Attacks - Yahoo Finance"
