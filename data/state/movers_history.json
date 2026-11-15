@@ -2330,130 +2330,121 @@
    {
     "date": "2026-11-15",
     "sym": "ZECUSDT",
-    "last": 929.56,
-    "pct24": -0.483,
-    "quote_vol": 76572976.0,
+    "last": 896.42,
+    "pct24": -1.594,
+    "quote_vol": 80756386.0,
+    "funding": null,
+    "source": "okx"
+   },
+   {
+    "date": "2026-11-15",
+    "sym": "XRPUSDT",
+    "last": 0.9552,
+    "pct24": -3.212,
+    "quote_vol": 96429258.0,
     "funding": null,
     "source": "okx"
    },
    {
     "date": "2026-11-15",
     "sym": "BTCUSDT",
-    "last": 65484.7,
-    "pct24": -3.231,
-    "quote_vol": 1212914786.0,
-    "funding": -7.3645834565e-06,
-    "source": "okx"
-   },
-   {
-    "date": "2026-11-15",
-    "sym": "XRPUSDT",
-    "last": 0.963,
-    "pct24": -3.902,
-    "quote_vol": 93872369.0,
-    "funding": null,
+    "last": 64516.5,
+    "pct24": -4.111,
+    "quote_vol": 1222569777.0,
+    "funding": -1.7569650166e-06,
     "source": "okx"
    },
    {
     "date": "2026-11-15",
     "sym": "ETHUSDT",
-    "last": 1829.14,
-    "pct24": -4.226,
-    "quote_vol": 553360112.0,
-    "funding": -6.21657322365e-05,
+    "last": 1794.81,
+    "pct24": -5.818,
+    "quote_vol": 563970940.0,
+    "funding": -4.8565562759e-05,
     "source": "okx"
    },
    {
     "date": "2026-11-15",
-    "sym": "SOLUSDT",
-    "last": 71.98,
-    "pct24": -5.488,
-    "quote_vol": 155074927.0,
-    "funding": -0.00020794331016,
-    "source": "okx"
-   },
-   {
-    "date": "2026-11-15",
-    "sym": "HYPEUSDT",
-    "last": 66.605,
-    "pct24": -5.558,
-    "quote_vol": 83147121.0,
+    "sym": "NEARUSDT",
+    "last": 3.118,
+    "pct24": -5.943,
+    "quote_vol": 29996449.0,
     "funding": null,
     "source": "okx"
    },
    {
     "date": "2026-11-15",
-    "sym": "DOGEUSDT",
-    "last": 0.05909,
-    "pct24": -6.548,
-    "quote_vol": 56994839.0,
+    "sym": "HYPEUSDT",
+    "last": 65.32,
+    "pct24": -6.316,
+    "quote_vol": 76647050.0,
     "funding": null,
     "source": "okx"
    },
    {
     "date": "2026-11-15",
     "sym": "OKBUSDT",
-    "last": 86.97,
-    "pct24": -6.594,
-    "quote_vol": 21180358.0,
+    "last": 85.9,
+    "pct24": -6.427,
+    "quote_vol": 20701154.0,
     "funding": null,
+    "source": "okx"
+   },
+   {
+    "date": "2026-11-15",
+    "sym": "SOLUSDT",
+    "last": 70.58,
+    "pct24": -6.603,
+    "quote_vol": 157957830.0,
+    "funding": -4.3492019024e-05,
     "source": "okx"
    },
    {
     "date": "2026-11-15",
     "sym": "SUIUSDT",
-    "last": 0.7263,
-    "pct24": -7.289,
-    "quote_vol": 26043278.0,
+    "last": 0.7127,
+    "pct24": -7.381,
+    "quote_vol": 25931976.0,
     "funding": null,
     "source": "okx"
    },
    {
     "date": "2026-11-15",
-    "sym": "NEARUSDT",
-    "last": 3.162,
-    "pct24": -7.517,
-    "quote_vol": 29670348.0,
-    "funding": null,
+    "sym": "DOGEUSDT",
+    "last": 0.05781,
+    "pct24": -8.092,
+    "quote_vol": 57994781.0,
+    "funding": -2.42089789731e-05,
     "source": "okx"
    },
    {
     "date": "2026-11-15",
     "sym": "PEPEUSDT",
-    "last": 3.9579e-06,
-    "pct24": -7.562,
-    "quote_vol": 31149806.0,
-    "funding": null,
+    "last": 3.8915e-06,
+    "pct24": -9.466,
+    "quote_vol": 30545485.0,
+    "funding": -0.0002718305368271,
     "source": "okx"
    },
    {
     "date": "2026-11-15",
     "sym": "UNIUSDT",
-    "last": 5.084,
-    "pct24": -9.586,
-    "quote_vol": 24261816.0,
-    "funding": -7.27593677121e-05,
-    "source": "okx"
-   },
-   {
-    "date": "2026-11-15",
-    "sym": "BERAUSDT",
-    "last": 0.0949,
-    "pct24": -24.861,
-    "quote_vol": 28974779.0,
-    "funding": -0.0020306796158559,
+    "last": 4.976,
+    "pct24": -9.708,
+    "quote_vol": 25709923.0,
+    "funding": 7.16502162613e-05,
     "source": "okx"
    },
    {
     "date": "2026-11-15",
     "sym": "BARDUSDT",
-    "last": 0.1128,
-    "pct24": -14.61,
-    "quote_vol": 30234843.0,
-    "funding": -0.0013986431763706,
+    "last": 0.1125,
+    "pct24": -10.144,
+    "quote_vol": 25281199.0,
+    "funding": -0.0016617509614675,
     "source": "okx"
    }
   ]
  },
- "updated": "2026-11-15T10:02:11+07:00"
+ "updated": "2026-11-15T15:28:44+07:00"
 }
