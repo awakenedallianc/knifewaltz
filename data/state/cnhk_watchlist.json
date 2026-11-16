@@ -44,31 +44,31 @@
    "asof": "2026-11-13"
   },
   {
-   "symbol": "9888.HK",
-   "key": "9888_HK",
-   "name": "Baidu Inc",
-   "pool": "CN_HK",
-   "dd250": -53.8,
-   "px": 74.19999694824219,
-   "asof": "2026-11-13"
-  },
-  {
    "symbol": "0992.HK",
    "key": "0992_HK",
    "name": "Lenovo Group Ltd",
    "pool": "CN_HK",
-   "dd250": -53.1,
-   "px": 17.6200008392334,
-   "asof": "2026-11-13"
+   "dd250": -55.2,
+   "px": 16.850000381469727,
+   "asof": "2026-11-16"
   },
   {
-   "symbol": "0968.HK",
-   "key": "0968_HK",
-   "name": "Xinyi Solar Holdings Ltd",
+   "symbol": "9888.HK",
+   "key": "9888_HK",
+   "name": "Baidu Inc",
    "pool": "CN_HK",
-   "dd250": -52.8,
-   "px": 1.8899999856948853,
-   "asof": "2026-11-13"
+   "dd250": -52.6,
+   "px": 76.0,
+   "asof": "2026-11-16"
+  },
+  {
+   "symbol": "1378.HK",
+   "key": "1378_HK",
+   "name": "China Hongqiao Group Ltd",
+   "pool": "CN_HK",
+   "dd250": -52.3,
+   "px": 19.190000534057617,
+   "asof": "2026-11-16"
   },
   {
    "symbol": "TME",
@@ -89,22 +89,13 @@
    "asof": "2026-11-13"
   },
   {
-   "symbol": "1378.HK",
-   "key": "1378_HK",
-   "name": "China Hongqiao Group Ltd",
+   "symbol": "0968.HK",
+   "key": "0968_HK",
+   "name": "Xinyi Solar Holdings Ltd",
    "pool": "CN_HK",
-   "dd250": -51.7,
-   "px": 19.440000534057617,
-   "asof": "2026-11-13"
-  },
-  {
-   "symbol": "1928.HK",
-   "key": "1928_HK",
-   "name": "Sands China Ltd",
-   "pool": "CN_HK",
-   "dd250": -51.2,
-   "px": 10.670000076293945,
-   "asof": "2026-11-13"
+   "dd250": -51.1,
+   "px": 1.9149999618530273,
+   "asof": "2026-11-16"
   }
  ]
 }

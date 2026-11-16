@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-16T01:03:19+07:00",
+ "generated_at": "2026-11-16T10:01:18+07:00",
  "date": "2026-11-16",
  "min_n": 30,
  "outcome_defs": {
@@ -22,7 +22,7 @@
    "question_id": "J1",
    "outcome_def": "1 若 180 日内触发 X-EVENT 类事件或较 veto 日再跌 90%",
    "n_total": 0,
-   "n_pending": 5572,
+   "n_pending": 5596,
    "n_unresolvable": 0,
    "conclusive": false,
    "base_rate": null,
@@ -35,7 +35,7 @@
    "question_id": "J2",
    "outcome_def": "1 若 |5 日前向收益| >= 2×ATR14%",
    "n_total": 4780,
-   "n_pending": 792,
+   "n_pending": 816,
    "n_unresolvable": 0,
    "conclusive": true,
    "base_rate": 0.227,
@@ -194,7 +194,7 @@
    "question_id": "J5",
    "outcome_def": "1 若 3 日内 |累计收益| >= 10%（movers_history 快照价口径）",
    "n_total": 1151,
-   "n_pending": 23,
+   "n_pending": 31,
    "n_unresolvable": 280,
    "conclusive": true,
    "base_rate": 0.049,
@@ -470,7 +470,7 @@
    "question_id": "J8",
    "outcome_def": "hit = 1 若判断日后 5 交易日已实现波动 sigma5（未来 5 根日 log 收益标准差）>= 1.25 × sigma20（判断日前 20 根日 log 收益标准差，判断时随 aux 落盘冻结）；前向不足 5 根 → pending，退市/断档 → unresolvable。与 J2 口径刻意不同：J2 结算方向性净移动（|5日收益|>=2×ATR14%），J8 结算波动放大（sigma 比值）——一概率一口径（RL-6）。另设组对比公示：p>=0.6 分歧组 vs p<0.4 无分歧组的 median(sigma5/sigma20)，0.4<=p<0.6 中间带不入组对比但正常进 Brier；任一组 n<30 该组只显示『收集中 x/30』（RL-4）",
    "n_total": 4499,
-   "n_pending": 767,
+   "n_pending": 790,
    "n_unresolvable": 18,
    "conclusive": true,
    "hit_rate": 1.0,
@@ -611,7 +611,7 @@
     {
      "score_lo": 40,
      "score_hi": 60,
-     "n_signals": 60,
+     "n_signals": 61,
      "hold20": {
       "n": 16,
       "win_rate": null,
@@ -672,7 +672,7 @@
      }
     }
    ],
-   "n_total": 106
+   "n_total": 107
   },
   "backtest": {
    "available": false,
@@ -681,7 +681,7 @@
  },
  "rule_counts": {
   "live": {
-   "S-FALL": 62,
+   "S-FALL": 63,
    "S-CATCH": 44,
    "G-FLIP-BACK": 1
   },

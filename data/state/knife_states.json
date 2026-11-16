@@ -2123,8 +2123,15 @@
   ]
  },
  "0960_HK": {
-  "state": "NORMAL",
-  "since": "2026-11-13",
-  "events": []
+  "state": "KNIFE_FALLING",
+  "since": "2026-11-16",
+  "events": [
+   {
+    "d": "2026-11-16",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -63.39% / 10日 -15.18%"
+   }
+  ]
  }
 }

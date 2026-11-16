@@ -29,7 +29,7 @@
  },
  "PODD": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-16",
   "clear_streak": 0,
   "top_headline": "PODD Mar 2027 125.000 call (PODD270319C00125000) Stock Price, News, Quote & History - Yahoo! Finance Canada"
@@ -337,7 +337,7 @@
  },
  "FINV": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-16",
   "clear_streak": 0,
   "top_headline": "FINV270319P00007500 Interactive Stock Chart | FINV Mar 2027 7.500 put Stock - Yahoo Finance"
