@@ -1,20 +1,20 @@
 {
- "date": "2026-11-16",
+ "date": "2026-11-17",
  "source": "yahoo-screener",
  "promoted": [
   {
-   "symbol": "HTFL",
-   "key": "HTFL",
-   "name": "Heartflow, Inc.",
+   "symbol": "SMMT",
+   "key": "SMMT",
+   "name": "Summit Therapeutics Inc.",
    "cls": "equity",
-   "pct_day": -19.13,
-   "mcap": 56763133952,
-   "dd52w": -19.94,
-   "ret10": -17.93,
-   "vol_ratio": 2.1,
-   "days_from_peak": 11,
-   "px": 48.459999084472656,
-   "asof": "2026-11-13",
+   "pct_day": -16.47,
+   "mcap": 5056406016,
+   "dd52w": -55.19,
+   "ret10": -20.14,
+   "vol_ratio": 5.04,
+   "days_from_peak": 145,
+   "px": 11.819999694824219,
+   "asof": "2026-11-16",
    "bars": 251
   }
  ],

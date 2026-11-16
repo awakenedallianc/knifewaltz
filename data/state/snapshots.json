@@ -7116,7 +7116,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "ca0170f72b027bdb",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": -3.05
+  },
   "settled": false
  },
  {
@@ -8978,6 +8980,218 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "51f4a538698dc27c",
+  "realized": {},
+  "settled": false
+ },
+ {
+  "id": "S-FALL:BZ:2026-11-17",
+  "kind": "S-FALL",
+  "symbol": "BZ",
+  "date": "2026-11-17",
+  "trigger_px": 12.670000076293945,
+  "stop_price": 12.618,
+  "features": {
+   "dd52w": -43.18,
+   "dd250": -43.18,
+   "ret10": -25.73,
+   "rsi14": 26.8,
+   "vol_ratio": 1.23,
+   "close_pos": 0.07,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": false,
+    "gate_ok": false,
+    "rsi_divergence": false
+   },
+   "checklist_n": 0,
+   "tier_time": "-",
+   "days_from_peak": 293,
+   "stop_price": 12.618,
+   "last_date": "2026-11-16",
+   "cls": "equity_single",
+   "tier": "T2C",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 24.4,
+    "capitulation_20": 0.0,
+    "checklist_20": 0.0,
+    "gate_20": 0.0
+   }
+  },
+  "score": 24,
+  "market": {
+   "blade_index": 13,
+   "gate_state": "RED",
+   "vix": 23.6200008392334,
+   "vix_ratio": 1.0059625766493407
+  },
+  "jev": null,
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "dd7c8f4da2b745b1",
+  "realized": {},
+  "settled": false
+ },
+ {
+  "id": "S-FALL:COPX:2026-11-17",
+  "kind": "S-FALL",
+  "symbol": "COPX",
+  "date": "2026-11-17",
+  "trigger_px": 65.5250015258789,
+  "stop_price": 65.385,
+  "features": {
+   "dd52w": -32.06,
+   "dd250": -32.06,
+   "ret10": -10.04,
+   "rsi14": 31.4,
+   "vol_ratio": 2.39,
+   "close_pos": 0.05,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": false,
+    "gate_ok": false,
+    "rsi_divergence": false
+   },
+   "checklist_n": 0,
+   "tier_time": "-",
+   "days_from_peak": 56,
+   "stop_price": 65.385,
+   "last_date": "2026-11-16",
+   "cls": "commodity",
+   "tier": "T1",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 9.0,
+    "capitulation_20": 0.0,
+    "checklist_20": 0.0,
+    "gate_20": 0.0
+   }
+  },
+  "score": 9,
+  "market": {
+   "blade_index": 13,
+   "gate_state": "RED",
+   "vix": 23.6200008392334,
+   "vix_ratio": 1.0059625766493407
+  },
+  "jev": null,
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "a81576188fd8f9f0",
+  "realized": {},
+  "settled": false
+ },
+ {
+  "id": "S-FALL:GDS:2026-11-17",
+  "kind": "S-FALL",
+  "symbol": "GDS",
+  "date": "2026-11-17",
+  "trigger_px": 16.899999618530273,
+  "stop_price": 15.52,
+  "features": {
+   "dd52w": -64.44,
+   "dd250": -64.44,
+   "ret10": -22.37,
+   "rsi14": 29.4,
+   "vol_ratio": 3.83,
+   "close_pos": 0.57,
+   "falling": true,
+   "capitulation": true,
+   "hammer": true,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": false,
+    "gate_ok": false,
+    "rsi_divergence": false
+   },
+   "checklist_n": 0,
+   "tier_time": "B",
+   "days_from_peak": 437,
+   "stop_price": 15.52,
+   "last_date": "2026-11-16",
+   "cls": "equity_single",
+   "tier": "T2C",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 32.4,
+    "capitulation_20": 20.0,
+    "checklist_20": 0.0,
+    "gate_20": 0.0
+   }
+  },
+  "score": 52,
+  "market": {
+   "blade_index": 13,
+   "gate_state": "RED",
+   "vix": 23.6200008392334,
+   "vix_ratio": 1.0059625766493407
+  },
+  "jev": null,
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "73fb4e457a2dc3e4",
+  "realized": {},
+  "settled": false
+ },
+ {
+  "id": "S-FALL:LX:2026-11-17",
+  "kind": "S-FALL",
+  "symbol": "LX",
+  "date": "2026-11-17",
+  "trigger_px": 0.5583999752998352,
+  "stop_price": 0.5566,
+  "features": {
+   "dd52w": -86.28,
+   "dd250": -85.9,
+   "ret10": -16.16,
+   "rsi14": 39.7,
+   "vol_ratio": 2.41,
+   "close_pos": 0.03,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": false,
+    "gate_ok": false,
+    "rsi_divergence": false
+   },
+   "checklist_n": 0,
+   "tier_time": "B",
+   "days_from_peak": 412,
+   "stop_price": 0.5566,
+   "last_date": "2026-11-16",
+   "cls": "equity_single",
+   "tier": "ORNAMENT",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 31.1,
+    "capitulation_20": 0.0,
+    "checklist_20": 0.0,
+    "gate_20": 0.0
+   }
+  },
+  "score": 31,
+  "market": {
+   "blade_index": 13,
+   "gate_state": "RED",
+   "vix": 23.6200008392334,
+   "vix_ratio": 1.0059625766493407
+  },
+  "jev": null,
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "bfc3fdb4f54f7131",
   "realized": {},
   "settled": false
  }

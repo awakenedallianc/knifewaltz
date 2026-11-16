@@ -156,8 +156,8 @@
   "events": []
  },
  "COPX": {
-  "state": "NORMAL",
-  "since": "2026-10-31",
+  "state": "KNIFE_FALLING",
+  "since": "2026-11-17",
   "events": [
    {
     "d": "2026-10-22",
@@ -182,6 +182,12 @@
     "from": "CATCH",
     "to": "NORMAL",
     "note": "跌破接刀日低点（X-STOP）"
+   },
+   {
+    "d": "2026-11-17",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -32.06% / 10日 -10.04%"
    }
   ],
   "catch_ref_price": 76.06999969482422,
@@ -998,8 +1004,8 @@
   "events": []
  },
  "GDX": {
-  "state": "CATCH",
-  "since": "2026-11-05",
+  "state": "NORMAL",
+  "since": "2026-11-17",
   "events": [
    {
     "d": "2026-10-31",
@@ -1018,11 +1024,18 @@
     "from": "STABILIZING",
     "to": "CATCH",
     "note": "checklist 3/5"
+   },
+   {
+    "d": "2026-11-17",
+    "from": "CATCH",
+    "to": "NORMAL",
+    "note": "跌破接刀日低点（X-STOP）"
    }
   ],
   "catch_ref_price": 84.58999633789062,
   "catch_day_low": 81.56,
-  "expires": "2026-11-21"
+  "expires": "2026-11-21",
+  "cooldown_until": "2026-12-03"
  },
  "GDXJ": {
   "state": "NORMAL",
@@ -1208,8 +1221,8 @@
   "events": []
  },
  "GDS": {
-  "state": "NORMAL",
-  "since": "2026-10-13",
+  "state": "KNIFE_FALLING",
+  "since": "2026-11-17",
   "events": [
    {
     "d": "2026-10-02",
@@ -1234,6 +1247,12 @@
     "from": "CATCH",
     "to": "NORMAL",
     "note": "跌破接刀日低点（X-STOP）"
+   },
+   {
+    "d": "2026-11-17",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -64.44% / 10日 -22.37%"
    }
   ],
   "catch_ref_price": 30.770000457763672,
@@ -1354,9 +1373,16 @@
   "events": []
  },
  "LX": {
-  "state": "NORMAL",
-  "since": "2026-09-22",
-  "events": []
+  "state": "KNIFE_FALLING",
+  "since": "2026-11-17",
+  "events": [
+   {
+    "d": "2026-11-17",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -86.28% / 10日 -16.16%"
+   }
+  ]
  },
  "NOAH": {
   "state": "NORMAL",
@@ -1408,8 +1434,8 @@
   "cooldown_until": "2026-11-14"
  },
  "BZ": {
-  "state": "STABILIZING",
-  "since": "2026-11-13",
+  "state": "KNIFE_FALLING",
+  "since": "2026-11-17",
   "events": [
    {
     "d": "2026-11-13",
@@ -1422,6 +1448,12 @@
     "from": "KNIFE_FALLING",
     "to": "STABILIZING",
     "note": "checklist 1/5"
+   },
+   {
+    "d": "2026-11-17",
+    "from": "STABILIZING",
+    "to": "KNIFE_FALLING",
+    "note": "企稳失败"
    }
   ]
  },
@@ -1836,8 +1868,8 @@
   "cooldown_until": "2026-11-22"
  },
  "RDDT": {
-  "state": "CATCH",
-  "since": "2026-11-10",
+  "state": "NORMAL",
+  "since": "2026-11-17",
   "events": [
    {
     "d": "2026-10-30",
@@ -1856,15 +1888,22 @@
     "from": "STABILIZING",
     "to": "CATCH",
     "note": "checklist 3/5"
+   },
+   {
+    "d": "2026-11-17",
+    "from": "CATCH",
+    "to": "NORMAL",
+    "note": "跌破接刀日低点（X-STOP）"
    }
   ],
   "catch_ref_price": 100.79000091552734,
   "catch_day_low": 94.1001,
-  "expires": "2026-11-26"
+  "expires": "2026-11-26",
+  "cooldown_until": "2026-12-03"
  },
  "INTC": {
-  "state": "CATCH",
-  "since": "2026-11-11",
+  "state": "NORMAL",
+  "since": "2026-11-17",
   "events": [
    {
     "d": "2026-10-31",
@@ -1883,11 +1922,18 @@
     "from": "STABILIZING",
     "to": "CATCH",
     "note": "checklist 3/5"
+   },
+   {
+    "d": "2026-11-17",
+    "from": "CATCH",
+    "to": "NORMAL",
+    "note": "跌破接刀日低点（X-STOP）"
    }
   ],
   "catch_ref_price": 57.4109992980957,
   "catch_day_low": 56.8501,
-  "expires": "2026-11-27"
+  "expires": "2026-11-27",
+  "cooldown_until": "2026-12-03"
  },
  "SNDK": {
   "state": "STABILIZING",
@@ -1920,8 +1966,8 @@
   ]
  },
  "CIEN": {
-  "state": "CATCH",
-  "since": "2026-11-13",
+  "state": "NORMAL",
+  "since": "2026-11-17",
   "events": [
    {
     "d": "2026-11-03",
@@ -1952,11 +1998,18 @@
     "from": "STABILIZING",
     "to": "CATCH",
     "note": "checklist 3/5"
+   },
+   {
+    "d": "2026-11-17",
+    "from": "CATCH",
+    "to": "NORMAL",
+    "note": "跌破接刀日低点（X-STOP）"
    }
   ],
   "catch_ref_price": 294.489990234375,
   "catch_day_low": 278.63,
-  "expires": "2026-11-29"
+  "expires": "2026-11-29",
+  "cooldown_until": "2026-12-03"
  },
  "NRG": {
   "state": "KNIFE_FALLING",
@@ -1971,8 +2024,8 @@
   ]
  },
  "MRVL": {
-  "state": "CATCH",
-  "since": "2026-11-11",
+  "state": "NORMAL",
+  "since": "2026-11-17",
   "events": [
    {
     "d": "2026-11-05",
@@ -2003,15 +2056,22 @@
     "from": "STABILIZING",
     "to": "CATCH",
     "note": "checklist 3/5"
+   },
+   {
+    "d": "2026-11-17",
+    "from": "CATCH",
+    "to": "NORMAL",
+    "note": "跌破接刀日低点（X-STOP）"
    }
   ],
   "catch_ref_price": 151.71499633789062,
   "catch_day_low": 147.79,
-  "expires": "2026-11-27"
+  "expires": "2026-11-27",
+  "cooldown_until": "2026-12-03"
  },
  "STX": {
-  "state": "CATCH",
-  "since": "2026-11-13",
+  "state": "NORMAL",
+  "since": "2026-11-17",
   "events": [
    {
     "d": "2026-11-06",
@@ -2030,11 +2090,18 @@
     "from": "STABILIZING",
     "to": "CATCH",
     "note": "checklist 3/5"
+   },
+   {
+    "d": "2026-11-17",
+    "from": "CATCH",
+    "to": "NORMAL",
+    "note": "跌破接刀日低点（X-STOP）"
    }
   ],
   "catch_ref_price": 540.885009765625,
   "catch_day_low": 516.7774,
-  "expires": "2026-11-29"
+  "expires": "2026-11-29",
+  "cooldown_until": "2026-12-03"
  },
  "LRCX": {
   "state": "KNIFE_FALLING",
@@ -2054,14 +2121,20 @@
   "events": []
  },
  "TER": {
-  "state": "KNIFE_FALLING",
-  "since": "2026-11-06",
+  "state": "STABILIZING",
+  "since": "2026-11-17",
   "events": [
    {
     "d": "2026-11-06",
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -56.03% / 10日 -31.1%"
+   },
+   {
+    "d": "2026-11-17",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 1/5"
    }
   ]
  },
@@ -2123,14 +2196,20 @@
   ]
  },
  "0960_HK": {
-  "state": "KNIFE_FALLING",
-  "since": "2026-11-16",
+  "state": "STABILIZING",
+  "since": "2026-11-17",
   "events": [
    {
     "d": "2026-11-16",
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -63.39% / 10日 -15.18%"
+   },
+   {
+    "d": "2026-11-17",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 1/5"
    }
   ]
  }
