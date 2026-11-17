@@ -1,22 +1,6 @@
 {
- "date": "2026-11-17",
+ "date": "2026-11-18",
  "source": "yahoo-screener",
- "promoted": [
-  {
-   "symbol": "SMMT",
-   "key": "SMMT",
-   "name": "Summit Therapeutics Inc.",
-   "cls": "equity",
-   "pct_day": -16.47,
-   "mcap": 3037934080,
-   "dd52w": -55.19,
-   "ret10": -20.14,
-   "vol_ratio": 5.05,
-   "days_from_peak": 145,
-   "px": 11.819999694824219,
-   "asof": "2026-11-16",
-   "bars": 251
-  }
- ],
+ "promoted": [],
  "degraded_reason": null
 }

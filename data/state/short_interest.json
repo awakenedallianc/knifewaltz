@@ -2,7 +2,7 @@
  "settlement": "2026-10-30",
  "staleness_note": "双月·滞后约9工作日",
  "source": "finra",
- "fetched_at": "2026-11-17T12:15:00+07:00",
+ "fetched_at": "2026-11-18T03:02:58+07:00",
  "rows": {
   "ALB": {
    "short": 12402907,
@@ -13,6 +13,11 @@
    "short": 5465979,
    "days_to_cover": 1.91,
    "chg_pct": -16.79
+  },
+  "AMAT": {
+   "short": 14452231,
+   "days_to_cover": 1.9,
+   "chg_pct": 1.93
   },
   "APTV": {
    "short": 11087532,
@@ -48,11 +53,6 @@
    "short": 3905235,
    "days_to_cover": 1.37,
    "chg_pct": -2
-  },
-  "COHR": {
-   "short": 10021335,
-   "days_to_cover": 1.29,
-   "chg_pct": 10.76
   },
   "COIN": {
    "short": 22834387,
@@ -109,6 +109,11 @@
    "days_to_cover": 2.8,
    "chg_pct": -7.31
   },
+  "ORCL": {
+   "short": 46405138,
+   "days_to_cover": 1.34,
+   "chg_pct": -2.35
+  },
   "PODD": {
    "short": 5326266,
    "days_to_cover": 4.25,
@@ -119,11 +124,6 @@
    "days_to_cover": 2.71,
    "chg_pct": 2.48
   },
-  "SMMT": {
-   "short": 42263053,
-   "days_to_cover": 9.4,
-   "chg_pct": 3.34
-  },
   "SNDK": {
    "short": 4911149,
    "days_to_cover": 1,
@@ -133,11 +133,6 @@
    "short": 8440115,
    "days_to_cover": 1.44,
    "chg_pct": 7.39
-  },
-  "TER": {
-   "short": 8031344,
-   "days_to_cover": 2.01,
-   "chg_pct": 2.24
   },
   "TSM": {
    "short": 32199918,

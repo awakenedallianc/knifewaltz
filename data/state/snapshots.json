@@ -2715,7 +2715,14 @@
   "engine_sha": "69e75ef468979668",
   "features_sha": "0c3b7c5872806f92",
   "realized": {
-   "fwd5_pct": -1.25
+   "fwd5_pct": -1.25,
+   "fwd20_pct": -3.13,
+   "mae20_pct": -8.44,
+   "atier": {
+    "pnl_pct": -4.69,
+    "exit": "X-STOP@2日",
+    "exit_bar": 2
+   }
   },
   "settled": false
  },
@@ -7148,7 +7155,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "fae099e53fd712ba",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": -2.95
+  },
   "settled": false
  },
  {
@@ -7210,7 +7219,8 @@
   "engine_sha": "69e75ef468979668",
   "features_sha": "543a007b8cceba21",
   "realized": {
-   "ledger_ref": "HE=F@2026-11-10"
+   "ledger_ref": "HE=F@2026-11-10",
+   "fwd5_pct": 4.48
   },
   "settled": false,
   "stier": {
@@ -7312,7 +7322,8 @@
   "engine_sha": "69e75ef468979668",
   "features_sha": "495f57df63d59612",
   "realized": {
-   "ledger_ref": "OJ=F@2026-11-10"
+   "ledger_ref": "OJ=F@2026-11-10",
+   "fwd5_pct": -8.86
   },
   "settled": false,
   "stier": {
@@ -7527,7 +7538,8 @@
   "engine_sha": "69e75ef468979668",
   "features_sha": "f57a8277a41f82f8",
   "realized": {
-   "ledger_ref": "RDDT@2026-11-10"
+   "ledger_ref": "RDDT@2026-11-10",
+   "fwd5_pct": -4.09
   },
   "settled": false,
   "stier": {
@@ -7633,7 +7645,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "149369d96bd5fb91",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": 0.52
+  },
   "settled": false
  },
  {
@@ -7699,7 +7713,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "d2e538b048d399f2",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": -1.35
+  },
   "settled": false
  },
  {
@@ -9462,6 +9478,297 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "bfc3fdb4f54f7131",
+  "realized": {},
+  "settled": false
+ },
+ {
+  "id": "S-FALL:FUTU:2026-11-18",
+  "kind": "S-FALL",
+  "symbol": "FUTU",
+  "date": "2026-11-18",
+  "trigger_px": 87.16000366210938,
+  "stop_price": 85.69,
+  "features": {
+   "dd52w": -53.67,
+   "dd250": -53.67,
+   "ret10": -15.06,
+   "rsi14": 33.0,
+   "vol_ratio": 1.01,
+   "close_pos": 0.28,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": false,
+    "gate_ok": false,
+    "rsi_divergence": false
+   },
+   "checklist_n": 0,
+   "tier_time": "-",
+   "days_from_peak": 262,
+   "stop_price": 85.69,
+   "last_date": "2026-11-17",
+   "cls": "equity_single",
+   "tier": "T2C",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 22.6,
+    "capitulation_20": 0.0,
+    "checklist_20": 0.0,
+    "gate_20": 0.0
+   }
+  },
+  "score": 23,
+  "market": {
+   "blade_index": 29,
+   "gate_state": "RED",
+   "vix": 26.200000762939453,
+   "vix_ratio": 1.0400952841392872
+  },
+  "jev": null,
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "0afdc58ca1bbe68c",
+  "realized": {},
+  "settled": false
+ },
+ {
+  "id": "S-FALL:GDS:2026-11-18",
+  "kind": "S-FALL",
+  "symbol": "GDS",
+  "date": "2026-11-18",
+  "trigger_px": 16.31999969482422,
+  "stop_price": 16.18,
+  "features": {
+   "dd52w": -65.66,
+   "dd250": -65.66,
+   "ret10": -25.34,
+   "rsi14": 22.9,
+   "vol_ratio": 1.33,
+   "close_pos": 0.15,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": false,
+    "gate_ok": false,
+    "rsi_divergence": false
+   },
+   "checklist_n": 0,
+   "tier_time": "B",
+   "days_from_peak": 438,
+   "stop_price": 16.18,
+   "last_date": "2026-11-17",
+   "cls": "equity_single",
+   "tier": "T2C",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 34.9,
+    "capitulation_20": 0.0,
+    "checklist_20": 0.0,
+    "gate_20": 0.0
+   }
+  },
+  "score": 35,
+  "market": {
+   "blade_index": 29,
+   "gate_state": "RED",
+   "vix": 26.200000762939453,
+   "vix_ratio": 1.0400952841392872
+  },
+  "jev": {
+   "family": "unclear",
+   "p_terminal": 0.01,
+   "conf": 0.65,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.423,
+   "catch_prior": null,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "92e18c685559c55a",
+  "realized": {},
+  "settled": false
+ },
+ {
+  "id": "S-FALL:GLW:2026-11-18",
+  "kind": "S-FALL",
+  "symbol": "GLW",
+  "date": "2026-11-18",
+  "trigger_px": 106.91500091552734,
+  "stop_price": 104.44,
+  "features": {
+   "dd52w": -58.19,
+   "dd250": -58.19,
+   "ret10": -15.24,
+   "rsi14": 33.4,
+   "vol_ratio": 0.55,
+   "close_pos": 0.49,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": true,
+    "vol_compress": false,
+    "gate_ok": false,
+    "rsi_divergence": false
+   },
+   "checklist_n": 1,
+   "tier_time": "DEAD_ZONE",
+   "days_from_peak": 99,
+   "stop_price": 104.44,
+   "last_date": "2026-11-17",
+   "cls": "equity_single",
+   "tier": "T2",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 24.9,
+    "capitulation_20": 0.0,
+    "checklist_20": 4.0,
+    "gate_20": 0.0
+   }
+  },
+  "score": 29,
+  "market": {
+   "blade_index": 29,
+   "gate_state": "RED",
+   "vix": 26.200000762939453,
+   "vix_ratio": 1.0400952841392872
+  },
+  "jev": {
+   "family": "B_fundamental_repricing",
+   "p_terminal": 0.0,
+   "conf": 0.15,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.27,
+   "catch_prior": null,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "244398df60e1f56e",
+  "realized": {},
+  "settled": false
+ },
+ {
+  "id": "S-FALL:KC:2026-11-18",
+  "kind": "S-FALL",
+  "symbol": "KC",
+  "date": "2026-11-18",
+  "trigger_px": 6.309999942779541,
+  "stop_price": 6.265,
+  "features": {
+   "dd52w": -65.35,
+   "dd250": -65.35,
+   "ret10": -17.08,
+   "rsi14": 25.4,
+   "vol_ratio": 1.45,
+   "close_pos": 0.14,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": false,
+    "gate_ok": false,
+    "rsi_divergence": false
+   },
+   "checklist_n": 0,
+   "tier_time": "B",
+   "days_from_peak": 441,
+   "stop_price": 6.265,
+   "last_date": "2026-11-17",
+   "cls": "equity_single",
+   "tier": "T2C",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 29.5,
+    "capitulation_20": 0.0,
+    "checklist_20": 0.0,
+    "gate_20": 0.0
+   }
+  },
+  "score": 30,
+  "market": {
+   "blade_index": 29,
+   "gate_state": "RED",
+   "vix": 26.200000762939453,
+   "vix_ratio": 1.0400952841392872
+  },
+  "jev": null,
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "b0191419b366841a",
+  "realized": {},
+  "settled": false
+ },
+ {
+  "id": "S-FALL:LX:2026-11-18",
+  "kind": "S-FALL",
+  "symbol": "LX",
+  "date": "2026-11-18",
+  "trigger_px": 0.5519999861717224,
+  "stop_price": 0.55,
+  "features": {
+   "dd52w": -86.06,
+   "dd250": -85.4,
+   "ret10": -19.18,
+   "rsi14": 39.9,
+   "vol_ratio": 0.59,
+   "close_pos": 0.08,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": false,
+    "gate_ok": false,
+    "rsi_divergence": false
+   },
+   "checklist_n": 0,
+   "tier_time": "B",
+   "days_from_peak": 413,
+   "stop_price": 0.55,
+   "last_date": "2026-11-17",
+   "cls": "equity_single",
+   "tier": "ORNAMENT",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 33.1,
+    "capitulation_20": 0.0,
+    "checklist_20": 0.0,
+    "gate_20": 0.0
+   }
+  },
+  "score": 33,
+  "market": {
+   "blade_index": 29,
+   "gate_state": "RED",
+   "vix": 26.200000762939453,
+   "vix_ratio": 1.0400952841392872
+  },
+  "jev": null,
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "84549d6fc89a7381",
   "realized": {},
   "settled": false
  }
