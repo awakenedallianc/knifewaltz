@@ -7419,7 +7419,8 @@
   "engine_sha": "69e75ef468979668",
   "features_sha": "4b5d0e6677e564b0",
   "realized": {
-   "ledger_ref": "PL=F@2026-11-10"
+   "ledger_ref": "PL=F@2026-11-10",
+   "fwd5_pct": -4.41
   },
   "settled": false,
   "stier": {
@@ -7751,7 +7752,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "9b602dbd4695af2b",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": -4.62
+  },
   "settled": false
  },
  {
@@ -8980,6 +8983,273 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "51f4a538698dc27c",
+  "realized": {},
+  "settled": false
+ },
+ {
+  "id": "S-CATCH:SNDK:2026-11-17",
+  "kind": "S-CATCH",
+  "symbol": "SNDK",
+  "date": "2026-11-17",
+  "trigger_px": 809.1099853515625,
+  "stop_price": 799.0,
+  "features": {
+   "dd52w": -65.35,
+   "dd250": -65.35,
+   "ret10": -24.74,
+   "rsi14": 29.2,
+   "vol_ratio": 1.03,
+   "close_pos": 0.26,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": true,
+    "vol_compress": false,
+    "gate_ok": true,
+    "rsi_divergence": true
+   },
+   "checklist_n": 3,
+   "tier_time": "B",
+   "days_from_peak": 100,
+   "stop_price": 799.0,
+   "last_date": "2026-11-16",
+   "cls": "equity_single",
+   "tier": "T2",
+   "state": "CATCH",
+   "score_parts": {
+    "fall_40": 34.4,
+    "capitulation_20": 0.0,
+    "checklist_20": 12.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 66,
+  "market": {
+   "blade_index": 12,
+   "gate_state": "GREEN",
+   "vix": 22.90999984741211,
+   "vix_ratio": 0.9952215200623741
+  },
+  "jev": {
+   "family": "A_liquidity_panic",
+   "p_terminal": 0.0,
+   "conf": 0.31,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.377,
+   "catch_prior": 0.333,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "659fbfda08436afb",
+  "realized": {
+   "ledger_ref": "SNDK@2026-11-17"
+  },
+  "settled": false,
+  "stier": {
+   "rules_version": "s1",
+   "admitted": false,
+   "status": null,
+   "soft_score": 0.5222,
+   "hard_pass": {
+    "H1": true,
+    "H2": false,
+    "H3": true,
+    "H4": true,
+    "H5": true,
+    "H6": true,
+    "H7": true,
+    "H8": true
+   },
+   "shadow": {
+    "H9": {
+     "would_block": true,
+     "lr": 1.0,
+     "grade": "线索"
+    },
+    "H10": {
+     "would_block": false,
+     "flip_back_age_days": null
+    },
+    "H11": {
+     "would_block": false,
+     "close_pos": 0.26
+    }
+   },
+   "slice": {
+    "key": "A_liquidity_panic|GREEN|B|none|equity_single",
+    "lr": 1.0,
+    "n": 0,
+    "wins": 0,
+    "wilson95": null,
+    "grade": "线索"
+   }
+  }
+ },
+ {
+  "id": "S-CATCH:WDC:2026-11-17",
+  "kind": "S-CATCH",
+  "symbol": "WDC",
+  "date": "2026-11-17",
+  "trigger_px": 280.92999267578125,
+  "stop_price": 275.34,
+  "features": {
+   "dd52w": -62.35,
+   "dd250": -62.35,
+   "ret10": -17.03,
+   "rsi14": 29.9,
+   "vol_ratio": 0.75,
+   "close_pos": 0.46,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": true,
+    "vol_compress": true,
+    "gate_ok": true,
+    "rsi_divergence": false
+   },
+   "checklist_n": 3,
+   "tier_time": "B",
+   "days_from_peak": 104,
+   "stop_price": 275.34,
+   "last_date": "2026-11-16",
+   "cls": "equity_single",
+   "tier": "T2",
+   "state": "CATCH",
+   "score_parts": {
+    "fall_40": 28.0,
+    "capitulation_20": 0.0,
+    "checklist_20": 12.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 60,
+  "market": {
+   "blade_index": 12,
+   "gate_state": "GREEN",
+   "vix": 22.90999984741211,
+   "vix_ratio": 0.9952215200623741
+  },
+  "jev": {
+   "family": "A_liquidity_panic",
+   "p_terminal": 0.0,
+   "conf": 0.39,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.423,
+   "catch_prior": 0.375,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "2d130a381f20a9e6",
+  "realized": {
+   "ledger_ref": "WDC@2026-11-17"
+  },
+  "settled": false,
+  "stier": {
+   "rules_version": "s1",
+   "admitted": false,
+   "status": null,
+   "soft_score": 0.5088,
+   "hard_pass": {
+    "H1": true,
+    "H2": false,
+    "H3": true,
+    "H4": true,
+    "H5": true,
+    "H6": true,
+    "H7": true,
+    "H8": false
+   },
+   "shadow": {
+    "H9": {
+     "would_block": true,
+     "lr": 1.0,
+     "grade": "线索"
+    },
+    "H10": {
+     "would_block": false,
+     "flip_back_age_days": null
+    },
+    "H11": {
+     "would_block": false,
+     "close_pos": 0.46
+    }
+   },
+   "slice": {
+    "key": "A_liquidity_panic|GREEN|B|none|equity_single",
+    "lr": 1.0,
+    "n": 0,
+    "wins": 0,
+    "wilson95": null,
+    "grade": "线索"
+   }
+  }
+ },
+ {
+  "id": "S-FALL:0881_HK:2026-11-17",
+  "kind": "S-FALL",
+  "symbol": "0881_HK",
+  "date": "2026-11-17",
+  "trigger_px": 1.8600000143051147,
+  "stop_price": 1.84,
+  "features": {
+   "dd52w": -85.6,
+   "dd250": -85.6,
+   "ret10": -16.22,
+   "rsi14": 24.6,
+   "vol_ratio": 0.33,
+   "close_pos": 0.67,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": true,
+    "gate_ok": true,
+    "rsi_divergence": false
+   },
+   "checklist_n": 2,
+   "tier_time": "B",
+   "days_from_peak": 769,
+   "stop_price": 1.84,
+   "last_date": "2026-11-17",
+   "cls": "equity_single",
+   "tier": "T2C",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 31.2,
+    "capitulation_20": 0.0,
+    "checklist_20": 8.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 59,
+  "market": {
+   "blade_index": 12,
+   "gate_state": "GREEN",
+   "vix": 22.90999984741211,
+   "vix_ratio": 0.9952215200623741
+  },
+  "jev": null,
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "abe58c38fd033c8e",
   "realized": {},
   "settled": false
  },

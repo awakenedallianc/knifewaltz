@@ -29,7 +29,7 @@
  },
  "PODD": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.02,
   "date": "2026-11-17",
   "clear_streak": 0,
   "top_headline": "Walter Klenz Obituary - The Press Democrat"
@@ -141,7 +141,7 @@
  },
  "UNG": {
   "veto": false,
-  "p": 0.03,
+  "p": 0.0,
   "date": "2026-11-17",
   "clear_streak": 0,
   "top_headline": "Student group honored for fostering dialogue - University of North Georgia"
@@ -183,7 +183,7 @@
  },
  "QFIN": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.03,
   "date": "2026-11-17",
   "clear_streak": 0,
   "top_headline": "Securities Lawsuit Alert: Qfin Holdings, Inc. (QFIN) - Contact Levi & Korsinsky for Information About Lead Plaintiff Deadline November 27, 2026 - ACCESS Newswir"
@@ -197,14 +197,14 @@
  },
  "IQ": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-17",
   "clear_streak": 0,
   "top_headline": "Asian Equities Traded in the US as American Depositary Receipts Start Week Sharply Lower in Monday Trading"
  },
  "XPEV": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-17",
   "clear_streak": 0,
   "top_headline": "Xpeng earnings analysis: questions answered and next catalysts"
@@ -253,7 +253,7 @@
  },
  "VNET": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.04,
   "date": "2026-11-17",
   "clear_streak": 0,
   "top_headline": "VNET Group (NASDAQ:VNET) Stock Falls 10.2% - Time to Sell? - MarketBeat"
@@ -365,7 +365,7 @@
  },
  "COIN": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-17",
   "clear_streak": 0,
   "top_headline": "Coinbase Stocks Fall 7.54% as Bitcoin Slides Toward $64,000 and Trading Volumes Shrink"
@@ -421,7 +421,7 @@
  },
  "WDC": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-17",
   "clear_streak": 0,
   "top_headline": "Chip Stocks Are Falling. Anthropic’s Trillion-Dollar IPO Is a Big Test."
@@ -484,10 +484,10 @@
  },
  "COPX": {
   "veto": false,
-  "p": 0.0,
-  "date": "2026-10-31",
+  "p": 0.09,
+  "date": "2026-11-17",
   "clear_streak": 0,
-  "top_headline": "COPX 261030 93.50C (COPX261030C93500) Stock Options Chain | Quotes & News - Moomoo"
+  "top_headline": "COPX Nov 2026 85.500 call (COPX261127C00085500) stock price, news, quote and history - Yahoo Finance UK"
  },
  "HE_F": {
   "veto": false,
@@ -603,7 +603,7 @@
  },
  "SMH": {
   "veto": false,
-  "p": 0.04,
+  "p": 0.0,
   "date": "2026-11-17",
   "clear_streak": 0,
   "top_headline": "Why AMD Stock Was Sliding Today"
@@ -617,7 +617,7 @@
  },
  "TER": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-17",
   "clear_streak": 0,
   "top_headline": "35 SW Rich Ter # 1-101, Stuart, FL 34997 - Realtor.com"

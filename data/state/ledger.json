@@ -1016,5 +1016,29 @@
   "tier_time": "-",
   "status": "open",
   "snapshot_ref": "S-CATCH:CC_F:2026-11-14"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "SNDK",
+  "date": "2026-11-17",
+  "entry": 809.1099853515625,
+  "stop": 799.0,
+  "score": 66,
+  "tier_time": "B",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:SNDK:2026-11-17"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "WDC",
+  "date": "2026-11-17",
+  "entry": 280.92999267578125,
+  "stop": 275.34,
+  "score": 60,
+  "tier_time": "B",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:WDC:2026-11-17"
  }
 ]
