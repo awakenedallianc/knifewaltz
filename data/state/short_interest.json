@@ -2,7 +2,7 @@
  "settlement": "2026-10-30",
  "staleness_note": "双月·滞后约9工作日",
  "source": "finra",
- "fetched_at": "2026-11-18T03:02:58+07:00",
+ "fetched_at": "2026-11-18T11:42:50+07:00",
  "rows": {
   "ALB": {
    "short": 12402907,
@@ -13,11 +13,6 @@
    "short": 5465979,
    "days_to_cover": 1.91,
    "chg_pct": -16.79
-  },
-  "AMAT": {
-   "short": 14452231,
-   "days_to_cover": 1.9,
-   "chg_pct": 1.93
   },
   "APTV": {
    "short": 11087532,
@@ -93,6 +88,11 @@
    "short": 152855264,
    "days_to_cover": 1.18,
    "chg_pct": 2.93
+  },
+  "INTU": {
+   "short": 8871536,
+   "days_to_cover": 3.16,
+   "chg_pct": 10.73
   },
   "KLAC": {
    "short": 21541175,

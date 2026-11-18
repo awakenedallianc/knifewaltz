@@ -1847,7 +1847,7 @@
   "cooldown_until": "2026-11-19"
  },
  "GLW": {
-  "state": "KNIFE_FALLING",
+  "state": "STABILIZING",
   "since": "2026-11-18",
   "events": [
    {
@@ -1879,6 +1879,12 @@
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -58.19% / 10日 -15.24%"
+   },
+   {
+    "d": "2026-11-18",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 1/5"
    }
   ],
   "catch_ref_price": 127.73999786376953,
@@ -2306,8 +2312,8 @@
   ]
  },
  "0960_HK": {
-  "state": "STABILIZING",
-  "since": "2026-11-17",
+  "state": "KNIFE_FALLING",
+  "since": "2026-11-18",
   "events": [
    {
     "d": "2026-11-16",
@@ -2320,6 +2326,12 @@
     "from": "KNIFE_FALLING",
     "to": "STABILIZING",
     "note": "checklist 1/5"
+   },
+   {
+    "d": "2026-11-18",
+    "from": "STABILIZING",
+    "to": "KNIFE_FALLING",
+    "note": "企稳失败"
    }
   ]
  }

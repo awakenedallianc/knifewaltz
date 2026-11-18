@@ -9482,6 +9482,59 @@
   "settled": false
  },
  {
+  "id": "S-FALL:0960_HK:2026-11-18",
+  "kind": "S-FALL",
+  "symbol": "0960_HK",
+  "date": "2026-11-18",
+  "trigger_px": 3.5399999618530273,
+  "stop_price": 3.465,
+  "features": {
+   "dd52w": -66.38,
+   "dd250": -66.38,
+   "ret10": -22.96,
+   "rsi14": 21.9,
+   "vol_ratio": 1.04,
+   "close_pos": 0.33,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": false,
+    "gate_ok": false,
+    "rsi_divergence": false
+   },
+   "checklist_n": 0,
+   "tier_time": "B",
+   "days_from_peak": 524,
+   "stop_price": 3.465,
+   "last_date": "2026-11-18",
+   "cls": "equity_single",
+   "tier": "T2C",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 33.8,
+    "capitulation_20": 0.0,
+    "checklist_20": 0.0,
+    "gate_20": 0.0
+   }
+  },
+  "score": 34,
+  "market": {
+   "blade_index": 25,
+   "gate_state": "RED",
+   "vix": 25.459999084472656,
+   "vix_ratio": 1.0192153543247566
+  },
+  "jev": null,
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "cdc79801042c4a95",
+  "realized": {},
+  "settled": false
+ },
+ {
   "id": "S-FALL:FUTU:2026-11-18",
   "kind": "S-FALL",
   "symbol": "FUTU",
