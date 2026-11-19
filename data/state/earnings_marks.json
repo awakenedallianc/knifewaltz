@@ -1,24 +1,16 @@
 {
- "asof": "2026-11-19T11:28:50+07:00",
+ "asof": "2026-11-20T02:39:40+07:00",
  "source": "yahoo-calendar",
  "caliber": "未来 5 个交易日窗（远期日历大票缺席是实测事实，不做远期）",
  "days": [
-  "2026-11-19",
   "2026-11-20",
   "2026-11-23",
   "2026-11-24",
-  "2026-11-25"
+  "2026-11-25",
+  "2026-11-26"
  ],
  "days_failed": [],
  "truncated_days": [],
- "watchlist_n": 28,
- "marks": [
-  {
-   "ticker": "INTU",
-   "date": "2026-11-19",
-   "when": "AMC",
-   "eps_est": 2.64,
-   "date_confirmed": true
-  }
- ]
+ "watchlist_n": 30,
+ "marks": []
 }

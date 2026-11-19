@@ -1,79 +1,5 @@
 {
  "days": {
-  "2026-10-21": [
-   {
-    "date": "2026-10-21",
-    "sym": "ZECUSDT",
-    "last": 1345.35,
-    "pct24": 12.313,
-    "quote_vol": 79124778.0,
-    "funding": null,
-    "source": "okx"
-   },
-   {
-    "date": "2026-10-21",
-    "sym": "NEARUSDT",
-    "last": 5.425,
-    "pct24": 11.557,
-    "quote_vol": 35518674.0,
-    "funding": null,
-    "source": "okx"
-   },
-   {
-    "date": "2026-10-21",
-    "sym": "XRPUSDT",
-    "last": 1.3805,
-    "pct24": 4.228,
-    "quote_vol": 25318298.0,
-    "funding": null,
-    "source": "okx"
-   },
-   {
-    "date": "2026-10-21",
-    "sym": "DOGEUSDT",
-    "last": 0.08338,
-    "pct24": 3.231,
-    "quote_vol": 20890491.0,
-    "funding": null,
-    "source": "okx"
-   },
-   {
-    "date": "2026-10-21",
-    "sym": "ETHUSDT",
-    "last": 2512.0,
-    "pct24": 2.898,
-    "quote_vol": 315758916.0,
-    "funding": 2.89365586529e-05,
-    "source": "okx"
-   },
-   {
-    "date": "2026-10-21",
-    "sym": "SOLUSDT",
-    "last": 108.5,
-    "pct24": 2.407,
-    "quote_vol": 50596453.0,
-    "funding": 2.1444742873e-05,
-    "source": "okx"
-   },
-   {
-    "date": "2026-10-21",
-    "sym": "BTCUSDT",
-    "last": 84599.9,
-    "pct24": 2.377,
-    "quote_vol": 536093885.0,
-    "funding": 3.49011074917e-05,
-    "source": "okx"
-   },
-   {
-    "date": "2026-10-21",
-    "sym": "WLDUSDT",
-    "last": 0.5738,
-    "pct24": 2.172,
-    "quote_vol": 20159080.0,
-    "funding": null,
-    "source": "okx"
-   }
-  ],
   "2026-10-22": [
    {
     "date": "2026-10-22",
@@ -2516,7 +2442,72 @@
     "funding": -0.0016575970600772,
     "source": "okx"
    }
+  ],
+  "2026-11-20": [
+   {
+    "date": "2026-11-20",
+    "sym": "ETHUSDT",
+    "last": 1775.77,
+    "pct24": 0.949,
+    "quote_vol": 168124907.0,
+    "funding": 1.49116201623e-05,
+    "source": "okx"
+   },
+   {
+    "date": "2026-11-20",
+    "sym": "HYPEUSDT",
+    "last": 67.734,
+    "pct24": 0.901,
+    "quote_vol": 22570608.0,
+    "funding": null,
+    "source": "okx"
+   },
+   {
+    "date": "2026-11-20",
+    "sym": "SOLUSDT",
+    "last": 73.69,
+    "pct24": 0.614,
+    "quote_vol": 53542589.0,
+    "funding": 1.09802365314e-05,
+    "source": "okx"
+   },
+   {
+    "date": "2026-11-20",
+    "sym": "BTCUSDT",
+    "last": 62595.5,
+    "pct24": -0.265,
+    "quote_vol": 483163906.0,
+    "funding": 7.5740884919e-05,
+    "source": "okx"
+   },
+   {
+    "date": "2026-11-20",
+    "sym": "XRPUSDT",
+    "last": 0.9666,
+    "pct24": -0.392,
+    "quote_vol": 32673519.0,
+    "funding": null,
+    "source": "okx"
+   },
+   {
+    "date": "2026-11-20",
+    "sym": "ZECUSDT",
+    "last": 902.84,
+    "pct24": -0.73,
+    "quote_vol": 43940493.0,
+    "funding": null,
+    "source": "okx"
+   },
+   {
+    "date": "2026-11-20",
+    "sym": "XNVDAUSDT",
+    "last": 148.6,
+    "pct24": -1.72,
+    "quote_vol": 24637976.0,
+    "funding": null,
+    "source": "okx"
+   }
   ]
  },
- "updated": "2026-11-19T11:29:03+07:00"
+ "updated": "2026-11-20T02:40:54+07:00"
 }
