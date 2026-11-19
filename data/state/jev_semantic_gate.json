@@ -29,14 +29,14 @@
  },
  "PODD": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-19",
   "clear_streak": 0,
   "top_headline": "Stifel Upgrades Tandem to Buy and Downgrades Insulet on Pump Trends - www.tokenpost.com"
  },
  "BSX": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-19",
   "clear_streak": 0,
   "top_headline": "BSX Fairly Valued by DCF at $40 - GuruFocus"
@@ -141,7 +141,7 @@
  },
  "UNG": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-19",
   "clear_streak": 0,
   "top_headline": "UNG recognizes '20 Under 40' alumni - University of North Georgia"
@@ -183,10 +183,10 @@
  },
  "QFIN": {
   "veto": false,
-  "p": 0.01,
-  "date": "2026-11-18",
+  "p": 0.0,
+  "date": "2026-11-19",
   "clear_streak": 0,
-  "top_headline": "Qfin Holdings (QFIN) Stock Could Be Below Fair Value Despite Market Doubts - Simply Wall St"
+  "top_headline": "Earnings Preview: QFIN to Report Financial Results Post-market on November 24 - Moomoo"
  },
  "TME": {
   "veto": false,
@@ -197,7 +197,7 @@
  },
  "IQ": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-19",
   "clear_streak": 0,
   "top_headline": "Asian Equities Traded in the US as American Depositary Receipts Decline in Wednesday Trading"
@@ -218,7 +218,7 @@
  },
  "BILI": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-19",
   "clear_streak": 0,
   "top_headline": "BILI261120P00024000 interactive stock chart | BILI Nov 2026 24.000 put stock - Yahoo Finance UK"
@@ -253,14 +253,14 @@
  },
  "VNET": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-19",
   "clear_streak": 0,
   "top_headline": "Factory Expands Collaboration with Microsoft to Bring Autonomous Software Engineering to Enterprises - Business Wire"
  },
  "WB": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.02,
   "date": "2026-11-19",
   "clear_streak": 0,
   "top_headline": "Weibo Corp (WB) Q3 2026 Earnings Call Highlights: Revenue Slips 7% as Advertiser Caution Weighs ..."
@@ -309,7 +309,7 @@
  },
  "BABA": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.03,
   "date": "2026-11-19",
   "clear_streak": 0,
   "top_headline": "BIDU Stock Slumps To Fresh 16 Year Low, BABA Shares Down To New 22-Month Low – Here’s What Investors Are Watching"
@@ -344,7 +344,7 @@
  },
  "KWEB": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-19",
   "clear_streak": 0,
   "top_headline": "KWEB261113P00028000 Interactive Stock Chart | KWEB Nov 2026 28.000 put Stock - Yahoo Finance"
@@ -365,14 +365,14 @@
  },
  "COIN": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-19",
   "clear_streak": 0,
   "top_headline": "Elon Musk deepfake nearly costs coinbase users $4.7 million"
  },
  "GDS": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-19",
   "clear_streak": 0,
   "top_headline": "GdS: Two games, one shot and an angry team-mate – ‘nightmare’ for Ramos extends to Portugal - SempreMilan"
@@ -400,7 +400,7 @@
  },
  "CTVA": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.02,
   "date": "2026-11-19",
   "clear_streak": 0,
   "top_headline": "Corteva (NYSE:CTVA) Reaches New 52-Week Low - Here's Why - MarketBeat"
@@ -435,7 +435,7 @@
  },
  "GDXJ": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-19",
   "clear_streak": 0,
   "top_headline": "GDXJ Dec 2026 100.000 put (GDXJ261211P00100000) stock price, news, quote and history - Yahoo Finance UK"
@@ -484,7 +484,7 @@
  },
  "COPX": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-19",
   "clear_streak": 0,
   "top_headline": "COPX Dec 2026 89.000 call (COPX261218C00089000) interactive stock chart - Yahoo Finance UK"

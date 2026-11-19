@@ -7,15 +7,15 @@
    "key": "ARDT",
    "name": "Ardent Health, Inc.",
    "cls": "equity",
-   "pct_day": -19.21,
-   "mcap": 8724063232,
-   "dd52w": -21.17,
-   "ret10": 10.39,
-   "vol_ratio": 6.61,
+   "pct_day": -18.87,
+   "mcap": 4723330048,
+   "dd52w": -20.84,
+   "ret10": 10.85,
+   "vol_ratio": 8.94,
    "days_from_peak": 5,
-   "px": 14.34000015258789,
+   "px": 14.399999618530273,
    "asof": "2026-11-18",
-   "bars": 252
+   "bars": 251
   }
  ],
  "degraded_reason": null
