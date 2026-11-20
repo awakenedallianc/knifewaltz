@@ -2,8 +2,13 @@
  "settlement": "2026-10-30",
  "staleness_note": "双月·滞后约9工作日",
  "source": "finra",
- "fetched_at": "2026-11-20T11:15:28+07:00",
+ "fetched_at": "2026-11-21T02:17:49+07:00",
  "rows": {
+  "AAOI": {
+   "short": 18036843,
+   "days_to_cover": 1.62,
+   "chg_pct": 10.68
+  },
   "ALB": {
    "short": 12402907,
    "days_to_cover": 5.28,
@@ -14,10 +19,10 @@
    "days_to_cover": 1.91,
    "chg_pct": -16.79
   },
-  "AMAT": {
-   "short": 14452231,
-   "days_to_cover": 1.9,
-   "chg_pct": 1.93
+  "APLD": {
+   "short": 61430942,
+   "days_to_cover": 2.4,
+   "chg_pct": -6.17
   },
   "APTV": {
    "short": 11087532,
@@ -39,6 +44,11 @@
    "days_to_cover": 2.36,
    "chg_pct": -3.11
   },
+  "BE": {
+   "short": 17686328,
+   "days_to_cover": 1.06,
+   "chg_pct": 2.88
+  },
   "BSX": {
    "short": 35113858,
    "days_to_cover": 1.65,
@@ -49,15 +59,15 @@
    "days_to_cover": 1.37,
    "chg_pct": -2
   },
+  "CIFR": {
+   "short": 84359099,
+   "days_to_cover": 1.82,
+   "chg_pct": -7.88
+  },
   "COIN": {
    "short": 22834387,
    "days_to_cover": 2.85,
    "chg_pct": -3.93
-  },
-  "CSGP": {
-   "short": 12499298,
-   "days_to_cover": 1.73,
-   "chg_pct": -16.61
   },
   "CTVA": {
    "short": 50977459,
@@ -84,6 +94,11 @@
    "days_to_cover": 1.59,
    "chg_pct": 3.52
   },
+  "HUT": {
+   "short": 20062374,
+   "days_to_cover": 4.15,
+   "chg_pct": 10.51
+  },
   "INTC": {
    "short": 152855264,
    "days_to_cover": 1.18,
@@ -94,10 +109,15 @@
    "days_to_cover": 3.16,
    "chg_pct": 10.73
   },
-  "KLAC": {
-   "short": 21541175,
-   "days_to_cover": 1.63,
-   "chg_pct": -13.43
+  "IREN": {
+   "short": 94679895,
+   "days_to_cover": 1.72,
+   "chg_pct": 0.07
+  },
+  "LITE": {
+   "short": 8111548,
+   "days_to_cover": 1.53,
+   "chg_pct": 4.8
   },
   "MRVL": {
    "short": 26088002,
@@ -129,20 +149,15 @@
    "days_to_cover": 2.71,
    "chg_pct": 2.48
   },
-  "SLS": {
-   "short": 57126298,
-   "days_to_cover": 6.7,
-   "chg_pct": 6.26
-  },
   "SNDK": {
    "short": 4911149,
    "days_to_cover": 1,
    "chg_pct": 4.39
   },
-  "SNEX": {
-   "short": 3677522,
-   "days_to_cover": 3.36,
-   "chg_pct": -8.93
+  "STX": {
+   "short": 8440115,
+   "days_to_cover": 1.44,
+   "chg_pct": 7.39
   },
   "TSM": {
    "short": 32199918,
@@ -153,11 +168,6 @@
    "short": 19373548,
    "days_to_cover": 2.14,
    "chg_pct": -0.38
-  },
-  "WSM": {
-   "short": 5932233,
-   "days_to_cover": 5.86,
-   "chg_pct": -10.12
   }
  }
 }

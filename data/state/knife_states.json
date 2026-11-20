@@ -20,19 +20,32 @@
   "events": []
  },
  "FXI": {
-  "state": "NORMAL",
-  "since": "2026-09-21",
-  "events": []
+  "state": "KNIFE_FALLING",
+  "since": "2026-11-21",
+  "events": [
+   {
+    "d": "2026-11-21",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -23.27% / 10日 -10.47%"
+   }
+  ]
  },
  "KWEB": {
-  "state": "KNIFE_FALLING",
-  "since": "2026-11-19",
+  "state": "STABILIZING",
+  "since": "2026-11-21",
   "events": [
    {
     "d": "2026-11-19",
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -42.59% / 10日 -10.33%"
+   },
+   {
+    "d": "2026-11-21",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 1/5"
    }
   ]
  },
@@ -96,8 +109,8 @@
   "events": []
  },
  "GLD": {
-  "state": "STABILIZING",
-  "since": "2026-11-20",
+  "state": "KNIFE_FALLING",
+  "since": "2026-11-21",
   "events": [
    {
     "d": "2026-11-20",
@@ -110,6 +123,12 @@
     "from": "KNIFE_FALLING",
     "to": "STABILIZING",
     "note": "checklist 1/5"
+   },
+   {
+    "d": "2026-11-21",
+    "from": "STABILIZING",
+    "to": "KNIFE_FALLING",
+    "note": "企稳失败"
    }
   ]
  },
@@ -351,8 +370,8 @@
   "events": []
  },
  "INTU": {
-  "state": "NORMAL",
-  "since": "2026-10-16",
+  "state": "KNIFE_FALLING",
+  "since": "2026-11-21",
   "events": [
    {
     "d": "2026-09-29",
@@ -371,6 +390,12 @@
     "from": "CATCH",
     "to": "NORMAL",
     "note": "接刀窗过期未确认"
+   },
+   {
+    "d": "2026-11-21",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -59.22% / 10日 -19.2%"
    }
   ],
   "catch_ref_price": 269.3999938964844,
@@ -1075,9 +1100,16 @@
   "events": []
  },
  "XME": {
-  "state": "NORMAL",
-  "since": "2026-09-22",
-  "events": []
+  "state": "KNIFE_FALLING",
+  "since": "2026-11-21",
+  "events": [
+   {
+    "d": "2026-11-21",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -38.73% / 10日 -12.91%"
+   }
+  ]
  },
  "GDX": {
   "state": "NORMAL",
@@ -1114,8 +1146,8 @@
   "cooldown_until": "2026-12-03"
  },
  "GDXJ": {
-  "state": "KNIFE_FALLING",
-  "since": "2026-11-20",
+  "state": "STABILIZING",
+  "since": "2026-11-21",
   "events": [
    {
     "d": "2026-10-23",
@@ -1158,6 +1190,12 @@
     "from": "STABILIZING",
     "to": "KNIFE_FALLING",
     "note": "企稳失败"
+   },
+   {
+    "d": "2026-11-21",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 1/5"
    }
   ],
   "catch_ref_price": 102.36000061035156,
@@ -1240,14 +1278,20 @@
   "events": []
  },
  "BILI": {
-  "state": "KNIFE_FALLING",
-  "since": "2026-11-19",
+  "state": "STABILIZING",
+  "since": "2026-11-21",
   "events": [
    {
     "d": "2026-11-19",
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -68.03% / 10日 -17.26%"
+   },
+   {
+    "d": "2026-11-21",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 1/5"
    }
   ]
  },
@@ -1298,9 +1342,16 @@
   ]
  },
  "XPEV": {
-  "state": "NORMAL",
-  "since": "2026-09-22",
-  "events": []
+  "state": "KNIFE_FALLING",
+  "since": "2026-11-21",
+  "events": [
+   {
+    "d": "2026-11-21",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -62.14% / 10日 -19.29%"
+   }
+  ]
  },
  "LI": {
   "state": "NORMAL",
@@ -1475,8 +1526,8 @@
   "events": []
  },
  "QFIN": {
-  "state": "NORMAL",
-  "since": "2026-10-20",
+  "state": "KNIFE_FALLING",
+  "since": "2026-11-21",
   "events": [
    {
     "d": "2026-09-29",
@@ -1501,6 +1552,12 @@
     "from": "CATCH",
     "to": "NORMAL",
     "note": "跌破接刀日低点（X-STOP）"
+   },
+   {
+    "d": "2026-11-21",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -77.53% / 10日 -19.44%"
    }
   ],
   "catch_ref_price": 5.644999980926514,
@@ -1623,14 +1680,20 @@
   ]
  },
  "KC": {
-  "state": "KNIFE_FALLING",
-  "since": "2026-11-18",
+  "state": "STABILIZING",
+  "since": "2026-11-21",
   "events": [
    {
     "d": "2026-11-18",
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -65.35% / 10日 -17.08%"
+   },
+   {
+    "d": "2026-11-21",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 1/5"
    }
   ]
  },
@@ -1734,8 +1797,8 @@
   "cooldown_until": "2026-10-15"
  },
  "COIN": {
-  "state": "KNIFE_FALLING",
-  "since": "2026-11-20",
+  "state": "STABILIZING",
+  "since": "2026-11-21",
   "events": [
    {
     "d": "2026-10-31",
@@ -1766,18 +1829,30 @@
     "from": "STABILIZING",
     "to": "KNIFE_FALLING",
     "note": "企稳失败"
+   },
+   {
+    "d": "2026-11-21",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 1/5"
    }
   ]
  },
  "ALB": {
-  "state": "KNIFE_FALLING",
-  "since": "2026-11-20",
+  "state": "STABILIZING",
+  "since": "2026-11-21",
   "events": [
    {
     "d": "2026-11-20",
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -61.25% / 10日 -15.07%"
+   },
+   {
+    "d": "2026-11-21",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 1/5"
    }
   ]
  },
@@ -1907,8 +1982,8 @@
   "cooldown_until": "2026-11-07"
  },
  "WDC": {
-  "state": "CATCH",
-  "since": "2026-11-17",
+  "state": "NORMAL",
+  "since": "2026-11-21",
   "events": [
    {
     "d": "2026-10-14",
@@ -1951,12 +2026,18 @@
     "from": "STABILIZING",
     "to": "CATCH",
     "note": "checklist 3/5"
+   },
+   {
+    "d": "2026-11-21",
+    "from": "CATCH",
+    "to": "NORMAL",
+    "note": "跌破接刀日低点（X-STOP）"
    }
   ],
   "catch_ref_price": 280.92999267578125,
   "catch_day_low": 275.34,
   "expires": "2026-12-03",
-  "cooldown_until": "2026-11-09"
+  "cooldown_until": "2026-12-07"
  },
  "FLEX": {
   "state": "NORMAL",
@@ -2428,14 +2509,20 @@
   ]
  },
  "LITE": {
-  "state": "KNIFE_FALLING",
-  "since": "2026-11-06",
+  "state": "STABILIZING",
+  "since": "2026-11-21",
   "events": [
    {
     "d": "2026-11-06",
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -55.03% / 10日 -32.27%"
+   },
+   {
+    "d": "2026-11-21",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 1/5"
    }
   ]
  },
@@ -2512,6 +2599,18 @@
     "from": "STABILIZING",
     "to": "KNIFE_FALLING",
     "note": "企稳失败"
+   }
+  ]
+ },
+ "BE": {
+  "state": "KNIFE_FALLING",
+  "since": "2026-11-21",
+  "events": [
+   {
+    "d": "2026-11-21",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -58.13% / 10日 -16.41%"
    }
   ]
  }
