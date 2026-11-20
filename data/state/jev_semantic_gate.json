@@ -64,7 +64,7 @@
  },
  "MSTR": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.0,
   "date": "2026-11-20",
   "clear_streak": 0,
   "top_headline": "Grok AI Predicts What Anthropic’s Record IPO Could Mean for Bitcoin"
@@ -141,7 +141,7 @@
  },
  "UNG": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-20",
   "clear_streak": 0,
   "top_headline": "The Bayeux Tapestry Replica Will Be Back in February - Vanguard"
@@ -162,7 +162,7 @@
  },
  "URA": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-20",
   "clear_streak": 0,
   "top_headline": "The price of Kampala business shutdowns - The EastAfrican"
@@ -197,7 +197,7 @@
  },
  "IQ": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.01,
   "date": "2026-11-20",
   "clear_streak": 0,
   "top_headline": "NZ Weekly Economic Insight 20 November 2026 - Westpac IQ"
@@ -246,21 +246,21 @@
  },
  "TCOM": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-20",
   "clear_streak": 0,
   "top_headline": "Trip.com Group Limited (TCOM) Stock Price, News, Quote & History - Yahoo! Finance Canada"
  },
  "VNET": {
   "veto": false,
-  "p": 0.04,
+  "p": 0.01,
   "date": "2026-11-20",
   "clear_streak": 0,
   "top_headline": "VNET Fiber Athlete of the Week: Peyton Rodgers - Erie News Now"
  },
  "WB": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-20",
   "clear_streak": 0,
   "top_headline": "Fiscal pressure hits development investment: WB - The New Nation"
@@ -309,7 +309,7 @@
  },
  "BABA": {
   "veto": false,
-  "p": 0.03,
+  "p": 0.0,
   "date": "2026-11-20",
   "clear_streak": 0,
   "top_headline": "Alibaba Group Holding Ltd (BABA) (Q2 2027) Earnings Call Highlights: AI Cloud Surges 64% as ..."
@@ -344,7 +344,7 @@
  },
  "KWEB": {
   "veto": false,
-  "p": 0.09,
+  "p": 0.01,
   "date": "2026-11-20",
   "clear_streak": 0,
   "top_headline": "KWEB Jan 2028 18.000 call (KWEB280121C00018000) stock price, news, quote and history - Yahoo Finance UK"
@@ -365,7 +365,7 @@
  },
  "COIN": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-20",
   "clear_streak": 0,
   "top_headline": "Sector Update: Financial Stocks Lower in Afternoon Trading"
@@ -400,7 +400,7 @@
  },
  "CTVA": {
   "veto": false,
-  "p": 0.08,
+  "p": 0.0,
   "date": "2026-11-20",
   "clear_streak": 0,
   "top_headline": "CTVA, ROAD Stocks Hit Over 52-Week Lows – What’s Driving The Selloff Today? - Stocktwits"
@@ -435,7 +435,7 @@
  },
  "GDXJ": {
   "veto": false,
-  "p": 0.03,
+  "p": 0.0,
   "date": "2026-11-20",
   "clear_streak": 0,
   "top_headline": "How (GDXJ) Movements Inform Risk Allocation Models - Stock Traders Daily"
@@ -484,7 +484,7 @@
  },
  "COPX": {
   "veto": false,
-  "p": 0.04,
+  "p": 0.01,
   "date": "2026-11-20",
   "clear_streak": 0,
   "top_headline": "Whatever Happens to Copper Next, These 3 Investments Offer Different Ways to Play It - MarketBeat"
@@ -519,7 +519,7 @@
  },
  "RDDT": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-20",
   "clear_streak": 0,
   "top_headline": "Investors Heavily Search Reddit Inc. (RDDT): Here is What You Need to Know"
@@ -548,9 +548,9 @@
  "SNDK": {
   "veto": false,
   "p": 0.0,
-  "date": "2026-11-19",
+  "date": "2026-11-20",
   "clear_streak": 0,
-  "top_headline": "Not Micron, Not Sandisk. This Is My Top Memory Stock for 2027."
+  "top_headline": "Is Tech in a Bear Market? 20 Tech Stocks Fall Up to 76% From Highs"
  },
  "GDX": {
   "veto": false,
@@ -670,5 +670,12 @@
   "date": "2026-11-17",
   "clear_streak": 0,
   "top_headline": "XME: Materials Dashboard For November (NYSEARCA:XME) - Seeking Alpha"
+ },
+ "GLD": {
+  "veto": false,
+  "p": 0.01,
+  "date": "2026-11-20",
+  "clear_streak": 0,
+  "top_headline": "Druckenmiller Bought 3 Gold Miners. History Shows How These Moves Usually Play Out."
  }
 }

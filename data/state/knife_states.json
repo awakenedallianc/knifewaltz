@@ -96,7 +96,7 @@
   "events": []
  },
  "GLD": {
-  "state": "KNIFE_FALLING",
+  "state": "STABILIZING",
   "since": "2026-11-20",
   "events": [
    {
@@ -104,6 +104,12 @@
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -32.13% / 10日 -10.36%"
+   },
+   {
+    "d": "2026-11-20",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 1/5"
    }
   ]
  },
@@ -479,9 +485,16 @@
   "events": []
  },
  "GC_F": {
-  "state": "NORMAL",
-  "since": "2026-09-21",
-  "events": []
+  "state": "KNIFE_FALLING",
+  "since": "2026-11-20",
+  "events": [
+   {
+    "d": "2026-11-20",
+    "from": "NORMAL",
+    "to": "KNIFE_FALLING",
+    "note": "刀落：dd52 -33.31% / 10日 -12.96%"
+   }
+  ]
  },
  "SI_F": {
   "state": "NORMAL",
@@ -1101,7 +1114,7 @@
   "cooldown_until": "2026-12-03"
  },
  "GDXJ": {
-  "state": "STABILIZING",
+  "state": "KNIFE_FALLING",
   "since": "2026-11-20",
   "events": [
    {
@@ -1139,6 +1152,12 @@
     "from": "KNIFE_FALLING",
     "to": "STABILIZING",
     "note": "checklist 1/5"
+   },
+   {
+    "d": "2026-11-20",
+    "from": "STABILIZING",
+    "to": "KNIFE_FALLING",
+    "note": "企稳失败"
    }
   ],
   "catch_ref_price": 102.36000061035156,
@@ -1715,7 +1734,7 @@
   "cooldown_until": "2026-10-15"
  },
  "COIN": {
-  "state": "STABILIZING",
+  "state": "KNIFE_FALLING",
   "since": "2026-11-20",
   "events": [
    {
@@ -1741,6 +1760,12 @@
     "from": "KNIFE_FALLING",
     "to": "STABILIZING",
     "note": "checklist 1/5"
+   },
+   {
+    "d": "2026-11-20",
+    "from": "STABILIZING",
+    "to": "KNIFE_FALLING",
+    "note": "企稳失败"
    }
   ]
  },

@@ -10972,6 +10972,191 @@
   "settled": false
  },
  {
+  "id": "S-FALL:COIN:2026-11-20",
+  "kind": "S-FALL",
+  "symbol": "COIN",
+  "date": "2026-11-20",
+  "trigger_px": 110.51000213623047,
+  "stop_price": 109.94,
+  "features": {
+   "dd52w": -60.16,
+   "dd250": -60.16,
+   "ret10": -27.06,
+   "rsi14": 21.7,
+   "vol_ratio": 1.12,
+   "close_pos": 0.1,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": false,
+    "gate_ok": false,
+    "rsi_divergence": false
+   },
+   "checklist_n": 0,
+   "tier_time": "B",
+   "days_from_peak": 337,
+   "stop_price": 109.94,
+   "last_date": "2026-11-18",
+   "cls": "equity_single",
+   "tier": "T2",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 33.4,
+    "capitulation_20": 0.0,
+    "checklist_20": 0.0,
+    "gate_20": 0.0
+   }
+  },
+  "score": 33,
+  "market": {
+   "blade_index": 33,
+   "gate_state": "RED",
+   "vix": 28.440000534057617,
+   "vix_ratio": 1.0521642549609234
+  },
+  "jev": {
+   "family": "unclear",
+   "p_terminal": 0.0,
+   "conf": 0.37,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.41,
+   "catch_prior": null,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "787c8296816c275d",
+  "realized": {},
+  "settled": false
+ },
+ {
+  "id": "S-FALL:GC_F:2026-11-20",
+  "kind": "S-FALL",
+  "symbol": "GC_F",
+  "date": "2026-11-20",
+  "trigger_px": 3546.800048828125,
+  "stop_price": 3518.5,
+  "features": {
+   "dd52w": -33.31,
+   "dd250": -33.31,
+   "ret10": -12.96,
+   "rsi14": 25.8,
+   "vol_ratio": 0.45,
+   "close_pos": 0.24,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": false,
+    "gate_ok": false,
+    "rsi_divergence": false
+   },
+   "checklist_n": 0,
+   "tier_time": "DEAD_ZONE",
+   "days_from_peak": 173,
+   "stop_price": 3518.5,
+   "last_date": "2026-11-19",
+   "cls": "futures",
+   "tier": "T1F",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 11.5,
+    "capitulation_20": 0.0,
+    "checklist_20": 0.0,
+    "gate_20": 0.0
+   }
+  },
+  "score": 11,
+  "market": {
+   "blade_index": 33,
+   "gate_state": "RED",
+   "vix": 28.440000534057617,
+   "vix_ratio": 1.0521642549609234
+  },
+  "jev": null,
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "3de9df908a613276",
+  "realized": {},
+  "settled": false
+ },
+ {
+  "id": "S-FALL:GDXJ:2026-11-20",
+  "kind": "S-FALL",
+  "symbol": "GDXJ",
+  "date": "2026-11-20",
+  "trigger_px": 85.83000183105469,
+  "stop_price": 85.66,
+  "features": {
+   "dd52w": -45.05,
+   "dd250": -45.05,
+   "ret10": -18.09,
+   "rsi14": 40.9,
+   "vol_ratio": 1.15,
+   "close_pos": 0.04,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": false,
+    "gate_ok": false,
+    "rsi_divergence": false
+   },
+   "checklist_n": 0,
+   "tier_time": "DEAD_ZONE",
+   "days_from_peak": 184,
+   "stop_price": 85.66,
+   "last_date": "2026-11-19",
+   "cls": "sector_etf",
+   "tier": "T1S",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 20.4,
+    "capitulation_20": 0.0,
+    "checklist_20": 0.0,
+    "gate_20": 0.0
+   }
+  },
+  "score": 20,
+  "market": {
+   "blade_index": 33,
+   "gate_state": "RED",
+   "vix": 28.440000534057617,
+   "vix_ratio": 1.0521642549609234
+  },
+  "jev": {
+   "family": "unclear",
+   "p_terminal": 0.0,
+   "conf": 0.81,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.257,
+   "catch_prior": null,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "f9f42b8acf65f017",
+  "realized": {},
+  "settled": false
+ },
+ {
   "id": "S-FALL:GLD:2026-11-20",
   "kind": "S-FALL",
   "symbol": "GLD",

@@ -12,17 +12,17 @@
    "key": "9888_HK",
    "name": "Baidu Inc",
    "pool": "CN_HK",
-   "dd250": -58.8,
-   "px": 66.19999694824219,
-   "asof": "2026-11-19"
+   "dd250": -59.9,
+   "px": 64.4000015258789,
+   "asof": "2026-11-20"
   },
   {
    "symbol": "BIDU",
    "key": "BIDU",
    "name": "百度",
    "pool": "CN_ADR",
-   "dd250": -58.6,
-   "px": 67.2300033569336,
+   "dd250": -59.2,
+   "px": 66.37999725341797,
    "asof": "2026-11-19"
   },
   {
@@ -30,9 +30,9 @@
    "key": "1378_HK",
    "name": "China Hongqiao Group Ltd",
    "pool": "CN_HK",
-   "dd250": -56.8,
-   "px": 17.3700008392334,
-   "asof": "2026-11-19"
+   "dd250": -57.1,
+   "px": 17.25,
+   "asof": "2026-11-20"
   },
   {
    "symbol": "XPEV",
@@ -48,18 +48,9 @@
    "key": "0992_HK",
    "name": "Lenovo Group Ltd",
    "pool": "CN_HK",
-   "dd250": -55.5,
-   "px": 16.719999313354492,
-   "asof": "2026-11-19"
-  },
-  {
-   "symbol": "9988.HK",
-   "key": "9988_HK",
-   "name": "Alibaba Group Holding Ltd",
-   "pool": "CN_HK",
-   "dd250": -53.7,
-   "px": 80.30000305175781,
-   "asof": "2026-11-19"
+   "dd250": -55.9,
+   "px": 16.56999969482422,
+   "asof": "2026-11-20"
   },
   {
    "symbol": "FUTU",
@@ -71,22 +62,31 @@
    "asof": "2026-11-19"
   },
   {
+   "symbol": "6618.HK",
+   "key": "6618_HK",
+   "name": "JD Health International Inc",
+   "pool": "CN_HK",
+   "dd250": -52.8,
+   "px": 32.84000015258789,
+   "asof": "2026-11-20"
+  },
+  {
    "symbol": "1928.HK",
    "key": "1928_HK",
    "name": "Sands China Ltd",
    "pool": "CN_HK",
    "dd250": -52.5,
    "px": 10.399999618530273,
-   "asof": "2026-11-19"
+   "asof": "2026-11-20"
   },
   {
-   "symbol": "6618.HK",
-   "key": "6618_HK",
-   "name": "JD Health International Inc",
+   "symbol": "0968.HK",
+   "key": "0968_HK",
+   "name": "Xinyi Solar Holdings Ltd",
    "pool": "CN_HK",
-   "dd250": -52.3,
-   "px": 33.20000076293945,
-   "asof": "2026-11-19"
+   "dd250": -52.4,
+   "px": 1.7599999904632568,
+   "asof": "2026-11-20"
   },
   {
    "symbol": "BABA",
@@ -107,13 +107,13 @@
    "asof": "2026-11-19"
   },
   {
-   "symbol": "0968.HK",
-   "key": "0968_HK",
-   "name": "Xinyi Solar Holdings Ltd",
+   "symbol": "9988.HK",
+   "key": "9988_HK",
+   "name": "Alibaba Group Holding Ltd",
    "pool": "CN_HK",
-   "dd250": -51.5,
-   "px": 1.809999942779541,
-   "asof": "2026-11-19"
+   "dd250": -51.6,
+   "px": 84.05000305175781,
+   "asof": "2026-11-20"
   },
   {
    "symbol": "TME",
@@ -123,6 +123,15 @@
    "dd250": -51.0,
    "px": 9.164999961853027,
    "asof": "2026-11-19"
+  },
+  {
+   "symbol": "2899.HK",
+   "key": "2899_HK",
+   "name": "Zijin Mining Group Co Ltd",
+   "pool": "CN_HK",
+   "dd250": -50.3,
+   "px": 22.940000534057617,
+   "asof": "2026-11-20"
   }
  ]
 }

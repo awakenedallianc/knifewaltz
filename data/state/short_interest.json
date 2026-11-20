@@ -2,7 +2,7 @@
  "settlement": "2026-10-30",
  "staleness_note": "双月·滞后约9工作日",
  "source": "finra",
- "fetched_at": "2026-11-20T02:39:42+07:00",
+ "fetched_at": "2026-11-20T11:15:28+07:00",
  "rows": {
   "ALB": {
    "short": 12402907,
@@ -133,6 +133,11 @@
    "short": 57126298,
    "days_to_cover": 6.7,
    "chg_pct": 6.26
+  },
+  "SNDK": {
+   "short": 4911149,
+   "days_to_cover": 1,
+   "chg_pct": 4.39
   },
   "SNEX": {
    "short": 3677522,
