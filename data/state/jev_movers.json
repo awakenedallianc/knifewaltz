@@ -1,37 +1,13 @@
 {
- "XAUTUSDT": {
-  "family": "systemic",
-  "flavor": 0.98,
-  "probs": {
-   "noise": 0.02,
-   "liquidation_cascade": 0.0,
-   "event_driven": 0.0,
-   "systemic": 0.95,
-   "unclear": 0.03
-  },
-  "date": "2026-11-21"
- },
  "XRPUSDT": {
   "family": "systemic",
-  "flavor": 1.0,
+  "flavor": 0.99,
   "probs": {
-   "noise": 0.0,
+   "noise": 0.01,
    "liquidation_cascade": 0.0,
    "event_driven": 0.0,
-   "systemic": 0.99,
-   "unclear": 0.01
-  },
-  "date": "2026-11-21"
- },
- "BTCUSDT": {
-  "family": "systemic",
-  "flavor": 1.0,
-  "probs": {
-   "noise": 0.0,
-   "liquidation_cascade": 0.01,
-   "event_driven": 0.02,
-   "systemic": 0.97,
-   "unclear": 0.0
+   "systemic": 0.96,
+   "unclear": 0.03
   },
   "date": "2026-11-21"
  },
@@ -41,20 +17,32 @@
   "probs": {
    "noise": 0.0,
    "liquidation_cascade": 0.01,
-   "event_driven": 0.45,
-   "systemic": 0.54,
+   "event_driven": 0.4,
+   "systemic": 0.59,
+   "unclear": 0.0
+  },
+  "date": "2026-11-21"
+ },
+ "BTCUSDT": {
+  "family": "systemic",
+  "flavor": 1.0,
+  "probs": {
+   "noise": 0.0,
+   "liquidation_cascade": 0.02,
+   "event_driven": 0.02,
+   "systemic": 0.96,
    "unclear": 0.0
   },
   "date": "2026-11-21"
  },
  "DOGEUSDT": {
   "family": "systemic",
-  "flavor": 0.98,
+  "flavor": 0.99,
   "probs": {
-   "noise": 0.02,
+   "noise": 0.01,
    "liquidation_cascade": 0.0,
    "event_driven": 0.0,
-   "systemic": 0.96,
+   "systemic": 0.97,
    "unclear": 0.02
   },
   "date": "2026-11-21"
@@ -64,9 +52,9 @@
   "flavor": 1.0,
   "probs": {
    "noise": 0.0,
-   "liquidation_cascade": 0.02,
-   "event_driven": 0.66,
-   "systemic": 0.32,
+   "liquidation_cascade": 0.01,
+   "event_driven": 0.52,
+   "systemic": 0.47,
    "unclear": 0.0
   },
   "date": "2026-11-21"
@@ -76,10 +64,34 @@
   "flavor": 0.92,
   "probs": {
    "noise": 0.08,
-   "liquidation_cascade": 0.0,
+   "liquidation_cascade": 0.01,
    "event_driven": 0.01,
-   "systemic": 0.76,
-   "unclear": 0.15
+   "systemic": 0.77,
+   "unclear": 0.13
+  },
+  "date": "2026-11-21"
+ },
+ "OKBUSDT": {
+  "family": "systemic",
+  "flavor": 0.97,
+  "probs": {
+   "noise": 0.03,
+   "liquidation_cascade": 0.01,
+   "event_driven": 0.0,
+   "systemic": 0.94,
+   "unclear": 0.02
+  },
+  "date": "2026-11-21"
+ },
+ "NEARUSDT": {
+  "family": "systemic",
+  "flavor": 0.97,
+  "probs": {
+   "noise": 0.03,
+   "liquidation_cascade": 0.01,
+   "event_driven": 0.0,
+   "systemic": 0.94,
+   "unclear": 0.02
   },
   "date": "2026-11-21"
  },
@@ -88,14 +100,14 @@
   "flavor": 0.99,
   "probs": {
    "noise": 0.01,
-   "liquidation_cascade": 0.0,
-   "event_driven": 0.83,
+   "liquidation_cascade": 0.01,
+   "event_driven": 0.82,
    "systemic": 0.16,
    "unclear": 0.0
   },
   "date": "2026-11-21"
  },
- "NEARUSDT": {
+ "ZECUSDT": {
   "family": "systemic",
   "flavor": 0.95,
   "probs": {
@@ -107,14 +119,110 @@
   },
   "date": "2026-11-21"
  },
- "ZECUSDT": {
+ "MSTRUSDT": {
+  "family": "systemic",
+  "flavor": 0.99,
+  "probs": {
+   "noise": 0.01,
+   "liquidation_cascade": 0.17,
+   "event_driven": 0.0,
+   "systemic": 0.8,
+   "unclear": 0.02
+  },
+  "date": "2026-11-21"
+ },
+ "SNXXUSDT": {
+  "family": "liquidation_cascade",
+  "flavor": 0.95,
+  "probs": {
+   "noise": 0.05,
+   "liquidation_cascade": 0.49,
+   "event_driven": 0.0,
+   "systemic": 0.43,
+   "unclear": 0.03
+  },
+  "date": "2026-11-21"
+ },
+ "BARDUSDT": {
+  "family": "systemic",
+  "flavor": 0.95,
+  "probs": {
+   "noise": 0.05,
+   "liquidation_cascade": 0.13,
+   "event_driven": 0.0,
+   "systemic": 0.76,
+   "unclear": 0.06
+  },
+  "date": "2026-11-21"
+ },
+ "KORUUSDT": {
   "family": "systemic",
   "flavor": 0.96,
   "probs": {
    "noise": 0.04,
-   "liquidation_cascade": 0.01,
+   "liquidation_cascade": 0.17,
    "event_driven": 0.0,
-   "systemic": 0.91,
+   "systemic": 0.77,
+   "unclear": 0.02
+  },
+  "date": "2026-11-21"
+ },
+ "SNDKUSDT": {
+  "family": "systemic",
+  "flavor": 0.98,
+  "probs": {
+   "noise": 0.02,
+   "liquidation_cascade": 0.08,
+   "event_driven": 0.0,
+   "systemic": 0.86,
+   "unclear": 0.04
+  },
+  "date": "2026-11-21"
+ },
+ "TQQQUSDT": {
+  "family": "systemic",
+  "flavor": 0.98,
+  "probs": {
+   "noise": 0.02,
+   "liquidation_cascade": 0.06,
+   "event_driven": 0.0,
+   "systemic": 0.89,
+   "unclear": 0.03
+  },
+  "date": "2026-11-21"
+ },
+ "MUUSDT": {
+  "family": "systemic",
+  "flavor": 0.99,
+  "probs": {
+   "noise": 0.01,
+   "liquidation_cascade": 0.04,
+   "event_driven": 0.0,
+   "systemic": 0.93,
+   "unclear": 0.02
+  },
+  "date": "2026-11-21"
+ },
+ "SOXLUSDT": {
+  "family": "systemic",
+  "flavor": 0.99,
+  "probs": {
+   "noise": 0.01,
+   "liquidation_cascade": 0.13,
+   "event_driven": 0.0,
+   "systemic": 0.84,
+   "unclear": 0.02
+  },
+  "date": "2026-11-21"
+ },
+ "NBISUSDT": {
+  "family": "systemic",
+  "flavor": 0.97,
+  "probs": {
+   "noise": 0.03,
+   "liquidation_cascade": 0.1,
+   "event_driven": 0.0,
+   "systemic": 0.83,
    "unclear": 0.04
   },
   "date": "2026-11-21"

@@ -2090,6 +2090,75 @@
     "src": "SempreMilan",
     "age_h": 9.8
    }
+  ],
+  "FXI": [
+   {
+    "t": "The Fed’s Biggest Dove Sees No Clear Path Back to 2% Inflation",
+    "src": "yahoo",
+    "age_h": 13.1
+   },
+   {
+    "t": "Bond ETFs Haven’t Been This Rewarding in Years, So Why Is Wall Street Dumping Them?",
+    "src": "yahoo",
+    "age_h": 33.6
+   },
+   {
+    "t": "A Monthly Check at 3 Levels of Risk: VTEB, TLT and EMB, Ranked",
+    "src": "yahoo",
+    "age_h": 34.7
+   },
+   {
+    "t": "Some Fed Officials Wanted to Hike in October. A Half-Point Hike Is on the Table.",
+    "src": "yahoo",
+    "age_h": 37.1
+   },
+   {
+    "t": "AGG Lost Money Over 5 Years. Is 60/40 Broken?",
+    "src": "yahoo",
+    "age_h": 40.7
+   }
+  ],
+  "ARKK": [
+   {
+    "t": "Cathie Wood Made a Big Bet on Anthropic (ANT) Stock",
+    "src": "yahoo",
+    "age_h": 7.6
+   },
+   {
+    "t": "Cathie Wood Sold Nvidia and Bought $78 Million of Anthropic at IPO",
+    "src": "yahoo",
+    "age_h": 13.4
+   },
+   {
+    "t": "Cathie Wood Loaded Up On Anthropic’s Stock During IPO",
+    "src": "yahoo",
+    "age_h": 14.3
+   },
+   {
+    "t": "The Question for Retirees Owning ARKK or KOMP Is How Much One Bad Stock Should Hurt",
+    "src": "yahoo",
+    "age_h": 14.9
+   },
+   {
+    "t": "Cathie Wood Buys Nearly 1 Million Anthropic Shares On IPO Day. ARK Also Cuts Nvidia Stake.",
+    "src": "yahoo",
+    "age_h": 15.1
+   },
+   {
+    "t": "Cathie Wood Buys $90 Million of Anthropic Stock While Trimming Nvidia",
+    "src": "yahoo",
+    "age_h": 17.0
+   },
+   {
+    "t": "Cathie Wood’s ARK Invest Loads Up $90M In Anthropic Shares, Dumps Nvidia As China Chip Sale Woes Deepen",
+    "src": "yahoo",
+    "age_h": 22.9
+   },
+   {
+    "t": "Cathie Wood sells $85 million of tumbling semiconductor stock",
+    "src": "yahoo",
+    "age_h": 29.0
+   }
   ]
  },
  "feeds": {

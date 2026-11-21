@@ -64,7 +64,7 @@
  },
  "MSTR": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-21",
   "clear_streak": 0,
   "top_headline": "Bitcoin Drops Below $59K, Wiping Out $1.5B In Crypto Bets: MSTR, BMNR, ASST Stocks Extend Losses"
@@ -667,9 +667,9 @@
  "XME": {
   "veto": false,
   "p": 0.0,
-  "date": "2026-11-17",
+  "date": "2026-11-21",
   "clear_streak": 0,
-  "top_headline": "XME: Materials Dashboard For November (NYSEARCA:XME) - Seeking Alpha"
+  "top_headline": "XME290119P00080000 interactive stock chart | XME Jan 2029 80.000 put stock - Yahoo Finance UK"
  },
  "GLD": {
   "veto": false,
@@ -691,5 +691,12 @@
   "date": "2026-11-21",
   "clear_streak": 0,
   "top_headline": "Where Will Bloom Energy Stock Be in 5 Years After More Than Doubling Its Revenue in 2026?"
+ },
+ "FXI": {
+  "veto": false,
+  "p": 0.0,
+  "date": "2026-11-21",
+  "clear_streak": 0,
+  "top_headline": "The Fed’s Biggest Dove Sees No Clear Path Back to 2% Inflation"
  }
 }
