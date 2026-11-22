@@ -99,7 +99,7 @@
  },
  "APTV": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-22",
   "clear_streak": 0,
   "top_headline": "Aptiv rated buy with 82% upside but faces earni... - Pluang"
@@ -141,7 +141,7 @@
  },
  "UNG": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-22",
   "clear_streak": 0,
   "top_headline": "Mlindo The Vocalist – Ung’phethe Kahle Ft. Mnqobi Yazo - TrendyHipHop"
@@ -456,7 +456,7 @@
  },
  "ARM": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.03,
   "date": "2026-11-22",
   "clear_streak": 0,
   "top_headline": "SoftBank Falls 14%, and 72% of Arm’s Shares Sit Pledged Behind Its Loans"
@@ -582,7 +582,7 @@
  },
  "STX": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-22",
   "clear_streak": 0,
   "top_headline": "Why Seagate Stock And AI Data Center Demand Are Back On Investors Radar"
