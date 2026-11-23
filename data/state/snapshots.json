@@ -9090,7 +9090,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "51f4a538698dc27c",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": -9.36
+  },
   "settled": false
  },
  {

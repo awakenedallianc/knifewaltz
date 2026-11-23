@@ -1801,8 +1801,8 @@
   ]
  },
  "0881_HK": {
-  "state": "KNIFE_FALLING",
-  "since": "2026-11-19",
+  "state": "STABILIZING",
+  "since": "2026-11-23",
   "events": [
    {
     "d": "2026-09-22",
@@ -1845,6 +1845,12 @@
     "from": "STABILIZING",
     "to": "KNIFE_FALLING",
     "note": "企稳失败"
+   },
+   {
+    "d": "2026-11-23",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 1/5"
    }
   ],
   "catch_ref_price": 2.869999885559082,
@@ -2641,8 +2647,8 @@
   ]
  },
  "0960_HK": {
-  "state": "KNIFE_FALLING",
-  "since": "2026-11-18",
+  "state": "STABILIZING",
+  "since": "2026-11-23",
   "events": [
    {
     "d": "2026-11-16",
@@ -2661,6 +2667,12 @@
     "from": "STABILIZING",
     "to": "KNIFE_FALLING",
     "note": "企稳失败"
+   },
+   {
+    "d": "2026-11-23",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 1/5"
    }
   ]
  },

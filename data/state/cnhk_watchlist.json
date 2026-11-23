@@ -12,18 +12,9 @@
    "key": "1378_HK",
    "name": "China Hongqiao Group Ltd",
    "pool": "CN_HK",
-   "dd250": -57.1,
-   "px": 17.270000457763672,
-   "asof": "2026-11-20"
-  },
-  {
-   "symbol": "0992.HK",
-   "key": "0992_HK",
-   "name": "Lenovo Group Ltd",
-   "pool": "CN_HK",
-   "dd250": -56.5,
-   "px": 16.350000381469727,
-   "asof": "2026-11-20"
+   "dd250": -57.3,
+   "px": 17.170000076293945,
+   "asof": "2026-11-23"
   },
   {
    "symbol": "FUTU",
@@ -33,6 +24,15 @@
    "dd250": -55.9,
    "px": 83.0199966430664,
    "asof": "2026-11-20"
+  },
+  {
+   "symbol": "0992.HK",
+   "key": "0992_HK",
+   "name": "Lenovo Group Ltd",
+   "pool": "CN_HK",
+   "dd250": -54.3,
+   "px": 17.15999984741211,
+   "asof": "2026-11-23"
   },
   {
    "symbol": "BABA",
@@ -53,22 +53,40 @@
    "asof": "2026-11-20"
   },
   {
-   "symbol": "6618.HK",
-   "key": "6618_HK",
-   "name": "JD Health International Inc",
+   "symbol": "1928.HK",
+   "key": "1928_HK",
+   "name": "Sands China Ltd",
    "pool": "CN_HK",
-   "dd250": -53.2,
-   "px": 32.599998474121094,
-   "asof": "2026-11-20"
+   "dd250": -53.3,
+   "px": 10.220000267028809,
+   "asof": "2026-11-23"
   },
   {
    "symbol": "0968.HK",
    "key": "0968_HK",
    "name": "Xinyi Solar Holdings Ltd",
    "pool": "CN_HK",
-   "dd250": -52.8,
-   "px": 1.7450000047683716,
-   "asof": "2026-11-20"
+   "dd250": -53.1,
+   "px": 1.7350000143051147,
+   "asof": "2026-11-23"
+  },
+  {
+   "symbol": "6618.HK",
+   "key": "6618_HK",
+   "name": "JD Health International Inc",
+   "pool": "CN_HK",
+   "dd250": -52.9,
+   "px": 32.81999969482422,
+   "asof": "2026-11-23"
+  },
+  {
+   "symbol": "9988.HK",
+   "key": "9988_HK",
+   "name": "Alibaba Group Holding Ltd",
+   "pool": "CN_HK",
+   "dd250": -52.6,
+   "px": 82.30000305175781,
+   "asof": "2026-11-23"
   },
   {
    "symbol": "TME",
@@ -80,40 +98,13 @@
    "asof": "2026-11-20"
   },
   {
-   "symbol": "1928.HK",
-   "key": "1928_HK",
-   "name": "Sands China Ltd",
-   "pool": "CN_HK",
-   "dd250": -52.4,
-   "px": 10.420000076293945,
-   "asof": "2026-11-20"
-  },
-  {
-   "symbol": "9988.HK",
-   "key": "9988_HK",
-   "name": "Alibaba Group Holding Ltd",
-   "pool": "CN_HK",
-   "dd250": -52.0,
-   "px": 83.3499984741211,
-   "asof": "2026-11-20"
-  },
-  {
    "symbol": "0285.HK",
    "key": "0285_HK",
    "name": "BYD Electronic International Co Ltd",
    "pool": "CN_HK",
    "dd250": -50.6,
-   "px": 17.809999465942383,
-   "asof": "2026-11-20"
-  },
-  {
-   "symbol": "2899.HK",
-   "key": "2899_HK",
-   "name": "Zijin Mining Group Co Ltd",
-   "pool": "CN_HK",
-   "dd250": -50.0,
-   "px": 23.059999465942383,
-   "asof": "2026-11-20"
+   "px": 17.829999923706055,
+   "asof": "2026-11-23"
   }
  ]
 }

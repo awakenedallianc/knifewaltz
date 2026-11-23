@@ -36,7 +36,7 @@
  },
  "BSX": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-23",
   "clear_streak": 0,
   "top_headline": "Boston Scientific (BSX) Stock Still Looks Cheap As Shares Fell 57% - Simply Wall St"
@@ -57,7 +57,7 @@
  },
  "ORCL": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-23",
   "clear_streak": 0,
   "top_headline": "Cathie Wood Just Bought $22 Million of CoreWeave Across 2 ARK Funds"
@@ -92,7 +92,7 @@
  },
  "FICO": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-23",
   "clear_streak": 0,
   "top_headline": "FICO Nov 2026 717.500 put (FICO261127P00717500) Stock Price, News, Quote & History - Yahoo! Finance Canada"
@@ -148,7 +148,7 @@
  },
  "PL_F": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-23",
   "clear_streak": 0,
   "top_headline": "NYMEX: Precious Metals Prices Down - 20-11-26 - Armenpress"
@@ -190,14 +190,14 @@
  },
  "TME": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-23",
   "clear_streak": 0,
   "top_headline": "TME Dec 2026 9.000 put (TME261218P00009000) Interactive Stock Chart - Yahoo Finance - Yahoo! Finance Canada"
  },
  "IQ": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-23",
   "clear_streak": 0,
   "top_headline": "Ghana ranks 13th among 20 countries with the lowest average IQ in Africa, latest ranking - Pulse Ghana"
@@ -449,7 +449,7 @@
  },
  "FLEX": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.0,
   "date": "2026-11-23",
   "clear_streak": 0,
   "top_headline": "A Weird '00s Nike Runner Returns as a Proper Sneaker-Heel - Highsnobiety"
