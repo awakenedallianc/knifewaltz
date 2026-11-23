@@ -2,13 +2,8 @@
  "settlement": "2026-10-30",
  "staleness_note": "双月·滞后约9工作日",
  "source": "finra",
- "fetched_at": "2026-11-23T10:58:56+07:00",
+ "fetched_at": "2026-11-24T05:56:22+07:00",
  "rows": {
-  "AAOI": {
-   "short": 18036843,
-   "days_to_cover": 1.62,
-   "chg_pct": 10.68
-  },
   "ALB": {
    "short": 12402907,
    "days_to_cover": 5.28,
@@ -18,11 +13,6 @@
    "short": 5465979,
    "days_to_cover": 1.91,
    "chg_pct": -16.79
-  },
-  "APLD": {
-   "short": 61430942,
-   "days_to_cover": 2.4,
-   "chg_pct": -6.17
   },
   "APTV": {
    "short": 11087532,
@@ -44,11 +34,6 @@
    "days_to_cover": 2.36,
    "chg_pct": -3.11
   },
-  "BE": {
-   "short": 17686328,
-   "days_to_cover": 1.06,
-   "chg_pct": 2.88
-  },
   "BSX": {
    "short": 35113858,
    "days_to_cover": 1.65,
@@ -59,15 +44,15 @@
    "days_to_cover": 1.37,
    "chg_pct": -2
   },
-  "CIFR": {
-   "short": 84359099,
-   "days_to_cover": 1.82,
-   "chg_pct": -7.88
-  },
   "COIN": {
    "short": 22834387,
    "days_to_cover": 2.85,
    "chg_pct": -3.93
+  },
+  "CSGP": {
+   "short": 12499298,
+   "days_to_cover": 1.73,
+   "chg_pct": -16.61
   },
   "CTVA": {
    "short": 50977459,
@@ -89,15 +74,15 @@
    "days_to_cover": 1.25,
    "chg_pct": 20.89
   },
+  "FSLR": {
+   "short": 11230097,
+   "days_to_cover": 5.35,
+   "chg_pct": -3.15
+  },
   "GLW": {
    "short": 16554486,
    "days_to_cover": 1.59,
    "chg_pct": 3.52
-  },
-  "HUT": {
-   "short": 20062374,
-   "days_to_cover": 4.15,
-   "chg_pct": 10.51
   },
   "INTC": {
    "short": 152855264,
@@ -108,16 +93,6 @@
    "short": 8871536,
    "days_to_cover": 3.16,
    "chg_pct": 10.73
-  },
-  "IREN": {
-   "short": 94679895,
-   "days_to_cover": 1.72,
-   "chg_pct": 0.07
-  },
-  "LITE": {
-   "short": 8111548,
-   "days_to_cover": 1.53,
-   "chg_pct": 4.8
   },
   "MRVL": {
    "short": 26088002,
@@ -138,6 +113,11 @@
    "short": 46405138,
    "days_to_cover": 1.34,
    "chg_pct": -2.35
+  },
+  "PLBL": {
+   "short": 283986,
+   "days_to_cover": 1.77,
+   "chg_pct": -2.74
   },
   "PODD": {
    "short": 5326266,
