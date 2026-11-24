@@ -21,18 +21,27 @@
    "key": "1378_HK",
    "name": "China Hongqiao Group Ltd",
    "pool": "CN_HK",
-   "dd250": -57.2,
-   "px": 17.229999542236328,
-   "asof": "2026-11-23"
+   "dd250": -59.1,
+   "px": 16.450000762939453,
+   "asof": "2026-11-24"
   },
   {
-   "symbol": "0992.HK",
-   "key": "0992_HK",
-   "name": "Lenovo Group Ltd",
+   "symbol": "0968.HK",
+   "key": "0968_HK",
+   "name": "Xinyi Solar Holdings Ltd",
    "pool": "CN_HK",
-   "dd250": -53.2,
-   "px": 17.59000015258789,
-   "asof": "2026-11-23"
+   "dd250": -55.3,
+   "px": 1.6549999713897705,
+   "asof": "2026-11-24"
+  },
+  {
+   "symbol": "1928.HK",
+   "key": "1928_HK",
+   "name": "Sands China Ltd",
+   "pool": "CN_HK",
+   "dd250": -53.3,
+   "px": 10.210000038146973,
+   "asof": "2026-11-24"
   },
   {
    "symbol": "WB",
@@ -53,31 +62,22 @@
    "asof": "2026-11-23"
   },
   {
-   "symbol": "0968.HK",
-   "key": "0968_HK",
-   "name": "Xinyi Solar Holdings Ltd",
-   "pool": "CN_HK",
-   "dd250": -53.0,
-   "px": 1.7400000095367432,
-   "asof": "2026-11-23"
-  },
-  {
-   "symbol": "1928.HK",
-   "key": "1928_HK",
-   "name": "Sands China Ltd",
-   "pool": "CN_HK",
-   "dd250": -52.4,
-   "px": 10.420000076293945,
-   "asof": "2026-11-23"
-  },
-  {
    "symbol": "6618.HK",
    "key": "6618_HK",
    "name": "JD Health International Inc",
    "pool": "CN_HK",
-   "dd250": -52.2,
-   "px": 33.279998779296875,
-   "asof": "2026-11-23"
+   "dd250": -52.7,
+   "px": 32.91999816894531,
+   "asof": "2026-11-24"
+  },
+  {
+   "symbol": "9988.HK",
+   "key": "9988_HK",
+   "name": "Alibaba Group Holding Ltd",
+   "pool": "CN_HK",
+   "dd250": -52.5,
+   "px": 82.3499984741211,
+   "asof": "2026-11-24"
   },
   {
    "symbol": "TME",
@@ -89,13 +89,13 @@
    "asof": "2026-11-23"
   },
   {
-   "symbol": "9988.HK",
-   "key": "9988_HK",
-   "name": "Alibaba Group Holding Ltd",
+   "symbol": "0992.HK",
+   "key": "0992_HK",
+   "name": "Lenovo Group Ltd",
    "pool": "CN_HK",
-   "dd250": -52.1,
-   "px": 83.05000305175781,
-   "asof": "2026-11-23"
+   "dd250": -51.9,
+   "px": 18.059999465942383,
+   "asof": "2026-11-24"
   },
   {
    "symbol": "BABA",
@@ -111,9 +111,9 @@
    "key": "0285_HK",
    "name": "BYD Electronic International Co Ltd",
    "pool": "CN_HK",
-   "dd250": -50.8,
-   "px": 17.739999771118164,
-   "asof": "2026-11-23"
+   "dd250": -50.4,
+   "px": 17.899999618530273,
+   "asof": "2026-11-24"
   }
  ]
 }

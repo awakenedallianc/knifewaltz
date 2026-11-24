@@ -981,7 +981,7 @@
   ]
  },
  "HO_F": {
-  "state": "KNIFE_FALLING",
+  "state": "STABILIZING",
   "since": "2026-11-24",
   "events": [
    {
@@ -989,6 +989,12 @@
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -30.7% / 10日 -13.48%"
+   },
+   {
+    "d": "2026-11-24",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 1/5"
    }
   ]
  },
