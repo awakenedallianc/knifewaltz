@@ -9665,7 +9665,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "cdc79801042c4a95",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": -5.6
+  },
   "settled": false
  },
  {

@@ -1,24 +1,12 @@
 {
- "XRPUSDT": {
-  "family": "systemic",
-  "flavor": 0.98,
-  "probs": {
-   "noise": 0.02,
-   "liquidation_cascade": 0.0,
-   "event_driven": 0.0,
-   "systemic": 0.9,
-   "unclear": 0.08
-  },
-  "date": "2026-11-25"
- },
  "BTCUSDT": {
   "family": "systemic",
   "flavor": 1.0,
   "probs": {
    "noise": 0.0,
-   "liquidation_cascade": 0.02,
-   "event_driven": 0.16,
-   "systemic": 0.82,
+   "liquidation_cascade": 0.03,
+   "event_driven": 0.2,
+   "systemic": 0.77,
    "unclear": 0.0
   },
   "date": "2026-11-25"
@@ -29,57 +17,69 @@
   "probs": {
    "noise": 0.0,
    "liquidation_cascade": 0.0,
-   "event_driven": 0.12,
-   "systemic": 0.88,
+   "event_driven": 0.09,
+   "systemic": 0.91,
    "unclear": 0.0
   },
   "date": "2026-11-25"
  },
- "DOGEUSDT": {
+ "XRPUSDT": {
   "family": "systemic",
-  "flavor": 0.96,
+  "flavor": 0.95,
   "probs": {
-   "noise": 0.04,
-   "liquidation_cascade": 0.0,
+   "noise": 0.05,
+   "liquidation_cascade": 0.01,
    "event_driven": 0.0,
-   "systemic": 0.91,
-   "unclear": 0.05
+   "systemic": 0.82,
+   "unclear": 0.12
   },
   "date": "2026-11-25"
  },
  "SOLUSDT": {
   "family": "systemic",
-  "flavor": 0.86,
+  "flavor": 0.9,
   "probs": {
-   "noise": 0.14,
-   "liquidation_cascade": 0.02,
-   "event_driven": 0.02,
-   "systemic": 0.79,
-   "unclear": 0.03
-  },
-  "date": "2026-11-25"
- },
- "HYPEUSDT": {
-  "family": "systemic",
-  "flavor": 0.81,
-  "probs": {
-   "noise": 0.19,
+   "noise": 0.1,
    "liquidation_cascade": 0.01,
-   "event_driven": 0.0,
-   "systemic": 0.71,
-   "unclear": 0.09
+   "event_driven": 0.01,
+   "systemic": 0.86,
+   "unclear": 0.02
   },
   "date": "2026-11-25"
  },
  "ZECUSDT": {
   "family": "systemic",
-  "flavor": 0.84,
+  "flavor": 0.9,
   "probs": {
-   "noise": 0.16,
+   "noise": 0.1,
+   "liquidation_cascade": 0.01,
+   "event_driven": 0.0,
+   "systemic": 0.77,
+   "unclear": 0.12
+  },
+  "date": "2026-11-25"
+ },
+ "HYPEUSDT": {
+  "family": "systemic",
+  "flavor": 0.83,
+  "probs": {
+   "noise": 0.17,
    "liquidation_cascade": 0.02,
    "event_driven": 0.0,
-   "systemic": 0.73,
-   "unclear": 0.09
+   "systemic": 0.67,
+   "unclear": 0.14
+  },
+  "date": "2026-11-25"
+ },
+ "SKHYNIXUSDT": {
+  "family": "liquidation_cascade",
+  "flavor": 0.93,
+  "probs": {
+   "noise": 0.07,
+   "liquidation_cascade": 0.54,
+   "event_driven": 0.0,
+   "systemic": 0.28,
+   "unclear": 0.11
   },
   "date": "2026-11-25"
  }

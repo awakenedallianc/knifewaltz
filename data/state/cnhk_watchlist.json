@@ -12,9 +12,9 @@
    "key": "1378_HK",
    "name": "China Hongqiao Group Ltd",
    "pool": "CN_HK",
-   "dd250": -59.1,
-   "px": 16.450000762939453,
-   "asof": "2026-11-24"
+   "dd250": -60.0,
+   "px": 16.100000381469727,
+   "asof": "2026-11-25"
   },
   {
    "symbol": "XPEV",
@@ -30,9 +30,18 @@
    "key": "0968_HK",
    "name": "Xinyi Solar Holdings Ltd",
    "pool": "CN_HK",
-   "dd250": -55.3,
-   "px": 1.6549999713897705,
-   "asof": "2026-11-24"
+   "dd250": -55.7,
+   "px": 1.6399999856948853,
+   "asof": "2026-11-25"
+  },
+  {
+   "symbol": "0992.HK",
+   "key": "0992_HK",
+   "name": "Lenovo Group Ltd",
+   "pool": "CN_HK",
+   "dd250": -55.7,
+   "px": 16.6299991607666,
+   "asof": "2026-11-25"
   },
   {
    "symbol": "WB",
@@ -41,15 +50,6 @@
    "pool": "CN_ADR",
    "dd250": -53.7,
    "px": 5.199999809265137,
-   "asof": "2026-11-24"
-  },
-  {
-   "symbol": "1928.HK",
-   "key": "1928_HK",
-   "name": "Sands China Ltd",
-   "pool": "CN_HK",
-   "dd250": -53.3,
-   "px": 10.210000038146973,
    "asof": "2026-11-24"
   },
   {
@@ -62,22 +62,22 @@
    "asof": "2026-11-24"
   },
   {
-   "symbol": "6618.HK",
-   "key": "6618_HK",
-   "name": "JD Health International Inc",
+   "symbol": "1928.HK",
+   "key": "1928_HK",
+   "name": "Sands China Ltd",
    "pool": "CN_HK",
-   "dd250": -52.7,
-   "px": 32.91999816894531,
-   "asof": "2026-11-24"
+   "dd250": -53.1,
+   "px": 10.270000457763672,
+   "asof": "2026-11-25"
   },
   {
    "symbol": "9988.HK",
    "key": "9988_HK",
    "name": "Alibaba Group Holding Ltd",
    "pool": "CN_HK",
-   "dd250": -52.5,
-   "px": 82.3499984741211,
-   "asof": "2026-11-24"
+   "dd250": -52.4,
+   "px": 82.5,
+   "asof": "2026-11-25"
   },
   {
    "symbol": "BABA",
@@ -89,13 +89,13 @@
    "asof": "2026-11-24"
   },
   {
-   "symbol": "0992.HK",
-   "key": "0992_HK",
-   "name": "Lenovo Group Ltd",
+   "symbol": "6618.HK",
+   "key": "6618_HK",
+   "name": "JD Health International Inc",
    "pool": "CN_HK",
-   "dd250": -51.9,
-   "px": 18.059999465942383,
-   "asof": "2026-11-24"
+   "dd250": -51.7,
+   "px": 33.63999938964844,
+   "asof": "2026-11-25"
   },
   {
    "symbol": "TME",
@@ -107,13 +107,13 @@
    "asof": "2026-11-24"
   },
   {
-   "symbol": "0285.HK",
-   "key": "0285_HK",
-   "name": "BYD Electronic International Co Ltd",
+   "symbol": "2899.HK",
+   "key": "2899_HK",
+   "name": "Zijin Mining Group Co Ltd",
    "pool": "CN_HK",
-   "dd250": -50.4,
-   "px": 17.899999618530273,
-   "asof": "2026-11-24"
+   "dd250": -50.3,
+   "px": 22.920000076293945,
+   "asof": "2026-11-25"
   }
  ]
 }
