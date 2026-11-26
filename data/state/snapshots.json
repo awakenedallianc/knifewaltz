@@ -13121,5 +13121,190 @@
   "features_sha": "5bb87168c25f2a89",
   "realized": {},
   "settled": false
+ },
+ {
+  "id": "S-FALL:IQ:2026-11-27",
+  "kind": "S-FALL",
+  "symbol": "IQ",
+  "date": "2026-11-27",
+  "trigger_px": 0.5049999952316284,
+  "stop_price": 0.45,
+  "features": {
+   "dd52w": -77.25,
+   "dd250": -76.94,
+   "ret10": -47.67,
+   "rsi14": 25.6,
+   "vol_ratio": 0.55,
+   "close_pos": 0.92,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": false,
+    "gate_ok": false,
+    "rsi_divergence": false
+   },
+   "checklist_n": 0,
+   "tier_time": "B",
+   "days_from_peak": 634,
+   "stop_price": 0.45,
+   "last_date": "2026-11-25",
+   "cls": "equity_single",
+   "tier": "ORNAMENT",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 40.0,
+    "capitulation_20": 0.0,
+    "checklist_20": 0.0,
+    "gate_20": 0.0
+   }
+  },
+  "score": 40,
+  "market": {
+   "blade_index": 16,
+   "gate_state": "RED",
+   "vix": 26.799999237060547,
+   "vix_ratio": 1.0193989465109523
+  },
+  "jev": {
+   "family": "B_fundamental_repricing",
+   "p_terminal": 0.01,
+   "conf": 0.16,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.253,
+   "catch_prior": null,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "6a438ac6ac361a36",
+  "realized": {},
+  "settled": false
+ },
+ {
+  "id": "S-FALL:SLV:2026-11-27",
+  "kind": "S-FALL",
+  "symbol": "SLV",
+  "date": "2026-11-27",
+  "trigger_px": 37.099998474121094,
+  "stop_price": 34.48,
+  "features": {
+   "dd52w": -64.87,
+   "dd250": -64.87,
+   "ret10": -20.47,
+   "rsi14": 22.1,
+   "vol_ratio": 2.16,
+   "close_pos": 0.97,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": false,
+    "gate_ok": false,
+    "rsi_divergence": false
+   },
+   "checklist_n": 0,
+   "tier_time": "B",
+   "days_from_peak": 209,
+   "stop_price": 34.48,
+   "last_date": "2026-11-25",
+   "cls": "commodity",
+   "tier": "T1",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 31.4,
+    "capitulation_20": 0.0,
+    "checklist_20": 0.0,
+    "gate_20": 0.0
+   }
+  },
+  "score": 31,
+  "market": {
+   "blade_index": 16,
+   "gate_state": "RED",
+   "vix": 26.799999237060547,
+   "vix_ratio": 1.0193989465109523
+  },
+  "jev": {
+   "family": "unclear",
+   "p_terminal": 0.0,
+   "conf": 0.19,
+   "veto": false,
+   "warn": false,
+   "news_heat": 0.33,
+   "catch_prior": null,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "691ad00c9713c74a",
+  "realized": {},
+  "settled": false
+ },
+ {
+  "id": "S-FALL:VNET:2026-11-27",
+  "kind": "S-FALL",
+  "symbol": "VNET",
+  "date": "2026-11-27",
+  "trigger_px": 2.059999942779541,
+  "stop_price": 1.77,
+  "features": {
+   "dd52w": -85.32,
+   "dd250": -85.32,
+   "ret10": -40.97,
+   "rsi14": 33.1,
+   "vol_ratio": 0.88,
+   "close_pos": 0.78,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": false,
+    "no_new_low_3d": false,
+    "vol_compress": false,
+    "gate_ok": false,
+    "rsi_divergence": false
+   },
+   "checklist_n": 0,
+   "tier_time": "B",
+   "days_from_peak": 444,
+   "stop_price": 1.77,
+   "last_date": "2026-11-25",
+   "cls": "equity_single",
+   "tier": "T2C",
+   "state": "KNIFE_FALLING",
+   "score_parts": {
+    "fall_40": 40.0,
+    "capitulation_20": 0.0,
+    "checklist_20": 0.0,
+    "gate_20": 0.0
+   }
+  },
+  "score": 40,
+  "market": {
+   "blade_index": 16,
+   "gate_state": "RED",
+   "vix": 26.799999237060547,
+   "vix_ratio": 1.0193989465109523
+  },
+  "jev": null,
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "0a6497773ad8bb07",
+  "realized": {},
+  "settled": false
  }
 ]
