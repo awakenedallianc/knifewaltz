@@ -10021,7 +10021,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "3af07e6b3fb12af3",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": -0.56
+  },
   "settled": false
  },
  {
@@ -10074,7 +10076,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "448a95665f9ac467",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": -6.07
+  },
   "settled": false
  },
  {
@@ -10127,7 +10131,9 @@
   "params_version": "v1.2-preregistered",
   "engine_sha": "69e75ef468979668",
   "features_sha": "65b6eeef4577ac23",
-  "realized": {},
+  "realized": {
+   "fwd5_pct": -12.93
+  },
   "settled": false
  },
  {

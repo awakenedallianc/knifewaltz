@@ -2572,59 +2572,77 @@
   "2026-11-26": [
    {
     "date": "2026-11-26",
-    "sym": "ZECUSDT",
-    "last": 753.31,
-    "pct24": 4.179,
-    "quote_vol": 47823150.0,
+    "sym": "NEARUSDT",
+    "last": 3.078,
+    "pct24": 7.36,
+    "quote_vol": 25054721.0,
     "funding": null,
     "source": "okx"
    },
    {
     "date": "2026-11-26",
     "sym": "HYPEUSDT",
-    "last": 61.25,
-    "pct24": 3.264,
-    "quote_vol": 30736866.0,
+    "last": 62.067,
+    "pct24": 5.252,
+    "quote_vol": 31599156.0,
     "funding": null,
     "source": "okx"
    },
    {
     "date": "2026-11-26",
     "sym": "XRPUSDT",
-    "last": 0.9357,
-    "pct24": 1.906,
-    "quote_vol": 26092015.0,
+    "last": 0.9625,
+    "pct24": 4.893,
+    "quote_vol": 30116788.0,
+    "funding": null,
+    "source": "okx"
+   },
+   {
+    "date": "2026-11-26",
+    "sym": "ZECUSDT",
+    "last": 767.8,
+    "pct24": 4.518,
+    "quote_vol": 45161323.0,
     "funding": null,
     "source": "okx"
    },
    {
     "date": "2026-11-26",
     "sym": "SOLUSDT",
-    "last": 70.18,
-    "pct24": 1.519,
-    "quote_vol": 69338691.0,
-    "funding": -2.26193638454e-05,
+    "last": 71.33,
+    "pct24": 3.889,
+    "quote_vol": 75063604.0,
+    "funding": 0.0001,
     "source": "okx"
    },
    {
     "date": "2026-11-26",
     "sym": "BTCUSDT",
-    "last": 59910.1,
-    "pct24": 0.482,
-    "quote_vol": 533250717.0,
-    "funding": 9.78732832021e-05,
+    "last": 60975.4,
+    "pct24": 3.096,
+    "quote_vol": 602853314.0,
+    "funding": 8.39778075866e-05,
     "source": "okx"
    },
    {
     "date": "2026-11-26",
     "sym": "ETHUSDT",
-    "last": 1680.69,
-    "pct24": 0.482,
-    "quote_vol": 246647645.0,
-    "funding": 7.84142902808e-05,
+    "last": 1700.42,
+    "pct24": 2.492,
+    "quote_vol": 247733648.0,
+    "funding": 9.49272878128e-05,
+    "source": "okx"
+   },
+   {
+    "date": "2026-11-26",
+    "sym": "BIGTIMEUSDT",
+    "last": 0.005796,
+    "pct24": -13.208,
+    "quote_vol": 41461463.0,
+    "funding": -0.0019738415062422,
     "source": "okx"
    }
   ]
  },
- "updated": "2026-11-26T03:42:58+07:00"
+ "updated": "2026-11-26T12:24:14+07:00"
 }

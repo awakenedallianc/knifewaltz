@@ -30,9 +30,9 @@
  "PODD": {
   "veto": false,
   "p": 0.0,
-  "date": "2026-11-25",
+  "date": "2026-11-26",
   "clear_streak": 0,
-  "top_headline": "Is it Prudent to Add Insulet Stock to Your Portfolio Right Now?"
+  "top_headline": "Should CFO Appointment Require Action From Insulet (PODD) Investors?"
  },
  "BSX": {
   "veto": false,
@@ -64,7 +64,7 @@
  },
  "MSTR": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-26",
   "clear_streak": 0,
   "top_headline": "Michael Saylor reveals a Bitcoin plan that could shock investors"
@@ -253,10 +253,10 @@
  },
  "VNET": {
   "veto": false,
-  "p": 0.01,
-  "date": "2026-11-20",
+  "p": 0.0,
+  "date": "2026-11-26",
   "clear_streak": 0,
-  "top_headline": "VNET Fiber Athlete of the Week: Peyton Rodgers - Erie News Now"
+  "top_headline": "VNET Fiber Athlete of the Week: Anna Johnson - Erie News Now"
  },
  "WB": {
   "veto": false,
@@ -400,7 +400,7 @@
  },
  "CTVA": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.0,
   "date": "2026-11-26",
   "clear_streak": 0,
   "top_headline": "Corteva, Inc. (CTVA) Stock Price, News, Quote & History - Yahoo! Finance Canada"
@@ -435,7 +435,7 @@
  },
  "GDXJ": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-26",
   "clear_streak": 0,
   "top_headline": "GDXJ Dec 2026 115.000 call (GDXJ261231C00115000) Seasonal Returns Chart - Yahoo Finance"

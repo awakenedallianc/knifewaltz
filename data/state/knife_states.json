@@ -541,7 +541,7 @@
   "events": []
  },
  "ORCL": {
-  "state": "KNIFE_FALLING",
+  "state": "STABILIZING",
   "since": "2026-11-26",
   "events": [
    {
@@ -549,6 +549,12 @@
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -58.26% / 10日 -19.32%"
+   },
+   {
+    "d": "2026-11-26",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 1/5"
    }
   ]
  },
@@ -2003,14 +2009,20 @@
   ]
  },
  "1024_HK": {
-  "state": "KNIFE_FALLING",
-  "since": "2026-11-19",
+  "state": "STABILIZING",
+  "since": "2026-11-26",
   "events": [
    {
     "d": "2026-11-19",
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -72.68% / 10日 -22.93%"
+   },
+   {
+    "d": "2026-11-26",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 1/5"
    }
   ]
  },
@@ -2346,7 +2358,7 @@
   "cooldown_until": "2026-12-07"
  },
  "FLEX": {
-  "state": "KNIFE_FALLING",
+  "state": "STABILIZING",
   "since": "2026-11-26",
   "events": [
    {
@@ -2378,6 +2390,12 @@
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -59.01% / 10日 -15.87%"
+   },
+   {
+    "d": "2026-11-26",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 2/5"
    }
   ],
   "catch_ref_price": 77.23999786376953,
@@ -2386,7 +2404,7 @@
   "cooldown_until": "2026-11-22"
  },
  "ARM": {
-  "state": "KNIFE_FALLING",
+  "state": "STABILIZING",
   "since": "2026-11-26",
   "events": [
    {
@@ -2418,6 +2436,12 @@
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -63.56% / 10日 -21.25%"
+   },
+   {
+    "d": "2026-11-26",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 1/5"
    }
   ],
   "catch_ref_price": 202.52000427246094,
@@ -2810,7 +2834,7 @@
   ]
  },
  "AMAT": {
-  "state": "KNIFE_FALLING",
+  "state": "STABILIZING",
   "since": "2026-11-26",
   "events": [
    {
@@ -2818,6 +2842,12 @@
     "from": "NORMAL",
     "to": "KNIFE_FALLING",
     "note": "刀落：dd52 -58.06% / 10日 -23.25%"
+   },
+   {
+    "d": "2026-11-26",
+    "from": "KNIFE_FALLING",
+    "to": "STABILIZING",
+    "note": "checklist 1/5"
    }
   ]
  },

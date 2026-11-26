@@ -1,37 +1,49 @@
 {
- "ZECUSDT": {
-  "family": "noise",
-  "flavor": 0.42,
-  "probs": {
-   "noise": 0.58,
-   "liquidation_cascade": 0.0,
-   "event_driven": 0.0,
-   "systemic": 0.07,
-   "unclear": 0.35
-  },
-  "date": "2026-11-26"
- },
- "HYPEUSDT": {
-  "family": "event_driven",
-  "flavor": 0.86,
-  "probs": {
-   "noise": 0.14,
-   "liquidation_cascade": 0.0,
-   "event_driven": 0.64,
-   "systemic": 0.14,
-   "unclear": 0.08
-  },
-  "date": "2026-11-26"
- },
- "XRPUSDT": {
+ "NEARUSDT": {
   "family": "noise",
   "flavor": 0.48,
   "probs": {
    "noise": 0.52,
    "liquidation_cascade": 0.0,
-   "event_driven": 0.17,
-   "systemic": 0.19,
-   "unclear": 0.12
+   "event_driven": 0.0,
+   "systemic": 0.29,
+   "unclear": 0.19
+  },
+  "date": "2026-11-26"
+ },
+ "HYPEUSDT": {
+  "family": "event_driven",
+  "flavor": 0.94,
+  "probs": {
+   "noise": 0.06,
+   "liquidation_cascade": 0.0,
+   "event_driven": 0.62,
+   "systemic": 0.26,
+   "unclear": 0.06
+  },
+  "date": "2026-11-26"
+ },
+ "XRPUSDT": {
+  "family": "systemic",
+  "flavor": 0.65,
+  "probs": {
+   "noise": 0.35,
+   "liquidation_cascade": 0.0,
+   "event_driven": 0.12,
+   "systemic": 0.45,
+   "unclear": 0.08
+  },
+  "date": "2026-11-26"
+ },
+ "ZECUSDT": {
+  "family": "systemic",
+  "flavor": 0.78,
+  "probs": {
+   "noise": 0.22,
+   "liquidation_cascade": 0.0,
+   "event_driven": 0.0,
+   "systemic": 0.52,
+   "unclear": 0.26
   },
   "date": "2026-11-26"
  },
@@ -41,8 +53,8 @@
   "probs": {
    "noise": 0.01,
    "liquidation_cascade": 0.0,
-   "event_driven": 0.91,
-   "systemic": 0.07,
+   "event_driven": 0.82,
+   "systemic": 0.16,
    "unclear": 0.01
   },
   "date": "2026-11-26"
@@ -53,21 +65,33 @@
   "probs": {
    "noise": 0.01,
    "liquidation_cascade": 0.0,
-   "event_driven": 0.27,
-   "systemic": 0.63,
-   "unclear": 0.09
+   "event_driven": 0.42,
+   "systemic": 0.54,
+   "unclear": 0.03
   },
   "date": "2026-11-26"
  },
  "ETHUSDT": {
-  "family": "systemic",
+  "family": "event_driven",
   "flavor": 0.99,
   "probs": {
    "noise": 0.01,
    "liquidation_cascade": 0.0,
-   "event_driven": 0.35,
-   "systemic": 0.54,
-   "unclear": 0.1
+   "event_driven": 0.53,
+   "systemic": 0.44,
+   "unclear": 0.02
+  },
+  "date": "2026-11-26"
+ },
+ "BIGTIMEUSDT": {
+  "family": "liquidation_cascade",
+  "flavor": 0.86,
+  "probs": {
+   "noise": 0.14,
+   "liquidation_cascade": 0.66,
+   "event_driven": 0.0,
+   "systemic": 0.02,
+   "unclear": 0.18
   },
   "date": "2026-11-26"
  }
