@@ -22,7 +22,7 @@
  },
  "NG_F": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-27",
   "clear_streak": 0,
   "top_headline": "US Natgas Falls 4% to 8-Week Low on Milder Weather Outlook, Lower LNG Export Flows - EnergyNow.com"
@@ -92,7 +92,7 @@
  },
  "FICO": {
   "veto": false,
-  "p": 0.03,
+  "p": 0.01,
   "date": "2026-11-27",
   "clear_streak": 0,
   "top_headline": "5 Beaten-Down Stocks Insiders Are Still Dumping (Even After a 50% Crash)"
@@ -127,7 +127,7 @@
  },
  "SLV": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.03,
   "date": "2026-11-27",
   "clear_streak": 0,
   "top_headline": "Commodity Prices Swing as Gold Rebounds 2.75% - Gotrade"
@@ -148,7 +148,7 @@
  },
  "PL_F": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-27",
   "clear_streak": 0,
   "top_headline": "NYMEX: Precious Metals Prices Up - 25-11-26 - Armenpress"
@@ -253,10 +253,10 @@
  },
  "VNET": {
   "veto": false,
-  "p": 0.0,
-  "date": "2026-11-26",
+  "p": 0.27,
+  "date": "2026-11-27",
   "clear_streak": 0,
-  "top_headline": "VNET Fiber Athlete of the Week: Anna Johnson - Erie News Now"
+  "top_headline": "VNET Q3 2026 Results: Revenue Up 14.8%, New $50M Buyback, 60MW Order - Minichart"
  },
  "WB": {
   "veto": false,
@@ -421,7 +421,7 @@
  },
  "WDC": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.02,
   "date": "2026-11-27",
   "clear_streak": 0,
   "top_headline": "Seagate Technology Got Hammered By Multiple Compression, Falling 40% in 3 Months: This Renowned Wall Street Desk Targets 185% Gains Following Earnings"
@@ -449,7 +449,7 @@
  },
  "FLEX": {
   "veto": false,
-  "p": 0.04,
+  "p": 0.05,
   "date": "2026-11-27",
   "clear_streak": 0,
   "top_headline": "Week 12 start 'em, sit 'em advice for fringe flex fantasy football starters - MSN"
@@ -519,7 +519,7 @@
  },
  "RDDT": {
   "veto": false,
-  "p": 0.04,
+  "p": 0.02,
   "date": "2026-11-27",
   "clear_streak": 0,
   "top_headline": "Reddit's 2027 Outlook: Scaling Advertising Business Drives Sustained Growth"
@@ -540,7 +540,7 @@
  },
  "INTC": {
   "veto": false,
-  "p": 0.02,
+  "p": 0.01,
   "date": "2026-11-27",
   "clear_streak": 0,
   "top_headline": "5 Most Oversold Semiconductor Stocks to Buy for 2027"
@@ -582,7 +582,7 @@
  },
  "STX": {
   "veto": false,
-  "p": 0.01,
+  "p": 0.0,
   "date": "2026-11-27",
   "clear_streak": 0,
   "top_headline": "Seagate Technology Got Hammered By Multiple Compression, Falling 40% in 3 Months: This Renowned Wall Street Desk Targets 185% Gains Following Earnings"
@@ -596,7 +596,7 @@
  },
  "AMAT": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-27",
   "clear_streak": 0,
   "top_headline": "5 Most Oversold Semiconductor Stocks to Buy for 2027"
@@ -694,7 +694,7 @@
  },
  "FXI": {
   "veto": false,
-  "p": 0.31,
+  "p": 0.14,
   "date": "2026-11-27",
   "clear_streak": 0,
   "top_headline": "FXI Mar 2027 32.000 put (FXI270331P00032000) interactive stock chart – Yahoo Finance - Yahoo Finance Singapore"

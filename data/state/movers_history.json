@@ -2573,67 +2573,67 @@
    {
     "date": "2026-11-27",
     "sym": "HYPEUSDT",
-    "last": 63.422,
-    "pct24": 3.339,
-    "quote_vol": 20806143.0,
+    "last": 66.061,
+    "pct24": 6.361,
+    "quote_vol": 27630884.0,
     "funding": null,
-    "source": "okx"
-   },
-   {
-    "date": "2026-11-27",
-    "sym": "NEARUSDT",
-    "last": 3.087,
-    "pct24": 3.279,
-    "quote_vol": 23214980.0,
-    "funding": null,
-    "source": "okx"
-   },
-   {
-    "date": "2026-11-27",
-    "sym": "XRPUSDT",
-    "last": 0.9548,
-    "pct24": 1.867,
-    "quote_vol": 23830060.0,
-    "funding": 0.0001,
     "source": "okx"
    },
    {
     "date": "2026-11-27",
     "sym": "SOLUSDT",
-    "last": 71.44,
-    "pct24": 1.607,
-    "quote_vol": 50267722.0,
-    "funding": 8.15968535874e-05,
+    "last": 73.21,
+    "pct24": 2.664,
+    "quote_vol": 43078826.0,
+    "funding": 0.0001,
     "source": "okx"
    },
    {
     "date": "2026-11-27",
     "sym": "ETHUSDT",
-    "last": 1704.43,
-    "pct24": 1.273,
-    "quote_vol": 133801810.0,
-    "funding": 5.94608319826e-05,
+    "last": 1742.84,
+    "pct24": 2.484,
+    "quote_vol": 136972134.0,
+    "funding": 6.01267993789e-05,
     "source": "okx"
    },
    {
     "date": "2026-11-27",
     "sym": "BTCUSDT",
-    "last": 60750.3,
-    "pct24": 1.247,
-    "quote_vol": 325486790.0,
-    "funding": 1.91598352237e-05,
+    "last": 61666.4,
+    "pct24": 1.167,
+    "quote_vol": 277144930.0,
+    "funding": 9.63323517554e-05,
+    "source": "okx"
+   },
+   {
+    "date": "2026-11-27",
+    "sym": "XRPUSDT",
+    "last": 0.9639,
+    "pct24": 0.25,
+    "quote_vol": 20770300.0,
+    "funding": 0.0001,
     "source": "okx"
    },
    {
     "date": "2026-11-27",
     "sym": "ZECUSDT",
-    "last": 721.28,
-    "pct24": -4.529,
-    "quote_vol": 43920549.0,
-    "funding": 7.11589557093e-05,
+    "last": 758.88,
+    "pct24": -1.295,
+    "quote_vol": 56123224.0,
+    "funding": 1.43322717543e-05,
+    "source": "okx"
+   },
+   {
+    "date": "2026-11-27",
+    "sym": "MMTUSDT",
+    "last": 0.1843,
+    "pct24": -27.298,
+    "quote_vol": 125691520.0,
+    "funding": -0.0020768550520606,
     "source": "okx"
    }
   ]
  },
- "updated": "2026-11-27T03:33:37+07:00"
+ "updated": "2026-11-27T12:19:38+07:00"
 }

@@ -1,37 +1,13 @@
 {
  "HYPEUSDT": {
   "family": "noise",
-  "flavor": 0.37,
+  "flavor": 0.27,
   "probs": {
-   "noise": 0.63,
+   "noise": 0.73,
    "liquidation_cascade": 0.0,
    "event_driven": 0.0,
-   "systemic": 0.21,
+   "systemic": 0.11,
    "unclear": 0.16
-  },
-  "date": "2026-11-27"
- },
- "NEARUSDT": {
-  "family": "systemic",
-  "flavor": 0.78,
-  "probs": {
-   "noise": 0.22,
-   "liquidation_cascade": 0.0,
-   "event_driven": 0.0,
-   "systemic": 0.46,
-   "unclear": 0.32
-  },
-  "date": "2026-11-27"
- },
- "XRPUSDT": {
-  "family": "systemic",
-  "flavor": 0.94,
-  "probs": {
-   "noise": 0.06,
-   "liquidation_cascade": 0.0,
-   "event_driven": 0.0,
-   "systemic": 0.71,
-   "unclear": 0.23
   },
   "date": "2026-11-27"
  },
@@ -41,21 +17,21 @@
   "probs": {
    "noise": 0.0,
    "liquidation_cascade": 0.0,
-   "event_driven": 0.9,
-   "systemic": 0.09,
-   "unclear": 0.01
+   "event_driven": 0.86,
+   "systemic": 0.14,
+   "unclear": 0.0
   },
   "date": "2026-11-27"
  },
  "ETHUSDT": {
-  "family": "systemic",
+  "family": "event_driven",
   "flavor": 0.99,
   "probs": {
    "noise": 0.01,
    "liquidation_cascade": 0.0,
-   "event_driven": 0.41,
-   "systemic": 0.55,
-   "unclear": 0.03
+   "event_driven": 0.5,
+   "systemic": 0.48,
+   "unclear": 0.01
   },
   "date": "2026-11-27"
  },
@@ -65,21 +41,45 @@
   "probs": {
    "noise": 0.01,
    "liquidation_cascade": 0.0,
-   "event_driven": 0.23,
-   "systemic": 0.71,
-   "unclear": 0.05
+   "event_driven": 0.24,
+   "systemic": 0.69,
+   "unclear": 0.06
+  },
+  "date": "2026-11-27"
+ },
+ "XRPUSDT": {
+  "family": "unclear",
+  "flavor": 0.77,
+  "probs": {
+   "noise": 0.23,
+   "liquidation_cascade": 0.0,
+   "event_driven": 0.0,
+   "systemic": 0.2,
+   "unclear": 0.57
   },
   "date": "2026-11-27"
  },
  "ZECUSDT": {
   "family": "event_driven",
-  "flavor": 0.91,
+  "flavor": 0.9,
   "probs": {
-   "noise": 0.09,
+   "noise": 0.1,
    "liquidation_cascade": 0.01,
-   "event_driven": 0.75,
-   "systemic": 0.03,
-   "unclear": 0.12
+   "event_driven": 0.68,
+   "systemic": 0.04,
+   "unclear": 0.17
+  },
+  "date": "2026-11-27"
+ },
+ "MMTUSDT": {
+  "family": "liquidation_cascade",
+  "flavor": 0.82,
+  "probs": {
+   "noise": 0.18,
+   "liquidation_cascade": 0.75,
+   "event_driven": 0.0,
+   "systemic": 0.01,
+   "unclear": 0.06
   },
   "date": "2026-11-27"
  }
