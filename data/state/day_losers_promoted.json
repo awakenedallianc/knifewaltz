@@ -1,22 +1,6 @@
 {
- "date": "2026-11-27",
+ "date": "2026-11-28",
  "source": "yahoo-screener",
- "promoted": [
-  {
-   "symbol": "NTNX",
-   "key": "NTNX",
-   "name": "Nutanix, Inc.",
-   "cls": "equity",
-   "pct_day": -15.19,
-   "mcap": 2698944512,
-   "dd52w": -37.96,
-   "ret10": -23.01,
-   "vol_ratio": 5.4,
-   "days_from_peak": 33,
-   "px": 46.29999923706055,
-   "asof": "2026-11-25",
-   "bars": 251
-  }
- ],
+ "promoted": [],
  "degraded_reason": null
 }
