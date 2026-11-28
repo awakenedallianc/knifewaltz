@@ -141,7 +141,7 @@
  },
  "UNG": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-28",
   "clear_streak": 0,
   "top_headline": "Dr. F. Ann Sumners Obituary (2026) - Gainesville, GA - Little & Davenport Funeral Home & Crematory - Legacy obituary"
@@ -197,7 +197,7 @@
  },
  "IQ": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-28",
   "clear_streak": 0,
   "top_headline": "How Commanders rookie Sonny Styles wields his football IQ as a weapon - The Washington Post"
@@ -519,7 +519,7 @@
  },
  "RDDT": {
   "veto": false,
-  "p": 0.0,
+  "p": 0.01,
   "date": "2026-11-28",
   "clear_streak": 0,
   "top_headline": "What Will Decide Reddit Stock Over The Next Six Months?"

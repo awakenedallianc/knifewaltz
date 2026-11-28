@@ -13378,6 +13378,108 @@
   "settled": false
  },
  {
+  "id": "S-CATCH:9888_HK:2026-11-28",
+  "kind": "S-CATCH",
+  "symbol": "9888_HK",
+  "date": "2026-11-28",
+  "trigger_px": 62.650001525878906,
+  "stop_price": 59.9,
+  "features": {
+   "dd52w": -60.97,
+   "dd250": -60.97,
+   "ret10": -15.57,
+   "rsi14": 19.6,
+   "vol_ratio": 1.9,
+   "close_pos": 0.95,
+   "falling": true,
+   "capitulation": false,
+   "hammer": false,
+   "checklist": {
+    "reversal_day": true,
+    "no_new_low_3d": false,
+    "vol_compress": true,
+    "gate_ok": true,
+    "rsi_divergence": false
+   },
+   "checklist_n": 3,
+   "tier_time": "B",
+   "days_from_peak": 208,
+   "stop_price": 59.9,
+   "last_date": "2026-11-27",
+   "cls": "equity_single",
+   "tier": "T2C",
+   "state": "CATCH",
+   "score_parts": {
+    "fall_40": 26.4,
+    "capitulation_20": 0.0,
+    "checklist_20": 12.0,
+    "gate_20": 20.0
+   }
+  },
+  "score": 58,
+  "market": {
+   "blade_index": 10,
+   "gate_state": "FLIP_BACK",
+   "vix": 23.809999465942383,
+   "vix_ratio": 0.9995801751045358
+  },
+  "jev": {
+   "news_heat": null,
+   "catch_prior": 0.517,
+   "outcome_defs": {
+    "p_terminal": "180 日内 X-EVENT 或较 veto 日再跌 90%",
+    "heat": "|5 日前向收益|>=2×ATR14%",
+    "catch_prior": "该笔 CATCH 按 A 档退出规则胜负"
+   }
+  },
+  "params_version": "v1.2-preregistered",
+  "engine_sha": "69e75ef468979668",
+  "features_sha": "d0f4075679352718",
+  "realized": {
+   "ledger_ref": "9888.HK@2026-11-28"
+  },
+  "settled": false,
+  "stier": {
+   "rules_version": "s1",
+   "admitted": false,
+   "status": null,
+   "soft_score": 0.5363,
+   "hard_pass": {
+    "H1": true,
+    "H2": false,
+    "H3": true,
+    "H4": true,
+    "H5": false,
+    "H6": true,
+    "H7": true,
+    "H8": false
+   },
+   "shadow": {
+    "H9": {
+     "would_block": true,
+     "lr": 1.0,
+     "grade": "线索"
+    },
+    "H10": {
+     "would_block": true,
+     "flip_back_age_days": 1
+    },
+    "H11": {
+     "would_block": false,
+     "close_pos": 0.95
+    }
+   },
+   "slice": {
+    "key": "None|FLIP_BACK|B|none|equity_single",
+    "lr": 1.0,
+    "n": 0,
+    "wins": 0,
+    "wilson95": null,
+    "grade": "线索"
+   }
+  }
+ },
+ {
   "id": "S-CATCH:ALB:2026-11-28",
   "kind": "S-CATCH",
   "symbol": "ALB",

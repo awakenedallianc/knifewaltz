@@ -1388,5 +1388,17 @@
   "tier_time": "-",
   "status": "open",
   "snapshot_ref": "S-CATCH:FXI:2026-11-28"
+ },
+ {
+  "kind": "live",
+  "signal": "S-CATCH",
+  "symbol": "9888.HK",
+  "date": "2026-11-28",
+  "entry": 62.650001525878906,
+  "stop": 59.9,
+  "score": 58,
+  "tier_time": "B",
+  "status": "open",
+  "snapshot_ref": "S-CATCH:9888_HK:2026-11-28"
  }
 ]

@@ -3270,8 +3270,8 @@
   ]
  },
  "9888_HK": {
-  "state": "STABILIZING",
-  "since": "2026-11-25",
+  "state": "CATCH",
+  "since": "2026-11-28",
   "events": [
    {
     "d": "2026-11-21",
@@ -3284,8 +3284,17 @@
     "from": "KNIFE_FALLING",
     "to": "STABILIZING",
     "note": "checklist 1/5"
+   },
+   {
+    "d": "2026-11-28",
+    "from": "STABILIZING",
+    "to": "CATCH",
+    "note": "checklist 3/5"
    }
-  ]
+  ],
+  "catch_ref_price": 62.650001525878906,
+  "catch_day_low": 59.9,
+  "expires": "2026-12-14"
  },
  "FSLR": {
   "state": "KNIFE_FALLING",

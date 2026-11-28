@@ -1,6 +1,22 @@
 {
  "date": "2026-11-28",
  "source": "yahoo-screener",
- "promoted": [],
+ "promoted": [
+  {
+   "symbol": "PLBL",
+   "key": "PLBL",
+   "name": "Polibeli Group Ltd",
+   "cls": "equity",
+   "pct_day": -18.28,
+   "mcap": 12604620800,
+   "dd52w": -29.96,
+   "ret10": 13.2,
+   "vol_ratio": 0.31,
+   "days_from_peak": 235,
+   "px": 8.229999542236328,
+   "asof": "2026-11-27",
+   "bars": 251
+  }
+ ],
  "degraded_reason": null
 }

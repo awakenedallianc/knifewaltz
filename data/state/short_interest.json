@@ -2,7 +2,7 @@
  "settlement": "2026-11-13",
  "staleness_note": "双月·滞后约9工作日",
  "source": "finra",
- "fetched_at": "2026-11-28T03:18:31+07:00",
+ "fetched_at": "2026-11-28T11:56:41+07:00",
  "rows": {
   "ALB": {
    "short": 12410997,
@@ -118,6 +118,11 @@
    "short": 52367533,
    "days_to_cover": 1.06,
    "chg_pct": 12.85
+  },
+  "PLBL": {
+   "short": 371307,
+   "days_to_cover": 1.61,
+   "chg_pct": 30.75
   },
   "PODD": {
    "short": 6679013,
